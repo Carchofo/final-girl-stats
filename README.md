@@ -1,6 +1,6 @@
 # Final Girl Stats
 
-Sitio estático. Dos páginas: estadísticas de 13.873 partidas y la chuleta de salidas.
+Sitio estático. Dos páginas: estadísticas de 13.915 partidas y la chuleta de salidas.
 
 ## Montar
 

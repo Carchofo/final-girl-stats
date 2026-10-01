@@ -110,16 +110,16 @@ PAGINAS = [
     {
         "fuente": "src/cuerpo.html",
         "salida": "index.html",
-        "title": "Estadísticas de Final Girl: 13.873 partidas reales",
+        "title": "Estadísticas de Final Girl: 13.915 partidas reales",
         # Google corta la descripcion sobre los 155 caracteres: lo que
         # importa va delante.
         "desc": (
-            "Victorias de cada killer en cada mapa de Final Girl, sobre 13.873 "
+            "Victorias de cada killer en cada mapa de Final Girl, sobre 13.915 "
             "partidas de la comunidad. Qué caja es más dura y dónde pierde cada asesino."
         ),
         "img": "img/vhs-final-girl.jpg",
         "ogtitle": "La página que todo fan de Final Girl necesitaba",
-        "ogdesc": "13.873 partidas reales de la comunidad: qué killer castiga en qué mapa, qué caja es más dura y cómo salir en el turno 1.",
+        "ogdesc": "13.915 partidas reales de la comunidad: qué killer castiga en qué mapa, qué caja es más dura y cómo salir en el turno 1.",
         "prioridad": "1.0",
         "act_index": ' aria-current="page"',
         "act_salidas": "", "act_fichas": "",
