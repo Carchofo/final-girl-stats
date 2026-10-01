@@ -232,13 +232,13 @@ def estilos():
     """El CSS vive dentro de cuerpo.html. Las páginas generadas lo reutilizan
     tal cual: duplicarlo a mano sería otra copia que mantener sincronizada,
     que es la enfermedad que este proyecto ya ha tenido una vez."""
-    s = (AQUI / "src" / "cuerpo.html").read_text()
+    s = (AQUI / "src" / "cuerpo.html").read_text(encoding="utf-8")
     bloques = re.findall(r"<style>.*?</style>", s, re.S)
     return "\n".join(bloques)
 
 
 def datos():
-    s = (AQUI / "src" / "cuerpo.html").read_text()
+    s = (AQUI / "src" / "cuerpo.html").read_text(encoding="utf-8")
     m = re.search(r"var D = (\{.*?\});\n", s, re.S)
     return json.loads(m.group(1))
 
@@ -275,7 +275,7 @@ def jsonld_de(pagina, url):
 
 for p in PAGINAS:
     url = f"{DOMINIO}/{p['salida']}" if p["salida"] != "index.html" else f"{DOMINIO}/"
-    cuerpo = (AQUI / p["fuente"]).read_text()
+    cuerpo = (AQUI / p["fuente"]).read_text(encoding="utf-8")
     # El cuerpo viene del artifact, que lleva su propio <title> porque alli
     # va dentro del <body>. Aqui ya hay uno en el <head>: dejar los dos
     # confunde al buscador sobre cual es el bueno.
@@ -286,7 +286,7 @@ for p in PAGINAS:
     desc = AQUI / "killers_desc.json"
     if desc.exists() and "var DESC = {};" in cuerpo:
         cuerpo = cuerpo.replace("var DESC = {};",
-                                "var DESC = " + desc.read_text().strip() + ";", 1)
+                                "var DESC = " + desc.read_text(encoding="utf-8").strip() + ";", 1)
 
     # Los enlaces entre las dos paginas apuntaban al artifact de claude.ai:
     # en el sitio tienen que quedarse dentro. Ademas de ser lo correcto para
@@ -340,7 +340,7 @@ for p in PAGINAS:
         robots="index,follow,max-image-preview:large" if INDEXAR
                else "noindex,nofollow",
     ) + cuerpo + PIE
-    (AQUI / p["salida"]).write_text(html)
+    (AQUI / p["salida"]).write_text(html, encoding="utf-8")
     print(f"{p['salida']}  {len(html)//1024} KB")
 
 # --- páginas por killer y por caja -----------------------------------------
@@ -352,7 +352,7 @@ for p in PAGINAS:
 # lo cachea para todas.
 CSS = estilos()
 (AQUI / "estilos.css").write_text(
-    re.sub(r"</?style>", "", CSS))
+    re.sub(r"</?style>", "", CSS), encoding="utf-8")
 print("estilos.css")
 
 generadas = paginas.generar()
@@ -377,7 +377,7 @@ for g in generadas:
         jsonld=jsonld_de(g, url),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + cuerpo + PIE
-    (AQUI / g["salida"]).write_text(html)
+    (AQUI / g["salida"]).write_text(html, encoding="utf-8")
 print(f"{len(generadas)} páginas de killer y caja")
 
 # --- índice de fichas ------------------------------------------------------
@@ -422,7 +422,7 @@ url_fichas = f"{DOMINIO}/fichas.html"
         ogdesc="Una página por cada killer y cada caja, con victorias por mapa y consejos.",
         jsonld=jsonld_de({"title": "Fichas de Final Girl", "desc": "Índice de killers y cajas."}, url_fichas),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
-    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + fichas + PIE)
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + fichas + PIE, encoding="utf-8")
 print("fichas.html (índice de las", len(generadas), "páginas)")
 
 PAGINAS += [{"salida": "fichas.html", "prioridad": "0.9"}]
@@ -437,8 +437,8 @@ PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in genera
 # No escribe en su hoja: construye un enlace prerrellenado de Google Forms,
 # que es una funcion publica del propio formulario. Nada entra hasta que una
 # persona pulsa Submit alli.
-plantilla = (AQUI / "registrar_plantilla.html").read_text()
-campos = json.loads((AQUI / "fg_form.json").read_text())
+plantilla = (AQUI / "registrar_plantilla.html").read_text(encoding="utf-8")
+campos = json.loads((AQUI / "fg_form.json").read_text(encoding="utf-8"))
 parejas = {f["killer"]: f["loc"] for f in D["films"]}
 plantilla = plantilla.replace("__FORMJSON__", json.dumps(campos, ensure_ascii=False))
 plantilla = plantilla.replace(
@@ -457,7 +457,7 @@ url_reg = f"{DOMINIO}/registrar.html"
         robots="noindex,nofollow",   # siempre, aunque el resto se indexe
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
     + NAV.format(act_index="", act_salidas="", act_fichas="")
-    + plantilla + PIE)
+    + plantilla + PIE, encoding="utf-8")
 print("registrar.html  (suelto: sin enlaces, sin sitemap, noindex fijo)")
 
 # --- sitemap y robots -----------------------------------------------------
@@ -470,14 +470,14 @@ if INDEXAR:
     (AQUI / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n'
         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n'
-    )
-    (AQUI / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {DOMINIO}/sitemap.xml\n")
+    , encoding="utf-8")
+    (AQUI / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     print("sitemap.xml y robots.txt  -- INDEXABLE")
 else:
     # Dos capas: robots.txt pide no rastrear, y cada pagina lleva noindex por
     # si llegan por un enlace directo sin pasar por robots.txt.
     (AQUI / "sitemap.xml").unlink(missing_ok=True)
-    (AQUI / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
+    (AQUI / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
     print("robots.txt  -- NO INDEXABLE (INDEXAR = False)")
     print("   La pagina se ve y se comparte, pero no entra en Google.")
     print("   Pon INDEXAR = True cuando tengas el permiso por escrito.")

@@ -65,7 +65,7 @@ def pc(x, dec=1):
 
 
 def datos():
-    s = (AQUI / 'src' / 'cuerpo.html').read_text()
+    s = (AQUI / 'src' / 'cuerpo.html').read_text(encoding="utf-8")
     return json.loads(re.search(r'var D = (\{.*?\});\n', s, re.S).group(1))
 
 
@@ -74,7 +74,7 @@ def descripciones():
     Final Girl Wiki (CC BY-SA): el texto es nuestro, los hechos son suyos,
     y por eso cada ficha la enlaza."""
     f = AQUI / 'killers_desc.json'
-    return json.loads(f.read_text()) if f.exists() else {}
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
 
 DESC = descripciones()

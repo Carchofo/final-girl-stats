@@ -220,7 +220,7 @@ def recalcular(filas, viejo):
 
 
 def main():
-    viejo_txt = (AQUI / 'src' / 'cuerpo.html').read_text()
+    viejo_txt = (AQUI / 'src' / 'cuerpo.html').read_text(encoding="utf-8")
     m = re.search(r'var D = (\{.*?\});\n', viejo_txt, re.S)
     viejo = json.loads(m.group(1))
 
@@ -242,7 +242,7 @@ def main():
         return
 
     nuevo_txt = viejo_txt[:m.start(1)] + json.dumps(nuevo, ensure_ascii=False) + viejo_txt[m.end(1):]
-    (AQUI / 'src' / 'cuerpo.html').write_text(nuevo_txt)
+    (AQUI / 'src' / 'cuerpo.html').write_text(nuevo_txt, encoding="utf-8")
 
     # La cifra de partidas esta escrita a mano en titulos, descripciones y
     # textos de seccion, porque ahi tiene que estar en el HTML servido y no
@@ -256,9 +256,9 @@ def main():
             ruta = AQUI / f
             if not ruta.exists():
                 continue
-            t = ruta.read_text()
+            t = ruta.read_text(encoding="utf-8")
             if antes in t:
-                ruta.write_text(t.replace(antes, ahora))
+                ruta.write_text(t.replace(antes, ahora), encoding="utf-8")
                 tocados.append(f)
 
     print(f'\nsrc/cuerpo.html actualizado.')
