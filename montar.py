@@ -24,7 +24,7 @@ DOMINIO = "https://carchofo.github.io/final-girl-stats"
 INDEXAR = False
 
 FORM = "https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform"
-HOJA = "https://docs.google.com/spreadsheets/d/1sxbGLkTCzOcRk5FDMmy1S5tJwRBD_LFJhXPnQHxGz1A/edit"
+HOJA = "https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit"
 
 # Llamada a registrar partidas. Va en las DOS paginas, arriba del todo: los
 # datos salen de esa hoja, asi que cuanta mas gente registre, mejores son
