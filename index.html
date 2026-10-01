@@ -1391,9 +1391,16 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
   // ---------- encuesta ----------
   (async function encuesta() {
     var caja = document.getElementById('enc');
+    // Fuera de claude.ai (la copia publicada en web) no existe `claude`, y
+    // leerlo lanzaba un ReferenceError que se tragaba la promesa y dejaba
+    // un error en consola en cada carga. La encuesta simplemente no va ahí.
+    if (typeof claude === 'undefined' || !claude || !claude.use) {
+      if (caja) caja.hidden = true;
+      return;
+    }
     var db = await claude.use('db');
     var user = await claude.use('user');
-    if (!db || !user) return;                 // vista sin db: la encuesta no existe
+    if (!db || !user) { if (caja) caja.hidden = true; return; }   // vista sin db
 
     var uid = null;
     try { uid = await user.id(); } catch (e) { uid = null; }
