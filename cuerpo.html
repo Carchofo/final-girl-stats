@@ -48,6 +48,19 @@
   }
   @media (max-width:900px) { .hero { background-attachment:scroll; } }
 
+
+  /* Posters del carrusel: ahora son botones. Se para la animacion al pasar
+     por encima, que si no es imposible acertarle a uno en movimiento. */
+  .marquee .tira .poster {
+    padding:0; border:0; background:none; cursor:pointer; display:block; flex:none;
+    border-radius:2px; transition:transform .16s, box-shadow .16s, outline-color .16s;
+    outline:2px solid transparent; outline-offset:2px;
+  }
+  .marquee .tira .poster:hover { transform:translateY(-3px) scale(1.04); z-index:2;
+    box-shadow:0 8px 22px rgba(0,0,0,.65), 0 0 0 1px var(--blood); }
+  .marquee .tira .poster:focus-visible { outline-color:var(--blood); }
+  .marquee:hover .tira, .marquee:focus-within .tira { animation-play-state:paused; }
+
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
          font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
@@ -1273,13 +1286,43 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
   });
   document.getElementById('g-orden').addEventListener('change', pintarGirls);
 
+  // Abre la ficha de una caja desde cualquier sitio: cambia a la pestaña
+  // Cajas y despliega esa fila. Busca la fila por nombre en vez de por
+  // indice porque el orden de la lista lo cambia el usuario.
+  function abrirCaja(nombre) {
+    var tab = document.querySelector('nav.tabs button[data-t="cajas"]');
+    if (tab) tab.click();
+    var cont = document.getElementById('l-cajas');
+    if (!cont) return;
+    var bars = cont.querySelectorAll('.bar');
+    for (var i = 0; i < bars.length; i++) {
+      var nm = bars[i].querySelector('.nm');
+      var txt = nm ? (nm.firstChild ? nm.firstChild.textContent : nm.textContent) : '';
+      if ((txt || '').trim() === nombre) {
+        if (bars[i].getAttribute('aria-expanded') !== 'true') bars[i].click();
+        bars[i].scrollIntoView({ block: 'center', behavior: 'smooth' });
+        return;
+      }
+    }
+  }
+
   (function () {
     var con = D.films.filter(function (f) { return f.img; });
     var dos = con.concat(con);   // duplicado para que el bucle no corte
-    document.getElementById('tira').innerHTML = dos.map(function (f) {
-      return '<img src="' + f.img + '" alt="" loading="lazy"' +
-        (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>';
+    var tira = document.getElementById('tira');
+    tira.innerHTML = dos.map(function (f) {
+      // Botones, no imagenes sueltas: esto navega, asi que tiene que
+      // funcionar con teclado y anunciar a donde lleva.
+      return '<button type="button" class="poster" data-film="' +
+        esc(f.film).replace(/"/g, '&quot;') + '" title="' + esc(f.film) +
+        '" aria-label="Ver la ficha de ' + esc(f.film) + '">' +
+        '<img src="' + f.img + '" alt="" loading="lazy"' +
+        (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '></button>';
     }).join('');
+    tira.addEventListener('click', function (e) {
+      var b = e.target.closest('.poster');
+      if (b) abrirCaja(b.dataset.film);
+    });
   })();
 
   leyenda();
