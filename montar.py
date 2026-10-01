@@ -235,6 +235,13 @@ for p in PAGINAS:
     # confunde al buscador sobre cual es el bueno.
     cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
 
+    # Las descripciones de los killers viven en killers_desc.json para que
+    # paginas.py y la pagina grande usen exactamente el mismo texto.
+    desc = AQUI / "killers_desc.json"
+    if desc.exists() and "var DESC = {};" in cuerpo:
+        cuerpo = cuerpo.replace("var DESC = {};",
+                                "var DESC = " + desc.read_text().strip() + ";", 1)
+
     # Los enlaces entre las dos paginas apuntaban al artifact de claude.ai:
     # en el sitio tienen que quedarse dentro. Ademas de ser lo correcto para
     # el visitante, los enlaces internos son como el buscador entiende que

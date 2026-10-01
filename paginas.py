@@ -47,6 +47,15 @@ def datos():
     return json.loads(re.search(r'var D = (\{.*?\});\n', s, re.S).group(1))
 
 
+def descripciones():
+    """Quien es cada killer y como juega. Los datos de juego salen de la
+    Final Girl Wiki (CC BY-SA): el texto es nuestro, los hechos son suyos,
+    y por eso cada ficha la enlaza."""
+    f = AQUI / 'killers_desc.json'
+    return json.loads(f.read_text()) if f.exists() else {}
+
+
+DESC = descripciones()
 D = datos()
 FILMS = {f['film']: f for f in D['films']}
 KILLERS = D['killers']
@@ -118,6 +127,19 @@ def pagina_killer(nombre, k):
               'está por debajo: es de los duros.' if dif < -4 else
               'queda justo en la media.')
     h.append(f'<p class="dek">{intro}</p>')
+
+    d = DESC.get(nombre)
+    if d and d.get('q'):
+        h.append('<h2>Quién es</h2>')
+        h.append(f'<p>{d["q"]}</p>')
+        if d.get('j'):
+            h.append('<h3>Cómo juega</h3>')
+            h.append(f'<p>{d["j"]}</p>')
+        if d.get('wiki'):
+            u = 'https://finalgirl.fandom.com/wiki/' + d['wiki'].replace(' ', '_')
+            h.append(f'<p class="sub">Datos de juego tomados de la '
+                     f'<a href="{u}" target="_blank" rel="noopener">Final Girl Wiki</a>, '
+                     f'bajo licencia CC BY-SA.</p>')
 
     if caja:
         h.append(f'<p>Viene en la caja <a href="{slug(caja)}.html"><b>{caja}</b></a>'

@@ -378,14 +378,20 @@
                 font-family:var(--f-mono); font-size:11px; opacity:0; }
   .bar[aria-expanded="true"] { background:var(--blood-s); }
   .bar .th { width:34px; height:48px; object-fit:cover; border-radius:2px; background:var(--sunk); flex:none; }
-  /* Arte del killer, pegado al borde derecho y desvanecido hacia el centro.
-     Va absoluto a proposito: no ocupa columna de la rejilla ni empuja los datos. */
-  .bar .art { position:absolute; right:0; top:0; height:100%; width:38%; max-width:230px;
-              object-fit:cover; object-position:50% 22%; opacity:.34; pointer-events:none;
-              -webkit-mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.65) 45%,transparent 100%);
-              mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.65) 45%,transparent 100%); }
-  .bar:hover .art, .bar[aria-expanded="true"] .art { opacity:.5; }
-  @media (max-width:560px){ .bar .art { width:46%; opacity:.26; } }
+  /* Arte del killer dentro del panel abierto: arriba a la derecha, a la altura
+     del nombre, desvanecido hacia el centro para que no tape las tablas. */
+  .rowdetail { position:relative; overflow:hidden; }
+  .rowdetail .art { position:absolute; right:0; top:0; height:190px; width:46%; max-width:320px;
+                    object-fit:cover; object-position:50% 20%; opacity:.4; pointer-events:none;
+                    -webkit-mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.55) 42%,transparent 100%);
+                    mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.55) 42%,transparent 100%); }
+  .rowdetail > * { position:relative; }
+  .quien { margin:16px 0 4px; max-width:62ch; }
+  .quien h4 { font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+              color:var(--blood); margin:14px 0 5px; }
+  .quien p { margin:0; font-size:14.5px; line-height:1.55; }
+  .quien .fuente { margin-top:11px; font-size:12px; color:var(--muted); }
+  @media (max-width:560px){ .rowdetail .art { width:62%; height:150px; opacity:.24; } }
   .bar.conth { grid-template-columns:34px 1fr 56px 46px; }
   .det-head { display:grid; grid-template-columns:78px 1fr; gap:14px; align-items:start; margin-bottom:14px; }
   .det-head img { width:78px; border-radius:3px; display:block; box-shadow:0 1px 4px rgba(0,0,0,.25); }
@@ -965,7 +971,6 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
       el.innerHTML = s.map(function (f, i) {
         return '<button type="button" class="bar' + (f.img ? ' conth' : '') + '" data-i="' + i + '" aria-expanded="false">' +
           '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
-          (f.art ? '<img class="art" src="' + f.art + '" alt="" loading="lazy">' : '') +
           (f.img ? '<img class="th" src="' + f.img + '" alt="" loading="lazy"' +
             (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
           '<span class="nm">' + f.nombre + (f.mia ? '<span class="mine">Tuya</span>' : '') +
@@ -1160,23 +1165,121 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
     }
   }
 
+  // Descripciones de cada killer. Las rellena montar.py desde
+  // killers_desc.json; si falta el fichero, el panel se pinta igual.
+  var DESC = {
+ "Hans": {"wiki":"Hans the Butcher",
+  "q":"Un hombre enorme con delantal de carnicero y una máscara de cerdo de hierro, arrastrando un mazo. Es el killer de la primera película de la serie 1 y el que enseña el juego.",
+  "j":"No tiene reglas especiales: ataca y punto. Empieza con 12 de vida y Horror 4, y antes del Finale su fase es sencilla, elegir objetivo y atacar."},
+ "Dr. Fright": {"wiki":"Dr. Fright",
+  "q":"Un terapeuta de piel podrida y ojos lechosos que mata dentro de los sueños. Lo que te hace ahí dentro te lo llevas al despertar.",
+  "j":"Arranca con 9 de vida y Horror 4. Juega con el estado de sueño: parte del peligro está en no poder distinguir dónde estás."},
+ "Geppetto": {"wiki":"Geppetto",
+  "q":"Un maestro de ceremonias alto y pálido con chistera y sonrisa de oreja a oreja. Convierte gente en marionetas vivas y las suma a su familia.",
+  "j":"8 de vida y Horror 4. Cada fase genera una marioneta antes de moverse, así que el tablero se te llena de minions si no limpias."},
+ "Poltergeist": {"wiki":"Poltergeist",
+  "q":"Helen Creech, una mujer espectral de vestido largo y ojos encendidos que recorre su propia casa.",
+  "j":"El caso raro: no tiene vida y no se la puede atacar. Se gana encontrando a Carolyn entre los mazos de objetos y saliendo con ella encima."},
+ "Inkanyamba": {"wiki":"Inkanyamba",
+  "q":"Un hombre enmascarado que se cree un vengador sagrado y ha olvidado su propio nombre. Pelea con dos dagas.",
+  "j":"9 de vida y Horror 4. Sube su propia Killer Wrath cada fase mientras esté baja, así que se vuelve más peligroso cuanto más dura la partida."},
+ "Terror from Above": {"wiki":"Terror from Above",
+  "q":"La primera viñeta del juego, de la serie 1. El killer son los pájaros, homenaje directo a la película de 1963.",
+  "j":"Formato corto: trae a Melanie como Final Girl y no hay un monstruo único al que pegar, sino una bandada."},
+ "Evomorph": {"wiki":"Evomorph",
+  "q":"Un alien insectoide de exoesqueleto blanco y rojo, con cola de escorpión y sin ojos visibles. Lo subieron a bordo escondido en la carga.",
+  "j":"Evoluciona matando. Empieza como cría lenta pero demoledora, pasa a joven rápido y débil, y termina en adulto lento y fuerte. Su vida sube de 4 hasta 10."},
+ "The Organism": {"wiki":"The Organism",
+  "q":"Humanoides mutados y llenos de pústulas, en tres variantes: Fast, Strong y Tough.",
+  "j":"Cada variante empieza con vida distinta (5, 6 y 7) pero todas arrancan en Horror 5, el nivel más alto de salida de la serie 2."},
+ "The Intruders": {"wiki":"The Intruders",
+  "q":"Un trío que cree estar haciendo obra santa liberando almas: Trish con su hacha y máscara de cráneo, Baghead con una hoja enorme, y Zeke, el pequeño.",
+  "j":"Horror 3, pero 6 de vida por cada uno de los tres. No es un killer, son tres cuerpos que cubren el tablero a la vez."},
+ "Big Bad Wolf": {"wiki":"Big Bad Wolf",
+  "q":"Un hombre lobo albino descomunal, pelo blanco y ojos rojos encendidos.",
+  "j":"9 de vida y Horror 5. Tiene dos modos: empieza en Track y pasa a Slay al revelarse el Dark Power. Varias Terror Cards hacen cosas distintas según el modo."},
+ "Ratchet Lady": {"wiki":"Ratchet Lady",
+  "q":"Una enfermera con camisón rasgado y la cabeza vendada sobre los ojos. Le falta la mano derecha, sustituida por un armazón metálico, y lleva un cuchillo.",
+  "j":"5 de Horror y 6 de vida, sin tope superior de vida. Viene con minions, los Maniacs, y a cambio tú dispones de cartas de acción Calm."},
+ "Terror from the Grave": {"wiki":"Terror from the Grave",
+  "q":"Segunda viñeta, de la serie 2. El killer son zombis, con Patsy como Final Girl.",
+  "j":"Formato corto de género zombi: la presión no viene de un enemigo fuerte sino del número."},
+ "Krampus": {"wiki":"Krampus",
+  "q":"Criatura bípeda con cuernos enormes, pelaje gris y lengua de reptil. Según el lore fue humano antes de su destierro.",
+  "j":"10 de vida y Horror 4. Su fase encadena mucho: ataca, vuelve a elegir objetivo, se mueve y deja un regalo."},
+ "Tormentor": {"wiki":"The Marrek Murders",
+  "q":"El killer de The Marrek Murders, la cuarta película de la serie 3, ambientada en el almacén Marrek.",
+  "j":"Terror de tortura, con el Saw como referencia clara. Trae a Mandy y Cassie como Final Girls."},
+ "Razorface": {"wiki":"Razorface",
+  "q":"Humanoide demoníaco sin labios ni nariz, el cuerpo cubierto de cortes rituales y ganchos encadenados a la piel.",
+  "j":"9 de vida y Horror 5. Empiezas con 3 cartas de Affliction encima y para matarlo de verdad tienes que purgar cada una cumpliendo su requisito."},
+ "Slayer": {"wiki":"Slayer",
+  "q":"Figura verde brillante con cabeza de calavera y piel musgosa, envuelta en zarcillos de energía azul que le llenan las cuencas vacías.",
+  "j":"11 de vida, el saco más grande de su serie, con Horror 4."},
+ "Hunter": {"wiki":"The H.U.N.T.E.R.",
+  "q":"Un androide cazador. En realidad son dos: el Mark V, alto y encapuchado, que se disfraza de humano, y el Mark X, más ágil y mejor acabado.",
+  "j":"15 de vida y Horror 5, pero esa vida solo cuenta para el Mark X. Un contador sustituye al Mark V por el Mark X cerca del final."},
+ "The Eyeless": {"wiki":"Don't Make a Sound",
+  "q":"El killer de Don't Make a Sound, quinta película de la serie 3, ambientada en Utopia.",
+  "j":"Monstruo que caza por sonido, con A Quiet Place y Temblores de referencia. Trae a Meghan y Ronda."},
+ "Terror from Destiny": {"wiki":"Terror from Destiny",
+  "q":"Tercera viñeta, de la serie 3. El killer es el propio Destino, con Gabrielle como Final Girl.",
+  "j":"Inspirado en Destino final: no hay cuerpo al que atacar, el peligro es la cadena de accidentes."},
+ "Billy": {"wiki":"Billy the Bear",
+  "q":"Un animatrónico de oso alto y destrozado, con el brazo izquierdo sin carcasa.",
+  "j":"Trae minions que aparecen durante la partida y actúan antes que él. Además recupera 1 de vida cada fase si hay una fuente de energía activa, así que cortarle la corriente es parte del plan."},
+ "Grimlash": {"wiki":"Grimlash",
+  "q":"Un dios antiguo con forma de haz de ramas y enredaderas, cabeza de calabaza encendida y una guadaña en llamas.",
+  "j":"10 de vida y Horror 4. Reparte Harvest Madness, que te da habilidades extra pero acaba matándote. Cada víctima que cae le suma una."},
+ "Berith": {"wiki":"Berith the Fallen Angel",
+  "q":"Un ángel caído que tienta a la blasfemia y al asesinato. En el tablero no aparece él, sino Ursula, la monja a la que posee.",
+  "j":"Horror 3 y 7 de vida, las de Ursula. Hay que expulsarlo sin matarla, usando Divine Blessings para subir sus opciones de salir viva. No se mueve en la primera parte de su fase."},
+ "Volk'ar": {"wiki":"The Volk'ar",
+  "q":"Una alienígena cazadora de piel morada, seis ojos amarillos a los lados de la cara y cuchillas en los antebrazos. Deja a sus presas colgadas como trofeos.",
+  "j":"10 de vida y Horror 4."},
+ "Raptors": {"wiki":"The Raptor Games",
+  "q":"El killer de The Raptor Games, quinta película de la serie 4, en Isla Lacarto.",
+  "j":"Terror de dinosaurios con Parque Jurásico de referencia. Trae a Maud y Christina."},
+ "Terror from Beyond": {"wiki":"",
+  "q":"Viñeta sin ficha propia en la wiki todavía.",
+  "j":""},
+ "Mort": {"wiki":"Mort the Teenage Dirtbag",
+  "q":"Sudadera gris, pantalón rojo y negro y una máscara de fantasma de un solo ojo. El killer de Shriek, en una convención de juegos de mesa.",
+  "j":"Horror 3 y sin vida hasta que se revela. Empieza siendo uno de 10 sospechosos, todos killers de otras películas: hay que interrogar y presionar a cinco para ir descartando."}
+};
+
   // Solo tenemos arte de algunos killers; el resto se pinta sin imagen.
   var ARTE = {
     'Hans': 'hans', 'Grimlash': 'grimlash', 'Big Bad Wolf': 'big-bad-wolf',
     'Dr. Fright': 'dr-fright', 'Geppetto': 'geppetto', 'Inkanyamba': 'inkanyamba',
-    'Poltergeist': 'poltergeist', 'Ratchet Lady': 'ratchet-lady', 'Raptors': 'raptors'
+    'Poltergeist': 'poltergeist', 'Ratchet Lady': 'ratchet-lady'
   };
+
+  // Quien es y como juega. Los datos del juego salen de la Final Girl Wiki,
+  // que se enlaza debajo: es la fuente y ademas hay mas de lo que cabe aqui.
+  function quienEs(k) {
+    var d = DESC[k];
+    if (!d || !d.q) return '';
+    return '<div class="quien"><h4>Quién es</h4><p>' + esc(d.q) + '</p>' +
+      (d.j ? '<h4>Cómo juega</h4><p>' + esc(d.j) + '</p>' : '') +
+      (d.wiki ? '<p class="fuente">Datos de juego: <a href="https://finalgirl.fandom.com/wiki/' +
+        encodeURIComponent(d.wiki.replace(/ /g, '_')) +
+        '" target="_blank" rel="noopener">Final Girl Wiki</a> (CC BY-SA)</p>' : '') +
+      '</div>';
+  }
 
   function pintarKillers() {
     var filas = Object.keys(D.killers).map(function (k) {
       var v = D.killers[k];
       return { nombre: k, sub: v.box || 'Killer alternativo', wr: v.wr, g: v.g, mia: !!misKillers[k], key: k,
-               art: ARTE[k] ? 'img/art/' + ARTE[k] + '.jpg' : null };
+          };
     });
     lista(document.getElementById('l-killers'), filas, function (row) {
       var v = D.killers[row.key];
-      var h = '<h3>' + row.key + '</h3><p class="loc">' + (v.box ? 'Sale en ' + v.box : 'Killer alternativo, sin caja propia') + '</p>' +
+      var h = (ARTE[row.key] ? '<img class="art" src="img/art/' + ARTE[row.key] + '.jpg" alt="" loading="lazy">' : '') +
+        '<h3>' + row.key + '</h3><p class="loc">' + (v.box ? 'Sale en ' + v.box : 'Killer alternativo, sin caja propia') + '</p>' +
         '<div class="split"><div><b>' + pc(v.wr) + '</b><span>Contra cualquier mapa<br>' + v.g + ' partidas</span></div></div>' +
+        quienEs(row.key) +
         secciones(v.secs) + extremos(filaKiller(row.key), 'Todos los mapas de ' + row.key);
       return h;
     }, 'killers');
