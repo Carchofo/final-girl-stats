@@ -1,0 +1,1121 @@
+<title>Laboratorio Final Girl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  /* Identidad de una sola pieza: siempre oscuro, a propósito.
+     El tema es cine de terror en VHS; en claro no funciona. */
+  :root {
+    color-scheme: dark;
+    --paper:#0b0a0b; --surface:#151315; --sunk:#1d1a1d; --ink:#f2ecec;
+    --muted:#9c8f93; --line:#262227; --line-hi:#3a333a;
+    --blood:#e0454f; --blood-s:#2a1216; --mid:#3a3438;
+    --glow:rgba(224,69,79,.30);
+    --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 34px rgba(0,0,0,.45);
+    --f-disp:"Jost","Futura","Century Gothic",sans-serif;
+    --f-body:"Jost","Futura","Century Gothic",Helvetica,sans-serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+         font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1040px; margin:0 auto; padding-inline:20px; padding-block:0 70px; }
+
+  header.top { padding-block:34px 20px; border-bottom:3px solid var(--ink); }
+  .eyebrow { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:.16em;
+             text-transform:uppercase; color:var(--blood); margin:0 0 9px; }
+  h1 { font-family:var(--f-disp); font-weight:800; letter-spacing:-.02em; font-size:clamp(40px,11vw,68px); line-height:.9;
+       text-transform:uppercase; margin:0 0 12px; text-wrap:balance; }
+  .dek { font-size:16.5px; color:var(--muted); max-width:62ch; margin:0; }
+  .dek a { color:var(--blood); }
+
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:1px;
+          background:var(--line); border-block:1px solid var(--line); margin-block:22px; }
+  .kpi { background:var(--surface); padding:13px 15px; }
+  .kpi b { font-family:var(--f-disp); font-size:29px; line-height:1; display:block; font-variant-numeric:tabular-nums; }
+  .kpi span { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase;
+              color:var(--muted); display:block; margin-top:5px; }
+
+  nav.tabs { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:18px;
+             position:sticky; top:env(safe-area-inset-top,0px); z-index:9;
+             background:var(--paper); padding-block:10px; }
+  nav.tabs button { font-family:var(--f-disp); font-size:19px; text-transform:uppercase; letter-spacing:.02em;
+                    background:transparent; border:1px solid transparent; border-radius:3px;
+                    padding:5px 12px; color:var(--muted); cursor:pointer; }
+  nav.tabs button[aria-selected="true"] { background:var(--ink); color:var(--paper); }
+  nav.tabs button:focus-visible { outline:2px solid var(--blood); outline-offset:2px; }
+
+  .ctrl { display:flex; gap:9px; flex-wrap:wrap; align-items:center; margin-bottom:14px; }
+  .ctrl label { font-family:var(--f-mono); font-size:10.5px; letter-spacing:.08em;
+                text-transform:uppercase; color:var(--muted); }
+  select, input[type="search"] {
+    font:inherit; font-size:14px; color:inherit; background:var(--surface);
+    border:1px solid var(--line-hi); border-radius:3px; padding:6px 9px; }
+  .chk { display:inline-flex; align-items:center; gap:7px; font-size:14px; cursor:pointer;
+         background:var(--surface); border:1px solid var(--line-hi); border-radius:3px; padding:6px 11px; }
+  .chk input { accent-color:var(--blood); margin:0; }
+
+  h2 { font-family:var(--f-disp); font-weight:700; letter-spacing:-.01em; font-size:29px; line-height:1;
+       text-transform:uppercase; margin:0 0 5px; }
+  .sub { color:var(--muted); font-size:14.5px; margin:0 0 16px; max-width:70ch; }
+  h3 { font-family:var(--f-disp); font-weight:700; font-size:21px; text-transform:uppercase; margin:0; }
+
+  /* matriz */
+  .mwrap { overflow:auto; border:1px solid var(--line); border-radius:3px; background:var(--surface); max-height:74vh; }
+  table.mx { border-collapse:separate; border-spacing:2px; font-family:var(--f-mono); font-size:11px; }
+  table.mx th { font-weight:500; color:var(--muted); font-size:10px; text-align:left; padding:3px 5px;
+                background:var(--surface); position:sticky; z-index:2; }
+  table.mx thead th { top:0; height:106px; vertical-align:bottom; white-space:nowrap; }
+  table.mx thead th div { writing-mode:vertical-rl; transform:rotate(180deg); }
+  table.mx tbody th { left:0; z-index:3; white-space:nowrap; font-family:var(--f-body); font-size:13px;
+                      color:var(--ink); padding-right:9px; border-right:1px solid var(--line); }
+  table.mx thead th:first-child { left:0; z-index:4; }
+  table.mx td { padding:0; }
+  .cell { width:34px; height:26px; border:0; border-radius:2px; cursor:pointer; padding:0;
+          font-family:var(--f-mono); font-size:10.5px; font-variant-numeric:tabular-nums; line-height:26px; }
+  .cell:focus-visible { outline:2px solid var(--ink); outline-offset:1px; }
+  .cell.nd { background:var(--sunk); color:var(--muted); cursor:default; }
+  .cell.box { box-shadow:inset 0 0 0 2px var(--ink); font-weight:600; }
+
+  .leg { display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin:12px 0 0;
+         font-family:var(--f-mono); font-size:10.5px; color:var(--muted); }
+  .leg i { display:block; width:22px; height:13px; border-radius:2px; }
+
+  /* listas */
+  .ordena { display:flex; gap:5px; align-items:center; flex-wrap:wrap; margin-bottom:9px; }
+  .ordena .lbl { font-family:var(--f-mono); font-size:10px; letter-spacing:.1em;
+                 text-transform:uppercase; color:var(--muted); margin-right:3px; }
+  .ordena button { font:inherit; font-size:13px; background:var(--surface); color:var(--muted);
+                   border:1px solid var(--line-hi); border-radius:3px; padding:4px 10px; cursor:pointer; }
+  .ordena button[aria-pressed="true"] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .ordena button:focus-visible { outline:2px solid var(--blood); outline-offset:1px; }
+  .ordena .dir { font-family:var(--f-mono); font-weight:600; min-width:34px; letter-spacing:0; }
+  .ordena .dir[aria-pressed="true"] { background:var(--blood); border-color:var(--blood); color:#fff; }
+  .barlist { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .bar { display:grid; grid-template-columns:1fr 56px 46px; gap:10px; align-items:center; background:var(--surface);
+         border:0; width:100%; text-align:left; padding:9px 13px; cursor:pointer; font:inherit; color:inherit; position:relative; }
+  .bar:hover { background:var(--sunk); }
+  .bar[aria-pressed="true"] { background:var(--blood-s); }
+  .bar:focus-visible { outline:2px solid var(--blood); outline-offset:-2px; }
+  .bar .fill { position:absolute; inset:0 auto 0 0; background:color-mix(in srgb,var(--blood) 11%,transparent); pointer-events:none; }
+  .bar > * { position:relative; }
+  .bar .nm { font-size:14.5px; line-height:1.25; }
+  .bar .nm i { font-style:normal; color:var(--muted); font-size:12.5px; display:block; }
+  .bar .pc { font-family:var(--f-mono); font-size:15px; text-align:right; font-variant-numeric:tabular-nums; }
+  .bar .pl { font-family:var(--f-mono); font-size:11px; color:var(--muted); text-align:right; }
+  .mine { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase;
+          background:var(--ink); color:var(--paper); padding:2px 5px; border-radius:2px; margin-left:6px; vertical-align:2px; }
+
+  .salidaLink { background:none; border:0; padding:0; font:inherit; color:var(--blood);
+                border-bottom:1px solid currentColor; cursor:pointer; }
+  dialog#dlg { border:1px solid var(--line-hi); border-top:4px solid var(--blood); border-radius:3px;
+               background:var(--surface); color:var(--ink); padding:0; max-width:620px; width:calc(100% - 32px);
+               box-shadow:0 10px 50px rgba(0,0,0,.3); }
+  dialog#dlg::backdrop { background:rgba(0,0,0,.55); }
+  .dlg-head { display:flex; justify-content:space-between; align-items:baseline; gap:14px;
+              padding:16px 18px 10px; border-bottom:1px solid var(--line); }
+  .dlg-head h3 { margin:0; }
+  .dlg-head button { font:inherit; font-size:13px; background:var(--sunk); border:1px solid var(--line-hi);
+                     border-radius:3px; padding:4px 11px; cursor:pointer; color:inherit; }
+  .dlg-body { padding:14px 18px 18px; max-height:68vh; overflow-y:auto; }
+  .sal { border-left:3px solid var(--line-hi); padding:3px 0 3px 13px; margin-bottom:16px; }
+  .sal.on { border-left-color:var(--blood); }
+  .sal h4 { font-family:var(--f-disp); font-size:19px; text-transform:uppercase; margin:0 0 2px; }
+  .sal .para { font-size:14px; color:var(--muted); margin:0 0 8px; }
+  .sal ol { margin:0; padding-left:17px; font-size:14.5px; }
+  .sal ol li { margin-bottom:4px; }
+  .sal .aqui { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+               background:var(--blood); color:#fff; padding:2px 6px; border-radius:2px; margin-left:7px; vertical-align:2px; }
+  .tips { display:grid; gap:10px; margin-top:16px; }
+  .tip { border-left:3px solid var(--line-hi); padding:2px 0 2px 13px; font-size:14.5px; line-height:1.45; }
+  .tip.calc { border-left-color:var(--blood); }
+  .tip.plan { border-left-color:var(--ink); }
+  .tip b { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--muted); display:block; margin-bottom:3px; }
+  .tip.calc b { color:var(--blood); }
+  .tip.plan b { color:var(--ink); }
+  .tip em { font-style:normal; font-family:var(--f-mono); font-variant-numeric:tabular-nums; }
+  .enc { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+         border-radius:4px; padding:16px 17px; margin-bottom:22px; box-shadow:var(--shadow); }
+  .enc h3 { margin:0 0 3px; }
+  .enc .pie { font-size:13px; color:var(--muted); margin:12px 0 0; }
+  .enc .opts { display:grid; gap:7px; margin-top:13px; }
+  .voto { position:relative; display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center;
+          background:var(--sunk); border:1px solid transparent; border-radius:3px; padding:9px 12px;
+          font:inherit; color:inherit; text-align:left; cursor:pointer; overflow:hidden; }
+  .voto:hover { border-color:var(--line-hi); }
+  .voto[disabled] { cursor:default; }
+  .voto .bg { position:absolute; inset:0 auto 0 0; background:color-mix(in srgb,var(--blood) 15%,transparent);
+              width:0; transition:width .45s ease; pointer-events:none; }
+  .voto > span:not(.bg) { position:relative; }
+  .voto .et { font-weight:500; }
+  .voto .np { font-family:var(--f-mono); font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .voto .pcv { font-family:var(--f-mono); font-size:14px; font-variant-numeric:tabular-nums; min-width:48px; text-align:right; }
+  .voto.mio { border-color:var(--blood); }
+  .voto.mio .et::after { content:" \2713"; color:var(--blood); font-weight:600; }
+  .temp { margin-bottom:26px; }
+  .temp-h { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+            border-bottom:2px solid var(--ink); padding-bottom:7px; margin-bottom:12px; }
+  .temp-h h3 { font-size:25px; }
+  .temp-h span { font-family:var(--f-mono); font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .temp-h .wr { font-family:var(--f-mono); font-size:17px; margin-left:auto; font-variant-numeric:tabular-nums; }
+  .cajas { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .caja { background:var(--surface); border:0; width:100%; text-align:left; padding:13px 15px;
+          cursor:pointer; font:inherit; color:inherit; display:grid; gap:7px; }
+  .caja:hover { background:var(--sunk); }
+  .caja[aria-expanded="true"] { background:var(--blood-s); }
+  .caja:focus-visible { outline:2px solid var(--blood); outline-offset:-2px; }
+  .caja-top { display:flex; align-items:baseline; gap:9px; flex-wrap:wrap; }
+  .caja-id { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; color:var(--blood); }
+  .caja-nm { font-family:var(--f-disp); font-size:21px; text-transform:uppercase; line-height:1; }
+  .caja-pc { margin-left:auto; font-family:var(--f-mono); font-size:16px; font-variant-numeric:tabular-nums; }
+  .caja-pl { font-family:var(--f-mono); font-size:11px; color:var(--muted); }
+  .caja-sub { font-size:13.5px; color:var(--muted); }
+  .caja-mec { font-size:14px; line-height:1.45; }
+  .caja-meta { display:flex; gap:7px; flex-wrap:wrap; }
+  .tag { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
+         background:var(--sunk); color:var(--muted); padding:3px 7px; border-radius:2px; }
+  .rev { border:1px solid var(--line); border-top:3px solid var(--ink); border-radius:3px;
+         padding:15px 16px; margin-top:18px; background:var(--sunk); }
+  .rev .ver { font-size:15px; line-height:1.5; margin:0 0 14px; }
+  .rev-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+  .rev h5 { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+            margin:0 0 6px; color:var(--muted); }
+  .rev ul { margin:0; padding-left:16px; font-size:14px; line-height:1.45; }
+  .rev ul li { margin-bottom:6px; }
+  .rev .pro h5 { color:#6da7ec; } .rev .con h5 { color:#e66767; }
+  .rev .pro h5 { color:#6da7ec; }
+  .rev .con h5 { color:#e66767; }
+  .rev .conf { margin-top:15px; border-top:1px solid var(--line-hi); padding-top:12px; }
+  .rev .conf div { font-size:14px; margin-bottom:9px; line-height:1.45; }
+  .rev .conf i { font-style:italic; color:var(--muted); display:block; }
+  .rev .src { margin-top:13px; border-top:1px solid var(--line-hi); padding-top:10px; font-size:12.5px; color:var(--muted); }
+  .rev .src a { color:var(--blood); }
+  /* ---------- fichas de pelicula ---------- */
+  .fichas { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; }
+  .ficha { position:relative; border:0; padding:0; cursor:pointer; font:inherit; color:#fff;
+           border-radius:4px; overflow:hidden; aspect-ratio:5/7; background:#0c0a0b;
+           display:block; text-align:left; box-shadow:0 2px 6px rgba(0,0,0,.25); }
+  .ficha img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+               filter:saturate(.92) contrast(1.05); transition:transform .5s ease; }
+  .ficha:hover img { transform:scale(1.045); }
+  .ficha::after { content:""; position:absolute; inset:0; pointer-events:none;
+                  background:linear-gradient(to top, rgba(8,6,7,.96) 0%, rgba(8,6,7,.78) 26%, rgba(8,6,7,.12) 58%, rgba(8,6,7,.30) 100%); }
+  .ficha:focus-visible { outline:3px solid var(--blood); outline-offset:2px; }
+  .ficha[aria-expanded="true"] { box-shadow:0 0 0 3px var(--blood); }
+  .f-body { position:absolute; inset:auto 0 0 0; z-index:2; padding:13px 13px 12px; display:grid; gap:5px; }
+  .f-id { font-family:var(--f-mono); font-size:9px; letter-spacing:.14em; color:#ff8a8a; }
+  .f-nm { font-family:var(--f-disp); font-weight:800; font-size:20px; line-height:.97;
+          letter-spacing:-.015em; text-transform:uppercase; text-wrap:balance; }
+  .f-k { font-size:12px; line-height:1.3; color:rgba(255,255,255,.72); }
+  .f-bar { display:flex; align-items:baseline; gap:7px; margin-top:3px; }
+  .f-wr { font-family:var(--f-mono); font-weight:600; font-size:17px; font-variant-numeric:tabular-nums; }
+  .f-pl { font-family:var(--f-mono); font-size:10px; color:rgba(255,255,255,.55); }
+  .f-mia { position:absolute; top:10px; right:10px; z-index:2; font-family:var(--f-mono); font-size:9px;
+           letter-spacing:.1em; text-transform:uppercase; background:#fff; color:#111;
+           padding:3px 6px; border-radius:2px; font-weight:600; }
+  .f-dot { width:7px; height:7px; border-radius:50%; display:inline-block; flex:none; }
+  .fichadet { grid-column:1/-1; }
+  @media (max-width:430px){ .fichas { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
+    .f-nm { font-size:16px; } }
+  .rowdetail { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood); border-radius:4px; padding:16px 16px 18px; }
+  .rowdetail h3 { margin-bottom:2px; }
+  .bar .caret { position:absolute; right:13px; top:50%; transform:translateY(-50%); color:var(--muted);
+                font-family:var(--f-mono); font-size:11px; opacity:0; }
+  .bar[aria-expanded="true"] { background:var(--blood-s); }
+  .bar .th { width:34px; height:48px; object-fit:cover; border-radius:2px; background:var(--sunk); flex:none; }
+  .bar.conth { grid-template-columns:34px 1fr 56px 46px; }
+  .det-head { display:grid; grid-template-columns:78px 1fr; gap:14px; align-items:start; margin-bottom:14px; }
+  .det-head img { width:78px; border-radius:3px; display:block; box-shadow:0 1px 4px rgba(0,0,0,.25); }
+  .det-head h3 { margin:0 0 2px; }
+  .det-head .loc { margin:0; }
+  @media (max-width:430px){ .bar.conth { grid-template-columns:30px 1fr 52px; } .bar .th { width:30px; height:42px; } }
+  .panel { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+           border-radius:3px; padding:18px; margin-top:15px; box-shadow:var(--shadow); }
+  .panel .loc { font-size:14px; color:var(--muted); margin:2px 0 15px; }
+  .split { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:11px; margin-bottom:6px; }
+  .split div { background:var(--sunk); border-radius:3px; padding:10px 12px; }
+  .split b { font-family:var(--f-mono); font-size:18px; display:block; font-variant-numeric:tabular-nums; }
+  .split span { font-size:12.5px; color:var(--muted); display:block; margin-top:2px; line-height:1.3; }
+  .sec-t { font-family:var(--f-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--blood); margin:18px 0 7px; }
+
+  .tw { overflow-x:auto; }
+  table.mini { width:100%; border-collapse:collapse; font-size:14.5px; }
+  table.mini th { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase;
+                  color:var(--muted); text-align:left; padding:5px 0; border-bottom:2px solid var(--line-hi); }
+  table.mini td { padding:6px 0; border-bottom:1px solid var(--line); }
+  table.mini td.n, table.mini th.n { text-align:right; font-family:var(--f-mono);
+                                     font-variant-numeric:tabular-nums; white-space:nowrap; padding-left:12px; }
+  table.mini td.s { font-size:12px; color:var(--muted); }
+  table.mini tr:last-child td { border-bottom:0; }
+  .peor td.n:first-of-type { color:#e66767; font-weight:600; }
+  .mejor td.n:first-of-type { color:#6da7ec; font-weight:600; }
+  .peor td.n:first-of-type { color:#e66767; }
+  .mejor td.n:first-of-type { color:#6da7ec; }
+
+  table.mini tr.poca td { color:var(--muted); }
+  table.mini tr.poca td.n:first-of-type { color:var(--muted) !important; font-weight:400 !important; }
+  .cruce { max-height:none; }
+  .nota { font-size:13.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:11px; margin-top:15px; }
+  .nota b { font-family:var(--f-mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+            color:var(--blood); margin-right:6px; }
+
+  footer { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted); }
+  footer a { color:var(--blood); }
+  details.mis { background:var(--surface); border:1px solid var(--line); border-radius:3px;
+               margin-bottom:18px; box-shadow:var(--shadow); }
+  details.mis summary { font-family:var(--f-mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+                        color:var(--blood); cursor:pointer; list-style:none; padding:11px 14px; }
+  details.mis summary::-webkit-details-marker { display:none; }
+  details.mis summary::before { content:"+ "; }
+  details.mis[open] summary::before { content:"\2013 "; }
+  .misgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:2px 14px;
+             padding:0 14px 13px; }
+  .misgrid label { display:flex; align-items:center; gap:8px; font-size:14px; cursor:pointer; padding:3px 0; }
+  .misgrid input { accent-color:var(--blood); margin:0; flex:none; }
+  .misfoot { padding:0 14px 13px; font-size:13px; color:var(--muted); display:flex; gap:9px; align-items:center; flex-wrap:wrap; }
+  .misfoot button { font:inherit; font-size:13px; background:var(--sunk); border:1px solid var(--line-hi);
+                    border-radius:3px; padding:4px 10px; cursor:pointer; color:inherit; }
+
+  /* ---------- textura y cabecera ---------- */
+  body::before {
+    content:""; position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.5;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.16) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at 50% 0%, transparent 52%, rgba(0,0,0,.42) 100%);
+    mix-blend-mode:multiply;
+  }
+
+  .marquee { position:relative; margin:0 -20px; padding:0; overflow:hidden;
+             border-bottom:1px solid var(--line); background:#0b0a0b; }
+  .marquee .tira { display:flex; gap:7px; padding:14px 20px; width:max-content;
+                   animation:desliza 90s linear infinite; }
+  .marquee img { width:62px; height:87px; object-fit:cover; border-radius:2px; flex:none;
+                 filter:grayscale(.55) brightness(.62) contrast(1.08); }
+  .marquee::after { content:""; position:absolute; inset:0; pointer-events:none;
+                    background:linear-gradient(90deg,#0b0a0b 0%,transparent 12%,transparent 88%,#0b0a0b 100%); }
+  @keyframes desliza { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee .tira { animation:none; } }
+
+  header.top { padding-block:30px 22px; border-bottom:3px solid var(--blood); position:relative; }
+  h1 { font-size:clamp(46px,13vw,104px); line-height:.82; font-weight:800; letter-spacing:-.035em; }
+  h1 .roja { color:var(--blood); display:block;
+             text-shadow:1.5px 0 0 rgba(0,180,200,.30), -1.5px 0 0 rgba(255,60,80,.22); }
+  .eyebrow { font-size:10.5px; letter-spacing:.24em; }
+
+  .kpis { border:1px solid var(--line); border-radius:3px; }
+  .kpi b { font-size:34px; letter-spacing:-.03em; }
+  .kpi:first-child b { color:var(--blood); }
+
+  h2 { letter-spacing:-.025em; font-weight:800; }
+  h3 { letter-spacing:-.02em; font-weight:700; }
+
+  /* ---------- rótulo de temporada ---------- */
+  .temp-h { border-bottom:1px solid var(--line-hi); align-items:center; padding-bottom:9px; }
+  .temp-h h3 { font-size:15px; letter-spacing:.28em; text-transform:uppercase; font-weight:600;
+               color:var(--muted); }
+  .temp-h .wr { font-size:23px; font-weight:600; color:var(--ink); letter-spacing:-.02em; }
+  .temp-h span:not(.wr) { letter-spacing:.09em; }
+
+  /* ---------- pósters ---------- */
+  .ficha { border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,.5);
+           transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s; }
+  .ficha:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,.6), 0 0 0 1px var(--glow); }
+  .ficha img { filter:saturate(1) contrast(1.04); }
+  .ficha::after { background:linear-gradient(to top, rgba(6,4,5,.97) 0%, rgba(6,4,5,.80) 30%, rgba(6,4,5,.06) 62%, rgba(6,4,5,.34) 100%); }
+  .ficha[aria-expanded="true"] { box-shadow:0 0 0 2px var(--blood), 0 10px 30px rgba(0,0,0,.6); transform:translateY(-5px); }
+  .f-nm { font-weight:800; letter-spacing:-.025em; font-size:21px; }
+  .f-id { color:var(--blood); letter-spacing:.18em; }
+  .f-mia { background:var(--blood); color:#fff; }
+
+  .fichas { gap:16px; }
+  nav.tabs button { letter-spacing:.05em; font-weight:600; font-size:17px; }
+  nav.tabs button[aria-selected="true"] { background:var(--blood); color:#fff; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+  @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
+</style>
+
+<div class="wrap">
+
+<div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
+
+<header class="top">
+  <p class="eyebrow">13.873 partidas reales · hoja comunitaria</p>
+  <h1>Laboratorio<span class="roja">Final Girl</span></h1>
+  <p class="dek">Todos los datos de la hoja de seguimiento de la comunidad, para trastear. La matriz cruza cada killer con cada localización: 572 combinaciones, 354 con partidas suficientes. Complemento de la <a href="https://claude.ai/artifact/9citaKuByjhsDA5S1qit6y">chuleta de salidas</a>.</p>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><b id="k1"></b><span>Partidas</span></div>
+  <div class="kpi"><b id="k2"></b><span>Victorias</span></div>
+  <div class="kpi"><b id="k3">26</b><span>Killers</span></div>
+  <div class="kpi"><b id="k4">22</b><span>Localizaciones</span></div>
+  <div class="kpi"><b id="k5">61</b><span>Final Girls</span></div>
+</div>
+
+<details class="mis" id="mis">
+  <summary id="mis-sum">Mis cajas</summary>
+  <div class="misgrid" id="mis-grid"></div>
+  <div class="misfoot">
+    <button type="button" id="mis-none">Ninguna</button>
+    <button type="button" id="mis-all">Todas</button>
+    <span id="mis-info"></span>
+  </div>
+</details>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" data-t="matriz" aria-selected="true">Matriz</button>
+  <button role="tab" data-t="cajas" aria-selected="false">Cajas</button>
+  <button role="tab" data-t="temporadas" aria-selected="false">Temporadas</button>
+  <button role="tab" data-t="killers" aria-selected="false">Killers</button>
+  <button role="tab" data-t="mapas" aria-selected="false">Mapas</button>
+  <button role="tab" data-t="girls" aria-selected="false">Final Girls</button>
+</nav>
+
+<section id="v-matriz">
+  <h2>Cada killer en cada mapa</h2>
+  <p class="sub">Filas, localizaciones. Columnas, killers. El número es el porcentaje de victorias. Recuadro negro = la pareja tal y como viene en su caja. Toca cualquier celda.</p>
+  <div class="ctrl">
+    <label class="chk"><input type="checkbox" id="f-mias"> Solo mis cajas</label>
+    <label for="f-orden">Ordenar mapas</label>
+    <select id="f-orden">
+      <option value="dif">De más duro a más fácil</option>
+      <option value="abc">Alfabético</option>
+    </select>
+    <input type="search" id="f-busca" placeholder="Filtrar killer…" style="flex:1;min-width:140px">
+  </div>
+  <div class="mwrap"><table class="mx" id="mx"></table></div>
+  <div class="leg" id="leg"></div>
+  <div class="panel" id="p-mx"></div>
+</section>
+
+<section id="v-cajas" hidden>
+  <h2>Cajas tal y como vienen</h2>
+  <p class="sub">Su killer con su localización, como sale de la caja. Toca una para el desglose completo.</p>
+  <div class="barlist" id="l-cajas"></div>
+</section>
+
+<section id="v-killers" hidden>
+  <h2>Killers</h2>
+  <p class="sub">Contra todas las localizaciones, no solo la suya. Dentro, sus Dark Powers y Finales ordenados por lo que te cuestan.</p>
+  <div class="barlist" id="l-killers"></div>
+</section>
+
+<section id="v-mapas" hidden>
+  <h2>Localizaciones</h2>
+  <p class="sub">Contra todos los killers. Dentro, sus cartas de Setup y qué killers se le dan mejor y peor.</p>
+  <div class="barlist" id="l-mapas"></div>
+</section>
+
+<section id="v-temporadas" hidden>
+  <h2>Cajas y temporadas</h2>
+  <p class="sub">Las 22 Feature Films por orden de publicación. Toca una ficha para su desglose: mecánica, Dark Powers, Finales, Setups y reviews. El porcentaje de cada temporada es el de sus cajas tal y como vienen, no el de cruzarlas.</p>
+  <div class="enc" id="enc" hidden>
+    <h3 id="enc-t">¿Cuál es tu temporada preferida?</h3>
+    <p class="sub" style="margin:0" id="enc-s">Los datos dicen cuál te gana. Esto es otra cosa.</p>
+    <div class="opts" id="enc-o"></div>
+    <p class="pie" id="enc-p"></p>
+  </div>
+  <div id="l-temps"></div>
+</section>
+
+<section id="v-girls" hidden>
+  <h2>Final Girls</h2>
+  <p class="sub">Mínimo 20 partidas. Con la caja de la que sale cada una.</p>
+  <div class="ctrl">
+    <label for="g-orden">Ordenar</label>
+    <select id="g-orden">
+      <option value="wr">Más victorias primero</option>
+      <option value="wrA">Menos victorias primero</option>
+      <option value="g">Más jugada</option>
+      <option value="abc">Alfabético</option>
+      <option value="caja">Por caja</option>
+    </select>
+  </div>
+  <div class="tw"><table class="mini" id="t-girls"></table></div>
+  <p class="nota"><b>Ojo</b> Entre la mejor y la peor hay unos 20 puntos, bastante menos que entre cajas. Y las de arriba con pocas partidas son promos que se juegan poco y por gente veterana. Elegir bien la caja pesa más que elegir bien la chica.</p>
+</section>
+
+<dialog id="dlg">
+  <div class="dlg-head"><h3 id="dlg-t">Las salidas</h3><button type="button" id="dlg-x">Cerrar</button></div>
+  <div class="dlg-body" id="dlg-b"></div>
+</dialog>
+
+<footer>
+  <p>Fuente: hoja pública de seguimiento de la comunidad de Final Girl, última partida registrada el <b id="f-last"></b>. La correspondencia de cada Final Girl con su caja viene del comparador de cajas de ReDesign, no de la hoja.</p>
+  <p>Las celdas vacías de la matriz son combinaciones con muy pocas partidas para significar nada. La escala de color va de rojo, por debajo de la media global, a azul, por encima, con el gris justo en la media.</p>
+</footer>
+
+</div>
+
+<script>
+var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","seasons":[["Temporada 1",5003,0.6392],["Temporada 2",4464,0.6745],["Temporada 3",2836,0.6622],["Temporada 4",656,0.6738],["Otras",914,0.6225]],"estado":[["Final Health: sobrevives tú",1710,0.4175],["Final Health: sobrevive él",2786,0.864],["Final Health: los dos",380,0.7447],["Final Health: ninguno",8618,0.6362],["Finale sin revelar",5381,0.5902],["Finale revelado",8492,0.6974],["Dark Power sin revelar",1237,0.7332],["Dark Power revelado",12636,0.6482],["Dificultad normal",12706,0.6544],["Extreme Horror",1146,0.6728]]},"films":[{"film":"The Happy Trails Horror","killer":"Hans","loc":"Camp Happy Trail","wr":0.6405,"plays":548,"locWr":0.7021,"locPlays":1514,"killWr":0.6365,"killPlays":1436,"secs":{"Dark Power":[["Unrevealed",0.7749,191],["Dark Obsession",0.4815,351],["Feed",0.67,300],["Sledgehammer Massacre",0.6974,304],["Blood Frenzy",0.6696,224]],"Finale":[["Unrevealed",0.592,375],["Bloodbath",0.5957,329],["Butcher Bloodlust",0.7684,285],["Dark, Darker, Darkest",0.6712,295],["Death Blow",0.5116,86]]},"setups":[["Capture the Flag",0.7778,99],["Meditation Hour",0.6238,101],["Skinny Dipping",0.5977,87],["The Bonfire",0.6296,108],["Treasure Hunt",0.6387,119]],"serie":"S1","fnum":"S1·F1","img":"img/the-happy-trails-horror.jpg","imgpos":null},{"film":"Frightmare on Maple Lane","killer":"Dr. Fright","loc":"Maple Lane","wr":0.7558,"plays":172,"locWr":0.6876,"locPlays":893,"killWr":0.7435,"killPlays":850,"secs":{"Dark Power":[["Unrevealed",0.896,173],["Never Really Dead",0.7371,175],["Pitchfork Assault",0.716,162],["The Frightmare is Inevitable",0.6973,185],["Shock Factor",0.6715,137]],"Finale":[["Unrevealed",0.7109,422],["Everyone Must Die",0.7094,117],["Face Your Fright",0.8689,122],["Time to Die",0.7143,119],["Dream Warfare",0.8246,57]]},"setups":[["A Quiet Place",0.76,25],["Block Party",0.9062,32],["Maple Lane",0.7,30],["Playtime",0.7931,29],["Revenge",0.6522,46]],"serie":"S1","fnum":"S1·F5","img":"img/frightmare-on-maple-lane.jpg","imgpos":null},{"film":"Carnage at the Carnival","killer":"Geppetto","loc":"Carnival of Blood","wr":0.4421,"plays":233,"locWr":0.5249,"locPlays":1025,"killWr":0.6501,"killPlays":783,"secs":{"Dark Power":[["Unrevealed",0.7037,81],["Immortal Master",0.6914,162],["Massive Abominations",0.6413,184],["Weapons Graft",0.6502,203],["Join the Family",0.6047,129]],"Finale":[["Unrevealed",0.5685,387],["I Made Your Friends",0.7451,102],["No Strings Attached",0.7302,126],["Remember Them?",0.7426,101],["Puppet Bombs",0.8095,42]]},"setups":[["Boxed In",0.5,38],["Center Stage",0.42,50],["Late for the Show",0.5238,42],["No Laughing Matter",0.3878,49],["Ring around the Rosie",0.4318,44]],"serie":"S1","fnum":"S1·F4","img":"img/carnage-at-the-carnival.jpg","imgpos":null},{"film":"The Haunting of Creech Manor","killer":"Poltergeist","loc":"Creech Manor","wr":0.4202,"plays":238,"locWr":0.5665,"locPlays":1052,"killWr":0.5611,"killPlays":884,"secs":{"Dark Power":[["Unrevealed",0.6458,48],["Eternal Despair",0.6162,198],["Invisible Barrier",0.5322,200],["Stiff Winds",0.5676,222],["Forgetting Something?",0.5032,157]],"Finale":[["Unrevealed",0.5432,567],["Nothing is easy",0.642,81],["Relentless Assault",0.5581,86],["She Will Soon Be Lost",0.5102,98],["Demonic Posession",0.8519,27]]},"setups":[["Creepshow",0.4898,49],["Dancing Queen",0.3158,38],["Strange Trophies",0.375,40],["The Dead Zone",0.5,40],["The Ladder",0.3898,59]],"serie":"S1","fnum":"S1·F2","img":"img/the-haunting-of-creech-manor.jpg","imgpos":null},{"film":"Slaughter in the Groves","killer":"Inkanyamba","loc":"Sacred Groves","wr":0.383,"plays":141,"locWr":0.4542,"locPlays":852,"killWr":0.6378,"killPlays":588,"secs":{"Dark Power":[["Unrevealed",0.8974,39],["Feast of Anger",0.6759,145],["Rising Dread",0.6643,140],["Volatile Temper",0.5405,148],["Dark Lightning",0.6471,102]],"Finale":[["Unrevealed",0.7865,267],["Savage Whirlwind",0.4242,99],["Violent Tantrum",0.4471,85],["We Need a Miracle",0.701,97],["Drag Her to Hell",0.5385,26]]},"setups":[["Dueling Tour Guides",0.3158,19],["Family Day",0.4444,27],["Mob O' Tourists",0.5,38],["Swamp Thing",0.3043,23],["Worship Service",0.2917,24]],"serie":"S1","fnum":"S1·F3","img":"img/slaughter-in-the-groves.jpg","imgpos":null},{"film":"Into the Void","killer":"Evomorph","loc":"USS Konrad","wr":0.7475,"plays":202,"locWr":0.7797,"locPlays":799,"killWr":0.7534,"killPlays":876,"secs":{"Dark Power":[["Unrevealed",0.8947,76],["Acid Blood",0.7149,228],["Razor Claws",0.8045,220],["Symbiotic Camouflage",0.7188,192],["Razor Tail",0.7315,149]],"Finale":[["Unrevealed",0.7866,506],["Blitz of Death",0.63,100],["Death in the Dark",0.8545,110],["The Perfect Organism",0.5909,110],["Impenetrable Armor",0.8947,38]]},"setups":[["Bloody Feast",0.8056,36],["Born In Flames",0.619,42],["Junction Danger",0.8409,44],["Showdown",0.7429,35],["Space Rave",0.7857,42]],"serie":"S2","fnum":"S2·F1","img":"img/into-the-void.jpg","imgpos":null},{"film":"Panic at Station 2891","killer":"The Organism","loc":"Station 2891","wr":0.6524,"plays":164,"locWr":0.6456,"locPlays":855,"killWr":0.7347,"killPlays":750,"secs":{"Number of Organisms":[["One",0.8689,328],["Two",0.6751,277],["Three",0.5377,106]],"Finale":[["Unrevealed",0.7135,171],["Cognitive Assimilation",0.8187,171],["Reductive Assimilation",0.7222,162],["Regenerative Assimilation",0.6703,185],["Final Assimilation",0.7593,54]]},"setups":[["A Nice Stew",0.6129,31],["Clear the Grounds",0.7143,35],["Good Morning",0.6,30],["Quittin Time",0.5714,35],["R & R",0.7576,33]],"serie":"S2","fnum":"S2·F2","img":"img/panic-at-station-2891.jpg","imgpos":null},{"film":"A Knock at the Door","killer":"The Intruders","loc":"Wingard Cottage","wr":0.6098,"plays":205,"locWr":0.6952,"locPlays":958,"killWr":0.6258,"killPlays":914,"secs":{"Dark Power":[["Unrevealed",0.5172,58],["Maskaphobia",0.6226,212],["No Remorse",0.6018,226],["Strength in Numbers",0.6971,241],["Won't Stay Down",0.6061,165]],"Finale":[["Unrevealed",0.2775,191],["Hunt Sweet Hunt",0.872,211],["Release the Beast",0.6698,215],["You're Gonna Die",0.68,200],["We Know Where You Live",0.5833,84]]},"setups":[["Couples Weekend",0.5682,44],["Dysfunctional Family",0.6667,36],["Fishing Trip",0.5957,47],["Grad Party",0.5833,36],["Special Occasion",0.6842,38]],"serie":"S2","fnum":"S2·F3","img":"img/a-knock-at-the-door.jpg","imgpos":null},{"film":"Once Upon a Full Moon","killer":"Big Bad Wolf","loc":"Storybook Woods","wr":0.7459,"plays":185,"locWr":0.7796,"locPlays":776,"killWr":0.7064,"killPlays":722,"secs":{"Dark Power":[["Unrevealed",0.8333,18],["Destructive Roar",0.79,200],["Ravenous Hunger",0.7234,178],["Sixth Sense",0.7077,195],["A Killing Machine",0.5088,114]],"Finale":[["Unrevealed",0.6596,379],["Rampant Growth",0.75,100],["Tasty Treats",0.6061,99],["Thrill of the Hunt",0.9216,102],["One More Bite",0.7568,37]]},"setups":[["Breadcrumb Trail",0.6667,33],["Family Visit",0.8286,35],["Forest Dwellers",0.7317,41],["Picnic",0.7442,43],["Scatter",0.7576,33]],"serie":"S2","fnum":"S2·F4","img":"img/once-upon-a-full-moon.jpg","imgpos":null},{"film":"Madness in the Dark","killer":"Ratchet Lady","loc":"Wolfe Asylum","wr":0.5,"plays":148,"locWr":0.6321,"locPlays":829,"killWr":0.6657,"killPlays":682,"secs":{"Dark Power":[["Unrevealed",0.7049,122],["Bloodfear",0.6947,131],["Dark Injection",0.6944,144],["Manic Burst",0.6568,169],["Shield of Madness",0.5545,110]],"Finale":[["Unrevealed",0.6515,330],["Feed the Madness",0.6869,99],["Hold Her Down",0.6214,103],["It's Raining Maniacs",0.6535,101],["Enter the Madhouse",0.814,43]]},"setups":[["A Solitary Life",0.6538,26],["Bingo Night",0.5,32],["The Dr. Is In",0.4815,27],["Madhouse Faceoff",0.4815,27],["Padded Rooms",0.4,35]],"serie":"S2","fnum":"S2·F5","img":"img/madness-in-the-dark.jpg","imgpos":null},{"film":"The North Pole Nightmare","killer":"Krampus","loc":"Santa's Village","wr":0.4667,"plays":180,"locWr":0.6495,"locPlays":622,"killWr":0.584,"killPlays":601,"secs":{"Dark Power":[["Unrevealed",0.76,50],["Blood and Cookies",0.5548,155],["Explosive Gifts",0.5238,147],["Tantalizing Gifts",0.6136,132],["Never Ending Gifts",0.5841,113]],"Finale":[["Unrevealed",0.6054,261],["Bamf!",0.5714,91],["Soul Lust",0.7021,94],["Unholy Gifts",0.5455,88],["Past Midnight",0.3939,66]]},"setups":[["Back With Lumber",0.3333,33],["Gather Round",0.5,46],["Reindeer Games",0.4074,27],["Story Time",0.3939,33],["Toys! Toys! Toys!",0.6667,36]],"serie":"SP","fnum":"Especial","img":"img/the-north-pole-nightmare.jpg","imgpos":null},{"film":"The Marrek Murders","killer":"Tormentor","loc":"Marrek Warehouse","wr":0.7134,"plays":164,"locWr":0.6842,"locPlays":570,"killWr":0.7361,"killPlays":595,"secs":{"Dark Power":[["Unrevealed",0.4,20],["Horrifying Traps",0.7113,142],["Overkill Traps",0.8105,153],["Unfair Traps",0.7484,155],["Endless Traps",0.7193,114]],"Finale":[["Unrevealed",0.0541,37],["Game Over",0.8133,150],["No Escape",0.7976,168],["The Ultimate Trap",0.764,161],["No Rest for the Weary",0.75,68]]},"setups":[["Daily Huddle",0.6667,30],["Shift Change",0.6667,33],["Units Per Hour",0.7714,35],["Unloading",0.7838,37],["You're Fired",0.6429,28]],"serie":"S3","fnum":"S3·F4","img":"img/the-marrek-murders.jpg","imgpos":null},{"film":"Hell to Pay","killer":"Razorface","loc":"Hellscape","wr":0.622,"plays":127,"locWr":0.78,"locPlays":591,"killWr":0.5382,"killPlays":511,"secs":{"Dark Power":[["Unrevealed",0.7222,18],["Helleport",0.6554,148],["Life Drain",0.4338,136],["Soulbound",0.5271,129],["Infinite Despair",0.4615,78]],"Finale":[["Unrevealed",0.3858,197],["Chains of Torment",0.6949,118],["I Feast On Your Pain",0.5532,94],["Taste Our Pleasures",0.6494,77],["Legendary Suffering",0.5833,24]]},"setups":[["Depravity",0.5417,24],["Ecstasy",0.5385,26],["Rapture",0.6957,23],["Revelation",0.6897,29],["Sensation",0.64,25]],"serie":"S3","fnum":"S3·F2","img":"img/hell-to-pay.jpg","imgpos":null},{"film":"The Falconwood Files","killer":"Slayer","loc":"Falconwood","wr":0.7063,"plays":126,"locWr":0.7329,"locPlays":468,"killWr":0.6067,"killPlays":511,"secs":{"Dark Power":[["Unrevealed",0.4857,35],["Master Plan",0.617,141],["Mind Control",0.6547,139],["Renewed Determination",0.6154,117],["It's In My Head!",0.5385,78]],"Finale":[["Unrevealed",0.4598,174],["Interdimensional Rift Collapse",0.6139,101],["Let's Finish This",0.7222,90],["Welcome To My World",0.8404,94],["Your Time is Up",0.46,50]]},"setups":[["4th of July Weekend",0.8276,29],["Back to School",0.5652,23],["Election Day",0.625,24],["Halloween",0.7727,22],["New Year's Eve",0.7143,28]],"serie":"S3","fnum":"S3·F3","img":"img/the-falconwood-files.jpg","imgpos":null},{"film":"The Killer from Tomorrow","killer":"Hunter","loc":"Sunnydaze Mall","wr":0.6071,"plays":140,"locWr":0.6236,"locPlays":457,"killWr":0.7085,"killPlays":470,"secs":{"Dark Power":[["Unrevealed",0.4118,17],["Cybernetic Agility",0.662,142],["Reinforced Endoskeleton",0.6364,112],["Titanium-Laced Bio Tissue",0.7358,106],["M134 Minigun Armament",0.75,92]],"Finale":[["Unrevealed",0.4345,168],["Adaptive A.I.",0.9255,94],["Relentless Pursuit",0.9479,96],["\"Termination Mode... Active\"",0.75,72],["Mark X-1000",0.7179,39]]},"setups":[["Black Friday",0.8182,33],["Family Dinner",0.5217,23],["Foodcourt Faceoff",0.5,30],["High Score!",0.6667,27],["Special Delivery",0.4815,27]],"serie":"S3","fnum":"S3·F1","img":"img/the-killer-from-tomorrow.jpg","imgpos":null},{"film":"Don't Make a Sound","killer":"The Eyeless","loc":"Utopia","wr":0.5607,"plays":173,"locWr":0.6088,"locPlays":634,"killWr":0.6436,"killPlays":491,"secs":{"Dark Power":[["Unrevealed",0.4314,51],["Hard Skin",0.6341,123],["Quick Counter",0.6694,124],["Reactive Swipe",0.625,112],["High Alert",0.775,80]],"Finale":[["Unrevealed",0.5316,158],["It Can Hear Everything",0.686,86],["It Knows My Moves",0.6354,96],["No More Running",0.62,100],["Final Slash",0.98,50]]},"setups":[["Bouldering",0.6176,34],["Monstrous Stench",0.4688,32],["Sundown",0.5667,30],["Trash Day",0.6316,38],["Welcome to Utopia",0.5128,39]],"serie":"S3","fnum":"S3·F5","img":"img/don-t-make-a-sound.jpg","imgpos":null},{"film":"Bad Times at Buddyland","killer":"Billy","loc":"Buddyland","wr":0.6067,"plays":89,"locWr":0.6696,"locPlays":224,"killWr":0.6069,"killPlays":173,"secs":{"Dark Power":[["Unrevealed",0.8333,18],["Deathlust",0.6061,33],["Endless Power",0.5897,39],["Introducing... Billy Jr!",0.62,50],["Merciless Minions",0.4615,26]],"Finale":[["Unrevealed",0.62,50],["Encore",0.3824,34],["It's Showtime!",0.88,25],["Sizzling Power",0.7931,29],["Power Surge",0.4074,27]]},"setups":[["Birthday Bash",0.5455,22],["Buddy Day",0.5714,21],["Hide and Seek",0.7059,17],["Pizza Party",0.6,15],["Playin' Hooky",0.6923,13]],"serie":"S4","fnum":"S4·F1","img":"img/bad-times-at-buddyland.jpg","imgpos":"18% center"},{"film":"A Rotten Harvest","killer":"Grimlash","loc":"Shady Acres","wr":0.7105,"plays":76,"locWr":0.6049,"locPlays":162,"killWr":0.7814,"killPlays":183,"secs":{"Dark Power":[["Unrevealed",1,13],["Rite of the Corrupted",0.7209,43],["Rite of the Old One",0.8235,51],["Root-bound Curse",0.6591,44],["Fields of Madness",0.8667,30]],"Finale":[["Unrevealed",0.7778,99],["Ancient Abomination",0.76,25],["Hunger of the Old Gods",0.8889,18],["Withered Harbinger",0.8571,21],["God of Blood and Grain",0.65,20]]},"setups":[["Demands of the Earth",0.6957,23],["Dusk Sacrifice",0.7273,11],["Final Crop",0.625,16],["Harvest Season",0.8333,12],["Reap What You Sow",0.7143,14]],"serie":"S4","fnum":"S4·F2","img":"img/a-rotten-harvest.jpg","imgpos":null},{"film":"A Demon in the Shadows","killer":"Berith","loc":"L'Armes Abbey","wr":0.5,"plays":64,"locWr":0.5691,"locPlays":123,"killWr":0.6016,"killPlays":128,"secs":{"Dark Power":[["Unrevealed",0.5556,9],["Keeping Ursula Alive",0.5161,31],["Lamb to the Slaughter",0.7059,34],["Rejecting God",0.5185,27],["Satanic Influence",0.6667,24]],"Finale":[["Unrevealed",0.4561,57],["Hell on Earth",0.7,20],["It Wants You!",0.6923,13],["Spiritual Attack",0.8571,21],["Legions of Hell",0.6667,15]]},"setups":[["Daily Chores",0.5,10],["Reflection & Meditation",0.5625,16],["Sunday Mass",0.5714,14],["Supper Time",0.4286,14],["Tourism Bus",0.4,10]],"serie":"S4","fnum":"S4·F3","img":"img/a-demon-in-the-shadows.jpg","imgpos":"18% center"},{"film":"The Green Terror","killer":"Volk'ar","loc":"Pesadilla Verde","wr":0.7907,"plays":43,"locWr":0.7791,"locPlays":86,"killWr":0.7403,"killPlays":77,"secs":{"Dark Power":[["Unrevealed",0.25,4],["Blades in the Dark",0.7895,19],["Chameleon of Death",0.75,17],["Stress of the Unknown",0.7667,30],["Merciless Ambush",0.8,5]],"Finale":[["Unrevealed",0.5714,14],["Guerilla Warfare",1,9],["Rampage",0.9,20],["Self Destruct",0.5,24],["Regenerative Cloaking",1,9]]},"setups":[["Cave Dwellers",0.9,10],["High Ground",0.6667,9],["Jungle Madness",0.8571,7],["Rebel Yell",1,9],["River Rats",0.5,8]],"serie":"S4","fnum":"S4·F4","img":"img/the-green-terror.jpg","imgpos":null},{"film":"The Raptor Games","killer":"Raptors","loc":"Isla Lagarto","wr":0.5366,"plays":41,"locWr":0.6379,"locPlays":58,"killWr":0.6452,"killPlays":62,"secs":{"Dark Power":[["Unrevealed",0.6364,11],["Blood Thirsty",0.7333,15],["Pack Conditioning",0.5,12],["They're Everywhere!",0.6154,13],["Scaly Hide",0.8571,7]],"Finale":[["Unrevealed",0.5143,35],["Born Hungry",1,6],["Claws Like Knives",0.6667,9],["Raptor Rush",0.7143,7],["Deadly Quick",1,5]]},"setups":[["Beach Landing",0.5714,7],["Facility Construction",0.3636,11],["Lab Breach",0.7778,9],["Let The Games Begin!",0.5714,7],["Look at the Volcano!",0.4286,7]],"serie":"S4","fnum":"S4·F5","img":"img/the-raptor-games.jpg","imgpos":null},{"film":"Shriek","killer":"Mort","loc":"Mega BGCon","wr":0.7107,"plays":121,"locWr":0.7354,"locPlays":325,"killWr":0.6965,"killPlays":313,"secs":{"Dark Power":[["Unrevealed",0,3],["Anonymous Terror",0.7097,93],["Toxic Whispers",0.747,83],["Relentless Paranoia",0.6316,76],["Snitches Get Stitches",0.7273,55]],"Finale":[["Unrevealed",0,12],["Mort as Hans",0.85,20],["Mort as Dr. Fright",0.6429,28],["Mort as Geppetto",0.8182,22],["Mort as Ratchet Lady",0.7368,38],["Mort as Big Bad Wolf",0.7826,23],["Mort as Baghead",0.6842,19],["Mort as Tormentor",0.7391,23],["Mort as Razorface",0.75,28],["Mort as H.U.N.T.E.R.",0.5714,28],["Mort as Krampus",0.871,31],["Secret Epic Finale",0.6098,41]]},"setups":[["Busiest Day",0.5556,18],["Family Day",0.9,20],["First Day",0.75,28],["Last Day",0.6667,30],["Mega Events",0.7619,21]],"serie":"SP","fnum":"Especial","img":"img/shriek.jpg","imgpos":"18% center"}],"girls":[["Elizabeth",0.9032,31,"Secuela"],["Grandma",0.8621,87,"Grandma's Grudge (S3)"],["Rena",0.7771,166,"Bad Times at Buddyland"],["Tali",0.7626,198,"The Killer from Tomorrow"],["Adrianne",0.7576,132,"Shriek"],["Jen",0.75,28,"Promo premium (S4)"],["Red",0.747,419,"Once Upon a Full Moon"],["Meg",0.7449,98,"Promo premium (S4)"],["Alois",0.7447,47,"The Green Terror"],["Ginny",0.7266,384,"A Knock at the Door"],["Uki",0.7238,420,"Panic at Station 2891"],["Sheila",0.7188,345,"Frightmare on Maple Lane"],["Dakota",0.717,53,"The Green Terror"],["Jenette",0.7163,423,"Into the Void"],["Cassie",0.7111,225,"The Marrek Murders"],["Carolyn",0.7103,107,"Carolyn's Revenge (S3)"],["Julie",0.7019,104,"Promo premium (S4)"],["Mandy",0.7009,234,"The Marrek Murders"],["Gabrielle",0.6974,152,"Temporada 3"],["Ronda",0.6949,177,"Don't Make a Sound"],["Christie",0.6946,167,"Hell to Pay"],["Joy",0.6944,108,"A Rotten Harvest"],["Ellen",0.6915,363,"Into the Void"],["Agnes",0.6906,181,"Box of Props (S2)"],["Maureen",0.6842,133,"Shriek"],["Gretel",0.6823,299,"Once Upon a Full Moon"],["Nancy",0.6807,285,"Frightmare on Maple Lane"],["Rita",0.68,75,"A Demon in the Shadows"],["Joan",0.6786,28,"Temporada 4"],["Veronica",0.6754,305,"Madness in the Dark"],["Janelle",0.6696,230,"The Falconwood Files"],["Layla",0.6667,156,"Box of Props (S2)"],["Julia",0.6667,147,"Box of Props (S2) · cruce con Dark Quarter"],["Iris",0.6667,24,"Promo premium (S4)"],["Ava",0.6603,418,"A Knock at the Door"],["Kate",0.6593,317,"Panic at Station 2891"],["Maud",0.6552,29,"The Raptor Games"],["Kenzie",0.651,192,"Hell to Pay"],["Octavia",0.64,150,"The Falconwood Files"],["Paula",0.6379,243,"Promo de la tienda de Van Ryder"],["Jamie",0.6377,138,"Guest Stars (S3)"],["Barbara",0.6346,353,"Slaughter in the Groves"],["Constance",0.6294,197,"Box of Props (S2) · cruce con Dark Quarter"],["Christina",0.6286,35,"The Raptor Games"],["Melanie",0.6269,260,"Temporada 1"],["Laurie",0.6206,651,"The Happy Trails Horror"],["Patsy",0.6189,286,"Temporada 2"],["Heather",0.6135,414,"Madness in the Dark"],["Adelaide",0.6126,302,"Slaughter in the Groves"],["Gwynn",0.6051,157,"Bad Times at Buddyland"],["Vicky",0.6042,96,"A Rotten Harvest"],["Reiko",0.6016,487,"The Happy Trails Horror"],["Selena",0.5967,424,"The Haunting of Creech Manor"],["Lindi",0.5943,106,"A Demon in the Shadows"],["Charlie",0.5855,386,"Carnage at the Carnival"],["Meghan",0.5833,204,"Don't Make a Sound"],["Asami",0.5801,462,"Carnage at the Carnival"],["Alice",0.5695,367,"The Haunting of Creech Manor"],["Mrs. Claus",0.5588,272,"The North Pole Nightmare"],["Cindy",0.5547,247,"The North Pole Nightmare"],["Kat",0.5333,225,"The Killer from Tomorrow"]],"locs":[["Sacred Groves",0.4542,852],["Carnival of Blood",0.5249,1025],["Creech Manor",0.5665,1052],["L'Armes Abbey",0.5691,123],["Shady Acres",0.6049,162],["Utopia",0.6088,634],["Sunnydaze Mall",0.6236,457],["Wolfe Asylum",0.6321,829],["Isla Lagarto",0.6379,58],["Station 2891",0.6456,855],["Santa's Village",0.6495,622],["Buddyland",0.6696,224],["Marrek Warehouse",0.6842,570],["Maple Lane",0.6876,893],["Wingard Cottage",0.6952,958],["Camp Happy Trail",0.7021,1514],["Falconwood",0.7329,468],["Mega BGCon",0.7354,325],["Pesadilla Verde",0.7791,86],["Storybook Woods",0.7796,776],["USS Konrad",0.7797,799],["Hellscape",0.78,591]],"killers":{"Hans":{"wr":0.6365,"g":1436,"secs":{"Dark Power":[["Unrevealed",0.7749,191],["Dark Obsession",0.4815,351],["Feed",0.67,300],["Sledgehammer Massacre",0.6974,304],["Blood Frenzy",0.6696,224]],"Finale":[["Unrevealed",0.592,375],["Bloodbath",0.5957,329],["Butcher Bloodlust",0.7684,285],["Dark, Darker, Darkest",0.6712,295],["Death Blow",0.5116,86]]},"box":"The Happy Trails Horror"},"Geppetto":{"wr":0.6501,"g":783,"secs":{"Dark Power":[["Unrevealed",0.7037,81],["Immortal Master",0.6914,162],["Massive Abominations",0.6413,184],["Weapons Graft",0.6502,203],["Join the Family",0.6047,129]],"Finale":[["Unrevealed",0.5685,387],["I Made Your Friends",0.7451,102],["No Strings Attached",0.7302,126],["Remember Them?",0.7426,101],["Puppet Bombs",0.8095,42]]},"box":"Carnage at the Carnival"},"Inkanyamba":{"wr":0.6378,"g":588,"secs":{"Dark Power":[["Unrevealed",0.8974,39],["Feast of Anger",0.6759,145],["Rising Dread",0.6643,140],["Volatile Temper",0.5405,148],["Dark Lightning",0.6471,102]],"Finale":[["Unrevealed",0.7865,267],["Savage Whirlwind",0.4242,99],["Violent Tantrum",0.4471,85],["We Need a Miracle",0.701,97],["Drag Her to Hell",0.5385,26]]},"box":"Slaughter in the Groves"},"Dr. Fright":{"wr":0.7435,"g":850,"secs":{"Dark Power":[["Unrevealed",0.896,173],["Never Really Dead",0.7371,175],["Pitchfork Assault",0.716,162],["The Frightmare is Inevitable",0.6973,185],["Shock Factor",0.6715,137]],"Finale":[["Unrevealed",0.7109,422],["Everyone Must Die",0.7094,117],["Face Your Fright",0.8689,122],["Time to Die",0.7143,119],["Dream Warfare",0.8246,57]]},"box":"Frightmare on Maple Lane"},"Poltergeist":{"wr":0.5611,"g":884,"secs":{"Dark Power":[["Unrevealed",0.6458,48],["Eternal Despair",0.6162,198],["Invisible Barrier",0.5322,200],["Stiff Winds",0.5676,222],["Forgetting Something?",0.5032,157]],"Finale":[["Unrevealed",0.5432,567],["Nothing is easy",0.642,81],["Relentless Assault",0.5581,86],["She Will Soon Be Lost",0.5102,98],["Demonic Posession",0.8519,27]]},"box":"The Haunting of Creech Manor"},"Terror from Above":{"wr":0.5887,"g":462,"secs":{"Dark Power":[["Unrevealed",0.713,115],["Birdnado",0.4904,104],["Run For Your Life",0.5984,127],["They're Just Waiting to Strike",0.531,113]],"Finale":[["Unrevealed",0.6838,272],["Endless Swarm",0.5455,55],["Fowl Agression",0.4219,64],["Insurmountable Odds",0.3881,67]]}},"Evomorph":{"wr":0.7534,"g":876,"secs":{"Dark Power":[["Unrevealed",0.8947,76],["Acid Blood",0.7149,228],["Razor Claws",0.8045,220],["Symbiotic Camouflage",0.7188,192],["Razor Tail",0.7315,149]],"Finale":[["Unrevealed",0.7866,506],["Blitz of Death",0.63,100],["Death in the Dark",0.8545,110],["The Perfect Organism",0.5909,110],["Impenetrable Armor",0.8947,38]]},"box":"Into the Void"},"The Intruders":{"wr":0.6258,"g":914,"secs":{"Dark Power":[["Unrevealed",0.5172,58],["Maskaphobia",0.6226,212],["No Remorse",0.6018,226],["Strength in Numbers",0.6971,241],["Won't Stay Down",0.6061,165]],"Finale":[["Unrevealed",0.2775,191],["Hunt Sweet Hunt",0.872,211],["Release the Beast",0.6698,215],["You're Gonna Die",0.68,200],["We Know Where You Live",0.5833,84]]},"box":"A Knock at the Door"},"Ratchet Lady":{"wr":0.6657,"g":682,"secs":{"Dark Power":[["Unrevealed",0.7049,122],["Bloodfear",0.6947,131],["Dark Injection",0.6944,144],["Manic Burst",0.6568,169],["Shield of Madness",0.5545,110]],"Finale":[["Unrevealed",0.6515,330],["Feed the Madness",0.6869,99],["Hold Her Down",0.6214,103],["It's Raining Maniacs",0.6535,101],["Enter the Madhouse",0.814,43]]},"box":"Madness in the Dark"},"The Organism":{"wr":0.7347,"g":750,"secs":{"Number of Organisms":[["One",0.8689,328],["Two",0.6751,277],["Three",0.5377,106]],"Finale":[["Unrevealed",0.7135,171],["Cognitive Assimilation",0.8187,171],["Reductive Assimilation",0.7222,162],["Regenerative Assimilation",0.6703,185],["Final Assimilation",0.7593,54]]},"box":"Panic at Station 2891"},"Big Bad Wolf":{"wr":0.7064,"g":722,"secs":{"Dark Power":[["Unrevealed",0.8333,18],["Destructive Roar",0.79,200],["Ravenous Hunger",0.7234,178],["Sixth Sense",0.7077,195],["A Killing Machine",0.5088,114]],"Finale":[["Unrevealed",0.6596,379],["Rampant Growth",0.75,100],["Tasty Treats",0.6061,99],["Thrill of the Hunt",0.9216,102],["One More Bite",0.7568,37]]},"box":"Once Upon a Full Moon"},"Terror from the Grave":{"wr":0.5077,"g":520,"secs":{"Dark Power":[["Unrevealed",0.6842,19],["Legion",0.3841,164],["Runners",0.6213,169],["Super Horde",0.5125,160]],"Finale":[["Unrevealed",0.1505,206],["I'm Overwhelmed",0.8111,90],["Their Numbers Are Endless",0.6837,98],["They've All Been Bitten",0.7731,119]]}},"Tormentor":{"wr":0.7361,"g":595,"secs":{"Dark Power":[["Unrevealed",0.4,20],["Horrifying Traps",0.7113,142],["Overkill Traps",0.8105,153],["Unfair Traps",0.7484,155],["Endless Traps",0.7193,114]],"Finale":[["Unrevealed",0.0541,37],["Game Over",0.8133,150],["No Escape",0.7976,168],["The Ultimate Trap",0.764,161],["No Rest for the Weary",0.75,68]]},"box":"The Marrek Murders"},"Razorface":{"wr":0.5382,"g":511,"secs":{"Dark Power":[["Unrevealed",0.7222,18],["Helleport",0.6554,148],["Life Drain",0.4338,136],["Soulbound",0.5271,129],["Infinite Despair",0.4615,78]],"Finale":[["Unrevealed",0.3858,197],["Chains of Torment",0.6949,118],["I Feast On Your Pain",0.5532,94],["Taste Our Pleasures",0.6494,77],["Legendary Suffering",0.5833,24]]},"box":"Hell to Pay"},"Slayer":{"wr":0.6067,"g":511,"secs":{"Dark Power":[["Unrevealed",0.4857,35],["Master Plan",0.617,141],["Mind Control",0.6547,139],["Renewed Determination",0.6154,117],["It's In My Head!",0.5385,78]],"Finale":[["Unrevealed",0.4598,174],["Interdimensional Rift Collapse",0.6139,101],["Let's Finish This",0.7222,90],["Welcome To My World",0.8404,94],["Your Time is Up",0.46,50]]},"box":"The Falconwood Files"},"Hunter":{"wr":0.7085,"g":470,"secs":{"Dark Power":[["Unrevealed",0.4118,17],["Cybernetic Agility",0.662,142],["Reinforced Endoskeleton",0.6364,112],["Titanium-Laced Bio Tissue",0.7358,106],["M134 Minigun Armament",0.75,92]],"Finale":[["Unrevealed",0.4345,168],["Adaptive A.I.",0.9255,94],["Relentless Pursuit",0.9479,96],["\"Termination Mode... Active\"",0.75,72],["Mark X-1000",0.7179,39]]},"box":"The Killer from Tomorrow"},"The Eyeless":{"wr":0.6436,"g":491,"secs":{"Dark Power":[["Unrevealed",0.4314,51],["Hard Skin",0.6341,123],["Quick Counter",0.6694,124],["Reactive Swipe",0.625,112],["High Alert",0.775,80]],"Finale":[["Unrevealed",0.5316,158],["It Can Hear Everything",0.686,86],["It Knows My Moves",0.6354,96],["No More Running",0.62,100],["Final Slash",0.98,50]]},"box":"Don't Make a Sound"},"Terror from Destiny":{"wr":0.7984,"g":258,"secs":{"Dark Power":[["Unrevealed",0.8478,46],["Existential Paralysis",0.8116,69],["Double Trouble",0.7532,77],["Hourglass of Despair",0.803,66],["Death at 30,000 ft",0.8,75],["Deathcoaster",0.8229,96],["Highway to Hell",0.8226,62]],"Finale":[]}},"Billy":{"wr":0.6069,"g":173,"secs":{"Dark Power":[["Unrevealed",0.8333,18],["Deathlust",0.6061,33],["Endless Power",0.5897,39],["Introducing... Billy Jr!",0.62,50],["Merciless Minions",0.4615,26]],"Finale":[["Unrevealed",0.62,50],["Encore",0.3824,34],["It's Showtime!",0.88,25],["Sizzling Power",0.7931,29],["Power Surge",0.4074,27]]},"box":"Bad Times at Buddyland"},"Grimlash":{"wr":0.7814,"g":183,"secs":{"Dark Power":[["Unrevealed",1,13],["Rite of the Corrupted",0.7209,43],["Rite of the Old One",0.8235,51],["Root-bound Curse",0.6591,44],["Fields of Madness",0.8667,30]],"Finale":[["Unrevealed",0.7778,99],["Ancient Abomination",0.76,25],["Hunger of the Old Gods",0.8889,18],["Withered Harbinger",0.8571,21],["God of Blood and Grain",0.65,20]]},"box":"A Rotten Harvest"},"Berith":{"wr":0.6016,"g":128,"secs":{"Dark Power":[["Unrevealed",0.5556,9],["Keeping Ursula Alive",0.5161,31],["Lamb to the Slaughter",0.7059,34],["Rejecting God",0.5185,27],["Satanic Influence",0.6667,24]],"Finale":[["Unrevealed",0.4561,57],["Hell on Earth",0.7,20],["It Wants You!",0.6923,13],["Spiritual Attack",0.8571,21],["Legions of Hell",0.6667,15]]},"box":"A Demon in the Shadows"},"Volk'ar":{"wr":0.7403,"g":77,"secs":{"Dark Power":[["Unrevealed",0.25,4],["Blades in the Dark",0.7895,19],["Chameleon of Death",0.75,17],["Stress of the Unknown",0.7667,30],["Merciless Ambush",0.8,5]],"Finale":[["Unrevealed",0.5714,14],["Guerilla Warfare",1,9],["Rampage",0.9,20],["Self Destruct",0.5,24],["Regenerative Cloaking",1,9]]},"box":"The Green Terror"},"Raptors":{"wr":0.6452,"g":62,"secs":{"Dark Power":[["Unrevealed",0.6364,11],["Blood Thirsty",0.7333,15],["Pack Conditioning",0.5,12],["They're Everywhere!",0.6154,13],["Scaly Hide",0.8571,7]],"Finale":[["Unrevealed",0.5143,35],["Born Hungry",1,6],["Claws Like Knives",0.6667,9],["Raptor Rush",0.7143,7],["Deadly Quick",1,5]]},"box":"The Raptor Games"},"Terror from Beyond":{"wr":0.6061,"g":33,"secs":{"Dark Power":[["Unrevealed",1,2],["Hunted By The Mob",0.7143,14],["Mass Hysteria",0.3,10],["Obstinate Victims",0.7143,7]],"Finale":[["Unrevealed",0.5417,24],["Born Again",0.75,4],["Luxuriant Growth",1,2],["You're Next!",0.6667,3]]}},"Krampus":{"wr":0.584,"g":601,"secs":{"Dark Power":[["Unrevealed",0.76,50],["Blood and Cookies",0.5548,155],["Explosive Gifts",0.5238,147],["Tantalizing Gifts",0.6136,132],["Never Ending Gifts",0.5841,113]],"Finale":[["Unrevealed",0.6054,261],["Bamf!",0.5714,91],["Soul Lust",0.7021,94],["Unholy Gifts",0.5455,88],["Past Midnight",0.3939,66]]},"box":"The North Pole Nightmare"},"Mort":{"wr":0.6965,"g":313,"secs":{"Dark Power":[["Unrevealed",0,3],["Anonymous Terror",0.7097,93],["Toxic Whispers",0.747,83],["Relentless Paranoia",0.6316,76],["Snitches Get Stitches",0.7273,55]],"Finale":[["Unrevealed",0,12],["Mort as Hans",0.85,20],["Mort as Dr. Fright",0.6429,28],["Mort as Geppetto",0.8182,22],["Mort as Ratchet Lady",0.7368,38],["Mort as Big Bad Wolf",0.7826,23],["Mort as Baghead",0.6842,19],["Mort as Tormentor",0.7391,23],["Mort as Razorface",0.75,28],["Mort as H.U.N.T.E.R.",0.5714,28],["Mort as Krampus",0.871,31],["Secret Epic Finale",0.6098,41]]},"box":"Shriek"}},"matrixKillers":["Hans","Dr. Fright","Geppetto","Poltergeist","Inkanyamba","Terror from Above","Evomorph","The Organism","The Intruders","Big Bad Wolf","Ratchet Lady","Terror from the Grave","Krampus","Tormentor","Razorface","Slayer","Hunter","The Eyeless","Terror from Destiny","Billy","Grimlash","Berith","Volk'ar","Raptors","Terror from Beyond","Mort"],"matrix":{"Camp Happy Trail":{"Hans":0.6405,"Dr. Fright":0.7805,"Geppetto":0.7292,"Poltergeist":0.6579,"Inkanyamba":0.6897,"Terror from Above":0.5781,"Evomorph":0.6957,"The Organism":0.8493,"The Intruders":0.7564,"Big Bad Wolf":0.7273,"Ratchet Lady":0.8036,"Terror from the Grave":0.5636,"Krampus":0.8,"Tormentor":0.7778,"Razorface":0.8889,"Slayer":0.6491,"Hunter":0.8242,"The Eyeless":0.6667,"Terror from Destiny":0.8182,"Billy":0.7143,"Grimlash":0.9412,"Berith":0.7143,"Volk'ar":null,"Raptors":null,"Terror from Beyond":0.6667,"Mort":0.6667},"Maple Lane":{"Hans":0.6701,"Dr. Fright":0.7558,"Geppetto":0.7703,"Poltergeist":0.6,"Inkanyamba":0.7241,"Terror from Above":0.5312,"Evomorph":0.7963,"The Organism":0.7255,"The Intruders":0.7727,"Big Bad Wolf":0.6667,"Ratchet Lady":0.5513,"Terror from the Grave":0.2857,"Krampus":0.7027,"Tormentor":0.8103,"Razorface":0.6,"Slayer":null,"Hunter":0.8333,"The Eyeless":null,"Terror from Destiny":0.8571,"Billy":0.8,"Grimlash":null,"Berith":null,"Volk'ar":null,"Terror from Beyond":null,"Mort":1.0},"Carnival of Blood":{"Hans":0.3878,"Dr. Fright":0.5942,"Geppetto":0.4421,"Poltergeist":0.6,"Inkanyamba":0.5556,"Terror from Above":0.6471,"Evomorph":0.6863,"The Organism":0.6842,"The Intruders":0.4684,"Big Bad Wolf":0.5814,"Ratchet Lady":0.5323,"Terror from the Grave":0.4706,"Krampus":0.3721,"Tormentor":0.6962,"Razorface":0.2958,"Slayer":0.8,"Hunter":null,"The Eyeless":0.6863,"Terror from Destiny":0.75,"Billy":null,"Grimlash":null,"Berith":null,"Volk'ar":null,"Raptors":null,"Mort":null},"Creech Manor":{"Hans":0.6239,"Dr. Fright":0.6042,"Geppetto":0.6625,"Poltergeist":0.4202,"Inkanyamba":0.566,"Terror from Above":0.4211,"Evomorph":0.8333,"The Organism":0.8421,"The Intruders":0.7073,"Big Bad Wolf":0.8,"Ratchet Lady":0.75,"Terror from the Grave":0.6889,"Krampus":0.4366,"Tormentor":0.6136,"Razorface":0.4231,"Slayer":0.46,"Hunter":null,"The Eyeless":0.6167,"Terror from Destiny":1.0,"Billy":null,"Grimlash":0.8,"Berith":null,"Volk'ar":null,"Raptors":null,"Mort":0.6667},"Sacred Groves":{"Hans":0.3537,"Dr. Fright":0.6182,"Geppetto":0.625,"Poltergeist":0.411,"Inkanyamba":0.383,"Terror from Above":0.551,"Evomorph":0.625,"The Organism":0.5283,"The Intruders":0.4364,"Big Bad Wolf":0.4091,"Ratchet Lady":0.5185,"Terror from the Grave":0.4524,"Krampus":0.25,"Tormentor":0.4865,"Razorface":0.2708,"Slayer":0.3265,"Hunter":null,"The Eyeless":0.2,"Terror from Destiny":0.8065,"Billy":null,"Grimlash":null,"Mort":null},"USS Konrad":{"Hans":0.7662,"Dr. Fright":0.9062,"Geppetto":0.9286,"Poltergeist":0.8421,"Inkanyamba":0.8824,"Terror from Above":0.7,"Evomorph":0.7475,"The Organism":0.7692,"The Intruders":0.7576,"Big Bad Wolf":0.6724,"Ratchet Lady":0.8077,"Terror from the Grave":0.45,"Krampus":0.8269,"Tormentor":0.8,"Razorface":null,"Slayer":0.8,"Hunter":0.9302,"The Eyeless":0.8696,"Terror from Destiny":0.8,"Billy":null,"Grimlash":0.8,"Berith":null,"Volk'ar":null,"Terror from Beyond":null,"Mort":0.8},"Station 2891":{"Hans":0.6364,"Dr. Fright":0.7059,"Geppetto":0.75,"Poltergeist":0.5797,"Inkanyamba":0.6667,"Terror from Above":0.4211,"Evomorph":0.7761,"The Organism":0.6524,"The Intruders":0.4324,"Big Bad Wolf":0.6349,"Ratchet Lady":0.8182,"Terror from the Grave":0.6,"Krampus":0.6829,"Tormentor":0.8571,"Razorface":0.623,"Slayer":null,"Hunter":0.4444,"The Eyeless":0.6275,"Terror from Destiny":0.6,"Billy":null,"Grimlash":0.625,"Berith":null,"Volk'ar":null,"Raptors":null,"Terror from Beyond":null,"Mort":null},"Wingard Cottage":{"Hans":0.6806,"Dr. Fright":0.875,"Geppetto":0.7895,"Poltergeist":0.6667,"Inkanyamba":0.7381,"Terror from Above":0.4828,"Evomorph":0.7969,"The Organism":0.76,"The Intruders":0.6098,"Big Bad Wolf":0.7368,"Ratchet Lady":0.8077,"Terror from the Grave":0.4286,"Krampus":0.6154,"Tormentor":0.8571,"Razorface":null,"Slayer":0.7051,"Hunter":0.7907,"The Eyeless":0.5,"Terror from Destiny":0.8571,"Billy":null,"Grimlash":0.8889,"Berith":0.875,"Volk'ar":null,"Raptors":null,"Mort":0.5932},"Storybook Woods":{"Hans":0.7556,"Dr. Fright":0.6984,"Geppetto":0.9268,"Poltergeist":0.75,"Inkanyamba":0.8519,"Terror from Above":0.6364,"Evomorph":0.8154,"The Organism":0.7931,"The Intruders":0.7619,"Big Bad Wolf":0.7459,"Ratchet Lady":0.7647,"Terror from the Grave":0.6667,"Krampus":0.9,"Tormentor":null,"Razorface":0.7105,"Slayer":0.8571,"Hunter":0.8,"The Eyeless":0.7778,"Terror from Destiny":0.9091,"Billy":0.8,"Grimlash":1.0,"Berith":null,"Volk'ar":null,"Raptors":null,"Terror from Beyond":null,"Mort":0.875},"Wolfe Asylum":{"Hans":0.6849,"Dr. Fright":0.7414,"Geppetto":0.7059,"Poltergeist":0.5818,"Inkanyamba":0.5946,"Terror from Above":0.9048,"Evomorph":0.6818,"The Organism":0.8298,"The Intruders":0.52,"Big Bad Wolf":0.6552,"Ratchet Lady":0.5,"Terror from the Grave":0.3478,"Krampus":0.6364,"Tormentor":0.8082,"Razorface":null,"Slayer":0.549,"Hunter":0.65,"The Eyeless":0.5714,"Terror from Destiny":0.6,"Billy":null,"Grimlash":null,"Berith":null,"Volk'ar":null,"Terror from Beyond":null,"Mort":null},"Marrek Warehouse":{"Hans":0.6032,"Dr. Fright":0.8,"Geppetto":0.5714,"Poltergeist":null,"Inkanyamba":null,"Terror from Above":null,"Evomorph":0.6667,"The Organism":0.7347,"The Intruders":0.6825,"Big Bad Wolf":0.6667,"Ratchet Lady":null,"Terror from the Grave":null,"Krampus":0.6,"Tormentor":0.7134,"Razorface":0.8,"Slayer":0.4,"Hunter":0.5686,"The Eyeless":0.6,"Terror from Destiny":null,"Billy":0.2,"Grimlash":0.75,"Berith":null,"Volk'ar":null,"Raptors":null,"Terror from Beyond":null,"Mort":0.7451},"Hellscape":{"Hans":0.9375,"Dr. Fright":0.9403,"Geppetto":0.8333,"Poltergeist":0.7826,"Inkanyamba":0.7937,"Terror from Above":0.6296,"Evomorph":0.8889,"The Organism":1.0,"The Intruders":0.8333,"Big Bad Wolf":0.8571,"Ratchet Lady":1.0,"Terror from the Grave":0.5429,"Krampus":1.0,"Tormentor":1.0,"Razorface":0.622,"Slayer":null,"Hunter":1.0,"The Eyeless":0.8,"Terror from Destiny":0.7931,"Billy":null,"Grimlash":1.0,"Berith":0.6667,"Volk'ar":null,"Raptors":null,"Terror from Beyond":null,"Mort":null},"Falconwood":{"Hans":0.7213,"Dr. Fright":1.0,"Geppetto":0.8333,"Poltergeist":0.8,"Inkanyamba":null,"Terror from Above":0.7727,"Evomorph":0.8,"The Organism":1.0,"The Intruders":0.8,"Big Bad Wolf":0.7627,"Ratchet Lady":0.6,"Terror from the Grave":0.5312,"Krampus":0.4,"Tormentor":0.6667,"Razorface":0.8333,"Slayer":0.7063,"Hunter":0.375,"The Eyeless":0.8571,"Terror from Destiny":0.84,"Billy":0.6667,"Grimlash":1.0,"Berith":null,"Volk'ar":null,"Raptors":null,"Mort":0.6},"Sunnydaze Mall":{"Hans":0.4667,"Dr. Fright":0.8,"Geppetto":0.6,"Poltergeist":0.8,"Inkanyamba":null,"Terror from Above":0.64,"Evomorph":0.7111,"The Organism":null,"The Intruders":0.6591,"Big Bad Wolf":0.5,"Ratchet Lady":0.8,"Terror from the Grave":0.5,"Krampus":0.6,"Tormentor":0.8333,"Razorface":0.7778,"Slayer":0.5111,"Hunter":0.6071,"The Eyeless":0.4167,"Terror from Destiny":0.8276,"Billy":null,"Grimlash":null,"Volk'ar":null,"Raptors":null,"Mort":0.5},"Utopia":{"Hans":0.4286,"Dr. Fright":0.3,"Geppetto":0.5,"Poltergeist":0.5758,"Inkanyamba":0.5,"Terror from Above":0.6452,"Evomorph":0.6984,"The Organism":0.7742,"The Intruders":0.4918,"Big Bad Wolf":0.6,"Ratchet Lady":0.6957,"Terror from the Grave":0.5833,"Krampus":0.5,"Tormentor":0.6667,"Razorface":0.4286,"Slayer":0.6667,"Hunter":0.7143,"The Eyeless":0.5607,"Terror from Destiny":0.6875,"Billy":0.8,"Berith":null,"Raptors":null,"Terror from Beyond":null,"Mort":null},"Buddyland":{"Hans":0.4,"Dr. Fright":0.5714,"Geppetto":0.75,"Poltergeist":0.4737,"Inkanyamba":null,"Terror from Above":null,"Evomorph":1.0,"The Organism":null,"The Intruders":0.75,"Big Bad Wolf":0.875,"Ratchet Lady":1.0,"Terror from the Grave":null,"Krampus":null,"Tormentor":null,"Razorface":0.6667,"Slayer":null,"Hunter":null,"Terror from Destiny":null,"Billy":0.6067,"Grimlash":1.0,"Berith":0.8333,"Volk'ar":null,"Raptors":null,"Terror from Beyond":null,"Mort":0.875},"Shady Acres":{"Hans":0.4286,"Dr. Fright":null,"Geppetto":null,"Terror from Above":null,"Evomorph":0.4,"The Organism":0.6667,"The Intruders":0.4,"Big Bad Wolf":null,"Ratchet Lady":null,"Terror from the Grave":null,"Krampus":null,"Tormentor":0.4,"Slayer":null,"Hunter":null,"Terror from Destiny":null,"Billy":0.4,"Grimlash":0.7105,"Berith":0.3333,"Raptors":null,"Terror from Beyond":null,"Mort":0.5714},"L'Armes Abbey":{"Hans":0.6667,"Dr. Fright":null,"Geppetto":null,"Poltergeist":null,"Inkanyamba":null,"Terror from Above":null,"Evomorph":0.6,"The Organism":null,"The Intruders":0.8,"Big Bad Wolf":null,"Ratchet Lady":null,"Terror from the Grave":null,"Krampus":null,"Tormentor":null,"Razorface":null,"Slayer":null,"Terror from Destiny":null,"Billy":0.6,"Grimlash":0.7143,"Berith":0.5,"Volk'ar":null,"Raptors":null,"Terror from Beyond":null,"Mort":null},"Pesadilla Verde":{"Hans":null,"Dr. Fright":null,"Geppetto":null,"Inkanyamba":null,"Terror from Above":null,"Evomorph":null,"The Organism":null,"The Intruders":1.0,"Big Bad Wolf":null,"Ratchet Lady":null,"Terror from the Grave":null,"Tormentor":null,"Razorface":null,"Slayer":null,"Hunter":null,"The Eyeless":null,"Billy":null,"Berith":null,"Volk'ar":0.7907,"Raptors":null,"Terror from Beyond":null},"Isla Lagarto":{"Hans":null,"Dr. Fright":null,"Inkanyamba":null,"Terror from the Grave":null,"Razorface":null,"Slayer":null,"The Eyeless":null,"Billy":0.8,"Berith":null,"Raptors":0.5366,"Terror from Beyond":null},"Santa's Village":{"Hans":0.7705,"Dr. Fright":0.8364,"Geppetto":0.6731,"Poltergeist":0.6667,"Inkanyamba":0.8889,"Terror from Above":0.4,"Evomorph":0.8043,"The Organism":0.6857,"The Intruders":0.6364,"Big Bad Wolf":0.5455,"Ratchet Lady":0.7907,"Terror from the Grave":0.5,"Krampus":0.4667,"Tormentor":null,"Razorface":null,"Slayer":0.6,"Hunter":null,"The Eyeless":null,"Terror from Destiny":null,"Billy":0.4,"Grimlash":null,"Berith":null,"Volk'ar":null,"Raptors":null,"Mort":0.8},"Mega BGCon":{"Hans":0.7143,"Dr. Fright":0.8,"Geppetto":null,"Poltergeist":1.0,"Inkanyamba":null,"Terror from Above":0.7826,"Evomorph":null,"The Organism":null,"The Intruders":0.5,"Big Bad Wolf":0.8182,"Ratchet Lady":null,"Terror from the Grave":0.6,"Krampus":null,"Tormentor":null,"Razorface":null,"Slayer":null,"Hunter":null,"The Eyeless":1.0,"Terror from Destiny":0.8333,"Billy":0.5,"Grimlash":0.5,"Berith":null,"Volk'ar":null,"Terror from Beyond":0.4,"Mort":0.7107}},"setups":{"Camp Happy Trail":[["Capture the Flag",0.7778,99],["Meditation Hour",0.6238,101],["Skinny Dipping",0.5977,87],["The Bonfire",0.6296,108],["Treasure Hunt",0.6387,119]],"Maple Lane":[["A Quiet Place",0.76,25],["Block Party",0.9062,32],["Maple Lane",0.7,30],["Playtime",0.7931,29],["Revenge",0.6522,46]],"Carnival of Blood":[["Boxed In",0.5,38],["Center Stage",0.42,50],["Late for the Show",0.5238,42],["No Laughing Matter",0.3878,49],["Ring around the Rosie",0.4318,44]],"Creech Manor":[["Creepshow",0.4898,49],["Dancing Queen",0.3158,38],["Strange Trophies",0.375,40],["The Dead Zone",0.5,40],["The Ladder",0.3898,59]],"Sacred Groves":[["Dueling Tour Guides",0.3158,19],["Family Day",0.4444,27],["Mob O' Tourists",0.5,38],["Swamp Thing",0.3043,23],["Worship Service",0.2917,24]],"USS Konrad":[["Bloody Feast",0.8056,36],["Born In Flames",0.619,42],["Junction Danger",0.8409,44],["Showdown",0.7429,35],["Space Rave",0.7857,42]],"Station 2891":[["A Nice Stew",0.6129,31],["Clear the Grounds",0.7143,35],["Good Morning",0.6,30],["Quittin Time",0.5714,35],["R & R",0.7576,33]],"Wingard Cottage":[["Couples Weekend",0.5682,44],["Dysfunctional Family",0.6667,36],["Fishing Trip",0.5957,47],["Grad Party",0.5833,36],["Special Occasion",0.6842,38]],"Storybook Woods":[["Breadcrumb Trail",0.6667,33],["Family Visit",0.8286,35],["Forest Dwellers",0.7317,41],["Picnic",0.7442,43],["Scatter",0.7576,33]],"Wolfe Asylum":[["A Solitary Life",0.6538,26],["Bingo Night",0.5,32],["The Dr. Is In",0.4815,27],["Madhouse Faceoff",0.4815,27],["Padded Rooms",0.4,35]],"Santa's Village":[["Back With Lumber",0.3333,33],["Gather Round",0.5,46],["Reindeer Games",0.4074,27],["Story Time",0.3939,33],["Toys! Toys! Toys!",0.6667,36]],"Marrek Warehouse":[["Daily Huddle",0.6667,30],["Shift Change",0.6667,33],["Units Per Hour",0.7714,35],["Unloading",0.7838,37],["You're Fired",0.6429,28]],"Hellscape":[["Depravity",0.5417,24],["Ecstasy",0.5385,26],["Rapture",0.6957,23],["Revelation",0.6897,29],["Sensation",0.64,25]],"Falconwood":[["4th of July Weekend",0.8276,29],["Back to School",0.5652,23],["Election Day",0.625,24],["Halloween",0.7727,22],["New Year's Eve",0.7143,28]],"Sunnydaze Mall":[["Black Friday",0.8182,33],["Family Dinner",0.5217,23],["Foodcourt Faceoff",0.5,30],["High Score!",0.6667,27],["Special Delivery",0.4815,27]],"Utopia":[["Bouldering",0.6176,34],["Monstrous Stench",0.4688,32],["Sundown",0.5667,30],["Trash Day",0.6316,38],["Welcome to Utopia",0.5128,39]],"Buddyland":[["Birthday Bash",0.5455,22],["Buddy Day",0.5714,21],["Hide and Seek",0.7059,17],["Pizza Party",0.6,15],["Playin' Hooky",0.6923,13]],"Shady Acres":[["Demands of the Earth",0.6957,23],["Dusk Sacrifice",0.7273,11],["Final Crop",0.625,16],["Harvest Season",0.8333,12],["Reap What You Sow",0.7143,14]],"L'Armes Abbey":[["Daily Chores",0.5,10],["Reflection & Meditation",0.5625,16],["Sunday Mass",0.5714,14],["Supper Time",0.4286,14],["Tourism Bus",0.4,10]],"Pesadilla Verde":[["Cave Dwellers",0.9,10],["High Ground",0.6667,9],["Jungle Madness",0.8571,7],["Rebel Yell",1,9],["River Rats",0.5,8]],"Isla Lagarto":[["Beach Landing",0.5714,7],["Facility Construction",0.3636,11],["Lab Breach",0.7778,9],["Let The Games Begin!",0.5714,7],["Look at the Volcano!",0.4286,7]],"Mega BGCon":[["Busiest Day",0.5556,18],["Family Day",0.9,20],["First Day",0.75,28],["Last Day",0.6667,30],["Mega Events",0.7619,21]]},"cajaGirls":{"The Happy Trails Horror":["Laurie","Reiko"],"The Haunting of Creech Manor":["Alice","Selena"],"Slaughter in the Groves":["Barbara","Adelaide"],"Carnage at the Carnival":["Asami","Charlie"],"Frightmare on Maple Lane":["Nancy","Sheila"],"Into the Void":["Ellen","Jenette"],"Panic at Station 2891":["Kate","Uki"],"A Knock at the Door":["Ava","Ginny"],"Once Upon a Full Moon":["Red","Gretel"],"Madness in the Dark":["Heather","Veronica"],"The Killer from Tomorrow":["Kat","Tali"],"Hell to Pay":["Kenzie","Christie"],"The Falconwood Files":["Octavia","Janelle"],"The Marrek Murders":["Mandy","Cassie"],"Don't Make a Sound":["Ronda","Meghan"],"Bad Times at Buddyland":["Gwynn","Rena"],"A Rotten Harvest":["Vicky","Joy"],"A Demon in the Shadows":["Rita","Lindi"],"The Green Terror":["Dakota","Alois"],"The Raptor Games":["Christina","Maud"],"The North Pole Nightmare":["Mrs. Claus","Cindy"],"Shriek":["Adrianne","Maureen"]},"consejos":{"The Happy Trails Horror":{"nivel":"Principiante","mapa":"Campo de pruebas sólido","mec":"Ninguna regla propia. Es el reglamento básico y nada más.","com":"Por eso es la caja con la que empezar: nada te distrae de aprender el juego.","foro":"Es lento y plomizo, pero pega muchísimo. Lleva siempre uno o dos Guard. Puedes ganarle la carrera y saquear la punta del mapa antes de que llegue. No acabes el turno en su casilla: apuñala gratis a quien tenga al lado."},"The Haunting of Creech Manor":{"nivel":"Avanzado","mapa":"Calles de sentido único, pocos enlaces","mec":"El Poltergeist NO tiene vida y no se le puede hacer daño. Se gana encontrando y sacando a Carolyn.","com":"Las calles de sentido único hacen el movimiento aún más incómodo.","foro":"Aquí las armas no valen para nada y las cartas de ataque tampoco. Es la única caja donde buscar arma es tiempo tirado: todo va a movimiento, búsqueda y rescate."},"Slaughter in the Groves":{"nivel":"Experto","mapa":"Tiene su propia pista de Ira Divina","mec":"La pista de Ira del killer se suma a la Ira Divina del mapa. Las dos actúan a la vez.","com":"Consenso: esta pareja es durísima. Inkanyamba en otro mapa es mucho más llevadero.","foro":"El dato lo confirma: es la caja más dura del juego. Si quieres jugar a Inkanyamba sin sufrir, sácalo de Sacred Groves."},"Carnage at the Carnival":{"nivel":"Avanzado","mapa":"Buen tema, las trampas se notan pasivas","mec":"3 títeres como minions. Regla Immortal Master: no puedes matar a Geppetto mientras queden los 3 en juego. Trampas en objetos y en cartas de Terror.","com":"Puede resultar demasiado fácil si limpias los títeres pronto.","foro":"Cuidado con buscar aquí: las trampas de objeto son desagradables. Y no intentes rematarlo sin haber quitado títeres antes."},"Frightmare on Maple Lane":{"nivel":"Medio","mapa":"Callejones sin salida, la acción Convince es pesada","mec":"Mundo de los sueños y Boiler Room. Necesitas la carta Convince para entrar en casas ocupadas.","com":"Opiniones partidas. Suele señalarse como la caja mecánicamente más floja de la S1, pero tiene defensores."},"Into the Void":{"nivel":"Avanzado","mapa":"Tarjetas llave, esclusas y autodestrucción","mec":"Evoluciona en 3 fases (Hatchling → Youngling → Adult). Se esconde tras la primera víctima y ataca por emboscada.","com":"De las más versátiles para mezclar, porque su mecánica funciona en cualquier mapa. Reglas llevaderas una vez las pillas.","foro":"Tiene victorias alternativas además de matarlo: autodestruir la nave y escapar, o echarlo por una esclusa. Si la pelea se te tuerce, cambia de objetivo."},"Panic at Station 2891":{"nivel":"Avanzado","mapa":"Rescate en helicóptero en vez de salidas, mecánica de congelación","mec":"Las víctimas se van testeando por infección. Las infectadas se convierten en killers independientes.","com":"Se le acusa de mucho mantenimiento; otros dicen que los dos sistemas extra se llevan bien una vez entendidos.","foro":"Estrategia del foro: testa cuanto antes a las dos víctimas expuestas más cercanas al laboratorio y deja que la tercera mute sola. Mantener un organismo vivo a poca vida te da el dado de adrenalina y evita los efectos de «si no hay organismo». El hacha es ideal porque tienen poca vida. Y puedes mandar víctimas al helicóptero por radio sin estar tú allí."},"A Knock at the Door":{"nivel":"Avanzado","mapa":"El mejor formato multi-killer, con crafteo","mec":"3 killers a la vez, uno de ellos siempre el «activo» y va cambiando. Sistema propio de crafteo de armas.","com":"Pese a los tres killers, se sigue sorprendentemente bien. Nunca abruma."},"Once Upon a Full Moon":{"nivel":"Principiante+","mapa":"Demasiado simple, se queda corto","mec":"Dos modos de killer, Rastrear y Matar, con acciones distintas. El tablero más pequeño de todas las cajas.","com":"Buen segundo killer después de Hans: los dos modos crean una subida de dificultad natural.","foro":"Ojo con una cosa: tiene un Dark Power que anula el daño de Retaliate y de cualquier reacción que devuelva golpes. Sigue bloqueando el ataque, pero no le haces nada. Si te sale, cambia el plan."},"Madness in the Dark":{"nivel":"Avanzado","mapa":"Sistema de pastillas y cartas Amped, carta «Final Girl 2.0»","mec":"Se cura sin tope mientras no la ataques. Cartas Amped (acciones mejoradas) a través del sistema de pastillas.","com":"Se la describe como impredecible: depende muchísimo de lo pronto que la encares.","foro":"No te persigue ella, te manda maniacos que van solo a por ti sin descanso. Y ojo: los maniacos hacen pérdida directa de vida, que NO se puede bloquear con Guard ni Retaliate. Aquí las defensivas sirven poco. Toca movilidad, rescatar rápido y llevar siempre un ataque a mano."},"The Killer from Tomorrow":{"nivel":"Experto","mapa":"La mecánica del Salvador depende mucho de la suerte","mec":"Dos fases (Mark V → Mark X) con stats distintos. El daño le va arrancando piezas cibernéticas antes de pasar de fase. Hay una víctima VIP, el Salvador, a la que hay que proteger.","com":"Frustrante en su propio mapa porque el rescate del Salvador depende mucho de los dados. Mejor en otros mapas. Además está entre los killers con más reglas del juego."},"Hell to Pay":{"nivel":"Medio+","mapa":"Losetas modulares, la mejor puerta de entrada a la S3","mec":"Las Aflicciones funcionan como objetivos opcionales además de la condición de victoria normal.","com":"Favorita de la comunidad como inicio de S3: exigente sin llegar a abrumar."},"The Falconwood Files":{"nivel":"Avanzado","mapa":"Misiones y dimensión espejo, mucha rejugabilidad","mec":"Existe una dimensión espejo oculta, versión paralela de cada casilla. Sistema de misiones con recompensas a elegir.","com":"Muy valorada por rejugabilidad: la elección de misiones hace que cada partida salga distinta."},"The Marrek Murders":{"nivel":"Medio","mapa":"Salidas bloqueadas, movimiento por estanterías","mec":"El Tormentor no aparece en el tablero hasta el Finale. Antes solo hay trampas mortales que desactivar.","com":"A la comunidad desactivar trampas antes del Finale no le resulta muy gratificante."},"Don't Make a Sound":{"nivel":"Medio","mapa":"Los gusanos de arena actúan como un segundo killer","mec":"Mecánica de ruido: tus propias acciones generan ruido, atraen al killer y lo activan.","com":"Concepto interesante, pero la comunidad opina que no está llevado hasta el final."},"Bad Times at Buddyland":{"nivel":"Medio","mapa":"4 casillas de recreativas como punto caliente","mec":"Los Buddies son minions con vida, iniciativa y ataque propios. No puedes atacar a Billy mientras haya un Buddy en su casilla. Se cura con el símbolo de corazón mientras quede activa 1 de las 4 fuentes de energía, que puedes desactivar gastando tiempo. El Finale épico saca un segundo killer, Boris: hay que matar a los dos.","com":"La apodan «el Camp Happy Trails de la S4»: buen campo de pruebas."},"A Rotten Harvest":{"nivel":"Medio","mapa":"Los niños actúan como enemigos independientes","mec":"Pista de Locura de la Cosecha: un corazón cura O baja la locura, nunca las dos. Los niveles 1-3 dan un bonus a elegir. Pasar del nivel 3 es derrota instantánea. Los niños secuestran víctimas para llevarlas al altar.","com":"Muy valorada la tensión de riesgo y recompensa de esa pista."},"A Demon in the Shadows":{"nivel":"Avanzado","mapa":"Malicia y sistema de dados bendito/maldito","mec":"Victoria en dos partes: derrotar a la monja poseída Ursula y luego revivirla con Bendiciones Divinas. Las casillas de Malicia cambian tu dado por el maldito. Colocar las 14 fichas de Malicia es derrota instantánea.","com":"El killer más atmosférico de la S4, y el mapa está entre los mejores del juego."},"The Green Terror":{"nivel":"Experto","mapa":"Sistema de río, víctimas soldado entrenables","mec":"Movimiento oculto con un mazo de cartas de ruta. Estados Oculto/Visible con acciones distintas. Un ataque acertado revela su ruta; uno fallado dispara la penalización de emboscada.","com":"El único killer de movimiento oculto del juego, muy tenso. Pero la comunidad avisa: el movimiento oculto se suma a un bucle ya complejo, y el tablero se lee mal. De los más exigentes en reglas."},"The Raptor Games":{"nivel":"Avanzado","mapa":"Vallas eléctricas, erupción volcánica","mec":"La vida de la manada es el número de raptors, sin tope. Los raptors sueltos se paran en las víctimas en vez de atacarlas. El T-Rex no se puede matar, mueve 2 por ronda y come en orden fijo: víctimas, raptors, Final Girl, killer. Tres vallas eléctricas bloquean movimiento y línea de tiro; un dado en Upkeep decide cuáles están activas. Rescatar cuesta 1 tiempo extra.","com":"Datos preliminares: la caja es muy reciente y hay poca experiencia."},"The North Pole Nightmare":{"nivel":"Medio","mapa":"Un pueblo con el árbol de Navidad en el centro","mec":"Sistema de regalos: los elfos (las víctimas) van revelando regalos con efecto aleatorio bueno o malo, y tú puedes arriesgarte a abrirlos. Trae su propio vehículo, el reno.","com":"Junto a Shriek, la única caja que trae miniaturas de serie. Krampus arranca con 10 de vida y horror 4, según fuente comunitaria."},"Shriek":{"nivel":"Avanzado","mapa":"Parodia de la GenCon, recinto ferial","mec":"Mort no empieza en el tablero: está escondido entre 10 sospechosos colocados al azar. Las cartas Interrogar y Coaccionar van revelando pistas que eliminan sospechosos hasta dejar uno. Hasta desenmascararlo, ciertas cartas de Terror dejan actuar como killer a un sospechoso al azar. Las víctimas no entran en pánico hasta que se le desenmascara.","com":"Homenaje a Scream con guasa. Es el lanzamiento más reciente, hay poca experiencia todavía."}},"cells":{"Camp Happy Trail":{"Hans":[548,0.6405],"Dr. Fright":[82,0.7805],"Terror from Above":[64,0.5781],"Poltergeist":[38,0.6579],"Geppetto":[48,0.7292],"Inkanyamba":[29,0.6897],"Terror from the Grave":[54,0.5556],"The Intruders":[78,0.7564],"Ratchet Lady":[56,0.8036],"Evomorph":[69,0.6957],"Big Bad Wolf":[66,0.7273],"The Organism":[73,0.8493],"Krampus":[65,0.8],"Terror from Destiny":[11,0.8182],"Slayer":[57,0.6491],"Tormentor":[18,0.7778],"Hunter":[91,0.8242],"The Eyeless":[6,0.6667],"Razorface":[9,0.8889],"Mort":[9,0.6667],"Grimlash":[17,0.9412],"Billy":[7,0.7143],"Volk'ar":[4,0.5],"Berith":[7,0.7143],"Terror from Beyond":[6,0.6667],"Raptors":[1,1.0],"Terror from The Grave":[1,1.0]},"Maple Lane":{"Dr. Fright":[172,0.7558],"Hans":[97,0.6701],"Poltergeist":[55,0.6],"Terror from Above":[32,0.5312],"Inkanyamba":[29,0.7241],"Geppetto":[74,0.7703],"Terror from the Grave":[33,0.303],"Big Bad Wolf":[12,0.6667],"The Organism":[51,0.7255],"Evomorph":[54,0.7963],"The Intruders":[22,0.7727],"Ratchet Lady":[78,0.5513],"Krampus":[37,0.7027],"Hunter":[6,0.8333],"Terror from Destiny":[7,0.8571],"Razorface":[50,0.6],"Tormentor":[58,0.8103],"Billy":[5,0.8],"Slayer":[2,0.5],"The Eyeless":[2,0.5],"Mort":[5,1.0],"Grimlash":[4,1.0],"Berith":[4,0.75],"Volk'ar":[1,1.0],"Terror from Beyond":[1,0.0],"Terror from The Grave":[2,0.0]},"Creech Manor":{"Dr. Fright":[48,0.6042],"Poltergeist":[238,0.4202],"Hans":[109,0.6239],"Inkanyamba":[53,0.566],"Geppetto":[80,0.6625],"Terror from Above":[38,0.4211],"Big Bad Wolf":[15,0.8],"Ratchet Lady":[12,0.75],"The Intruders":[41,0.7073],"The Organism":[57,0.8421],"Evomorph":[12,0.8333],"Terror from the Grave":[44,0.6818],"Krampus":[71,0.4366],"The Eyeless":[60,0.6167],"Tormentor":[44,0.6136],"Terror from Destiny":[6,1.0],"Hunter":[2,1.0],"Slayer":[50,0.46],"Razorface":[52,0.4231],"Mort":[6,0.6667],"Billy":[3,0.6667],"Grimlash":[5,0.8],"Berith":[3,0.6667],"Volk'ar":[1,0.0],"Raptors":[1,1.0],"Terror from The Grave":[1,1.0]},"Carnival of Blood":{"Geppetto":[233,0.4421],"Poltergeist":[80,0.6],"Dr. Fright":[69,0.5942],"Inkanyamba":[36,0.5556],"Hans":[49,0.3878],"Terror from Above":[17,0.6471],"Terror from the Grave":[12,0.4167],"The Intruders":[79,0.4684],"Ratchet Lady":[62,0.5323],"Big Bad Wolf":[43,0.5814],"The Organism":[19,0.6842],"Evomorph":[51,0.6863],"Krampus":[43,0.3721],"Slayer":[5,0.8],"Tormentor":[79,0.6962],"Terror from Destiny":[8,0.75],"Hunter":[3,0.6667],"The Eyeless":[51,0.6863],"Razorface":[71,0.2958],"Mort":[3,0.6667],"Grimlash":[3,0.6667],"Billy":[1,1.0],"Volk'ar":[1,0.0],"Berith":[1,0.0],"Raptors":[1,1.0],"Terror from The Grave":[5,0.6]},"Sacred Groves":{"Inkanyamba":[141,0.383],"Hans":[82,0.3537],"Dr. Fright":[55,0.6182],"Poltergeist":[73,0.411],"Geppetto":[48,0.625],"Ratchet Lady":[27,0.5185],"The Organism":[53,0.5283],"Terror from Above":[49,0.551],"Terror from the Grave":[42,0.4524],"Big Bad Wolf":[22,0.4091],"Evomorph":[16,0.625],"The Intruders":[55,0.4364],"Krampus":[8,0.25],"Razorface":[48,0.2708],"Tormentor":[37,0.4865],"Slayer":[49,0.3265],"The Eyeless":[5,0.2],"Hunter":[3,0.3333],"Mort":[4,0.25],"Terror from Destiny":[31,0.8065],"Billy":[3,0.3333],"Grimlash":[1,1.0]},"Wolfe Asylum":{"Ratchet Lady":[148,0.5],"Evomorph":[22,0.6818],"Terror from Above":[21,0.9048],"Big Bad Wolf":[29,0.6552],"Inkanyamba":[37,0.5946],"Geppetto":[34,0.7059],"Dr. Fright":[58,0.7414],"Hans":[73,0.6849],"Poltergeist":[55,0.5818],"The Intruders":[25,0.52],"The Organism":[47,0.8298],"Terror from the Grave":[46,0.3478],"Krampus":[44,0.6364],"Razorface":[4,0.75],"The Eyeless":[7,0.5714],"Tormentor":[73,0.8082],"Terror from Destiny":[5,0.6],"Hunter":[40,0.65],"Slayer":[51,0.549],"Mort":[2,0.5],"Grimlash":[2,1.0],"Billy":[3,0.3333],"Berith":[1,1.0],"Terror from Beyond":[1,1.0],"Volk'ar":[1,1.0]},"Station 2891":{"The Organism":[164,0.6524],"Evomorph":[67,0.7761],"Hans":[22,0.6364],"Inkanyamba":[39,0.6667],"Geppetto":[44,0.75],"Poltergeist":[69,0.5797],"Ratchet Lady":[22,0.8182],"Terror from Above":[38,0.4211],"Dr. Fright":[51,0.7059],"The Intruders":[37,0.4324],"Big Bad Wolf":[63,0.6349],"Terror from the Grave":[34,0.5882],"Krampus":[41,0.6829],"Razorface":[61,0.623],"Slayer":[2,1.0],"Terror from Destiny":[15,0.6],"Hunter":[9,0.4444],"The Eyeless":[51,0.6275],"Tormentor":[7,0.8571],"Mort":[3,1.0],"Grimlash":[8,0.625],"Billy":[1,1.0],"Volk'ar":[3,0.6667],"Terror from Beyond":[1,1.0],"Raptors":[1,1.0],"Berith":[1,1.0],"Terror from The Grave":[1,1.0]},"Wingard Cottage":{"The Intruders":[205,0.6098],"The Organism":[25,0.76],"Terror from the Grave":[34,0.4118],"Evomorph":[64,0.7969],"Terror from Above":[29,0.4828],"Poltergeist":[33,0.6667],"Inkanyamba":[42,0.7381],"Geppetto":[19,0.7895],"Hans":[72,0.6806],"Dr. Fright":[16,0.875],"Ratchet Lady":[52,0.8077],"Big Bad Wolf":[76,0.7368],"Krampus":[13,0.6154],"Tormentor":[56,0.8571],"Razorface":[3,0.6667],"Hunter":[43,0.7907],"Slayer":[78,0.7051],"The Eyeless":[6,0.5],"Terror from Destiny":[7,0.8571],"Mort":[59,0.5932],"Billy":[4,0.75],"Grimlash":[9,0.8889],"Berith":[8,0.875],"Volk'ar":[2,1.0],"Raptors":[2,1.0],"Terror from The Grave":[1,1.0]},"Storybook Woods":{"Big Bad Wolf":[185,0.7459],"Evomorph":[65,0.8154],"Terror from the Grave":[14,0.7143],"Poltergeist":[20,0.75],"The Organism":[58,0.7931],"Geppetto":[41,0.9268],"Hans":[45,0.7556],"Ratchet Lady":[51,0.7647],"Terror from Above":[11,0.6364],"Dr. Fright":[63,0.6984],"Inkanyamba":[54,0.8519],"The Intruders":[21,0.7619],"Krampus":[10,0.9],"Razorface":[38,0.7105],"Tormentor":[4,1.0],"The Eyeless":[45,0.7778],"Terror from Destiny":[11,0.9091],"Hunter":[5,0.8],"Slayer":[7,0.8571],"Billy":[5,0.8],"Mort":[8,0.875],"Grimlash":[6,1.0],"Volk'ar":[3,0.6667],"Berith":[2,1.0],"Raptors":[1,1.0],"Terror from Beyond":[2,1.0],"Terror from The Grave":[1,0.0]},"USS Konrad":{"Evomorph":[202,0.7475],"The Organism":[26,0.7692],"The Intruders":[66,0.7576],"Terror from the Grave":[17,0.3529],"Geppetto":[14,0.9286],"Hans":[77,0.7662],"Dr. Fright":[32,0.9062],"Inkanyamba":[34,0.8824],"Ratchet Lady":[52,0.8077],"Poltergeist":[19,0.8421],"Terror from Above":[10,0.7],"Big Bad Wolf":[58,0.6724],"Krampus":[52,0.8269],"Razorface":[3,0.6667],"Slayer":[5,0.8],"Hunter":[43,0.9302],"Tormentor":[10,0.8],"Terror from Destiny":[5,0.8],"The Eyeless":[46,0.8696],"Mort":[5,0.8],"Billy":[2,0.5],"Grimlash":[10,0.8],"Volk'ar":[2,0.5],"Berith":[3,0.6667],"Terror from Beyond":[3,0.3333],"Terror from The Grave":[3,1.0]},"Santa's Village":{"Krampus":[180,0.4667],"The Intruders":[11,0.6364],"Geppetto":[52,0.6731],"Poltergeist":[54,0.6667],"The Organism":[35,0.6857],"Inkanyamba":[9,0.8889],"Terror from the Grave":[12,0.5],"Terror from Above":[15,0.4],"Ratchet Lady":[43,0.7907],"Dr. Fright":[55,0.8364],"Big Bad Wolf":[11,0.5455],"Evomorph":[46,0.8043],"Hans":[61,0.7705],"Tormentor":[3,1.0],"Razorface":[3,0.3333],"Slayer":[5,0.6],"Hunter":[3,1.0],"The Eyeless":[3,1.0],"Billy":[5,0.4],"Mort":[5,0.8],"Terror from Destiny":[4,1.0],"Berith":[3,0.6667],"Grimlash":[1,1.0],"Raptors":[2,0.5],"Volk'ar":[1,1.0]},"Sunnydaze Mall":{"Hunter":[140,0.6071],"The Eyeless":[12,0.4167],"Poltergeist":[5,0.8],"Tormentor":[12,0.8333],"Razorface":[9,0.7778],"Krampus":[5,0.6],"Hans":[15,0.4667],"Evomorph":[45,0.7111],"Dr. Fright":[5,0.8],"Terror from Destiny":[29,0.8276],"Terror from the Grave":[26,0.5],"Ratchet Lady":[5,0.8],"Geppetto":[5,0.6],"Inkanyamba":[2,1.0],"The Organism":[3,1.0],"Big Bad Wolf":[8,0.5],"The Intruders":[44,0.6591],"Billy":[4,0.5],"Slayer":[45,0.5111],"Mort":[6,0.5],"Terror from Above":[25,0.64],"Grimlash":[3,0.3333],"Volk'ar":[2,0.0],"Raptors":[2,0.5]},"Marrek Warehouse":{"Tormentor":[164,0.7134],"Hunter":[51,0.5686],"The Intruders":[63,0.6825],"Big Bad Wolf":[6,0.6667],"Geppetto":[7,0.5714],"The Eyeless":[5,0.6],"Dr. Fright":[45,0.8],"The Organism":[49,0.7347],"Slayer":[5,0.4],"Inkanyamba":[2,1.0],"Hans":[63,0.6032],"Evomorph":[18,0.6667],"Poltergeist":[2,1.0],"Ratchet Lady":[3,0.6667],"Terror from Above":[2,0.5],"Billy":[5,0.2],"Mort":[51,0.7451],"Krampus":[5,0.6],"Terror from the Grave":[3,0.0],"Razorface":[5,0.8],"Terror from Destiny":[2,1.0],"Grimlash":[8,0.75],"Berith":[3,0.6667],"Terror from Beyond":[1,1.0],"Volk'ar":[1,1.0],"Raptors":[1,1.0]},"Utopia":{"The Eyeless":[173,0.5607],"Terror from Above":[31,0.6452],"Big Bad Wolf":[5,0.6],"Razorface":[7,0.4286],"Terror from Destiny":[32,0.6875],"Inkanyamba":[6,0.5],"Tormentor":[6,0.6667],"Slayer":[6,0.6667],"The Intruders":[61,0.4918],"Evomorph":[63,0.6984],"Ratchet Lady":[46,0.6957],"Hans":[7,0.4286],"Dr. Fright":[10,0.3],"Geppetto":[6,0.5],"Poltergeist":[66,0.5758],"The Organism":[62,0.7742],"Terror from the Grave":[24,0.5833],"Hunter":[7,0.7143],"Billy":[5,0.8],"Krampus":[6,0.5],"Mort":[1,1.0],"Terror from Beyond":[1,0.0],"Raptors":[1,1.0],"Berith":[2,0.5]},"Falconwood":{"Slayer":[126,0.7063],"Terror from Destiny":[25,0.84],"Hans":[61,0.7213],"Evomorph":[5,0.8],"Tormentor":[6,0.6667],"The Organism":[5,1.0],"The Eyeless":[7,0.8571],"Dr. Fright":[6,1.0],"Terror from Above":[22,0.7727],"Poltergeist":[5,0.8],"Geppetto":[6,0.8333],"Inkanyamba":[2,1.0],"The Intruders":[55,0.8],"Big Bad Wolf":[59,0.7627],"Ratchet Lady":[5,0.6],"Krampus":[5,0.4],"Razorface":[6,0.8333],"Hunter":[8,0.375],"Mort":[5,0.6],"Terror from the Grave":[32,0.5312],"Grimlash":[7,1.0],"Billy":[6,0.6667],"Berith":[1,1.0],"Volk'ar":[2,0.5],"Raptors":[1,1.0]},"Hellscape":{"Hans":[16,0.9375],"The Organism":[6,1.0],"Poltergeist":[46,0.7826],"Terror from Destiny":[29,0.7931],"Krampus":[6,1.0],"Geppetto":[54,0.8333],"Tormentor":[6,1.0],"The Intruders":[6,0.8333],"Hunter":[8,1.0],"Razorface":[127,0.622],"Dr. Fright":[67,0.9403],"Evomorph":[54,0.8889],"Inkanyamba":[63,0.7937],"Ratchet Lady":[8,1.0],"Big Bad Wolf":[7,0.8571],"The Eyeless":[5,0.8],"Slayer":[2,0.5],"Terror from the Grave":[35,0.5429],"Terror from Above":[27,0.6296],"Mort":[1,1.0],"Grimlash":[5,1.0],"Volk'ar":[3,1.0],"Berith":[6,0.6667],"Billy":[1,1.0],"Terror from Beyond":[2,0.5],"Raptors":[1,1.0]},"Buddyland":{"Billy":[89,0.6067],"Slayer":[2,0.5],"The Intruders":[12,0.75],"Mort":[8,0.875],"Poltergeist":[19,0.4737],"Hunter":[3,0.6667],"Terror from Destiny":[3,1.0],"Krampus":[3,1.0],"Geppetto":[8,0.75],"Dr. Fright":[7,0.5714],"Tormentor":[1,1.0],"Inkanyamba":[4,1.0],"Terror from the Grave":[2,0.0],"Grimlash":[5,1.0],"Razorface":[6,0.6667],"Evomorph":[5,1.0],"Berith":[6,0.8333],"Big Bad Wolf":[8,0.875],"The Organism":[4,0.75],"Ratchet Lady":[5,1.0],"Volk'ar":[4,0.75],"Raptors":[2,1.0],"Terror from Beyond":[2,0.5],"Terror from Above":[1,1.0],"Hans":[15,0.4]},"Mega BGCon":{"The Eyeless":[5,1.0],"Poltergeist":[5,1.0],"Billy":[8,0.5],"Hans":[7,0.7143],"Mort":[121,0.7107],"The Organism":[3,0.6667],"The Intruders":[8,0.5],"Big Bad Wolf":[44,0.8182],"Tormentor":[3,0.6667],"Terror from the Grave":[35,0.6],"Dr. Fright":[5,0.8],"Geppetto":[2,1.0],"Ratchet Lady":[3,1.0],"Terror from Above":[23,0.7826],"Hunter":[3,1.0],"Krampus":[3,0.6667],"Razorface":[2,1.0],"Inkanyamba":[1,1.0],"Evomorph":[2,1.0],"Slayer":[3,1.0],"Grimlash":[6,0.5],"Terror from Destiny":[24,0.8333],"Berith":[2,1.0],"Terror from Beyond":[5,0.4],"Volk'ar":[2,1.0]},"Shady Acres":{"Grimlash":[76,0.7105],"Hans":[7,0.4286],"The Intruders":[15,0.4],"Krampus":[1,0.0],"Billy":[5,0.4],"Mort":[7,0.5714],"Dr. Fright":[1,0.0],"Tormentor":[5,0.4],"Geppetto":[3,1.0],"Slayer":[4,0.5],"Evomorph":[10,0.4],"Big Bad Wolf":[2,1.0],"Terror from Above":[2,1.0],"Hunter":[1,1.0],"Terror from Destiny":[3,0.6667],"The Organism":[6,0.6667],"Berith":[9,0.3333],"Terror from Beyond":[2,1.0],"Raptors":[1,1.0],"Terror from the Grave":[1,0.0],"Ratchet Lady":[1,1.0]},"L'Armes Abbey":{"Berith":[64,0.5],"Mort":[4,0.75],"Krampus":[3,0.6667],"Billy":[5,0.6],"Evomorph":[5,0.6],"Tormentor":[2,1.0],"Geppetto":[2,0.5],"Poltergeist":[2,0.5],"Grimlash":[7,0.7143],"Volk'ar":[1,1.0],"Hans":[6,0.6667],"The Intruders":[5,0.8],"Slayer":[1,0.0],"Razorface":[2,0.5],"Terror from Beyond":[2,0.0],"Terror from Destiny":[1,1.0],"Terror from Above":[3,0.3333],"The Organism":[2,0.0],"Inkanyamba":[1,1.0],"Raptors":[1,1.0],"Ratchet Lady":[1,1.0],"Dr. Fright":[1,1.0],"Big Bad Wolf":[1,1.0],"Terror from the Grave":[1,1.0]},"Pesadilla Verde":{"Volk'ar":[43,0.7907],"Hans":[3,1.0],"The Intruders":[5,1.0],"Big Bad Wolf":[2,1.0],"Inkanyamba":[3,0.6667],"The Eyeless":[1,0.0],"The Organism":[2,0.5],"Berith":[1,1.0],"Slayer":[3,1.0],"Hunter":[1,1.0],"Geppetto":[3,0.3333],"Terror from the Grave":[3,0.6667],"Raptors":[2,0.5],"Terror from Above":[2,1.0],"Evomorph":[1,1.0],"Razorface":[4,0.5],"Terror from Beyond":[2,1.0],"Ratchet Lady":[2,1.0],"Dr. Fright":[1,0.0],"Billy":[1,1.0],"Tormentor":[1,1.0]},"Isla Lagarto":{"Slayer":[3,1.0],"Raptors":[41,0.5366],"Billy":[5,0.8],"Terror from Beyond":[2,1.0],"The Eyeless":[1,1.0],"Berith":[1,1.0],"Inkanyamba":[1,0.0],"Razorface":[1,1.0],"Dr. Fright":[1,1.0],"Hans":[1,1.0],"Terror from the Grave":[1,1.0]}},"temporadas":[{"id":"S1","nombre":"Temporada 1","cajas":["The Happy Trails Horror","The Haunting of Creech Manor","Slaughter in the Groves","Carnage at the Carnival","Frightmare on Maple Lane"],"plays":1332,"wr":0.5541},{"id":"S2","nombre":"Temporada 2","cajas":["Into the Void","Panic at Station 2891","A Knock at the Door","Once Upon a Full Moon","Madness in the Dark"],"plays":904,"wr":0.6582},{"id":"S3","nombre":"Temporada 3","cajas":["The Killer from Tomorrow","Hell to Pay","The Falconwood Files","The Marrek Murders","Don't Make a Sound"],"plays":730,"wr":0.6397},{"id":"S4","nombre":"Temporada 4","cajas":["Bad Times at Buddyland","A Rotten Harvest","A Demon in the Shadows","The Green Terror","The Raptor Games"],"plays":313,"wr":0.6262},{"id":"SP","nombre":"Especiales","cajas":["The North Pole Nightmare","Shriek"],"plays":301,"wr":0.5648}],"reviews":{"Madness in the Dark":{"veredicto":"Muy valorada por diseño, y de las más duras del juego. Tres reviews coinciden: el manicomio y las pastillas encantan, la Ratchet Lady frustra. No es caja para empezar.","pros":["El Wolfe Asylum es de las localizaciones mejor valoradas del juego. «Probablemente mi favorita», «top tier location».","El sistema de pastillas es lo más elogiado. Juntas tres y sacas una carta Amped, que es muy potente.","Los maniacos gustan como sistema de minions, y las cartas de Calmar dan respuesta al jugador.","El mapa funciona bien con otros killers, no solo con el suyo."],"contras":["Su curación sin tope es lo que rompe a la gente. «Si dejas que se te vaya de las manos, es extremadamente difícil de tratar».","Las pastillas cuestan de aprovechar bien, aunque sean fáciles de recoger.","Exceso de reglas en algunas cartas de evento, que añaden complicación sin aportar.","Hay armas con pegas serias: munición limitada o pérdida de vida al usarlas."],"claves":["Ve a por ella pronto y a menudo. Es el consejo que más se repite: si esperas, se vuelve casi imposible de matar.","Pero saca tiempo para un arma igualmente. Quien ganó lo hizo con las dos cosas.","Ella es pasiva al principio: solo sus maniacos te persiguen, ella aguanta posición. Si la mueves sin icono de bota, te estás inventando un killer mucho peor.","Las pastillas son fáciles de encontrar y hay sitios que dan dos. Cada Amp cuesta tres."],"confirma":[["Un veterano de 150+ partidas dice que es mucho más fácil sacándola de su manicomio","Cierto y por mucho: 66,6% de media en cualquier mapa, pero 50,0% en Wolfe Asylum. Es su peor mapa de largo. En Camp Happy Trails sube al 80,4% y en Station 2891 al 81,8%."],["Dice además que es peor en mapas con curación extra","Encaja: el Wolfe Asylum con otros killers da 63,2%, cerca de la media. Lo brutal es la pareja, no cada mitad."],["Una review señala el finale «Hold Her Down» como brutalmente difícil","Confirmado: 62,1% sobre 103 partidas, su peor finale. Su peor Dark Power es Shield of Madness, 55,5% sobre 110."]],"fuentes":[["Madness in the Dark (Ratchet Lady) strategy? — BGG","https://boardgamegeek.com/thread/3046429/madness-in-the-dark-ratchet-lady-strategy"],["New to Final Girl. Ratchet Lady is absurdly difficult — BGG","https://boardgamegeek.com/thread/3199605/new-to-final-girl-am-i-playing-correctly-ratchet-l"],["Review de Zatu Games","https://zatu.com/en-us/blogs/reviews/final-girl-madness-in-the-dark-review"],["Review de Dude Take Your Turn","https://dudetakeyourturn.ca/2026/06/08/nurse-can-i-have-my-pills-now-final-girl-madness-in-the-dark-review/"]]}}};
+
+(function () {
+  var RAMPA = ['#8f2026','#c23a42','#e0656c','#ee9a9f','#f6c9cc','#3a3438','#bcd8f6','#8fbaef','#5f9ce6','#3a7ed0','#2159a0'];
+  var CORTES = [-0.20,-0.14,-0.09,-0.045,-0.015,0.015,0.045,0.09,0.14,0.20];
+  var MEDIA = D.meta.wr;
+  var POR_DEFECTO = ['The Happy Trails Horror','Into the Void','A Knock at the Door','Once Upon a Full Moon','Madness in the Dark'];
+  var CLAVE = 'fg-mis-cajas';
+  var MIAS = (function () {
+    try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
+    return POR_DEFECTO.slice();
+  })();
+  function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
+
+  var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
+  var pc0 = function (x) { return Math.round(x * 100); };
+
+  function paso(wr) {
+    var d = wr - MEDIA, i = 0;
+    while (i < CORTES.length && d >= CORTES[i]) i++;
+    return i;
+  }
+  function colorDe(wr) {
+    var i = paso(wr);
+    return i === 5 ? 'var(--mid)' : RAMPA[i];
+  }
+  function tintaDe(wr) {
+    var i = paso(wr);
+    return (i <= 1 || i >= 9) ? '#ffffff' : (i === 5 ? '#cfc7ca' : '#12100f');
+  }
+
+  // cajas que corresponden a cada pareja killer+localizacion
+  var ESCAJA = {};
+  D.films.forEach(function (f) { ESCAJA[f.killer + '|' + f.loc] = f.film; });
+  var misKillers = {}, misLocs = {};
+  function recalcMias() {
+    misKillers = {}; misLocs = {};
+    D.films.forEach(function (f) {
+      if (MIAS.indexOf(f.film) !== -1) { misKillers[f.killer] = 1; misLocs[f.loc] = 1; }
+    });
+  }
+  recalcMias();
+
+  // ---------- tablas reutilizables ----------
+  function tablaOrdenada(filas, cabeceras) {
+    var s = filas.slice().sort(function (a, b) { return a[1] - b[1]; });
+    var h = '<div class="tw"><table class="mini"><thead><tr><th>' + cabeceras[0] +
+            '</th><th class="n">' + cabeceras[1] + '</th><th class="n">Partidas</th></tr></thead><tbody>';
+    h += s.map(function (r, i) {
+      var cls = i === 0 ? 'peor' : (i === s.length - 1 ? 'mejor' : '');
+      return '<tr class="' + cls + '"><td>' + r[0] + '</td><td class="n">' + pc(r[1]) +
+             '</td><td class="n">' + r[2] + '</td></tr>';
+    }).join('');
+    return h + '</tbody></table></div>';
+  }
+
+  function secciones(secs) {
+    var h = '';
+    Object.keys(secs).forEach(function (k) {
+      if (!secs[k].length) return;
+      var t = k === 'Dark Power' ? 'Dark Powers, del que más te hunde al que menos'
+            : k === 'Finale' ? 'Finales, del que más te hunde al que menos'
+            : k === 'Number of Organisms' ? 'Número de Organismos'
+            : k;
+      h += '<p class="sec-t">' + t + '</p>' + tablaOrdenada(secs[k], ['Carta', 'Victorias']);
+    });
+    return h;
+  }
+
+  // fila del killer a lo ancho de todos los mapas, y viceversa
+  var MIN_CELDA = 5;   // igual que el umbral de la hoja original
+  var FIABLE = 20;     // por debajo de esto no sacamos conclusiones
+
+  function celda(k, loc) {
+    var c = (D.cells[loc] || {})[k];
+    return c ? { wr: c[1], g: c[0] } : null;
+  }
+  function filaKiller(k) {
+    var out = [];
+    Object.keys(D.cells).forEach(function (loc) {
+      var c = celda(k, loc);
+      if (c && c.g >= MIN_CELDA) out.push([loc, c.wr, c.g]);
+    });
+    return out;
+  }
+  function columnaLoc(loc) {
+    var out = [];
+    Object.keys(D.cells[loc] || {}).forEach(function (k) {
+      var c = celda(k, loc);
+      if (c && c.g >= MIN_CELDA) out.push([k, c.wr, c.g]);
+    });
+    return out;
+  }
+  function extremos(arr, titulo) {
+    if (arr.length < 3) return '';
+    var s = arr.slice().sort(function (a, b) { return b[1] - a[1]; });
+    var fiables = s.filter(function (r) { return r[2] >= FIABLE; });
+    var ref = fiables.length ? fiables : s;
+    var mejor = ref[0], peor = ref[ref.length - 1];
+    return '<p class="sec-t">' + titulo + ' · las ' + s.length + '</p>' +
+      '<div class="tw"><table class="mini"><thead><tr><th>Contra</th><th class="n">Victorias</th>' +
+      '<th class="n">Partidas</th></tr></thead><tbody>' +
+      s.map(function (r) {
+        var poca = r[2] < FIABLE;
+        var cls = poca ? 'poca' : (r === mejor ? 'mejor' : (r === peor ? 'peor' : ''));
+        return '<tr class="' + cls + '"><td>' + r[0] + '</td><td class="n">' + pc(r[1]) +
+               '</td><td class="n">' + r[2] + '</td></tr>';
+      }).join('') + '</tbody></table></div>' +
+      '<p class="nota" style="margin-top:9px"><b>Cómo leerla</b>En gris, las combinaciones con menos de ' + FIABLE +
+      ' partidas: se enseñan pero no cuentan para marcar el mejor y el peor. Quedan fuera las que no llegan a ' +
+      MIN_CELDA + ' partidas.</p>';
+  }
+
+  // ---------- matriz ----------
+  function pintarMatriz() {
+    var soloMias = document.getElementById('f-mias').checked;
+    var orden = document.getElementById('f-orden').value;
+    var busca = document.getElementById('f-busca').value.trim().toLowerCase();
+
+    var ks = D.matrixKillers.filter(function (k) {
+      if (soloMias && !misKillers[k]) return false;
+      if (busca && k.toLowerCase().indexOf(busca) === -1) return false;
+      return true;
+    });
+    var locs = Object.keys(D.matrix).filter(function (l) { return !soloMias || misLocs[l]; });
+    var med = {};
+    D.locs.forEach(function (r) { med[r[0]] = r[1]; });
+    if (orden === 'dif') locs.sort(function (a, b) { return (med[a] || 1) - (med[b] || 1); });
+    else locs.sort(function (a, b) { return a.localeCompare(b, 'es'); });
+
+    var h = '<thead><tr><th></th>' + ks.map(function (k) { return '<th><div>' + k + '</div></th>'; }).join('') + '</tr></thead><tbody>';
+    locs.forEach(function (loc) {
+      h += '<tr><th>' + loc + '</th>';
+      ks.forEach(function (k) {
+        var c = celda(k, loc);
+        if (!c || c.g < MIN_CELDA) { h += '<td><div class="cell nd">·</div></td>'; return; }
+        var v = c.wr, caja = ESCAJA[k + '|' + loc];
+        h += '<td><button type="button" class="cell' + (caja ? ' box' : '') + '"' +
+             ' style="background:' + colorDe(v) + ';color:' + tintaDe(v) + '"' +
+             ' data-k="' + k + '" data-l="' + loc + '" title="' + k + ' en ' + loc + ': ' + pc(v) + ' · ' + c.g + ' partidas">' +
+             pc0(v) + '</button></td>';
+      });
+      h += '</tr>';
+    });
+    document.getElementById('mx').innerHTML = h + '</tbody>';
+
+    document.querySelectorAll('#mx .cell:not(.nd)').forEach(function (b) {
+      b.addEventListener('click', function () {
+        detalleCelda(b.dataset.k, b.dataset.l);
+        var p = document.getElementById('p-mx');
+        if (p.getBoundingClientRect().top > window.innerHeight - 80) {
+          p.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  function detalleCelda(k, loc) {
+    var cc = celda(k, loc);
+    var v = cc.wr, caja = ESCAJA[k + '|' + loc];
+    var kd = D.killers[k], ld = D.locs.filter(function (r) { return r[0] === loc; })[0];
+    var fk = filaKiller(k), cl = columnaLoc(loc);
+    var mediaK = fk.reduce(function (s, r) { return s + r[1]; }, 0) / (fk.length || 1);
+    var mediaL = cl.reduce(function (s, r) { return s + r[1]; }, 0) / (cl.length || 1);
+
+    var h = '<h3>' + k + ' en ' + loc + '</h3>' +
+      '<p class="loc">' + (caja ? 'Es la pareja de <b>' + caja + '</b>, tal y como viene en la caja.'
+                                : 'Combinación cruzada. No vienen en la misma caja.') + '</p>' +
+      '<div class="split">' +
+        '<div><b>' + pc(v) + '</b><span>Esta combinación<br>' + cc.g + ' partidas</span></div>' +
+        '<div><b>' + pc(mediaK) + '</b><span>' + k + '<br>en un mapa medio</span></div>' +
+        '<div><b>' + pc(mediaL) + '</b><span>' + loc + '<br>con un killer medio</span></div>' +
+        '<div><b>' + pc(D.meta.wr) + '</b><span>Media de todo<br>el juego</span></div>' +
+      '</div>' +
+      (cc.g < FIABLE ? '<p class="nota"><b>Poca muestra</b>Solo ' + cc.g + ' partidas. Tómalo como anécdota.</p>' : '') +
+      '<p class="nota"><b>Lectura</b> ' +
+        (v > mediaK && v > mediaL ? 'Se le da bien a los dos. Buena combinación si quieres ganar.'
+         : v < mediaK && v < mediaL ? 'Castiga por los dos lados. De las duras de verdad.'
+         : v > mediaK ? 'Este mapa le sienta mejor de lo normal a este killer.'
+         : 'Este mapa le sienta peor de lo normal a este killer.') + '</p>';
+
+    if (kd) h += secciones(kd.secs);
+    if (D.setups[loc]) h += '<p class="sec-t">Cartas de Setup de ' + loc + '</p>' + tablaOrdenada(D.setups[loc], ['Setup', 'Victorias']);
+    document.getElementById('p-mx').innerHTML = h;
+  }
+
+  function leyenda() {
+    var pasos = [0, 2, 4, 5, 6, 8, 10];
+    document.getElementById('leg').innerHTML =
+      '<span>Más duro</span>' +
+      pasos.map(function (i) { return '<i style="background:' + (i === 5 ? 'var(--mid)' : RAMPA[i]) + '"></i>'; }).join('') +
+      '<span>Más fácil</span><span style="margin-left:10px">· gris = media del juego (' + pc(MEDIA) + ')</span>';
+  }
+
+  // ---------- listas genéricas ----------
+  var ORDEN_ST = {};
+  try { ORDEN_ST = JSON.parse(localStorage.getItem('fg-orden')) || {}; } catch (e) { ORDEN_ST = {}; }
+  function guardarOrden() { try { localStorage.setItem('fg-orden', JSON.stringify(ORDEN_ST)); } catch (e) {} }
+
+  var CLAVES = [
+    { k: 'wr', n: 'Victorias', desc: true },
+    { k: 'g',  n: 'Partidas',  desc: true },
+    { k: 'nombre', n: 'Nombre', desc: false }
+  ];
+
+  function lista(el, filas, render, id) {
+    var st = ORDEN_ST[id] || (ORDEN_ST[id] = { k: 'wr', desc: true });
+
+    var barra = el.previousElementSibling;
+    if (!barra || !barra.classList.contains('ordena')) {
+      barra = document.createElement('div');
+      barra.className = 'ordena';
+      el.parentNode.insertBefore(barra, el);
+    }
+
+    function dibujaBarra() {
+      barra.innerHTML = '<span class="lbl">Ordenar por</span>' +
+        CLAVES.map(function (c) {
+          return '<button type="button" data-k="' + c.k + '" aria-pressed="' + (st.k === c.k) + '">' + c.n + '</button>';
+        }).join('') +
+        '<button type="button" class="dir" aria-pressed="true" title="' +
+          (st.desc ? 'De mayor a menor' : 'De menor a mayor') + '">' +
+          (st.desc ? '\u2193 May' : '\u2191 Men') + '</button>';
+
+      barra.querySelectorAll('button[data-k]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var c = CLAVES.filter(function (x) { return x.k === b.dataset.k; })[0];
+          if (st.k === c.k) st.desc = !st.desc; else { st.k = c.k; st.desc = c.desc; }
+          guardarOrden(); pinta();
+        });
+      });
+      barra.querySelector('.dir').addEventListener('click', function () {
+        st.desc = !st.desc; guardarOrden(); pinta();
+      });
+    }
+
+    function pinta() {
+      var s = filas.slice().sort(function (a, b) {
+        var r = st.k === 'nombre'
+          ? String(a.nombre).localeCompare(String(b.nombre), 'es')
+          : (a[st.k] - b[st.k]);
+        return st.desc ? -r : r;
+      });
+      var max = Math.max.apply(null, s.map(function (f) { return f.wr; }));
+      el.innerHTML = s.map(function (f, i) {
+        return '<button type="button" class="bar' + (f.img ? ' conth' : '') + '" data-i="' + i + '" aria-expanded="false">' +
+          '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
+          (f.img ? '<img class="th" src="' + f.img + '" alt="" loading="lazy"' +
+            (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
+          '<span class="nm">' + f.nombre + (f.mia ? '<span class="mine">Tuya</span>' : '') +
+          (f.sub ? '<i>' + f.sub + '</i>' : '') + '</span>' +
+          '<span class="pc">' + pc(f.wr) + '</span>' +
+          '<span class="pl">' + f.g + '</span></button>';
+      }).join('');
+
+      function abrir(b, quieto) {
+        var ya = b.getAttribute('aria-expanded') === 'true';
+        el.querySelectorAll('.rowdetail').forEach(function (d) { d.remove(); });
+        el.querySelectorAll('.bar').forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+        if (ya) return;
+        b.setAttribute('aria-expanded', 'true');
+        var d = document.createElement('div');
+        d.className = 'rowdetail';
+        d.innerHTML = render(s[parseInt(b.dataset.i, 10)]);
+        b.insertAdjacentElement('afterend', d);
+        if (!quieto) {
+          var r = b.getBoundingClientRect();
+          if (r.top < 70 || r.top > window.innerHeight - 120) b.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+      }
+
+      el.querySelectorAll('.bar').forEach(function (b) {
+        b.addEventListener('click', function () { abrir(b, false); });
+      });
+      if (s.length) abrir(el.querySelector('.bar'), true);
+      dibujaBarra();
+    }
+
+    pinta();
+  }
+
+  function pts(x) { return (x >= 0 ? '+' : '−') + Math.abs(Math.round(x * 100)); }
+
+  function comoJugarla(f) {
+    var c = D.consejos[f.film] || {};
+    var media = f.killWr !== null ? f.killWr : f.wr;
+    var neg = function (r) { return '<b style="display:inline;font-family:inherit;font-size:inherit;letter-spacing:0;text-transform:none;color:inherit">' + r + '</b>'; };
+    var h = '<p class="sec-t">Cómo jugarla</p><div class="tips">';
+
+    var cual, texto;
+    if (f.killer === 'Poltergeist') {
+      cual = 'C'; texto = ', rescate. Es la única caja sin nada que matar: buscar arma es tiempo tirado.';
+    } else if (f.wr < 0.55) {
+      cual = 'B'; texto = ', y lo innegociable es no caer al rojo. En las cajas duras la economía de cartas es lo único que compensa la mala suerte.';
+    } else if (f.wr > 0.72) {
+      cual = 'D'; texto = ' si ves un arma cuerpo a cuerpo en el montaje. Es de las cajas que perdonan, puedes permitirte el viaje.';
+    } else {
+      cual = 'B'; texto = ' por defecto. La C si el montaje te deja víctimas agrupadas cerca de una salida.';
+    }
+    h += '<div class="tip plan"><b>Salida recomendada</b>' +
+      '<button type="button" class="salidaLink" data-s="' + cual + '">' + SALIDAS[cual].n + '</button>' + texto + '</div>';
+
+    var MIN = 20;
+    if (f.plays < 90) {
+      h += '<div class="tip"><b>Cuidado con la muestra</b>Esta caja solo tiene <em>' + f.plays +
+           ' partidas</em> registradas. Repartidas entre Dark Powers, Finales y Setups quedan puñados de partidas por carta, ' +
+           'así que los desgloses de abajo son orientativos y no conclusiones.</div>';
+    }
+
+    var calc = [];
+    var dp = (f.secs['Dark Power'] || []).filter(function (r) { return r[0] !== 'Unrevealed' && r[2] >= MIN; });
+    if (dp.length > 1) {
+      var o = dp.slice().sort(function (a, b) { return a[1] - b[1]; });
+      var horq = o[o.length - 1][1] - o[0][1];
+      calc.push('El Dark Power que más te cuesta es ' + neg(o[0][0]) + ': <em>' +
+        (o[0][1] * 100).toFixed(1).replace('.', ',') + '%</em> frente al <em>' +
+        (media * 100).toFixed(1).replace('.', ',') + '%</em> de media del killer, <em>' + pts(o[0][1] - media) + ' puntos</em>.' +
+        (horq > 0.12 ? ' Con <em>' + Math.round(horq * 100) + ' puntos</em> entre el mejor y el peor, esta caja se decide en buena parte en esa carta.' : ''));
+    }
+    var fin = (f.secs['Finale'] || []).filter(function (r) { return r[0] !== 'Unrevealed' && r[2] >= MIN; });
+    if (fin.length > 1) {
+      var of = fin.slice().sort(function (a, b) { return a[1] - b[1]; });
+      calc.push('El Finale peor es ' + neg(of[0][0]) + ', <em>' + (of[0][1] * 100).toFixed(1).replace('.', ',') +
+        '%</em>. Llega con el mazo de Terror agotado, así que prepárate antes: arma equipada, Guard o Retaliate en mano y un Close Call.');
+    }
+    var sus = f.setups.filter(function (r) { return r[2] >= MIN; });
+    if (sus.length > 1) {
+      var os = sus.slice().sort(function (a, b) { return a[1] - b[1]; });
+      var hs = os[os.length - 1][1] - os[0][1];
+      if (hs > 0.10) {
+        calc.push('El montaje inicial pesa: <em>' + Math.round(hs * 100) + ' puntos</em> entre ' +
+          neg(os[os.length - 1][0]) + ' y ' + neg(os[0][0]) + '. Si sale la mala, cuenta con una partida más larga.');
+      }
+    }
+    var fk = filaKiller(f.killer);
+    if (fk.length > 3) {
+      var mejor = fk.slice().sort(function (a, b) { return b[1] - a[1]; })[0];
+      if (mejor[1] - f.wr > 0.08 && mejor[0] !== f.loc) {
+        calc.push('A este killer su propio mapa le corta las alas. En ' + neg(mejor[0]) + ' la gente gana el <em>' +
+          (mejor[1] * 100).toFixed(1).replace('.', ',') + '%</em>, <em>' + pts(mejor[1] - f.wr) +
+          ' puntos</em> sobre la caja cerrada. Si te atasca, prueba a mezclar.');
+      }
+    }
+    if (calc.length) h += '<div class="tip calc"><b>Lo que dicen los números</b>' + calc.join('<br><br>') + '</div>';
+
+    if (c.mec) h += '<div class="tip"><b>Su mecánica propia</b>' + c.mec + '</div>';
+    if (c.foro) h += '<div class="tip"><b>Consejo del foro</b>' + c.foro + '</div>';
+    if (c.com) h += '<div class="tip"><b>Lo que opina la comunidad</b>' + c.com +
+      (c.nivel ? ' <em>Nivel: ' + c.nivel + '. Mapa: ' + c.mapa + '.</em>' : '') + '</div>';
+
+    return h + '</div>';
+  }
+
+  function pintarCajas() {
+    var filas = D.films.map(function (f) {
+      return { nombre: f.film, sub: f.killer + ' · ' + f.loc, wr: f.wr, g: f.plays,
+               mia: MIAS.indexOf(f.film) !== -1, img: f.img, raw: f };
+    });
+    lista(document.getElementById('l-cajas'), filas, function (row) { return detalleCaja(row.raw); }, 'cajas');
+  }
+
+
+  function bloqueReview(nombre) {
+    var r = D.reviews && D.reviews[nombre];
+    if (!r) return '';
+    var lista = function (a) { return '<ul>' + a.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>'; };
+    return '<p class="sec-t">Qué dicen las reviews</p><div class="rev">' +
+      '<p class="ver">' + r.veredicto + '</p>' +
+      '<div class="rev-cols">' +
+        '<div class="pro"><h5>A favor</h5>' + lista(r.pros) + '</div>' +
+        '<div class="con"><h5>En contra</h5>' + lista(r.contras) + '</div>' +
+      '</div>' +
+      '<div class="conf"><h5>Claves de juego que sacan</h5>' + lista(r.claves) + '</div>' +
+      (r.confirma && r.confirma.length ? '<div class="conf"><h5>Contrastado con las 13.873 partidas</h5>' +
+        r.confirma.map(function (c) { return '<div><i>' + c[0] + '</i>' + c[1] + '</div>'; }).join('') + '</div>' : '') +
+      '<div class="src">Fuentes: ' + r.fuentes.map(function (f) {
+        return '<a href="' + f[1] + '">' + f[0] + '</a>';
+      }).join(' · ') + '</div></div>';
+  }
+
+  function detalleCaja(f) {
+    {
+      var h = '<div class="det-head">' +
+        (f.img ? '<img src="' + f.img + '" alt="Portada de ' + f.film + '" loading="lazy"' +
+          (f.imgpos ? ' style="object-fit:cover;aspect-ratio:5/7;object-position:' + f.imgpos + '"' : '') + '>' : '<div></div>') +
+        '<div><h3>' + f.film + '</h3><p class="loc">' + f.killer + ' en ' + f.loc +
+        (f.fnum ? ' · <b>' + f.fnum + '</b>' : '') + '</p></div></div>' +
+        '<div class="split">' +
+          '<div><b>' + pc(f.wr) + '</b><span>La caja tal cual<br>' + f.plays + ' partidas</span></div>' +
+          (f.killWr !== null ? '<div><b>' + pc(f.killWr) + '</b><span>' + f.killer + ' en<br>cualquier mapa</span></div>' : '') +
+          (f.locWr !== null ? '<div><b>' + pc(f.locWr) + '</b><span>' + f.loc + ' con<br>cualquier killer</span></div>' : '') +
+          '<div><b>' + (D.cajaGirls[f.film] || ['—']).join(' · ') + '</b><span>Sus Final Girls</span></div>' +
+        '</div>' + comoJugarla(f) + secciones(f.secs);
+      if (f.setups.length) h += '<p class="sec-t">Cartas de Setup</p>' + tablaOrdenada(f.setups, ['Setup', 'Victorias']);
+      h += bloqueReview(f.film);
+      h += extremos(filaKiller(f.killer), 'Todos los mapas de ' + f.killer);
+      return h;
+    }
+  }
+
+  function pintarKillers() {
+    var filas = Object.keys(D.killers).map(function (k) {
+      var v = D.killers[k];
+      return { nombre: k, sub: v.box || 'Killer alternativo', wr: v.wr, g: v.g, mia: !!misKillers[k], key: k };
+    });
+    lista(document.getElementById('l-killers'), filas, function (row) {
+      var v = D.killers[row.key];
+      var h = '<h3>' + row.key + '</h3><p class="loc">' + (v.box ? 'Sale en ' + v.box : 'Killer alternativo, sin caja propia') + '</p>' +
+        '<div class="split"><div><b>' + pc(v.wr) + '</b><span>Contra cualquier mapa<br>' + v.g + ' partidas</span></div></div>' +
+        secciones(v.secs) + extremos(filaKiller(row.key), 'Todos los mapas de ' + row.key);
+      return h;
+    }, 'killers');
+  }
+
+  function pintarMapas() {
+    var filas = D.locs.map(function (r) {
+      return { nombre: r[0], sub: '', wr: r[1], g: r[2], mia: !!misLocs[r[0]], key: r[0] };
+    });
+    lista(document.getElementById('l-mapas'), filas, function (row) {
+      var h = '<h3>' + row.key + '</h3><p class="loc">Medido contra todos los killers</p>' +
+        '<div class="split"><div><b>' + pc(row.wr) + '</b><span>Media del mapa<br>' + row.g + ' partidas</span></div></div>';
+      if (D.setups[row.key]) h += '<p class="sec-t">Cartas de Setup</p>' + tablaOrdenada(D.setups[row.key], ['Setup', 'Victorias']);
+      h += extremos(columnaLoc(row.key), 'Todos los killers en ' + row.key);
+      return h;
+    }, 'mapas');
+  }
+
+
+  function pintarTemporadas() {
+    var cont = document.getElementById('l-temps');
+    cont.innerHTML = D.temporadas.map(function (T) {
+      return '<div class="temp"><div class="temp-h"><h3>' + T.nombre + '</h3>' +
+        '<span>' + T.cajas.length + ' cajas · ' + T.plays + ' partidas</span>' +
+        '<span class="wr">' + pc(T.wr) + '</span></div>' +
+        '<div class="fichas" data-t="' + T.id + '">' + T.cajas.map(function (n) {
+          var f = D.films.filter(function (x) { return x.film === n; })[0];
+          var col = paso(f.wr) === 5 ? '#6f676b' : ['#b02c2c','#e05252','#ec8585','#f4b0b0','#fbd9d9','#6f676b','#cde2fb','#9ec5f4','#6da7ec','#3987e5','#1c5cab'][paso(f.wr)];
+          return '<button type="button" class="ficha" data-f="' + n + '" aria-expanded="false">' +
+            (f.img ? '<img src="' + f.img + '" alt="Portada de ' + n + '" loading="lazy"' +
+              (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
+            (MIAS.indexOf(n) !== -1 ? '<span class="f-mia">Tuya</span>' : '') +
+            '<span class="f-body">' +
+              '<span class="f-id">' + (f.fnum || '') + '</span>' +
+              '<span class="f-nm">' + n + '</span>' +
+              '<span class="f-k">' + f.killer + '<br>' + f.loc + '</span>' +
+              '<span class="f-bar"><span class="f-dot" style="background:' + col + '"></span>' +
+                '<span class="f-wr">' + pc(f.wr) + '</span>' +
+                '<span class="f-pl">' + f.plays + ' partidas</span></span>' +
+            '</span></button>';
+        }).join('') + '</div></div>';
+    }).join('');
+
+    cont.querySelectorAll('.ficha').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var rejilla = b.parentNode;
+        var ya = b.getAttribute('aria-expanded') === 'true';
+        cont.querySelectorAll('.fichadet').forEach(function (d) { d.remove(); });
+        cont.querySelectorAll('.ficha').forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+        if (ya) return;
+        b.setAttribute('aria-expanded', 'true');
+        var f = D.films.filter(function (x) { return x.film === b.dataset.f; })[0];
+        var d = document.createElement('div');
+        d.className = 'rowdetail fichadet';
+        d.innerHTML = detalleCaja(f);
+        rejilla.appendChild(d);
+        var r = b.getBoundingClientRect();
+        if (r.top < 70) b.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      });
+    });
+  }
+
+  function pintarGirls() {
+    var o = document.getElementById('g-orden').value;
+    var g = D.girls.slice();
+    if (o === 'wr') g.sort(function (a, b) { return b[1] - a[1]; });
+    else if (o === 'wrA') g.sort(function (a, b) { return a[1] - b[1]; });
+    else if (o === 'g') g.sort(function (a, b) { return b[2] - a[2]; });
+    else if (o === 'abc') g.sort(function (a, b) { return a[0].localeCompare(b[0], 'es'); });
+    else g.sort(function (a, b) { return a[3].localeCompare(b[3], 'es') || b[1] - a[1]; });
+
+    document.getElementById('t-girls').innerHTML =
+      '<thead><tr><th>Final Girl</th><th>De qué caja sale</th><th class="n">Victorias</th><th class="n">Partidas</th></tr></thead><tbody>' +
+      g.map(function (r) {
+        var mia = MIAS.indexOf(r[3]) !== -1;
+        return '<tr><td>' + r[0] + (mia ? '<span class="mine">Tuya</span>' : '') + '</td><td class="s">' + r[3] +
+               '</td><td class="n">' + pc(r[1]) + '</td><td class="n">' + r[2] + '</td></tr>';
+      }).join('') + '</tbody>';
+  }
+
+
+  function pintarMis() {
+    var orden = D.films.map(function (f) { return f.film; }).sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    document.getElementById('mis-grid').innerHTML = orden.map(function (n, i) {
+      return '<label><input type="checkbox" data-f="' + i + '"' + (MIAS.indexOf(n) !== -1 ? ' checked' : '') + '>' + n + '</label>';
+    }).join('');
+    document.querySelectorAll('#mis-grid input').forEach(function (cb, i) {
+      cb.addEventListener('change', function () {
+        var n = orden[i], j = MIAS.indexOf(n);
+        if (cb.checked && j === -1) MIAS.push(n);
+        if (!cb.checked && j !== -1) MIAS.splice(j, 1);
+        guardarMias(); recalcMias(); repintarTodo();
+      });
+    });
+    document.getElementById('mis-none').onclick = function () { MIAS = []; guardarMias(); recalcMias(); pintarMis(); repintarTodo(); };
+    document.getElementById('mis-all').onclick = function () { MIAS = orden.slice(); guardarMias(); recalcMias(); pintarMis(); repintarTodo(); };
+    document.getElementById('mis-sum').textContent = 'Mis cajas · ' + MIAS.length + ' de ' + orden.length;
+    document.getElementById('mis-info').textContent = MIAS.length
+      ? 'Se marcan como Tuya y alimentan el filtro de la matriz. Se guarda en este navegador.'
+      : 'Sin ninguna marcada, el filtro "solo mis cajas" deja la matriz vacía.';
+  }
+
+  function repintarTodo() {
+    pintarMatriz(); pintarCajas(); pintarTemporadas(); pintarKillers(); pintarMapas(); pintarGirls();
+  }
+
+
+  var SALIDAS = {
+    A: { n: 'Salida A · Economía total',
+         p: 'Llegar a 3 dados en el turno 2 y olvidarte del horror. Para killers que escupen iconos de horror.',
+         s: ['Turno 1: no juegas nada. Descartas toda la mano menos los 2 Focus, +4 Tiempo, total 10.',
+             'Compras 2× Distraction, Improvise y Close Call.',
+             'Turno 2: Improvise primero, luego las dos Distraction.',
+             'Riesgo: regalas el turno 1 entero. Malo si el killer empieza sobre las víctimas.'] },
+    B: { n: 'Salida B · Horror suave',
+         p: 'Lo mismo que la A sin regalar el turno. Es la de por defecto y la que más victorias reporta.',
+         s: ['Turno 1: juegas un Focus y mueves con los Walk. Compras una Distraction y un Close Call.',
+             'Turno 2: juegas la Distraction. Ya estás a 3 dados.',
+             'Medio: solo Sprint y Search. Rescatar y saquear.',
+             'Final: acumulas Retaliate y ataques, y esperas a que venga él.'] },
+    C: { n: 'Salida C · Rescate agresivo',
+         p: 'Congelar al killer. Es la salida de las partidas que se ganan sin arma.',
+         s: ['Turno 1: mueves con los dos Walk hacia el grupo. Compras Sprint.',
+             'Turnos 2-4: ignoras al killer. Sprint y rescate, lo más rápido posible.',
+             'Rutea contando los bonus de rescate: un desvío de 2 casillas sale gratis si te dan movimiento.',
+             'Objetivo: llenar la carta de Final Girl y girarla. Cada víctima muerta le sube el bloodlust.'] },
+    D: { n: 'Salida D · Arma primero',
+         p: 'Solo si ves un arma cuerpo a cuerpo boca arriba en el montaje. Un arma multiplica tu daño por más de dos.',
+         s: ['Antes: comprueba qué casilla da a ese mazo. Cada casilla está atada a un mazo concreto.',
+             'Turno 1: juegas los dos Walk hacia allí. Compras Search y Sprint.',
+             'Turno 2: Sprint para llegar y Search allí mismo. Usa las dos Search.',
+             'Si está a más de dos turnos de viaje y hay víctimas muriendo en otra dirección, pásate a la C.'] }
+  };
+
+  function abrirSalida(cual) {
+    document.getElementById('dlg-t').textContent = cual ? SALIDAS[cual].n : 'Las salidas';
+    document.getElementById('dlg-b').innerHTML =
+      ['A','B','C','D'].map(function (k) {
+        var s = SALIDAS[k];
+        return '<div class="sal' + (k === cual ? ' on' : '') + '">' +
+          '<h4>' + s.n + (k === cual ? '<span class="aqui">Esta caja</span>' : '') + '</h4>' +
+          '<p class="para">' + s.p + '</p><ol>' + s.s.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol></div>';
+      }).join('') +
+      '<p style="font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0">' +
+      'Versión completa, con el burst, las armas y los errores de reglas, en la ' +
+      '<a href="https://claude.ai/artifact/9citaKuByjhsDA5S1qit6y" style="color:var(--blood)">chuleta de salidas</a>.</p>';
+    document.getElementById('dlg').showModal();
+  }
+
+  document.getElementById('dlg-x').addEventListener('click', function () { document.getElementById('dlg').close(); });
+  document.getElementById('dlg').addEventListener('click', function (e) {
+    if (e.target.id === 'dlg') document.getElementById('dlg').close();
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.salidaLink') : null;
+    if (b) abrirSalida(b.dataset.s || null);
+  });
+
+  // ---------- arranque ----------
+  document.getElementById('k1').textContent = D.meta.total.toLocaleString('es-ES');
+  document.getElementById('k2').textContent = pc(D.meta.wr);
+  document.getElementById('f-last').textContent = D.meta.last;
+
+  document.querySelectorAll('nav.tabs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('nav.tabs button').forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+      b.setAttribute('aria-selected', 'true');
+      ['matriz', 'cajas', 'temporadas', 'killers', 'mapas', 'girls'].forEach(function (t) {
+        document.getElementById('v-' + t).hidden = (t !== b.dataset.t);
+      });
+    });
+  });
+
+  ['f-mias', 'f-orden', 'f-busca'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', pintarMatriz);
+  });
+  document.getElementById('g-orden').addEventListener('change', pintarGirls);
+
+  (function () {
+    var con = D.films.filter(function (f) { return f.img; });
+    var dos = con.concat(con);   // duplicado para que el bucle no corte
+    document.getElementById('tira').innerHTML = dos.map(function (f) {
+      return '<img src="' + f.img + '" alt="" loading="lazy"' +
+        (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>';
+    }).join('');
+  })();
+
+  leyenda();
+  pintarMis();
+  pintarMatriz();
+  detalleCelda('Hans', 'Camp Happy Trail');
+  pintarCajas();
+  pintarTemporadas();
+  pintarKillers();
+  pintarMapas();
+  pintarGirls();
+
+  // ---------- encuesta ----------
+  (async function encuesta() {
+    var caja = document.getElementById('enc');
+    var db = await claude.use('db');
+    var user = await claude.use('user');
+    if (!db || !user) return;                 // vista sin db: la encuesta no existe
+
+    var uid = null;
+    try { uid = await user.id(); } catch (e) { uid = null; }
+    var puedo = false;
+    try { puedo = (await user.can('data.write')) !== false; } catch (e) { puedo = true; }
+
+    var OPC = D.temporadas.map(function (T) { return { id: T.id, n: T.nombre }; });
+    var conteo = {}, miVoto = null, total = 0;
+
+    function pinta() {
+      var max = Math.max.apply(null, OPC.map(function (o) { return conteo[o.id] || 0; }).concat([1]));
+      document.getElementById('enc-o').innerHTML = OPC.map(function (o) {
+        var n = conteo[o.id] || 0;
+        var p = total ? n / total : 0;
+        return '<button type="button" class="voto' + (miVoto === o.id ? ' mio' : '') + '"' +
+          (puedo && uid ? '' : ' disabled') + ' data-o="' + o.id + '">' +
+          '<span class="bg" style="width:' + (total ? (n / max * 100) : 0).toFixed(1) + '%"></span>' +
+          '<span class="et">' + o.n + '</span>' +
+          '<span class="np">' + n + '</span>' +
+          '<span class="pcv">' + (total ? (p * 100).toFixed(0) + '%' : '—') + '</span></button>';
+      }).join('');
+
+      document.getElementById('enc-p').textContent = !uid
+        ? 'Inicia sesión para votar.'
+        : !puedo
+          ? 'Puedes ver los resultados, pero no votar con tu nivel de acceso.'
+          : (miVoto ? 'Has votado. Toca otra para cambiarlo. ' : 'Un voto por persona, y puedes cambiarlo. ') +
+            total + (total === 1 ? ' voto' : ' votos');
+
+      document.getElementById('enc-o').querySelectorAll('.voto:not([disabled])').forEach(function (b) {
+        b.addEventListener('click', async function () {
+          if (miVoto === b.dataset.o) return;
+          try { await db.doc('votos/' + uid).set({ t: b.dataset.o, ts: Date.now() }); }
+          catch (e) { document.getElementById('enc-p').textContent = 'No se ha podido guardar el voto.'; }
+        });
+      });
+    }
+
+    caja.hidden = false;
+    pinta();
+
+    db.collection('votos').onSnapshot(function (snap) {
+      conteo = {}; total = 0; miVoto = null;
+      snap.docs.forEach(function (d) {
+        var v = d.data() || {};
+        if (!v.t) return;
+        conteo[v.t] = (conteo[v.t] || 0) + 1; total++;
+        if (d.id === uid) miVoto = v.t;
+      });
+      pinta();
+    }, function () { caja.hidden = true; });
+  })();
+})();
+</script>

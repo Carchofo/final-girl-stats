@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Salidas de Final Girl: las 4 aperturas y cuándo usar cada una</title>
+<meta name="description" content="Las 4 aperturas de Final Girl turno a turno: cuál usar según tengas armas a la vista o víctimas cerca, dados y errores de reglas comunes.">
+<link rel="canonical" href="https://carchofo.github.io/final-girl-stats/salidas.html">
+<meta name="theme-color" content="#0b0a0b">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- Open Graph: lo que se ve al pegar el enlace en Reddit, Discord o BGG.
+     Es de donde va a venir casi todo el trafico al principio, mucho antes
+     que de Google. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Final Girl Stats">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Salidas de Final Girl: las 4 aperturas y cuándo usar cada una">
+<meta property="og:description" content="Las 4 aperturas de Final Girl turno a turno: cuál usar según tengas armas a la vista o víctimas cerca, dados y errores de reglas comunes.">
+<meta property="og:url" content="https://carchofo.github.io/final-girl-stats/salidas.html">
+<meta property="og:image" content="https://carchofo.github.io/final-girl-stats/img/the-happy-trails-horror.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Salidas de Final Girl: las 4 aperturas y cuándo usar cada una">
+<meta name="twitter:description" content="Las 4 aperturas de Final Girl turno a turno: cuál usar según tengas armas a la vista o víctimas cerca, dados y errores de reglas comunes.">
+<meta name="twitter:image" content="https://carchofo.github.io/final-girl-stats/img/the-happy-trails-horror.jpg">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Salidas de Final Girl: las 4 aperturas y cuándo usar cada una","description":"Las 4 aperturas de Final Girl turno a turno: cuál usar según tengas armas a la vista o víctimas cerca, dados y errores de reglas comunes.","url":"https://carchofo.github.io/final-girl-stats/salidas.html","inLanguage":"es","keywords":["Final Girl","board game","solo","win rate","estadísticas"],"temporalCoverage":"../28 sep 2026","variableMeasured":"Porcentaje de victoria","measurementTechnique":"Partidas registradas por jugadores","distribution":{"@type":"DataDownload","encodingFormat":"text/html","contentUrl":"https://carchofo.github.io/final-girl-stats/salidas.html"},"about":{"@type":"Game","name":"Final Girl","gamePlatform":"Juego de mesa","numberOfPlayers":{"@type":"QuantitativeValue","value":1}},"size":"13873 partidas"}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128373;</text></svg>">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+    --paper:   #f6f2f0;
+    --surface: #ffffff;
+    --sunk:    #ece5e3;
+    --ink:     #191316;
+    --muted:   #6d6066;
+    --line:    #e2d8d6;
+    --line-hi: #cfc1bf;
+    --blood:   #a3232b;
+    --blood-s: #f3e2e2;
+    --verde:   #2c6b4c;
+    --ambar:   #9a6b0d;
+    --rojo:    #a3232b;
+    --shadow:  0 1px 2px rgba(25,19,22,.06), 0 6px 18px rgba(25,19,22,.05);
+
+    --f-disp: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;
+    --f-body: "Newsreader", Georgia, "Times New Roman", serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper:   #131013;
+      --surface: #1c181b;
+      --sunk:    #241f23;
+      --ink:     #efe7e8;
+      --muted:   #a1919a;
+      --line:    #2e262b;
+      --line-hi: #453a40;
+      --blood:   #e0666d;
+      --blood-s: #33191d;
+      --verde:   #62b98c;
+      --ambar:   #d6a33c;
+      --rojo:    #e0666d;
+      --shadow:  0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:   #131013;
+    --surface: #1c181b;
+    --sunk:    #241f23;
+    --ink:     #efe7e8;
+    --muted:   #a1919a;
+    --line:    #2e262b;
+    --line-hi: #453a40;
+    --blood:   #e0666d;
+    --blood-s: #33191d;
+    --verde:   #62b98c;
+    --ambar:   #d6a33c;
+    --rojo:    #e0666d;
+    --shadow:  0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---------- cabecera ---------- */
+  header.top {
+    padding-block: 40px 26px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--f-disp);
+    font-weight: 800;
+    font-size: clamp(44px, 13vw, 78px);
+    line-height: .88;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 0 0 14px;
+  }
+  .dek {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 54ch;
+    margin: 0;
+  }
+
+  /* ---------- secciones ---------- */
+  section { padding-block: 40px 8px; }
+  h2 {
+    font-family: var(--f-disp);
+    font-weight: 700;
+    font-size: clamp(27px, 6vw, 36px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .005em;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  h2 .num {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blood);
+    letter-spacing: .1em;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 22px;
+    max-width: 58ch;
+  }
+  h3 {
+    font-family: var(--f-disp);
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    margin: 0;
+  }
+
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; }
+  em { font-style: italic; color: var(--muted); }
+
+  /* ---------- selector ---------- */
+  .picker {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .q > span {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .toggle {
+    display: inline-flex;
+    flex: none;
+    border: 1px solid var(--line-hi);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--sunk);
+  }
+  .toggle button {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 6px 13px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .12s, color .12s;
+  }
+  .toggle button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .toggle button:focus-visible {
+    outline: 2px solid var(--blood);
+    outline-offset: -2px;
+  }
+
+  .verdict {
+    padding: 16px;
+    background: var(--blood-s);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .verdict .tag {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    background: var(--blood);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 2px;
+    flex: none;
+    margin-top: 2px;
+  }
+  :root[data-theme="dark"] .verdict .tag,
+  .verdict .tag { color: #fff; }
+  .verdict b {
+    font-family: var(--f-disp);
+    font-size: 21px;
+    text-transform: uppercase;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+  .verdict small {
+    font-size: 14.5px;
+    color: var(--ink);
+    opacity: .82;
+  }
+
+  /* ---------- salidas ---------- */
+  .salida {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--line-hi);
+    border-radius: 3px;
+    padding: 18px 18px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 16px;
+    transition: border-left-color .18s;
+  }
+  .salida.on { border-left-color: var(--blood); }
+  .salida-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .letra {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--blood);
+  }
+  .cuando {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  .cuando b { color: var(--ink); font-weight: 600; }
+
+  ol.turnos {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  ol.turnos li {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-size: 15px;
+  }
+  ol.turnos .t {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 2px solid var(--line-hi);
+    padding-top: 5px;
+  }
+  .riesgo {
+    font-size: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 11px;
+    color: var(--muted);
+  }
+  .riesgo b {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin-right: 6px;
+  }
+
+  /* ---------- tablas ---------- */
+  .tabla-wrap { overflow-x: auto; margin-bottom: 16px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 340px;
+    font-size: 15px;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 12px 9px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--line-hi);
+    white-space: nowrap;
+  }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-size: 14px; padding-right: 0; }
+  tr:last-child td { border-bottom: 0; }
+
+  .chip {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip.v { background: color-mix(in srgb, var(--verde) 15%, transparent); color: var(--verde); }
+  .chip.a { background: color-mix(in srgb, var(--ambar) 18%, transparent); color: var(--ambar); }
+  .chip.r { background: color-mix(in srgb, var(--rojo) 15%, transparent); color: var(--rojo); }
+
+  /* ---------- avisos ---------- */
+  .aviso {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--blood);
+    border-radius: 3px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .aviso h3 { margin-bottom: 8px; }
+  .aviso p { font-size: 15px; }
+
+  ul.check {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 11px;
+  }
+  ul.check li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    font-size: 15px;
+    align-items: start;
+  }
+  ul.check li::before {
+    content: "✕";
+    font-family: var(--f-mono);
+    font-size: 13px;
+    color: var(--blood);
+    line-height: 1.5;
+  }
+
+  ul.plain { margin: 0 0 12px; padding-left: 20px; }
+  ul.plain li { margin-bottom: 7px; font-size: 15px; }
+
+  .kbd {
+    font-family: var(--f-mono);
+    font-size: .88em;
+    background: var(--sunk);
+    padding: 1px 5px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  footer a { color: var(--blood); text-decoration: none; border-bottom: 1px solid currentColor; }
+  footer a:hover { opacity: .75; }
+  footer p { margin-bottom: 8px; }
+
+
+  /* ---------- estadisticas ---------- */
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; margin-bottom:22px; }
+  .kpi { background:var(--surface); padding:14px 16px; }
+  .kpi b { font-family:var(--f-disp); font-size:31px; line-height:1; display:block; font-variant-numeric:tabular-nums; }
+  .kpi span { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); display:block; margin-top:5px; }
+
+  .barlist { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .bar { display:grid; grid-template-columns:1fr 54px 46px; gap:10px; align-items:center;
+         background:var(--surface); border:0; width:100%; text-align:left; padding:9px 13px; cursor:pointer;
+         font:inherit; color:inherit; position:relative; }
+  .bar:hover { background:var(--sunk); }
+  .bar[aria-pressed="true"] { background:var(--blood-s); }
+  .bar:focus-visible { outline:2px solid var(--blood); outline-offset:-2px; }
+  .bar .fill { position:absolute; inset:0 auto 0 0; background:color-mix(in srgb, var(--blood) 11%, transparent); pointer-events:none; }
+  .bar > * { position:relative; }
+  .bar .nm { font-size:14.5px; line-height:1.25; }
+  .bar .nm i { font-style:normal; color:var(--muted); font-size:12.5px; display:block; }
+  .bar .pc { font-family:var(--f-mono); font-size:15px; font-variant-numeric:tabular-nums; text-align:right; font-weight:500; }
+  .bar .pl { font-family:var(--f-mono); font-size:11px; color:var(--muted); text-align:right; }
+  .mine { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase;
+          background:var(--ink); color:var(--paper); padding:2px 5px; border-radius:2px; margin-left:6px; vertical-align:2px; }
+
+  .detalle { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+             border-radius:3px; padding:18px; margin-top:16px; box-shadow:var(--shadow); }
+  .detalle h3 { margin-bottom:3px; }
+  .detalle .loc { font-size:14px; color:var(--muted); margin:0 0 16px; }
+  .split { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:18px; }
+  .split div { background:var(--sunk); border-radius:3px; padding:11px 13px; }
+  .split b { font-family:var(--f-mono); font-size:19px; display:block; font-variant-numeric:tabular-nums; }
+  .split span { font-size:12.5px; color:var(--muted); display:block; margin-top:2px; line-height:1.3; }
+  .sec-t { font-family:var(--f-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--blood); margin:18px 0 8px; }
+  .mini { width:100%; border-collapse:collapse; font-size:14.5px; }
+  .mini td { padding:6px 0; border-bottom:1px solid var(--line); }
+  .mini td:last-child, .mini td:nth-last-child(2) { text-align:right; font-family:var(--f-mono); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .mini td:nth-last-child(2) { padding-right:14px; }
+  .mini td:last-child { font-size:11.5px; color:var(--muted); }
+  .mini tr:last-child td { border-bottom:0; }
+  .mini .peor td:first-child { font-weight:600; }
+  .mini .peor td:nth-last-child(2) { color:var(--rojo); }
+  .mini .mejor td:nth-last-child(2) { color:var(--verde); }
+
+  .mini td.org { text-align:left !important; font-family:var(--f-body) !important; font-size:12.5px; color:var(--muted); }
+  details.mas { margin-top:16px; border-top:1px solid var(--line); padding-top:14px; }
+  details.mas summary { font-family:var(--f-mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+                        color:var(--blood); cursor:pointer; list-style:none; }
+  details.mas summary::-webkit-details-marker { display:none; }
+  details.mas summary::before { content:"+ "; }
+  details.mas[open] summary::before { content:"– "; }
+  details.mas > div { padding-top:14px; }
+  @media (max-width:420px){ .bar { grid-template-columns:1fr 50px; } .bar .pl { display:none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+  @media (max-width: 420px) {
+    .q { flex-direction: column; align-items: flex-start; gap: 9px; }
+    ol.turnos li { grid-template-columns: 1fr; gap: 3px; }
+    ol.turnos .t { border-top: 0; padding-top: 0; }
+  }
+</style>
+
+<div class="wrap">
+
+<nav class="nav-sitio" aria-label="Secciones">
+  <a href="index.html">Estadísticas</a>
+  <a href="salidas.html" aria-current="page">Salidas</a>
+</nav>
+<style>
+  .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
+                letter-spacing:.06em; text-transform:uppercase; }
+  .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
+                  border-bottom:2px solid transparent; }
+  .nav-sitio a:hover { color:var(--ink); }
+  .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+</style>
+<header class="top">
+  <p class="eyebrow">Chuleta de mesa · juego en solitario</p>
+  <h1>Salidas de<br>Final Girl</h1>
+  <p class="dek">Cuatro aperturas con respaldo en el foro de BGG, para qué vale cada una, y cómo elegir mirando el tablero en el turno 1.</p>
+</header><aside class="cta-registro">
+  <p><strong>Estos datos salen de partidas que registra la gente.</strong>
+     Los lleva la comunidad en una hoja abierta, y cada partida que añades
+     afina las cifras de esta página.</p>
+  <p><a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">Registrar una partida</a>
+     <a class="cta-alt" href="https://docs.google.com/spreadsheets/d/1sxbGLkTCzOcRk5FDMmy1S5tJwRBD_LFJhXPnQHxGz1A/edit" target="_blank" rel="noopener">Ver la hoja original</a></p>
+</aside>
+<style>
+  .cta-registro { border:1px solid var(--line-hi); border-left:3px solid var(--blood);
+                   background:var(--surface); padding:14px 16px; margin:18px 0 6px;
+                   border-radius:3px; }
+  .cta-registro p { margin:0 0 10px; font-size:14px; color:var(--muted); line-height:1.55; }
+  .cta-registro p:last-child { margin-bottom:0; }
+  .cta-registro strong { color:var(--ink); font-weight:600; }
+  .cta-btn { display:inline-block; background:var(--blood); color:#fff; text-decoration:none;
+              padding:7px 14px; border-radius:3px; font-size:13px; font-weight:600;
+              letter-spacing:.03em; }
+  .cta-btn:hover { filter:brightness(1.1); }
+  .cta-alt { display:inline-block; margin-left:12px; color:var(--muted); font-size:13px; }
+  .cta-alt:hover { color:var(--ink); }
+</style>
+
+
+<section>
+  <h2><span class="num">01</span> Mira la mesa</h2>
+  <p class="sub">Tres preguntas después del montaje. La recomendación se actualiza sola.</p>
+
+  <div class="picker">
+    <div class="q">
+      <span>¿Hay un arma <b>cuerpo a cuerpo</b> boca arriba en algún mazo de objetos?<br><em>Hacha, bate, cuchillo. Las de distancia no cuentan.</em></span>
+      <span class="toggle" role="group" aria-label="Arma cuerpo a cuerpo a la vista">
+        <button type="button" data-k="arma" data-v="1" aria-pressed="false">Sí</button>
+        <button type="button" data-k="arma" data-v="0" aria-pressed="false">No</button>
+      </span>
+    </div>
+    <div class="q">
+      <span>¿Tienes <b>víctimas agrupadas</b> a tu alcance, camino de una salida?</span>
+      <span class="toggle" role="group" aria-label="Víctimas agrupadas cerca">
+        <button type="button" data-k="vict" data-v="1" aria-pressed="false">Sí</button>
+        <button type="button" data-k="vict" data-v="0" aria-pressed="false">No</button>
+      </span>
+    </div>
+    <div class="q">
+      <span>¿El killer empieza <b>a dos casillas o menos</b> de ti o de un grupo de víctimas?</span>
+      <span class="toggle" role="group" aria-label="Killer cerca">
+        <button type="button" data-k="kill" data-v="1" aria-pressed="false">Sí</button>
+        <button type="button" data-k="kill" data-v="0" aria-pressed="false">No</button>
+      </span>
+    </div>
+    <div class="verdict">
+      <span class="tag" id="v-tag">—</span>
+      <span>
+        <b id="v-name">Responde las tres</b>
+        <small id="v-why">Mientras tanto, las cuatro salidas están abajo. Si solo vas a recordar una cosa: el turno 1 es de economía, no de acción.</small>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span> Las cuatro salidas</h2>
+  <p class="sub">Un turno es: juegas cartas, y <strong>después</strong> compras con el tiempo que quede. Comprar es el final de tu turno, no el principio: lo que compres se juega al turno siguiente.</p>
+
+  <div class="aviso" style="border-top-color:var(--line-hi)">
+    <h3>Las tres reglas de tiempo</h3>
+    <ul class="plain" style="margin-bottom:0">
+      <li>El número de la esquina es de <strong>compra</strong>. Jugar una carta no cuesta tiempo; solo lo pierdes si el resultado lleva el icono.</li>
+      <li><strong>El tiempo sin gastar se pierde</strong> al resetear a 6. Si te sobra, compra algo aunque no lo necesites: sirve de combustible para convertir.</li>
+      <li><strong>No puedes comprar lo que has jugado o descartado ese turno</strong>, ni siquiera las de coste 0. Vuelven al tableau y se recogen en un turno posterior.</li>
+    </ul>
+  </div>
+
+  <article class="salida" id="s-a">
+    <div class="salida-head"><span class="letra">Salida A</span><h3>Economía total</h3></div>
+    <p class="cuando"><b>Para qué vale:</b> llegar a 3 dados en el turno 2 y no volver a mirar el horror. Contra killers que escupen iconos de horror, como Hans.</p>
+    <ol class="turnos">
+      <li><span class="t">Turno 1<br>acción</span><span>No juegas nada. Descartas toda la mano menos los 2 Focus: <span class="kbd">+4 Tiempo</span>, total 10.</span></li>
+      <li><span class="t">Turno 1<br>compras</span><span>2× Distraction, Improvise, Close Call.</span></li>
+      <li><span class="t">Turno 2</span><span>Improvise primero. Luego las dos Distraction. Los Focus, de combustible para convertir los 3 y 4.</span></li>
+      <li><span class="t">Después</span><span>Ya en verde, Sprint y Search sin parar.</span></li>
+    </ol>
+    <p class="riesgo"><b>Riesgo</b> Regalas el turno 1 entero. Si el killer empieza encima de un grupo de víctimas, el bloodlust te sube antes de haber hecho nada. Su propio autor reporta resultados mixtos.</p>
+  </article>
+
+  <article class="salida" id="s-b">
+    <div class="salida-head"><span class="letra">Salida B</span><h3>Horror suave</h3></div>
+    <p class="cuando"><b>Para qué vale:</b> lo mismo que A pero sin regalar el turno. Es la salida por defecto y la que más victorias reporta.</p>
+    <ol class="turnos">
+      <li><span class="t">Turno 1<br>acción</span><span>Juegas un Focus y mueves con los Walk hacia donde quieras estar. Descartas lo que no uses por tiempo.</span></li>
+      <li><span class="t">Turno 1<br>compras</span><span>Una Distraction y un Close Call. Gasta el resto en lo que sea.</span></li>
+      <li><span class="t">Turno 2</span><span>Juegas la Distraction. Ya estás a 3 dados.</span></li>
+      <li><span class="t">Medio</span><span>Solo Sprint y Search. Rescatar y saquear. Ignora lo demás salvo que el horror se dispare.</span></li>
+      <li><span class="t">Final</span><span>Acumulas Retaliate y cartas de ataque. Esperas a que venga él.</span></li>
+    </ol>
+    <p class="riesgo"><b>Nota</b> Focus vuelve a merecer la pena a partir de horror 5 o 6, no antes: te devuelve tiempo.</p>
+  </article>
+
+  <article class="salida" id="s-c">
+    <div class="salida-head"><span class="letra">Salida C</span><h3>Rescate agresivo</h3></div>
+    <p class="cuando"><b>Para qué vale:</b> congelar al killer. Es la salida de las partidas que se ganan sin arma, y la mejor si el mapa te pone víctimas agrupadas cerca.</p>
+    <ol class="turnos">
+      <li><span class="t">Turno 1</span><span>Mueves con los dos Walk hacia el grupo. Compras Sprint, y una segunda si llegas.</span></li>
+      <li><span class="t">Turnos 2-4</span><span>Ignoras al killer por completo. Sprint y rescate, lo más rápido posible.</span></li>
+      <li><span class="t">Ruta</span><span>Planifica el camino contando los bonus de rescate: un desvío de 2 casillas sale gratis si te dan movimiento libre.</span></li>
+      <li><span class="t">Objetivo</span><span>Llenar la carta de Final Girl y girarla. Ultimate desbloqueada.</span></li>
+      <li><span class="t">Después</span><span>Saqueo, y solo entonces pelea.</span></li>
+    </ol>
+    <p class="riesgo"><b>Por qué funciona</b> Cada víctima muerta sube el bloodlust, y el bloodlust es su daño y su movimiento. Partidas reportadas: 10 víctimas salvadas dejaron a Hans clavado en 2 de daño y 1 de movimiento toda la partida.</p>
+  </article>
+
+  <article class="salida" id="s-d">
+    <div class="salida-head"><span class="letra">Salida D</span><h3>Arma primero</h3></div>
+    <p class="cuando"><b>Para qué vale:</b> solo cuando ves un arma cuerpo a cuerpo boca arriba en el montaje. Un arma multiplica tu daño por más de dos; nada más lo hace.</p>
+    <ol class="turnos">
+      <li><span class="t">Antes</span><span>Comprueba <b>qué casilla</b> da a ese mazo. Cada casilla de búsqueda está atada a un mazo concreto, no al más cercano.</span></li>
+      <li><span class="t">Turno 1<br>acción</span><span>Juegas tus dos Walk hacia esa casilla, desviándote por víctimas. Descartas Weak Attack y Short Rest por tiempo.</span></li>
+      <li><span class="t">Turno 1<br>compras</span><span>Search y Sprint, 2 cada una. Si te sobra, la segunda Search o un Close Call: <b>el tiempo sin gastar se pierde.</b></span></li>
+      <li><span class="t">Turno 2</span><span>Sprint para llegar y Search allí mismo.</span></li>
+      <li><span class="t">Cavar</span><span>Usa <b>las dos</b> Search. La primera coge la de arriba, la segunda cava más abajo.</span></li>
+      <li><span class="t">Después</span><span>Vuelves a la salida B o C con el arma encima.</span></li>
+    </ol>
+    <p class="riesgo"><b>Riesgo</b> Mientras cavas, él mata. Si el arma está lejos y las víctimas cerca, C gana.</p>
+  </article>
+
+  <article class="salida" id="s-lejos" style="border-left-color:var(--line-hi)">
+    <div class="salida-head"><span class="letra">Variante</span><h3>¿Y si el arma está lejos?</h3></div>
+    <p class="cuando"><b>Lo que de verdad cuesta no es la distancia, es por dónde pasas.</b> Alejarte del killer es barato aunque sea lejos: Hans y compañía son lentos y puedes saquear la punta del mapa antes de que llegue. Cruzarte con él es caro aunque sea cerca.</p>
+    <ul class="plain">
+      <li><strong>Mide en turnos, no en casillas.</strong> Con Walk y Sprint mueves unas 3 casillas por turno. El mazo de Terror son 10 cartas: tres turnos de viaje son un tercio de la partida antes del Finale.</li>
+      <li><strong>Haz que el viaje se pague solo.</strong> Rutea por encima de las víctimas. Los bonus de rescate incluyen movimiento libre, así que un desvío de dos casillas sale gratis y además frena el bloodlust. Esto convierte la salida D en la C sin renunciar al arma.</li>
+      <li><strong>Hay otros dos mazos.</strong> Solo ves la carta de arriba de cada uno: 3 objetos de 12. El mazo de al lado esconde 4 cartas que no has mirado. Cavar cerca suele ganarle a viajar lejos.</li>
+      <li><strong>Predice su ruta.</strong> Va siempre a lo más cercano, y en empate al grupo con más víctimas. Elige el mazo que quede al otro lado de donde él va a ir.</li>
+    </ul>
+    <p class="riesgo"><b>Regla rápida</b> Más de dos turnos de viaje y con víctimas muriendo en otra dirección: olvídate del arma que ves, coge la salida C y busca en el mazo que te pille de camino.</p>
+  </article>
+</section>
+
+<section>
+  <h2><span class="num">03</span> El burst</h2>
+  <p class="sub">El patrón de ataque. No vayas picando un golpe por turno: monta la mano y descarga todo en una vuelta.</p>
+  <div class="aviso">
+    <ol class="turnos">
+      <li><span class="t">Prepara</span><span>Termina tu fase de acción con <b>Retaliate + Furious Strike + Weak Attack</b> en mano. Y un Close Call.</span></li>
+      <li><span class="t">Cebo</span><span>Métete en su casilla, o déjale llegar.</span></li>
+      <li><span class="t">Su fase</span><span>Te ataca → Retaliate. <b>Daño, y el arma cuenta.</b></span></li>
+      <li><span class="t">Tu fase</span><span>Weak Attack y Furious Strike. <b>El arma cuenta en los dos.</b></span></li>
+      <li><span class="t">Sales</span><span>Carta de movimiento y fuera. No acabes el turno en su casilla.</span></li>
+    </ol>
+    <p class="riesgo" style="margin-top:14px"><b>Tres golpes</b> Tres instancias de daño en una vuelta, todas con el bonus del arma. Uno de ellos gratis, porque sale de su turno y no de tu fase de acción.</p>
+  </div>
+  <ul class="plain">
+    <li><strong>Retaliate solo cae turno sí turno no</strong>, hay que recomprarla. Alterna con Guard.</li>
+    <li>Si lo rematas <strong>con Retaliate, la fase del killer termina ahí mismo</strong>. Si se levanta, vas directo a tu fase de acción en vez de comerte el resto de su turno. Mejor rematar en su fase que en la tuya.</li>
+    <li>Los modificadores del arma <strong>solo se aplican si la carta ya hizo 1 de daño</strong>. Ataque fallado con hacha = nada.</li>
+    <li><strong>No estás obligado a usar el arma equipada</strong> (confirmado por el diseñador). Puedes pegar a puño limpio si el arma te perjudica.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">04</span> Armas</h2>
+  <p class="sub">Lo que la gente confunde con mala suerte suele ser esto.</p>
+  <div class="tabla-wrap">
+    <table>
+      <thead><tr><th>Arma</th><th>Vale</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hacha</b></td><td><span class="chip v">La mejor</span></td><td>Daño alto y sirve con Retaliate</td></tr>
+        <tr><td><b>Bate</b></td><td><span class="chip v">Muy buena</span></td><td>Cuerpo a cuerpo, sin pegas</td></tr>
+        <tr><td><b>Cuchillo</b></td><td><span class="chip a">Sirve</span></td><td>Poco daño pero cuenta como arma</td></tr>
+        <tr><td><b>A distancia</b></td><td><span class="chip r">No es arma</span></td><td>Ver abajo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="aviso">
+    <h3>La trampa de las armas a distancia</h3>
+    <p>No se pueden usar <strong>ni con Retaliate ni con las cartas de ataque</strong>. La única excepción es el Old Revolver con Weak Attack. Y varias tienen alcance mínimo mayor que 0: <strong>no puedes atacar al killer si está en tu casilla</strong>.</p>
+    <p>Si te sale una, vuelve a buscar y suéltala. Trátala como si no hubieras encontrado arma.</p>
+    <p>Único uso bueno: disparar desde lejos para comerte los marcadores de vida extra de los <strong>Minor Dark Power</strong> sin acercarte.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span> Dados y defensa</h2>
+  <p class="sub">Probabilidad de sacar los 2 éxitos que activan la línea buena de una carta.</p>
+  <div class="tabla-wrap">
+    <table>
+      <thead><tr><th>Zona de horror</th><th class="n">Dados</th><th class="n">Mano vacía</th><th class="n">Con cartas que quemar</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip r">Rojo</span></td><td class="n">1</td><td class="n">0 %</td><td class="n">0 %</td></tr>
+        <tr><td><span class="chip a">Amarillo</span></td><td class="n">2</td><td class="n">11 %</td><td class="n">44 %</td></tr>
+        <tr><td><span class="chip v">Verde</span></td><td class="n">3</td><td class="n">26 %</td><td class="n">74 %</td></tr>
+        <tr><td><span class="chip v">Verde + adrenalina</span></td><td class="n">4</td><td class="n">41 %</td><td class="n">89 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="plain">
+    <li><strong>La mano pesa más que el tercer dado.</strong> 2 dados con mano llena bate a 3 dados con la mano vacía.</li>
+    <li><strong>Adrenalina:</strong> +1 dado mientras estés en tu Final Health token, +2 si el killer también. Hay quien se deja bajar a 1 de vida a propósito.</li>
+    <li><strong>Bajar horror no es progresar, es mantener la posición.</strong> Si estás a 5 y bajas 2, la carta de Terror te devuelve a 5. Si no bajas, te deja en 7 y en un solo dado.</li>
+  </ul>
+
+  <div class="aviso">
+    <h3>Dos cuchillos son dos ataques</h3>
+    <p>No es un ataque que hace el doble. Son dos ataques seguidos, cada uno con el daño completo. <strong>Una carta de reacción cubre un ataque.</strong> Puedes apilar dos Guard sobre el mismo ataque, pero un Guard nunca cubre dos.</p>
+    <div class="tabla-wrap" style="margin:14px 0 0">
+      <table>
+        <thead><tr><th>Hans, 3 de ataque, dos cuchillos</th><th class="n">Sin defensa</th><th class="n">1 Guard</th><th class="n">2 Guard</th></tr></thead>
+        <tbody>
+          <tr><td>Ataque 1</td><td class="n">−3</td><td class="n">0</td><td class="n">0</td></tr>
+          <tr><td>Ataque 2</td><td class="n">−3</td><td class="n">−3</td><td class="n">0</td></tr>
+          <tr><td><b>Total</b></td><td class="n"><b>−6</b></td><td class="n"><b>−3</b></td><td class="n"><b>0</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span> Lo que cuesta partidas</h2>
+  <p class="sub">Errores que los propios jugadores del foro confiesan.</p>
+  <ul class="check">
+    <li>Pagar otra vez el coste de la carta al jugarla. <strong>El coste es solo de compra.</strong></li>
+    <li>Convertir dos parciales con dos cartas. Son <strong>2 cartas por dado</strong>: dos treses cuestan cuatro cartas.</li>
+    <li>Jugar una carta importante sin 2 o 3 cartas de reserva en la mano para convertir.</li>
+    <li>No descartar cartas boca abajo por <span class="kbd">+1 Tiempo</span>. Es de donde salen Critical Blow y Ambush.</li>
+    <li>Comprar las dos Close Call a la vez. Compra una y <strong>deja la otra en el tableau</strong> para la ronda siguiente.</li>
+    <li>No comprar con el tiempo sobrante. Cartas que no vas a jugar siguen siendo combustible de conversión.</li>
+    <li>Acabar el turno en la casilla del killer. Muchos apuñalan gratis a quien tengan al lado al empezar su fase.</li>
+    <li>Esconderse. Solo se gana matándolo, y él se hace más fuerte cada turno. Entrar, pegar, salir.</li>
+    <li>Olvidar que el límite de <strong>10 cartas en mano rige siempre</strong>, no solo al comprar. Y el descarte forzoso no da tiempo.</li>
+    <li>Usar Guard o Retaliate contra pérdida de vida por icono. Solo valen contra ataques reales.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">07</span> Trucos de mapa</h2>
+  <ul class="plain">
+    <li><strong>Callejones sin salida:</strong> deja víctimas ahí. El killer gasta 2 o 3 rondas en ir a por una sola muerte.</li>
+    <li><strong>Sin bota, no se mueve.</strong> Si la acción del killer no lleva icono de movimiento, no se mueve por muy lejos que esté su objetivo.</li>
+    <li><strong>Dos botas son dos movimientos separados</strong>, no uno largo. Importa con objetos que frenan: el Padlock para uno y él sigue con el otro.</li>
+    <li><strong>Objetivo:</strong> siempre el más cercano. En empate, el grupo con más víctimas. Puedes usar eso para desviarlo.</li>
+    <li><strong>Las víctimas de tu casilla se comen el ataque antes que tú</strong>, salvo que tú seas el objetivo declarado. Escudo humano legal, a cambio de bloodlust.</li>
+    <li><strong>Fireworks, Bear Trap y Pepper Spray</strong> controlan por dónde va. Una trampa le quita turnos enteros.</li>
+  </ul>
+</section>
+
+
+<section id="stats">
+  <h2><span class="num">08</span> Qué dicen 13.873 partidas</h2>
+  <p class="sub">Datos reales de la hoja comunitaria de seguimiento, no estimaciones. Última partida registrada: <b id="st-last"></b>. Entran unas 8 al día.</p>
+
+  <div class="kpis">
+    <div class="kpi"><b id="k-tot"></b><span>Partidas</span></div>
+    <div class="kpi"><b id="k-wr"></b><span>Victorias</span></div>
+    <div class="kpi"><b id="k-best"></b><span>Caja más fácil</span></div>
+    <div class="kpi"><b id="k-worst"></b><span>Caja más dura</span></div>
+  </div>
+
+  <p class="sub" style="margin-bottom:10px">Cada caja tal y como viene, su killer con su localización. Toca una para ver el desglose.</p>
+  <div class="barlist" id="st-films"></div>
+  <div class="detalle" id="st-det"></div>
+
+  <details class="mas"><summary>Localizaciones, de la más dura a la más fácil</summary><div>
+    <div class="tabla-wrap"><table class="mini" id="st-locs"></table></div>
+    <p class="riesgo" style="margin-top:12px"><b>Ojo</b> Aquí cada localización se mide contra todos los killers, no solo el suyo. Por eso Sacred Groves sale peor que cualquier caja completa: es el mapa que más castiga, venga quien venga.</p>
+  </div></details>
+
+  <details class="mas"><summary>Final Girls, ordenadas por victorias</summary><div>
+    <div class="tabla-wrap"><table class="mini" id="st-girls"></table></div>
+    <p class="riesgo" style="margin-top:12px"><b>Ojo</b> Mínimo 20 partidas. La diferencia entre la mejor y la peor son unos 20 puntos, bastante menos que entre cajas: elegir bien la caja pesa más que elegir bien la chica.</p>
+  </div></details>
+
+  <details class="mas"><summary>Estado de la partida</summary><div>
+    <div class="tabla-wrap"><table class="mini" id="st-estado"></table></div>
+    <p class="riesgo" style="margin-top:12px"><b>Léelo al revés</b> Los tramos con pocas partidas son los que acaban pronto. Que "Finale sin revelar" tenga peor winrate significa que las partidas que se pierden se pierden <b>antes</b> de llegar al Finale. Y el Final Health token te salva a ti el 42% de las veces, pero a él el 86%: cuando creas que lo has matado, casi nunca lo has matado.</p>
+  </div></details>
+</section>
+
+<footer>
+  <p>Recopilado de los foros de BoardGameGeek, el reglamento oficial de Van Ryder Games y las respuestas del diseñador A.J. Porfirio. Los costes exactos de cada carta están impresos en la esquina inferior derecha de tus cartas.</p>
+  <p>Para trastear con todos los datos, incluida la matriz de cada killer en cada mapa: <a href="index.html">Laboratorio Final Girl</a>.</p>
+  <p>Hilos: <a href="https://boardgamegeek.com/thread/3073862/general-strategytips-guide-for-final-girl">Guía general de estrategia</a> · <a href="https://boardgamegeek.com/thread/3366324/tips-for-those-struggling-with-hans">Struggling with Hans</a> · <a href="https://boardgamegeek.com/thread/2907249/need-help-with-final-girl">Need help</a> · <a href="https://boardgamegeek.com/thread/3293184/strategy-tips">Strategy tips</a> · <a href="https://boardgamegeek.com/thread/3099277/3-dice-asap-strategy">3 dice ASAP</a> · <a href="https://boardgamegeek.com/thread/3042215/do-you-have-to-use-your-weapon">Do you have to use your weapon</a></p>
+</footer>
+
+</div>
+
+<script>
+  var estado = { arma: null, vict: null, kill: null };
+
+  var SALIDAS = {
+    A: { id: 's-a', nombre: 'Salida A · Economía total' },
+    B: { id: 's-b', nombre: 'Salida B · Horror suave' },
+    C: { id: 's-c', nombre: 'Salida C · Rescate agresivo' },
+    D: { id: 's-d', nombre: 'Salida D · Arma primero' }
+  };
+
+  function decidir(e) {
+    // El killer encima cambia todo: no puedes regalar el turno 1.
+    if (e.kill === 1) {
+      if (e.vict === 1) return ['C', 'Él está encima y hay víctimas que salvar. Cada muerte le sube el bloodlust, así que sácalas ya. Nada de regalar el turno 1.'];
+      if (e.arma === 1) return ['D', 'Está cerca pero no hay víctimas que perder. Ve a por el arma antes de que te alcance, y lleva un Guard encima.'];
+      return ['B', 'Está encima y no hay ni arma ni víctimas a mano. Baja horror sin perder el turno y prepara Guard y Retaliate.'];
+    }
+    // Con margen, el mapa decide.
+    if (e.vict === 1) return ['C', 'Killer lejos y víctimas agrupadas: es la ventana de rescate. Congelas su bloodlust y giras la carta de Final Girl.'];
+    if (e.arma === 1) return ['D', 'Killer lejos y un arma cuerpo a cuerpo a la vista. No la vas a tener más barata que ahora.'];
+    return ['A', 'Nada urgente en el tablero: es el único momento en que puedes permitirte regalar el turno 1 y plantarte en 3 dados en el turno 2.'];
+  }
+
+  function pintar() {
+    var listo = estado.arma !== null && estado.vict !== null && estado.kill !== null;
+    var tag = document.getElementById('v-tag');
+    var nombre = document.getElementById('v-name');
+    var porque = document.getElementById('v-why');
+
+    document.querySelectorAll('.salida').forEach(function (el) { el.classList.remove('on'); });
+
+    if (!listo) {
+      tag.textContent = '—';
+      nombre.textContent = 'Responde las tres';
+      porque.textContent = 'Mientras tanto, las cuatro salidas están abajo. Si solo vas a recordar una cosa: el turno 1 es de economía, no de acción.';
+      return;
+    }
+
+    var r = decidir(estado);
+    var s = SALIDAS[r[0]];
+    tag.textContent = r[0];
+    nombre.textContent = s.nombre;
+    porque.textContent = r[1];
+    var card = document.getElementById(s.id);
+    if (card) card.classList.add('on');
+  }
+
+  document.querySelectorAll('.toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.dataset.k, v = parseInt(b.dataset.v, 10);
+      estado[k] = (estado[k] === v) ? null : v;
+      b.parentNode.querySelectorAll('button').forEach(function (o) {
+        o.setAttribute('aria-pressed', String(estado[k] === parseInt(o.dataset.v, 10)));
+      });
+      pintar();
+    });
+  });
+
+  pintar();
+</script>
+
+<script>
+  var ST = {"films":[{"film":"The Happy Trails Horror","killer":"Hans","loc":"Camp Happy Trail","wr":0.6405,"plays":548,"locWr":0.7021,"locPlays":1514,"killWr":0.6365,"killPlays":1436,"secs":{"Dark Power":[["Unrevealed",0.7749,191],["Dark Obsession",0.4815,351],["Feed",0.67,300],["Sledgehammer Massacre",0.6974,304],["Blood Frenzy",0.6696,224]],"Finale":[["Unrevealed",0.592,375],["Bloodbath",0.5957,329],["Butcher Bloodlust",0.7684,285],["Dark, Darker, Darkest",0.6712,295],["Death Blow",0.5116,86]]},"setups":[["Capture the Flag",0.7778,99],["Meditation Hour",0.6238,101],["Skinny Dipping",0.5977,87],["The Bonfire",0.6296,108],["Treasure Hunt",0.6387,119]]},{"film":"Frightmare on Maple Lane","killer":"Dr. Fright","loc":"Maple Lane","wr":0.7558,"plays":172,"locWr":0.6876,"locPlays":893,"killWr":0.7435,"killPlays":850,"secs":{"Dark Power":[["Unrevealed",0.896,173],["Never Really Dead",0.7371,175],["Pitchfork Assault",0.716,162],["The Frightmare is Inevitable",0.6973,185],["Shock Factor",0.6715,137]],"Finale":[["Unrevealed",0.7109,422],["Everyone Must Die",0.7094,117],["Face Your Fright",0.8689,122],["Time to Die",0.7143,119],["Dream Warfare",0.8246,57]]},"setups":[["A Quiet Place",0.76,25],["Block Party",0.9062,32],["Maple Lane",0.7,30],["Playtime",0.7931,29],["Revenge",0.6522,46]]},{"film":"Carnage at the Carnival","killer":"Geppetto","loc":"Carnival of Blood","wr":0.4421,"plays":233,"locWr":0.5249,"locPlays":1025,"killWr":0.6501,"killPlays":783,"secs":{"Dark Power":[["Unrevealed",0.7037,81],["Immortal Master",0.6914,162],["Massive Abominations",0.6413,184],["Weapons Graft",0.6502,203],["Join the Family",0.6047,129]],"Finale":[["Unrevealed",0.5685,387],["I Made Your Friends",0.7451,102],["No Strings Attached",0.7302,126],["Remember Them?",0.7426,101],["Puppet Bombs",0.8095,42]]},"setups":[["Boxed In",0.5,38],["Center Stage",0.42,50],["Late for the Show",0.5238,42],["No Laughing Matter",0.3878,49],["Ring around the Rosie",0.4318,44]]},{"film":"The Haunting of Creech Manor","killer":"Poltergeist","loc":"Creech Manor","wr":0.4202,"plays":238,"locWr":0.5665,"locPlays":1052,"killWr":0.5611,"killPlays":884,"secs":{"Dark Power":[["Unrevealed",0.6458,48],["Eternal Despair",0.6162,198],["Invisible Barrier",0.5322,200],["Stiff Winds",0.5676,222],["Forgetting Something?",0.5032,157]],"Finale":[["Unrevealed",0.5432,567],["Nothing is easy",0.642,81],["Relentless Assault",0.5581,86],["She Will Soon Be Lost",0.5102,98],["Demonic Posession",0.8519,27]]},"setups":[["Creepshow",0.4898,49],["Dancing Queen",0.3158,38],["Strange Trophies",0.375,40],["The Dead Zone",0.5,40],["The Ladder",0.3898,59]]},{"film":"Slaughter in the Groves","killer":"Inkanyamba","loc":"Sacred Groves","wr":0.383,"plays":141,"locWr":0.4542,"locPlays":852,"killWr":0.6378,"killPlays":588,"secs":{"Dark Power":[["Unrevealed",0.8974,39],["Feast of Anger",0.6759,145],["Rising Dread",0.6643,140],["Volatile Temper",0.5405,148],["Dark Lightning",0.6471,102]],"Finale":[["Unrevealed",0.7865,267],["Savage Whirlwind",0.4242,99],["Violent Tantrum",0.4471,85],["We Need a Miracle",0.701,97],["Drag Her to Hell",0.5385,26]]},"setups":[["Dueling Tour Guides",0.3158,19],["Family Day",0.4444,27],["Mob O' Tourists",0.5,38],["Swamp Thing",0.3043,23],["Worship Service",0.2917,24]]},{"film":"Into the Void","killer":"Evomorph","loc":"USS Konrad","wr":0.7475,"plays":202,"locWr":0.7797,"locPlays":799,"killWr":0.7534,"killPlays":876,"secs":{"Dark Power":[["Unrevealed",0.8947,76],["Acid Blood",0.7149,228],["Razor Claws",0.8045,220],["Symbiotic Camouflage",0.7188,192],["Razor Tail",0.7315,149]],"Finale":[["Unrevealed",0.7866,506],["Blitz of Death",0.63,100],["Death in the Dark",0.8545,110],["The Perfect Organism",0.5909,110],["Impenetrable Armor",0.8947,38]]},"setups":[["Bloody Feast",0.8056,36],["Born In Flames",0.619,42],["Junction Danger",0.8409,44],["Showdown",0.7429,35],["Space Rave",0.7857,42]]},{"film":"Panic at Station 2891","killer":"The Organism","loc":"Station 2891","wr":0.6524,"plays":164,"locWr":0.6456,"locPlays":855,"killWr":0.7347,"killPlays":750,"secs":{"Number of Organisms":[["One",0.8689,328],["Two",0.6751,277],["Three",0.5377,106]],"Finale":[["Unrevealed",0.7135,171],["Cognitive Assimilation",0.8187,171],["Reductive Assimilation",0.7222,162],["Regenerative Assimilation",0.6703,185],["Final Assimilation",0.7593,54]]},"setups":[["A Nice Stew",0.6129,31],["Clear the Grounds",0.7143,35],["Good Morning",0.6,30],["Quittin Time",0.5714,35],["R & R",0.7576,33]]},{"film":"A Knock at the Door","killer":"The Intruders","loc":"Wingard Cottage","wr":0.6098,"plays":205,"locWr":0.6952,"locPlays":958,"killWr":0.6258,"killPlays":914,"secs":{"Dark Power":[["Unrevealed",0.5172,58],["Maskaphobia",0.6226,212],["No Remorse",0.6018,226],["Strength in Numbers",0.6971,241],["Won't Stay Down",0.6061,165]],"Finale":[["Unrevealed",0.2775,191],["Hunt Sweet Hunt",0.872,211],["Release the Beast",0.6698,215],["You're Gonna Die",0.68,200],["We Know Where You Live",0.5833,84]]},"setups":[["Couples Weekend",0.5682,44],["Dysfunctional Family",0.6667,36],["Fishing Trip",0.5957,47],["Grad Party",0.5833,36],["Special Occasion",0.6842,38]]},{"film":"Once Upon a Full Moon","killer":"Big Bad Wolf","loc":"Storybook Woods","wr":0.7459,"plays":185,"locWr":0.7796,"locPlays":776,"killWr":0.7064,"killPlays":722,"secs":{"Dark Power":[["Unrevealed",0.8333,18],["Destructive Roar",0.79,200],["Ravenous Hunger",0.7234,178],["Sixth Sense",0.7077,195],["A Killing Machine",0.5088,114]],"Finale":[["Unrevealed",0.6596,379],["Rampant Growth",0.75,100],["Tasty Treats",0.6061,99],["Thrill of the Hunt",0.9216,102],["One More Bite",0.7568,37]]},"setups":[["Breadcrumb Trail",0.6667,33],["Family Visit",0.8286,35],["Forest Dwellers",0.7317,41],["Picnic",0.7442,43],["Scatter",0.7576,33]]},{"film":"Madness in the Dark","killer":"Ratchet Lady","loc":"Wolfe Asylum","wr":0.5,"plays":148,"locWr":0.6321,"locPlays":829,"killWr":0.6657,"killPlays":682,"secs":{"Dark Power":[["Unrevealed",0.7049,122],["Bloodfear",0.6947,131],["Dark Injection",0.6944,144],["Manic Burst",0.6568,169],["Shield of Madness",0.5545,110]],"Finale":[["Unrevealed",0.6515,330],["Feed the Madness",0.6869,99],["Hold Her Down",0.6214,103],["It's Raining Maniacs",0.6535,101],["Enter the Madhouse",0.814,43]]},"setups":[["A Solitary Life",0.6538,26],["Bingo Night",0.5,32],["The Dr. Is In",0.4815,27],["Madhouse Faceoff",0.4815,27],["Padded Rooms",0.4,35]]},{"film":"The North Pole Nightmare","killer":"Krampus","loc":"Santa's Village","wr":0.4667,"plays":180,"locWr":0.6495,"locPlays":622,"killWr":0.584,"killPlays":601,"secs":{"Dark Power":[["Unrevealed",0.76,50],["Blood and Cookies",0.5548,155],["Explosive Gifts",0.5238,147],["Tantalizing Gifts",0.6136,132],["Never Ending Gifts",0.5841,113]],"Finale":[["Unrevealed",0.6054,261],["Bamf!",0.5714,91],["Soul Lust",0.7021,94],["Unholy Gifts",0.5455,88],["Past Midnight",0.3939,66]]},"setups":[["Back With Lumber",0.3333,33],["Gather Round",0.5,46],["Reindeer Games",0.4074,27],["Story Time",0.3939,33],["Toys! Toys! Toys!",0.6667,36]]},{"film":"The Marrek Murders","killer":"Tormentor","loc":"Marrek Warehouse","wr":0.7134,"plays":164,"locWr":0.6842,"locPlays":570,"killWr":0.7361,"killPlays":595,"secs":{"Dark Power":[["Unrevealed",0.4,20],["Horrifying Traps",0.7113,142],["Overkill Traps",0.8105,153],["Unfair Traps",0.7484,155],["Endless Traps",0.7193,114]],"Finale":[["Unrevealed",0.0541,37],["Game Over",0.8133,150],["No Escape",0.7976,168],["The Ultimate Trap",0.764,161],["No Rest for the Weary",0.75,68]]},"setups":[["Daily Huddle",0.6667,30],["Shift Change",0.6667,33],["Units Per Hour",0.7714,35],["Unloading",0.7838,37],["You're Fired",0.6429,28]]},{"film":"Hell to Pay","killer":"Razorface","loc":"Hellscape","wr":0.622,"plays":127,"locWr":0.78,"locPlays":591,"killWr":0.5382,"killPlays":511,"secs":{"Dark Power":[["Unrevealed",0.7222,18],["Helleport",0.6554,148],["Life Drain",0.4338,136],["Soulbound",0.5271,129],["Infinite Despair",0.4615,78]],"Finale":[["Unrevealed",0.3858,197],["Chains of Torment",0.6949,118],["I Feast On Your Pain",0.5532,94],["Taste Our Pleasures",0.6494,77],["Legendary Suffering",0.5833,24]]},"setups":[["Depravity",0.5417,24],["Ecstasy",0.5385,26],["Rapture",0.6957,23],["Revelation",0.6897,29],["Sensation",0.64,25]]},{"film":"The Falconwood Files","killer":"Slayer","loc":"Falconwood","wr":0.7063,"plays":126,"locWr":0.7329,"locPlays":468,"killWr":0.6067,"killPlays":511,"secs":{"Dark Power":[["Unrevealed",0.4857,35],["Master Plan",0.617,141],["Mind Control",0.6547,139],["Renewed Determination",0.6154,117],["It's In My Head!",0.5385,78]],"Finale":[["Unrevealed",0.4598,174],["Interdimensional Rift Collapse",0.6139,101],["Let's Finish This",0.7222,90],["Welcome To My World",0.8404,94],["Your Time is Up",0.46,50]]},"setups":[["4th of July Weekend",0.8276,29],["Back to School",0.5652,23],["Election Day",0.625,24],["Halloween",0.7727,22],["New Year's Eve",0.7143,28]]},{"film":"The Killer from Tomorrow","killer":"Hunter","loc":"Sunnydaze Mall","wr":0.6071,"plays":140,"locWr":0.6236,"locPlays":457,"killWr":0.7085,"killPlays":470,"secs":{"Dark Power":[["Unrevealed",0.4118,17],["Cybernetic Agility",0.662,142],["Reinforced Endoskeleton",0.6364,112],["Titanium-Laced Bio Tissue",0.7358,106],["M134 Minigun Armament",0.75,92]],"Finale":[["Unrevealed",0.4345,168],["Adaptive A.I.",0.9255,94],["Relentless Pursuit",0.9479,96],["\"Termination Mode... Active\"",0.75,72],["Mark X-1000",0.7179,39]]},"setups":[["Black Friday",0.8182,33],["Family Dinner",0.5217,23],["Foodcourt Faceoff",0.5,30],["High Score!",0.6667,27],["Special Delivery",0.4815,27]]},{"film":"Don't Make a Sound","killer":"The Eyeless","loc":"Utopia","wr":0.5607,"plays":173,"locWr":0.6088,"locPlays":634,"killWr":0.6436,"killPlays":491,"secs":{"Dark Power":[["Unrevealed",0.4314,51],["Hard Skin",0.6341,123],["Quick Counter",0.6694,124],["Reactive Swipe",0.625,112],["High Alert",0.775,80]],"Finale":[["Unrevealed",0.5316,158],["It Can Hear Everything",0.686,86],["It Knows My Moves",0.6354,96],["No More Running",0.62,100],["Final Slash",0.98,50]]},"setups":[["Bouldering",0.6176,34],["Monstrous Stench",0.4688,32],["Sundown",0.5667,30],["Trash Day",0.6316,38],["Welcome to Utopia",0.5128,39]]},{"film":"Bad Times at Buddyland","killer":"Billy","loc":"Buddyland","wr":0.6067,"plays":89,"locWr":0.6696,"locPlays":224,"killWr":0.6069,"killPlays":173,"secs":{"Dark Power":[["Unrevealed",0.8333,18],["Deathlust",0.6061,33],["Endless Power",0.5897,39],["Introducing... Billy Jr!",0.62,50],["Merciless Minions",0.4615,26]],"Finale":[["Unrevealed",0.62,50],["Encore",0.3824,34],["It's Showtime!",0.88,25],["Sizzling Power",0.7931,29],["Power Surge",0.4074,27]]},"setups":[["Birthday Bash",0.5455,22],["Buddy Day",0.5714,21],["Hide and Seek",0.7059,17],["Pizza Party",0.6,15],["Playin' Hooky",0.6923,13]]},{"film":"A Rotten Harvest","killer":"Grimlash","loc":"Shady Acres","wr":0.7105,"plays":76,"locWr":0.6049,"locPlays":162,"killWr":0.7814,"killPlays":183,"secs":{"Dark Power":[["Unrevealed",1,13],["Rite of the Corrupted",0.7209,43],["Rite of the Old One",0.8235,51],["Root-bound Curse",0.6591,44],["Fields of Madness",0.8667,30]],"Finale":[["Unrevealed",0.7778,99],["Ancient Abomination",0.76,25],["Hunger of the Old Gods",0.8889,18],["Withered Harbinger",0.8571,21],["God of Blood and Grain",0.65,20]]},"setups":[["Demands of the Earth",0.6957,23],["Dusk Sacrifice",0.7273,11],["Final Crop",0.625,16],["Harvest Season",0.8333,12],["Reap What You Sow",0.7143,14]]},{"film":"A Demon in the Shadows","killer":"Berith","loc":"L'Armes Abbey","wr":0.5,"plays":64,"locWr":0.5691,"locPlays":123,"killWr":0.6016,"killPlays":128,"secs":{"Dark Power":[["Unrevealed",0.5556,9],["Keeping Ursula Alive",0.5161,31],["Lamb to the Slaughter",0.7059,34],["Rejecting God",0.5185,27],["Satanic Influence",0.6667,24]],"Finale":[["Unrevealed",0.4561,57],["Hell on Earth",0.7,20],["It Wants You!",0.6923,13],["Spiritual Attack",0.8571,21],["Legions of Hell",0.6667,15]]},"setups":[["Daily Chores",0.5,10],["Reflection & Meditation",0.5625,16],["Sunday Mass",0.5714,14],["Supper Time",0.4286,14],["Tourism Bus",0.4,10]]},{"film":"The Green Terror","killer":"Volk'ar","loc":"Pesadilla Verde","wr":0.7907,"plays":43,"locWr":0.7791,"locPlays":86,"killWr":0.7403,"killPlays":77,"secs":{"Dark Power":[["Unrevealed",0.25,4],["Blades in the Dark",0.7895,19],["Chameleon of Death",0.75,17],["Stress of the Unknown",0.7667,30],["Merciless Ambush",0.8,5]],"Finale":[["Unrevealed",0.5714,14],["Guerilla Warfare",1,9],["Rampage",0.9,20],["Self Destruct",0.5,24],["Regenerative Cloaking",1,9]]},"setups":[["Cave Dwellers",0.9,10],["High Ground",0.6667,9],["Jungle Madness",0.8571,7],["Rebel Yell",1,9],["River Rats",0.5,8]]},{"film":"The Raptor Games","killer":"Raptors","loc":"Isla Lagarto","wr":0.5366,"plays":41,"locWr":0.6379,"locPlays":58,"killWr":0.6452,"killPlays":62,"secs":{"Dark Power":[["Unrevealed",0.6364,11],["Blood Thirsty",0.7333,15],["Pack Conditioning",0.5,12],["They're Everywhere!",0.6154,13],["Scaly Hide",0.8571,7]],"Finale":[["Unrevealed",0.5143,35],["Born Hungry",1,6],["Claws Like Knives",0.6667,9],["Raptor Rush",0.7143,7],["Deadly Quick",1,5]]},"setups":[["Beach Landing",0.5714,7],["Facility Construction",0.3636,11],["Lab Breach",0.7778,9],["Let The Games Begin!",0.5714,7],["Look at the Volcano!",0.4286,7]]},{"film":"Shriek","killer":"Mort","loc":"Mega BGCon","wr":0.7107,"plays":121,"locWr":0.7354,"locPlays":325,"killWr":0.6965,"killPlays":313,"secs":{"Dark Power":[["Unrevealed",0,3],["Anonymous Terror",0.7097,93],["Toxic Whispers",0.747,83],["Relentless Paranoia",0.6316,76],["Snitches Get Stitches",0.7273,55]],"Finale":[["Unrevealed",0,12],["Mort as Hans",0.85,20],["Mort as Dr. Fright",0.6429,28],["Mort as Geppetto",0.8182,22],["Mort as Ratchet Lady",0.7368,38],["Mort as Big Bad Wolf",0.7826,23],["Mort as Baghead",0.6842,19],["Mort as Tormentor",0.7391,23],["Mort as Razorface",0.75,28],["Mort as H.U.N.T.E.R.",0.5714,28],["Mort as Krampus",0.871,31],["Secret Epic Finale",0.6098,41]]},"setups":[["Busiest Day",0.5556,18],["Family Day",0.9,20],["First Day",0.75,28],["Last Day",0.6667,30],["Mega Events",0.7619,21]]}],"girls":[["Elizabeth",0.9032,31,"Secuela"],["Grandma",0.8621,87,"Grandma's Grudge (S3)"],["Rena",0.7771,166,"Bad Times at Buddyland"],["Tali",0.7626,198,"The Killer from Tomorrow"],["Adrianne",0.7576,132,"Shriek"],["Jen",0.75,28,"Promo premium (S4)"],["Red",0.747,419,"Once Upon a Full Moon"],["Meg",0.7449,98,"Promo premium (S4)"],["Alois",0.7447,47,"The Green Terror"],["Ginny",0.7266,384,"A Knock at the Door"],["Uki",0.7238,420,"Panic at Station 2891"],["Sheila",0.7188,345,"Frightmare on Maple Lane"],["Dakota",0.717,53,"The Green Terror"],["Jenette",0.7163,423,"Into the Void"],["Cassie",0.7111,225,"The Marrek Murders"],["Carolyn",0.7103,107,"Carolyn's Revenge (S3)"],["Julie",0.7019,104,"Promo premium (S4)"],["Mandy",0.7009,234,"The Marrek Murders"],["Gabrielle",0.6974,152,"Temporada 3"],["Ronda",0.6949,177,"Don't Make a Sound"],["Christie",0.6946,167,"Hell to Pay"],["Joy",0.6944,108,"A Rotten Harvest"],["Ellen",0.6915,363,"Into the Void"],["Agnes",0.6906,181,"Box of Props (S2)"],["Maureen",0.6842,133,"Shriek"],["Gretel",0.6823,299,"Once Upon a Full Moon"],["Nancy",0.6807,285,"Frightmare on Maple Lane"],["Rita",0.68,75,"A Demon in the Shadows"],["Joan",0.6786,28,"Temporada 4"],["Veronica",0.6754,305,"Madness in the Dark"],["Janelle",0.6696,230,"The Falconwood Files"],["Layla",0.6667,156,"Box of Props (S2)"],["Julia",0.6667,147,"Box of Props (S2) · cruce con Dark Quarter"],["Iris",0.6667,24,"Promo premium (S4)"],["Ava",0.6603,418,"A Knock at the Door"],["Kate",0.6593,317,"Panic at Station 2891"],["Maud",0.6552,29,"The Raptor Games"],["Kenzie",0.651,192,"Hell to Pay"],["Octavia",0.64,150,"The Falconwood Files"],["Paula",0.6379,243,"Promo de la tienda de Van Ryder"],["Jamie",0.6377,138,"Guest Stars (S3)"],["Barbara",0.6346,353,"Slaughter in the Groves"],["Constance",0.6294,197,"Box of Props (S2) · cruce con Dark Quarter"],["Christina",0.6286,35,"The Raptor Games"],["Melanie",0.6269,260,"Temporada 1"],["Laurie",0.6206,651,"The Happy Trails Horror"],["Patsy",0.6189,286,"Temporada 2"],["Heather",0.6135,414,"Madness in the Dark"],["Adelaide",0.6126,302,"Slaughter in the Groves"],["Gwynn",0.6051,157,"Bad Times at Buddyland"],["Vicky",0.6042,96,"A Rotten Harvest"],["Reiko",0.6016,487,"The Happy Trails Horror"],["Selena",0.5967,424,"The Haunting of Creech Manor"],["Lindi",0.5943,106,"A Demon in the Shadows"],["Charlie",0.5855,386,"Carnage at the Carnival"],["Meghan",0.5833,204,"Don't Make a Sound"],["Asami",0.5801,462,"Carnage at the Carnival"],["Alice",0.5695,367,"The Haunting of Creech Manor"],["Mrs. Claus",0.5588,272,"The North Pole Nightmare"],["Cindy",0.5547,247,"The North Pole Nightmare"],["Kat",0.5333,225,"The Killer from Tomorrow"]],"locs":[["Sacred Groves",0.4542,852],["Carnival of Blood",0.5249,1025],["Creech Manor",0.5665,1052],["L'Armes Abbey",0.5691,123],["Shady Acres",0.6049,162],["Utopia",0.6088,634],["Sunnydaze Mall",0.6236,457],["Wolfe Asylum",0.6321,829],["Isla Lagarto",0.6379,58],["Station 2891",0.6456,855],["Santa's Village",0.6495,622],["Buddyland",0.6696,224],["Marrek Warehouse",0.6842,570],["Maple Lane",0.6876,893],["Wingard Cottage",0.6952,958],["Camp Happy Trail",0.7021,1514],["Falconwood",0.7329,468],["Mega BGCon",0.7354,325],["Pesadilla Verde",0.7791,86],["Storybook Woods",0.7796,776],["USS Konrad",0.7797,799],["Hellscape",0.78,591]],"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","seasons":[["Temporada 1",5003,0.6392],["Temporada 2",4464,0.6745],["Temporada 3",2836,0.6622],["Temporada 4",656,0.6738],["Otras",914,0.6225]],"estado":[["Final Health: sobrevives tú",1710,0.4175],["Final Health: sobrevive él",2786,0.864],["Final Health: los dos",380,0.7447],["Final Health: ninguno",8618,0.6362],["Finale sin revelar",5381,0.5902],["Finale revelado",8492,0.6974],["Dark Power sin revelar",1237,0.7332],["Dark Power revelado",12636,0.6482],["Dificultad normal",12706,0.6544],["Extreme Horror",1146,0.6728]]}};
+  var MIAS = ['The Happy Trails Horror','Into the Void','A Knock at the Door','Once Upon a Full Moon','Madness in the Dark'];
+  var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
+  var esMia = function (f) { return MIAS.indexOf(f) !== -1; };
+
+  function filas(tb, arr, fmt) {
+    tb.innerHTML = arr.map(fmt).join('');
+  }
+
+  function detalle(f) {
+    var d = document.getElementById('st-det');
+    var h = '<h3>' + f.film + '</h3>' +
+      '<p class="loc">' + f.killer + ' en ' + f.loc + '</p>' +
+      '<div class="split">' +
+        '<div><b>' + pc(f.wr) + '</b><span>Esta caja tal cual<br>' + f.plays + ' partidas</span></div>' +
+        (f.killWr !== null ? '<div><b>' + pc(f.killWr) + '</b><span>' + f.killer + ' contra<br>cualquier mapa</span></div>' : '') +
+        (f.locWr !== null ? '<div><b>' + pc(f.locWr) + '</b><span>' + f.loc + ' contra<br>cualquier killer</span></div>' : '') +
+      '</div>';
+
+    Object.keys(f.secs).forEach(function (k) {
+      var rows = f.secs[k].slice().sort(function (a, b) { return a[1] - b[1]; });
+      var titulo = k === 'Dark Power' ? 'Dark Powers, del que más te hunde al que menos'
+                 : k === 'Finale' ? 'Finales, del que más te hunde al que menos'
+                 : k;
+      h += '<p class="sec-t">' + titulo + '</p><div class="tabla-wrap"><table class="mini">' +
+        rows.map(function (r, i) {
+          var cls = i === 0 ? 'peor' : (i === rows.length - 1 ? 'mejor' : '');
+          return '<tr class="' + cls + '"><td>' + r[0] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+        }).join('') + '</table></div>';
+    });
+
+    if (f.setups.length) {
+      var s = f.setups.slice().sort(function (a, b) { return a[1] - b[1]; });
+      h += '<p class="sec-t">Cartas de Setup, de la peor a la mejor</p><div class="tabla-wrap"><table class="mini">' +
+        s.map(function (r, i) {
+          var cls = i === 0 ? 'peor' : (i === s.length - 1 ? 'mejor' : '');
+          return '<tr class="' + cls + '"><td>' + r[0] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+        }).join('') + '</table></div>';
+    }
+    d.innerHTML = h;
+  }
+
+  function pintarStats() {
+    var m = ST.meta;
+    document.getElementById('st-last').textContent = m.last;
+    document.getElementById('k-tot').textContent = m.total.toLocaleString('es-ES');
+    document.getElementById('k-wr').textContent = pc(m.wr);
+
+    var orden = ST.films.slice().sort(function (a, b) { return b.wr - a.wr; });
+    document.getElementById('k-best').textContent = pc(orden[0].wr);
+    document.getElementById('k-worst').textContent = pc(orden[orden.length - 1].wr);
+
+    var max = orden[0].wr;
+    document.getElementById('st-films').innerHTML = orden.map(function (f, i) {
+      return '<button type="button" class="bar" data-i="' + ST.films.indexOf(f) + '" aria-pressed="false">' +
+        '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
+        '<span class="nm">' + f.film + (esMia(f.film) ? '<span class="mine">Tuya</span>' : '') +
+        '<i>' + f.killer + ' · ' + f.loc + '</i></span>' +
+        '<span class="pc">' + pc(f.wr) + '</span>' +
+        '<span class="pl">' + f.plays + '</span></button>';
+    }).join('');
+
+    document.querySelectorAll('#st-films .bar').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.querySelectorAll('#st-films .bar').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        detalle(ST.films[parseInt(b.dataset.i, 10)]);
+      });
+    });
+
+    filas(document.getElementById('st-locs'), ST.locs, function (r) {
+      return '<tr><td>' + r[0] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+    });
+    filas(document.getElementById('st-girls'), ST.girls, function (r) {
+      return '<tr><td>' + r[0] + '</td><td class="org">' + r[3] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+    });
+    filas(document.getElementById('st-estado'), ST.meta.estado, function (r) {
+      return '<tr><td>' + r[0] + '</td><td>' + pc(r[2]) + '</td><td>' + r[1] + '</td></tr>';
+    });
+
+    var inicial = ST.films.filter(function (f) { return esMia(f.film); })
+                          .sort(function (a, b) { return b.plays - a.plays; })[0] || ST.films[0];
+    detalle(inicial);
+    var btn = document.querySelector('#st-films .bar[data-i="' + ST.films.indexOf(inicial) + '"]');
+    if (btn) btn.setAttribute('aria-pressed', 'true');
+  }
+
+  pintarStats();
+</script>
+
+
+</body>
+</html>
