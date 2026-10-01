@@ -14,10 +14,11 @@ The site credits the sheet and links to your form, but it does not nag anyone to
 
 It is set to noindex for now. I did not want it in Google before you told me it was fine.
 
-Two things:
+Three things:
 
 1. Are you happy with me using the data? Happy to credit it however you prefer.
 2. Would you add a link to it from the sheet? People who want the numbers would find them, and people who want to log plays would land on your form.
+3. I can add a short logging form on my side that opens your form prefilled, so people type less and the play still lands in your sheet through your form, with nothing new for you to maintain. If you would rather I did not, I will not. And if you ever wanted a proper write path, that should be a script you own and can switch off, not something I post to on my own.
 
 Thanks for keeping the tracker going. It is the only real data this game has.
 
