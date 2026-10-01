@@ -121,7 +121,10 @@
     /* background-attachment:fixed va mal en iOS: salta al hacer scroll o
        se queda pegado. En móvil basta con que no se mueva el elemento,
        que ya es position:fixed. */
-    body::after { background-attachment:scroll; opacity:.10; }
+    /* Al 10% la cinta no se veia: el hueco entre la cabecera y la portada
+       salia negro. Los paneles de datos son opacos, asi que subirla no
+       le quita contraste a ningun texto. */
+    body::after { background-attachment:scroll; opacity:.34; filter:none; }
     .hero { background-attachment:scroll; }
 
     /* La cabecera iba pegada al contenido y entre las dos tapaban toda la
@@ -131,7 +134,7 @@
     /* El hueco de arriba es a proposito: ahi se ve la cinta del fondo,
        entre la cabecera y la portada. Sin el, las dos se tocan y el
        fondo no asoma en ningun momento. */
-    .hero { margin:26px 14px 0; border-radius:3px; overflow:hidden;
+    .hero { margin:34px 14px 0; border-radius:3px; overflow:hidden;
             min-height:230px; }
     .hero::after {
       background:
