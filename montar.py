@@ -375,6 +375,38 @@ print("fichas.html (índice de las", len(generadas), "páginas)")
 PAGINAS += [{"salida": "fichas.html", "prioridad": "0.9"}]
 PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
+# --- borrador de registro de partidas --------------------------------------
+# Pagina a proposito SUELTA: no entra en la navegacion, ni en fichas.html,
+# ni en el sitemap, y lleva noindex pase lo que pase. Existe solo para
+# enseñarsela a quien lleva la hoja por enlace directo. Si dicen que no,
+# se borra el fichero y no lo vio nadie.
+#
+# No escribe en su hoja: construye un enlace prerrellenado de Google Forms,
+# que es una funcion publica del propio formulario. Nada entra hasta que una
+# persona pulsa Submit alli.
+plantilla = (AQUI / "registrar_plantilla.html").read_text()
+campos = json.loads((AQUI / "fg_form.json").read_text())
+parejas = {f["killer"]: f["loc"] for f in D["films"]}
+plantilla = plantilla.replace("__FORMJSON__", json.dumps(campos, ensure_ascii=False))
+plantilla = plantilla.replace(
+    "var FORM =",
+    "var PAREJAS = " + json.dumps(parejas, ensure_ascii=False) + ";\n  var FORM =")
+
+url_reg = f"{DOMINIO}/registrar.html"
+(AQUI / "registrar.html").write_text(
+    CABECERA.format(
+        title="Registrar una partida de Final Girl",
+        desc="Atajo para registrar una partida en la hoja comunitaria: cinco campos en vez de ciento ochenta y nueve.",
+        url=url_reg, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle="Registrar una partida de Final Girl",
+        ogdesc="Cinco campos en vez de ciento ochenta y nueve.",
+        jsonld=jsonld_de({"title": "Registrar una partida", "desc": "Borrador."}, url_reg),
+        robots="noindex,nofollow",   # siempre, aunque el resto se indexe
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
+    + NAV.format(act_index="", act_salidas="", act_fichas="")
+    + plantilla + PIE)
+print("registrar.html  (suelto: sin enlaces, sin sitemap, noindex fijo)")
+
 # --- sitemap y robots -----------------------------------------------------
 urls = "".join(
     f"<url><loc>{DOMINIO}/{'' if p['salida']=='index.html' else p['salida']}</loc>"

@@ -1,0 +1,169 @@
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Borrador · no enlazado desde el resto del sitio</p>
+  <h1>Registrar<span class="roja">una partida</span></h1>
+  <p class="dek">Cinco campos en vez de ciento ochenta y nueve. Al terminar se abre el formulario de la hoja comunitaria con todo puesto, y solo tienes que confirmar. La partida entra en su hoja, no en ninguna otra.</p>
+</header>
+
+<form id="reg" autocomplete="off">
+  <div class="campo">
+    <label for="r-nick">Tu nombre en la hoja</label>
+    <input type="text" id="r-nick" placeholder="El mismo que uses siempre" spellcheck="false">
+    <small>Se guarda en este navegador para la próxima vez.</small>
+  </div>
+
+  <div class="campo">
+    <label for="r-killer">Killer</label>
+    <select id="r-killer"><option value="">Elige…</option></select>
+  </div>
+
+  <div class="campo" id="c-loc" hidden>
+    <label for="r-loc">Localización</label>
+    <select id="r-loc"></select>
+    <small id="r-loc-nota"></small>
+  </div>
+
+  <div class="campo">
+    <label for="r-girl">Final Girl</label>
+    <select id="r-girl"><option value="">Elige…</option></select>
+  </div>
+
+  <div class="campo">
+    <span class="label">¿Quién ganó?</span>
+    <div class="radios" id="r-gano">
+      <label><input type="radio" name="gano" value="Final Girl" checked> Gané yo</label>
+      <label><input type="radio" name="gano" value="The Killer"> Ganó el killer</label>
+    </div>
+  </div>
+
+  <div class="campo">
+    <span class="label">Dificultad</span>
+    <div class="radios" id="r-dif">
+      <label><input type="radio" name="dif" value="Normal" checked> Normal</label>
+      <label><input type="radio" name="dif" value="Extreme Horror"> Extreme Horror</label>
+    </div>
+  </div>
+
+  <div class="aviso" id="r-resumen" hidden></div>
+
+  <p><button type="submit" class="cta-btn" id="r-enviar" disabled>Abrir el formulario con esto puesto</button></p>
+  <p class="riesgo"><b>Qué pasa al pulsar</b> Se abre el formulario de la hoja comunitaria en otra pestaña, con estos campos ya rellenados. Nada se envía hasta que tú le des a Submit allí. Esta página no escribe en su hoja ni guarda nada en ningún sitio.</p>
+</form>
+
+<footer>
+  <p>La hoja la mantiene la comunidad de Final Girl. Este atajo solo usa los enlaces prerrellenados que ofrece Google Forms: no toca sus datos.</p>
+</footer>
+
+</div>
+
+<style>
+  #reg { max-width:560px; }
+  .campo { margin-bottom:20px; }
+  .campo label, .campo .label { display:block; font-family:var(--f-mono); font-size:11px;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .campo input[type=text], .campo select {
+    width:100%; padding:10px 12px; font:inherit; font-size:15px;
+    background:var(--sunk); color:var(--ink); border:1px solid var(--line-hi); border-radius:3px; }
+  .campo input[type=text]:focus, .campo select:focus { outline:2px solid var(--blood); outline-offset:-2px; }
+  .campo small { display:block; margin-top:5px; font-size:12px; color:var(--muted); }
+  .radios { display:flex; gap:10px; flex-wrap:wrap; }
+  .radios label { display:flex; align-items:center; gap:7px; font-family:var(--f-body);
+    font-size:14.5px; letter-spacing:0; text-transform:none; color:var(--ink);
+    background:var(--sunk); border:1px solid var(--line-hi); border-radius:3px;
+    padding:9px 13px; cursor:pointer; margin:0; }
+  .radios label:has(input:checked) { border-color:var(--blood); background:var(--blood-s); }
+  #r-enviar { border:0; cursor:pointer; font:inherit; font-size:15px; font-weight:600; padding:11px 18px; }
+  #r-enviar:disabled { opacity:.45; cursor:not-allowed; }
+  #r-resumen p { margin:0; font-size:14.5px; }
+</style>
+
+<script>
+(function () {
+  var F = __FORMJSON__;
+  var FORM = "https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform";
+
+  var killer = document.getElementById('r-killer');
+  var girl   = document.getElementById('r-girl');
+  var loc    = document.getElementById('r-loc');
+  var cLoc   = document.getElementById('c-loc');
+  var nick   = document.getElementById('r-nick');
+  var boton  = document.getElementById('r-enviar');
+  var resumen = document.getElementById('r-resumen');
+
+  function llena(sel, ops) {
+    ops.forEach(function (o) {
+      var e = document.createElement('option');
+      e.value = o; e.textContent = o; sel.appendChild(e);
+    });
+  }
+  llena(killer, F['Killer'].ops);
+  llena(girl, F['Final Girl'].ops);
+
+  // El nick es lo unico que se guarda, y solo aqui: ahorra teclear a quien
+  // registra varias partidas seguidas.
+  try { nick.value = localStorage.getItem('fg-nick') || ''; } catch (e) {}
+  nick.addEventListener('input', function () {
+    try { localStorage.setItem('fg-nick', nick.value); } catch (e) {}
+  });
+
+  killer.addEventListener('change', function () {
+    var campo = F['Location (' + killer.value + ')'];
+    loc.innerHTML = '';
+    if (!campo) { cLoc.hidden = true; revisa(); return; }
+    cLoc.hidden = false;
+    llena(loc, campo.ops);
+    // Su mapa de caja primero: es el que juega casi todo el mundo.
+    var propia = PAREJAS[killer.value];
+    if (propia && campo.ops.indexOf(propia) !== -1) loc.value = propia;
+    document.getElementById('r-loc-nota').textContent =
+      propia ? 'La de su caja es ' + propia + '.' : '';
+    revisa();
+  });
+
+  function datos() {
+    return {
+      nick: nick.value.trim(),
+      killer: killer.value,
+      loc: cLoc.hidden ? '' : loc.value,
+      girl: girl.value,
+      gano: document.querySelector('input[name=gano]:checked').value,
+      dif: document.querySelector('input[name=dif]:checked').value
+    };
+  }
+
+  function revisa() {
+    var d = datos();
+    var listo = d.nick && d.killer && d.girl && (cLoc.hidden || d.loc);
+    boton.disabled = !listo;
+    resumen.hidden = !listo;
+    if (listo) {
+      resumen.innerHTML = '<p><b>' + d.girl + '</b> contra <b>' + d.killer + '</b>' +
+        (d.loc ? ' en ' + d.loc : '') + '. ' +
+        (d.gano === 'Final Girl' ? 'Victoria' : 'Derrota') +
+        (d.dif === 'Extreme Horror' ? ', en Extreme Horror' : '') + '.</p>';
+    }
+  }
+  document.getElementById('reg').addEventListener('input', revisa);
+  document.getElementById('reg').addEventListener('change', revisa);
+
+  document.getElementById('reg').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = datos();
+    var p = [];
+    function add(campo, valor) {
+      if (!valor || !F[campo]) return;
+      p.push('entry.' + F[campo].entry + '=' + encodeURIComponent(valor));
+    }
+    add('Nickname', d.nick);
+    add('Killer', d.killer);
+    add('Location (' + d.killer + ')', d.loc);
+    add('Final Girl', d.girl);
+    add('Who won the game?', d.gano);
+    add('Difficulty Settings', d.dif);
+    window.open(FORM + '?usp=pp_url&' + p.join('&'), '_blank', 'noopener');
+  });
+
+  revisa();
+})();
+</script>

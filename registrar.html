@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Registrar una partida de Final Girl</title>
+<meta name="description" content="Atajo para registrar una partida en la hoja comunitaria: cinco campos en vez de ciento ochenta y nueve.">
+<link rel="canonical" href="https://carchofo.github.io/final-girl-stats/registrar.html">
+<meta name="theme-color" content="#0b0a0b">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- Open Graph: lo que se ve al pegar el enlace en Reddit, Discord o BGG.
+     Es de donde va a venir casi todo el trafico al principio, mucho antes
+     que de Google. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La página que todo fan de Final Girl necesitaba">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Registrar una partida de Final Girl">
+<meta property="og:description" content="Cinco campos en vez de ciento ochenta y nueve.">
+<meta property="og:url" content="https://carchofo.github.io/final-girl-stats/registrar.html">
+<meta property="og:image" content="https://carchofo.github.io/final-girl-stats/img/vhs-final-girl.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Registrar una partida de Final Girl">
+<meta name="twitter:description" content="Cinco campos en vez de ciento ochenta y nueve.">
+<meta name="twitter:image" content="https://carchofo.github.io/final-girl-stats/img/vhs-final-girl.jpg">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Registrar una partida","description":"Borrador.","url":"https://carchofo.github.io/final-girl-stats/registrar.html","inLanguage":"es","keywords":["Final Girl","board game","solo","win rate","estadísticas"],"temporalCoverage":"../28 sep 2026","variableMeasured":"Porcentaje de victoria","measurementTechnique":"Partidas registradas por jugadores","distribution":{"@type":"DataDownload","encodingFormat":"text/html","contentUrl":"https://carchofo.github.io/final-girl-stats/registrar.html"},"about":{"@type":"Game","name":"Final Girl","gamePlatform":"Juego de mesa","numberOfPlayers":{"@type":"QuantitativeValue","value":1}},"size":"13873 partidas"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128373;</text></svg>">
+<link rel="stylesheet" href="estilos.css"></head>
+<body>
+<nav class="nav-sitio" aria-label="Secciones">
+  <a href="index.html">Estadísticas</a>
+  <a href="salidas.html">Salidas</a>
+  <a href="fichas.html">Fichas</a>
+</nav>
+<style>
+  .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
+                letter-spacing:.06em; text-transform:uppercase; }
+  .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
+                  border-bottom:2px solid transparent; }
+  .nav-sitio a:hover { color:var(--ink); }
+  .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+</style>
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Borrador · no enlazado desde el resto del sitio</p>
+  <h1>Registrar<span class="roja">una partida</span></h1>
+  <p class="dek">Cinco campos en vez de ciento ochenta y nueve. Al terminar se abre el formulario de la hoja comunitaria con todo puesto, y solo tienes que confirmar. La partida entra en su hoja, no en ninguna otra.</p>
+</header>
+
+<form id="reg" autocomplete="off">
+  <div class="campo">
+    <label for="r-nick">Tu nombre en la hoja</label>
+    <input type="text" id="r-nick" placeholder="El mismo que uses siempre" spellcheck="false">
+    <small>Se guarda en este navegador para la próxima vez.</small>
+  </div>
+
+  <div class="campo">
+    <label for="r-killer">Killer</label>
+    <select id="r-killer"><option value="">Elige…</option></select>
+  </div>
+
+  <div class="campo" id="c-loc" hidden>
+    <label for="r-loc">Localización</label>
+    <select id="r-loc"></select>
+    <small id="r-loc-nota"></small>
+  </div>
+
+  <div class="campo">
+    <label for="r-girl">Final Girl</label>
+    <select id="r-girl"><option value="">Elige…</option></select>
+  </div>
+
+  <div class="campo">
+    <span class="label">¿Quién ganó?</span>
+    <div class="radios" id="r-gano">
+      <label><input type="radio" name="gano" value="Final Girl" checked> Gané yo</label>
+      <label><input type="radio" name="gano" value="The Killer"> Ganó el killer</label>
+    </div>
+  </div>
+
+  <div class="campo">
+    <span class="label">Dificultad</span>
+    <div class="radios" id="r-dif">
+      <label><input type="radio" name="dif" value="Normal" checked> Normal</label>
+      <label><input type="radio" name="dif" value="Extreme Horror"> Extreme Horror</label>
+    </div>
+  </div>
+
+  <div class="aviso" id="r-resumen" hidden></div>
+
+  <p><button type="submit" class="cta-btn" id="r-enviar" disabled>Abrir el formulario con esto puesto</button></p>
+  <p class="riesgo"><b>Qué pasa al pulsar</b> Se abre el formulario de la hoja comunitaria en otra pestaña, con estos campos ya rellenados. Nada se envía hasta que tú le des a Submit allí. Esta página no escribe en su hoja ni guarda nada en ningún sitio.</p>
+</form>
+
+<footer>
+  <p>La hoja la mantiene la comunidad de Final Girl. Este atajo solo usa los enlaces prerrellenados que ofrece Google Forms: no toca sus datos.</p>
+</footer>
+
+</div>
+
+<style>
+  #reg { max-width:560px; }
+  .campo { margin-bottom:20px; }
+  .campo label, .campo .label { display:block; font-family:var(--f-mono); font-size:11px;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .campo input[type=text], .campo select {
+    width:100%; padding:10px 12px; font:inherit; font-size:15px;
+    background:var(--sunk); color:var(--ink); border:1px solid var(--line-hi); border-radius:3px; }
+  .campo input[type=text]:focus, .campo select:focus { outline:2px solid var(--blood); outline-offset:-2px; }
+  .campo small { display:block; margin-top:5px; font-size:12px; color:var(--muted); }
+  .radios { display:flex; gap:10px; flex-wrap:wrap; }
+  .radios label { display:flex; align-items:center; gap:7px; font-family:var(--f-body);
+    font-size:14.5px; letter-spacing:0; text-transform:none; color:var(--ink);
+    background:var(--sunk); border:1px solid var(--line-hi); border-radius:3px;
+    padding:9px 13px; cursor:pointer; margin:0; }
+  .radios label:has(input:checked) { border-color:var(--blood); background:var(--blood-s); }
+  #r-enviar { border:0; cursor:pointer; font:inherit; font-size:15px; font-weight:600; padding:11px 18px; }
+  #r-enviar:disabled { opacity:.45; cursor:not-allowed; }
+  #r-resumen p { margin:0; font-size:14.5px; }
+</style>
+
+<script>
+(function () {
+  var F = {"Final Girl": {"entry": 253888300, "ops": ["Adelaide", "Adrianne", "Agnes", "Alice", "Alois", "Asami", "Ava", "Barbara", "Carolyn", "Cassie", "Charlie", "Christie", "Christina", "Cindy", "Constance", "Dakota", "Elizabeth", "Ellen", "Gabrielle", "Ginny", "Grandma", "Gretel", "Gwynn", "Heather", "Iris", "Jamie", "Janelle", "Jen", "Jenette", "Joan", "Joy", "Julia", "Julie", "Kat", "Kate", "Kenzie", "Laurie", "Layla", "Lindi", "Mandy", "Maud", "Maureen", "Meg", "Meghan", "Melanie", "Mrs. Claus", "Nancy", "Octavia", "Patsy", "Paula", "Red", "Reiko", "Rena", "Rita", "Ronda", "Selena", "Sheila", "Tali", "Uki", "Ursula", "Veronica", "Vicky", "Custom Final Girl"]}, "Killer": {"entry": 720188483, "ops": ["Berith", "Big Bad Wolf", "Billy", "Dr. Fright", "Evomorph", "The Eyeless", "Geppetto", "Grimlash", "Hans", "Hunter", "Inkanyamba", "The Intruders", "Krampus", "Mort", "The Organism", "Poltergeist", "Ratchet Lady", "Raptors", "Razorface", "Slayer", "Tormentor", "Volk'ar", "Terror from Above", "Terror from the Grave", "Terror from Destiny", "Terror from Beyond"]}, "Who won the game?": {"entry": 497593548, "ops": ["Final Girl", "The Killer"]}, "Difficulty Settings": {"entry": 790564844, "ops": ["Normal", "Extreme Horror"]}, "Nickname": {"entry": 1385293211, "ops": []}, "Location (Hans)": {"entry": 2080642183, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Fright)": {"entry": 1808190301, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Geppetto)": {"entry": 38505747, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Poltergeist)": {"entry": 670584886, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Inkanyamba)": {"entry": 1343977933, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from Above)": {"entry": 1637903760, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Evomorph)": {"entry": 1983462178, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (The Organism)": {"entry": 2017954739, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (The Intruders)": {"entry": 1505798963, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Big Bad Wolf)": {"entry": 1400272832, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Ratchet Lady)": {"entry": 1069097487, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from the Grave)": {"entry": 571039736, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Krampus)": {"entry": 579885087, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Tormentor)": {"entry": 279908257, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (The Eyeless)": {"entry": 1044216487, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Razorface)": {"entry": 1821404640, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Slayer)": {"entry": 824762383, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Hunter)": {"entry": 1193367229, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from Destiny)": {"entry": 993914043, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Billy)": {"entry": 1292497034, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Mort)": {"entry": 2065157138, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Grimlash)": {"entry": 1228263566, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Berith)": {"entry": 1518866411, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Volk'ar)": {"entry": 1138654545, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Raptors)": {"entry": 718343413, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from Beyond)": {"entry": 1645409366, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}};
+  var PAREJAS = {"Hans": "Camp Happy Trail", "Dr. Fright": "Maple Lane", "Geppetto": "Carnival of Blood", "Poltergeist": "Creech Manor", "Inkanyamba": "Sacred Groves", "Evomorph": "USS Konrad", "The Organism": "Station 2891", "The Intruders": "Wingard Cottage", "Big Bad Wolf": "Storybook Woods", "Ratchet Lady": "Wolfe Asylum", "Krampus": "Santa's Village", "Tormentor": "Marrek Warehouse", "Razorface": "Hellscape", "Slayer": "Falconwood", "Hunter": "Sunnydaze Mall", "The Eyeless": "Utopia", "Billy": "Buddyland", "Grimlash": "Shady Acres", "Berith": "L'Armes Abbey", "Volk'ar": "Pesadilla Verde", "Raptors": "Isla Lagarto", "Mort": "Mega BGCon"};
+  var FORM = "https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform";
+
+  var killer = document.getElementById('r-killer');
+  var girl   = document.getElementById('r-girl');
+  var loc    = document.getElementById('r-loc');
+  var cLoc   = document.getElementById('c-loc');
+  var nick   = document.getElementById('r-nick');
+  var boton  = document.getElementById('r-enviar');
+  var resumen = document.getElementById('r-resumen');
+
+  function llena(sel, ops) {
+    ops.forEach(function (o) {
+      var e = document.createElement('option');
+      e.value = o; e.textContent = o; sel.appendChild(e);
+    });
+  }
+  llena(killer, F['Killer'].ops);
+  llena(girl, F['Final Girl'].ops);
+
+  // El nick es lo unico que se guarda, y solo aqui: ahorra teclear a quien
+  // registra varias partidas seguidas.
+  try { nick.value = localStorage.getItem('fg-nick') || ''; } catch (e) {}
+  nick.addEventListener('input', function () {
+    try { localStorage.setItem('fg-nick', nick.value); } catch (e) {}
+  });
+
+  killer.addEventListener('change', function () {
+    var campo = F['Location (' + killer.value + ')'];
+    loc.innerHTML = '';
+    if (!campo) { cLoc.hidden = true; revisa(); return; }
+    cLoc.hidden = false;
+    llena(loc, campo.ops);
+    // Su mapa de caja primero: es el que juega casi todo el mundo.
+    var propia = PAREJAS[killer.value];
+    if (propia && campo.ops.indexOf(propia) !== -1) loc.value = propia;
+    document.getElementById('r-loc-nota').textContent =
+      propia ? 'La de su caja es ' + propia + '.' : '';
+    revisa();
+  });
+
+  function datos() {
+    return {
+      nick: nick.value.trim(),
+      killer: killer.value,
+      loc: cLoc.hidden ? '' : loc.value,
+      girl: girl.value,
+      gano: document.querySelector('input[name=gano]:checked').value,
+      dif: document.querySelector('input[name=dif]:checked').value
+    };
+  }
+
+  function revisa() {
+    var d = datos();
+    var listo = d.nick && d.killer && d.girl && (cLoc.hidden || d.loc);
+    boton.disabled = !listo;
+    resumen.hidden = !listo;
+    if (listo) {
+      resumen.innerHTML = '<p><b>' + d.girl + '</b> contra <b>' + d.killer + '</b>' +
+        (d.loc ? ' en ' + d.loc : '') + '. ' +
+        (d.gano === 'Final Girl' ? 'Victoria' : 'Derrota') +
+        (d.dif === 'Extreme Horror' ? ', en Extreme Horror' : '') + '.</p>';
+    }
+  }
+  document.getElementById('reg').addEventListener('input', revisa);
+  document.getElementById('reg').addEventListener('change', revisa);
+
+  document.getElementById('reg').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = datos();
+    var p = [];
+    function add(campo, valor) {
+      if (!valor || !F[campo]) return;
+      p.push('entry.' + F[campo].entry + '=' + encodeURIComponent(valor));
+    }
+    add('Nickname', d.nick);
+    add('Killer', d.killer);
+    add('Location (' + d.killer + ')', d.loc);
+    add('Final Girl', d.girl);
+    add('Who won the game?', d.gano);
+    add('Difficulty Settings', d.dif);
+    window.open(FORM + '?usp=pp_url&' + p.join('&'), '_blank', 'noopener');
+  });
+
+  revisa();
+})();
+</script>
+
+</body>
+</html>
