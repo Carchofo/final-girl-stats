@@ -61,6 +61,39 @@
   .marquee .tira .poster:focus-visible { outline-color:var(--blood); }
   .marquee:hover .tira, .marquee:focus-within .tira { animation-play-state:paused; }
 
+
+  /* --- Móvil ------------------------------------------------------------
+     A 375 px el texto de la cabecera ocupaba media pantalla antes de
+     enseñar un solo dato. Se recorta todo un escalón y la cinta se hace
+     más baja, que ahí compite con el contenido. */
+  @media (max-width:560px) {
+    .hero { min-height:0; }
+    .hero > .wrap { padding-block:18px 20px; }
+    .hero .eyebrow { font-size:9.5px; letter-spacing:.12em; line-height:1.5; }
+    .hero h1 { font-size:clamp(34px,11.5vw,46px); }
+    .hero .dek { font-size:14.5px; line-height:1.45; }
+    .hero .dek br { display:none; }
+
+    .marquee .tira { padding:9px 14px; gap:5px; }
+    .marquee img { width:46px; height:64px; }
+    .marquee .flecha { width:34px; font-size:19px; opacity:.85;
+                       background:linear-gradient(90deg, rgba(11,10,11,.85), transparent); }
+    .marquee .flecha.der { background:linear-gradient(270deg, rgba(11,10,11,.85), transparent); }
+
+    /* background-attachment:fixed va mal en iOS: salta al hacer scroll o
+       se queda pegado. En móvil basta con que no se mueva el elemento,
+       que ya es position:fixed. */
+    body::after { background-attachment:scroll; opacity:.10; }
+    .hero { background-attachment:scroll; }
+
+    .cta-registro { padding:12px 13px; }
+    .cta-registro p { font-size:13px; }
+    .kpi { padding:11px 12px; }
+    .kpi b { font-size:25px; }
+    section[id^="v-"] { padding-block:30px 14px; }
+    nav.tabs { margin-block:18px 8px; }
+  }
+
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
          font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
@@ -1424,7 +1457,7 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
       b.type = 'button'; b.className = 'flecha ' + clase;
       b.setAttribute('aria-label', etiqueta); b.textContent = glifo;
       b.addEventListener('click', function () {
-        parado = true;
+        pausa(5000);
         tira.scrollBy({ left: signo * Math.round(tira.clientWidth * 0.8), behavior: 'smooth' });
       });
       marq.appendChild(b);
@@ -1442,11 +1475,21 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
 
     // Avance automatico suave, que para en cuanto el usuario toca algo:
     // la cinta sigue viva, pero deja de pelearse con quien quiere leerla.
-    var parado = false;
+    // Se para al tocarlo, pero vuelve solo a los 4 segundos quieto: pararlo
+    // para siempre dejaba la cinta muerta en cuanto alguien la rozaba.
+    var parado = false, reloj = null;
+    function pausa(ms) {
+      parado = true;
+      clearTimeout(reloj);
+      reloj = setTimeout(function () { parado = false; }, ms || 4000);
+    }
     ['pointerdown', 'wheel', 'keydown', 'focusin'].forEach(function (ev) {
-      tira.addEventListener(ev, function () { parado = true; }, { passive: true });
+      tira.addEventListener(ev, function () { pausa(); }, { passive: true });
     });
-    marq.addEventListener('pointerenter', function () { parado = true; });
+    // Con el raton encima no avanza, y al salir sigue: el hover no lleva
+    // reloj porque mientras apuntas a un poster no quieres que se escape.
+    marq.addEventListener('pointerenter', function () { clearTimeout(reloj); parado = true; });
+    marq.addEventListener('pointerleave', function () { pausa(1200); });
 
     var mitad = 0;
     requestAnimationFrame(function () { mitad = tira.scrollWidth / 2; });
