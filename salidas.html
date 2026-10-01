@@ -547,6 +547,9 @@
               background:var(--surface); border:1px solid var(--line);
               border-top:2px solid var(--blood); border-radius:0 0 3px 3px;
               box-shadow:0 14px 34px rgba(0,0,0,.6); }
+  /* display:grid pisa al atributo hidden, que solo vale display:none por
+     defecto del navegador. Sin esto el menu nace abierto. */
+  .nav-mas[hidden] { display:none; }
   .nav-mas a { color:var(--muted); text-decoration:none; padding:7px 0; }
   .nav-mas a:hover { color:var(--blood); }
   @media (max-width:560px) {
