@@ -378,6 +378,14 @@
                 font-family:var(--f-mono); font-size:11px; opacity:0; }
   .bar[aria-expanded="true"] { background:var(--blood-s); }
   .bar .th { width:34px; height:48px; object-fit:cover; border-radius:2px; background:var(--sunk); flex:none; }
+  /* Arte del killer, pegado al borde derecho y desvanecido hacia el centro.
+     Va absoluto a proposito: no ocupa columna de la rejilla ni empuja los datos. */
+  .bar .art { position:absolute; right:0; top:0; height:100%; width:38%; max-width:230px;
+              object-fit:cover; object-position:50% 22%; opacity:.34; pointer-events:none;
+              -webkit-mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.65) 45%,transparent 100%);
+              mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.65) 45%,transparent 100%); }
+  .bar:hover .art, .bar[aria-expanded="true"] .art { opacity:.5; }
+  @media (max-width:560px){ .bar .art { width:46%; opacity:.26; } }
   .bar.conth { grid-template-columns:34px 1fr 56px 46px; }
   .det-head { display:grid; grid-template-columns:78px 1fr; gap:14px; align-items:start; margin-bottom:14px; }
   .det-head img { width:78px; border-radius:3px; display:block; box-shadow:0 1px 4px rgba(0,0,0,.25); }
@@ -957,6 +965,7 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
       el.innerHTML = s.map(function (f, i) {
         return '<button type="button" class="bar' + (f.img ? ' conth' : '') + '" data-i="' + i + '" aria-expanded="false">' +
           '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
+          (f.art ? '<img class="art" src="' + f.art + '" alt="" loading="lazy">' : '') +
           (f.img ? '<img class="th" src="' + f.img + '" alt="" loading="lazy"' +
             (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
           '<span class="nm">' + f.nombre + (f.mia ? '<span class="mine">Tuya</span>' : '') +
@@ -1151,10 +1160,18 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
     }
   }
 
+  // Solo tenemos arte de algunos killers; el resto se pinta sin imagen.
+  var ARTE = {
+    'Hans': 'hans', 'Grimlash': 'grimlash', 'Big Bad Wolf': 'big-bad-wolf',
+    'Dr. Fright': 'dr-fright', 'Geppetto': 'geppetto', 'Inkanyamba': 'inkanyamba',
+    'Poltergeist': 'poltergeist', 'Ratchet Lady': 'ratchet-lady', 'Raptors': 'raptors'
+  };
+
   function pintarKillers() {
     var filas = Object.keys(D.killers).map(function (k) {
       var v = D.killers[k];
-      return { nombre: k, sub: v.box || 'Killer alternativo', wr: v.wr, g: v.g, mia: !!misKillers[k], key: k };
+      return { nombre: k, sub: v.box || 'Killer alternativo', wr: v.wr, g: v.g, mia: !!misKillers[k], key: k,
+               art: ARTE[k] ? 'img/art/' + ARTE[k] + '.jpg' : null };
     });
     lista(document.getElementById('l-killers'), filas, function (row) {
       var v = D.killers[row.key];
