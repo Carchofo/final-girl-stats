@@ -50,8 +50,38 @@ for y in range(0, sh, 3):
     d.line((0, y, sw, y), fill=215)
 scan_rgb = Image.merge("RGB", (scan, scan, scan))
 
+
+# --- Igualar el color con la cinta del fondo de la web ---------------------
+# La paleta sale medida de vhs-final-girl.jpg, no inventada: sombras casi
+# negras (9,6,5) y luces calidas rojizas (153,106,95). Se mapea la
+# luminancia de cada fotograma a ese degradado y se mezcla con el original,
+# para teñir sin aplanar: a tope perderia el rojo de la sangre y del logo.
+SOMBRA = (9, 6, 5)
+LUZ = (153, 106, 95)
+FUERZA = 0.62
+
+
+def _rampa():
+    """Tabla de 256 niveles, de la sombra a la luz de la cinta."""
+    t = []
+    for canal in range(3):
+        a, b = SOMBRA[canal], LUZ[canal]
+        t += [min(255, max(0, round(a + (b - a) * (i / 255)))) for i in range(256)]
+    return t
+
+
+RAMPA = _rampa()
+
+
+def gradear(img, fuerza=FUERZA):
+    """fuerza alta para las imagenes insertadas: su arte original es muy
+    saturado (el bosque es cian puro) y con la mezcla suave seguia cantando
+    que no pertenecia a esta pantalla."""
+    teñida = img.convert("L").convert("RGB").point(RAMPA)
+    return Image.blend(img, teñida, fuerza)
+
 tv_gif = Image.open(TV)
-gif_frames = [f.copy().convert("RGB") for f in ImageSequence.Iterator(tv_gif)]
+gif_frames = [gradear(f.copy().convert("RGB")) for f in ImageSequence.Iterator(tv_gif)]
 DUR = tv_gif.info.get("duration", 100)
 
 # --- Reflejo de la pantalla ------------------------------------------------
@@ -93,7 +123,7 @@ for paso in GUION:
             i += 1
     else:
         _, ruta, ms = paso
-        imagen = con_reflejo(Image.blend(encajar(ruta), scan_rgb, 0.10))
+        imagen = con_reflejo(gradear(Image.blend(encajar(ruta), scan_rgb, 0.10), 0.82))
         n = max(1, round(ms / DUR))
         for _ in range(n):
             fondo = gif_frames[i % len(gif_frames)].copy()
@@ -101,6 +131,26 @@ for paso in GUION:
             frames.append(fondo)
             durations.append(DUR)
             i += 1
+
+# --- Paleta comun ----------------------------------------------------------
+# Sin esto Pillow calcula la paleta con el PRIMER fotograma, que es estatica
+# gris, y luego machaca los tonos calidos de las imagenes insertadas: un
+# fotograma medido en (73,59,52) salia dentro del GIF como (109,123,112),
+# o sea verde. Se construye una paleta a partir de una muestra de TODOS los
+# fotogramas y se cuantiza cada uno contra ella.
+muestra = Image.new("RGB", (frames[0].width, frames[0].height * len(frames)))
+for i, f in enumerate(frames):
+    muestra.paste(f, (0, i * frames[0].height))
+paleta = muestra.quantize(colors=255, method=Image.MEDIANCUT)
+def _cuantiza(f):
+    q = f.quantize(palette=paleta, dither=Image.Dither.FLOYDSTEINBERG)
+    # Los fotogramas heredan info del GIF original ("transparency" y
+    # "background" como tuplas) y el guardado revienta al escribirlos.
+    q.info = {}
+    return q
+
+
+frames = [_cuantiza(f) for f in frames]
 
 frames[0].save(
     SALIDA, save_all=True, append_images=frames[1:],

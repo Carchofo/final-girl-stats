@@ -117,7 +117,9 @@ PAGINAS = [
             "Victorias de cada killer en cada mapa de Final Girl, sobre 13.873 "
             "partidas de la comunidad. Qué caja es más dura y dónde pierde cada asesino."
         ),
-        "img": "img/the-happy-trails-horror.jpg",
+        "img": "img/vhs-final-girl.jpg",
+        "ogtitle": "La página que todo fan de Final Girl necesitaba",
+        "ogdesc": "13.873 partidas reales de la comunidad: qué killer castiga en qué mapa, qué caja es más dura y cómo salir en el turno 1.",
         "prioridad": "1.0",
         "act_index": ' aria-current="page"',
         "act_salidas": "", "act_fichas": "",
@@ -157,15 +159,15 @@ CABECERA = """<!doctype html>
      Es de donde va a venir casi todo el trafico al principio, mucho antes
      que de Google. -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Final Girl Stats">
+<meta property="og:site_name" content="La página que todo fan de Final Girl necesitaba">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{desc}">
+<meta property="og:title" content="{ogtitle}">
+<meta property="og:description" content="{ogdesc}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{imgurl}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{title}">
-<meta name="twitter:description" content="{desc}">
+<meta name="twitter:title" content="{ogtitle}">
+<meta name="twitter:description" content="{ogdesc}">
 <meta name="twitter:image" content="{imgurl}">
 
 <script type="application/ld+json">{jsonld}</script>
@@ -276,6 +278,8 @@ for p in PAGINAS:
         desc=p["desc"],
         url=url,
         imgurl=f"{DOMINIO}/{p['img']}",
+        ogtitle=p.get("ogtitle", p["title"]),
+        ogdesc=p.get("ogdesc", p["desc"]),
         jsonld=jsonld_de(p, url),
         robots="index,follow,max-image-preview:large" if INDEXAR
                else "noindex,nofollow",
@@ -313,6 +317,8 @@ for g in generadas:
     html = CABECERA.format(
         title=g["title"], desc=g["desc"], url=url,
         imgurl=f"{DOMINIO}/{g.get('img') or 'img/vhs-final-girl.jpg'}",
+        ogtitle=g["title"],
+        ogdesc=g["desc"],
         jsonld=jsonld_de(g, url),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + cuerpo + PIE
@@ -358,6 +364,8 @@ url_fichas = f"{DOMINIO}/fichas.html"
         title="Fichas de Final Girl: todos los killers y todas las cajas",
         desc="Una página por cada killer y cada caja de Final Girl, con victorias por mapa, cartas más duras y consejos.",
         url=url_fichas, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle="Fichas de Final Girl: todos los killers y todas las cajas",
+        ogdesc="Una página por cada killer y cada caja, con victorias por mapa y consejos.",
         jsonld=jsonld_de({"title": "Fichas de Final Girl", "desc": "Índice de killers y cajas."}, url_fichas),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + fichas + PIE)
