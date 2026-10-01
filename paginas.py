@@ -23,11 +23,33 @@ AQUI = pathlib.Path(__file__).parent
 # una ficha cambia de URL o desaparece y te quedas con enlaces rotos en 22
 # páginas sin enterarte. Una búsqueda por el nombre de la caja aguanta.
 AFILIADOS = {
-    # "amazon":   {"tag": "", "nombre": "Amazon",
-    #              "url": "https://www.amazon.es/s?k={q}&tag={tag}"},
-    # "zacatrus": {"tag": "", "nombre": "Zacatrus",
-    #              "url": "https://zacatrus.es/catalogsearch/result/?q={q}&acc={tag}"},
+    # Amazon tiene un programa y un identificador POR PAIS: el tag de
+    # amazon.es no cobra nada en amazon.com. Hay que darse de alta en cada
+    # uno que interese. Rellena solo los que tengas; los vacios no se pintan.
+    "amazon": {
+        "nombre": "Amazon",
+        "url": "https://www.{dom}/s?k={q}&tag={tag}",
+        "tags": {
+            "ES": {"dom": "amazon.es",    "tag": ""},
+            "US": {"dom": "amazon.com",   "tag": ""},
+            "GB": {"dom": "amazon.co.uk", "tag": ""},
+            "DE": {"dom": "amazon.de",    "tag": ""},
+            "FR": {"dom": "amazon.fr",    "tag": ""},
+            "IT": {"dom": "amazon.it",    "tag": ""},
+            "CA": {"dom": "amazon.ca",    "tag": ""},
+            "MX": {"dom": "amazon.com.mx","tag": ""},
+            "AU": {"dom": "amazon.com.au","tag": ""},
+        },
+    },
+    # Tiendas de un solo pais. Solo se pintan a quien vive donde envian:
+    # ensenar una tienda espanola a alguien de Ohio es ruido.
+    # "zacatrus": {"nombre": "Zacatrus", "paises": ["ES"],
+    #              "url": "https://zacatrus.es/catalogsearch/result/?q={q}&acc={tag}",
+    #              "tag": ""},
 }
+
+# A quien se le ensena el enlace de Amazon cuando no sabemos de donde es.
+PAIS_POR_DEFECTO = "US"
 
 MIN_CELDA = 20          # partidas mínimas para citar una combinación
 MIN_SECCION = 20        # ídem para Dark Powers y Finales
@@ -75,24 +97,86 @@ def mapas_de(killer):
 def bloque_tienda(nombre):
     """Enlaces de compra, solo si hay algún afiliado configurado.
 
+    Geolocalizado en el navegador: cada país tiene su Amazon y su tag, y
+    el tag de amazon.es no cobra nada en amazon.com. Se decide por la zona
+    horaria del visitante, que ya está en su equipo. No se llama a ningún
+    servicio de geolocalización: eso sería una petición a un tercero, con
+    su rastreo y su aviso de cookies, para acertar un país.
+
+    Sin JavaScript queda el enlace por defecto, que funciona igual.
+
     El aviso de que son enlaces de afiliado va SIEMPRE y antes de los
     enlaces, no escondido en el pie: el sitio se sostiene sobre datos
     que presta la comunidad, y ahí no se juega con la confianza.
     """
-    activos = [a for a in AFILIADOS.values() if a.get("tag")]
-    if not activos:
-        return ""
+    import json
     import urllib.parse
     q = urllib.parse.quote_plus("Final Girl " + nombre)
-    enlaces = " ".join(
-        f'<a class="tienda" href="{a["url"].format(q=q, tag=a["tag"])}" '
-        f'target="_blank" rel="noopener sponsored nofollow">{a["nombre"]}</a>'
-        for a in activos)
+
+    enlaces = []
+    for a in AFILIADOS.values():
+        if a.get("tags"):                      # multipaís (Amazon)
+            porpais = {p: a["url"].format(dom=v["dom"], q=q, tag=v["tag"])
+                       for p, v in a["tags"].items() if v.get("tag")}
+            if not porpais:
+                continue
+            defecto = porpais.get(PAIS_POR_DEFECTO) or list(porpais.values())[0]
+            enlaces.append(
+                f'<a class="tienda" href="{defecto}" data-geo=\'{json.dumps(porpais)}\' '
+                f'target="_blank" rel="noopener sponsored nofollow">{a["nombre"]}</a>')
+        elif a.get("tag"):                     # un solo país
+            url = a["url"].format(q=q, tag=a["tag"])
+            paises = json.dumps(a.get("paises") or [])
+            enlaces.append(
+                f'<a class="tienda" href="{url}" data-solo=\'{paises}\' hidden '
+                f'target="_blank" rel="noopener sponsored nofollow">{a["nombre"]}</a>')
+
+    if not enlaces:
+        return ""
+
     return ('<h2>Dónde conseguirla</h2>'
             '<div class="aviso"><p class="sub" style="margin-bottom:10px">'
             'Enlaces de afiliado: si compras, a mí me llega una comisión y a ti '
             'te cuesta lo mismo. No cambian lo que dicen los datos de arriba.</p>'
-            f'<p>{enlaces}</p></div>')
+            f'<p>{" ".join(enlaces)}</p></div>' + JS_GEO)
+
+
+# Tabla zona horaria -> pais. Corta a proposito: cubre los paises donde
+# hay programa de afiliados, y el resto cae en el por defecto.
+JS_GEO = """<script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
+
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>"""
 
 
 def tabla(cab, filas):
