@@ -386,6 +386,10 @@
                     -webkit-mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.55) 42%,transparent 100%);
                     mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.55) 42%,transparent 100%); }
   .rowdetail > * { position:relative; }
+  /* La caja del porcentaje tapaba el arte justo por donde pasa. Translucida
+     deja ver el dibujo detras sin perder contraste en el numero. */
+  .rowdetail .split div { background:color-mix(in srgb,var(--sunk) 55%,transparent);
+                          backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
   .quien { margin:16px 0 4px; max-width:62ch; }
   .quien h4 { font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
               color:var(--blood); margin:14px 0 5px; }
