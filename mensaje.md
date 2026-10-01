@@ -26,6 +26,8 @@ Three things:
 
    That page is not linked from anywhere and is set to noindex. It exists so you can try it. If you would rather I dropped it, I will delete it. And if you ever wanted a real write path, that should be a script you own and can switch off, not something I post to on my own.
 
+One more thing so there are no surprises later: I would like to put store affiliate links on the box pages, the kind where I get a small cut if someone buys. Tell me if that bothers you and I will leave them out. There are no ads and I am not putting anything behind a paywall.
+
 Whatever you decide, thanks for keeping it going this long. It is the only real data this game has, and it only exists because someone kept the spreadsheet tidy for four and a half years.
 
 Rafel

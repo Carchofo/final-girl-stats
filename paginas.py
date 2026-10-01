@@ -16,6 +16,19 @@ import re
 import unicodedata
 
 AQUI = pathlib.Path(__file__).parent
+# --- Afiliados -------------------------------------------------------------
+# Vacío = no se pinta nada. Pon tu identificador y aparecen los enlaces.
+#
+# Son enlaces de BÚSQUEDA por nombre, no a fichas de producto concretas:
+# una ficha cambia de URL o desaparece y te quedas con enlaces rotos en 22
+# páginas sin enterarte. Una búsqueda por el nombre de la caja aguanta.
+AFILIADOS = {
+    # "amazon":   {"tag": "", "nombre": "Amazon",
+    #              "url": "https://www.amazon.es/s?k={q}&tag={tag}"},
+    # "zacatrus": {"tag": "", "nombre": "Zacatrus",
+    #              "url": "https://zacatrus.es/catalogsearch/result/?q={q}&acc={tag}"},
+}
+
 MIN_CELDA = 20          # partidas mínimas para citar una combinación
 MIN_SECCION = 20        # ídem para Dark Powers y Finales
 
@@ -48,6 +61,29 @@ def mapas_de(killer):
     r = [(loc, c[1], c[0]) for loc, d in CELLS.items()
          for k, c in d.items() if k == killer and c[0] >= MIN_CELDA]
     return sorted(r, key=lambda x: -x[1])
+
+
+def bloque_tienda(nombre):
+    """Enlaces de compra, solo si hay algún afiliado configurado.
+
+    El aviso de que son enlaces de afiliado va SIEMPRE y antes de los
+    enlaces, no escondido en el pie: el sitio se sostiene sobre datos
+    que presta la comunidad, y ahí no se juega con la confianza.
+    """
+    activos = [a for a in AFILIADOS.values() if a.get("tag")]
+    if not activos:
+        return ""
+    import urllib.parse
+    q = urllib.parse.quote_plus("Final Girl " + nombre)
+    enlaces = " ".join(
+        f'<a class="tienda" href="{a["url"].format(q=q, tag=a["tag"])}" '
+        f'target="_blank" rel="noopener sponsored nofollow">{a["nombre"]}</a>'
+        for a in activos)
+    return ('<h2>Dónde conseguirla</h2>'
+            '<div class="aviso"><p class="sub" style="margin-bottom:10px">'
+            'Enlaces de afiliado: si compras, a mí me llega una comisión y a ti '
+            'te cuesta lo mismo. No cambian lo que dicen los datos de arriba.</p>'
+            f'<p>{enlaces}</p></div>')
 
 
 def tabla(cab, filas):
@@ -205,6 +241,8 @@ def pagina_caja(f):
     if r:
         h.append('<h2>Qué dicen las reviews</h2>')
         h.append(f'<div class="aviso"><p><b>{r.get("veredicto","")}</b></p></div>')
+
+    h.append(bloque_tienda(f["film"]))
 
     h.append('<h2>Cómo empezar la partida</h2>')
     h.append('<p>Las cuatro aperturas, con cuál usar según lo que veas en el montaje, '
