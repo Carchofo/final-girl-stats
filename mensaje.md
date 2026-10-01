@@ -18,7 +18,11 @@ Three things:
 
 1. Are you happy with me using the data? Happy to credit it however you prefer.
 2. Would you add a link to it from the sheet? People who want the numbers would find them, and people who want to log plays would land on your form.
-3. I can add a short logging form on my side that opens your form prefilled, so people type less and the play still lands in your sheet through your form, with nothing new for you to maintain. If you would rather I did not, I will not. And if you ever wanted a proper write path, that should be a script you own and can switch off, not something I post to on my own.
+3. I made a short logging form you can try: https://carchofo.github.io/final-girl-stats/registrar.html
+
+   Five fields instead of 189. It opens your form prefilled and you confirm there, so the play goes into your sheet through your own form. It uses the prefilled link feature of Google Forms, so it never writes to your sheet and nothing is sent until someone presses Submit on your side.
+
+   That page is not linked from anywhere and is set to noindex. It exists so you can try it. If you would rather I dropped it, I will delete it. And if you ever wanted a real write path, that should be a script you own and can switch off, not something I post to on my own.
 
 Thanks for keeping the tracker going. It is the only real data this game has.
 
