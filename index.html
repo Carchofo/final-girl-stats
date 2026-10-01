@@ -104,7 +104,9 @@
      más baja, que ahí compite con el contenido. */
   @media (max-width:560px) {
     .hero { min-height:0; }
-    .hero > .wrap { padding-block:18px 20px; }
+    /* El texto baja dentro de la portada: arriba queda la cinta limpia,
+       que ahi va al 100% y no al 34% del fondo general. */
+    .hero > .wrap { padding-block:96px 20px; }
     .hero .eyebrow { font-size:9.5px; letter-spacing:.12em; line-height:1.5; }
     .hero h1 { font-size:clamp(34px,11.5vw,46px); }
     .hero .dek { font-size:14.5px; line-height:1.45; }
@@ -138,8 +140,8 @@
             min-height:230px; }
     .hero::after {
       background:
-        linear-gradient(to top, rgba(11,10,11,.92) 0%, rgba(11,10,11,.72) 40%,
-                        rgba(11,10,11,.30) 78%, rgba(11,10,11,.45) 100%);
+        linear-gradient(to top, rgba(11,10,11,.93) 0%, rgba(11,10,11,.86) 42%,
+                        rgba(11,10,11,.30) 72%, transparent 100%);
     }
     .marquee { margin-top:14px; }
     /* El primer bloque de datos arranca mas abajo: ese hueco es por donde
