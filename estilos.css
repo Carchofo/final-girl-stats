@@ -91,6 +91,17 @@
     nav.tabs { margin-block:18px 8px; }
   }
 
+
+  /* "Lo que te falta": la colección de cajas de un jugador. */
+  .coleccion { background:var(--sunk); border-radius:3px; padding:13px 15px; margin:0 0 6px; }
+  .coleccion .barra { height:7px; background:var(--mid); border-radius:99px; overflow:hidden; margin-bottom:10px; }
+  .coleccion .barra span { display:block; height:100%; background:var(--blood); border-radius:99px; }
+  .coleccion p { margin:0 0 8px; font-size:14px; }
+  .coleccion p:last-child { margin-bottom:0; }
+  .coleccion .falta { color:var(--muted); font-size:12.5px; line-height:1.9; }
+  .coleccion .falta span { display:inline-block; border:1px solid var(--line-hi); border-radius:2px;
+                           padding:2px 7px; margin:0 5px 4px 0; color:var(--ink); font-size:12px; }
+
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
          font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }

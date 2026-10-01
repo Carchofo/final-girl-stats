@@ -267,7 +267,10 @@ for p in PAGINAS:
             if ancla in cuerpo:
                 cuerpo = cuerpo.replace(ancla, NAV.format(**p) + ancla, 1)
                 break
-    cuerpo = cuerpo.replace("</header>", "</header>" + CTA.format(form=FORM, hoja=HOJA), 1)
+    # El aviso de registro ya NO va arriba de cada página: quien llega
+    # buscando consejos se comía una petición antes de leer nada, y repetida
+    # en 50 páginas se lee como insistencia. Queda solo en el pie, donde se
+    # ha ganado el derecho a pedir.
 
     if p.get("unificar_estilo"):
         # DESPUES del cuerpo: a igual especificidad gana la ultima regla, y
@@ -307,7 +310,6 @@ for g in generadas:
         + '<div class="wrap"><header class="top">'
         + g["cuerpo"].split("</h1>", 1)[0] + "</h1>"
         + (g["cuerpo"].split("</h1>", 1)[1] if "</h1>" in g["cuerpo"] else "")
-        + CTA.format(form=FORM, hoja=HOJA)
         + '<footer><p>Datos de la <a href="' + HOJA + '" target="_blank" rel="noopener">hoja '
           'pública de seguimiento</a> de la comunidad de Final Girl '
           '(<a href="' + FORM + '" target="_blank" rel="noopener">registra tus partidas</a>). '
@@ -346,7 +348,6 @@ fichas = (
       'sus cartas más duras y los consejos de quien las ha jugado.</p></header>'
     + enlaces("killer", "Killers", "Dónde gana y dónde pierde cada uno, y qué Dark Powers y Finales castigan más.")
     + enlaces("caja", "Cajas", "Cada caja con su killer y su mapa, hojas de preparación y qué tiene de particular.")
-    + CTA.format(form=FORM, hoja=HOJA)
     + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> '
       'o a la <a href="salidas.html">chuleta de salidas</a>.</p></footer></div>'
     + '''<style>

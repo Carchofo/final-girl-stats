@@ -96,6 +96,17 @@
     nav.tabs { margin-block:18px 8px; }
   }
 
+
+  /* "Lo que te falta": la colección de cajas de un jugador. */
+  .coleccion { background:var(--sunk); border-radius:3px; padding:13px 15px; margin:0 0 6px; }
+  .coleccion .barra { height:7px; background:var(--mid); border-radius:99px; overflow:hidden; margin-bottom:10px; }
+  .coleccion .barra span { display:block; height:100%; background:var(--blood); border-radius:99px; }
+  .coleccion p { margin:0 0 8px; font-size:14px; }
+  .coleccion p:last-child { margin-bottom:0; }
+  .coleccion .falta { color:var(--muted); font-size:12.5px; line-height:1.9; }
+  .coleccion .falta span { display:inline-block; border:1px solid var(--line-hi); border-radius:2px;
+                           padding:2px 7px; margin:0 5px 4px 0; color:var(--ink); font-size:12px; }
+
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
          font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
@@ -1350,6 +1361,34 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
              (u.n === 1 ? ' partida' : ' partidas') + ' el porcentaje no dice cómo juega esta persona, '
              + 'dice qué suerte tuvo. Hacen falta unas 10 para que signifique algo.</p>';
       }
+      // Lo que le falta. Un hueco motiva mas que una peticion: el jugador de
+      // mesa ve 14 de 22 y quiere las 8 restantes. Y no le pide nada.
+      (function () {
+        var mias = UM.u[sel];
+        if (!mias) return;
+        var hechas = {};
+        mias.forEach(function (f) { hechas[UM.k[f[0]] + '|' + UM.l[f[1]]] = f[2]; });
+        var jugadas = [], faltan = [];
+        D.films.forEach(function (f) {
+          (hechas[f.killer + '|' + f.loc] ? jugadas : faltan).push(f);
+        });
+        if (!jugadas.length) return;
+        var pcent = Math.round(jugadas.length / D.films.length * 100);
+        h += '<p class="sec-t">Cajas tal y como vienen</p>' +
+          '<div class="coleccion">' +
+          '<div class="barra"><span style="width:' + pcent + '%"></span></div>' +
+          '<p><b>' + jugadas.length + ' de ' + D.films.length + '</b> jugadas, ' +
+          'con su killer en su mapa.</p>';
+        if (faltan.length) {
+          h += '<p class="falta">Sin jugar: ' + faltan.map(function (f) {
+            return '<span>' + esc(f.film) + '</span>';
+          }).join('') + '</p>';
+        } else {
+          h += '<p class="falta">Las 22. No queda ninguna.</p>';
+        }
+        h += '</div>';
+      })();
+
       h += tabla('Killers que más juega', u.kill, u.wr);
       h += tabla('Killer y mapa', u.combo, u.wr);   // sólo en los de 10+
       h += tabla('Final Girls que más usa', u.girl, u.wr);
