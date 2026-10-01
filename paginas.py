@@ -129,7 +129,7 @@ def pagina_killer(nombre, k):
 
     h.append('<h2>Cómo salir contra él</h2>')
     h.append('<p>Las cuatro aperturas y cuándo usar cada una están en la '
-             '<a href="salidas.html">chuleta de salidas</a>. '
+             '<a href="salidas.html">estrategias de salida</a>. '
              'Para cruzar a este killer con cualquier otro mapa, la matriz completa está en '
              '<a href="index.html">las estadísticas</a>.</p>')
 
@@ -208,7 +208,7 @@ def pagina_caja(f):
 
     h.append('<h2>Cómo empezar la partida</h2>')
     h.append('<p>Las cuatro aperturas, con cuál usar según lo que veas en el montaje, '
-             'están en la <a href="salidas.html">chuleta de salidas</a>.</p>')
+             'están en la <a href="salidas.html">estrategias de salida</a>.</p>')
 
     titulo = f'{f["film"]}: estadísticas y consejos ({pc(f["wr"],0)} de victorias)'
     desc = (f'{f["killer"]} en {f["loc"]}. Se gana el {pc(f["wr"])} sobre {f["plays"]} partidas. '

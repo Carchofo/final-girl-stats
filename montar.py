@@ -72,7 +72,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
 </style>
 """
 
-# La chuleta de salidas viene del artifact anterior al rediseño: tema claro,
+# La estrategias de salida viene del artifact anterior al rediseño: tema claro,
 # Big Shoulders y Newsreader. La de estadisticas es oscura con Jost. Dos
 # paginas del mismo sitio no pueden verse de dos sitios distintos.
 #
@@ -349,7 +349,7 @@ fichas = (
     + enlaces("killer", "Killers", "Dónde gana y dónde pierde cada uno, y qué Dark Powers y Finales castigan más.")
     + enlaces("caja", "Cajas", "Cada caja con su killer y su mapa, hojas de preparación y qué tiene de particular.")
     + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> '
-      'o a la <a href="salidas.html">chuleta de salidas</a>.</p></footer></div>'
+      'o a la <a href="salidas.html">estrategias de salida</a>.</p></footer></div>'
     + '''<style>
   .indice { list-style:none; margin:0 0 26px; padding:0;
             display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1px;
