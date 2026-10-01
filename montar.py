@@ -10,6 +10,7 @@ Uso:  python3 montar.py
 import re
 import json
 import pathlib
+import paginas
 
 AQUI = pathlib.Path(__file__).parent
 DOMINIO = "https://carchofo.github.io/final-girl-stats"
@@ -59,6 +60,7 @@ ENLACES = {
 NAV = """<nav class="nav-sitio" aria-label="Secciones">
   <a href="index.html"{act_index}>Estadísticas</a>
   <a href="salidas.html"{act_salidas}>Salidas</a>
+  <a href="fichas.html"{act_fichas}>Fichas</a>
 </nav>
 <style>
   .nav-sitio {{ display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
@@ -106,7 +108,7 @@ UNIFICAR_ESTILO = """
 
 PAGINAS = [
     {
-        "fuente": "cuerpo.html",
+        "fuente": "src/cuerpo.html",
         "salida": "index.html",
         "title": "Estadísticas de Final Girl: 13.873 partidas reales",
         # Google corta la descripcion sobre los 155 caracteres: lo que
@@ -118,14 +120,14 @@ PAGINAS = [
         "img": "img/the-happy-trails-horror.jpg",
         "prioridad": "1.0",
         "act_index": ' aria-current="page"',
-        "act_salidas": "",
+        "act_salidas": "", "act_fichas": "",
         "reemplazos": {
             "<h1>Laboratorio<span class=\"roja\">Final Girl</span></h1>":
                 "<h1>Estadísticas<span class=\"roja\">Final Girl</span></h1>",
         },
     },
     {
-        "fuente": "salidas-cuerpo.html",
+        "fuente": "src/salidas-cuerpo.html",
         "salida": "salidas.html",
         "title": "Salidas de Final Girl: las 4 aperturas y cuándo usar cada una",
         "desc": (
@@ -135,7 +137,7 @@ PAGINAS = [
         "img": "img/the-happy-trails-horror.jpg",
         "prioridad": "0.8",
         "act_index": "",
-        "act_salidas": ' aria-current="page"',
+        "act_salidas": ' aria-current="page"', "act_fichas": "",
         "unificar_estilo": True,
     },
 ]
@@ -178,8 +180,17 @@ CABECERA = """<!doctype html>
 PIE = "\n</body>\n</html>\n"
 
 
+def estilos():
+    """El CSS vive dentro de cuerpo.html. Las páginas generadas lo reutilizan
+    tal cual: duplicarlo a mano sería otra copia que mantener sincronizada,
+    que es la enfermedad que este proyecto ya ha tenido una vez."""
+    s = (AQUI / "src" / "cuerpo.html").read_text()
+    bloques = re.findall(r"<style>.*?</style>", s, re.S)
+    return "\n".join(bloques)
+
+
 def datos():
-    s = (AQUI / "cuerpo.html").read_text()
+    s = (AQUI / "src" / "cuerpo.html").read_text()
     m = re.search(r"var D = (\{.*?\});\n", s, re.S)
     return json.loads(m.group(1))
 
@@ -250,7 +261,10 @@ for p in PAGINAS:
     # El cuerpo de salidas ya trae su propia barra (se añadió al artifact,
     # que no pasa por aquí). Meter otra dejaba dos seguidas.
     if "nav-sitio" not in cuerpo:
-        cuerpo = cuerpo.replace("<header class=\"top\">", NAV.format(**p) + "<header class=\"top\">", 1)
+        for ancla in ('<header class="hero">', '<header class="top">'):
+            if ancla in cuerpo:
+                cuerpo = cuerpo.replace(ancla, NAV.format(**p) + ancla, 1)
+                break
     cuerpo = cuerpo.replace("</header>", "</header>" + CTA.format(form=FORM, hoja=HOJA), 1)
 
     if p.get("unificar_estilo"):
@@ -268,6 +282,89 @@ for p in PAGINAS:
     ) + cuerpo + PIE
     (AQUI / p["salida"]).write_text(html)
     print(f"{p['salida']}  {len(html)//1024} KB")
+
+# --- páginas por killer y por caja -----------------------------------------
+# Una URL solo posiciona para una cosa. Las búsquedas son concretas
+# ("consejos Hans Final Girl"), así que cada killer y cada caja necesita su
+# propia página, con el texto en el HTML y no pintado por JavaScript.
+# El CSS a un fichero aparte: repetido en 47 páginas son 1,6 MB y el
+# navegador lo baja una vez por página. En un .css lo baja una sola vez y
+# lo cachea para todas.
+CSS = estilos()
+(AQUI / "estilos.css").write_text(
+    re.sub(r"</?style>", "", CSS))
+print("estilos.css")
+
+generadas = paginas.generar()
+for g in generadas:
+    url = f"{DOMINIO}/{g['salida']}"
+    cuerpo = (
+        NAV.format(act_index="", act_salidas="", act_fichas="")
+        + '<div class="wrap"><header class="top">'
+        + g["cuerpo"].split("</h1>", 1)[0] + "</h1>"
+        + (g["cuerpo"].split("</h1>", 1)[1] if "</h1>" in g["cuerpo"] else "")
+        + CTA.format(form=FORM, hoja=HOJA)
+        + '<footer><p>Datos de la <a href="' + HOJA + '" target="_blank" rel="noopener">hoja '
+          'pública de seguimiento</a> de la comunidad de Final Girl '
+          '(<a href="' + FORM + '" target="_blank" rel="noopener">registra tus partidas</a>). '
+          'Vuelve a <a href="index.html">todas las estadísticas</a>.</p></footer>'
+        + "</div>"
+    )
+    html = CABECERA.format(
+        title=g["title"], desc=g["desc"], url=url,
+        imgurl=f"{DOMINIO}/{g.get('img') or 'img/vhs-final-girl.jpg'}",
+        jsonld=jsonld_de(g, url),
+        robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + cuerpo + PIE
+    (AQUI / g["salida"]).write_text(html)
+print(f"{len(generadas)} páginas de killer y caja")
+
+# --- índice de fichas ------------------------------------------------------
+# Sin esto las 47 páginas quedan huérfanas: nadie llega a ellas y un
+# buscador tampoco, porque no hay ningún enlace que seguir. El sitemap las
+# declara, pero los enlaces internos son lo que de verdad las sostiene.
+def enlaces(tipo, titulo, nota):
+    items = [g for g in generadas if g["tipo"] == tipo]
+    items.sort(key=lambda g: g["title"])
+    li = "".join(
+        f'<li><a href="{g["salida"]}">{g["title"].split(":")[0].split(" en Final Girl")[0]}</a></li>'
+        for g in items)
+    return f'<h2>{titulo}</h2><p class="sub">{nota}</p><ul class="indice">{li}</ul>'
+
+fichas = (
+    NAV.format(act_index="", act_salidas="", act_fichas="")
+    + '<div class="wrap"><header class="top">'
+      '<p class="eyebrow">Índice · ' + str(len(generadas)) + ' fichas</p>'
+      '<h1>Todas las<span class="roja">fichas</span></h1>'
+      '<p class="dek">Una página por killer y por caja, con sus porcentajes de victoria, '
+      'sus cartas más duras y los consejos de quien las ha jugado.</p></header>'
+    + enlaces("killer", "Killers", "Dónde gana y dónde pierde cada uno, y qué Dark Powers y Finales castigan más.")
+    + enlaces("caja", "Cajas", "Cada caja con su killer y su mapa, hojas de preparación y qué tiene de particular.")
+    + CTA.format(form=FORM, hoja=HOJA)
+    + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> '
+      'o a la <a href="salidas.html">chuleta de salidas</a>.</p></footer></div>'
+    + '''<style>
+  .indice { list-style:none; margin:0 0 26px; padding:0;
+            display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1px;
+            background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .indice li { background:var(--surface); }
+  .indice a { display:block; padding:11px 14px; color:var(--ink); text-decoration:none; font-size:14.5px; }
+  .indice a:hover { background:var(--blood-s); color:var(--blood); }
+</style>'''
+)
+url_fichas = f"{DOMINIO}/fichas.html"
+(AQUI / "fichas.html").write_text(
+    CABECERA.format(
+        title="Fichas de Final Girl: todos los killers y todas las cajas",
+        desc="Una página por cada killer y cada caja de Final Girl, con victorias por mapa, cartas más duras y consejos.",
+        url=url_fichas, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        jsonld=jsonld_de({"title": "Fichas de Final Girl", "desc": "Índice de killers y cajas."}, url_fichas),
+        robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + fichas + PIE)
+print("fichas.html (índice de las", len(generadas), "páginas)")
+
+PAGINAS += [{"salida": "fichas.html", "prioridad": "0.9"}]
+PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
 # --- sitemap y robots -----------------------------------------------------
 urls = "".join(

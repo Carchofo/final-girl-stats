@@ -445,6 +445,19 @@
   @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
 </style>
 
+<nav class="nav-sitio" aria-label="Secciones">
+  <a href="index.html" aria-current="page">Estadísticas</a>
+  <a href="salidas.html">Salidas</a>
+  <a href="fichas.html">Fichas</a>
+</nav>
+<style>
+  .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
+                letter-spacing:.06em; text-transform:uppercase; }
+  .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
+                  border-bottom:2px solid transparent; }
+  .nav-sitio a:hover { color:var(--ink); }
+  .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+</style>
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">13.873 partidas reales · hoja comunitaria</p>
