@@ -128,7 +128,10 @@
        pantalla: el fondo de cinta no se veia en ningun momento. Ahora la
        cabecera se recorta por los lados y respira por arriba y por abajo,
        asi que la cinta asoma alrededor y entre bloques. */
-    .hero { margin:10px 14px 0; border-radius:3px; overflow:hidden;
+    /* El hueco de arriba es a proposito: ahi se ve la cinta del fondo,
+       entre la cabecera y la portada. Sin el, las dos se tocan y el
+       fondo no asoma en ningun momento. */
+    .hero { margin:26px 14px 0; border-radius:3px; overflow:hidden;
             min-height:230px; }
     .hero::after {
       background:
@@ -581,8 +584,7 @@
   <a href="fichas.html">Fichas</a>
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Más secciones">+</button>
-</nav>
-<div class="nav-mas" id="nav-mas" hidden>
+  <div class="nav-mas" id="nav-mas" hidden>
   <a href="index.html#matriz">Matriz</a>
   <a href="index.html#tops">Tops</a>
   <a href="index.html#cajas">Cajas</a>
@@ -591,10 +593,12 @@
   <a href="index.html#mapas">Mapas</a>
   <a href="index.html#girls">Final Girls</a>
   <a href="index.html#jug">Jugadores</a>
-</div>
+  </div>
+</nav>
 <style>
   .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
-                letter-spacing:.06em; text-transform:uppercase; align-items:center; }
+                letter-spacing:.06em; text-transform:uppercase; align-items:center;
+                position:relative; }
   .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
                   border-bottom:2px solid transparent; }
   .nav-sitio a:hover { color:var(--ink); }
@@ -607,18 +611,23 @@
                      padding:3px 8px 5px; margin-left:auto; }
   .nav-sitio .mas:hover { color:var(--ink); border-color:var(--muted); }
   .nav-sitio .mas[aria-expanded="true"] { color:var(--blood); border-color:var(--blood); }
-  .nav-mas { display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
-              gap:2px 14px; padding:12px 0 4px; font-size:13px;
+  /* Flotante, no en el flujo: desplegandose en linea empujaba la portada
+     y el resto de la pagina media pantalla hacia abajo. */
+  .nav-mas { position:absolute; top:100%; right:0; z-index:40; min-width:230px;
+              display:grid; grid-template-columns:1fr 1fr; gap:0 10px;
+              padding:8px 14px 10px; font-size:13px;
               letter-spacing:.06em; text-transform:uppercase;
-              border-top:1px solid var(--line); margin-top:6px; }
-  .nav-mas a { color:var(--muted); text-decoration:none; padding:6px 0; }
+              background:var(--surface); border:1px solid var(--line);
+              border-top:2px solid var(--blood); border-radius:0 0 3px 3px;
+              box-shadow:0 14px 34px rgba(0,0,0,.6); }
+  .nav-mas a { color:var(--muted); text-decoration:none; padding:7px 0; }
   .nav-mas a:hover { color:var(--blood); }
   @media (max-width:560px) {
     .nav-sitio { justify-content:center; gap:16px; }
     /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
        descuadraria el centro. */
     .nav-sitio .mas { margin-left:0; }
-    .nav-mas { text-align:center; }
+    .nav-mas { left:0; right:0; min-width:0; text-align:center; }
   }
 </style>
 <script>
@@ -626,11 +635,20 @@
   var b = document.querySelector('.nav-sitio .mas');
   var m = document.getElementById('nav-mas');
   if (!b || !m) return;
-  b.addEventListener('click', function () {
-    var abierto = b.getAttribute('aria-expanded') === 'true';
-    b.setAttribute('aria-expanded', String(!abierto));
-    m.hidden = abierto;
-    b.textContent = abierto ? '+' : '✕';
+  function pon(abierto) {
+    b.setAttribute('aria-expanded', String(abierto));
+    m.hidden = !abierto;
+    b.textContent = abierto ? '✕' : '+';
+  }
+  b.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pon(b.getAttribute('aria-expanded') !== 'true');
+  });
+  document.addEventListener('click', function (e) {
+    if (!m.hidden && !m.contains(e.target)) pon(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !m.hidden) { pon(false); b.focus(); }
   });
 })();
 </script>

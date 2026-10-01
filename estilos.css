@@ -91,7 +91,10 @@
        pantalla: el fondo de cinta no se veia en ningun momento. Ahora la
        cabecera se recorta por los lados y respira por arriba y por abajo,
        asi que la cinta asoma alrededor y entre bloques. */
-    .hero { margin:10px 14px 0; border-radius:3px; overflow:hidden;
+    /* El hueco de arriba es a proposito: ahi se ve la cinta del fondo,
+       entre la cabecera y la portada. Sin el, las dos se tocan y el
+       fondo no asoma en ningun momento. */
+    .hero { margin:26px 14px 0; border-radius:3px; overflow:hidden;
             min-height:230px; }
     .hero::after {
       background:
