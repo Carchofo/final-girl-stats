@@ -50,6 +50,36 @@
     --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
 
+
+  /* Cabecera a sangre con la cinta de VHS. El degradado de abajo la funde
+     con el fondo de la página: sin él se ve un corte recto y canta que es
+     una imagen pegada. El texto va sobre la zona oscura de la izquierda,
+     nunca sobre la sangre, que ahí no se lee. */
+  .hero {
+    position:relative;   /* ya va fuera de .wrap: el ancho completo es gratis */
+    min-height:clamp(300px, 46vw, 480px);
+    display:flex; align-items:flex-end;
+    background:var(--paper) url("img/vhs-final-girl.jpg") center/cover no-repeat;
+    isolation:isolate;
+  }
+  .hero::after {
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      linear-gradient(to top, var(--paper) 0%, rgba(11,10,11,.86) 22%, rgba(11,10,11,.35) 55%, rgba(11,10,11,.55) 100%),
+      linear-gradient(to right, rgba(11,10,11,.80) 0%, rgba(11,10,11,.25) 48%, transparent 70%);
+  }
+  .hero > .wrap { position:relative; z-index:1; width:100%; padding-block:0 26px; }
+  .hero .eyebrow { color:var(--blood); text-shadow:0 1px 10px rgba(0,0,0,.9); }
+  .hero h1 { text-shadow:0 2px 20px rgba(0,0,0,.85); }
+  .hero .dek { color:#d9cfd2; text-shadow:0 1px 10px rgba(0,0,0,.9); max-width:52ch; }
+  @media (max-width:640px) {
+    .hero { min-height:340px; background-position:62% center; }
+  }
+  @media (prefers-reduced-motion:no-preference) {
+    .hero { background-attachment:fixed; }
+  }
+  @media (max-width:900px) { .hero { background-attachment:scroll; } }
+
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
          font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
@@ -313,6 +343,17 @@
                     border-radius:3px; padding:4px 10px; cursor:pointer; color:inherit; }
 
   /* ---------- textura y cabecera ---------- */
+  /* La cinta tambien de fondo de toda la pagina, muy apagada: se intuye
+     entre bloques y da continuidad con la cabecera. Va en ::after y FIJA,
+     detras de todo (z-index negativo), para que no se mueva al bajar ni
+     tape nada. Los paneles son opacos, asi que ningun texto cae encima. */
+  body::after {
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:url("img/vhs-final-girl.jpg") center/cover no-repeat fixed;
+    opacity:.13; filter:grayscale(.35) contrast(.85);
+  }
+  body { position:relative; }
+
   body::before {
     content:""; position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.5;
     background-image:
@@ -371,26 +412,12 @@
   @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
 </style>
 
-<div class="wrap">
-
-<div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
-
-<nav class="nav-sitio" aria-label="Secciones">
-  <a href="index.html" aria-current="page">Estadísticas</a>
-  <a href="salidas.html">Salidas</a>
-</nav>
-<style>
-  .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
-                letter-spacing:.06em; text-transform:uppercase; }
-  .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
-                  border-bottom:2px solid transparent; }
-  .nav-sitio a:hover { color:var(--ink); }
-  .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
-</style>
-<header class="top">
-  <p class="eyebrow">13.873 partidas reales · hoja comunitaria</p>
-  <h1>Estadísticas<span class="roja">Final Girl</span></h1>
-  <p class="dek">Todos los datos de la hoja de seguimiento de la comunidad, para trastear. La matriz cruza cada killer con cada localización: 572 combinaciones, 354 con partidas suficientes. Complemento de la <a href="salidas.html">chuleta de salidas</a>.</p>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">13.873 partidas reales · hoja comunitaria</p>
+    <h1>Estadísticas<span class="roja">Final Girl</span></h1>
+    <p class="dek">Todos los datos de la hoja de seguimiento de la comunidad, para trastear. La matriz cruza cada killer con cada localización: 572 combinaciones, 354 con partidas suficientes. Complemento de la <a href="salidas.html">chuleta de salidas</a>.</p>
+  </div>
 </header><aside class="cta-registro">
   <p><strong>Estos datos salen de partidas que registra la gente.</strong>
      Los lleva la comunidad en una hoja abierta, y cada partida que añades
@@ -413,6 +440,10 @@
   .cta-alt:hover { color:var(--ink); }
 </style>
 
+
+<div class="wrap">
+
+<div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
 
 <div class="kpis">
   <div class="kpi"><b id="k1"></b><span>Partidas</span></div>
