@@ -8,7 +8,9 @@ Hi,
 
 I built a site with the tracker data: https://carchofo.github.io/final-girl-stats/
 
-It links to your form from the top of every page and from the footer, so people who look at the numbers can add their own plays. There is also a tab where anyone can find themselves by nickname and see their own matrix of killers and locations, which is something the spreadsheet cannot show.
+Anyone can find themselves by nickname and see their own matrix of killers and locations, plus which of the 22 box pairings they have played and which they are missing. One of your top contributors has played 21 of 22. The spreadsheet cannot show that, and it gives people a reason of their own to keep logging.
+
+The site credits the sheet and links to your form, but it does not nag anyone to sign up. I would rather the reason to log plays came from seeing your own gaps.
 
 It is set to noindex for now. I did not want it in Google before you told me it was fine.
 
@@ -28,7 +30,7 @@ Hi,
 
 I built this from the tracker data: https://carchofo.github.io/final-girl-stats/
 
-It links back to your form from every page. It is on noindex until you tell me it is fine to publish.
+People can look themselves up and see which boxes they are missing. It credits the sheet and links to your form. It is on noindex until you tell me it is fine to publish.
 
 Would you be ok with it? And would you link to it from the sheet?
 
