@@ -6,7 +6,9 @@ Asunto: Built a site from the tracker data, want your OK before indexing
 
 Hi,
 
-I built a site with the tracker data: https://carchofo.github.io/final-girl-stats/
+I have been going through the tracker for a while and I wanted to say first that the way it is built is the reason any of this is possible. A separate Location column per killer sounds like a small decision, but it is what lets you cross every killer with every map. Most trackers collapse that and the data becomes useless for exactly the question people ask. Four and a half years, 669 people, 14,473 plays, and one logged today. Nothing else in this game comes close.
+
+So I built a site with it: https://carchofo.github.io/final-girl-stats/
 
 Anyone can find themselves by nickname and see their own matrix of killers and locations, plus which of the 22 box pairings they have played and which they are missing. One of your top contributors has played 21 of 22. The spreadsheet cannot show that, and it gives people a reason of their own to keep logging.
 
@@ -24,7 +26,7 @@ Three things:
 
    That page is not linked from anywhere and is set to noindex. It exists so you can try it. If you would rather I dropped it, I will delete it. And if you ever wanted a real write path, that should be a script you own and can switch off, not something I post to on my own.
 
-Thanks for keeping the tracker going. It is the only real data this game has.
+Whatever you decide, thanks for keeping it going this long. It is the only real data this game has, and it only exists because someone kept the spreadsheet tidy for four and a half years.
 
 Rafel
 
@@ -33,7 +35,7 @@ Rafel
 
 Hi,
 
-I built this from the tracker data: https://carchofo.github.io/final-girl-stats/
+The tracker is the only real data this game has, and the per killer Location columns are what make it actually useful. I built this from it: https://carchofo.github.io/final-girl-stats/
 
 People can look themselves up and see which boxes they are missing. It credits the sheet and links to your form. It is on noindex until you tell me it is fine to publish.
 
