@@ -13,7 +13,7 @@ import pathlib
 import paginas
 
 AQUI = pathlib.Path(__file__).parent
-DOMINIO = "https://carchofo.github.io/final-girl-stats"
+DOMINIO = "https://finalgirlstats.com"
 
 # Interruptor de indexacion.
 #   False -> la pagina se puede ver y compartir, pero se pide a los buscadores
