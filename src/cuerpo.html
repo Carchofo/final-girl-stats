@@ -708,11 +708,13 @@ var D = {"meta": {"total": 13915, "wr": 0.6553, "perDay": 8.13, "last": "1 oct 2
   var RAMPA = ['#8f2026','#c23a42','#e0656c','#ee9a9f','#f6c9cc','#3a3438','#bcd8f6','#8fbaef','#5f9ce6','#3a7ed0','#2159a0'];
   var CORTES = [-0.20,-0.14,-0.09,-0.045,-0.015,0.015,0.045,0.09,0.14,0.20];
   var MEDIA = D.meta.wr;
-  var POR_DEFECTO = ['The Happy Trails Horror','Into the Void','A Knock at the Door','Once Upon a Full Moon','Madness in the Dark'];
+  // Nadie empieza con cajas marcadas. Venia con cinco puestas, las de
+  // quien monto la pagina, y a cualquier visitante le aparecian como
+  // "Tuya": una coleccion ajena presentada como propia.
   var CLAVE = 'fg-mis-cajas';
   var MIAS = (function () {
     try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
-    return POR_DEFECTO.slice();
+    return [];
   })();
   function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
 
@@ -1415,10 +1417,22 @@ var D = {"meta": {"total": 13915, "wr": 0.6553, "perDay": 8.13, "last": "1 oct 2
     });
     document.getElementById('mis-none').onclick = function () { MIAS = []; guardarMias(); recalcMias(); pintarMis(); repintarTodo(); };
     document.getElementById('mis-all').onclick = function () { MIAS = orden.slice(); guardarMias(); recalcMias(); pintarMis(); repintarTodo(); };
-    document.getElementById('mis-sum').textContent = 'Mis cajas · ' + MIAS.length + ' de ' + orden.length;
+    document.getElementById('mis-sum').textContent = MIAS.length
+      ? 'Mis cajas · ' + MIAS.length + ' de ' + orden.length
+      : 'Mis cajas · marca las tuyas';
     document.getElementById('mis-info').textContent = MIAS.length
-      ? 'Se marcan como Tuya y alimentan el filtro de la matriz. Se guarda en este navegador.'
-      : 'Sin ninguna marcada, el filtro "solo mis cajas" deja la matriz vacía.';
+      ? 'Se marcan como Tuya y alimentan el filtro de la matriz. Se guarda en este navegador, solo para ti.'
+      : 'Marca las cajas que tengas: aparecerán señaladas por toda la página y podrás filtrar la matriz para ver solo las tuyas. Se guarda en este navegador, no se envía a ninguna parte.';
+
+    // El filtro no sirve de nada sin cajas marcadas, y dejaba la matriz en
+    // blanco sin explicar por que. Mejor apagado y dicho.
+    var filtro = document.getElementById('f-mias');
+    if (filtro) {
+      filtro.disabled = !MIAS.length;
+      if (!MIAS.length) filtro.checked = false;
+      var etiqueta = filtro.closest('label');
+      if (etiqueta) etiqueta.title = MIAS.length ? '' : 'Marca antes alguna caja en "Mis cajas"';
+    }
   }
 
   function repintarTodo() {
