@@ -506,6 +506,18 @@
 
 <nav class="nav-sitio" aria-label="Secciones">
   <a href="index.html">Estadísticas</a>
+  <a href="#" aria-current="page">Salidas</a>
+</nav>
+<style>
+  .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
+               letter-spacing:.06em; text-transform:uppercase; }
+  .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
+                 border-bottom:2px solid transparent; }
+  .nav-sitio a:hover { color:var(--ink); }
+  .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+</style>
+<nav class="nav-sitio" aria-label="Secciones">
+  <a href="index.html">Estadísticas</a>
   <a href="salidas.html" aria-current="page">Salidas</a>
 </nav>
 <style>
