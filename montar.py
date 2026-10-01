@@ -70,6 +70,40 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
 </style>
 """
 
+# La chuleta de salidas viene del artifact anterior al rediseño: tema claro,
+# Big Shoulders y Newsreader. La de estadisticas es oscura con Jost. Dos
+# paginas del mismo sitio no pueden verse de dos sitios distintos.
+#
+# Se arregla al montar, no editando el cuerpo, para que siga siendo un
+# export limpio del artifact y se pueda volver a exportar sin perder esto.
+#
+# El selector repite las tres formas que usa el cuerpo original porque
+# ":root:not([data-theme=light])" pesa mas que ":root" a secas: con un
+# ":root" normal, las reglas del modo oscuro de abajo seguirian ganando.
+UNIFICAR_ESTILO = """
+<style>
+  /* Identidad unica del sitio, aplicada sobre el tema antiguo. */
+  :root,
+  :root:not([data-theme="light"]),
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:#0b0a0b; --surface:#151315; --sunk:#1d1a1d; --ink:#f2ecec;
+    --muted:#9c8f93; --line:#262227; --line-hi:#3a333a;
+    --blood:#e0454f; --blood-s:#2a1216; --mid:#3a3438;
+    --verde:#4caf7d; --ambar:#d7a43a; --rojo:#e0454f;
+    --glow:rgba(224,69,79,.30);
+    --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 34px rgba(0,0,0,.45);
+    --f-disp:"Jost","Futura","Century Gothic",sans-serif;
+    --f-body:"Jost","Futura","Century Gothic",Helvetica,sans-serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  body { background:var(--paper); color:var(--ink); font-family:var(--f-body); }
+  /* El cuerpo viejo da por hecho fondo claro en algunos sitios. */
+  table, th, td { border-color:var(--line); }
+  th { background:var(--sunk); color:var(--ink); }
+</style>
+"""
+
 PAGINAS = [
     {
         "fuente": "cuerpo.html",
@@ -102,6 +136,7 @@ PAGINAS = [
         "prioridad": "0.8",
         "act_index": "",
         "act_salidas": ' aria-current="page"',
+        "unificar_estilo": True,
     },
 ]
 
@@ -132,6 +167,9 @@ CABECERA = """<!doctype html>
 <meta name="twitter:image" content="{imgurl}">
 
 <script type="application/ld+json">{jsonld}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128373;</text></svg>">
 </head>
 <body>
@@ -211,6 +249,11 @@ for p in PAGINAS:
     # menos que dos enlazadas, y al visitante le hace falta igual.
     cuerpo = cuerpo.replace("<header class=\"top\">", NAV.format(**p) + "<header class=\"top\">", 1)
     cuerpo = cuerpo.replace("</header>", "</header>" + CTA.format(form=FORM, hoja=HOJA), 1)
+
+    if p.get("unificar_estilo"):
+        # DESPUES del cuerpo: a igual especificidad gana la ultima regla, y
+        # el cuerpo trae las suyas.
+        cuerpo = cuerpo + UNIFICAR_ESTILO
     html = CABECERA.format(
         title=p["title"],
         desc=p["desc"],
