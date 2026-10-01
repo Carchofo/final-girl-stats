@@ -395,13 +395,34 @@
     mix-blend-mode:multiply;
   }
 
-  .marquee { position:relative; margin:0 -20px; padding:0; overflow:hidden;
+  /* De animacion a scroll real: ahora que cada poster abre su ficha, una
+     cinta que se mueve sola y no se puede parar es un incordio. Se mueve
+     con rueda, arrastre, flechas del teclado y los botones de los lados.
+     Sigue avanzando sola, pero se para en cuanto tocas algo. */
+  .marquee { position:relative; margin:0 -20px; padding:0;
              border-bottom:1px solid var(--line); background:#0b0a0b; }
-  .marquee .tira { display:flex; gap:7px; padding:14px 20px; width:max-content;
-                   animation:desliza 90s linear infinite; }
+  .marquee .tira { display:flex; gap:7px; padding:14px 20px;
+                   overflow-x:auto; overflow-y:hidden; scroll-behavior:smooth;
+                   scrollbar-width:none; -ms-overflow-style:none;
+                   overscroll-behavior-x:contain; cursor:grab; }
+  .marquee .tira::-webkit-scrollbar { display:none; }
+  .marquee .tira.arrastrando { cursor:grabbing; scroll-behavior:auto; }
+
+  .marquee .flecha {
+    position:absolute; top:0; bottom:0; width:42px; z-index:3;
+    display:flex; align-items:center; justify-content:center;
+    border:0; background:none; color:var(--ink); cursor:pointer;
+    font-family:var(--f-mono); font-size:22px; line-height:1;
+    opacity:.55; transition:opacity .15s, background .15s;
+  }
+  .marquee .flecha:hover { opacity:1; background:rgba(11,10,11,.55); }
+  .marquee .flecha:focus-visible { outline:2px solid var(--blood); outline-offset:-4px; opacity:1; }
+  .marquee .flecha[hidden] { display:none; }
+  .marquee .flecha.izq { left:0; }
+  .marquee .flecha.der { right:0; }
   .marquee img { width:62px; height:87px; object-fit:cover; border-radius:2px; flex:none;
                  filter:grayscale(.55) brightness(.62) contrast(1.08); }
-  .marquee::after { content:""; position:absolute; inset:0; pointer-events:none;
+  .marquee::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
                     background:linear-gradient(90deg,#0b0a0b 0%,transparent 12%,transparent 88%,#0b0a0b 100%); }
   @keyframes desliza { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .marquee .tira { animation:none; } }
@@ -1385,10 +1406,73 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
         '<img src="' + f.img + '" alt="" loading="lazy"' +
         (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '></button>';
     }).join('');
+    // Arrastrar para mover. Hay que distinguir arrastre de clic: si no,
+    // soltar despues de mover abria una ficha que nadie habia pedido.
+    var baja = false, x0 = 0, s0 = 0, movido = 0;
+    tira.addEventListener('pointerdown', function (e) {
+      baja = true; movido = 0; x0 = e.clientX; s0 = tira.scrollLeft;
+      tira.classList.add('arrastrando');
+    });
+    tira.addEventListener('pointermove', function (e) {
+      if (!baja) return;
+      var d = e.clientX - x0;
+      movido = Math.max(movido, Math.abs(d));
+      tira.scrollLeft = s0 - d;
+    });
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) {
+      tira.addEventListener(ev, function () { baja = false; tira.classList.remove('arrastrando'); });
+    });
+
     tira.addEventListener('click', function (e) {
+      if (movido > 6) { movido = 0; return; }   // fue un arrastre, no un clic
       var b = e.target.closest('.poster');
       if (b) abrirCaja(b.dataset.film);
     });
+
+    // Flechas a los lados.
+    var marq = document.getElementById('marq');
+    function flecha(clase, signo, etiqueta, glifo) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'flecha ' + clase;
+      b.setAttribute('aria-label', etiqueta); b.textContent = glifo;
+      b.addEventListener('click', function () {
+        parado = true;
+        tira.scrollBy({ left: signo * Math.round(tira.clientWidth * 0.8), behavior: 'smooth' });
+      });
+      marq.appendChild(b);
+      return b;
+    }
+    var izq = flecha('izq', -1, 'Ver portadas anteriores', '‹');
+    var der = flecha('der', 1, 'Ver portadas siguientes', '›');
+
+    function estadoFlechas() {
+      izq.hidden = tira.scrollLeft < 8;
+      der.hidden = tira.scrollLeft > tira.scrollWidth - tira.clientWidth - 8;
+    }
+    tira.addEventListener('scroll', estadoFlechas);
+    estadoFlechas();
+
+    // Avance automatico suave, que para en cuanto el usuario toca algo:
+    // la cinta sigue viva, pero deja de pelearse con quien quiere leerla.
+    var parado = false;
+    ['pointerdown', 'wheel', 'keydown', 'focusin'].forEach(function (ev) {
+      tira.addEventListener(ev, function () { parado = true; }, { passive: true });
+    });
+    marq.addEventListener('pointerenter', function () { parado = true; });
+
+    var mitad = 0;
+    requestAnimationFrame(function () { mitad = tira.scrollWidth / 2; });
+    setInterval(function () {
+      if (parado || !mitad) return;
+      // La lista va duplicada: al llegar a la mitad se salta al principio
+      // sin transicion y el bucle parece infinito.
+      if (tira.scrollLeft >= mitad) {
+        tira.style.scrollBehavior = 'auto';
+        tira.scrollLeft -= mitad;
+        tira.style.scrollBehavior = '';
+      }
+      tira.scrollLeft += 1;
+    }, 40);
   })();
 
   leyenda();

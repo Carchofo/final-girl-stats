@@ -358,13 +358,34 @@
     mix-blend-mode:multiply;
   }
 
-  .marquee { position:relative; margin:0 -20px; padding:0; overflow:hidden;
+  /* De animacion a scroll real: ahora que cada poster abre su ficha, una
+     cinta que se mueve sola y no se puede parar es un incordio. Se mueve
+     con rueda, arrastre, flechas del teclado y los botones de los lados.
+     Sigue avanzando sola, pero se para en cuanto tocas algo. */
+  .marquee { position:relative; margin:0 -20px; padding:0;
              border-bottom:1px solid var(--line); background:#0b0a0b; }
-  .marquee .tira { display:flex; gap:7px; padding:14px 20px; width:max-content;
-                   animation:desliza 90s linear infinite; }
+  .marquee .tira { display:flex; gap:7px; padding:14px 20px;
+                   overflow-x:auto; overflow-y:hidden; scroll-behavior:smooth;
+                   scrollbar-width:none; -ms-overflow-style:none;
+                   overscroll-behavior-x:contain; cursor:grab; }
+  .marquee .tira::-webkit-scrollbar { display:none; }
+  .marquee .tira.arrastrando { cursor:grabbing; scroll-behavior:auto; }
+
+  .marquee .flecha {
+    position:absolute; top:0; bottom:0; width:42px; z-index:3;
+    display:flex; align-items:center; justify-content:center;
+    border:0; background:none; color:var(--ink); cursor:pointer;
+    font-family:var(--f-mono); font-size:22px; line-height:1;
+    opacity:.55; transition:opacity .15s, background .15s;
+  }
+  .marquee .flecha:hover { opacity:1; background:rgba(11,10,11,.55); }
+  .marquee .flecha:focus-visible { outline:2px solid var(--blood); outline-offset:-4px; opacity:1; }
+  .marquee .flecha[hidden] { display:none; }
+  .marquee .flecha.izq { left:0; }
+  .marquee .flecha.der { right:0; }
   .marquee img { width:62px; height:87px; object-fit:cover; border-radius:2px; flex:none;
                  filter:grayscale(.55) brightness(.62) contrast(1.08); }
-  .marquee::after { content:""; position:absolute; inset:0; pointer-events:none;
+  .marquee::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
                     background:linear-gradient(90deg,#0b0a0b 0%,transparent 12%,transparent 88%,#0b0a0b 100%); }
   @keyframes desliza { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .marquee .tira { animation:none; } }
