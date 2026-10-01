@@ -820,6 +820,47 @@ var D = {"meta":{"total":13873,"wr":0.6558,"perDay":8.12,"last":"28 sep 2026","s
     h += '<div class="tip plan"><b>Salida recomendada</b>' +
       '<button type="button" class="salidaLink" data-s="' + cual + '">' + SALIDAS[cual].n + '</button>' + texto + '</div>';
 
+    // Cómo le va al killer en SU mapa frente a su media en todos. Es el
+    // único dato de la hoja que dice algo sobre el enfrentamiento concreto
+    // y no solo sobre lo dura que es la caja: un killer puede ser temible
+    // en general y flojear en su propia localización, o al revés.
+    // Diferencia encontrada el 2026-10-01: va de -25,5 (Inkanyamba en
+    // Sacred Groves) a +10,0 (Slayer en Falconwood).
+    (function () {
+      var glob = f.killWr;
+      var aqui = (D.cells[f.loc] || {})[f.killer];
+      if (glob === null || !aqui || aqui[0] < 20) return;
+      var dif = (aqui[1] - glob) * 100;
+      if (Math.abs(dif) < 4) return;   // por debajo de 4 puntos es ruido
+
+      // Su mejor y su peor mapa, para dar escala a la diferencia.
+      var suyos = [];
+      for (var loc in D.cells) {
+        var c = D.cells[loc][f.killer];
+        if (c && c[0] >= 20) suyos.push([loc, c[1]]);
+      }
+      suyos.sort(function (a, b) { return b[1] - a[1]; });
+      // Con un solo mapa de muestra suficiente, la "media en todos los
+      // mapas" sale de partidas sueltas y la diferencia es ruido.
+      // Afecta a Grimlash, Berith, Volk'ar y Raptors.
+      if (suyos.length < 2) return;
+
+      var duro = dif < 0;
+      var txt = '<b>' + f.killer + ' ' + (duro ? 'rinde peor' : 'rinde mejor') +
+        ' en ' + f.loc + '</b>' +
+        'Gana el ' + pc(aqui[1]) + ' aquí, frente al ' + pc(glob) +
+        ' que saca repartido por todos los mapas: ' +
+        neg((dif > 0 ? '+' : '') + dif.toFixed(1) + ' puntos') + '. ';
+      txt += duro
+        ? 'El mapa juega a tu favor, no al suyo. '
+        : 'Esta localización le sienta bien: no te confíes por su media. ';
+      if (suyos.length >= 3) {
+        txt += 'Donde más gana es ' + suyos[0][0] + ' (' + pc(suyos[0][1]) + ') y donde menos, ' +
+               suyos[suyos.length - 1][0] + ' (' + pc(suyos[suyos.length - 1][1]) + ').';
+      }
+      h += '<div class="tip">' + txt + '</div>';
+    })();
+
     var MIN = 20;
     if (f.plays < 90) {
       h += '<div class="tip"><b>Cuidado con la muestra</b>Esta caja solo tiene <em>' + f.plays +
