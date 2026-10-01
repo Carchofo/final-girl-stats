@@ -247,7 +247,10 @@ for p in PAGINAS:
 
     # Barra de navegacion: dos paginas sueltas sin enlaces entre si valen
     # menos que dos enlazadas, y al visitante le hace falta igual.
-    cuerpo = cuerpo.replace("<header class=\"top\">", NAV.format(**p) + "<header class=\"top\">", 1)
+    # El cuerpo de salidas ya trae su propia barra (se añadió al artifact,
+    # que no pasa por aquí). Meter otra dejaba dos seguidas.
+    if "nav-sitio" not in cuerpo:
+        cuerpo = cuerpo.replace("<header class=\"top\">", NAV.format(**p) + "<header class=\"top\">", 1)
     cuerpo = cuerpo.replace("</header>", "</header>" + CTA.format(form=FORM, hoja=HOJA), 1)
 
     if p.get("unificar_estilo"):
