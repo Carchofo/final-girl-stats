@@ -35,15 +35,61 @@
   <a href="index.html">Estadísticas</a>
   <a href="salidas.html">Salidas</a>
   <a href="fichas.html">Fichas</a>
+  <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
+          aria-label="Más secciones">+</button>
 </nav>
+<div class="nav-mas" id="nav-mas" hidden>
+  <a href="index.html#matriz">Matriz</a>
+  <a href="index.html#tops">Tops</a>
+  <a href="index.html#cajas">Cajas</a>
+  <a href="index.html#temporadas">Temporadas</a>
+  <a href="index.html#killers">Killers</a>
+  <a href="index.html#mapas">Mapas</a>
+  <a href="index.html#girls">Final Girls</a>
+  <a href="index.html#jug">Jugadores</a>
+</div>
 <style>
   .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
-                letter-spacing:.06em; text-transform:uppercase; }
+                letter-spacing:.06em; text-transform:uppercase; align-items:center; }
   .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
                   border-bottom:2px solid transparent; }
   .nav-sitio a:hover { color:var(--ink); }
   .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+  /* El "+" abre las secciones de dentro de Estadisticas. En el movil la
+     tira de pestanas se parte en dos lineas y cuesta encontrarlas; aqui
+     estan todas juntas y a un toque. */
+  .nav-sitio .mas { border:1px solid var(--line); background:none; color:var(--muted);
+                     font:inherit; line-height:1; cursor:pointer; border-radius:3px;
+                     padding:3px 8px 5px; margin-left:auto; }
+  .nav-sitio .mas:hover { color:var(--ink); border-color:var(--muted); }
+  .nav-sitio .mas[aria-expanded="true"] { color:var(--blood); border-color:var(--blood); }
+  .nav-mas { display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
+              gap:2px 14px; padding:12px 0 4px; font-size:13px;
+              letter-spacing:.06em; text-transform:uppercase;
+              border-top:1px solid var(--line); margin-top:6px; }
+  .nav-mas a { color:var(--muted); text-decoration:none; padding:6px 0; }
+  .nav-mas a:hover { color:var(--blood); }
+  @media (max-width:560px) {
+    .nav-sitio { justify-content:center; gap:16px; }
+    /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
+       descuadraria el centro. */
+    .nav-sitio .mas { margin-left:0; }
+    .nav-mas { text-align:center; }
+  }
 </style>
+<script>
+(function () {
+  var b = document.querySelector('.nav-sitio .mas');
+  var m = document.getElementById('nav-mas');
+  if (!b || !m) return;
+  b.addEventListener('click', function () {
+    var abierto = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!abierto));
+    m.hidden = abierto;
+    b.textContent = abierto ? '+' : '✕';
+  });
+})();
+</script>
 <div class="wrap"><header class="top"><p class="eyebrow">Índice · 47 fichas</p><h1>Todas las<span class="roja">fichas</span></h1><p class="dek">Una página por killer y por caja, con sus porcentajes de victoria, sus cartas más duras y los consejos de quien las ha jugado.</p></header><h2>Killers</h2><p class="sub">Dónde gana y dónde pierde cada uno, y qué Dark Powers y Finales castigan más.</p><ul class="indice"><li><a href="berith.html">Berith</a></li><li><a href="big-bad-wolf.html">Big Bad Wolf</a></li><li><a href="billy.html">Billy</a></li><li><a href="dr-fright.html">Dr. Fright</a></li><li><a href="evomorph.html">Evomorph</a></li><li><a href="geppetto.html">Geppetto</a></li><li><a href="grimlash.html">Grimlash</a></li><li><a href="hans.html">Hans</a></li><li><a href="hunter.html">Hunter</a></li><li><a href="inkanyamba.html">Inkanyamba</a></li><li><a href="krampus.html">Krampus</a></li><li><a href="mort.html">Mort</a></li><li><a href="poltergeist.html">Poltergeist</a></li><li><a href="raptors.html">Raptors</a></li><li><a href="ratchet-lady.html">Ratchet Lady</a></li><li><a href="razorface.html">Razorface</a></li><li><a href="slayer.html">Slayer</a></li><li><a href="terror-from-above.html">Terror from Above</a></li><li><a href="terror-from-destiny.html">Terror from Destiny</a></li><li><a href="terror-from-the-grave.html">Terror from the Grave</a></li><li><a href="the-eyeless.html">The Eyeless</a></li><li><a href="the-intruders.html">The Intruders</a></li><li><a href="the-organism.html">The Organism</a></li><li><a href="tormentor.html">Tormentor</a></li><li><a href="volk-ar.html">Volk'ar</a></li></ul><h2>Cajas</h2><p class="sub">Cada caja con su killer y su mapa, hojas de preparación y qué tiene de particular.</p><ul class="indice"><li><a href="a-demon-in-the-shadows.html">A Demon in the Shadows</a></li><li><a href="a-knock-at-the-door.html">A Knock at the Door</a></li><li><a href="a-rotten-harvest.html">A Rotten Harvest</a></li><li><a href="bad-times-at-buddyland.html">Bad Times at Buddyland</a></li><li><a href="carnage-at-the-carnival.html">Carnage at the Carnival</a></li><li><a href="don-t-make-a-sound.html">Don't Make a Sound</a></li><li><a href="frightmare-on-maple-lane.html">Frightmare on Maple Lane</a></li><li><a href="hell-to-pay.html">Hell to Pay</a></li><li><a href="into-the-void.html">Into the Void</a></li><li><a href="madness-in-the-dark.html">Madness in the Dark</a></li><li><a href="once-upon-a-full-moon.html">Once Upon a Full Moon</a></li><li><a href="panic-at-station-2891.html">Panic at Station 2891</a></li><li><a href="shriek.html">Shriek</a></li><li><a href="slaughter-in-the-groves.html">Slaughter in the Groves</a></li><li><a href="the-falconwood-files.html">The Falconwood Files</a></li><li><a href="the-green-terror.html">The Green Terror</a></li><li><a href="the-happy-trails-horror.html">The Happy Trails Horror</a></li><li><a href="the-haunting-of-creech-manor.html">The Haunting of Creech Manor</a></li><li><a href="the-killer-from-tomorrow.html">The Killer from Tomorrow</a></li><li><a href="the-marrek-murders.html">The Marrek Murders</a></li><li><a href="the-north-pole-nightmare.html">The North Pole Nightmare</a></li><li><a href="the-raptor-games.html">The Raptor Games</a></li></ul><footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> o a la <a href="salidas.html">estrategias de salida</a>.</p></footer></div><style>
   .indice { list-style:none; margin:0 0 26px; padding:0;
             display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1px;

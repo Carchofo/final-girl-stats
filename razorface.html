@@ -35,15 +35,61 @@
   <a href="index.html">Estadísticas</a>
   <a href="salidas.html">Salidas</a>
   <a href="fichas.html">Fichas</a>
+  <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
+          aria-label="Más secciones">+</button>
 </nav>
+<div class="nav-mas" id="nav-mas" hidden>
+  <a href="index.html#matriz">Matriz</a>
+  <a href="index.html#tops">Tops</a>
+  <a href="index.html#cajas">Cajas</a>
+  <a href="index.html#temporadas">Temporadas</a>
+  <a href="index.html#killers">Killers</a>
+  <a href="index.html#mapas">Mapas</a>
+  <a href="index.html#girls">Final Girls</a>
+  <a href="index.html#jug">Jugadores</a>
+</div>
 <style>
   .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
-                letter-spacing:.06em; text-transform:uppercase; }
+                letter-spacing:.06em; text-transform:uppercase; align-items:center; }
   .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
                   border-bottom:2px solid transparent; }
   .nav-sitio a:hover { color:var(--ink); }
   .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+  /* El "+" abre las secciones de dentro de Estadisticas. En el movil la
+     tira de pestanas se parte en dos lineas y cuesta encontrarlas; aqui
+     estan todas juntas y a un toque. */
+  .nav-sitio .mas { border:1px solid var(--line); background:none; color:var(--muted);
+                     font:inherit; line-height:1; cursor:pointer; border-radius:3px;
+                     padding:3px 8px 5px; margin-left:auto; }
+  .nav-sitio .mas:hover { color:var(--ink); border-color:var(--muted); }
+  .nav-sitio .mas[aria-expanded="true"] { color:var(--blood); border-color:var(--blood); }
+  .nav-mas { display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
+              gap:2px 14px; padding:12px 0 4px; font-size:13px;
+              letter-spacing:.06em; text-transform:uppercase;
+              border-top:1px solid var(--line); margin-top:6px; }
+  .nav-mas a { color:var(--muted); text-decoration:none; padding:6px 0; }
+  .nav-mas a:hover { color:var(--blood); }
+  @media (max-width:560px) {
+    .nav-sitio { justify-content:center; gap:16px; }
+    /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
+       descuadraria el centro. */
+    .nav-sitio .mas { margin-left:0; }
+    .nav-mas { text-align:center; }
+  }
 </style>
+<script>
+(function () {
+  var b = document.querySelector('.nav-sitio .mas');
+  var m = document.getElementById('nav-mas');
+  if (!b || !m) return;
+  b.addEventListener('click', function () {
+    var abierto = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!abierto));
+    m.hidden = abierto;
+    b.textContent = abierto ? '+' : '✕';
+  });
+})();
+</script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 7 mapas con datos</p>
 <h1>Razorface<span class="roja">en 53,8% de victorias</span></h1>
 <p class="dek">Sobre <b>511 partidas</b> registradas, la Final Girl gana el 53,8% de las veces contra Razorface. La media de todo el juego es 65,5%, así que está por debajo: es de los duros.</p>

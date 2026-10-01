@@ -87,6 +87,23 @@
     body::after { background-attachment:scroll; opacity:.10; }
     .hero { background-attachment:scroll; }
 
+    /* La cabecera iba pegada al contenido y entre las dos tapaban toda la
+       pantalla: el fondo de cinta no se veia en ningun momento. Ahora la
+       cabecera se recorta por los lados y respira por arriba y por abajo,
+       asi que la cinta asoma alrededor y entre bloques. */
+    .hero { margin:10px 14px 0; border-radius:3px; overflow:hidden;
+            min-height:230px; }
+    .hero::after {
+      background:
+        linear-gradient(to top, rgba(11,10,11,.92) 0%, rgba(11,10,11,.72) 40%,
+                        rgba(11,10,11,.30) 78%, rgba(11,10,11,.45) 100%);
+    }
+    .marquee { margin-top:14px; }
+    /* El primer bloque de datos arranca mas abajo: ese hueco es por donde
+       se ve la cinta del fondo. */
+    .kpis, .wrap > .kpis { margin-top:16px; }
+    nav.tabs { margin-block:22px 10px; }
+
     .cta-registro { padding:12px 13px; }
     .cta-registro p { font-size:13px; }
     .kpi { padding:11px 12px; }
