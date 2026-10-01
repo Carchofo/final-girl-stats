@@ -107,7 +107,9 @@
     .hero .dek br { display:none; }
 
     .marquee .tira { padding:9px 14px; gap:5px; }
-    .marquee img { width:46px; height:64px; }
+    /* .marquee .tira img y no .marquee img: la regla general va DESPUÉS en
+       el fichero y, a igual peso, gana la última. */
+    .marquee .tira img { width:46px; height:64px; }
     .marquee .flecha { width:34px; font-size:19px; opacity:.85;
                        background:linear-gradient(90deg, rgba(11,10,11,.85), transparent); }
     .marquee .flecha.der { background:linear-gradient(270deg, rgba(11,10,11,.85), transparent); }
