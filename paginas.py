@@ -180,6 +180,11 @@ def pagina_killer(nombre, k):
             h.append(f'<p>La peor papeleta es <b>{peor[0]}</b>: con ella encima la partida se gana '
                      f'solo el {pc(peor[1])} de las veces, sobre {peor[2]} partidas.</p>')
 
+    # La ficha del killer tambien vende: quien llega buscando "como ganar a
+    # Hans" muchas veces no tiene la caja. Se enlaza la suya, no el killer.
+    if caja:
+        h.append(bloque_tienda(caja))
+
     c = CONSEJOS.get(caja or '', {})
     if c.get('foro'):
         h.append('<h2>Qué dice quien lo ha jugado</h2>')
