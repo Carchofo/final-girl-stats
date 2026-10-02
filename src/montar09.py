@@ -17,7 +17,12 @@ def peor(arr):
 SET = {}
 for f in D['films']:
     a = [x for x in f['setups'] if x[2] >= 20]
-    if a: SET[f['killer']] = (max(a, key=lambda x: x[1]), min(a, key=lambda x: x[1]))
+    if len(a) < 2: continue
+    b, w = max(a, key=lambda x: x[1]), min(a, key=lambda x: x[1])
+    # Solo si la diferencia probablemente no es azar (test de dos proporciones).
+    q = (b[1]*b[2] + w[1]*w[2]) / (b[2] + w[2])
+    z = (b[1] - w[1]) / (q*(1-q)*(1/b[2] + 1/w[2])) ** .5
+    if z >= 1.96: SET[f['killer']] = (b, w, round(z, 2))
 KX = []
 for k, v in D['killers'].items():
     p = P[k]
@@ -58,7 +63,8 @@ JS = '''
       if (x.base) h += '<p class="sec-t">Cómo es</p><p>' + esc(x.base) + '</p>';
       h += '<p class="sec-t">Lo que te mata · ' + fuente(x.src) + '</p><p>' + esc(x.ojo) + '</p>';
       if (x.set) {
-        h += '<p class="sec-t">Carta de Setup</p><p><b>Para aprender, empieza con ' + esc(x.set[0][0]) + '</b>: es el Setup con más victorias (' + pc(x.set[0][1]) + ', ' + x.set[0][2] + ' partidas). Cuando la domines, prueba ' + esc(x.set[1][0]) + ', el más duro (' + pc(x.set[1][1]) + ').</p>';
+        h += '<p class="sec-t">Carta de Setup · aquí sí importa</p><p><b>Para aprender, empieza con ' + esc(x.set[0][0]) + '</b>: es el Setup con más victorias (' + pc(x.set[0][1]) + ', ' + x.set[0][2] + ' partidas). Cuando la domines, prueba ' + esc(x.set[1][0]) + ', el más duro (' + pc(x.set[1][1]) + ', ' + x.set[1][2] + ' partidas).' +
+          (x.set[2] < 2.3 ? ' <em>Diferencia en el límite de lo fiable: pocas partidas.</em>' : '') + '</p>';
       }
       if (x.dp || x.fin) {
         h += '<p class="sec-t">Lo que más hunde, según los datos</p><div class="tabla-wrap"><table class="mini">' +
