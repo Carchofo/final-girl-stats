@@ -95,6 +95,10 @@ def numeros(texto):
     La coma decimal y el punto de millar del castellano conviven en la
     misma frase, asi que no vale un float() a secas.
     """
+    # Separador de millar por espacio ("13 920", y sus variantes finas e
+    # inquebrantables). Sin esto el guardia ve un 13 y un 920, no encuentra
+    # el 920 en los datos y tira un resumen que era correcto.
+    texto = re.sub(r"(?<=\d)[\s   ](?=\d{3}(?!\d))", "", texto)
     out = set()
     for t in re.findall(r"\d[\d.,]*", texto):
         t = t.rstrip(".,")
