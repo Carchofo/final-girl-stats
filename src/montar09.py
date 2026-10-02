@@ -23,6 +23,20 @@ for f in D['films']:
     q = (b[1]*b[2] + w[1]*w[2]) / (b[2] + w[2])
     z = (b[1] - w[1]) / (q*(1-q)*(1/b[2] + 1/w[2])) ** .5
     if z >= 1.96: SET[f['killer']] = (b, w, round(z, 2))
+def evitar(v):
+    # Dark Power o Finale muy descompensado frente al resto de los de su killer:
+    # z >= 3 (casi imposible que sea azar) y al menos 15 puntos de diferencia.
+    out = []
+    for sec in ('Dark Power', 'Finale'):
+        a = [x for x in v['secs'].get(sec, []) if x[0] != 'Unrevealed' and x[2] >= 20]
+        for x in a:
+            r = [y for y in a if y is not x]
+            if not r: continue
+            n2 = sum(y[2] for y in r); w2 = sum(y[1]*y[2] for y in r) / n2
+            q = (x[1]*x[2] + w2*n2) / (x[2] + n2)
+            z = (w2 - x[1]) / (q*(1-q)*(1/x[2] + 1/n2)) ** .5
+            if z >= 3 and w2 - x[1] >= .15: out.append([sec, x[0], x[1], x[2], round(w2, 4)])
+    return out
 KX = []
 for k, v in D['killers'].items():
     p = P[k]
@@ -31,7 +45,7 @@ for k, v in D['killers'].items():
         k=k, box=v.get('box'), wr=v['wr'], n=v['g'], mio=k in MIOS,
         base=K.get(k, {}).get('j') or '',
         s=p['s'], por=p['por'], ojo=p['ojo'], src=p['src'],
-        set=SET.get(k), dp=peor(v['secs'].get('Dark Power', [])), fin=peor(v['secs'].get('Finale', [])),
+        set=SET.get(k), ev=evitar(v), dp=peor(v['secs'].get('Dark Power', [])), fin=peor(v['secs'].get('Finale', [])),
         ficha=('https://finalgirlstats.com/' + sl + '.html') if os.path.exists(f'{WEB}/{sl}.html') else None))
 KX.sort(key=lambda x: (not x['mio'], x['wr']))
 assert len(KX) == 26
@@ -65,6 +79,11 @@ JS = '''
       if (x.set) {
         h += '<p class="sec-t">Carta de Setup · aquí sí importa</p><p><b>Para aprender, empieza con ' + esc(x.set[0][0]) + '</b>: es el Setup con más victorias (' + pc(x.set[0][1]) + ', ' + x.set[0][2] + ' partidas). Cuando la domines, prueba ' + esc(x.set[1][0]) + ', el más duro (' + pc(x.set[1][1]) + ', ' + x.set[1][2] + ' partidas).' +
           (x.set[2] < 2.3 ? ' <em>Diferencia en el límite de lo fiable: pocas partidas.</em>' : '') + '</p>';
+      }
+      if (x.ev.length) {
+        h += '<div class="aviso" style="margin:16px 0 0"><h3>Descompensado</h3>' + x.ev.map(function (e) {
+          return '<p><b>' + e[0] + ' ' + esc(e[1]) + '</b>: ' + pc(e[2]) + ' de victorias en ' + e[3] + ' partidas, frente al ' + pc(e[4]) + ' del resto.</p>';
+        }).join('') + '<p class="riesgo"><b>Si quieres evitarlo</b> Sale al azar, así que no se puede esquivar en partida. Si buscas una partida equilibrada, sácalo del mazo antes de barajar. Es una regla de la casa, no oficial.</p></div>';
       }
       if (x.dp || x.fin) {
         h += '<p class="sec-t">Lo que más hunde, según los datos</p><div class="tabla-wrap"><table class="mini">' +
