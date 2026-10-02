@@ -16,7 +16,7 @@ Every killer against every map, a page per killer and per box, and people can lo
 
 It costs you nothing and there is nothing for you to maintain. Plays logged from the site go through your own form, prefilled, so they land in your sheet, never in mine. The idea is to bring more people to log their games with you.
 
-It is on noindex until you say it is fine. Are you ok with it, and would you link it from the sheet?
+It is on noindex until you say it is fine. Are you ok with it?
 
 Thanks,
 Rafel
