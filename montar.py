@@ -52,6 +52,15 @@ CTA = """<aside class="cta-registro">
 </style>
 """
 
+def cifras():
+    """Numeros que se repiten por los textos, sacados de los datos."""
+    m = paginas.D["meta"]
+    return {"partidas": f'{m["total"]:,}'.replace(",", "."),
+            "jugadores": str(m.get("jugadores", ""))}
+
+
+CIFRAS = cifras()
+
 ENLACES = {
     "https://claude.ai/artifact/9citaKuByjhsDA5S1qit6y": "salidas.html",
     "https://claude.ai/artifact/BEA6n9fvejJWTBwwzn75dp": "index.html",
@@ -174,16 +183,16 @@ PAGINAS = [
     {
         "fuente": "src/cuerpo.html",
         "salida": "index.html",
-        "title": "Estadísticas de Final Girl: 13.915 partidas reales",
+        "title": f'Estadísticas de Final Girl: {CIFRAS["partidas"]} partidas reales',
         # Google corta la descripcion sobre los 155 caracteres: lo que
         # importa va delante.
         "desc": (
-            "Victorias de cada killer en cada mapa de Final Girl, sobre 13.915 "
+            f'Victorias de cada killer en cada mapa de Final Girl, sobre {CIFRAS["partidas"]} '
             "partidas de la comunidad. Qué caja es más dura y dónde pierde cada asesino."
         ),
         "img": "img/vhs-final-girl.jpg",
         "ogtitle": "La página que todo fan de Final Girl necesitaba",
-        "ogdesc": "13.915 partidas reales de la comunidad: qué killer castiga en qué mapa, qué caja es más dura y cómo salir en el turno 1.",
+        "ogdesc": f'{CIFRAS["partidas"]} partidas reales de la comunidad: qué killer castiga en qué mapa, qué caja es más dura y cómo salir en el turno 1.',
         "prioridad": "1.0",
         "act_index": ' aria-current="page"',
         "act_salidas": "", "act_fichas": "",
@@ -298,6 +307,13 @@ for p in PAGINAS:
     # va dentro del <body>. Aqui ya hay uno en el <head>: dejar los dos
     # confunde al buscador sobre cual es el bueno.
     cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
+
+    # Las cifras que van en el HTML servido (y no pintadas por JavaScript,
+    # que el buscador no las veria) se rellenan aqui desde los datos. Antes
+    # estaban escritas a mano en cinco sitios y se quedaban viejas.
+    for clave, valor in CIFRAS.items():
+        cuerpo = re.sub(r'(<span data-dato="%s">)[^<]*(</span>)' % clave,
+                        r'\g<1>' + valor + r'\g<2>', cuerpo)
 
     # Las descripciones de los killers viven en killers_desc.json para que
     # paginas.py y la pagina grande usen exactamente el mismo texto.

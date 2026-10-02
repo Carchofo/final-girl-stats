@@ -124,6 +124,10 @@ def recalcular(filas, viejo):
     D['meta']['total'] = total
     D['meta']['wr'] = pct(total, victorias)
     D['meta']['perDay'] = round(total / max(dias, 1), 2)
+    # Cuanta gente ha registrado partidas. Estaba escrito a mano y se
+    # quedo en 669 hace meses.
+    D['meta']['jugadores'] = len({(f.get('Nickname') or '').strip()
+                                  for f in filas if (f.get('Nickname') or '').strip()})
     if ultima:
         D['meta']['last'] = f"{ultima.day} {MESES[ultima.month - 1]} {ultima.year}"
 
