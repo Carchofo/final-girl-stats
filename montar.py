@@ -262,7 +262,10 @@ CABECERA = """<!doctype html>
 <body>
 """
 
-PIE = "\n</body>\n</html>\n"
+# Contador de visitas sin cuenta ni cookies (hits.sh). Ver el total:
+# https://hits.sh/finalgirlstats.com.svg?view=today-total (cada vista suma 1).
+CONTADOR = '<img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">'
+PIE = "\n" + CONTADOR + "\n</body>\n</html>\n"
 
 
 def estilos():
