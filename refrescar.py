@@ -128,6 +128,20 @@ def recalcular(filas, viejo):
     # quedo en 669 hace meses.
     D['meta']['jugadores'] = len({(f.get('Nickname') or '').strip()
                                   for f in filas if (f.get('Nickname') or '').strip()})
+    # Concentracion de la muestra: quien aporta cuanto. Estaba todo
+    # escrito a mano en el parrafo "Por que importa".
+    porJug = cuenta(filas, lambda f: (f.get('Nickname') or '').strip())
+    porJug.pop('', None)
+    orden = sorted(porJug.values(), key=lambda v: -v[0])
+    if orden:
+        D['meta']['top25'] = round(sum(v[0] for v in orden[:25]) / total * 100)
+        D['meta']['top1'] = f"{orden[0][0] / total * 100:.1f}".replace('.', ',')
+        D['meta']['unicas'] = round(sum(1 for v in orden if v[0] == 1) / len(orden) * 100)
+        g10 = sum(v[0] for v in orden[:10]); w10 = sum(v[1] for v in orden[:10])
+        gr = sum(v[0] for v in orden[10:]); wr = sum(v[1] for v in orden[10:])
+        D['meta']['wrTop10'] = pct(g10, w10)
+        D['meta']['wrResto'] = pct(gr, wr)
+
     if ultima:
         D['meta']['last'] = f"{ultima.day} {MESES[ultima.month - 1]} {ultima.year}"
 
@@ -179,6 +193,13 @@ def recalcular(filas, viejo):
         if cel:
             D['cells'][loc] = cel
             D['matrix'][loc] = mat
+
+    # Cuantas casillas tiene la matriz y cuantas tienen muestra.
+    D['meta']['combis'] = len(D['killers']) * len(celdas)
+    # 5 es el umbral con el que la matriz pinta una casilla (MIN_CELDA en
+    # cuerpo.html), no el de las tablas.
+    D['meta']['combisOk'] = sum(1 for loc in D['cells'].values()
+                                for g, _ in loc.values() if g >= 5)
 
     # --- hojas de preparación ----------------------------------------
     sets = defaultdict(lambda: defaultdict(lambda: [0, 0]))

@@ -55,8 +55,18 @@ CTA = """<aside class="cta-registro">
 def cifras():
     """Numeros que se repiten por los textos, sacados de los datos."""
     m = paginas.D["meta"]
-    return {"partidas": f'{m["total"]:,}'.replace(",", "."),
-            "jugadores": str(m.get("jugadores", ""))}
+    def pc(x):
+        return f"{x*100:.1f}".replace(".", ",") + "%"
+    c = {"partidas": f'{m["total"]:,}'.replace(",", "."),
+         "jugadores": str(m.get("jugadores", "")),
+         "media": pc(m["wr"])}
+    for clave in ("combis", "combisOk", "top25", "top1", "unicas"):
+        if m.get(clave) is not None:
+            c[clave] = str(m[clave])
+    for clave in ("wrTop10", "wrResto"):
+        if m.get(clave) is not None:
+            c[clave] = pc(m[clave])
+    return c
 
 
 CIFRAS = cifras()
