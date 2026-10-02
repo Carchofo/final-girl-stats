@@ -1,0 +1,97 @@
+import json, os, re, sys, unicodedata
+sys.path.insert(0, os.path.dirname(__file__))
+from planes import P
+D = json.load(open('/private/tmp/claude-501/D.json'))
+K = json.load(open('/Users/mac/Desktop/final-girl-web/killers_desc.json'))
+WEB = '/Users/mac/Desktop/final-girl-web'
+MIOS = ['Hans', 'Evomorph', 'The Intruders', 'Big Bad Wolf', 'Ratchet Lady']
+
+def slug(s):
+    s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+', '-', s).strip('-')
+
+def peor(arr):
+    a = [x for x in arr if x[0] != 'Unrevealed' and x[2] >= 20]
+    return min(a, key=lambda x: x[1]) if a else None
+
+KX = []
+for k, v in D['killers'].items():
+    p = P[k]
+    sl = slug(k)
+    KX.append(dict(
+        k=k, box=v.get('box'), wr=v['wr'], n=v['g'], mio=k in MIOS,
+        base=K.get(k, {}).get('j') or '',
+        s=p['s'], por=p['por'], ojo=p['ojo'], src=p['src'],
+        dp=peor(v['secs'].get('Dark Power', [])), fin=peor(v['secs'].get('Finale', [])),
+        ficha=('https://finalgirlstats.com/' + sl + '.html') if os.path.exists(f'{WEB}/{sl}.html') else None))
+KX.sort(key=lambda x: (not x['mio'], x['wr']))
+assert len(KX) == 26
+
+SEC = '''
+<section id="killers">
+  <h2><span class="num">09</span> Contra cada killer</h2>
+  <p class="sub">Los 26, primero los tuyos y luego del más duro al más fácil. Qué salida usar, qué te va a matar y qué Dark Power y Finale temer. La salida es criterio propio a partir de las reglas de cada caja y del foro; la fuente de cada aviso va indicada.</p>
+  <div class="barlist" id="kx-list"></div>
+  <div class="detalle" id="kx-det"></div>
+  <p class="riesgo" style="margin-top:14px"><b>Umbrales</b> Win rate visible desde 5 partidas; Dark Power y Finale más duros solo con 20 o más. Sin datos suficientes, se queda en blanco.</p>
+</section>
+'''
+
+JS = '''
+<script>
+  var KX = %s;
+  var SRC = { foro: 'Foro BGG', reglas: 'Reglas de la caja', datos: 'Datos', poca: 'Poca información' };
+  (function () {
+    var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%%'; };
+    var fuente = function (s) { return s.split('+').map(function (t) { return SRC[t]; }).join(' · '); };
+    var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+    function det(x) {
+      var h = '<h3>' + esc(x.k) + '</h3><p class="loc">' + (x.box ? esc(x.box) : 'Película corta') + '</p>';
+      h += '<div class="split">' +
+        (x.n >= 5 ? '<div><b>' + pc(x.wr) + '</b><span>Victorias contra él<br>' + x.n + ' partidas' + (x.n < 20 ? ' · pocas' : '') + '</span></div>' : '') +
+        (x.s ? '<div><b>Salida ' + x.s + '</b><span>' + esc(x.por) + '</span></div>' : '') +
+        '</div>';
+      if (x.base) h += '<p class="sec-t">Cómo es</p><p>' + esc(x.base) + '</p>';
+      h += '<p class="sec-t">Lo que te mata · ' + fuente(x.src) + '</p><p>' + esc(x.ojo) + '</p>';
+      if (x.dp || x.fin) {
+        h += '<p class="sec-t">Lo que más hunde, según los datos</p><div class="tabla-wrap"><table class="mini">' +
+          (x.dp ? '<tr class="peor"><td>Dark Power: ' + esc(x.dp[0]) + '</td><td>' + pc(x.dp[1]) + '</td><td>' + x.dp[2] + '</td></tr>' : '') +
+          (x.fin ? '<tr class="peor"><td>Finale: ' + esc(x.fin[0]) + '</td><td>' + pc(x.fin[1]) + '</td><td>' + x.fin[2] + '</td></tr>' : '') +
+          '</table></div>';
+      }
+      if (x.ficha) h += '<p style="margin-top:12px"><a href="' + x.ficha + '" style="color:var(--blood)">Ficha completa de ' + esc(x.k) + ' →</a></p>';
+      document.getElementById('kx-det').innerHTML = h;
+    }
+    var lista = document.getElementById('kx-list');
+    lista.innerHTML = KX.map(function (x, i) {
+      return '<button type="button" class="bar" data-i="' + i + '" aria-pressed="false">' +
+        '<span class="fill" style="width:' + (x.wr * 100).toFixed(1) + '%%"></span>' +
+        '<span class="nm">' + esc(x.k) + (x.mio ? '<span class="mine">Tuyo</span>' : '') +
+        '<i>' + (x.s ? 'Salida ' + x.s : 'Sin salida recomendada') + '</i></span>' +
+        '<span class="pc">' + (x.n >= 5 ? pc(x.wr) : '—') + '</span>' +
+        '<span class="pl">' + x.n + '</span></button>';
+    }).join('');
+    lista.querySelectorAll('.bar').forEach(function (b) {
+      b.addEventListener('click', function () {
+        lista.querySelectorAll('.bar').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        det(KX[parseInt(b.dataset.i, 10)]);
+      });
+    });
+    lista.querySelector('.bar').setAttribute('aria-pressed', 'true');
+    det(KX[0]);
+  })();
+</script>
+''' % json.dumps(KX, ensure_ascii=False)
+
+def aplicar(path, out):
+    s = open(path).read()
+    assert 'id="killers"' not in s, 'ya tiene la seccion 09'
+    assert s.count('<footer>') == 1
+    s = s.replace('<footer>', SEC + '\n<footer>', 1)
+    i = s.rfind('<style>')  # el bloque de identidad final; los scripts van antes
+    s = s[:i] + JS + '\n' + s[i:]
+    open(out, 'w').write(s)
+
+aplicar(sys.argv[1], sys.argv[2])
+print('ok', sys.argv[2])
