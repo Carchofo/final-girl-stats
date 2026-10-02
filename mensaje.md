@@ -4,7 +4,25 @@ Actualizado al 2 de octubre de 2026. Cifras comprobadas contra los datos
 publicados ese dia: 13.919 partidas completas, 669 personas, 26 killers,
 22 localizaciones, 50 paginas.
 
-## Versión corta (la que enviaría)
+## La que se envía (GeekMail a @Rancord, Dean Vanderscoff)
+
+Asunto: Built a site from your tracker, want your OK first
+
+Hi Dean,
+
+Thanks for keeping the tracker going. I built a site on top of it: https://finalgirlstats.com
+
+Every killer against every map, a page per killer and per box, and people can look up their nickname to see what they are missing. The numbers match your summary tab (13,920 plays, 65.53%) and refresh from the sheet.
+
+It is on noindex until you say it is fine. Plays logged from the site go through your own form, prefilled, so they land in your sheet, never in mine.
+
+Two questions: are you ok with it, and would you link it from the sheet? I would also like to add store affiliate links on the box pages. Tell me if that bothers you and I will leave them out.
+
+Thanks,
+Rafel
+
+
+## Versión larga (descartada: demasiado larga para un primer contacto)
 
 Asunto: Built a site from the tracker data, want your OK before indexing
 
