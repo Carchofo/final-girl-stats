@@ -106,7 +106,7 @@
     .hero { min-height:0; }
     /* El texto baja dentro de la portada: arriba queda la cinta limpia,
        que ahi va al 100% y no al 34% del fondo general. */
-    .hero > .wrap { padding-block:140px 20px; }
+    .hero > .wrap { padding-block:150px 20px; }
     .hero .eyebrow { font-size:9.5px; letter-spacing:.12em; line-height:1.5; }
     .hero h1 { font-size:clamp(34px,11.5vw,46px); }
     .hero .dek { font-size:14.5px; line-height:1.45; }
@@ -142,9 +142,10 @@
        libre por encima del titulo. */
     .hero { margin:34px 14px 0; border-radius:3px; overflow:hidden;
             min-height:330px;
-            background-size:195% auto;
-            /* Al 100% el logo de la cinta cae a unos 77px del borde de
-               arriba, justo en la franja libre sobre el titulo. */
+            background-size:212% auto;
+            /* Con este zoom y la posicion al 100%, el logo de la cinta cae
+               a unos 55px del borde de arriba: queda por encima de la
+               frase pequena en vez de detras. */
             background-position:50% 100%; }
     .hero::after {
       background:
