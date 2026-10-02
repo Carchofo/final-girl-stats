@@ -1,0 +1,111 @@
+{
+  "caja": "A Knock at the Door",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta un WR de 60.7, lo que la sitúa en el puesto 10 de dificultad entre las 22 disponibles. El mapa Wingard Cottage (WR 69.0) y el asesino The Intruders (WR 62.5) por separado son significativamente mejores que esta combinación específica.",
+  "claves": [
+    "La carta 'No Remorse' es la peor opción en Dark Power con un WR de 60.0, aunque la diferencia estadística frente a la mejor carta ('Strength in Numbers') es significativa (z=2.21).",
+    "El final del juego se define por 'Hunt Sweet Hunt' (WR 87.3), que supera ampliamente al peor escenario ('We Know Where You Live', WR 58.3) con una diferencia de z de 5.51.",
+    "La fase de Setup muestra una tendencia hacia 'Dysfunctional Family' sobre 'Couples Weekend', pero la muestra actual no es suficiente para afirmar que esta preferencia sea estadísticamente significativa (significativo: false)."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "A Knock at the Door",
+    "killer": "The Intruders",
+    "mapa": "Wingard Cottage",
+    "serie": "S2",
+    "partidas": 206,
+    "wr": 60.7,
+    "puesto_dificultad": "10 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 62.5,
+      "partidas": 925
+    },
+    "mapa_en_general": {
+      "wr": 69.0,
+      "partidas": 973
+    },
+    "mapa_con_otros_killers": 70.3,
+    "mejores_mapas_del_killer": [
+      [
+        "Falconwood",
+        77.8,
+        63
+      ],
+      [
+        "Maple Lane",
+        77.3,
+        22
+      ],
+      [
+        "Storybook Woods",
+        76.2,
+        21
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Station 2891",
+        43.2,
+        37
+      ],
+      [
+        "Sacred Groves",
+        43.6,
+        55
+      ],
+      [
+        "Carnival of Blood",
+        46.8,
+        79
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Strength in Numbers",
+        "wr": 69.7,
+        "partidas": 241
+      },
+      "peor": {
+        "carta": "No Remorse",
+        "wr": 60.0,
+        "partidas": 230
+      },
+      "z": 2.21,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Hunt Sweet Hunt",
+        "wr": 87.3,
+        "partidas": 212
+      },
+      "peor": {
+        "carta": "We Know Where You Live",
+        "wr": 58.3,
+        "partidas": 84
+      },
+      "z": 5.51,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Dysfunctional Family",
+        "wr": 73.8,
+        "partidas": 187
+      },
+      "peor": {
+        "carta": "Couples Weekend",
+        "wr": 65.8,
+        "partidas": 231
+      },
+      "z": 1.76,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

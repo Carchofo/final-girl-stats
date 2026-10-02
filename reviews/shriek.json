@@ -1,0 +1,112 @@
+{
+  "caja": "Shriek",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 1 punto WR por encima de la media del juego (70.5 vs 65.5) y se sitúa en el puesto 15 de 22 en dificultad, lo que indica un rendimiento medio-alto pero no excepcional para Mort.",
+  "claves": [
+    "La carta 'Mort as Krampus' en finale es el elemento más fuerte con un WR de 87.1 y una diferencia z de 2.58, siendo estadísticamente significativa.",
+    "El setup depende totalmente de 'Family Day' (WR 84.6), mientras que 'Last Day' baja la puntuación a 67.5 con una diferencia z de 2.37 también significativa.",
+    "La carta 'Relentless Paranoia' es la peor opción en dark_power con un WR de 63.2, aunque la muestra no da para afirmar si esta diferencia es estadísticamente significativa (z=1.45).",
+    "Mega BGCon actúa como su mapa más difícil para Mort (puesto 15), a pesar de tener el mismo nombre que en la lista de mejores mapas del killer donde aparece por debajo de Marrek Warehouse."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Shriek",
+    "killer": "Mort",
+    "mapa": "Mega BGCon",
+    "serie": "SP",
+    "partidas": 122,
+    "wr": 70.5,
+    "puesto_dificultad": "15 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 69.4,
+      "partidas": 314
+    },
+    "mapa_en_general": {
+      "wr": 73.4,
+      "partidas": 327
+    },
+    "mapa_con_otros_killers": 75.4,
+    "mejores_mapas_del_killer": [
+      [
+        "Marrek Warehouse",
+        74.5,
+        51
+      ],
+      [
+        "Mega BGCon",
+        70.5,
+        122
+      ],
+      [
+        "Wingard Cottage",
+        59.3,
+        59
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Wingard Cottage",
+        59.3,
+        59
+      ],
+      [
+        "Mega BGCon",
+        70.5,
+        122
+      ],
+      [
+        "Marrek Warehouse",
+        74.5,
+        51
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Toxic Whispers",
+        "wr": 73.8,
+        "partidas": 84
+      },
+      "peor": {
+        "carta": "Relentless Paranoia",
+        "wr": 63.2,
+        "partidas": 76
+      },
+      "z": 1.45,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Mort as Krampus",
+        "wr": 87.1,
+        "partidas": 31
+      },
+      "peor": {
+        "carta": "Mort as H.U.N.T.E.R.",
+        "wr": 57.1,
+        "partidas": 28
+      },
+      "z": 2.58,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Family Day",
+        "wr": 84.6,
+        "partidas": 65
+      },
+      "peor": {
+        "carta": "Last Day",
+        "wr": 67.5,
+        "partidas": 80
+      },
+      "z": 2.37,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

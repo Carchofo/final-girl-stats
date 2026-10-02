@@ -1,0 +1,111 @@
+{
+  "caja": "Don't Make a Sound",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 56.1 WR debido a que Utopia es el peor mapa para The Eyeless (puesto 8 de 22) y la carta Final Slash domina con un 98.0 WR en finales.",
+  "claves": [
+    "El contraste entre High Alert (77.5 WR) y Reactive Swipe (62.5 WR) es estadísticamente significativo con una Z de 2.21.",
+    "Final Slash ofrece el mejor cierre posible al alcanzar casi la perfección con un 98.0 WR en 50 partidas analizadas.",
+    "La carta Monstrous Stench no muestra un impacto significativo en el setup, a pesar de tener un WR ligeramente inferior a Trash Day."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Don't Make a Sound",
+    "killer": "The Eyeless",
+    "mapa": "Utopia",
+    "serie": "S3",
+    "partidas": 173,
+    "wr": 56.1,
+    "puesto_dificultad": "8 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 64.4,
+      "partidas": 491
+    },
+    "mapa_en_general": {
+      "wr": 60.9,
+      "partidas": 634
+    },
+    "mapa_con_otros_killers": 64.4,
+    "mejores_mapas_del_killer": [
+      [
+        "USS Konrad",
+        87.0,
+        46
+      ],
+      [
+        "Storybook Woods",
+        77.8,
+        45
+      ],
+      [
+        "Carnival of Blood",
+        68.6,
+        51
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Utopia",
+        56.1,
+        173
+      ],
+      [
+        "Creech Manor",
+        61.7,
+        60
+      ],
+      [
+        "Station 2891",
+        62.7,
+        51
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "High Alert",
+        "wr": 77.5,
+        "partidas": 80
+      },
+      "peor": {
+        "carta": "Reactive Swipe",
+        "wr": 62.5,
+        "partidas": 112
+      },
+      "z": 2.21,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Final Slash",
+        "wr": 98.0,
+        "partidas": 50
+      },
+      "peor": {
+        "carta": "No More Running",
+        "wr": 62.0,
+        "partidas": 100
+      },
+      "z": 4.74,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Trash Day",
+        "wr": 68.0,
+        "partidas": 122
+      },
+      "peor": {
+        "carta": "Monstrous Stench",
+        "wr": 57.5,
+        "partidas": 120
+      },
+      "z": 1.69,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

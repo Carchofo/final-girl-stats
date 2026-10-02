@@ -1,0 +1,65 @@
+{
+  "caja": "The Raptor Games",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 2-3 frases: es la peor de la serie S4 y el killer más débil del juego en general, según los datos.",
+  "claves": [
+    "El WR de 53.7 es significativamente inferior a la media del mapa (64.4) y al del killer en general (64.5).",
+    "La carta 'Facility Construction' en setup es el peor elemento con un WR de 50.0, aunque la muestra no permite afirmar que sea estadísticamente relevante.",
+    "El killer solo ha jugado 41 partidas, lo que limita la fiabilidad de los datos frente a su historial global."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Raptor Games",
+    "killer": "Raptors",
+    "mapa": "Isla Lagarto",
+    "serie": "S4",
+    "partidas": 41,
+    "wr": 53.7,
+    "puesto_dificultad": "7 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 64.5,
+      "partidas": 62
+    },
+    "mapa_en_general": {
+      "wr": 64.4,
+      "partidas": 59
+    },
+    "mapa_con_otros_killers": null,
+    "mejores_mapas_del_killer": [
+      [
+        "Isla Lagarto",
+        53.7,
+        41
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Isla Lagarto",
+        53.7,
+        41
+      ]
+    ],
+    "dark_power": null,
+    "finale": null,
+    "setup": {
+      "mejor": {
+        "carta": "Lab Breach",
+        "wr": 81.8,
+        "partidas": 11
+      },
+      "peor": {
+        "carta": "Facility Construction",
+        "wr": 50.0,
+        "partidas": 14
+      },
+      "z": 1.65,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

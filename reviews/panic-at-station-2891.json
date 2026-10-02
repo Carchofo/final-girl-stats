@@ -1,0 +1,98 @@
+{
+  "caja": "Panic at Station 2891",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja tiene un WR de 65.2, lo que la sitúa en el puesto 14 de dificultad dentro del juego. Aunque es inferior a su promedio general (73.5) y al del mapa (64.6), los datos muestran que esta combinación específica no es tan desfavorable como sus peores mapas.",
+  "claves": [
+    "El final 'Cognitive Assimilation' eleva el WR a 81.9, un cambio estadísticamente significativo frente al peor caso de 67.0.",
+    "El setup 'R & R' mejora la partida hasta 70.4, mientras que 'Quittin Time' la reduce a 61.9, aunque esta diferencia no alcanza significancia estadística.",
+    "Station 2891 es el tercer peor mapa para The Organism, con un WR de 65.2 basado en 164 partidas registradas."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Panic at Station 2891",
+    "killer": "The Organism",
+    "mapa": "Station 2891",
+    "serie": "S2",
+    "partidas": 164,
+    "wr": 65.2,
+    "puesto_dificultad": "14 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 73.5,
+      "partidas": 750
+    },
+    "mapa_en_general": {
+      "wr": 64.6,
+      "partidas": 857
+    },
+    "mapa_con_otros_killers": 64.2,
+    "mejores_mapas_del_killer": [
+      [
+        "Camp Happy Trail",
+        84.9,
+        73
+      ],
+      [
+        "Creech Manor",
+        84.2,
+        57
+      ],
+      [
+        "Wolfe Asylum",
+        83.0,
+        47
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        52.8,
+        53
+      ],
+      [
+        "Station 2891",
+        65.2,
+        164
+      ],
+      [
+        "Santa's Village",
+        68.6,
+        35
+      ]
+    ],
+    "dark_power": null,
+    "finale": {
+      "mejor": {
+        "carta": "Cognitive Assimilation",
+        "wr": 81.9,
+        "partidas": 171
+      },
+      "peor": {
+        "carta": "Regenerative Assimilation",
+        "wr": 67.0,
+        "partidas": 185
+      },
+      "z": 3.2,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "R & R",
+        "wr": 70.4,
+        "partidas": 152
+      },
+      "peor": {
+        "carta": "Quittin Time",
+        "wr": 61.9,
+        "partidas": 173
+      },
+      "z": 1.62,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

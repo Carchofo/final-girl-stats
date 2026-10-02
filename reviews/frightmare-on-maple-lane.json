@@ -1,0 +1,112 @@
+{
+  "caja": "Frightmare on Maple Lane",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja es una opción de bajo riesgo con un WR del 75.6%, superior a la media general de la serie y del mapa por separado. Su dificultad se sitúa en el puesto 21 de 22, lo que indica que Dr. Fright domina este entorno específico de forma consistente.",
+  "claves": [
+    "El WR del killer en esta caja (74.4) es ligeramente inferior a su promedio global (75.6), pero sigue siendo muy competitivo.",
+    "La carta 'Face Your Fright' en el finale es un activo crítico con un WR del 86.9 y una diferencia significativa de +3.03 respecto a la peor opción.",
+    "El setup muestra una ventaja clara con 'Block Party' (75.3 WR) frente a 'Playtime' (62.6 WR), aunque la muestra no es estadísticamente significativa para el dark power.",
+    "Evita las cartas finales débiles como 'Everyone Must Die' (70.9 WR) y prioriza el setup inicial para maximizar tu ventaja en un mapa donde el killer suele ser más fuerte que en otros."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Frightmare on Maple Lane",
+    "killer": "Dr. Fright",
+    "mapa": "Maple Lane",
+    "serie": "S1",
+    "partidas": 172,
+    "wr": 75.6,
+    "puesto_dificultad": "21 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 74.4,
+      "partidas": 851
+    },
+    "mapa_en_general": {
+      "wr": 68.7,
+      "partidas": 894
+    },
+    "mapa_con_otros_killers": 66.3,
+    "mejores_mapas_del_killer": [
+      [
+        "Hellscape",
+        94.0,
+        67
+      ],
+      [
+        "USS Konrad",
+        90.6,
+        32
+      ],
+      [
+        "Santa's Village",
+        83.6,
+        55
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Carnival of Blood",
+        59.4,
+        69
+      ],
+      [
+        "Creech Manor",
+        60.4,
+        48
+      ],
+      [
+        "Sacred Groves",
+        61.8,
+        55
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Never Really Dead",
+        "wr": 73.7,
+        "partidas": 175
+      },
+      "peor": {
+        "carta": "Shock Factor",
+        "wr": 67.2,
+        "partidas": 137
+      },
+      "z": 1.27,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Face Your Fright",
+        "wr": 86.9,
+        "partidas": 122
+      },
+      "peor": {
+        "carta": "Everyone Must Die",
+        "wr": 70.9,
+        "partidas": 117
+      },
+      "z": 3.03,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Block Party",
+        "wr": 75.3,
+        "partidas": 170
+      },
+      "peor": {
+        "carta": "Playtime",
+        "wr": 62.6,
+        "partidas": 166
+      },
+      "z": 2.51,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

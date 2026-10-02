@@ -1,0 +1,111 @@
+{
+  "caja": "Carnage at the Carnival",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 3 estrellas: el WR de 44.2 es significativamente peor que la media del mapa (52.5) y del killer en general (64.9), además de ser su peor escenario registrado.",
+  "claves": [
+    "El setup con 'Center Stage' como carta más débil tiene un contraste estadísticamente significativo que empuja el WR a 50.5 frente a la media de 60.2.",
+    "La combinación de Geppetto en Carnival of Blood es su peores caso histórico, superando solo por margen mínimo a Sacred Groves y Creech Manor.",
+    "A pesar de tener 'Puppet Bombs' como mejor finale (81.0), el bajo rendimiento del setup anula cualquier ventaja defensiva potencial."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Carnage at the Carnival",
+    "killer": "Geppetto",
+    "mapa": "Carnival of Blood",
+    "serie": "S1",
+    "partidas": 233,
+    "wr": 44.2,
+    "puesto_dificultad": "3 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 64.9,
+      "partidas": 784
+    },
+    "mapa_en_general": {
+      "wr": 52.5,
+      "partidas": 1028
+    },
+    "mapa_con_otros_killers": 54.1,
+    "mejores_mapas_del_killer": [
+      [
+        "Storybook Woods",
+        92.7,
+        41
+      ],
+      [
+        "Hellscape",
+        83.3,
+        54
+      ],
+      [
+        "Maple Lane",
+        76.0,
+        75
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Carnival of Blood",
+        44.2,
+        233
+      ],
+      [
+        "Sacred Groves",
+        62.5,
+        48
+      ],
+      [
+        "Creech Manor",
+        66.2,
+        80
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Immortal Master",
+        "wr": 68.7,
+        "partidas": 163
+      },
+      "peor": {
+        "carta": "Join the Family",
+        "wr": 60.5,
+        "partidas": 129
+      },
+      "z": 1.47,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Puppet Bombs",
+        "wr": 81.0,
+        "partidas": 42
+      },
+      "peor": {
+        "carta": "No Strings Attached",
+        "wr": 73.0,
+        "partidas": 126
+      },
+      "z": 1.03,
+      "significativo": false
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Late for the Show",
+        "wr": 60.2,
+        "partidas": 206
+      },
+      "peor": {
+        "carta": "Center Stage",
+        "wr": 50.5,
+        "partidas": 200
+      },
+      "z": 1.96,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

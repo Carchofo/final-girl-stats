@@ -1,0 +1,112 @@
+{
+  "caja": "The Falconwood Files",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja tiene un WR de 70.6 en Falconwood con Slayer, situándose como la partida más difícil para este asesino (puesto 16/22). El valor se mantiene gracias a finales muy fuertes como 'Welcome To My World' (WR 84.2) y setups sólidos con 'Halloween', aunque el poder oscuro muestra variabilidad sin diferencias estadísticamente significativas.",
+  "claves": [
+    "El WR de la caja (70.6) es idéntico al promedio general del mapa Falconwood, confirmando que Slayer no tiene ventaja ni desventaja específica en este entorno.",
+    "'Welcome To My World' domina los finales con un WR de 84.2 y una diferencia z de 4.94, siendo el factor más importante para ganar.",
+    "El setup 'Halloween' es el mejor con un WR de 81.6, mientras que 'Election Day' resulta ser el peor con solo 65.1 de WR.",
+    "A pesar de tener datos suficientes (126 partidas), la diferencia en poder oscuro entre las cartas no alcanza a ser estadísticamente significativa según los números."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Falconwood Files",
+    "killer": "Slayer",
+    "mapa": "Falconwood",
+    "serie": "S3",
+    "partidas": 126,
+    "wr": 70.6,
+    "puesto_dificultad": "16 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 60.1,
+      "partidas": 524
+    },
+    "mapa_en_general": {
+      "wr": 73.1,
+      "partidas": 476
+    },
+    "mapa_con_otros_killers": 73.7,
+    "mejores_mapas_del_killer": [
+      [
+        "Falconwood",
+        70.6,
+        126
+      ],
+      [
+        "Wingard Cottage",
+        65.6,
+        90
+      ],
+      [
+        "Camp Happy Trail",
+        64.9,
+        57
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        32.6,
+        49
+      ],
+      [
+        "Creech Manor",
+        46.0,
+        50
+      ],
+      [
+        "Sunnydaze Mall",
+        51.1,
+        45
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Mind Control",
+        "wr": 64.8,
+        "partidas": 142
+      },
+      "peor": {
+        "carta": "It's In My Head!",
+        "wr": 53.7,
+        "partidas": 82
+      },
+      "z": 1.64,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Welcome To My World",
+        "wr": 84.2,
+        "partidas": 95
+      },
+      "peor": {
+        "carta": "Your Time is Up",
+        "wr": 45.1,
+        "partidas": 51
+      },
+      "z": 4.94,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Halloween",
+        "wr": 81.6,
+        "partidas": 87
+      },
+      "peor": {
+        "carta": "Election Day",
+        "wr": 65.1,
+        "partidas": 106
+      },
+      "z": 2.56,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

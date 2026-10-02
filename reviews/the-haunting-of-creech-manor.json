@@ -1,0 +1,112 @@
+{
+  "caja": "The Haunting of Creech Manor",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja tiene un WR de 42.0 y ocupa el puesto 2 entre las 22 más difíciles del juego. El Poltergeist en Creech Manor es notablemente inferior a su rendimiento general (56.1) y al del mapa con otros asesinos (59.4), confirmando que esta combinación específica penaliza severamente la victoria.",
+  "claves": [
+    "El contraste entre el WR de 42.0 de esta caja y el WR general del Poltergeist de 56.1 es estadísticamente significativo, indicando una debilidad inherente a este asesino en este entorno.",
+    "La carta 'Eternal Despair' mejora el WR hasta 61.6 con un contraste significativo, mientras que 'Forgetting Something?' lo reduce a 50.3, mostrando una dependencia crítica de la elección de cartas oscuras.",
+    "El finale 'Demonic Posession' eleva el WR a 85.2 en un contraste muy significativo frente al 'peor' escenario de 51.0 con 'She Will Soon Be Lost', siendo este factor determinante para ganar.",
+    "La fase setup muestra una diferencia no significativa entre la mejor y peor carta (z=1.59), sugiriendo que el resultado depende más del finale y las cartas oscuras que de la configuración inicial."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Haunting of Creech Manor",
+    "killer": "Poltergeist",
+    "mapa": "Creech Manor",
+    "serie": "S1",
+    "partidas": 238,
+    "wr": 42.0,
+    "puesto_dificultad": "2 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 56.1,
+      "partidas": 884
+    },
+    "mapa_en_general": {
+      "wr": 56.6,
+      "partidas": 1052
+    },
+    "mapa_con_otros_killers": 59.4,
+    "mejores_mapas_del_killer": [
+      [
+        "Hellscape",
+        78.3,
+        46
+      ],
+      [
+        "Storybook Woods",
+        75.0,
+        20
+      ],
+      [
+        "Wingard Cottage",
+        66.7,
+        33
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        41.1,
+        73
+      ],
+      [
+        "Creech Manor",
+        42.0,
+        238
+      ],
+      [
+        "Utopia",
+        57.6,
+        66
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Eternal Despair",
+        "wr": 61.6,
+        "partidas": 198
+      },
+      "peor": {
+        "carta": "Forgetting Something?",
+        "wr": 50.3,
+        "partidas": 157
+      },
+      "z": 2.13,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Demonic Posession",
+        "wr": 85.2,
+        "partidas": 27
+      },
+      "peor": {
+        "carta": "She Will Soon Be Lost",
+        "wr": 51.0,
+        "partidas": 98
+      },
+      "z": 3.19,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "The Dead Zone",
+        "wr": 62.2,
+        "partidas": 180
+      },
+      "peor": {
+        "carta": "Strange Trophies",
+        "wr": 54.4,
+        "partidas": 228
+      },
+      "z": 1.59,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

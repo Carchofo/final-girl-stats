@@ -1,0 +1,91 @@
+{
+  "caja": "A Demon in the Shadows",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 50 WR y es el peor rendimiento de Berith en L'Armes Abbey, siendo su único mapa con datos registrados.",
+  "claves": [
+    "El killer no tiene mejores ni peores mapas distintos de este, ya que todas sus partidas (64) se jugaron aquí.",
+    "La carta 'Spiritual Attack' domina el final con un WR del 86.4, aunque la muestra es pequeña (22 partidas).",
+    "El setup más efectivo es 'Supper Time' (60 WR), pero la diferencia con la peor opción no es estadísticamente significativa."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "A Demon in the Shadows",
+    "killer": "Berith",
+    "mapa": "L'Armes Abbey",
+    "serie": "S4",
+    "partidas": 64,
+    "wr": 50.0,
+    "puesto_dificultad": "6 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 60.6,
+      "partidas": 132
+    },
+    "mapa_en_general": {
+      "wr": 56.9,
+      "partidas": 123
+    },
+    "mapa_con_otros_killers": null,
+    "mejores_mapas_del_killer": [
+      [
+        "L'Armes Abbey",
+        50.0,
+        64
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "L'Armes Abbey",
+        50.0,
+        64
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Lamb to the Slaughter",
+        "wr": 69.4,
+        "partidas": 36
+      },
+      "peor": {
+        "carta": "Keeping Ursula Alive",
+        "wr": 53.1,
+        "partidas": 32
+      },
+      "z": 1.38,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Spiritual Attack",
+        "wr": 86.4,
+        "partidas": 22
+      },
+      "peor": {
+        "carta": "Hell on Earth",
+        "wr": 71.4,
+        "partidas": 21
+      },
+      "z": 1.2,
+      "significativo": false
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Supper Time",
+        "wr": 60.0,
+        "partidas": 25
+      },
+      "peor": {
+        "carta": "Tourism Bus",
+        "wr": 50.0,
+        "partidas": 24
+      },
+      "z": 0.7,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

@@ -1,0 +1,112 @@
+{
+  "caja": "The Happy Trails Horror",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 64 WR y es la opción más segura de S1 tras el cambio de mapa, superando al promedio del asesino (63.7) y del entorno general (70.2).",
+  "claves": [
+    "El WR de Hans en Camp Happy Trail (64.0) supera su media histórica (63.7), corrigiendo la percepción de dificultad extrema que tenía en otros mapas.",
+    "La combinación con 'Sledgehammer Massacre' es estadísticamente superior (+69.8 WR frente a 48.1 de 'Dark Obsession'), un contraste significativo confirmado por los datos.",
+    "El final del juego depende totalmente de 'Butcher Bloodlust' (76.8 WR), mientras que 'Death Blow' colapsa la partida a 51.2 WR, una diferencia significativa y crítica.",
+    "El setup es neutro: 'Capture the Flag' ofrece un ligero plus (+74.3) sobre 'Treasure Hunt' (+68.7), pero el contraste no es estadísticamente significativo."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Happy Trails Horror",
+    "killer": "Hans",
+    "mapa": "Camp Happy Trail",
+    "serie": "S1",
+    "partidas": 548,
+    "wr": 64.0,
+    "puesto_dificultad": "13 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 63.7,
+      "partidas": 1439
+    },
+    "mapa_en_general": {
+      "wr": 70.2,
+      "partidas": 1517
+    },
+    "mapa_con_otros_killers": 73.2,
+    "mejores_mapas_del_killer": [
+      [
+        "Santa's Village",
+        77.0,
+        61
+      ],
+      [
+        "USS Konrad",
+        76.6,
+        77
+      ],
+      [
+        "Storybook Woods",
+        75.6,
+        45
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        35.4,
+        82
+      ],
+      [
+        "Carnival of Blood",
+        40.4,
+        52
+      ],
+      [
+        "Marrek Warehouse",
+        60.3,
+        63
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Sledgehammer Massacre",
+        "wr": 69.8,
+        "partidas": 305
+      },
+      "peor": {
+        "carta": "Dark Obsession",
+        "wr": 48.1,
+        "partidas": 351
+      },
+      "z": 5.62,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Butcher Bloodlust",
+        "wr": 76.8,
+        "partidas": 285
+      },
+      "peor": {
+        "carta": "Death Blow",
+        "wr": 51.2,
+        "partidas": 86
+      },
+      "z": 4.59,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Capture the Flag",
+        "wr": 74.3,
+        "partidas": 261
+      },
+      "peor": {
+        "carta": "Treasure Hunt",
+        "wr": 68.7,
+        "partidas": 342
+      },
+      "z": 1.51,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

@@ -1,0 +1,111 @@
+{
+  "caja": "Into the Void",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "La caja Into the Void cuesta 3 estrellas: el WR de 74.8 en USS Konrad es inferior al promedio del mapa (77.9) y del asesino (75.4), aunque la muestra de 202 partidas no permite descartar que sea una anomalía estadística.",
+  "claves": [
+    "El contraste entre las cartas de Dark Power es significativo, con Razor Claws elevando el WR a 80.5 frente a Acid Blood en 71.6.",
+    "La elección del Finale tiene un impacto decisivo: Impenetrable Armor garantiza un WR de 89.5 mientras que The Perfect Organism lo desploma a 59.1, con una diferencia estadística significativa.",
+    "El Setup muestra una variación menor entre Space Rave y Showdown; la diferencia de WR no es suficiente para afirmar que una carta sea objetivamente superior a la otra."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Into the Void",
+    "killer": "Evomorph",
+    "mapa": "USS Konrad",
+    "serie": "S2",
+    "partidas": 202,
+    "wr": 74.8,
+    "puesto_dificultad": "20 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 75.4,
+      "partidas": 877
+    },
+    "mapa_en_general": {
+      "wr": 77.9,
+      "partidas": 802
+    },
+    "mapa_con_otros_killers": 79.2,
+    "mejores_mapas_del_killer": [
+      [
+        "Hellscape",
+        88.9,
+        54
+      ],
+      [
+        "Storybook Woods",
+        81.5,
+        65
+      ],
+      [
+        "Santa's Village",
+        80.4,
+        46
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Wolfe Asylum",
+        68.2,
+        22
+      ],
+      [
+        "Carnival of Blood",
+        68.6,
+        51
+      ],
+      [
+        "Camp Happy Trail",
+        69.6,
+        69
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Razor Claws",
+        "wr": 80.5,
+        "partidas": 220
+      },
+      "peor": {
+        "carta": "Acid Blood",
+        "wr": 71.6,
+        "partidas": 229
+      },
+      "z": 2.19,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Impenetrable Armor",
+        "wr": 89.5,
+        "partidas": 38
+      },
+      "peor": {
+        "carta": "The Perfect Organism",
+        "wr": 59.1,
+        "partidas": 110
+      },
+      "z": 3.43,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Space Rave",
+        "wr": 82.7,
+        "partidas": 156
+      },
+      "peor": {
+        "carta": "Showdown",
+        "wr": 75.0,
+        "partidas": 152
+      },
+      "z": 1.65,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

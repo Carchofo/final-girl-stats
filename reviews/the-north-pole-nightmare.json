@@ -1,0 +1,111 @@
+{
+  "caja": "The North Pole Nightmare",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 46.7 WR debido a la combinación de un mapa con el rendimiento más bajo del asesino Krampus y una fase final estadísticamente devastadora.",
+  "claves": [
+    "Santa's Village es el peor mapa para Krampus con 180 partidas registradas, situándolo en el puesto 4 de dificultad entre sus mapas.",
+    "La carta 'Past Midnight' en la fase final reduce drásticamente el WR a 39.4, siendo una diferencia estadísticamente significativa respecto a la mejor opción.",
+    "El poder oscuro muestra una variación moderada (z=1.51) que no alcanza significancia estadística entre la mejor y peor carta del juego."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The North Pole Nightmare",
+    "killer": "Krampus",
+    "mapa": "Santa's Village",
+    "serie": "SP",
+    "partidas": 180,
+    "wr": 46.7,
+    "puesto_dificultad": "4 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 58.3,
+      "partidas": 602
+    },
+    "mapa_en_general": {
+      "wr": 65.0,
+      "partidas": 622
+    },
+    "mapa_con_otros_killers": 74.9,
+    "mejores_mapas_del_killer": [
+      [
+        "USS Konrad",
+        82.7,
+        52
+      ],
+      [
+        "Camp Happy Trail",
+        80.0,
+        65
+      ],
+      [
+        "Maple Lane",
+        70.3,
+        37
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Carnival of Blood",
+        37.2,
+        43
+      ],
+      [
+        "Creech Manor",
+        43.7,
+        71
+      ],
+      [
+        "Santa's Village",
+        46.7,
+        180
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Tantalizing Gifts",
+        "wr": 61.4,
+        "partidas": 132
+      },
+      "peor": {
+        "carta": "Explosive Gifts",
+        "wr": 52.4,
+        "partidas": 147
+      },
+      "z": 1.51,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Soul Lust",
+        "wr": 70.2,
+        "partidas": 94
+      },
+      "peor": {
+        "carta": "Past Midnight",
+        "wr": 39.4,
+        "partidas": 66
+      },
+      "z": 3.88,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Back With Lumber",
+        "wr": 68.3,
+        "partidas": 120
+      },
+      "peor": {
+        "carta": "Reindeer Games",
+        "wr": 62.4,
+        "partidas": 101
+      },
+      "z": 0.93,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

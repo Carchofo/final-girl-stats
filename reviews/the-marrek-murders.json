@@ -1,0 +1,112 @@
+{
+  "caja": "The Marrek Murders",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 71.3 WR por encima del promedio general de la serie S3 y el mapa Marrek Warehouse, lo que indica un rendimiento sólido pero no excepcional dado su puesto 18 de dificultad.",
+  "claves": [
+    "El Tormentor en este mapa específico supera a su rendimiento general (73.6 WR) con una ventaja clara sobre la media del juego (65.5 WR).",
+    "La carta 'Overkill Traps' es el mejor Dark Power con un WR de 81.0, mientras que 'Horrifying Traps' resulta ser la peor opción con solo 71.1 WR.",
+    "El setup muestra una diferencia significativa entre las mejores y peores cartas, siendo 'Shift Change' notablemente superior a 'You're Fired'.",
+    "El finale presenta una variación menor sin significancia estadística, donde 'Game Over' lidera con 81.3 WR frente a los 75.0 WR de 'No Rest for the Weary'."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Marrek Murders",
+    "killer": "Tormentor",
+    "mapa": "Marrek Warehouse",
+    "serie": "S3",
+    "partidas": 164,
+    "wr": 71.3,
+    "puesto_dificultad": "18 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 73.6,
+      "partidas": 595
+    },
+    "mapa_en_general": {
+      "wr": 67.9,
+      "partidas": 574
+    },
+    "mapa_con_otros_killers": 68.3,
+    "mejores_mapas_del_killer": [
+      [
+        "Wingard Cottage",
+        85.7,
+        56
+      ],
+      [
+        "Maple Lane",
+        81.0,
+        58
+      ],
+      [
+        "Wolfe Asylum",
+        80.8,
+        73
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        48.6,
+        37
+      ],
+      [
+        "Creech Manor",
+        61.4,
+        44
+      ],
+      [
+        "Carnival of Blood",
+        69.6,
+        79
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Overkill Traps",
+        "wr": 81.0,
+        "partidas": 153
+      },
+      "peor": {
+        "carta": "Horrifying Traps",
+        "wr": 71.1,
+        "partidas": 142
+      },
+      "z": 2.0,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Game Over",
+        "wr": 81.3,
+        "partidas": 150
+      },
+      "peor": {
+        "carta": "No Rest for the Weary",
+        "wr": 75.0,
+        "partidas": 68
+      },
+      "z": 1.07,
+      "significativo": false
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Shift Change",
+        "wr": 74.4,
+        "partidas": 121
+      },
+      "peor": {
+        "carta": "You're Fired",
+        "wr": 60.2,
+        "partidas": 118
+      },
+      "z": 2.34,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

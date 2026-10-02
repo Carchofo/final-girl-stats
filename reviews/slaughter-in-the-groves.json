@@ -1,0 +1,112 @@
+{
+  "caja": "Slaughter in the Groves",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja es una de las más difíciles del juego con un WR de 38.3, lo que la convierte en el peor mapa para Inkanyamba (su WR general es 63.8). La dificultad extrema se debe a que Sacred Groves aparece en la lista de peores mapas del asesino y tiene una puntuación significativamente inferior a su promedio global.",
+  "claves": [
+    "Inkanyamba sufre drásticamente en este mapa, cayendo de un WR general de 63.8 a solo 38.3 con 141 partidas registradas.",
+    "La carta 'Volatile Temper' es la peor opción para el final (WR 54.0) y 'Dueling Tour Guides' arruina el setup (WR 33.8), ambas diferencias estadísticamente significativas.",
+    "A pesar de tener las mejores cartas disponibles, el WR del mapa con otros asesinos (47.1) sigue siendo mucho superior al rendimiento específico de esta combinación (38.3).",
+    "El juego dura en promedio 65.5 minutos, lo que indica una tensión sostenida dada la posición de dificultad '1 de 22' para este asesino."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Slaughter in the Groves",
+    "killer": "Inkanyamba",
+    "mapa": "Sacred Groves",
+    "serie": "S1",
+    "partidas": 141,
+    "wr": 38.3,
+    "puesto_dificultad": "1 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 63.8,
+      "partidas": 588
+    },
+    "mapa_en_general": {
+      "wr": 45.4,
+      "partidas": 852
+    },
+    "mapa_con_otros_killers": 47.1,
+    "mejores_mapas_del_killer": [
+      [
+        "USS Konrad",
+        88.2,
+        34
+      ],
+      [
+        "Storybook Woods",
+        85.2,
+        54
+      ],
+      [
+        "Hellscape",
+        79.4,
+        63
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        38.3,
+        141
+      ],
+      [
+        "Carnival of Blood",
+        55.6,
+        36
+      ],
+      [
+        "Creech Manor",
+        56.6,
+        53
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Feast of Anger",
+        "wr": 67.6,
+        "partidas": 145
+      },
+      "peor": {
+        "carta": "Volatile Temper",
+        "wr": 54.0,
+        "partidas": 148
+      },
+      "z": 2.37,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "We Need a Miracle",
+        "wr": 70.1,
+        "partidas": 97
+      },
+      "peor": {
+        "carta": "Savage Whirlwind",
+        "wr": 42.4,
+        "partidas": 99
+      },
+      "z": 3.9,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Swamp Thing",
+        "wr": 51.1,
+        "partidas": 174
+      },
+      "peor": {
+        "carta": "Dueling Tour Guides",
+        "wr": 33.8,
+        "partidas": 151
+      },
+      "z": 3.16,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

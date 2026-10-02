@@ -1,0 +1,112 @@
+{
+  "caja": "Hell to Pay",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja es una opción de riesgo elevado con un WR del 62.2%, notablemente inferior a la media general del mapa (78.0%) y del asesino en otros mapas (80.3%). La dificultad se confirma al ocupar el puesto 12 de 22, siendo Hellscape uno de los escenarios más duros para Razorface.",
+  "claves": [
+    "El WR de 62.2% es inferior a la media general del mapa (78.0%) y al asesino en otros mapas (80.3%).",
+    "La carta 'Helleport' ofrece el mejor rendimiento con un WR de 65.5%, aunque la muestra de 148 partidas no permite afirmaciones definitivas sobre su consistencia.",
+    "El contraste entre las mejores y peores cartas del final es estadísticamente significativo (z=2.13), indicando que 'Chains of Torment' supera claramente a 'I Feast On Your Pain'.",
+    "La carta de setup 'Rapture' muestra el mejor WR (81.6%), pero la diferencia con la segunda opción no alcanza significación estadística (significativo: false)."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Hell to Pay",
+    "killer": "Razorface",
+    "mapa": "Hellscape",
+    "serie": "S3",
+    "partidas": 127,
+    "wr": 62.2,
+    "puesto_dificultad": "12 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 53.8,
+      "partidas": 511
+    },
+    "mapa_en_general": {
+      "wr": 78.0,
+      "partidas": 591
+    },
+    "mapa_con_otros_killers": 80.3,
+    "mejores_mapas_del_killer": [
+      [
+        "Storybook Woods",
+        71.0,
+        38
+      ],
+      [
+        "Station 2891",
+        62.3,
+        61
+      ],
+      [
+        "Hellscape",
+        62.2,
+        127
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        27.1,
+        48
+      ],
+      [
+        "Carnival of Blood",
+        29.6,
+        71
+      ],
+      [
+        "Creech Manor",
+        42.3,
+        52
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Helleport",
+        "wr": 65.5,
+        "partidas": 148
+      },
+      "peor": {
+        "carta": "Life Drain",
+        "wr": 43.4,
+        "partidas": 136
+      },
+      "z": 3.75,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Chains of Torment",
+        "wr": 69.5,
+        "partidas": 118
+      },
+      "peor": {
+        "carta": "I Feast On Your Pain",
+        "wr": 55.3,
+        "partidas": 94
+      },
+      "z": 2.13,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Rapture",
+        "wr": 81.6,
+        "partidas": 125
+      },
+      "peor": {
+        "carta": "Ecstasy",
+        "wr": 76.4,
+        "partidas": 127
+      },
+      "z": 1.02,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

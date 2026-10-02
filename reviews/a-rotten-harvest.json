@@ -1,0 +1,92 @@
+{
+  "caja": "A Rotten Harvest",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja tiene un WR de 71.0 en 76 partidas, lo que la sitúa como una opción intermedia con dificultad media del juego de 65.5 y un puesto de 17 de 22.",
+  "claves": [
+    "El mapa Shady Acres es simultáneamente el mejor y peor entorno para Grimlash, manteniendo el WR exacto de 71.0 en todas las partidas analizadas.",
+    "La carta Dusk Sacrifice en el setup es claramente la peor opción con un WR de 45.2, mientras que Reap What You Sow lidera con 72.0.",
+    "A pesar de que la diferencia entre la mejor y peor carta del finale (Hunger vs God of Blood) muestra un z-score de 1.89, el contraste no es estadísticamente significativo según los datos.",
+    "El efecto Dark Power tampoco alcanza significancia estadística (significativo: false), aunque la diferencia en WR entre Fields of Madness y Root-bound Curse es considerable."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "A Rotten Harvest",
+    "killer": "Grimlash",
+    "mapa": "Shady Acres",
+    "serie": "S4",
+    "partidas": 76,
+    "wr": 71.0,
+    "puesto_dificultad": "17 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 78.2,
+      "partidas": 188
+    },
+    "mapa_en_general": {
+      "wr": 60.4,
+      "partidas": 164
+    },
+    "mapa_con_otros_killers": null,
+    "mejores_mapas_del_killer": [
+      [
+        "Shady Acres",
+        71.0,
+        76
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Shady Acres",
+        71.0,
+        76
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Fields of Madness",
+        "wr": 84.9,
+        "partidas": 33
+      },
+      "peor": {
+        "carta": "Root-bound Curse",
+        "wr": 65.9,
+        "partidas": 44
+      },
+      "z": 1.88,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Hunger of the Old Gods",
+        "wr": 90.0,
+        "partidas": 20
+      },
+      "peor": {
+        "carta": "God of Blood and Grain",
+        "wr": 65.0,
+        "partidas": 20
+      },
+      "z": 1.89,
+      "significativo": false
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Reap What You Sow",
+        "wr": 72.0,
+        "partidas": 25
+      },
+      "peor": {
+        "carta": "Dusk Sacrifice",
+        "wr": 45.2,
+        "partidas": 31
+      },
+      "z": 2.02,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

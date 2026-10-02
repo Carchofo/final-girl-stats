@@ -1,0 +1,112 @@
+{
+  "caja": "Once Upon a Full Moon",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "La caja cuesta 2-3 frases: es una opción de bajo coste debido a su WR del 74.6 y puesto 19/22 en dificultad, pero el precio sube si buscas consistencia porque la muestra no da para afirmar que las cartas de setup o finale sean significativamente mejores o peores que el promedio del killer.",
+  "claves": [
+    "El mapa Storybook Woods es el peor entorno para Big Bad Wolf con un WR del 74.6 frente a los 78.0 generales.",
+    "La carta Destructive Roar eleva el WR al 79.0, mientras que A Killing Machine lo baja drásticamente al 50.9.",
+    "El finale Thrill of the Hunt es extremadamente fuerte (WR 92.2), pero Tasty Treats es muy débil (WR 60.6).",
+    "No hay diferencia estadísticamente significativa en las cartas de setup, aunque Scatter tiende a ser mejor que Breadcrumb Trail."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Once Upon a Full Moon",
+    "killer": "Big Bad Wolf",
+    "mapa": "Storybook Woods",
+    "serie": "S2",
+    "partidas": 185,
+    "wr": 74.6,
+    "puesto_dificultad": "19 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 70.6,
+      "partidas": 722
+    },
+    "mapa_en_general": {
+      "wr": 78.0,
+      "partidas": 777
+    },
+    "mapa_con_otros_killers": 78.4,
+    "mejores_mapas_del_killer": [
+      [
+        "Mega BGCon",
+        81.8,
+        44
+      ],
+      [
+        "Falconwood",
+        76.3,
+        59
+      ],
+      [
+        "Storybook Woods",
+        74.6,
+        185
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Sacred Groves",
+        40.9,
+        22
+      ],
+      [
+        "Carnival of Blood",
+        58.1,
+        43
+      ],
+      [
+        "Station 2891",
+        63.5,
+        63
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Destructive Roar",
+        "wr": 79.0,
+        "partidas": 200
+      },
+      "peor": {
+        "carta": "A Killing Machine",
+        "wr": 50.9,
+        "partidas": 114
+      },
+      "z": 5.17,
+      "significativo": true
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Thrill of the Hunt",
+        "wr": 92.2,
+        "partidas": 102
+      },
+      "peor": {
+        "carta": "Tasty Treats",
+        "wr": 60.6,
+        "partidas": 99
+      },
+      "z": 5.28,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Scatter",
+        "wr": 80.5,
+        "partidas": 133
+      },
+      "peor": {
+        "carta": "Breadcrumb Trail",
+        "wr": 75.8,
+        "partidas": 149
+      },
+      "z": 0.93,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

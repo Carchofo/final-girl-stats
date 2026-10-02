@@ -1,0 +1,91 @@
+{
+  "caja": "Bad Times at Buddyland",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja es extremadamente difícil, con un WR de 60.7 que la sitúa en el puesto 9 entre las 22 más duras del juego. La dificultad se debe principalmente al finale 'Encore', cuyo bajo rendimiento (WR 40.0) y alto contraste significativo destruyen cualquier intento de victoria.",
+  "claves": [
+    "El mapa Buddyland no ofrece ventajas para Billy, manteniendo el WR idéntico a su peor desempeño en otras ubicaciones.",
+    "La carta 'Merciless Minions' es la peor opción posible con un WR de 46.2, aunque el contraste no alcanza significancia estadística.",
+    "El finale 'Encore' es el mayor problema del juego, mostrando un WR de 40.0 y un valor Z de 3.74 que confirma su impacto devastador."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "Bad Times at Buddyland",
+    "killer": "Billy",
+    "mapa": "Buddyland",
+    "serie": "S4",
+    "partidas": 89,
+    "wr": 60.7,
+    "puesto_dificultad": "9 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 60.9,
+      "partidas": 174
+    },
+    "mapa_en_general": {
+      "wr": 67.1,
+      "partidas": 225
+    },
+    "mapa_con_otros_killers": null,
+    "mejores_mapas_del_killer": [
+      [
+        "Buddyland",
+        60.7,
+        89
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Buddyland",
+        60.7,
+        89
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "Introducing... Billy Jr!",
+        "wr": 62.0,
+        "partidas": 50
+      },
+      "peor": {
+        "carta": "Merciless Minions",
+        "wr": 46.2,
+        "partidas": 26
+      },
+      "z": 1.32,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "It's Showtime!",
+        "wr": 88.0,
+        "partidas": 25
+      },
+      "peor": {
+        "carta": "Encore",
+        "wr": 40.0,
+        "partidas": 35
+      },
+      "z": 3.74,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Birthday Bash",
+        "wr": 72.3,
+        "partidas": 47
+      },
+      "peor": {
+        "carta": "Playin' Hooky",
+        "wr": 61.4,
+        "partidas": 44
+      },
+      "z": 1.11,
+      "significativo": false
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

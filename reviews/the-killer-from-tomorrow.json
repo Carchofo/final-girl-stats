@@ -1,0 +1,111 @@
+{
+  "caja": "The Killer from Tomorrow",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja cuesta 2-3 frases: es la peor opción de la serie S3 con un WR de 60.7 y el mapa Sunnydaze Mall figura entre los peores para Hunter en general.",
+  "claves": [
+    "El WR del Killer en este mapa (60.7) coincide exactamente con su puntuación global, confirmando que no hay ventaja ni desventaja específica del entorno.",
+    "La carta 'Relentless Pursuit' es la mejor opción de fin de juego con un WR de 94.8, mientras que 'Mark X-1000' es la peor con solo 71.8.",
+    "El contraste entre las cartas de Setup muestra una diferencia significativa (z=3.03), siendo 'Foodcourt Faceoff' notablemente inferior a 'High Score!'."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Killer from Tomorrow",
+    "killer": "Hunter",
+    "mapa": "Sunnydaze Mall",
+    "serie": "S3",
+    "partidas": 140,
+    "wr": 60.7,
+    "puesto_dificultad": "11 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 70.9,
+      "partidas": 470
+    },
+    "mapa_en_general": {
+      "wr": 62.4,
+      "partidas": 457
+    },
+    "mapa_con_otros_killers": 64.0,
+    "mejores_mapas_del_killer": [
+      [
+        "USS Konrad",
+        93.0,
+        43
+      ],
+      [
+        "Camp Happy Trail",
+        82.4,
+        91
+      ],
+      [
+        "Wingard Cottage",
+        79.1,
+        43
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Marrek Warehouse",
+        56.9,
+        51
+      ],
+      [
+        "Sunnydaze Mall",
+        60.7,
+        140
+      ],
+      [
+        "Wolfe Asylum",
+        65.0,
+        40
+      ]
+    ],
+    "dark_power": {
+      "mejor": {
+        "carta": "M134 Minigun Armament",
+        "wr": 75.0,
+        "partidas": 92
+      },
+      "peor": {
+        "carta": "Cybernetic Agility",
+        "wr": 66.2,
+        "partidas": 142
+      },
+      "z": 1.43,
+      "significativo": false
+    },
+    "finale": {
+      "mejor": {
+        "carta": "Relentless Pursuit",
+        "wr": 94.8,
+        "partidas": 96
+      },
+      "peor": {
+        "carta": "Mark X-1000",
+        "wr": 71.8,
+        "partidas": 39
+      },
+      "z": 3.75,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "High Score!",
+        "wr": 70.7,
+        "partidas": 92
+      },
+      "peor": {
+        "carta": "Foodcourt Faceoff",
+        "wr": 49.0,
+        "partidas": 96
+      },
+      "z": 3.03,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}

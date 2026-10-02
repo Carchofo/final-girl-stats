@@ -1,0 +1,78 @@
+{
+  "caja": "The Green Terror",
+  "estado": "borrador-pc",
+  "modelo": "qwen3.5:9b",
+  "veredicto": "Esta caja de The Green Terror en Pesadilla Verde cuesta 79.1 WR, lo que la sitúa como la segunda más difícil del juego y muy por encima del promedio general del asesino (74.0) y del mapa (77.9).",
+  "claves": [
+    "El asesino Volk'ar rinde exactamente igual en este mapa que en cualquier otro, con 43 partidas registradas siendo su única muestra disponible.",
+    "La carta Rampage es el salvavidas definitivo con un WR de 90.0, mientras que Self Destruct arruina la partida al bajarlo a 50.0, una diferencia estadísticamente significativa (z=2.84).",
+    "El setup es crítico: Cave Dwellers eleva el rendimiento a casi 94 WR, pero River Rats lo destruye drásticamente hasta 64.7, otro contraste significativo (z=2.04) que define la partida temprana."
+  ],
+  "pros": [],
+  "contras": [],
+  "confirma": [],
+  "fuentes": [],
+  "datos": {
+    "caja": "The Green Terror",
+    "killer": "Volk'ar",
+    "mapa": "Pesadilla Verde",
+    "serie": "S4",
+    "partidas": 43,
+    "wr": 79.1,
+    "puesto_dificultad": "22 de 22 (1 = la mas dura)",
+    "media_del_juego": 65.5,
+    "killer_en_general": {
+      "wr": 74.0,
+      "partidas": 77
+    },
+    "mapa_en_general": {
+      "wr": 77.9,
+      "partidas": 86
+    },
+    "mapa_con_otros_killers": null,
+    "mejores_mapas_del_killer": [
+      [
+        "Pesadilla Verde",
+        79.1,
+        43
+      ]
+    ],
+    "peores_mapas_del_killer": [
+      [
+        "Pesadilla Verde",
+        79.1,
+        43
+      ]
+    ],
+    "dark_power": null,
+    "finale": {
+      "mejor": {
+        "carta": "Rampage",
+        "wr": 90.0,
+        "partidas": 20
+      },
+      "peor": {
+        "carta": "Self Destruct",
+        "wr": 50.0,
+        "partidas": 24
+      },
+      "z": 2.84,
+      "significativo": true
+    },
+    "setup": {
+      "mejor": {
+        "carta": "Cave Dwellers",
+        "wr": 93.8,
+        "partidas": 16
+      },
+      "peor": {
+        "carta": "River Rats",
+        "wr": 64.7,
+        "partidas": 17
+      },
+      "z": 2.04,
+      "significativo": true
+    }
+  },
+  "nota": "pros, contras, confirma y fuentes van vacios a proposito: salen de reviews reales y el modelo local no las tiene. Los rellena un humano antes de publicar."
+}
