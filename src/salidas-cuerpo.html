@@ -923,9 +923,9 @@
           (x.set[2] < 2.3 ? ' <em>Diferencia en el límite de lo fiable: pocas partidas.</em>' : '') + '</p>';
       }
       if (x.ev.length) {
-        h += '<div class="aviso" style="margin:16px 0 0"><h3>Descompensado</h3>' + x.ev.map(function (e) {
+        h += '<div class="aviso" style="margin:16px 0 0"><h3>Descompensado: déjalo fuera</h3>' + x.ev.map(function (e) {
           return '<p><b>' + e[0] + ' ' + esc(e[1]) + '</b>: ' + pc(e[2]) + ' de victorias en ' + e[3] + ' partidas, frente al ' + pc(e[4]) + ' del resto.</p>';
-        }).join('') + '<p class="riesgo"><b>Si quieres evitarlo</b> Sale al azar, así que no se puede esquivar en partida. Si buscas una partida equilibrada, sácalo del mazo antes de barajar. Es una regla de la casa, no oficial.</p></div>';
+        }).join('') + '<p class="riesgo"><b>Déjalo fuera</b> Sácalo del mazo antes de barajar. Es tu partida: juegas solo y montas la mesa como quieras.</p></div>';
       }
       if (x.dp || x.fin) {
         h += '<p class="sec-t">Lo que más hunde, según los datos</p><div class="tabla-wrap"><table class="mini">' +
