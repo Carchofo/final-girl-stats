@@ -1,3 +1,4 @@
 __pycache__/
 *.pyc
 datos/_cuerpo_antes.html
+datos/pipeline.log

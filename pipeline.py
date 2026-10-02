@@ -115,9 +115,16 @@ def main():
         git('fetch', 'origin', check=False)
         actual = git('rev-parse', '--abbrev-ref', 'HEAD')
         if actual != RAMA:
-            git('checkout', '-B', RAMA, 'origin/main')
-        else:
-            git('merge', '--ff-only', 'origin/main', check=False)
+            # La rama ya lleva las herramientas del PC, asi que se reutiliza.
+            # Solo se crea desde main la primera vez: rehacerla cada dia
+            # borraria pipeline.py y los borradores sin avisar.
+            existe = (git('rev-parse', '--verify', RAMA, check=False)
+                      or git('rev-parse', '--verify', f'origin/{RAMA}', check=False))
+            if existe:
+                git('checkout', RAMA)
+                git('merge', '--ff-only', f'origin/{RAMA}', check=False)
+            else:
+                git('checkout', '-b', RAMA, 'origin/main')
     print(f'  {git("rev-parse", "--abbrev-ref", "HEAD")}')
 
     paso('Datos antiguos')
