@@ -14,9 +14,9 @@ Thanks for keeping the tracker going. I built a site on top of it: https://final
 
 Every killer against every map, a page per killer and per box, and people can look up their nickname to see what they are missing. The numbers match your summary tab (13,920 plays, 65.53%) and refresh from the sheet.
 
-It is on noindex until you say it is fine. Plays logged from the site go through your own form, prefilled, so they land in your sheet, never in mine.
+It costs you nothing and there is nothing for you to maintain. Plays logged from the site go through your own form, prefilled, so they land in your sheet, never in mine. The idea is to bring more people to log their games with you.
 
-Two questions: are you ok with it, and would you link it from the sheet? I would also like to add store affiliate links on the box pages. Tell me if that bothers you and I will leave them out.
+It is on noindex until you say it is fine. Are you ok with it, and would you link it from the sheet?
 
 Thanks,
 Rafel
