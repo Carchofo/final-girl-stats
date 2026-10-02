@@ -28,11 +28,15 @@ Three things:
 
 1. Are you happy with me using the data? Happy to credit it however you prefer.
 2. Would you add a link to it from the sheet? People who want the numbers would find them, and people who want to log plays would land on your form.
-3. I made a short logging form you can try: https://finalgirlstats.com/registrar.html
+3. Every play logged through the site ends up in your sheet, not in a database of mine.
 
-   Five fields instead of 189. It opens your form prefilled and you confirm there, so the play goes into your sheet through your own form. It uses the prefilled link feature of Google Forms, so it never writes to your sheet and nothing is sent until someone presses Submit on your side.
+   Your form is linked from the site already. On top of that I made a short version you can try: https://finalgirlstats.com/registrar.html
 
-   That page is not linked from anywhere and is set to noindex. It exists so you can try it. If you would rather I dropped it, I will delete it. And if you ever wanted a real write path, that should be a script you own and can switch off, not something I post to on my own.
+   Five fields instead of 189. It opens your form prefilled and the person confirms and submits there, so the play lands in your sheet through your own form. It uses the prefilled link feature of Google Forms, so it never writes to your sheet, nothing is sent until someone presses Submit on your side, and if you changed or closed the form tomorrow it would simply stop working. No account, no integration, nothing for you to maintain.
+
+   The point is that the site feeds the tracker rather than competing with it. Someone arrives looking for numbers, sees their own gaps, and the easiest next step in front of them is logging a play into your sheet.
+
+   That page is not linked from anywhere yet and is set to noindex, so you can try it before deciding. If you would rather I dropped it, I will delete it. And if you ever wanted a real write path, that should be a script you own and can switch off, not something I post to on my own.
 
 One more thing so there are no surprises later: I would like to put store affiliate links on the box pages, the kind where I get a small cut if someone buys. Tell me if that bothers you and I will leave them out. There are no ads and I am not putting anything behind a paywall.
 
@@ -47,7 +51,7 @@ Hi,
 
 The tracker is the only real data this game has, and the per killer Location columns are what make it actually useful. I built this from it: https://finalgirlstats.com
 
-Every killer against every map, a page for each killer and each box, and people can look themselves up and see which boxes they are missing. It credits the sheet and links to your form. It is on noindex until you tell me it is fine to publish.
+Every killer against every map, a page for each killer and each box, and people can look themselves up and see which boxes they are missing. It credits the sheet and links to your form, so plays logged from the site go into your sheet, not mine. It is on noindex until you tell me it is fine to publish.
 
 Would you be ok with it? And would you link to it from the sheet?
 
@@ -71,6 +75,11 @@ permiso.
 La votacion de la comunidad NO se menciona: todavia no existe. Prometer
 funciones sin construir en el mensaje donde pides permiso es la forma mas
 rapida de quedar mal si luego no sale.
+
+El punto 3 va con el beneficio por delante: las partidas que entren por
+la web acaban en SU hoja, por su propio formulario. No escribimos nada, no
+hay integracion que mantener, y si cierran el formulario deja de funcionar
+solo. Asi queda claro que no competimos con la hoja, la alimentamos.
 
 No pide exclusividad ni nada raro. Solo permiso y un enlace.
 
