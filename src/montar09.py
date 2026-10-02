@@ -14,6 +14,10 @@ def peor(arr):
     a = [x for x in arr if x[0] != 'Unrevealed' and x[2] >= 20]
     return min(a, key=lambda x: x[1]) if a else None
 
+SET = {}
+for f in D['films']:
+    a = [x for x in f['setups'] if x[2] >= 20]
+    if a: SET[f['killer']] = (max(a, key=lambda x: x[1]), min(a, key=lambda x: x[1]))
 KX = []
 for k, v in D['killers'].items():
     p = P[k]
@@ -22,7 +26,7 @@ for k, v in D['killers'].items():
         k=k, box=v.get('box'), wr=v['wr'], n=v['g'], mio=k in MIOS,
         base=K.get(k, {}).get('j') or '',
         s=p['s'], por=p['por'], ojo=p['ojo'], src=p['src'],
-        dp=peor(v['secs'].get('Dark Power', [])), fin=peor(v['secs'].get('Finale', [])),
+        set=SET.get(k), dp=peor(v['secs'].get('Dark Power', [])), fin=peor(v['secs'].get('Finale', [])),
         ficha=('https://finalgirlstats.com/' + sl + '.html') if os.path.exists(f'{WEB}/{sl}.html') else None))
 KX.sort(key=lambda x: (not x['mio'], x['wr']))
 assert len(KX) == 26
@@ -53,6 +57,9 @@ JS = '''
         '</div>';
       if (x.base) h += '<p class="sec-t">Cómo es</p><p>' + esc(x.base) + '</p>';
       h += '<p class="sec-t">Lo que te mata · ' + fuente(x.src) + '</p><p>' + esc(x.ojo) + '</p>';
+      if (x.set) {
+        h += '<p class="sec-t">Carta de Setup</p><p><b>Para aprender, empieza con ' + esc(x.set[0][0]) + '</b>: es el Setup con más victorias (' + pc(x.set[0][1]) + ', ' + x.set[0][2] + ' partidas). Cuando la domines, prueba ' + esc(x.set[1][0]) + ', el más duro (' + pc(x.set[1][1]) + ').</p>';
+      }
       if (x.dp || x.fin) {
         h += '<p class="sec-t">Lo que más hunde, según los datos</p><div class="tabla-wrap"><table class="mini">' +
           (x.dp ? '<tr class="peor"><td>Dark Power: ' + esc(x.dp[0]) + '</td><td>' + pc(x.dp[1]) + '</td><td>' + x.dp[2] + '</td></tr>' : '') +
