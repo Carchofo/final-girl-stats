@@ -10,11 +10,11 @@ Asunto: Built a site from the tracker data, want your OK before indexing
 
 Hi,
 
-I have been going through the tracker for a while and I wanted to say first that the way it is built is the reason any of this is possible. A separate Location column per killer sounds like a small decision, but it is what lets you cross every killer with every map. Most trackers collapse that and the data becomes useless for exactly the question people ask. Four and a half years, 669 people, 13,915 plays, and one logged today. Nothing else in this game comes close.
+I have been going through the tracker for a while and I wanted to say first that the way it is built is the reason any of this is possible. A separate Location column per killer sounds like a small decision, but it is what lets you cross every killer with every map. Most trackers collapse that and the data becomes useless for exactly the question people ask. Four and a half years, 669 people, 13,920 plays, and more logged today. Nothing else in this game comes close.
 
 So I built a site with it: https://finalgirlstats.com
 
-It cross tabulates all 26 killers against all 22 locations, 572 combinations with 354 that have enough plays to mean anything. The counts match your own summary tab, 13,915 plays at 65.53 percent, because I drop the same incomplete rows you do rather than scraping everything. Every killer and every box has its own page with its Dark Powers and Finale cards ranked by how much they cost you. There is a Tops section with the extremes: hardest killers, hardest maps, the killer and map pairings that almost nobody survives.
+It cross tabulates all 26 killers against all 22 locations, 572 combinations with 355 that have enough plays to mean anything. The counts match your own summary tab, 13,920 plays at 65.53 percent, because I drop the same incomplete rows you do rather than scraping everything. Every killer and every box has its own page with its Dark Powers and Finale cards ranked by how much they cost you. There is a Tops section with the extremes: hardest killers, hardest maps, the killer and map pairings that almost nobody survives.
 
 Anyone can also find themselves by nickname and see their own matrix, plus which of the 22 box pairings they have played and which they are missing. One of your top contributors has played 21 of 22. The spreadsheet cannot show that, and it gives people a reason of their own to keep logging.
 
