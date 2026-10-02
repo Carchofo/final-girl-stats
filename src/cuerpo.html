@@ -104,11 +104,14 @@
     /* El hueco de arriba es a proposito: ahi se ve la cinta del fondo,
        entre la cabecera y la portada. Sin el, las dos se tocan y el
        fondo no asoma en ningun momento. */
+    /* En movil la caja es casi del mismo formato que la imagen, asi que
+       "cover" no recorta y no hay margen para mover el encuadre. Se amplia
+       y se coloca el logo de la cinta en la franja de arriba, la que queda
+       libre por encima del titulo. */
     .hero { margin:34px 14px 0; border-radius:3px; overflow:hidden;
-            min-height:300px;
-            /* La cinta sube: se encuadra por arriba, que es donde esta el
-               dibujo, en vez de centrada. */
-            background-position:62% 12%; }
+            min-height:330px;
+            background-size:195% auto;
+            background-position:50% 8%; }
     .hero::after {
       background:
         linear-gradient(to top, rgba(11,10,11,.93) 0%, rgba(11,10,11,.86) 42%,
