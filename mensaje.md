@@ -10,11 +10,11 @@ Asunto: Built a site from the tracker data, want your OK before indexing
 
 Hi,
 
-I have been going through the tracker for a while and I wanted to say first that the way it is built is the reason any of this is possible. A separate Location column per killer sounds like a small decision, but it is what lets you cross every killer with every map. Most trackers collapse that and the data becomes useless for exactly the question people ask. Four and a half years, 669 people, almost 14,500 rows, and one logged today. Nothing else in this game comes close.
+I have been going through the tracker for a while and I wanted to say first that the way it is built is the reason any of this is possible. A separate Location column per killer sounds like a small decision, but it is what lets you cross every killer with every map. Most trackers collapse that and the data becomes useless for exactly the question people ask. Four and a half years, 669 people, 13,915 plays, and one logged today. Nothing else in this game comes close.
 
 So I built a site with it: https://finalgirlstats.com
 
-It cross tabulates all 26 killers against all 22 locations, 572 combinations with 354 that have enough plays to mean anything. Every killer and every box has its own page with its Dark Powers and Finale cards ranked by how much they cost you. There is a Tops section with the extremes: hardest killers, hardest maps, the killer and map pairings that almost nobody survives.
+It cross tabulates all 26 killers against all 22 locations, 572 combinations with 354 that have enough plays to mean anything. The counts match your own summary tab, 13,915 plays at 65.53 percent, because I drop the same incomplete rows you do rather than scraping everything. Every killer and every box has its own page with its Dark Powers and Finale cards ranked by how much they cost you. There is a Tops section with the extremes: hardest killers, hardest maps, the killer and map pairings that almost nobody survives.
 
 Anyone can also find themselves by nickname and see their own matrix, plus which of the 22 box pairings they have played and which they are missing. One of your top contributors has played 21 of 22. The spreadsheet cannot show that, and it gives people a reason of their own to keep logging.
 
@@ -67,10 +67,12 @@ El orden importa: primero lo que les das, luego lo que pides. Y el noindex
 va antes de las preguntas, porque es la prueba de que no es un hecho
 consumado.
 
-Digo "almost 14,500 rows" y no una cifra exacta de partidas porque la hoja
-tiene 14.474 filas y 13.919 estan completas. Ellos conocen su hoja: dar un
-numero que no cuadra con el suyo invita a discutir el dato en vez del
-permiso.
+La cifra exacta, 13.915 partidas y 65,53%, es la de SU pestana de resumen.
+Mi ETL dio ese mismo numero el 2 de octubre: descarta las mismas 559 filas
+incompletas que descartan ellos. Decirselo es la mejor credencial del
+mensaje, porque demuestra que replicamos su criterio en vez de raspar la
+hoja entera. Si al enviar el correo la cifra ha cambiado, mirala primero en
+su pestana de portada y usa la suya, no la nuestra.
 
 La votacion de la comunidad NO se menciona: todavia no existe. Prometer
 funciones sin construir en el mensaje donde pides permiso es la forma mas
