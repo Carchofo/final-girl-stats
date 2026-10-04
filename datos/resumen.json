@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-04 08:30",
+  "resumen": {
+    "titular": "Aumento leve en victorias de Terror from Beyond y ligera subida del WR general",
+    "relevantes": [
+      {
+        "que": "Terror from Beyond pasó de 33 a 35 partidas con fiable: true",
+        "porque": "El dato tiene fiable: true y representa un cambio concreto en partidas de este killer; además el salto de WR es 2.25 puntos, aunque la variación global del WR es solo 0.01.",
+        "accion": "Mencionar el aumento de partidas y la mejora de WR en el texto si se quiere destacar el rendimiento de este killer."
+      },
+      {
+        "que": "El WR general subió de 65.53 a 65.54 (salto 0.01)",
+        "porque": "Es el único cambio visible en el WR global y corresponde a un incremento mínimo; refleja la tendencia actual sin cambios sustanciales.",
+        "accion": "Puede incluirse brevemente como 'ligeramente mayor' si el texto describe la tendencia general."
+      }
+    ],
+    "ignorado": "El número de nuevas partidas (31) y el incremento de jugadores (669 → 670) son relevantes solo como contexto, pero no cambian ninguna métrica clave del killer o la final girl; también no hay cruces, girls o setups nuevos que requieran actualización.",
+    "tocar_textos": true
+  }
+}

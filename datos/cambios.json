@@ -1,20 +1,30 @@
 {
   "meta": {
     "partidas_antes": 13920,
-    "partidas_ahora": 13920,
-    "partidas_nuevas": 0,
+    "partidas_ahora": 13951,
+    "partidas_nuevas": 31,
     "wr_antes": 65.53,
-    "wr_ahora": 65.53,
-    "wr_salto_pt": 0.0,
+    "wr_ahora": 65.54,
+    "wr_salto_pt": 0.01,
     "ultima_antes": "2 oct 2026",
-    "ultima_ahora": "2 oct 2026",
+    "ultima_ahora": "4 oct 2026",
     "jugadores_antes": 669,
-    "jugadores_ahora": 669
+    "jugadores_ahora": 670
   },
-  "killers": [],
+  "killers": [
+    {
+      "killer": "Terror from Beyond",
+      "partidas_antes": 33,
+      "partidas_ahora": 35,
+      "wr_antes": 60.61,
+      "wr_ahora": 62.86,
+      "salto_pt": 2.25,
+      "fiable": true
+    }
+  ],
   "cruces_nuevos": [],
   "girls_nuevas": [],
   "setups_nuevos": [],
   "cajas": [],
-  "hay_algo": false
+  "hay_algo": true
 }
