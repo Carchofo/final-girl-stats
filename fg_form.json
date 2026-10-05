@@ -1,1 +1,1798 @@
-{"Final Girl": {"entry": 253888300, "ops": ["Adelaide", "Adrianne", "Agnes", "Alice", "Alois", "Asami", "Ava", "Barbara", "Carolyn", "Cassie", "Charlie", "Christie", "Christina", "Cindy", "Constance", "Dakota", "Elizabeth", "Ellen", "Gabrielle", "Ginny", "Grandma", "Gretel", "Gwynn", "Heather", "Iris", "Jamie", "Janelle", "Jen", "Jenette", "Joan", "Joy", "Julia", "Julie", "Kat", "Kate", "Kenzie", "Laurie", "Layla", "Lindi", "Mandy", "Maud", "Maureen", "Meg", "Meghan", "Melanie", "Mrs. Claus", "Nancy", "Octavia", "Patsy", "Paula", "Red", "Reiko", "Rena", "Rita", "Ronda", "Selena", "Sheila", "Tali", "Uki", "Ursula", "Veronica", "Vicky", "Custom Final Girl"]}, "Killer": {"entry": 720188483, "ops": ["Berith", "Big Bad Wolf", "Billy", "Dr. Fright", "Evomorph", "The Eyeless", "Geppetto", "Grimlash", "Hans", "Hunter", "Inkanyamba", "The Intruders", "Krampus", "Mort", "The Organism", "Poltergeist", "Ratchet Lady", "Raptors", "Razorface", "Slayer", "Tormentor", "Volk'ar", "Terror from Above", "Terror from the Grave", "Terror from Destiny", "Terror from Beyond"]}, "Who won the game?": {"entry": 497593548, "ops": ["Final Girl", "The Killer"]}, "Difficulty Settings": {"entry": 790564844, "ops": ["Normal", "Extreme Horror"]}, "Nickname": {"entry": 1385293211, "ops": []}, "Location (Hans)": {"entry": 2080642183, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Fright)": {"entry": 1808190301, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Geppetto)": {"entry": 38505747, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Poltergeist)": {"entry": 670584886, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Inkanyamba)": {"entry": 1343977933, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from Above)": {"entry": 1637903760, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Evomorph)": {"entry": 1983462178, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (The Organism)": {"entry": 2017954739, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (The Intruders)": {"entry": 1505798963, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Big Bad Wolf)": {"entry": 1400272832, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Ratchet Lady)": {"entry": 1069097487, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from the Grave)": {"entry": 571039736, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Krampus)": {"entry": 579885087, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Tormentor)": {"entry": 279908257, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (The Eyeless)": {"entry": 1044216487, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Razorface)": {"entry": 1821404640, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Slayer)": {"entry": 824762383, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Hunter)": {"entry": 1193367229, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from Destiny)": {"entry": 993914043, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Billy)": {"entry": 1292497034, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Mort)": {"entry": 2065157138, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Grimlash)": {"entry": 1228263566, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Berith)": {"entry": 1518866411, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Volk'ar)": {"entry": 1138654545, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Raptors)": {"entry": 718343413, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}, "Location (Terror from Beyond)": {"entry": 1645409366, "ops": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"]}}
+{
+ "base": {
+  "Final Girl": {
+   "entry": 253888300,
+   "ops": [
+    "Adelaide",
+    "Adrianne",
+    "Agnes",
+    "Alice",
+    "Alois",
+    "Asami",
+    "Ava",
+    "Barbara",
+    "Carolyn",
+    "Cassie",
+    "Charlie",
+    "Christie",
+    "Christina",
+    "Cindy",
+    "Constance",
+    "Dakota",
+    "Elizabeth",
+    "Ellen",
+    "Gabrielle",
+    "Ginny",
+    "Grandma",
+    "Gretel",
+    "Gwynn",
+    "Heather",
+    "Iris",
+    "Jamie",
+    "Janelle",
+    "Jen",
+    "Jenette",
+    "Joan",
+    "Joy",
+    "Julia",
+    "Julie",
+    "Kat",
+    "Kate",
+    "Kenzie",
+    "Laurie",
+    "Layla",
+    "Lindi",
+    "Mandy",
+    "Maud",
+    "Maureen",
+    "Meg",
+    "Meghan",
+    "Melanie",
+    "Mrs. Claus",
+    "Nancy",
+    "Octavia",
+    "Patsy",
+    "Paula",
+    "Red",
+    "Reiko",
+    "Rena",
+    "Rita",
+    "Ronda",
+    "Selena",
+    "Sheila",
+    "Tali",
+    "Uki",
+    "Ursula",
+    "Veronica",
+    "Vicky",
+    "Custom Final Girl"
+   ],
+   "req": true
+  },
+  "Custom Final Girl": {
+   "entry": 469643764,
+   "ops": [],
+   "req": false
+  },
+  "Killer": {
+   "entry": 720188483,
+   "ops": [
+    "Berith",
+    "Big Bad Wolf",
+    "Billy",
+    "Dr. Fright",
+    "Evomorph",
+    "The Eyeless",
+    "Geppetto",
+    "Grimlash",
+    "Hans",
+    "Hunter",
+    "Inkanyamba",
+    "The Intruders",
+    "Krampus",
+    "Mort",
+    "The Organism",
+    "Poltergeist",
+    "Ratchet Lady",
+    "Raptors",
+    "Razorface",
+    "Slayer",
+    "Tormentor",
+    "Volk'ar",
+    "Terror from Above",
+    "Terror from the Grave",
+    "Terror from Destiny",
+    "Terror from Beyond"
+   ],
+   "req": true
+  },
+  "Who won the game?": {
+   "entry": 497593548,
+   "ops": [
+    "Final Girl",
+    "The Killer"
+   ],
+   "req": true
+  },
+  "Final Health Revive?": {
+   "entry": 1068930111,
+   "ops": [
+    "Neither",
+    "The Killer",
+    "Final Girl",
+    "Both"
+   ],
+   "req": false
+  },
+  "Difficulty Settings": {
+   "entry": 790564844,
+   "ops": [
+    "Normal",
+    "Extreme Horror"
+   ],
+   "req": false
+  },
+  "Nickname": {
+   "entry": 1385293211,
+   "ops": [],
+   "req": false
+  }
+ },
+ "setup": {
+  "Camp Happy Trail": {
+   "entry": 330981945,
+   "ops": [
+    "Capture the Flag",
+    "Meditation Hour",
+    "Skinny Dipping",
+    "The Bonfire",
+    "Treasure Hunt"
+   ],
+   "req": false
+  },
+  "Maple Lane": {
+   "entry": 1766654390,
+   "ops": [
+    "A Quiet Place",
+    "Block Party",
+    "Maple Lane",
+    "Playtime",
+    "Revenge"
+   ],
+   "req": false
+  },
+  "Carnival of Blood": {
+   "entry": 1452021406,
+   "ops": [
+    "Boxed In",
+    "Center Stage",
+    "Late for the Show",
+    "No Laughing Matter",
+    "Ring around the Rosie"
+   ],
+   "req": false
+  },
+  "Creech Manor": {
+   "entry": 1349120051,
+   "ops": [
+    "Creepshow",
+    "Dancing Queen",
+    "Strange Trophies",
+    "The Dead Zone",
+    "The Ladder"
+   ],
+   "req": false
+  },
+  "Sacred Groves": {
+   "entry": 266400374,
+   "ops": [
+    "Dueling Tour Guides",
+    "Family Day",
+    "Mob O' Tourists",
+    "Swamp Thing",
+    "Worship Service"
+   ],
+   "req": false
+  },
+  "USS Konrad": {
+   "entry": 1388703943,
+   "ops": [
+    "Bloody Feast",
+    "Born In Flames",
+    "Junction Danger",
+    "Showdown",
+    "Space Rave"
+   ],
+   "req": false
+  },
+  "_extra": {
+   "USS Konrad": {
+    "Victory Type": {
+     "entry": 322269912,
+     "ops": [
+      "Killer defeated",
+      "Airlock",
+      "Crusher",
+      "Incinerator",
+      "Self-Destruct"
+     ],
+     "req": false
+    }
+   },
+   "Falconwood": {
+    "Missions": {
+     "entry": 2132953985,
+     "ops": [
+      "Expose the Lab",
+      "Survive the Hunt",
+      "Save your Father",
+      "Crack the Code",
+      "Missing Friend"
+     ],
+     "req": false
+    }
+   }
+  },
+  "Station 2891": {
+   "entry": 1636325644,
+   "ops": [
+    "A Nice Stew",
+    "Clear the Grounds",
+    "Good Morning",
+    "Quittin Time",
+    "R & R"
+   ],
+   "req": false
+  },
+  "Wingard Cottage": {
+   "entry": 1410655572,
+   "ops": [
+    "Couples Weekend",
+    "Dysfunctional Family",
+    "Fishing Trip",
+    "Grad Party",
+    "Special Occasion"
+   ],
+   "req": false
+  },
+  "Storybook Woods": {
+   "entry": 524796524,
+   "ops": [
+    "Breadcrumb Trail",
+    "Family Visit",
+    "Forest Dwellers",
+    "Picnic",
+    "Scatter"
+   ],
+   "req": false
+  },
+  "Wolfe Asylum": {
+   "entry": 464357697,
+   "ops": [
+    "A Solitary Life",
+    "Bingo Night",
+    "Madhouse Faceoff",
+    "Padded Rooms",
+    "The Dr. Is In"
+   ],
+   "req": false
+  },
+  "Marrek Warehouse": {
+   "entry": 1423965756,
+   "ops": [
+    "Daily Huddle",
+    "Shift Change",
+    "Units Per Hour",
+    "Unloading",
+    "You're Fired"
+   ],
+   "req": false
+  },
+  "Utopia": {
+   "entry": 1006059893,
+   "ops": [
+    "Bouldering",
+    "Monstrous Stench",
+    "Sundown",
+    "Trash Day",
+    "Welcome to Utopia"
+   ],
+   "req": false
+  },
+  "Hellscape": {
+   "entry": 407325351,
+   "ops": [
+    "Depravity",
+    "Ecstasy",
+    "Rapture",
+    "Revelation",
+    "Sensation"
+   ],
+   "req": false
+  },
+  "Falconwood": {
+   "entry": 307133675,
+   "ops": [
+    "4th of July Weekend",
+    "Back to School",
+    "Election Day",
+    "Halloween",
+    "New Year's Eve"
+   ],
+   "req": false
+  },
+  "Sunnydaze Mall": {
+   "entry": 1439148666,
+   "ops": [
+    "Black Friday",
+    "Family Dinner",
+    "Foodcourt Faceoff",
+    "High Score!",
+    "Special Delivery"
+   ],
+   "req": false
+  },
+  "Santa's Village": {
+   "entry": 624566470,
+   "ops": [
+    "Back With Lumber",
+    "Gather Round",
+    "Reindeer Games",
+    "Story Time",
+    "Toys! Toys! Toys!"
+   ],
+   "req": false
+  },
+  "Buddyland": {
+   "entry": 656998575,
+   "ops": [
+    "Birthday Bash",
+    "Buddy Day",
+    "Hide and Seek",
+    "Pizza Party",
+    "Playin' Hooky"
+   ],
+   "req": false
+  },
+  "Mega BGCon": {
+   "entry": 1559516392,
+   "ops": [
+    "Busiest Day",
+    "Family Day",
+    "First Day",
+    "Last Day",
+    "Mega Events"
+   ],
+   "req": false
+  },
+  "Shady Acres": {
+   "entry": 556551790,
+   "ops": [
+    "Demands of the Earth",
+    "Dusk Sacrifice",
+    "Final Crop",
+    "Harvest Season",
+    "Reap What You Sow"
+   ],
+   "req": false
+  },
+  "L'Armes Abbey": {
+   "entry": 1873677061,
+   "ops": [
+    "Daily Chores",
+    "Reflection & Meditation",
+    "Sunday Mass",
+    "Supper Time",
+    "Tourism Bus"
+   ],
+   "req": false
+  },
+  "Pesadilla Verde": {
+   "entry": 941217785,
+   "ops": [
+    "Cave Dwellers",
+    "High Ground",
+    "Jungle Madness",
+    "Rebel Yell",
+    "River Rats"
+   ],
+   "req": false
+  },
+  "Isla Lagarto": {
+   "entry": 654894340,
+   "ops": [
+    "Beach Landing",
+    "Facility Construction",
+    "Lab Breach",
+    "Let The Games Begin!",
+    "Look at the Volcano!"
+   ],
+   "req": false
+  }
+ },
+ "killer": {
+  "Hans": {
+   "loc": {
+    "entry": 2080642183,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1606258877,
+    "ops": [
+     "Unrevealed",
+     "Bloodbath",
+     "Butcher Bloodlust",
+     "Dark, Darker, Darkest",
+     "Death Blow"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1067250402,
+    "ops": [
+     "Unrevealed",
+     "Dark Obsession",
+     "Feed",
+     "Sledgehammer Massacre",
+     "Blood Frenzy"
+    ],
+    "req": false
+   }
+  },
+  "Dr. Fright": {
+   "loc": {
+    "entry": 1808190301,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 814938822,
+    "ops": [
+     "Unrevealed",
+     "Everyone Must Die",
+     "Face Your Fright",
+     "Time to Die",
+     "Dream Warfare"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 52535060,
+    "ops": [
+     "Unrevealed",
+     "Never Really Dead",
+     "Pitchfork Assault",
+     "The Frightmare is Inevitable",
+     "Shock Factor"
+    ],
+    "req": false
+   }
+  },
+  "Geppetto": {
+   "loc": {
+    "entry": 38505747,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1799239683,
+    "ops": [
+     "Unrevealed",
+     "I Made Your Friends",
+     "No Strings Attached",
+     "Remember Them?",
+     "Puppet Bombs"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1761721475,
+    "ops": [
+     "Unrevealed",
+     "Immortal Master",
+     "Massive Abominations",
+     "Weapons Graft",
+     "Join the Family"
+    ],
+    "req": false
+   }
+  },
+  "Poltergeist": {
+   "loc": {
+    "entry": 670584886,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 309509844,
+    "ops": [
+     "Unrevealed",
+     "Nothing is Easy",
+     "Relentless Assault",
+     "She Will Soon Be Lost",
+     "Demonic Posession"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1561987736,
+    "ops": [
+     "Unrevealed",
+     "Eternal Despair",
+     "Invisible Barrier",
+     "Stiff Winds",
+     "Forgetting Something?"
+    ],
+    "req": false
+   }
+  },
+  "Inkanyamba": {
+   "loc": {
+    "entry": 1343977933,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1193198809,
+    "ops": [
+     "Unrevealed",
+     "Savage Whirlwind",
+     "Violent Tantrum",
+     "We Need a Miracle",
+     "Drag Her to Hell"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 163876105,
+    "ops": [
+     "Unrevealed",
+     "Feast of Anger",
+     "Rising Dread",
+     "Volatile Temper",
+     "Dark Lightning"
+    ],
+    "req": false
+   }
+  },
+  "Terror from Above": {
+   "loc": {
+    "entry": 1637903760,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 429995815,
+    "ops": [
+     "Unrevealed",
+     "Fowl Agression",
+     "Endless Swarm",
+     "Insurmountable Odds"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 456311622,
+    "ops": [
+     "Unrevealed",
+     "Birdnado",
+     "Run For Your Life",
+     "They're Just Waiting to Strike"
+    ],
+    "req": false
+   },
+   "Special Victims": {
+    "entry": 731279469,
+    "ops": [
+     "(1) Easy",
+     "(2) Normal",
+     "(3) Hard",
+     "None"
+    ],
+    "req": false
+   }
+  },
+  "Evomorph": {
+   "loc": {
+    "entry": 1983462178,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 231303553,
+    "ops": [
+     "Unrevealed",
+     "Blitz of Death",
+     "Death in the Dark",
+     "The Perfect Organism",
+     "Impenetrable Armor"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 567924,
+    "ops": [
+     "Unrevealed",
+     "Acid Blood",
+     "Razor Claws",
+     "Symbiotic Camouflage",
+     "Razor Tail"
+    ],
+    "req": false
+   },
+   "Form Defeated": {
+    "entry": 1786797462,
+    "ops": [
+     "Hatchling",
+     "Youngling",
+     "Adult"
+    ],
+    "req": false
+   }
+  },
+  "The Organism": {
+   "loc": {
+    "entry": 2017954739,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1622015352,
+    "ops": [
+     "Unrevealed",
+     "Cognitive Assimilation",
+     "Reductive Assimilation",
+     "Regenerative Assimilation",
+     "Final Assimilation"
+    ],
+    "req": false
+   },
+   "How many Organisms": {
+    "entry": 1489877860,
+    "ops": [
+     "One",
+     "Two",
+     "Three"
+    ],
+    "req": false
+   }
+  },
+  "The Intruders": {
+   "loc": {
+    "entry": 1505798963,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 260150296,
+    "ops": [
+     "Unrevealed",
+     "Hunt Sweet Hunt",
+     "Release the Beast",
+     "You're Gonna Die",
+     "We Know Where You Live"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1224448829,
+    "ops": [
+     "Unrevealed",
+     "Maskaphobia",
+     "No Remorse",
+     "Strength in Numbers",
+     "Won't Stay Down"
+    ],
+    "req": false
+   }
+  },
+  "Big Bad Wolf": {
+   "loc": {
+    "entry": 1400272832,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1408453872,
+    "ops": [
+     "Unrevealed",
+     "Rampant Growth",
+     "Tasty Treats",
+     "Thrill of the Hunt",
+     "One More Bite"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 724034355,
+    "ops": [
+     "Unrevealed",
+     "Destructive Roar",
+     "Ravenous Hunger",
+     "Sixth Sense",
+     "A Killing Machine"
+    ],
+    "req": false
+   }
+  },
+  "Ratchet Lady": {
+   "loc": {
+    "entry": 1069097487,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1214017807,
+    "ops": [
+     "Unrevealed",
+     "Feed the Madness",
+     "Hold Her Down",
+     "It's Raining Maniacs",
+     "Enter the Madhouse"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 632586064,
+    "ops": [
+     "Unrevealed",
+     "Bloodfear",
+     "Dark Injection",
+     "Manic Burst",
+     "Shield of Madness"
+    ],
+    "req": false
+   }
+  },
+  "Terror from the Grave": {
+   "loc": {
+    "entry": 571039736,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 547470406,
+    "ops": [
+     "Unrevealed",
+     "I'm Overwhelmed",
+     "Their Numbers Are Endless",
+     "They've All Been Bitten"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1228544495,
+    "ops": [
+     "Unrevealed",
+     "Legion",
+     "Runners",
+     "Super Horde"
+    ],
+    "req": false
+   }
+  },
+  "Krampus": {
+   "loc": {
+    "entry": 579885087,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 6076258,
+    "ops": [
+     "Unrevealed",
+     "Bamf!",
+     "Soul Lust",
+     "Unholy Gifts",
+     "Past Midnight"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1612273225,
+    "ops": [
+     "Unrevealed",
+     "Blood and Cookies",
+     "Explosive Gifts",
+     "Tantalizing Gifts",
+     "Never Ending Gifts"
+    ],
+    "req": false
+   }
+  },
+  "Tormentor": {
+   "loc": {
+    "entry": 279908257,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 142070636,
+    "ops": [
+     "Unrevealed",
+     "Game Over",
+     "No Escape",
+     "The Ultimate Trap",
+     "No Rest for the Weary"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1564426367,
+    "ops": [
+     "Unrevealed",
+     "Horrifying Traps",
+     "Overkill Traps",
+     "Unfair Traps",
+     "Endless Traps"
+    ],
+    "req": false
+   },
+   "How did you die": {
+    "entry": 376038958,
+    "ops": [
+     "Killer",
+     "Trap"
+    ],
+    "req": false
+   }
+  },
+  "The Eyeless": {
+   "loc": {
+    "entry": 1044216487,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1481106602,
+    "ops": [
+     "Unrevealed",
+     "It Can Hear Everything",
+     "It Knows My Moves",
+     "No More Running",
+     "Final Slash"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1680304154,
+    "ops": [
+     "Unrevealed",
+     "Hard Skin",
+     "Quick Counter",
+     "Reactive Swipe",
+     "High Alert"
+    ],
+    "req": false
+   }
+  },
+  "Razorface": {
+   "loc": {
+    "entry": 1821404640,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1400064412,
+    "ops": [
+     "Unrevealed",
+     "Chains of Torment",
+     "I Feast On Your Pain",
+     "Taste Our Pleasures",
+     "Legendary Suffering"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1999962068,
+    "ops": [
+     "Unrevealed",
+     "Helleport",
+     "Life Drain",
+     "Soulbound",
+     "Infinite Despair"
+    ],
+    "req": false
+   }
+  },
+  "Slayer": {
+   "loc": {
+    "entry": 824762383,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 795440290,
+    "ops": [
+     "Unrevealed",
+     "Interdimensional Rift Collapse",
+     "Let's Finish This",
+     "Welcome To My World",
+     "Your Time is Up"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 100427085,
+    "ops": [
+     "Unrevealed",
+     "Master Plan",
+     "Mind Control",
+     "Renewed Determination",
+     "It's In My Head!"
+    ],
+    "req": false
+   }
+  },
+  "Hunter": {
+   "loc": {
+    "entry": 1193367229,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1629044757,
+    "ops": [
+     "Unrevealed",
+     "Adaptive A.I.",
+     "Relentless Pursuit",
+     "\"Termination Mode... Active\"",
+     "Mark X-1000"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 333524293,
+    "ops": [
+     "Unrevealed",
+     "Cybernetic Agility",
+     "Reinforced Endoskeleton",
+     "Titanium-Laced Bio Tissue",
+     "M134 Minigun Armament"
+    ],
+    "req": false
+   }
+  },
+  "Terror from Destiny": {
+   "loc": {
+    "entry": 993914043,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "Death Order": {
+    "entry": 1009670389,
+    "ops": [
+     "Death at 30,000 ft",
+     "Deathcoaster",
+     "Highway to Hell"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1483840918,
+    "ops": [
+     "Unrevealed",
+     "Double Trouble",
+     "Existential Paralysis",
+     "Hourglass of Despair"
+    ],
+    "req": false
+   }
+  },
+  "Billy": {
+   "loc": {
+    "entry": 1292497034,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 2038409947,
+    "ops": [
+     "Unrevealed",
+     "Encore",
+     "It's Showtime!",
+     "Sizzling Power",
+     "Power Surge"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1829675669,
+    "ops": [
+     "Unrevealed",
+     "Deathlust",
+     "Endless Power",
+     "Introducing... Billy Jr!",
+     "Merciless Minions"
+    ],
+    "req": false
+   }
+  },
+  "Mort": {
+   "loc": {
+    "entry": 2065157138,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1442782920,
+    "ops": [
+     "Unrevealed",
+     "Mort as Hans",
+     "Mort as Dr. Fright",
+     "Mort as Geppetto",
+     "Mort as Baghead",
+     "Mort as Big Bad Wolf",
+     "Mort as Ratchet Lady",
+     "Mort as H.U.N.T.E.R.",
+     "Mort as Razorface",
+     "Mort as Tormentor",
+     "Mort as Krampus",
+     "Secret Epic Finale"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 335044941,
+    "ops": [
+     "Unrevealed",
+     "Anonymous Terror",
+     "Relentless Paranoia",
+     "Toxic Whispers",
+     "Snitches Get Stitches"
+    ],
+    "req": false
+   }
+  },
+  "Grimlash": {
+   "loc": {
+    "entry": 1228263566,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 984320107,
+    "ops": [
+     "Unrevealed",
+     "Ancient Abomination",
+     "Hunger of the Old Gods",
+     "Withered Harbinger",
+     "God of Blood and Grain"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 713606407,
+    "ops": [
+     "Unrevealed",
+     "Rite of the Corrupted",
+     "Rite of the Old One",
+     "Root-bound Curse",
+     "Fields of Madness"
+    ],
+    "req": false
+   }
+  },
+  "Berith": {
+   "loc": {
+    "entry": 1518866411,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1462269265,
+    "ops": [
+     "Unrevealed",
+     "Hell on Earth",
+     "It Wants You!",
+     "Spiritual Attack",
+     "Legions of Hell"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 689651749,
+    "ops": [
+     "Unrevealed",
+     "Keeping Ursula Alive",
+     "Lamb to the Slaughter",
+     "Rejecting God",
+     "Satanic Influence"
+    ],
+    "req": false
+   },
+   "Divine Blessings": {
+    "entry": 120043411,
+    "ops": [
+     "Heavenly",
+     "Hellish"
+    ],
+    "req": false
+   }
+  },
+  "Volk'ar": {
+   "loc": {
+    "entry": 1138654545,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 715505970,
+    "ops": [
+     "Unrevealed",
+     "Guerilla Warfare",
+     "Rampage",
+     "Self Destruct",
+     "Regenerative Cloaking"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 1168439454,
+    "ops": [
+     "Unrevealed",
+     "Blades in the Dark",
+     "Chameleon of Death",
+     "Stress of the Unknown",
+     "Merciless Ambush"
+    ],
+    "req": false
+   }
+  },
+  "Raptors": {
+   "loc": {
+    "entry": 718343413,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 754175778,
+    "ops": [
+     "Unrevealed",
+     "Born Hungry",
+     "Claws Like Knives",
+     "Raptor Rush",
+     "Deadly Quick"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 2117871803,
+    "ops": [
+     "Unrevealed",
+     "Blood Thirsty",
+     "Pack Conditioning",
+     "They're Everywhere!",
+     "Scaly Hide"
+    ],
+    "req": false
+   }
+  },
+  "Terror from Beyond": {
+   "loc": {
+    "entry": 1645409366,
+    "ops": [
+     "Buddyland",
+     "Camp Happy Trail",
+     "Carnival of Blood",
+     "Creech Manor",
+     "Falconwood",
+     "Hellscape",
+     "Isla Lagarto",
+     "L'Armes Abbey",
+     "Maple Lane",
+     "Marrek Warehouse",
+     "Mega BGCon",
+     "Pesadilla Verde",
+     "Sacred Groves",
+     "Santa's Village",
+     "Shady Acres",
+     "Station 2891",
+     "Storybook Woods",
+     "Sunnydaze Mall",
+     "USS Konrad",
+     "Utopia",
+     "Wingard Cottage",
+     "Wolfe Asylum"
+    ],
+    "req": true
+   },
+   "finale": {
+    "entry": 1765754027,
+    "ops": [
+     "Unrevealed",
+     "Born Again",
+     "Luxuriant Growth",
+     "You're Next!"
+    ],
+    "req": false
+   },
+   "dp": {
+    "entry": 9900329,
+    "ops": [
+     "Unrevealed",
+     "Hunted By The Mob",
+     "Mass Hysteria",
+     "Obstinate Victims"
+    ],
+    "req": false
+   }
+  }
+ }
+}

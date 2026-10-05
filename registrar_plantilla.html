@@ -1,54 +1,73 @@
 <div class="wrap">
 
 <header class="top">
-  <p class="eyebrow">Borrador · no enlazado desde el resto del sitio</p>
+  <p class="eyebrow">Hoja comunitaria · 30 segundos</p>
   <h1>Registrar<span class="roja">una partida</span></h1>
-  <p class="dek">Cinco campos en vez de ciento ochenta y nueve. Al terminar se abre el formulario de la hoja comunitaria con todo puesto, y solo tienes que confirmar. La partida entra en su hoja, no en ninguna otra.</p>
+  <p class="dek">Tres pasos con desplegables en vez de recorrer ciento noventa campos. Al terminar se abre el formulario de la hoja comunitaria con todo puesto, y solo tienes que confirmar. La partida entra en su hoja, no en ninguna otra.</p>
 </header>
 
 <form id="reg" autocomplete="off">
+
+  <fieldset class="paso">
+    <legend><span class="num">1</span> La partida</legend>
+    <div class="campo">
+      <label for="r-killer">Killer</label>
+      <select id="r-killer" required><option value="">Elige…</option></select>
+    </div>
+    <div class="campo" id="c-loc" hidden>
+      <label for="r-loc">Localización</label>
+      <select id="r-loc"></select>
+      <small id="r-loc-nota"></small>
+    </div>
+    <div class="campo">
+      <label for="r-girl">Final Girl</label>
+      <select id="r-girl" required><option value="">Elige…</option></select>
+      <small id="r-girl-nota"></small>
+    </div>
+  </fieldset>
+
+  <fieldset class="paso">
+    <legend><span class="num">2</span> El resultado</legend>
+    <div class="campo">
+      <span class="label">¿Quién ganó?</span>
+      <div class="radios grandes">
+        <label><input type="radio" name="gano" value="Final Girl"> Gané yo</label>
+        <label><input type="radio" name="gano" value="The Killer"> Ganó el killer</label>
+      </div>
+    </div>
+    <div class="campo">
+      <span class="label">¿Alguien usó su Final Health?</span>
+      <div class="radios">
+        <label><input type="radio" name="fh" value="Neither"> Nadie</label>
+        <label><input type="radio" name="fh" value="Final Girl"> Yo</label>
+        <label><input type="radio" name="fh" value="The Killer"> El killer</label>
+        <label><input type="radio" name="fh" value="Both"> Los dos</label>
+      </div>
+    </div>
+    <div class="campo">
+      <span class="label">Dificultad</span>
+      <div class="radios">
+        <label><input type="radio" name="dif" value="Normal" checked> Normal</label>
+        <label><input type="radio" name="dif" value="Extreme Horror"> Extreme Horror</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="paso" id="p-det" hidden>
+    <legend><span class="num">3</span> Detalles <em>opcional, pero es lo que más afina las estadísticas</em></legend>
+    <div id="det"></div>
+  </fieldset>
+
   <div class="campo">
     <label for="r-nick">Tu nombre en la hoja</label>
     <input type="text" id="r-nick" placeholder="El mismo que uses siempre" spellcheck="false">
-    <small>Se guarda en este navegador para la próxima vez.</small>
-  </div>
-
-  <div class="campo">
-    <label for="r-killer">Killer</label>
-    <select id="r-killer"><option value="">Elige…</option></select>
-  </div>
-
-  <div class="campo" id="c-loc" hidden>
-    <label for="r-loc">Localización</label>
-    <select id="r-loc"></select>
-    <small id="r-loc-nota"></small>
-  </div>
-
-  <div class="campo">
-    <label for="r-girl">Final Girl</label>
-    <select id="r-girl"><option value="">Elige…</option></select>
-  </div>
-
-  <div class="campo">
-    <span class="label">¿Quién ganó?</span>
-    <div class="radios" id="r-gano">
-      <label><input type="radio" name="gano" value="Final Girl" checked> Gané yo</label>
-      <label><input type="radio" name="gano" value="The Killer"> Ganó el killer</label>
-    </div>
-  </div>
-
-  <div class="campo">
-    <span class="label">Dificultad</span>
-    <div class="radios" id="r-dif">
-      <label><input type="radio" name="dif" value="Normal" checked> Normal</label>
-      <label><input type="radio" name="dif" value="Extreme Horror"> Extreme Horror</label>
-    </div>
+    <small>Se guarda en este navegador, con tu último killer y Final Girl, para la próxima vez.</small>
   </div>
 
   <div class="aviso" id="r-resumen" hidden></div>
 
   <p><button type="submit" class="cta-btn" id="r-enviar" disabled>Abrir el formulario con esto puesto</button></p>
-  <p class="riesgo"><b>Qué pasa al pulsar</b> Se abre el formulario de la hoja comunitaria en otra pestaña, con estos campos ya rellenados. Nada se envía hasta que tú le des a Submit allí. Esta página no escribe en su hoja ni guarda nada en ningún sitio.</p>
+  <p class="riesgo"><b>Qué pasa al pulsar</b> Se abre el formulario de la hoja comunitaria en otra pestaña, con estos campos ya rellenados. Pasa las páginas con Next y dale a Submit al final: nada se envía hasta entonces. Esta página no escribe en su hoja ni guarda nada fuera de tu navegador.</p>
 </form>
 
 <footer>
@@ -59,7 +78,11 @@
 
 <style>
   #reg { max-width:560px; }
-  .campo { margin-bottom:20px; }
+  .paso { border:1px solid var(--line); border-radius:3px; padding:16px 16px 4px; margin:0 0 18px; }
+  .paso legend { font-family:var(--f-disp); font-size:19px; text-transform:uppercase; padding:0 8px; }
+  .paso legend .num { font-family:var(--f-mono); font-size:12px; color:var(--blood); margin-right:6px; }
+  .paso legend em { font-family:var(--f-body); font-size:12.5px; text-transform:none; color:var(--muted); font-style:normal; margin-left:6px; }
+  .campo { margin-bottom:18px; }
   .campo label, .campo .label { display:block; font-family:var(--f-mono); font-size:11px;
     letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
   .campo input[type=text], .campo select {
@@ -67,13 +90,14 @@
     background:var(--sunk); color:var(--ink); border:1px solid var(--line-hi); border-radius:3px; }
   .campo input[type=text]:focus, .campo select:focus { outline:2px solid var(--blood); outline-offset:-2px; }
   .campo small { display:block; margin-top:5px; font-size:12px; color:var(--muted); }
-  .radios { display:flex; gap:10px; flex-wrap:wrap; }
+  .radios { display:flex; gap:8px; flex-wrap:wrap; }
   .radios label { display:flex; align-items:center; gap:7px; font-family:var(--f-body);
     font-size:14.5px; letter-spacing:0; text-transform:none; color:var(--ink);
     background:var(--sunk); border:1px solid var(--line-hi); border-radius:3px;
     padding:9px 13px; cursor:pointer; margin:0; }
+  .radios.grandes label { flex:1; justify-content:center; padding:13px; font-size:16px; font-weight:600; }
   .radios label:has(input:checked) { border-color:var(--blood); background:var(--blood-s); }
-  #r-enviar { border:0; cursor:pointer; font:inherit; font-size:15px; font-weight:600; padding:11px 18px; }
+  #r-enviar { border:0; cursor:pointer; font:inherit; font-size:15px; font-weight:600; padding:12px 20px; width:100%; }
   #r-enviar:disabled { opacity:.45; cursor:not-allowed; }
   #r-resumen p { margin:0; font-size:14.5px; }
 </style>
@@ -82,88 +106,121 @@
 (function () {
   var F = __FORMJSON__;
   var FORM = "https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform";
+  var $ = function (id) { return document.getElementById(id); };
+  var killer = $('r-killer'), girl = $('r-girl'), loc = $('r-loc'), cLoc = $('c-loc');
+  var nick = $('r-nick'), boton = $('r-enviar'), resumen = $('r-resumen'), det = $('det');
 
-  var killer = document.getElementById('r-killer');
-  var girl   = document.getElementById('r-girl');
-  var loc    = document.getElementById('r-loc');
-  var cLoc   = document.getElementById('c-loc');
-  var nick   = document.getElementById('r-nick');
-  var boton  = document.getElementById('r-enviar');
-  var resumen = document.getElementById('r-resumen');
+  // Nombres del formulario en ingles; aqui solo traducimos la etiqueta.
+  var ETQ = { finale: 'Finale', dp: 'Dark Power', 'Victory Type': 'Cómo ganaste',
+    'Missions': 'Misión', 'Form Defeated': 'Forma en que lo derrotaste',
+    'How many Organisms': 'Cuántos organismos', 'How did you die': 'Cómo moriste',
+    'Death Order': 'Orden de muertes', 'Divine Blessings': 'Divine Blessings',
+    'Special Victims': 'Special Victims' };
 
-  function llena(sel, ops) {
-    ops.forEach(function (o) {
-      var e = document.createElement('option');
-      e.value = o; e.textContent = o; sel.appendChild(e);
-    });
+  function opcion(sel, v, txt) {
+    var e = document.createElement('option'); e.value = v; e.textContent = txt || v; sel.appendChild(e);
   }
-  llena(killer, F['Killer'].ops);
-  llena(girl, F['Final Girl'].ops);
+  function llena(sel, ops) { ops.forEach(function (o) { opcion(sel, o); }); }
+  function guarda(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function lee(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
 
-  // El nick es lo unico que se guarda, y solo aqui: ahorra teclear a quien
-  // registra varias partidas seguidas.
-  try { nick.value = localStorage.getItem('fg-nick') || ''; } catch (e) {}
-  nick.addEventListener('input', function () {
-    try { localStorage.setItem('fg-nick', nick.value); } catch (e) {}
-  });
+  llena(killer, F.base['Killer'].ops);
+
+  // Final Girl: las de la caja del killer primero, el resto debajo.
+  function girls() {
+    var previa = girl.value || lee('fg-girl');
+    girl.innerHTML = ''; opcion(girl, '', 'Elige…');
+    var suyas = (CHICAS[killer.value] || []).filter(function (g) { return F.base['Final Girl'].ops.indexOf(g) !== -1; });
+    var resto = F.base['Final Girl'].ops.filter(function (g) { return suyas.indexOf(g) === -1; });
+    if (suyas.length) {
+      var a = document.createElement('optgroup'); a.label = 'De su caja'; girl.appendChild(a); llena(a, suyas);
+      var b = document.createElement('optgroup'); b.label = 'Todas'; girl.appendChild(b); llena(b, resto);
+    } else llena(girl, resto);
+    if (previa && F.base['Final Girl'].ops.indexOf(previa) !== -1) girl.value = previa;
+  }
+
+  function desplegable(clave, campo, etq) {
+    var d = document.createElement('div'); d.className = 'campo';
+    var id = 'd-' + campo.entry;
+    d.innerHTML = '<label for="' + id + '">' + etq + '</label>';
+    var s = document.createElement('select'); s.id = id; s.dataset.entry = campo.entry;
+    opcion(s, '', 'No lo sé / lo dejo');
+    llena(s, campo.ops);
+    d.appendChild(s); det.appendChild(d);
+  }
+
+  function detalles() {
+    det.innerHTML = '';
+    var k = F.killer[killer.value] || {}, l = loc.value;
+    if (F.setup[l]) desplegable('setup', F.setup[l], 'Setup (' + l + ')');
+    Object.keys(k).forEach(function (c) { if (c !== 'loc') desplegable(c, k[c], ETQ[c] || c); });
+    var extra = (F.setup._extra || {})[l] || {};
+    Object.keys(extra).forEach(function (c) { desplegable(c, extra[c], ETQ[c] || c); });
+    $('p-det').hidden = !det.children.length;
+  }
 
   killer.addEventListener('change', function () {
-    var campo = F['Location (' + killer.value + ')'];
+    var campo = (F.killer[killer.value] || {}).loc;
     loc.innerHTML = '';
-    if (!campo) { cLoc.hidden = true; revisa(); return; }
-    cLoc.hidden = false;
-    llena(loc, campo.ops);
-    // Su mapa de caja primero: es el que juega casi todo el mundo.
-    var propia = PAREJAS[killer.value];
-    if (propia && campo.ops.indexOf(propia) !== -1) loc.value = propia;
-    document.getElementById('r-loc-nota').textContent =
-      propia ? 'La de su caja es ' + propia + '.' : '';
-    revisa();
+    if (campo) {
+      cLoc.hidden = false; llena(loc, campo.ops);
+      // Su mapa de caja primero: es el que juega casi todo el mundo.
+      var propia = PAREJAS[killer.value];
+      if (propia && campo.ops.indexOf(propia) !== -1) loc.value = propia;
+      $('r-loc-nota').textContent = propia ? 'La de su caja es ' + propia + '.' : '';
+    } else cLoc.hidden = true;
+    girls(); detalles(); guarda('fg-killer', killer.value); revisa();
   });
+  loc.addEventListener('change', function () { detalles(); revisa(); });
+  girl.addEventListener('change', function () { guarda('fg-girl', girl.value); });
+  nick.value = lee('fg-nick');
+  nick.addEventListener('input', function () { guarda('fg-nick', nick.value); });
 
+  function marcado(n) { var e = document.querySelector('input[name=' + n + ']:checked'); return e ? e.value : ''; }
   function datos() {
-    return {
-      nick: nick.value.trim(),
-      killer: killer.value,
-      loc: cLoc.hidden ? '' : loc.value,
-      girl: girl.value,
-      gano: document.querySelector('input[name=gano]:checked').value,
-      dif: document.querySelector('input[name=dif]:checked').value
-    };
+    return { nick: nick.value.trim(), killer: killer.value, loc: cLoc.hidden ? '' : loc.value,
+      girl: girl.value, gano: marcado('gano'), fh: marcado('fh'), dif: marcado('dif') };
   }
-
   function revisa() {
     var d = datos();
-    var listo = d.nick && d.killer && d.girl && (cLoc.hidden || d.loc);
+    var listo = d.killer && d.girl && d.gano && (cLoc.hidden || d.loc);
     boton.disabled = !listo;
     resumen.hidden = !listo;
     if (listo) {
+      var n = Array.prototype.filter.call(det.querySelectorAll('select'), function (s) { return s.value; }).length;
       resumen.innerHTML = '<p><b>' + d.girl + '</b> contra <b>' + d.killer + '</b>' +
-        (d.loc ? ' en ' + d.loc : '') + '. ' +
-        (d.gano === 'Final Girl' ? 'Victoria' : 'Derrota') +
-        (d.dif === 'Extreme Horror' ? ', en Extreme Horror' : '') + '.</p>';
+        (d.loc ? ' en ' + d.loc : '') + '. ' + (d.gano === 'Final Girl' ? 'Victoria' : 'Derrota') +
+        (d.dif === 'Extreme Horror' ? ', en Extreme Horror' : '') + '.' +
+        (n ? ' Con ' + n + ' detalle' + (n > 1 ? 's' : '') + '.' : '') + '</p>';
     }
   }
-  document.getElementById('reg').addEventListener('input', revisa);
-  document.getElementById('reg').addEventListener('change', revisa);
+  $('reg').addEventListener('input', revisa);
+  $('reg').addEventListener('change', revisa);
 
-  document.getElementById('reg').addEventListener('submit', function (e) {
+  $('reg').addEventListener('submit', function (e) {
     e.preventDefault();
-    var d = datos();
-    var p = [];
-    function add(campo, valor) {
-      if (!valor || !F[campo]) return;
-      p.push('entry.' + F[campo].entry + '=' + encodeURIComponent(valor));
-    }
-    add('Nickname', d.nick);
-    add('Killer', d.killer);
-    add('Location (' + d.killer + ')', d.loc);
-    add('Final Girl', d.girl);
-    add('Who won the game?', d.gano);
-    add('Difficulty Settings', d.dif);
+    var d = datos(), p = [];
+    function add(entry, valor) { if (entry && valor) p.push('entry.' + entry + '=' + encodeURIComponent(valor)); }
+    var B = F.base;
+    add(B['Nickname'].entry, d.nick);
+    add(B['Killer'].entry, d.killer);
+    add(((F.killer[d.killer] || {}).loc || {}).entry, d.loc);
+    add(B['Final Girl'].entry, d.girl);
+    add(B['Who won the game?'].entry, d.gano);
+    add(B['Final Health Revive?'].entry, d.fh);
+    add(B['Difficulty Settings'].entry, d.dif);
+    det.querySelectorAll('select').forEach(function (s) { add(s.dataset.entry, s.value); });
     window.open(FORM + '?usp=pp_url&' + p.join('&'), '_blank', 'noopener');
   });
 
+  // registrar.html?k=Hans&l=Camp Happy Trail llega con killer y mapa puestos.
+  var q = new URLSearchParams(location.search);
+  var ultimo = q.get('k') || lee('fg-killer');
+  if (ultimo && F.killer[ultimo]) {
+    killer.value = ultimo; killer.dispatchEvent(new Event('change'));
+    if (q.get('l') && Array.prototype.some.call(loc.options, function (o) { return o.value === q.get('l'); })) { loc.value = q.get('l'); detalles(); }
+  }
+  else girls();
   revisa();
 })();
 </script>

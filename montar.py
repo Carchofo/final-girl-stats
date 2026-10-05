@@ -488,18 +488,20 @@ plantilla = (AQUI / "registrar_plantilla.html").read_text(encoding="utf-8")
 campos = json.loads((AQUI / "fg_form.json").read_text(encoding="utf-8"))
 parejas = {f["killer"]: f["loc"] for f in D["films"]}
 plantilla = plantilla.replace("__FORMJSON__", json.dumps(campos, ensure_ascii=False))
+chicas = {f["killer"]: D.get("cajaGirls", {}).get(f["film"], []) for f in D["films"]}
 plantilla = plantilla.replace(
     "var FORM =",
-    "var PAREJAS = " + json.dumps(parejas, ensure_ascii=False) + ";\n  var FORM =")
+    "var PAREJAS = " + json.dumps(parejas, ensure_ascii=False) + ";\n"
+    "  var CHICAS = " + json.dumps(chicas, ensure_ascii=False) + ";\n  var FORM =")
 
 url_reg = f"{DOMINIO}/registrar.html"
 (AQUI / "registrar.html").write_text(
     CABECERA.format(
         title="Registrar una partida de Final Girl",
-        desc="Atajo para registrar una partida en la hoja comunitaria: cinco campos en vez de ciento ochenta y nueve.",
+        desc="Atajo para registrar una partida en la hoja comunitaria: tres pasos con desplegables en vez de ciento noventa campos.",
         url=url_reg, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
         ogtitle="Registrar una partida de Final Girl",
-        ogdesc="Cinco campos en vez de ciento ochenta y nueve.",
+        ogdesc="Tres pasos con desplegables, 30 segundos.",
         jsonld=jsonld_de({"title": "Registrar una partida", "desc": "Borrador."}, url_reg),
         robots="noindex,nofollow",   # siempre, aunque el resto se indexe
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
