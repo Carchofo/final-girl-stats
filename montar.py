@@ -21,7 +21,7 @@ DOMINIO = "https://finalgirlstats.com"
 #            antes de tener su confirmacion formal.
 #   True  -> indexable. Cambiar SOLO cuando haya permiso explicito, y entonces
 #            dar de alta el sitemap en Search Console.
-INDEXAR = False
+INDEXAR = True
 
 FORM = "https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform"
 HOJA = "https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit"
