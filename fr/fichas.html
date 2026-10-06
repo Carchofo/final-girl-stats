@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Statistiques Final Girl : victoires par killer et par boîte (13 920 parties)</title>
+<meta name="description" content="Taux de victoire de chaque killer et de chaque boîte de Final Girl, sur 13 920 parties de la communauté. Killers les plus durs, meilleures cartes, Dark Powers">
+<link rel="canonical" href="https://finalgirlstats.com/fr/fichas.html">
+<meta name="theme-color" content="#0b0a0b">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Open Graph: lo que se ve al pegar el enlace en Reddit, Discord o BGG.
+     Es de donde va a venir casi todo el trafico al principio, mucho antes
+     que de Google. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Final Girl Stats">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Statistiques Final Girl : victoires par killer et par boîte (13 920 parties)">
+<meta property="og:description" content="Taux de victoire de chaque killer et de chaque boîte de Final Girl, sur 13 920 parties de la communauté. Killers les plus durs, meilleures cartes, Dark Powers">
+<meta property="og:url" content="https://finalgirlstats.com/fr/fichas.html">
+<meta property="og:image" content="https://finalgirlstats.com/img/vhs-final-girl.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statistiques Final Girl : victoires par killer et par boîte (13 920 parties)">
+<meta name="twitter:description" content="Taux de victoire de chaque killer et de chaque boîte de Final Girl, sur 13 920 parties de la communauté. Killers les plus durs, meilleures cartes, Dark Powers">
+<meta name="twitter:image" content="https://finalgirlstats.com/img/vhs-final-girl.jpg">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Statistiques Final Girl : victoires par killer et par boîte (13 920 parties)","description":"Taux de victoire de chaque killer et de chaque boîte de Final Girl, sur 13 920 parties de la communauté. Killers les plus durs, meilleures cartes, Dark Powers","url":"https://finalgirlstats.com/fr/fichas.html","inLanguage":"fr","keywords":["Final Girl","board game","solo","win rate","statistics"],"temporalCoverage":"../2 oct 2026","isAccessibleForFree":true,"creator":{"@type":"Organization","name":"Final Girl Stats","url":"https://finalgirlstats.com/"},"about":{"@type":"Game","name":"Final Girl","numberOfPlayers":{"@type":"QuantitativeValue","value":1}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128373;</text></svg>">
+<link rel="alternate" hreflang="es" href="https://finalgirlstats.com/fichas.html">
+<link rel="alternate" hreflang="en" href="https://finalgirlstats.com/en/fichas.html">
+<link rel="alternate" hreflang="fr" href="https://finalgirlstats.com/fr/fichas.html">
+<link rel="alternate" hreflang="de" href="https://finalgirlstats.com/de/fichas.html">
+<link rel="alternate" hreflang="it" href="https://finalgirlstats.com/it/fichas.html">
+<link rel="alternate" hreflang="x-default" href="https://finalgirlstats.com/en/fichas.html">
+<link rel="stylesheet" href="../estilos.css"><style>.idiomas{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;margin:10px 0 0;color:var(--muted)}.idiomas a{color:var(--muted);text-decoration:none}.idiomas a[aria-current]{color:var(--blood)}.idiomas a:hover{color:var(--ink)}</style></head>
+<body>
+<nav class="nav-sitio" aria-label="Sections">
+  <a href="index.html">Stats</a>
+  <a href="salidas.html">Ouvertures</a>
+  <a href="fichas.html">Fiches</a>
+  <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
+          aria-label="Plus de sections">+</button>
+  <div class="nav-mas" id="nav-mas" hidden>
+  <a href="index.html#matriz">Matrice</a>
+  <a href="index.html#tops">Tops</a>
+  <a href="index.html#cajas">Boîtes</a>
+  <a href="index.html#temporadas">Saisons</a>
+  <a href="index.html#killers">Killers</a>
+  <a href="index.html#mapas">Cartes</a>
+  <a href="index.html#girls">Final Girls</a>
+  <a href="index.html#jug">Joueurs</a>
+  </div>
+</nav>
+<style>
+  .nav-sitio { display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
+                letter-spacing:.06em; text-transform:uppercase; align-items:center;
+                position:relative; }
+  .nav-sitio a { color:var(--muted); text-decoration:none; padding-bottom:4px;
+                  border-bottom:2px solid transparent; }
+  .nav-sitio a:hover { color:var(--ink); }
+  .nav-sitio a[aria-current] { color:var(--blood); border-color:var(--blood); }
+  /* El "+" abre las secciones de dentro de Estadisticas. En el movil la
+     tira de pestanas se parte en dos lineas y cuesta encontrarlas; aqui
+     estan todas juntas y a un toque. */
+  .nav-sitio .mas { border:1px solid var(--line); background:none; color:var(--muted);
+                     font:inherit; line-height:1; cursor:pointer; border-radius:3px;
+                     padding:3px 8px 5px; margin-left:auto; }
+  .nav-sitio .mas:hover { color:var(--ink); border-color:var(--muted); }
+  .nav-sitio .mas[aria-expanded="true"] { color:var(--blood); border-color:var(--blood); }
+  /* Flotante, no en el flujo: desplegandose en linea empujaba la portada
+     y el resto de la pagina media pantalla hacia abajo. */
+  .nav-mas { position:absolute; top:100%; right:0; z-index:40; min-width:230px;
+              display:grid; grid-template-columns:1fr 1fr; gap:0 10px;
+              padding:8px 14px 10px; font-size:13px;
+              letter-spacing:.06em; text-transform:uppercase;
+              background:var(--surface); border:1px solid var(--line);
+              border-top:2px solid var(--blood); border-radius:0 0 3px 3px;
+              box-shadow:0 14px 34px rgba(0,0,0,.6); }
+  /* display:grid pisa al atributo hidden, que solo vale display:none por
+     defecto del navegador. Sin esto el menu nace abierto. */
+  .nav-mas[hidden] { display:none; }
+  .nav-mas a { color:var(--muted); text-decoration:none; padding:7px 0; }
+  .nav-mas a:hover { color:var(--blood); }
+  @media (max-width:560px) {
+    .nav-sitio { justify-content:center; gap:16px; }
+    /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
+       descuadraria el centro. */
+    .nav-sitio .mas { margin-left:0; }
+    .nav-mas { left:0; right:0; min-width:0; text-align:center; }
+  }
+</style>
+<script>
+(function () {
+  var b = document.querySelector('.nav-sitio .mas');
+  var m = document.getElementById('nav-mas');
+  if (!b || !m) return;
+  function pon(abierto) {
+    b.setAttribute('aria-expanded', String(abierto));
+    m.hidden = !abierto;
+    b.textContent = abierto ? '✕' : '+';
+  }
+  b.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pon(b.getAttribute('aria-expanded') !== 'true');
+  });
+  document.addEventListener('click', function (e) {
+    if (!m.hidden && !m.contains(e.target)) pon(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !m.hidden) { pon(false); b.focus(); }
+  });
+})();
+</script>
+<div class="wrap"><header class="top"><p class="eyebrow">13 920 parties réelles · 669 joueurs</p>
+<h1>Final Girl<span class="roja">statistiques</span></h1>
+<p class="dek">À quelle fréquence la Final Girl survit à chaque killer et à chaque boîte, sur 13 920 parties enregistrées par la communauté. Moyenne : <b>65,5 %</b>.</p><p class="idiomas"><a href="../fichas.html" hreflang="es">ES</a> · <a href="../en/fichas.html" hreflang="en">EN</a> · <a href="../fr/fichas.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/fichas.html" hreflang="de">DE</a> · <a href="../it/fichas.html" hreflang="it">IT</a></p></header>
+<p>Envie de croiser n'importe quel killer avec n'importe quelle carte ? Voir les <a href="index.html">statistiques interactives complètes</a>.</p>
+<h2>Killers, du plus dur au plus facile</h2>
+<div class="tabla-wrap"><table><thead><tr><th>Killer</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td><a href="terror-from-the-grave.html">Terror from the Grave</a></td><td class=n>50,8 %</td><td class=n>520</td></tr><tr><td><a href="razorface.html">Razorface</a></td><td class=n>53,8 %</td><td class=n>511</td></tr><tr><td><a href="poltergeist.html">Poltergeist</a></td><td class=n>56,1 %</td><td class=n>884</td></tr><tr><td><a href="krampus.html">Krampus</a></td><td class=n>58,3 %</td><td class=n>602</td></tr><tr><td><a href="terror-from-above.html">Terror from Above</a></td><td class=n>58,4 %</td><td class=n>466</td></tr><tr><td><a href="slayer.html">Slayer</a></td><td class=n>60,1 %</td><td class=n>524</td></tr><tr><td><a href="berith.html">Berith</a></td><td class=n>60,6 %</td><td class=n>132</td></tr><tr><td><a href="billy.html">Billy</a></td><td class=n>60,9 %</td><td class=n>174</td></tr><tr><td><a href="the-intruders.html">The Intruders</a></td><td class=n>62,5 %</td><td class=n>925</td></tr><tr><td><a href="hans.html">Hans</a></td><td class=n>63,7 %</td><td class=n>1 439</td></tr><tr><td><a href="inkanyamba.html">Inkanyamba</a></td><td class=n>63,8 %</td><td class=n>588</td></tr><tr><td><a href="the-eyeless.html">The Eyeless</a></td><td class=n>64,4 %</td><td class=n>491</td></tr><tr><td><a href="raptors.html">Raptors</a></td><td class=n>64,5 %</td><td class=n>62</td></tr><tr><td><a href="geppetto.html">Geppetto</a></td><td class=n>64,9 %</td><td class=n>784</td></tr><tr><td><a href="ratchet-lady.html">Ratchet Lady</a></td><td class=n>66,6 %</td><td class=n>683</td></tr><tr><td><a href="mort.html">Mort</a></td><td class=n>69,4 %</td><td class=n>314</td></tr><tr><td><a href="big-bad-wolf.html">Big Bad Wolf</a></td><td class=n>70,6 %</td><td class=n>722</td></tr><tr><td><a href="hunter.html">Hunter</a></td><td class=n>70,9 %</td><td class=n>470</td></tr><tr><td><a href="the-organism.html">The Organism</a></td><td class=n>73,5 %</td><td class=n>750</td></tr><tr><td><a href="tormentor.html">Tormentor</a></td><td class=n>73,6 %</td><td class=n>595</td></tr><tr><td><a href="volk-ar.html">Volk'ar</a></td><td class=n>74,0 %</td><td class=n>77</td></tr><tr><td><a href="dr-fright.html">Dr. Fright</a></td><td class=n>74,4 %</td><td class=n>851</td></tr><tr><td><a href="evomorph.html">Evomorph</a></td><td class=n>75,4 %</td><td class=n>877</td></tr><tr><td><a href="grimlash.html">Grimlash</a></td><td class=n>78,2 %</td><td class=n>188</td></tr><tr><td><a href="terror-from-destiny.html">Terror from Destiny</a></td><td class=n>79,8 %</td><td class=n>258</td></tr></tbody></table></div>
+<h2>Boîtes, de la plus dure à la plus facile</h2>
+<div class="tabla-wrap"><table><thead><tr><th>Boîte</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td><a href="slaughter-in-the-groves.html">Slaughter in the Groves</a></td><td class=n>38,3 %</td><td class=n>141</td></tr><tr><td><a href="the-haunting-of-creech-manor.html">The Haunting of Creech Manor</a></td><td class=n>42,0 %</td><td class=n>238</td></tr><tr><td><a href="carnage-at-the-carnival.html">Carnage at the Carnival</a></td><td class=n>44,2 %</td><td class=n>233</td></tr><tr><td><a href="the-north-pole-nightmare.html">The North Pole Nightmare</a></td><td class=n>46,7 %</td><td class=n>180</td></tr><tr><td><a href="madness-in-the-dark.html">Madness in the Dark</a></td><td class=n>50,0 %</td><td class=n>148</td></tr><tr><td><a href="a-demon-in-the-shadows.html">A Demon in the Shadows</a></td><td class=n>50,0 %</td><td class=n>64</td></tr><tr><td><a href="the-raptor-games.html">The Raptor Games</a></td><td class=n>53,7 %</td><td class=n>41</td></tr><tr><td><a href="don-t-make-a-sound.html">Don't Make a Sound</a></td><td class=n>56,1 %</td><td class=n>173</td></tr><tr><td><a href="bad-times-at-buddyland.html">Bad Times at Buddyland</a></td><td class=n>60,7 %</td><td class=n>89</td></tr><tr><td><a href="a-knock-at-the-door.html">A Knock at the Door</a></td><td class=n>60,7 %</td><td class=n>206</td></tr><tr><td><a href="the-killer-from-tomorrow.html">The Killer from Tomorrow</a></td><td class=n>60,7 %</td><td class=n>140</td></tr><tr><td><a href="hell-to-pay.html">Hell to Pay</a></td><td class=n>62,2 %</td><td class=n>127</td></tr><tr><td><a href="the-happy-trails-horror.html">The Happy Trails Horror</a></td><td class=n>64,0 %</td><td class=n>548</td></tr><tr><td><a href="panic-at-station-2891.html">Panic at Station 2891</a></td><td class=n>65,2 %</td><td class=n>164</td></tr><tr><td><a href="shriek.html">Shriek</a></td><td class=n>70,5 %</td><td class=n>122</td></tr><tr><td><a href="the-falconwood-files.html">The Falconwood Files</a></td><td class=n>70,6 %</td><td class=n>126</td></tr><tr><td><a href="a-rotten-harvest.html">A Rotten Harvest</a></td><td class=n>71,0 %</td><td class=n>76</td></tr><tr><td><a href="the-marrek-murders.html">The Marrek Murders</a></td><td class=n>71,3 %</td><td class=n>164</td></tr><tr><td><a href="once-upon-a-full-moon.html">Once Upon a Full Moon</a></td><td class=n>74,6 %</td><td class=n>185</td></tr><tr><td><a href="into-the-void.html">Into the Void</a></td><td class=n>74,8 %</td><td class=n>202</td></tr><tr><td><a href="frightmare-on-maple-lane.html">Frightmare on Maple Lane</a></td><td class=n>75,6 %</td><td class=n>172</td></tr><tr><td><a href="the-green-terror.html">The Green Terror</a></td><td class=n>79,1 %</td><td class=n>43</td></tr></tbody></table></div>
+<div class="aviso"><p>Vous avez joué ? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">Enregistrez la partie sur le formulaire communautaire</a> : chaque partie affine ces chiffres.</p></div><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>

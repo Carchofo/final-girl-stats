@@ -1,0 +1,1885 @@
+<title>Laboratorio Final Girl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  /* Identidad de una sola pieza: siempre oscuro, a propósito.
+     El tema es cine de terror en VHS; en claro no funciona. */
+  :root {
+    color-scheme: dark;
+    --paper:#0b0a0b; --surface:#151315; --sunk:#1d1a1d; --ink:#f2ecec;
+    --muted:#9c8f93; --line:#262227; --line-hi:#3a333a;
+    --blood:#e0454f; --blood-s:#2a1216; --mid:#3a3438;
+    --glow:rgba(224,69,79,.30);
+    --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 34px rgba(0,0,0,.45);
+    --f-disp:"Jost","Futura","Century Gothic",sans-serif;
+    --f-body:"Jost","Futura","Century Gothic",Helvetica,sans-serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+
+
+  /* Cabecera a sangre con la cinta de VHS. El degradado de abajo la funde
+     con el fondo de la página: sin él se ve un corte recto y canta que es
+     una imagen pegada. El texto va sobre la zona oscura de la izquierda,
+     nunca sobre la sangre, que ahí no se lee. */
+  .hero {
+    position:relative;   /* ya va fuera de .wrap: el ancho completo es gratis */
+    min-height:clamp(300px, 46vw, 480px);
+    display:flex; align-items:flex-end;
+    background:var(--paper) url("img/vhs-final-girl.jpg") center/cover no-repeat;
+    isolation:isolate;
+  }
+  .hero::after {
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      linear-gradient(to top, var(--paper) 0%, rgba(11,10,11,.86) 22%, rgba(11,10,11,.35) 55%, rgba(11,10,11,.55) 100%),
+      linear-gradient(to right, rgba(11,10,11,.80) 0%, rgba(11,10,11,.25) 48%, transparent 70%);
+  }
+  .hero > .wrap { position:relative; z-index:1; width:100%; padding-block:0 26px; }
+  .hero .eyebrow { color:var(--blood); text-shadow:0 1px 10px rgba(0,0,0,.9);
+                   margin-bottom:18px; }
+  /* El h1 va con interlineado 0,88: las tildes y los trazos altos se salen
+     por encima de su caja y se montaban sobre la frase de arriba. */
+  .hero h1 { margin-top:0; padding-top:.06em; }
+  .hero h1 { text-shadow:0 2px 20px rgba(0,0,0,.85); }
+  .hero .dek { color:#d9cfd2; text-shadow:0 1px 10px rgba(0,0,0,.9); max-width:52ch; }
+  @media (max-width:640px) {
+    .hero { min-height:340px; background-position:62% center; }
+  }
+  @media (prefers-reduced-motion:no-preference) {
+    .hero { background-attachment:fixed; }
+  }
+  @media (max-width:900px) { .hero { background-attachment:scroll; } }
+
+
+  /* Posters del carrusel: ahora son botones. Se para la animacion al pasar
+     por encima, que si no es imposible acertarle a uno en movimiento. */
+  .marquee .tira .poster {
+    padding:0; border:0; background:none; cursor:pointer; display:block; flex:none;
+    border-radius:2px; transition:transform .16s, box-shadow .16s, outline-color .16s;
+    outline:2px solid transparent; outline-offset:2px;
+  }
+  .marquee .tira .poster:hover { transform:translateY(-3px) scale(1.04); z-index:2;
+    box-shadow:0 8px 22px rgba(0,0,0,.65), 0 0 0 1px var(--blood); }
+  .marquee .tira .poster:focus-visible { outline-color:var(--blood); }
+  .marquee:hover .tira, .marquee:focus-within .tira { animation-play-state:paused; }
+
+
+  /* --- Móvil ------------------------------------------------------------
+     A 375 px el texto de la cabecera ocupaba media pantalla antes de
+     enseñar un solo dato. Se recorta todo un escalón y la cinta se hace
+     más baja, que ahí compite con el contenido. */
+  @media (max-width:560px) {
+    .hero { min-height:0; }
+    /* El texto baja dentro de la portada: arriba queda la cinta limpia,
+       que ahi va al 100% y no al 34% del fondo general. */
+    .hero > .wrap { padding-block:150px 20px; }
+    .hero .eyebrow { font-size:9.5px; letter-spacing:.12em; line-height:1.5; }
+    .hero h1 { font-size:clamp(34px,11.5vw,46px); }
+    .hero .dek { font-size:14.5px; line-height:1.45; }
+    .hero .dek br { display:none; }
+
+    .marquee .tira { padding:9px 14px; gap:5px; }
+    /* .marquee .tira img y no .marquee img: la regla general va DESPUÉS en
+       el fichero y, a igual peso, gana la última. */
+    .marquee .tira img { width:46px; height:64px; }
+    .marquee .flecha { width:34px; font-size:19px; opacity:.85;
+                       background:linear-gradient(90deg, rgba(11,10,11,.85), transparent); }
+    .marquee .flecha.der { background:linear-gradient(270deg, rgba(11,10,11,.85), transparent); }
+
+    /* background-attachment:fixed va mal en iOS: salta al hacer scroll o
+       se queda pegado. En móvil basta con que no se mueva el elemento,
+       que ya es position:fixed. */
+    /* Al 10% la cinta no se veia: el hueco entre la cabecera y la portada
+       salia negro. Los paneles de datos son opacos, asi que subirla no
+       le quita contraste a ningun texto. */
+    body::after { background-attachment:scroll; opacity:.34; filter:none; }
+    .hero { background-attachment:scroll; }
+
+    /* La cabecera iba pegada al contenido y entre las dos tapaban toda la
+       pantalla: el fondo de cinta no se veia en ningun momento. Ahora la
+       cabecera se recorta por los lados y respira por arriba y por abajo,
+       asi que la cinta asoma alrededor y entre bloques. */
+    /* El hueco de arriba es a proposito: ahi se ve la cinta del fondo,
+       entre la cabecera y la portada. Sin el, las dos se tocan y el
+       fondo no asoma en ningun momento. */
+    /* En movil la caja es casi del mismo formato que la imagen, asi que
+       "cover" no recorta y no hay margen para mover el encuadre. Se amplia
+       y se coloca el logo de la cinta en la franja de arriba, la que queda
+       libre por encima del titulo. */
+    .hero { margin:34px 14px 0; border-radius:3px; overflow:hidden;
+            min-height:330px;
+            background-size:212% auto;
+            /* Con este zoom y la posicion al 100%, el logo de la cinta cae
+               a unos 55px del borde de arriba: queda por encima de la
+               frase pequena en vez de detras. */
+            background-position:50% 100%; }
+    .hero::after {
+      background:
+        linear-gradient(to top, rgba(11,10,11,.93) 0%, rgba(11,10,11,.86) 42%,
+                        rgba(11,10,11,.30) 72%, transparent 100%);
+    }
+    .marquee { margin-top:14px; }
+    /* El primer bloque de datos arranca mas abajo: ese hueco es por donde
+       se ve la cinta del fondo. */
+    .kpis, .wrap > .kpis { margin-top:16px; }
+    nav.tabs { margin-block:22px 10px; }
+
+    .cta-registro { padding:12px 13px; }
+    .cta-registro p { font-size:13px; }
+    .kpi { padding:11px 12px; }
+    .kpi b { font-size:25px; }
+    section[id^="v-"] { padding-block:30px 14px; }
+    nav.tabs { margin-block:18px 8px; }
+  }
+
+
+  /* "Lo que te falta": la colección de cajas de un jugador. */
+  .coleccion { background:var(--sunk); border-radius:3px; padding:13px 15px; margin:0 0 6px; }
+  .coleccion .barra { height:7px; background:var(--mid); border-radius:99px; overflow:hidden; margin-bottom:10px; }
+  .coleccion .barra span { display:block; height:100%; background:var(--blood); border-radius:99px; }
+  .coleccion p { margin:0 0 8px; font-size:14px; }
+  .coleccion p:last-child { margin-bottom:0; }
+  .coleccion .falta { color:var(--muted); font-size:12.5px; line-height:1.9; }
+  .coleccion .falta span { display:inline-block; border:1px solid var(--line-hi); border-radius:2px;
+                           padding:2px 7px; margin:0 5px 4px 0; color:var(--ink); font-size:12px; }
+
+
+  /* Enlaces de tienda en las fichas de caja. */
+  a.tienda { display:inline-block; border:1px solid var(--line-hi); border-radius:3px;
+             padding:8px 14px; margin:0 8px 8px 0; color:var(--ink); text-decoration:none;
+             font-size:14px; background:var(--sunk); }
+  a.tienda:hover { border-color:var(--blood); color:var(--blood); }
+
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+         font-family:var(--f-body); font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1040px; margin:0 auto; padding-inline:20px; padding-block:0 70px; }
+
+  /* Aire entre secciones para que el fondo respire al bajar. Sin esto los
+     bloques van pegados y la cinta solo se ve en la cabecera. */
+  section[id^="v-"] { padding-block:46px 18px; }
+  section[id^="v-"] > h2 { margin-top:0; }
+  section[id^="v-"] + section[id^="v-"] { border-top:1px solid var(--line); }
+
+  /* Separacion entre los bloques grandes de dentro: la lista, el detalle,
+     la matriz. Son los huecos por donde asoma el fondo. */
+  .barlist, .detalle, .panel, .kpis, .tabla-wrap { margin-block:22px; }
+  .detalle { margin-top:26px; }
+
+  /* Los paneles pierden un pelin de opacidad: la cinta se intuye debajo
+     sin que ningun texto pierda contraste. */
+  .detalle, .aviso, .kpi, .bar, .picker, .salida {
+    background-color:color-mix(in srgb, var(--surface) 92%, transparent);
+  }
+
+  nav.tabs { margin-block:26px 10px; }
+  footer { margin-top:64px; }
+
+  header.top { padding-block:34px 20px; border-bottom:3px solid var(--ink); }
+  .eyebrow { font-family:var(--f-mono); font-size:11px; font-weight:600; letter-spacing:.16em;
+             text-transform:uppercase; color:var(--blood); margin:0 0 9px; }
+  h1 { font-family:var(--f-disp); font-weight:800; letter-spacing:-.02em; font-size:clamp(40px,11vw,68px); line-height:.9;
+       text-transform:uppercase; margin:0 0 12px; text-wrap:balance; }
+  .dek { font-size:16.5px; color:var(--muted); max-width:62ch; margin:0; }
+  .dek a { color:var(--blood); }
+
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:1px;
+          background:var(--line); border-block:1px solid var(--line); margin-block:22px; }
+  .kpi { background:var(--surface); padding:13px 15px; }
+  .kpi b { font-family:var(--f-disp); font-size:29px; line-height:1; display:block; font-variant-numeric:tabular-nums; }
+  .kpi span { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase;
+              color:var(--muted); display:block; margin-top:5px; }
+
+  nav.tabs { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:18px;
+             position:sticky; top:env(safe-area-inset-top,0px); z-index:9;
+             background:var(--paper); padding-block:10px; }
+  nav.tabs button { font-family:var(--f-disp); font-size:19px; text-transform:uppercase; letter-spacing:.02em;
+                    background:transparent; border:1px solid transparent; border-radius:3px;
+                    padding:5px 12px; color:var(--muted); cursor:pointer; }
+  nav.tabs button[aria-selected="true"] { background:var(--ink); color:var(--paper); }
+  nav.tabs button:focus-visible { outline:2px solid var(--blood); outline-offset:2px; }
+
+  .ctrl { display:flex; gap:9px; flex-wrap:wrap; align-items:center; margin-bottom:14px; }
+  .ctrl label { font-family:var(--f-mono); font-size:10.5px; letter-spacing:.08em;
+                text-transform:uppercase; color:var(--muted); }
+  select, input[type="search"] {
+    font:inherit; font-size:14px; color:inherit; background:var(--surface);
+    border:1px solid var(--line-hi); border-radius:3px; padding:6px 9px; }
+  .chk { display:inline-flex; align-items:center; gap:7px; font-size:14px; cursor:pointer;
+         background:var(--surface); border:1px solid var(--line-hi); border-radius:3px; padding:6px 11px; }
+  .chk input { accent-color:var(--blood); margin:0; }
+
+  h2 { font-family:var(--f-disp); font-weight:700; letter-spacing:-.01em; font-size:29px; line-height:1;
+       text-transform:uppercase; margin:0 0 5px; }
+  .sub { color:var(--muted); font-size:14.5px; margin:0 0 16px; max-width:70ch; }
+  h3 { font-family:var(--f-disp); font-weight:700; font-size:21px; text-transform:uppercase; margin:0; }
+
+  /* matriz */
+  .mwrap { overflow:auto; border:1px solid var(--line); border-radius:3px; background:var(--surface); max-height:74vh; }
+  table.mx { border-collapse:separate; border-spacing:2px; font-family:var(--f-mono); font-size:11px; }
+  table.mx th { font-weight:500; color:var(--muted); font-size:10px; text-align:left; padding:3px 5px;
+                background:var(--surface); position:sticky; z-index:2; }
+  table.mx thead th { top:0; height:106px; vertical-align:bottom; white-space:nowrap; }
+  table.mx thead th div { writing-mode:vertical-rl; transform:rotate(180deg); }
+  table.mx tbody th { left:0; z-index:3; white-space:nowrap; font-family:var(--f-body); font-size:13px;
+                      color:var(--ink); padding-right:9px; border-right:1px solid var(--line); }
+  table.mx thead th:first-child { left:0; z-index:4; }
+  table.mx td { padding:0; }
+  .cell { width:34px; height:26px; border:0; border-radius:2px; cursor:pointer; padding:0;
+          font-family:var(--f-mono); font-size:10.5px; font-variant-numeric:tabular-nums; line-height:26px; }
+  .cell:focus-visible { outline:2px solid var(--ink); outline-offset:1px; }
+  .cell.nd { background:var(--sunk); color:var(--muted); cursor:default; }
+  .cell.box { box-shadow:inset 0 0 0 2px var(--ink); font-weight:600; }
+
+  .leg { display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin:12px 0 0;
+         font-family:var(--f-mono); font-size:10.5px; color:var(--muted); }
+  .leg i { display:block; width:22px; height:13px; border-radius:2px; }
+
+  /* listas */
+  .ordena { display:flex; gap:5px; align-items:center; flex-wrap:wrap; margin-bottom:9px; }
+  .ordena .lbl { font-family:var(--f-mono); font-size:10px; letter-spacing:.1em;
+                 text-transform:uppercase; color:var(--muted); margin-right:3px; }
+  .ordena button { font:inherit; font-size:13px; background:var(--surface); color:var(--muted);
+                   border:1px solid var(--line-hi); border-radius:3px; padding:4px 10px; cursor:pointer; }
+  .ordena button[aria-pressed="true"] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .ordena button:focus-visible { outline:2px solid var(--blood); outline-offset:1px; }
+  .ordena .dir { font-family:var(--f-mono); font-weight:600; min-width:34px; letter-spacing:0; }
+  .ordena .dir[aria-pressed="true"] { background:var(--blood); border-color:var(--blood); color:#fff; }
+  .barlist { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .bar { display:grid; grid-template-columns:1fr 56px 46px; gap:10px; align-items:center; background:var(--surface);
+         border:0; width:100%; text-align:left; padding:9px 13px; cursor:pointer; font:inherit; color:inherit; position:relative; }
+  .bar:hover { background:var(--sunk); }
+  .bar[aria-pressed="true"] { background:var(--blood-s); }
+  .bar:focus-visible { outline:2px solid var(--blood); outline-offset:-2px; }
+  .bar .fill { position:absolute; inset:0 auto 0 0; background:color-mix(in srgb,var(--blood) 11%,transparent); pointer-events:none; }
+  .bar > * { position:relative; }
+  .bar .nm { font-size:14.5px; line-height:1.25; }
+  .bar .nm i { font-style:normal; color:var(--muted); font-size:12.5px; display:block; }
+  .bar .pc { font-family:var(--f-mono); font-size:15px; text-align:right; font-variant-numeric:tabular-nums; }
+  .bar .pl { font-family:var(--f-mono); font-size:11px; color:var(--muted); text-align:right; }
+  .mine { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase;
+          background:var(--ink); color:var(--paper); padding:2px 5px; border-radius:2px; margin-left:6px; vertical-align:2px; }
+
+  .salidaLink { background:none; border:0; padding:0; font:inherit; color:var(--blood);
+                border-bottom:1px solid currentColor; cursor:pointer; }
+  dialog#dlg { border:1px solid var(--line-hi); border-top:4px solid var(--blood); border-radius:3px;
+               background:var(--surface); color:var(--ink); padding:0; max-width:620px; width:calc(100% - 32px);
+               box-shadow:0 10px 50px rgba(0,0,0,.3); }
+  dialog#dlg::backdrop { background:rgba(0,0,0,.55); }
+  .dlg-head { display:flex; justify-content:space-between; align-items:baseline; gap:14px;
+              padding:16px 18px 10px; border-bottom:1px solid var(--line); }
+  .dlg-head h3 { margin:0; }
+  .dlg-head button { font:inherit; font-size:13px; background:var(--sunk); border:1px solid var(--line-hi);
+                     border-radius:3px; padding:4px 11px; cursor:pointer; color:inherit; }
+  .dlg-body { padding:14px 18px 18px; max-height:68vh; overflow-y:auto; }
+  .sal { border-left:3px solid var(--line-hi); padding:3px 0 3px 13px; margin-bottom:16px; }
+  .sal.on { border-left-color:var(--blood); }
+  .sal h4 { font-family:var(--f-disp); font-size:19px; text-transform:uppercase; margin:0 0 2px; }
+  .sal .para { font-size:14px; color:var(--muted); margin:0 0 8px; }
+  .sal ol { margin:0; padding-left:17px; font-size:14.5px; }
+  .sal ol li { margin-bottom:4px; }
+  .sal .aqui { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+               background:var(--blood); color:#fff; padding:2px 6px; border-radius:2px; margin-left:7px; vertical-align:2px; }
+  .tips { display:grid; gap:10px; margin-top:16px; }
+  .tip { border-left:3px solid var(--line-hi); padding:2px 0 2px 13px; font-size:14.5px; line-height:1.45; }
+  .tip.calc { border-left-color:var(--blood); }
+  .tip.plan { border-left-color:var(--ink); }
+  .tip b { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--muted); display:block; margin-bottom:3px; }
+  .tip.calc b { color:var(--blood); }
+  .tip.plan b { color:var(--ink); }
+  .tip em { font-style:normal; font-family:var(--f-mono); font-variant-numeric:tabular-nums; }
+  .enc { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+         border-radius:4px; padding:16px 17px; margin-bottom:22px; box-shadow:var(--shadow); }
+  .enc h3 { margin:0 0 3px; }
+  .enc .pie { font-size:13px; color:var(--muted); margin:12px 0 0; }
+  .enc .opts { display:grid; gap:7px; margin-top:13px; }
+  .voto { position:relative; display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center;
+          background:var(--sunk); border:1px solid transparent; border-radius:3px; padding:9px 12px;
+          font:inherit; color:inherit; text-align:left; cursor:pointer; overflow:hidden; }
+  .voto:hover { border-color:var(--line-hi); }
+  .voto[disabled] { cursor:default; }
+  .voto .bg { position:absolute; inset:0 auto 0 0; background:color-mix(in srgb,var(--blood) 15%,transparent);
+              width:0; transition:width .45s ease; pointer-events:none; }
+  .voto > span:not(.bg) { position:relative; }
+  .voto .et { font-weight:500; }
+  .voto .np { font-family:var(--f-mono); font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .voto .pcv { font-family:var(--f-mono); font-size:14px; font-variant-numeric:tabular-nums; min-width:48px; text-align:right; }
+  .voto.mio { border-color:var(--blood); }
+  .voto.mio .et::after { content:" \2713"; color:var(--blood); font-weight:600; }
+  .temp { margin-bottom:26px; }
+  .temp-h { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+            border-bottom:2px solid var(--ink); padding-bottom:7px; margin-bottom:12px; }
+  .temp-h h3 { font-size:25px; }
+  .temp-h span { font-family:var(--f-mono); font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .temp-h .wr { font-family:var(--f-mono); font-size:17px; margin-left:auto; font-variant-numeric:tabular-nums; }
+  .cajas { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .caja { background:var(--surface); border:0; width:100%; text-align:left; padding:13px 15px;
+          cursor:pointer; font:inherit; color:inherit; display:grid; gap:7px; }
+  .caja:hover { background:var(--sunk); }
+  .caja[aria-expanded="true"] { background:var(--blood-s); }
+  .caja:focus-visible { outline:2px solid var(--blood); outline-offset:-2px; }
+  .caja-top { display:flex; align-items:baseline; gap:9px; flex-wrap:wrap; }
+  .caja-id { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; color:var(--blood); }
+  .caja-nm { font-family:var(--f-disp); font-size:21px; text-transform:uppercase; line-height:1; }
+  .caja-pc { margin-left:auto; font-family:var(--f-mono); font-size:16px; font-variant-numeric:tabular-nums; }
+  .caja-pl { font-family:var(--f-mono); font-size:11px; color:var(--muted); }
+  .caja-sub { font-size:13.5px; color:var(--muted); }
+  .caja-mec { font-size:14px; line-height:1.45; }
+  .caja-meta { display:flex; gap:7px; flex-wrap:wrap; }
+  .tag { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
+         background:var(--sunk); color:var(--muted); padding:3px 7px; border-radius:2px; }
+  .rev { border:1px solid var(--line); border-top:3px solid var(--ink); border-radius:3px;
+         padding:15px 16px; margin-top:18px; background:var(--sunk); }
+  .rev .ver { font-size:15px; line-height:1.5; margin:0 0 14px; }
+  .rev-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+  .rev h5 { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+            margin:0 0 6px; color:var(--muted); }
+  .rev ul { margin:0; padding-left:16px; font-size:14px; line-height:1.45; }
+  .rev ul li { margin-bottom:6px; }
+  .rev .pro h5 { color:#6da7ec; } .rev .con h5 { color:#e66767; }
+  .rev .pro h5 { color:#6da7ec; }
+  .rev .con h5 { color:#e66767; }
+  .rev .conf { margin-top:15px; border-top:1px solid var(--line-hi); padding-top:12px; }
+  .rev .conf div { font-size:14px; margin-bottom:9px; line-height:1.45; }
+  .rev .conf i { font-style:italic; color:var(--muted); display:block; }
+  .rev .src { margin-top:13px; border-top:1px solid var(--line-hi); padding-top:10px; font-size:12.5px; color:var(--muted); }
+  .rev .src a { color:var(--blood); }
+  /* ---------- fichas de pelicula ---------- */
+  .fichas { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; }
+  .ficha { position:relative; border:0; padding:0; cursor:pointer; font:inherit; color:#fff;
+           border-radius:4px; overflow:hidden; aspect-ratio:5/7; background:#0c0a0b;
+           display:block; text-align:left; box-shadow:0 2px 6px rgba(0,0,0,.25); }
+  .ficha img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+               filter:saturate(.92) contrast(1.05); transition:transform .5s ease; }
+  .ficha:hover img { transform:scale(1.045); }
+  .ficha::after { content:""; position:absolute; inset:0; pointer-events:none;
+                  background:linear-gradient(to top, rgba(8,6,7,.96) 0%, rgba(8,6,7,.78) 26%, rgba(8,6,7,.12) 58%, rgba(8,6,7,.30) 100%); }
+  .ficha:focus-visible { outline:3px solid var(--blood); outline-offset:2px; }
+  .ficha[aria-expanded="true"] { box-shadow:0 0 0 3px var(--blood); }
+  .f-body { position:absolute; inset:auto 0 0 0; z-index:2; padding:13px 13px 12px; display:grid; gap:5px; }
+  .f-id { font-family:var(--f-mono); font-size:9px; letter-spacing:.14em; color:#ff8a8a; }
+  .f-nm { font-family:var(--f-disp); font-weight:800; font-size:20px; line-height:.97;
+          letter-spacing:-.015em; text-transform:uppercase; text-wrap:balance; }
+  .f-k { font-size:12px; line-height:1.3; color:rgba(255,255,255,.72); }
+  .f-bar { display:flex; align-items:baseline; gap:7px; margin-top:3px; }
+  .f-wr { font-family:var(--f-mono); font-weight:600; font-size:17px; font-variant-numeric:tabular-nums; }
+  .f-pl { font-family:var(--f-mono); font-size:10px; color:rgba(255,255,255,.55); }
+  .f-mia { position:absolute; top:10px; right:10px; z-index:2; font-family:var(--f-mono); font-size:9px;
+           letter-spacing:.1em; text-transform:uppercase; background:#fff; color:#111;
+           padding:3px 6px; border-radius:2px; font-weight:600; }
+  .f-dot { width:7px; height:7px; border-radius:50%; display:inline-block; flex:none; }
+  .fichadet { grid-column:1/-1; }
+  @media (max-width:430px){ .fichas { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
+    .f-nm { font-size:16px; } }
+  .rowdetail { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood); border-radius:4px; padding:16px 16px 18px; }
+  .rowdetail h3 { margin-bottom:2px; }
+  .bar .caret { position:absolute; right:13px; top:50%; transform:translateY(-50%); color:var(--muted);
+                font-family:var(--f-mono); font-size:11px; opacity:0; }
+  .bar[aria-expanded="true"] { background:var(--blood-s); }
+  .bar .th { width:34px; height:48px; object-fit:cover; border-radius:2px; background:var(--sunk); flex:none; }
+  /* Arte del killer dentro del panel abierto: arriba a la derecha, a la altura
+     del nombre, desvanecido hacia el centro para que no tape las tablas. */
+  .rowdetail { position:relative; overflow:hidden; }
+  .rowdetail .art { position:absolute; right:0; top:0; height:190px; width:46%; max-width:320px;
+                    object-fit:cover; object-position:50% 20%; opacity:.4; pointer-events:none;
+                    -webkit-mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.55) 42%,transparent 100%);
+                    mask-image:linear-gradient(to left,#000 0,rgba(0,0,0,.55) 42%,transparent 100%); }
+  .rowdetail > * { position:relative; }
+  /* La caja del porcentaje tapaba el arte justo por donde pasa. Translucida
+     deja ver el dibujo detras sin perder contraste en el numero. */
+  .rowdetail .split div { background:color-mix(in srgb,var(--sunk) 55%,transparent);
+                          backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
+  /* Tops: rejilla de listas cortas. Cada tarjeta se lee sola. */
+  .tops { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:14px; }
+  .top { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+         border-radius:3px; padding:14px 15px 12px; }
+  .top h3 { margin:0 0 2px; font-size:17px; }
+  .top .sub { margin:0 0 10px; font-size:12.5px; }
+  .top ol { list-style:none; margin:0; padding:0; counter-reset:t; }
+  .top li { display:grid; grid-template-columns:19px 1fr auto; gap:8px; align-items:baseline;
+            padding:6px 0; border-top:1px solid var(--line); }
+  .top li:first-child { border-top:0; }
+  .top li::before { counter-increment:t; content:counter(t); font-family:var(--f-mono);
+                    font-size:11px; color:var(--muted); }
+  .top .n { font-size:14px; line-height:1.3; }
+  .top .n i { display:block; font-style:normal; font-size:11.5px; color:var(--muted); }
+  .top .v { font-family:var(--f-mono); font-size:14px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .top .v em { font-style:normal; color:var(--muted); font-size:11px; margin-left:6px; }
+  .top a { color:inherit; }
+  .quien { margin:16px 0 4px; max-width:62ch; }
+  .quien h4 { font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+              color:var(--blood); margin:14px 0 5px; }
+  .quien p { margin:0; font-size:14.5px; line-height:1.55; }
+  .quien .fuente { margin-top:11px; font-size:12px; color:var(--muted); }
+  @media (max-width:560px){ .rowdetail .art { width:62%; height:150px; opacity:.24; } }
+  .bar.conth { grid-template-columns:34px 1fr 56px 46px; }
+  .det-head { display:grid; grid-template-columns:78px 1fr; gap:14px; align-items:start; margin-bottom:14px; }
+  .det-head img { width:78px; border-radius:3px; display:block; box-shadow:0 1px 4px rgba(0,0,0,.25); }
+  .det-head h3 { margin:0 0 2px; }
+  .det-head .loc { margin:0; }
+  @media (max-width:430px){ .bar.conth { grid-template-columns:30px 1fr 52px; } .bar .th { width:30px; height:42px; } }
+  .panel { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+           border-radius:3px; padding:18px; margin-top:15px; box-shadow:var(--shadow); }
+  .panel .loc { font-size:14px; color:var(--muted); margin:2px 0 15px; }
+  .split { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:11px; margin-bottom:6px; }
+  .split div { background:var(--sunk); border-radius:3px; padding:10px 12px; }
+  .split b { font-family:var(--f-mono); font-size:18px; display:block; font-variant-numeric:tabular-nums; }
+  .split span { font-size:12.5px; color:var(--muted); display:block; margin-top:2px; line-height:1.3; }
+  .sec-t { font-family:var(--f-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--blood); margin:18px 0 7px; }
+
+  .tw { overflow-x:auto; }
+  table.mini { width:100%; border-collapse:collapse; font-size:14.5px; }
+  table.mini th { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase;
+                  color:var(--muted); text-align:left; padding:5px 0; border-bottom:2px solid var(--line-hi); }
+  table.mini td { padding:6px 0; border-bottom:1px solid var(--line); }
+  table.mini td.n, table.mini th.n { text-align:right; font-family:var(--f-mono);
+                                     font-variant-numeric:tabular-nums; white-space:nowrap; padding-left:12px; }
+  table.mini td.s { font-size:12px; color:var(--muted); }
+  table.mini tr:last-child td { border-bottom:0; }
+  .peor td.n:first-of-type { color:#e66767; font-weight:600; }
+  .mejor td.n:first-of-type { color:#6da7ec; font-weight:600; }
+  .peor td.n:first-of-type { color:#e66767; }
+  .mejor td.n:first-of-type { color:#6da7ec; }
+
+  table.mini tr.poca td { color:var(--muted); }
+  table.mini tr.poca td.n:first-of-type { color:var(--muted) !important; font-weight:400 !important; }
+  .cruce { max-height:none; }
+  .nota { font-size:13.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:11px; margin-top:15px; }
+  .nota b { font-family:var(--f-mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+            color:var(--blood); margin-right:6px; }
+
+  footer { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted); }
+  footer a { color:var(--blood); }
+  details.mis { background:var(--surface); border:1px solid var(--line); border-radius:3px;
+               margin-bottom:18px; box-shadow:var(--shadow); }
+  details.mis summary { font-family:var(--f-mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+                        color:var(--blood); cursor:pointer; list-style:none; padding:11px 14px; }
+  details.mis summary::-webkit-details-marker { display:none; }
+  details.mis summary::before { content:"+ "; }
+  details.mis[open] summary::before { content:"\2013 "; }
+  .misgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:2px 14px;
+             padding:0 14px 13px; }
+  .misgrid label { display:flex; align-items:center; gap:8px; font-size:14px; cursor:pointer; padding:3px 0; }
+  .misgrid input { accent-color:var(--blood); margin:0; flex:none; }
+  .misfoot { padding:0 14px 13px; font-size:13px; color:var(--muted); display:flex; gap:9px; align-items:center; flex-wrap:wrap; }
+  .misfoot button { font:inherit; font-size:13px; background:var(--sunk); border:1px solid var(--line-hi);
+                    border-radius:3px; padding:4px 10px; cursor:pointer; color:inherit; }
+
+  /* ---------- textura y cabecera ---------- */
+  /* La cinta tambien de fondo de toda la pagina, muy apagada: se intuye
+     entre bloques y da continuidad con la cabecera. Va en ::after y FIJA,
+     detras de todo (z-index negativo), para que no se mueva al bajar ni
+     tape nada. Los paneles son opacos, asi que ningun texto cae encima. */
+  body::after {
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:url("img/vhs-final-girl.jpg") center/cover no-repeat fixed;
+    opacity:.13; filter:grayscale(.35) contrast(.85);
+  }
+  body { position:relative; }
+
+  body::before {
+    content:""; position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.5;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.16) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at 50% 0%, transparent 52%, rgba(0,0,0,.42) 100%);
+    mix-blend-mode:multiply;
+  }
+
+  /* De animacion a scroll real: ahora que cada poster abre su ficha, una
+     cinta que se mueve sola y no se puede parar es un incordio. Se mueve
+     con rueda, arrastre, flechas del teclado y los botones de los lados.
+     Sigue avanzando sola, pero se para en cuanto tocas algo. */
+  .marquee { position:relative; margin:0 -20px; padding:0;
+             border-bottom:1px solid var(--line); background:#0b0a0b; }
+  .marquee .tira { display:flex; gap:7px; padding:14px 20px;
+                   overflow-x:auto; overflow-y:hidden; scroll-behavior:smooth;
+                   scrollbar-width:none; -ms-overflow-style:none;
+                   overscroll-behavior-x:contain; cursor:grab; }
+  .marquee .tira::-webkit-scrollbar { display:none; }
+  .marquee .tira.arrastrando { cursor:grabbing; scroll-behavior:auto; }
+
+  .marquee .flecha {
+    position:absolute; top:0; bottom:0; width:42px; z-index:3;
+    display:flex; align-items:center; justify-content:center;
+    border:0; background:none; color:var(--ink); cursor:pointer;
+    font-family:var(--f-mono); font-size:22px; line-height:1;
+    opacity:.55; transition:opacity .15s, background .15s;
+  }
+  .marquee .flecha:hover { opacity:1; background:rgba(11,10,11,.55); }
+  .marquee .flecha:focus-visible { outline:2px solid var(--blood); outline-offset:-4px; opacity:1; }
+  .marquee .flecha[hidden] { display:none; }
+  .marquee .flecha.izq { left:0; }
+  .marquee .flecha.der { right:0; }
+  .marquee img { width:62px; height:87px; object-fit:cover; border-radius:2px; flex:none;
+                 filter:grayscale(.55) brightness(.62) contrast(1.08); }
+  .marquee::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
+                    background:linear-gradient(90deg,#0b0a0b 0%,transparent 12%,transparent 88%,#0b0a0b 100%); }
+  @keyframes desliza { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee .tira { animation:none; } }
+
+  header.top { padding-block:30px 22px; border-bottom:3px solid var(--blood); position:relative; }
+  h1 { font-size:clamp(46px,13vw,104px); line-height:.82; font-weight:800; letter-spacing:-.035em; }
+  h1 .roja { color:var(--blood); display:block;
+             text-shadow:1.5px 0 0 rgba(0,180,200,.30), -1.5px 0 0 rgba(255,60,80,.22); }
+  .eyebrow { font-size:10.5px; letter-spacing:.24em; }
+
+  .kpis { border:1px solid var(--line); border-radius:3px; }
+  .kpi b { font-size:34px; letter-spacing:-.03em; }
+  .kpi:first-child b { color:var(--blood); }
+
+  h2 { letter-spacing:-.025em; font-weight:800; }
+  h3 { letter-spacing:-.02em; font-weight:700; }
+
+  /* ---------- rótulo de temporada ---------- */
+  .temp-h { border-bottom:1px solid var(--line-hi); align-items:center; padding-bottom:9px; }
+  .temp-h h3 { font-size:15px; letter-spacing:.28em; text-transform:uppercase; font-weight:600;
+               color:var(--muted); }
+  .temp-h .wr { font-size:23px; font-weight:600; color:var(--ink); letter-spacing:-.02em; }
+  .temp-h span:not(.wr) { letter-spacing:.09em; }
+
+  /* ---------- pósters ---------- */
+  .ficha { border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,.5);
+           transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s; }
+  .ficha:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,.6), 0 0 0 1px var(--glow); }
+  .ficha img { filter:saturate(1) contrast(1.04); }
+  .ficha::after { background:linear-gradient(to top, rgba(6,4,5,.97) 0%, rgba(6,4,5,.80) 30%, rgba(6,4,5,.06) 62%, rgba(6,4,5,.34) 100%); }
+  .ficha[aria-expanded="true"] { box-shadow:0 0 0 2px var(--blood), 0 10px 30px rgba(0,0,0,.6); transform:translateY(-5px); }
+  .f-nm { font-weight:800; letter-spacing:-.025em; font-size:21px; }
+  .f-id { color:var(--blood); letter-spacing:.18em; }
+  .f-mia { background:var(--blood); color:#fff; }
+
+  .fichas { gap:16px; }
+  nav.tabs button { letter-spacing:.05em; font-weight:600; font-size:17px; }
+  nav.tabs button[aria-selected="true"] { background:var(--blood); color:#fff; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+  @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">La pagina di cui ogni fan di Final Girl aveva bisogno</p>
+    <h1>Laboratorio<span class="roja">Final Girl</span></h1>
+    <p class="dek"><b><span data-dato="partidas">13.920</span> partite reali</b>, registrate una a una da <span data-dato="jugadores">669</span> giocatori nel <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">foglio di tracciamento della community</a>, aperto da gennaio 2022. La matrice incrocia ogni killer con ogni location: <span data-dato="combis">572</span> combinazioni, <span data-dato="combisOk">354</span> con partite sufficienti. Complemento delle <a href="https://claude.ai/artifact/9citaKuByjhsDA5S1qit6y">strategie di uscita</a>.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
+
+<div class="kpis">
+  <div class="kpi"><b id="k1"></b><span>Partite</span></div>
+  <div class="kpi"><b id="k2"></b><span>Vittorie</span></div>
+  <div class="kpi"><b id="k3">26</b><span>Killers</span></div>
+  <div class="kpi"><b id="k4">22</b><span>Location</span></div>
+  <div class="kpi"><b id="k5">61</b><span>Final Girls</span></div>
+</div>
+
+<details class="mis" id="mis">
+  <summary id="mis-sum">Le mie scatole</summary>
+  <div class="misgrid" id="mis-grid"></div>
+  <div class="misfoot">
+    <button type="button" id="mis-none">Nessuna</button>
+    <button type="button" id="mis-all">Tutte</button>
+    <span id="mis-info"></span>
+  </div>
+</details>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" data-t="matriz" aria-selected="true">Matrice</button>
+  <button role="tab" data-t="tops" aria-selected="false">Tops</button>
+  <button role="tab" data-t="cajas" aria-selected="false">Scatole</button>
+  <button role="tab" data-t="temporadas" aria-selected="false">Stagioni</button>
+  <button role="tab" data-t="killers" aria-selected="false">Killers</button>
+  <button role="tab" data-t="mapas" aria-selected="false">Mappe</button>
+  <button role="tab" data-t="girls" aria-selected="false">Final Girls</button>
+  <button role="tab" data-t="jug" aria-selected="false">Giocatori</button>
+</nav>
+
+<section id="v-matriz">
+  <h2>Ogni killer su ogni mappa</h2>
+  <p class="sub">Righe, location. Colonne, killer. Il numero è la percentuale di vittorie. Riquadro nero = la coppia così com’è nella sua scatola. Tocca una cella qualsiasi. <a href="registrar.html" class="reg-link">Hai giocato? Registra la tua partita in 30 secondi →</a></p>
+  <style>.reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}</style>
+  <div class="ctrl">
+    <label class="chk"><input type="checkbox" id="f-mias"> Solo le mie scatole</label>
+    <label for="f-orden">Ordina mappe</label>
+    <select id="f-orden">
+      <option value="dif">Dalla più dura alla più facile</option>
+      <option value="abc">Alfabetico</option>
+    </select>
+    <input type="search" id="f-busca" placeholder="Filtra killer…" style="flex:1;min-width:140px">
+    <label for="f-jug">Matrice di</label>
+    <select id="f-jug"><option value="">Tutta la community</option></select>
+  </div>
+  <p class="riesgo" id="f-jug-aviso" hidden style="margin:0 0 10px"></p>
+  <div class="mwrap"><table class="mx" id="mx"></table></div>
+  <div class="leg" id="leg"></div>
+  <div class="panel" id="p-mx"></div>
+</section>
+
+<section id="v-cajas" hidden>
+  <h2>Scatole così come sono</h2>
+  <p class="sub">Il suo killer con la sua location, come escono dalla scatola. Tocca una scatola per il dettaglio completo.</p>
+  <div class="barlist" id="l-cajas"></div>
+</section>
+
+<section id="v-killers" hidden>
+  <h2>Killers</h2>
+  <p class="sub">Contro tutte le location, non solo la sua. All’interno, i suoi Dark Power e Finale ordinati per quanto ti costano.</p>
+  <div class="barlist" id="l-killers"></div>
+</section>
+
+<section id="v-mapas" hidden>
+  <h2>Location</h2>
+  <p class="sub">Contro tutti i killer. All’interno, le sue carte Setup e i killer contro cui va meglio e peggio.</p>
+  <div class="barlist" id="l-mapas"></div>
+</section>
+
+<section id="v-temporadas" hidden>
+  <h2>Scatole e stagioni</h2>
+  <p class="sub">Le 22 Feature Film in ordine di uscita. Tocca una scheda per il dettaglio: meccaniche, Dark Power, Finale, Setup e recensioni. La percentuale di ogni stagione è quella delle sue scatole così come sono, non quella degli incroci.</p>
+  <div class="enc" id="enc" hidden>
+    <h3 id="enc-t">Qual è la tua stagione preferita?</h3>
+    <p class="sub" style="margin:0" id="enc-s">I dati dicono quale ti fa vincere di più. Questa è un’altra cosa.</p>
+    <div class="opts" id="enc-o"></div>
+    <p class="pie" id="enc-p"></p>
+  </div>
+  <div id="l-temps"></div>
+</section>
+
+
+<section id="v-jug" hidden>
+  <h2>Chi c’è dietro i dati</h2>
+  <p class="sub">Le <span data-dato="partidas">13.920</span> partite non escono dal nulla: le registrano delle persone, una a una. Ci sono <b id="ju-n"></b>, da chi ne ha registrata una a chi ne ha quasi mille. Cercati, e se non ci sei, sai cosa manca.</p>
+
+  <div class="ctrl">
+    <input type="search" id="ju-busca" placeholder="Cerca giocatore…" autocomplete="off">
+    <select id="ju-orden">
+      <option value="n">Più partite</option>
+      <option value="wr">Percentuale migliore (10+ partite)</option>
+      <option value="peor">Percentuale peggiore (10+ partite)</option>
+      <option value="az">Alfabetico</option>
+    </select>
+  </div>
+  <p id="ju-aviso" style="font-size:12.5px;color:var(--muted);margin:0 0 8px"></p>
+  <div class="barlist" id="ju-lista"></div>
+  <div id="ju-det"></div>
+
+  <p class="riesgo" style="margin-top:16px"><b>Perché conta</b> Sono <span data-dato="jugadores">669</span> persone, ma venticinque di loro producono il <span data-dato="top25">50</span>% dei dati, e la più prolifica da sola il <span data-dato="top1">7,3</span>%. Un <span data-dato="unicas">33</span>% ha registrato una sola partita. Chi registra molto vince più della media, ma di poco: <span data-dato="wrTop10">70,1%</span> i primi dieci contro <span data-dato="wrResto">65,0%</span> tutti gli altri. Per questo i confronti tra scatole reggono, mentre i valori assoluti vanno presi con le pinze.</p>
+</section>
+
+<section id="v-girls" hidden>
+  <h2>Final Girls</h2>
+  <p class="sub">Minimo 20 partite. Con la scatola da cui proviene ciascuna.</p>
+  <div class="ctrl">
+    <label for="g-orden">Ordina</label>
+    <select id="g-orden">
+      <option value="wr">Prima più vittorie</option>
+      <option value="wrA">Prima meno vittorie</option>
+      <option value="g">Più giocata</option>
+      <option value="abc">Alfabetico</option>
+      <option value="caja">Per scatola</option>
+    </select>
+  </div>
+  <div class="tw"><table class="mini" id="t-girls"></table></div>
+  <p class="nota"><b>Attenzione</b> Tra la migliore e la peggiore ci sono circa 20 punti, molto meno che tra le scatole. E quelle in cima con poche partite sono promo che si giocano poco e da gente esperta. Scegliere bene la scatola pesa più che scegliere bene la ragazza.</p>
+</section>
+
+<section id="v-tops" hidden>
+  <h2>Gli estremi</h2>
+  <p class="sub">Il meglio e il peggio di ogni cosa, sulle <span data-dato="partidas">13.920</span> partite. Ogni lista richiede un minimo di partite per entrare: senza quel minimo, in cima ci sarebbero sempre rarità giocate tre volte.</p>
+  <div class="tops" id="tops"></div>
+  <p class="nota"><b>Come leggerlo</b> La percentuale è quella con cui vince la Final Girl, non il killer. Un numero basso indica un killer duro.</p>
+</section>
+
+<dialog id="dlg">
+  <div class="dlg-head"><h3 id="dlg-t">Le aperture</h3><button type="button" id="dlg-x">Chiudi</button></div>
+  <div class="dlg-body" id="dlg-b"></div>
+</dialog>
+
+<footer>
+  <p>Fonte: foglio pubblico di tracciamento della community di Final Girl, ultima partita registrata il <b id="f-last"></b>. L’abbinamento di ogni Final Girl con la sua scatola proviene dal comparatore di scatole di ReDesign, non dal foglio.</p>
+  <p>Le celle vuote della matrice sono combinazioni con troppo poche partite per significare qualcosa. La scala di colore va dal rosso, sotto la media globale, al blu, sopra, con il grigio esattamente sulla media.</p>
+</footer>
+
+</div>
+
+<script>
+var UM = /*@@UM@@*/;
+var UJ = /*@@UJ@@*/;
+var D = /*@@D@@*/;
+
+(function () {
+  var RAMPA = ['#8f2026','#c23a42','#e0656c','#ee9a9f','#f6c9cc','#3a3438','#bcd8f6','#8fbaef','#5f9ce6','#3a7ed0','#2159a0'];
+  var CORTES = [-0.20,-0.14,-0.09,-0.045,-0.015,0.015,0.045,0.09,0.14,0.20];
+  var MEDIA = D.meta.wr;
+  // Cifra de partidas para los textos que se pintan desde JavaScript.
+  var PARTIDAS = D.meta.total.toLocaleString('it');
+  // Nadie empieza con cajas marcadas. Venia con cinco puestas, las de
+  // quien monto la pagina, y a cualquier visitante le aparecian como
+  // "Tuya": una coleccion ajena presentada como propia.
+  var CLAVE = 'fg-mis-cajas';
+  var MIAS = (function () {
+    try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
+    return [];
+  })();
+  function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
+
+  var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
+  // Los nicks los escribe quien quiera en un formulario abierto y acaban
+  // dentro de innerHTML: escaparlos no es cosmetica.
+  var esc = function (x) {
+    return String(x).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  var pc0 = function (x) { return Math.round(x * 100); };
+
+  function paso(wr) {
+    var d = wr - MEDIA, i = 0;
+    while (i < CORTES.length && d >= CORTES[i]) i++;
+    return i;
+  }
+  function colorDe(wr) {
+    var i = paso(wr);
+    return i === 5 ? 'var(--mid)' : RAMPA[i];
+  }
+  function tintaDe(wr) {
+    var i = paso(wr);
+    return (i <= 1 || i >= 9) ? '#ffffff' : (i === 5 ? '#cfc7ca' : '#12100f');
+  }
+
+  // cajas que corresponden a cada pareja killer+localizacion
+  var ESCAJA = {};
+  D.films.forEach(function (f) { ESCAJA[f.killer + '|' + f.loc] = f.film; });
+  var misKillers = {}, misLocs = {};
+  function recalcMias() {
+    misKillers = {}; misLocs = {};
+    D.films.forEach(function (f) {
+      if (MIAS.indexOf(f.film) !== -1) { misKillers[f.killer] = 1; misLocs[f.loc] = 1; }
+    });
+  }
+  recalcMias();
+
+  // ---------- tablas reutilizables ----------
+  function tablaOrdenada(filas, cabeceras) {
+    var s = filas.slice().sort(function (a, b) { return a[1] - b[1]; });
+    var h = '<div class="tw"><table class="mini"><thead><tr><th>' + cabeceras[0] +
+            '</th><th class="n">' + cabeceras[1] + '</th><th class="n">Partite</th></tr></thead><tbody>';
+    h += s.map(function (r, i) {
+      var cls = i === 0 ? 'peor' : (i === s.length - 1 ? 'mejor' : '');
+      return '<tr class="' + cls + '"><td>' + r[0] + '</td><td class="n">' + pc(r[1]) +
+             '</td><td class="n">' + r[2] + '</td></tr>';
+    }).join('');
+    return h + '</tbody></table></div>';
+  }
+
+  function secciones(secs) {
+    var h = '';
+    Object.keys(secs).forEach(function (k) {
+      if (!secs[k].length) return;
+      var t = k === 'Dark Power' ? 'Dark Power, da quello che ti affossa di più a quello che ti affossa di meno'
+            : k === 'Finale' ? 'Finale, da quello che ti affossa di più a quello che ti affossa di meno'
+            : k === 'Number of Organisms' ? 'Numero di Organismi'
+            : k;
+      h += '<p class="sec-t">' + t + '</p>' + tablaOrdenada(secs[k], ['Carta', 'Vittorie']);
+    });
+    return h;
+  }
+
+  // fila del killer a lo ancho de todos los mapas, y viceversa
+  var MIN_CELDA = 5;   // igual que el umbral de la hoja original
+  // Con un jugador concreto el umbral baja a 1: casi nadie repite una misma
+  // combinacion 5 veces, y con el minimo general su matriz saldria vacia.
+  function minCelda() { return JUGCELDAS ? 1 : MIN_CELDA; }
+  var FIABLE = 20;     // por debajo de esto no sacamos conclusiones
+
+  // Jugador seleccionado en la matriz: null = toda la comunidad.
+  var JUG = null;
+  var JUGCELDAS = null;   // { "killer|loc": [partidas, victorias] }
+
+  function cargarJugador(nombre) {
+    JUG = nombre || null;
+    JUGCELDAS = null;
+    if (!JUG || !UM.u[JUG]) return;
+    JUGCELDAS = {};
+    UM.u[JUG].forEach(function (f) {
+      JUGCELDAS[UM.k[f[0]] + '|' + UM.l[f[1]]] = [f[2], f[3]];
+    });
+  }
+
+  function celda(k, loc) {
+    if (JUGCELDAS) {
+      // Con un jugador elegido se enseñan SUS partidas, no las de todos.
+      // Aqui el minimo general no vale: casi nadie repite una combinacion
+      // 20 veces, y filtrar por eso dejaria la matriz vacia.
+      var m = JUGCELDAS[k + '|' + loc];
+      return m ? { wr: m[1] / m[0], g: m[0], propio: true } : null;
+    }
+    var c = (D.cells[loc] || {})[k];
+    return c ? { wr: c[1], g: c[0] } : null;
+  }
+  function filaKiller(k) {
+    var out = [];
+    Object.keys(D.cells).forEach(function (loc) {
+      var c = celda(k, loc);
+      if (c && c.g >= minCelda()) out.push([loc, c.wr, c.g]);
+    });
+    return out;
+  }
+  function columnaLoc(loc) {
+    var out = [];
+    Object.keys(D.cells[loc] || {}).forEach(function (k) {
+      var c = celda(k, loc);
+      if (c && c.g >= minCelda()) out.push([k, c.wr, c.g]);
+    });
+    return out;
+  }
+  function extremos(arr, titulo) {
+    if (arr.length < 3) return '';
+    var s = arr.slice().sort(function (a, b) { return b[1] - a[1]; });
+    var fiables = s.filter(function (r) { return r[2] >= FIABLE; });
+    var ref = fiables.length ? fiables : s;
+    var mejor = ref[0], peor = ref[ref.length - 1];
+    return '<p class="sec-t">' + titulo + ' · tutte e ' + s.length + '</p>' +
+      '<div class="tw"><table class="mini"><thead><tr><th>Contro</th><th class="n">Vittorie</th>' +
+      '<th class="n">Partite</th></tr></thead><tbody>' +
+      s.map(function (r) {
+        var poca = r[2] < FIABLE;
+        var cls = poca ? 'poca' : (r === mejor ? 'mejor' : (r === peor ? 'peor' : ''));
+        return '<tr class="' + cls + '"><td>' + r[0] + '</td><td class="n">' + pc(r[1]) +
+               '</td><td class="n">' + r[2] + '</td></tr>';
+      }).join('') + '</tbody></table></div>' +
+      '<p class="nota" style="margin-top:9px"><b>Come leggerla</b>In grigio, le combinazioni con meno di ' + FIABLE +
+      ' partite: vengono mostrate ma non contano per segnare la migliore e la peggiore. Restano fuori quelle che non arrivano a ' +
+      MIN_CELDA + ' partite.</p>';
+  }
+
+  // ---------- matriz ----------
+  function pintarMatriz() {
+    var soloMias = document.getElementById('f-mias').checked;
+    var orden = document.getElementById('f-orden').value;
+    var busca = document.getElementById('f-busca').value.trim().toLowerCase();
+
+    var ks = D.matrixKillers.filter(function (k) {
+      if (soloMias && !misKillers[k]) return false;
+      if (busca && k.toLowerCase().indexOf(busca) === -1) return false;
+      return true;
+    });
+    var locs = Object.keys(D.matrix).filter(function (l) { return !soloMias || misLocs[l]; });
+    var med = {};
+    D.locs.forEach(function (r) { med[r[0]] = r[1]; });
+    if (orden === 'dif') locs.sort(function (a, b) { return (med[a] || 1) - (med[b] || 1); });
+    else locs.sort(function (a, b) { return a.localeCompare(b, 'it'); });
+
+    var h = '<thead><tr><th></th>' + ks.map(function (k) { return '<th><div>' + k + '</div></th>'; }).join('') + '</tr></thead><tbody>';
+    locs.forEach(function (loc) {
+      h += '<tr><th>' + loc + '</th>';
+      ks.forEach(function (k) {
+        var c = celda(k, loc);
+        if (!c || c.g < minCelda()) { h += '<td><div class="cell nd">·</div></td>'; return; }
+        var v = c.wr, caja = ESCAJA[k + '|' + loc];
+        h += '<td><button type="button" class="cell' + (caja ? ' box' : '') + '"' +
+             ' style="background:' + colorDe(v) + ';color:' + tintaDe(v) + '"' +
+             ' data-k="' + k + '" data-l="' + loc + '" title="' + k + ' in ' + loc + ': ' + pc(v) + ' · ' + c.g + ' partite">' +
+             pc0(v) + '</button></td>';
+      });
+      h += '</tr>';
+    });
+    document.getElementById('mx').innerHTML = h + '</tbody>';
+
+    document.querySelectorAll('#mx .cell:not(.nd)').forEach(function (b) {
+      b.addEventListener('click', function () {
+        detalleCelda(b.dataset.k, b.dataset.l);
+        var p = document.getElementById('p-mx');
+        if (p.getBoundingClientRect().top > window.innerHeight - 80) {
+          p.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  function detalleCelda(k, loc) {
+    var cc = celda(k, loc);
+    var v = cc.wr, caja = ESCAJA[k + '|' + loc];
+    var kd = D.killers[k], ld = D.locs.filter(function (r) { return r[0] === loc; })[0];
+    var fk = filaKiller(k), cl = columnaLoc(loc);
+    var mediaK = fk.reduce(function (s, r) { return s + r[1]; }, 0) / (fk.length || 1);
+    var mediaL = cl.reduce(function (s, r) { return s + r[1]; }, 0) / (cl.length || 1);
+
+    var h = '<h3>' + k + ' in ' + loc + '</h3>' +
+      '<p class="loc">' + (caja ? 'È la coppia di <b>' + caja + '</b>, così com’è nella scatola.'
+                                : 'Combinazione incrociata. Non sono nella stessa scatola.') + '</p>' +
+      '<div class="split">' +
+        '<div><b>' + pc(v) + '</b><span>Questa combinazione<br>' + cc.g + ' partite</span></div>' +
+        '<div><b>' + pc(mediaK) + '</b><span>' + k + '<br>su una mappa media</span></div>' +
+        '<div><b>' + pc(mediaL) + '</b><span>' + loc + '<br>con un killer medio</span></div>' +
+        '<div><b>' + pc(D.meta.wr) + '</b><span>Media di tutto<br>il gioco</span></div>' +
+      '</div>' +
+      (cc.g < FIABLE ? '<p class="nota"><b>Campione ridotto</b>Solo ' + cc.g + ' partite. Prendilo come un aneddoto.</p>' : '') +
+      '<p class="nota"><b>Lettura</b> ' +
+        (v > mediaK && v > mediaL ? 'Va bene a entrambi. Buona combinazione se vuoi vincere.'
+         : v < mediaK && v < mediaL ? 'Punisce da entrambi i lati. Una di quelle davvero dure.'
+         : v > mediaK ? 'Questa mappa si adatta a questo killer meglio del normale.'
+         : 'Questa mappa si adatta a questo killer peggio del normale.') + '</p>';
+
+    if (kd) h += secciones(kd.secs);
+    if (D.setups[loc]) h += '<p class="sec-t">Carte Setup di ' + loc + '</p>' + tablaOrdenada(D.setups[loc], ['Setup', 'Vittorie']);
+    document.getElementById('p-mx').innerHTML = h;
+  }
+
+  function leyenda() {
+    var pasos = [0, 2, 4, 5, 6, 8, 10];
+    document.getElementById('leg').innerHTML =
+      '<span>Più duro</span>' +
+      pasos.map(function (i) { return '<i style="background:' + (i === 5 ? 'var(--mid)' : RAMPA[i]) + '"></i>'; }).join('') +
+      '<span>Più facile</span><span style="margin-left:10px">· grigio = media del gioco (' + pc(MEDIA) + ')</span>';
+  }
+
+  // ---------- listas genéricas ----------
+  var ORDEN_ST = {};
+  try { ORDEN_ST = JSON.parse(localStorage.getItem('fg-orden')) || {}; } catch (e) { ORDEN_ST = {}; }
+  function guardarOrden() { try { localStorage.setItem('fg-orden', JSON.stringify(ORDEN_ST)); } catch (e) {} }
+
+  var CLAVES = [
+    { k: 'wr', n: 'Vittorie', desc: true },
+    { k: 'g',  n: 'Partite',  desc: true },
+    { k: 'nombre', n: 'Nome', desc: false }
+  ];
+
+  function lista(el, filas, render, id) {
+    var st = ORDEN_ST[id] || (ORDEN_ST[id] = { k: 'wr', desc: true });
+
+    var barra = el.previousElementSibling;
+    if (!barra || !barra.classList.contains('ordena')) {
+      barra = document.createElement('div');
+      barra.className = 'ordena';
+      el.parentNode.insertBefore(barra, el);
+    }
+
+    function dibujaBarra() {
+      barra.innerHTML = '<span class="lbl">Ordina per</span>' +
+        CLAVES.map(function (c) {
+          return '<button type="button" data-k="' + c.k + '" aria-pressed="' + (st.k === c.k) + '">' + c.n + '</button>';
+        }).join('') +
+        '<button type="button" class="dir" aria-pressed="true" title="' +
+          (st.desc ? 'Dal maggiore al minore' : 'Dal minore al maggiore') + '">' +
+          (st.desc ? '\u2193 Mag' : '\u2191 Min') + '</button>';
+
+      barra.querySelectorAll('button[data-k]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var c = CLAVES.filter(function (x) { return x.k === b.dataset.k; })[0];
+          if (st.k === c.k) st.desc = !st.desc; else { st.k = c.k; st.desc = c.desc; }
+          guardarOrden(); pinta();
+        });
+      });
+      barra.querySelector('.dir').addEventListener('click', function () {
+        st.desc = !st.desc; guardarOrden(); pinta();
+      });
+    }
+
+    function pinta() {
+      var s = filas.slice().sort(function (a, b) {
+        var r = st.k === 'nombre'
+          ? String(a.nombre).localeCompare(String(b.nombre), 'it')
+          : (a[st.k] - b[st.k]);
+        return st.desc ? -r : r;
+      });
+      var max = Math.max.apply(null, s.map(function (f) { return f.wr; }));
+      el.innerHTML = s.map(function (f, i) {
+        return '<button type="button" class="bar' + (f.img ? ' conth' : '') + '" data-i="' + i + '" aria-expanded="false">' +
+          '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
+          (f.img ? '<img class="th" src="' + f.img + '" alt="" loading="lazy"' +
+            (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
+          '<span class="nm">' + f.nombre + (f.mia ? '<span class="mine">Tua</span>' : '') +
+          (f.sub ? '<i>' + f.sub + '</i>' : '') + '</span>' +
+          '<span class="pc">' + pc(f.wr) + '</span>' +
+          '<span class="pl">' + f.g + '</span></button>';
+      }).join('');
+
+      function abrir(b, quieto) {
+        var ya = b.getAttribute('aria-expanded') === 'true';
+        el.querySelectorAll('.rowdetail').forEach(function (d) { d.remove(); });
+        el.querySelectorAll('.bar').forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+        if (ya) return;
+        b.setAttribute('aria-expanded', 'true');
+        var d = document.createElement('div');
+        d.className = 'rowdetail';
+        d.innerHTML = render(s[parseInt(b.dataset.i, 10)]);
+        b.insertAdjacentElement('afterend', d);
+        if (!quieto) {
+          var r = b.getBoundingClientRect();
+          if (r.top < 70 || r.top > window.innerHeight - 120) b.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+      }
+
+      el.querySelectorAll('.bar').forEach(function (b) {
+        b.addEventListener('click', function () { abrir(b, false); });
+      });
+      if (s.length) abrir(el.querySelector('.bar'), true);
+      dibujaBarra();
+    }
+
+    pinta();
+  }
+
+  function pts(x) { return (x >= 0 ? '+' : '−') + Math.abs(Math.round(x * 100)); }
+
+  function comoJugarla(f) {
+    var c = D.consejos[f.film] || {};
+    var media = f.killWr !== null ? f.killWr : f.wr;
+    var neg = function (r) { return '<b style="display:inline;font-family:inherit;font-size:inherit;letter-spacing:0;text-transform:none;color:inherit">' + r + '</b>'; };
+    var h = '<p class="sec-t">Come giocarla</p><div class="tips">';
+
+    var cual, texto;
+    if (f.killer === 'Poltergeist') {
+      cual = 'C'; texto = ', salvataggio. È l’unica scatola senza niente da uccidere: cercare un’arma è tempo buttato.';
+    } else if (f.wr < 0.55) {
+      cual = 'B'; texto = ', e la regola irrinunciabile è non finire nel rosso. Nelle scatole dure l’economia di carte è l’unica cosa che compensa la sfortuna.';
+    } else if (f.wr > 0.72) {
+      cual = 'D'; texto = ' se vedi un’arma da mischia nel setup. È una di quelle scatole che perdonano, puoi permetterti il viaggio.';
+    } else {
+      cual = 'B'; texto = ' di default. La C se il setup ti lascia vittime raggruppate vicino a un’uscita.';
+    }
+    h += '<div class="tip plan"><b>Apertura consigliata</b>' +
+      '<button type="button" class="salidaLink" data-s="' + cual + '">' + SALIDAS[cual].n + '</button>' + texto + '</div>';
+
+    // Cómo le va al killer en SU mapa frente a su media en todos. Es el
+    // único dato de la hoja que dice algo sobre el enfrentamiento concreto
+    // y no solo sobre lo dura que es la caja: un killer puede ser temible
+    // en general y flojear en su propia localización, o al revés.
+    // Diferencia encontrada el 2026-10-01: va de -25,5 (Inkanyamba en
+    // Sacred Groves) a +10,0 (Slayer en Falconwood).
+    (function () {
+      var glob = f.killWr;
+      var aqui = (D.cells[f.loc] || {})[f.killer];
+      if (glob === null || !aqui || aqui[0] < 20) return;
+      var dif = (aqui[1] - glob) * 100;
+      if (Math.abs(dif) < 4) return;   // por debajo de 4 puntos es ruido
+
+      // Su mejor y su peor mapa, para dar escala a la diferencia.
+      var suyos = [];
+      for (var loc in D.cells) {
+        var c = D.cells[loc][f.killer];
+        if (c && c[0] >= 20) suyos.push([loc, c[1]]);
+      }
+      suyos.sort(function (a, b) { return b[1] - a[1]; });
+      // Con un solo mapa de muestra suficiente, la "media en todos los
+      // mapas" sale de partidas sueltas y la diferencia es ruido.
+      // Afecta a Grimlash, Berith, Volk'ar y Raptors.
+      if (suyos.length < 2) return;
+
+      var duro = dif < 0;
+      var txt = '<b>' + f.killer + ' ' + (duro ? 'rende peggio' : 'rende meglio') +
+        ' in ' + f.loc + '</b>' +
+        'Vince il ' + pc(aqui[1]) + ' qui, contro il ' + pc(glob) +
+        ' che ottiene distribuito su tutte le mappe: ' +
+        neg((dif > 0 ? '+' : '') + dif.toFixed(1) + ' punti') + '. ';
+      txt += duro
+        ? 'La mappa gioca a tuo favore, non al suo. '
+        : 'Questa location gli calza a pennello: non fidarti della sua media. ';
+      if (suyos.length >= 3) {
+        txt += 'Dove vince di più è ' + suyos[0][0] + ' (' + pc(suyos[0][1]) + ') e dove vince di meno, ' +
+               suyos[suyos.length - 1][0] + ' (' + pc(suyos[suyos.length - 1][1]) + ').';
+      }
+      h += '<div class="tip">' + txt + '</div>';
+    })();
+
+    var MIN = 20;
+    if (f.plays < 90) {
+      h += '<div class="tip"><b>Attenzione al campione</b>Questa scatola ha solo <em>' + f.plays +
+           ' partite</em> registrate. Distribuite tra Dark Power, Finale e Setup restano manciate di partite per carta, ' +
+           'quindi i dettagli qui sotto sono indicativi e non conclusioni.</div>';
+    }
+
+    var calc = [];
+    var dp = (f.secs['Dark Power'] || []).filter(function (r) { return r[0] !== 'Unrevealed' && r[2] >= MIN; });
+    if (dp.length > 1) {
+      var o = dp.slice().sort(function (a, b) { return a[1] - b[1]; });
+      var horq = o[o.length - 1][1] - o[0][1];
+      calc.push('Il Dark Power che ti costa di più è ' + neg(o[0][0]) + ': <em>' +
+        (o[0][1] * 100).toFixed(1).replace('.', ',') + '%</em> contro il <em>' +
+        (media * 100).toFixed(1).replace('.', ',') + '%</em> di media del killer, <em>' + pts(o[0][1] - media) + ' punti</em>.' +
+        (horq > 0.12 ? ' Con <em>' + Math.round(horq * 100) + ' punti</em> tra il migliore e il peggiore, questa scatola si decide in buona parte su quella carta.' : ''));
+    }
+    var fin = (f.secs['Finale'] || []).filter(function (r) { return r[0] !== 'Unrevealed' && r[2] >= MIN; });
+    if (fin.length > 1) {
+      var of = fin.slice().sort(function (a, b) { return a[1] - b[1]; });
+      calc.push('Il Finale peggiore è ' + neg(of[0][0]) + ', <em>' + (of[0][1] * 100).toFixed(1).replace('.', ',') +
+        '%</em>. Arriva con il mazzo Terror esaurito, quindi preparati prima: arma equipaggiata, Guard o Retaliate in mano e un Close Call.');
+    }
+    var sus = f.setups.filter(function (r) { return r[2] >= MIN; });
+    if (sus.length > 1) {
+      var os = sus.slice().sort(function (a, b) { return a[1] - b[1]; });
+      var hs = os[os.length - 1][1] - os[0][1];
+      if (hs > 0.10) {
+        calc.push('Il setup iniziale pesa: <em>' + Math.round(hs * 100) + ' punti</em> tra ' +
+          neg(os[os.length - 1][0]) + ' e ' + neg(os[0][0]) + '. Se esce quello cattivo, preparati a una partita più lunga.');
+      }
+    }
+    var fk = filaKiller(f.killer);
+    if (fk.length > 3) {
+      var mejor = fk.slice().sort(function (a, b) { return b[1] - a[1]; })[0];
+      if (mejor[1] - f.wr > 0.08 && mejor[0] !== f.loc) {
+        calc.push('La sua stessa mappa taglia le ali a questo killer. In ' + neg(mejor[0]) + ' la gente vince il <em>' +
+          (mejor[1] * 100).toFixed(1).replace('.', ',') + '%</em>, <em>' + pts(mejor[1] - f.wr) +
+          ' punti</em> rispetto alla scatola così com’è. Se ti blocchi, prova a mescolare.');
+      }
+    }
+    if (calc.length) h += '<div class="tip calc"><b>Cosa dicono i numeri</b>' + calc.join('<br><br>') + '</div>';
+
+    if (c.mec) h += '<div class="tip"><b>La sua meccanica</b>' + c.mec + '</div>';
+    if (c.foro) h += '<div class="tip"><b>Consiglio dal forum</b>' + c.foro + '</div>';
+    if (c.com) h += '<div class="tip"><b>Cosa ne pensa la community</b>' + c.com +
+      (c.nivel ? ' <em>Livello: ' + c.nivel + '. Mappa: ' + c.mapa + '.</em>' : '') + '</div>';
+
+    return h + '</div>';
+  }
+
+  function pintarCajas() {
+    var filas = D.films.map(function (f) {
+      return { nombre: f.film, sub: f.killer + ' · ' + f.loc, wr: f.wr, g: f.plays,
+               mia: MIAS.indexOf(f.film) !== -1, img: f.img, raw: f };
+    });
+    lista(document.getElementById('l-cajas'), filas, function (row) { return detalleCaja(row.raw); }, 'cajas');
+  }
+
+
+  function bloqueReview(nombre) {
+    var r = D.reviews && D.reviews[nombre];
+    if (!r) return '';
+    var lista = function (a) { return '<ul>' + a.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>'; };
+    return '<p class="sec-t">Cosa dicono le recensioni</p><div class="rev">' +
+      '<p class="ver">' + r.veredicto + '</p>' +
+      '<div class="rev-cols">' +
+        '<div class="pro"><h5>A favore</h5>' + lista(r.pros) + '</div>' +
+        '<div class="con"><h5>Contro</h5>' + lista(r.contras) + '</div>' +
+      '</div>' +
+      '<div class="conf"><h5>Chiavi di gioco che emergono</h5>' + lista(r.claves) + '</div>' +
+      (r.confirma && r.confirma.length ? '<div class="conf"><h5>Confrontato con le ' + PARTIDAS + ' partite</h5>' +
+        r.confirma.map(function (c) { return '<div><i>' + c[0] + '</i>' + c[1] + '</div>'; }).join('') + '</div>' : '') +
+      '<div class="src">Fonti: ' + r.fuentes.map(function (f) {
+        return '<a href="' + f[1] + '">' + f[0] + '</a>';
+      }).join(' · ') + '</div></div>';
+  }
+
+  function detalleCaja(f) {
+    {
+      var h = '<div class="det-head">' +
+        (f.img ? '<img src="' + f.img + '" alt="Copertina di ' + f.film + '" loading="lazy"' +
+          (f.imgpos ? ' style="object-fit:cover;aspect-ratio:5/7;object-position:' + f.imgpos + '"' : '') + '>' : '<div></div>') +
+        '<div><h3>' + f.film + '</h3><p class="loc">' + f.killer + ' in ' + f.loc +
+        (f.fnum ? ' · <b>' + f.fnum + '</b>' : '') + '</p></div></div>' +
+        '<div class="split">' +
+          '<div><b>' + pc(f.wr) + '</b><span>La scatola così com’è<br>' + f.plays + ' partite</span></div>' +
+          (f.killWr !== null ? '<div><b>' + pc(f.killWr) + '</b><span>' + f.killer + ' su<br>qualsiasi mappa</span></div>' : '') +
+          (f.locWr !== null ? '<div><b>' + pc(f.locWr) + '</b><span>' + f.loc + ' con<br>qualsiasi killer</span></div>' : '') +
+          '<div><b>' + (D.cajaGirls[f.film] || ['—']).join(' · ') + '</b><span>Le sue Final Girls</span></div>' +
+        '</div>' + comoJugarla(f) + secciones(f.secs);
+      if (f.setups.length) h += '<p class="sec-t">Carte Setup</p>' + tablaOrdenada(f.setups, ['Setup', 'Vittorie']);
+      h += bloqueReview(f.film);
+      h += extremos(filaKiller(f.killer), 'Tutte le mappe di ' + f.killer);
+      return h;
+    }
+  }
+
+  // Descripciones de cada killer. Las rellena montar.py desde
+  // killers_desc.json; si falta el fichero, el panel se pinta igual.
+  var DESC = {};
+
+  // Solo tenemos arte de algunos killers; el resto se pinta sin imagen.
+  var ARTE = {
+    'Hans': 'hans', 'Grimlash': 'grimlash', 'Big Bad Wolf': 'big-bad-wolf',
+    'Dr. Fright': 'dr-fright', 'Geppetto': 'geppetto', 'Inkanyamba': 'inkanyamba',
+    'Poltergeist': 'poltergeist', 'Ratchet Lady': 'ratchet-lady',
+    'Slayer': 'slayer', 'Tormentor': 'tormentor', 'The Eyeless': 'the-eyeless',
+    'Berith': 'berith', "Volk'ar": 'volk-ar', 'Billy': 'billy',
+    'The Intruders': 'the-intruders', 'Mort': 'mort', 'Raptors': 'raptors',
+    'Evomorph': 'evomorph', 'Krampus': 'krampus', 'Razorface': 'razorface',
+    'The Organism': 'the-organism'
+  };
+
+  // Quien es y como juega. Los datos del juego salen de la Final Girl Wiki,
+  // que se enlaza debajo: es la fuente y ademas hay mas de lo que cabe aqui.
+  function quienEs(k) {
+    var d = DESC[k];
+    if (!d || !d.q) return '';
+    return '<div class="quien"><h4>Chi è</h4><p>' + esc(d.q) + '</p>' +
+      (d.j ? '<h4>Come gioca</h4><p>' + esc(d.j) + '</p>' : '') +
+      (d.wiki ? '<p class="fuente">Dati di gioco: <a href="https://finalgirl.fandom.com/wiki/' +
+        encodeURIComponent(d.wiki.replace(/ /g, '_')) +
+        '" target="_blank" rel="noopener">Final Girl Wiki</a> (CC BY-SA)</p>' : '') +
+      '</div>';
+  }
+
+  // Enlaces a las fichas sueltas. Son paginas del sitio, no del artifact:
+  // en claude.ai no existen, asi que alli se pinta texto sin enlace.
+  var HAYFICHAS = location.hostname.indexOf('claude.ai') === -1;
+  function slugFG(t) {
+    return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
+  var FICHA = {}, FICHA_CAJA = {};
+  if (HAYFICHAS) {
+    Object.keys(D.killers).forEach(function (k) { FICHA[k] = slugFG(k) + '.html'; });
+    D.films.forEach(function (f) { FICHA_CAJA[f.film] = slugFG(f.film) + '.html'; });
+  }
+
+  // ---------- Tops ----------
+  // Rankings cortos sacados de los mismos datos que el resto de la pagina.
+  // Cada lista lleva su minimo de partidas: sin el, lo primero de cada
+  // ranking seria siempre una rareza con tres partidas y un 100%.
+  function tarjetaTop(titulo, sub, filas) {
+    if (!filas.length) return '';
+    return '<div class="top"><h3>' + titulo + '</h3><p class="sub">' + sub + '</p><ol>' +
+      filas.map(function (f) {
+        return '<li><span class="n">' + (f.href ? '<a href="' + f.href + '">' + esc(f.n) + '</a>' : esc(f.n)) +
+          (f.s ? '<i>' + esc(f.s) + '</i>' : '') + '</span>' +
+          '<span class="v">' + f.v + (f.g ? '<em>' + f.g + '</em>' : '') + '</span></li>';
+      }).join('') + '</ol></div>';
+  }
+
+  function pintarTops() {
+    var el = document.getElementById('tops');
+    if (!el || el.innerHTML) return;
+    var h = '';
+
+    // Killers, por lo que dejan ganar.
+    var ks = Object.keys(D.killers).map(function (k) {
+      return { n: k, s: D.killers[k].box || 'Killer alternativo', wr: D.killers[k].wr, g: D.killers[k].g,
+               href: FICHA[k] || null };
+    }).filter(function (x) { return x.g >= 100; });
+    var porWr = function (a, b) { return a.wr - b.wr; };
+    var fmt = function (x) { return { n: x.n, s: x.s, v: pc(x.wr), g: x.g + ' part.', href: x.href }; };
+
+    h += tarjetaTop('I killer più duri', 'Minimo 100 partite. Più è basso, peggio la passi.',
+                    ks.slice().sort(porWr).slice(0, 5).map(fmt));
+    h += tarjetaTop('I killer più morbidi', 'Minimo 100 partite. Da cui conviene cominciare.',
+                    ks.slice().sort(porWr).reverse().slice(0, 5).map(fmt));
+
+    // Mapas.
+    var ls = D.locs.filter(function (r) { return r[2] >= 100; })
+      .map(function (r) { return { n: r[0], wr: r[1], g: r[2] }; });
+    h += tarjetaTop('Le mappe più dure', 'Minimo 100 partite, contro qualsiasi killer.',
+                    ls.slice().sort(porWr).slice(0, 5).map(fmt));
+
+    // Combinaciones killer + mapa.
+    var combos = [];
+    Object.keys(D.cells).forEach(function (loc) {
+      Object.keys(D.cells[loc]).forEach(function (k) {
+        var c = D.cells[loc][k];
+        if (c[0] >= 30) combos.push({ n: k, s: 'in ' + loc, wr: c[1], g: c[0], href: FICHA[k] || null });
+      });
+    });
+    h += tarjetaTop('Le combinazioni impossibili', 'Killer e mappa insieme, minimo 30 partite.',
+                    combos.slice().sort(porWr).slice(0, 5).map(fmt));
+    h += tarjetaTop('Le combinazioni regalate', 'Le stesse regole, all’estremo opposto.',
+                    combos.slice().sort(porWr).reverse().slice(0, 5).map(fmt));
+
+    // Cartas: Dark Powers y Finales de todos los killers juntos.
+    function cartas(clave) {
+      var out = [];
+      Object.keys(D.killers).forEach(function (k) {
+        (D.killers[k].secs[clave] || []).forEach(function (x) {
+          if (x[0] !== 'Unrevealed' && x[2] >= 50) out.push({ n: x[0], s: k, wr: x[1], g: x[2], href: FICHA[k] || null });
+        });
+      });
+      return out.sort(porWr).slice(0, 5).map(fmt);
+    }
+    h += tarjetaTop('I Dark Power che puniscono di più', 'Di tutti i killer, minimo 50 partite.', cartas('Dark Power'));
+    h += tarjetaTop('I Finale che puniscono di più', 'Di tutti i killer, minimo 50 partite.', cartas('Finale'));
+
+    // Final Girls.
+    var gs = D.girls.filter(function (g) { return g[2] >= 50; })
+      .map(function (g) { return { n: g[0], s: g[3], wr: g[1], g: g[2] }; });
+    h += tarjetaTop('Le Final Girl che vincono di più', 'Minimo 50 partite. Scegliere bene la scatola pesa più che scegliere bene la ragazza.',
+                    gs.sort(porWr).reverse().slice(0, 5).map(fmt));
+
+    // Hojas de preparacion.
+    var sps = [];
+    Object.keys(D.setups).forEach(function (loc) {
+      D.setups[loc].forEach(function (x) {
+        if (x[2] >= 50) sps.push({ n: x[0], s: loc, wr: x[1], g: x[2] });
+      });
+    });
+    h += tarjetaTop('I fogli di preparazione più duri', 'Il setup con cui inizi, minimo 50 partite.',
+                    sps.sort(porWr).slice(0, 5).map(fmt));
+
+    // Cajas mas jugadas: aqui el numero que manda son las partidas.
+    h += tarjetaTop('Le scatole più giocate', 'Ciò che la gente porta davvero al tavolo.',
+                    D.films.slice().sort(function (a, b) { return b.plays - a.plays; }).slice(0, 5)
+                      .map(function (f) {
+                        return { n: f.film, s: f.killer + ' in ' + f.loc, v: f.plays.toLocaleString('it'),
+                                 g: pc(f.wr), href: FICHA_CAJA[f.film] || null };
+                      }));
+
+    el.innerHTML = h;
+  }
+
+  function pintarKillers() {
+    var filas = Object.keys(D.killers).map(function (k) {
+      var v = D.killers[k];
+      return { nombre: k, sub: v.box || 'Killer alternativo', wr: v.wr, g: v.g, mia: !!misKillers[k], key: k,
+          };
+    });
+    lista(document.getElementById('l-killers'), filas, function (row) {
+      var v = D.killers[row.key];
+      var h = (ARTE[row.key] ? '<img class="art" src="img/art/' + ARTE[row.key] + '.jpg" alt="" loading="lazy">' : '') +
+        '<h3>' + row.key + '</h3><p class="loc">' + (v.box ? 'Esce in ' + v.box : 'Killer alternativo, senza scatola propria') + '</p>' +
+        '<div class="split"><div><b>' + pc(v.wr) + '</b><span>Contro qualsiasi mappa<br>' + v.g + ' partite</span></div></div>' +
+        quienEs(row.key) +
+        secciones(v.secs) + extremos(filaKiller(row.key), 'Tutte le mappe di ' + row.key);
+      return h;
+    }, 'killers');
+  }
+
+  function pintarMapas() {
+    var filas = D.locs.map(function (r) {
+      return { nombre: r[0], sub: '', wr: r[1], g: r[2], mia: !!misLocs[r[0]], key: r[0] };
+    });
+    lista(document.getElementById('l-mapas'), filas, function (row) {
+      var h = '<h3>' + row.key + '</h3><p class="loc">Misurato contro tutti i killer</p>' +
+        '<div class="split"><div><b>' + pc(row.wr) + '</b><span>Media della mappa<br>' + row.g + ' partite</span></div></div>';
+      if (D.setups[row.key]) h += '<p class="sec-t">Carte Setup</p>' + tablaOrdenada(D.setups[row.key], ['Setup', 'Vittorie']);
+      h += extremos(columnaLoc(row.key), 'Tutti i killer in ' + row.key);
+      return h;
+    }, 'mapas');
+  }
+
+
+  function pintarTemporadas() {
+    var cont = document.getElementById('l-temps');
+    cont.innerHTML = D.temporadas.map(function (T) {
+      return '<div class="temp"><div class="temp-h"><h3>' + T.nombre + '</h3>' +
+        '<span>' + T.cajas.length + ' scatole · ' + T.plays + ' partite</span>' +
+        '<span class="wr">' + pc(T.wr) + '</span></div>' +
+        '<div class="fichas" data-t="' + T.id + '">' + T.cajas.map(function (n) {
+          var f = D.films.filter(function (x) { return x.film === n; })[0];
+          var col = paso(f.wr) === 5 ? '#6f676b' : ['#b02c2c','#e05252','#ec8585','#f4b0b0','#fbd9d9','#6f676b','#cde2fb','#9ec5f4','#6da7ec','#3987e5','#1c5cab'][paso(f.wr)];
+          return '<button type="button" class="ficha" data-f="' + n + '" aria-expanded="false">' +
+            (f.img ? '<img src="' + f.img + '" alt="Copertina di ' + n + '" loading="lazy"' +
+              (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
+            (MIAS.indexOf(n) !== -1 ? '<span class="f-mia">Tua</span>' : '') +
+            '<span class="f-body">' +
+              '<span class="f-id">' + (f.fnum || '') + '</span>' +
+              '<span class="f-nm">' + n + '</span>' +
+              '<span class="f-k">' + f.killer + '<br>' + f.loc + '</span>' +
+              '<span class="f-bar"><span class="f-dot" style="background:' + col + '"></span>' +
+                '<span class="f-wr">' + pc(f.wr) + '</span>' +
+                '<span class="f-pl">' + f.plays + ' partite</span></span>' +
+            '</span></button>';
+        }).join('') + '</div></div>';
+    }).join('');
+
+    cont.querySelectorAll('.ficha').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var rejilla = b.parentNode;
+        var ya = b.getAttribute('aria-expanded') === 'true';
+        cont.querySelectorAll('.fichadet').forEach(function (d) { d.remove(); });
+        cont.querySelectorAll('.ficha').forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+        if (ya) return;
+        b.setAttribute('aria-expanded', 'true');
+        var f = D.films.filter(function (x) { return x.film === b.dataset.f; })[0];
+        var d = document.createElement('div');
+        d.className = 'rowdetail fichadet';
+        d.innerHTML = detalleCaja(f);
+        rejilla.appendChild(d);
+        var r = b.getBoundingClientRect();
+        if (r.top < 70) b.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      });
+    });
+  }
+
+  function pintarGirls() {
+    var o = document.getElementById('g-orden').value;
+    var g = D.girls.slice();
+    if (o === 'wr') g.sort(function (a, b) { return b[1] - a[1]; });
+    else if (o === 'wrA') g.sort(function (a, b) { return a[1] - b[1]; });
+    else if (o === 'g') g.sort(function (a, b) { return b[2] - a[2]; });
+    else if (o === 'abc') g.sort(function (a, b) { return a[0].localeCompare(b[0], 'it'); });
+    else g.sort(function (a, b) { return a[3].localeCompare(b[3], 'it') || b[1] - a[1]; });
+
+    document.getElementById('t-girls').innerHTML =
+      '<thead><tr><th>Final Girl</th><th>Da quale scatola proviene</th><th class="n">Vittorie</th><th class="n">Partite</th></tr></thead><tbody>' +
+      g.map(function (r) {
+        var mia = MIAS.indexOf(r[3]) !== -1;
+        return '<tr><td>' + r[0] + (mia ? '<span class="mine">Tua</span>' : '') + '</td><td class="s">' + r[3] +
+               '</td><td class="n">' + pc(r[1]) + '</td><td class="n">' + r[2] + '</td></tr>';
+      }).join('') + '</tbody>';
+  }
+
+
+  function pintarMis() {
+    var orden = D.films.map(function (f) { return f.film; }).sort(function (a, b) { return a.localeCompare(b, 'it'); });
+    document.getElementById('mis-grid').innerHTML = orden.map(function (n, i) {
+      return '<label><input type="checkbox" data-f="' + i + '"' + (MIAS.indexOf(n) !== -1 ? ' checked' : '') + '>' + n + '</label>';
+    }).join('');
+    document.querySelectorAll('#mis-grid input').forEach(function (cb, i) {
+      cb.addEventListener('change', function () {
+        var n = orden[i], j = MIAS.indexOf(n);
+        if (cb.checked && j === -1) MIAS.push(n);
+        if (!cb.checked && j !== -1) MIAS.splice(j, 1);
+        guardarMias(); recalcMias(); repintarTodo();
+      });
+    });
+    document.getElementById('mis-none').onclick = function () { MIAS = []; guardarMias(); recalcMias(); pintarMis(); repintarTodo(); };
+    document.getElementById('mis-all').onclick = function () { MIAS = orden.slice(); guardarMias(); recalcMias(); pintarMis(); repintarTodo(); };
+    document.getElementById('mis-sum').textContent = MIAS.length
+      ? 'Le mie scatole · ' + MIAS.length + ' su ' + orden.length
+      : 'Le mie scatole · segna le tue';
+    document.getElementById('mis-info').textContent = MIAS.length
+      ? 'Vengono segnate come Tua e alimentano il filtro della matrice. Si salva in questo browser, solo per te.'
+      : 'Segna le scatole che possiedi: saranno evidenziate in tutta la pagina e potrai filtrare la matrice per vedere solo le tue. Si salva in questo browser, non viene inviato da nessuna parte.';
+
+    // El filtro no sirve de nada sin cajas marcadas, y dejaba la matriz en
+    // blanco sin explicar por que. Mejor apagado y dicho.
+    var filtro = document.getElementById('f-mias');
+    if (filtro) {
+      filtro.disabled = !MIAS.length;
+      if (!MIAS.length) filtro.checked = false;
+      var etiqueta = filtro.closest('label');
+      if (etiqueta) etiqueta.title = MIAS.length ? '' : 'Segna prima qualche scatola in “Le mie scatole”';
+    }
+  }
+
+  function repintarTodo() {
+    pintarMatriz(); pintarCajas(); pintarTemporadas(); pintarKillers(); pintarMapas(); pintarGirls(); pintarTops();
+  }
+
+
+  var SALIDAS = {
+    A: { n: 'Apertura A · Economia totale',
+         p: 'Arrivare a 3 dadi al turno 2 e dimenticarti dell’orrore. Per i killer che sputano icone di orrore.',
+         s: ['Turno 1: non giochi niente. Scarti tutta la mano tranne i 2 Focus, +4 Tempo, totale 10.',
+             'Compri 2× Distraction, Improvise e Close Call.',
+             'Turno 2: prima Improvise, poi le due Distraction.',
+             'Rischio: regali tutto il turno 1. Male se il killer parte sopra le vittime.'] },
+    B: { n: 'Apertura B · Orrore morbido',
+         p: 'Come la A senza regalare il turno. È quella di default e quella che porta più vittorie.',
+         s: ['Turno 1: giochi un Focus e ti muovi con i Walk. Compri una Distraction e un Close Call.',
+             'Turno 2: giochi la Distraction. Sei già a 3 dadi.',
+             'Fase centrale: solo Sprint e Search. Salvare e saccheggiare.',
+             'Fine: accumuli Retaliate e attacchi, e aspetti che venga lui.'] },
+    C: { n: 'Apertura C · Salvataggio aggressivo',
+         p: 'Congelare il killer. È l’apertura delle partite che si vincono senza arma.',
+         s: ['Turno 1: ti muovi con i due Walk verso il gruppo. Compri Sprint.',
+             'Turni 2-4: ignori il killer. Sprint e salvataggio, il più in fretta possibile.',
+             'Pianifica il percorso contando i bonus di salvataggio: una deviazione di 2 caselle è gratis se ti danno movimento.',
+             'Obiettivo: riempire la carta della Final Girl e girarla. Ogni vittima morta gli alza il bloodlust.'] },
+    D: { n: 'Apertura D · Prima l’arma',
+         p: 'Solo se vedi un’arma da mischia scoperta nel setup. Un’arma moltiplica il tuo danno per più di due.',
+         s: ['Prima: controlla quale casella dà accesso a quel mazzo. Ogni casella è legata a un mazzo preciso.',
+             'Turno 1: giochi i due Walk in quella direzione. Compri Search e Sprint.',
+             'Turno 2: Sprint per arrivare e Search lì stesso. Usa entrambe le Search.',
+             'Se è a più di due turni di viaggio e ci sono vittime che muoiono in un’altra direzione, passa alla C.'] }
+  };
+
+  function abrirSalida(cual) {
+    document.getElementById('dlg-t').textContent = cual ? SALIDAS[cual].n : 'Le aperture';
+    document.getElementById('dlg-b').innerHTML =
+      ['A','B','C','D'].map(function (k) {
+        var s = SALIDAS[k];
+        return '<div class="sal' + (k === cual ? ' on' : '') + '">' +
+          '<h4>' + s.n + (k === cual ? '<span class="aqui">Questa scatola</span>' : '') + '</h4>' +
+          '<p class="para">' + s.p + '</p><ol>' + s.s.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ol></div>';
+      }).join('') +
+      '<p style="font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0">' +
+      'Versione completa, con il burst, le armi e gli errori di regolamento, nelle ' +
+      '<a href="https://claude.ai/artifact/9citaKuByjhsDA5S1qit6y" style="color:var(--blood)">strategie di apertura</a>.</p>';
+    document.getElementById('dlg').showModal();
+  }
+
+  document.getElementById('dlg-x').addEventListener('click', function () { document.getElementById('dlg').close(); });
+  document.getElementById('dlg').addEventListener('click', function (e) {
+    if (e.target.id === 'dlg') document.getElementById('dlg').close();
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.salidaLink') : null;
+    if (b) abrirSalida(b.dataset.s || null);
+  });
+
+  // ---------- arranque ----------
+  document.getElementById('k1').textContent = D.meta.total.toLocaleString('it');
+  document.getElementById('k2').textContent = pc(D.meta.wr);
+  document.getElementById('f-last').textContent = D.meta.last;
+
+  // Abrir una pestana concreta, para poder enlazarla desde fuera
+  // (index.html#killers). Sin esto, el menu "+" de la cabecera llevaria
+  // siempre a la matriz y el enlace no serviria de nada.
+  function abrirPestana(t) {
+    var b = document.querySelector('nav.tabs button[data-t="' + t + '"]');
+    if (b) b.click();
+  }
+
+  document.querySelectorAll('nav.tabs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('nav.tabs button').forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+      b.setAttribute('aria-selected', 'true');
+      ['matriz', 'tops', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
+        document.getElementById('v-' + t).hidden = (t !== b.dataset.t);
+      });
+    });
+  });
+
+
+  // --- Jugadores ----------------------------------------------------------
+  // Solo quien tiene 10 partidas o mas: por debajo, un porcentaje de
+  // victorias no dice nada de como juega, solo de la suerte que tuvo.
+  (function () {
+    var nombres = Object.keys(UJ);
+    var cubren = nombres.reduce(function (a, n) { return a + UJ[n].n; }, 0);
+    document.getElementById('ju-n').textContent = nombres.length + ' persone che le hanno registrate';
+
+    var lista = document.getElementById('ju-lista');
+    var det = document.getElementById('ju-det');
+    var sel = null;
+
+    function filas() {
+      var q = document.getElementById('ju-busca').value.trim().toLowerCase();
+      var o = document.getElementById('ju-orden').value;
+      var r = nombres.filter(function (n) { return !q || n.toLowerCase().indexOf(q) !== -1; });
+      // Ordenar por porcentaje con todo el mundo no sirve: quien registró
+      // una partida y la ganó sale al 100% y copa la lista. Para esos dos
+      // ordenes hace falta un mínimo; buscar por nombre sigue encontrando
+      // a cualquiera.
+      if (o === 'wr' || o === 'peor') r = r.filter(function (n) { return UJ[n].n >= 10; });
+      r.sort(function (a, b) {
+        if (o === 'az') return a.toLowerCase() < b.toLowerCase() ? -1 : 1;
+        if (o === 'wr') return UJ[b].wr - UJ[a].wr;
+        if (o === 'peor') return UJ[a].wr - UJ[b].wr;
+        return UJ[b].n - UJ[a].n;
+      });
+      return r;
+    }
+
+    function pintarLista() {
+      var r = filas();
+      var o = document.getElementById('ju-orden').value;
+      var max = r.length ? Math.max.apply(null, r.map(function (n) { return UJ[n].n; })) : 1;
+      lista.innerHTML = r.slice(0, 60).map(function (n) {
+        var u = UJ[n];
+        return '<button type="button" class="bar" data-n="' + n.replace(/"/g, '&quot;') + '"' +
+          ' aria-pressed="' + (sel === n) + '">' +
+          '<span class="fill" style="width:' + (u.n / max * 100) + '%"></span>' +
+          '<span class="nm">' + esc(n) + '</span>' +
+          '<span class="pc">' + pc(u.wr) + '</span>' +
+          '<span class="pl">' + u.n + '</span></button>';
+      }).join('') || '<div style="padding:14px;color:var(--muted);font-size:14px">Nessuno con quel nome.</div>';
+      var aviso = document.getElementById('ju-aviso');
+      aviso.textContent = (o === 'wr' || o === 'peor')
+        ? 'Ordinamento solo tra chi ha 10 partite o più (' + r.length + '). Cerca per nome per trovare chiunque.'
+        : (r.length > 60 ? 'Mostrati 60 su ' + r.length + '. Scrivi un nome per trovare una persona precisa.' : '');
+      lista.querySelectorAll('.bar').forEach(function (b) {
+        b.addEventListener('click', function () {
+          sel = (sel === b.dataset.n) ? null : b.dataset.n;
+          pintarLista(); pintarDet();
+        });
+      });
+    }
+
+    function tabla(titulo, arr, media) {
+      if (!arr || !arr.length) return '';
+      return '<p class="sec-t">' + titulo + '</p><table class="mini">' + arr.map(function (x) {
+        var dif = x[2] - media;
+        var cls = x[1] >= 8 && Math.abs(dif) > 0.12 ? (dif > 0 ? 'mejor' : 'peor') : '';
+        return '<tr class="' + cls + '"><td>' + esc(x[0]) + '</td><td>' + pc(x[2]) +
+               '</td><td>' + x[1] + '</td></tr>';
+      }).join('') + '</table>';
+    }
+
+    function pintarDet() {
+      if (!sel) { det.innerHTML = ''; return; }
+      var u = UJ[sel];
+      var dif = (u.wr - D.meta.wr) * 100;
+      var h = '<div class="detalle"><h3>' + esc(sel) + '</h3>' +
+        '<p class="loc">' + u.n + ' partite registrate' +
+        (u.d1 ? ', da ' + u.d1 + ' a ' + u.d2 : '') + '.</p>' +
+        '<div class="split">' +
+          '<div><b>' + u.n + '</b><span>Partite</span></div>' +
+          '<div><b>' + pc(u.wr) + '</b><span>Vittorie</span></div>' +
+          '<div><b>' + (dif > 0 ? '+' : '') + dif.toFixed(1) + '</b><span>Punti sopra la media (' + pc(D.meta.wr) + ')</span></div>' +
+          (u.ext ? '<div><b>' + u.ext + '</b><span>In Extreme Horror</span></div>' : '') +
+        '</div>';
+      if (u.n < 10) {
+        h += '<p class="riesgo" style="margin-top:0"><b>Poche partite</b>Con ' + u.n +
+             (u.n === 1 ? ' partita' : ' partite') + ' la percentuale non dice come gioca questa persona, '
+             + 'dice che fortuna ha avuto. Ne servono circa 10 perché significhi qualcosa.</p>';
+      }
+      // Lo que le falta. Un hueco motiva mas que una peticion: el jugador de
+      // mesa ve 14 de 22 y quiere las 8 restantes. Y no le pide nada.
+      (function () {
+        var mias = UM.u[sel];
+        if (!mias) return;
+        var hechas = {};
+        mias.forEach(function (f) { hechas[UM.k[f[0]] + '|' + UM.l[f[1]]] = f[2]; });
+        var jugadas = [], faltan = [];
+        D.films.forEach(function (f) {
+          (hechas[f.killer + '|' + f.loc] ? jugadas : faltan).push(f);
+        });
+        if (!jugadas.length) return;
+        var pcent = Math.round(jugadas.length / D.films.length * 100);
+        h += '<p class="sec-t">Scatole così come sono</p>' +
+          '<div class="coleccion">' +
+          '<div class="barra"><span style="width:' + pcent + '%"></span></div>' +
+          '<p><b>' + jugadas.length + ' su ' + D.films.length + '</b> giocate, ' +
+          'con il loro killer nella loro mappa.</p>';
+        if (faltan.length) {
+          h += '<p class="falta">Non giocate: ' + faltan.map(function (f) {
+            return '<span>' + esc(f.film) + '</span>';
+          }).join('') + '</p>';
+        } else {
+          h += '<p class="falta">Tutte e 22. Non ne manca nessuna.</p>';
+        }
+        h += '</div>';
+      })();
+
+      h += tabla('Killer che gioca di più', u.kill, u.wr);
+      h += tabla('Killer e mappa', u.combo, u.wr);   // sólo en los de 10+
+      h += tabla('Final Girl che usa di più', u.girl, u.wr);
+      h += '<p class="riesgo" style="margin-top:14px"><b>Come leggerlo</b> Il colore indica ciò che si discosta dalla SUA media (' +
+           pc(u.wr) + '), non da quella generale, e solo con 8 partite o più. Mostra dove va meglio e peggio a <em>questa persona</em>.</p>';
+      h += '</div>';
+      det.innerHTML = h;
+      det.querySelector('.detalle').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    document.getElementById('ju-busca').addEventListener('input', pintarLista);
+    document.getElementById('ju-orden').addEventListener('change', pintarLista);
+    pintarLista();
+  })();
+
+  ['f-mias', 'f-orden', 'f-busca'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', pintarMatriz);
+  });
+
+  // Matriz de un jugador concreto: ve SUS partidas en la misma rejilla.
+  (function () {
+    var sel = document.getElementById('f-jug');
+    Object.keys(UM.u)
+      .sort(function (a, b) { return UM.u[b].length - UM.u[a].length; })
+      .forEach(function (n) {
+        var total = UM.u[n].reduce(function (x, f) { return x + f[2]; }, 0);
+        var o = document.createElement('option');
+        o.value = n;
+        o.textContent = n + ' (' + total + ')';
+        sel.appendChild(o);
+      });
+    sel.addEventListener('change', function () {
+      cargarJugador(sel.value);
+      pintarMatriz();
+      var aviso = document.getElementById('f-jug-aviso');
+      if (!aviso) return;
+      if (!JUG) { aviso.hidden = true; return; }
+      var total = UM.u[JUG].reduce(function (x, f) { return x + f[2]; }, 0);
+      aviso.hidden = false;
+      aviso.innerHTML = 'Stai vedendo le <b>' + total + ' partite di ' + esc(JUG) +
+        '</b>, non quelle della community. Qui una cella è una sola partita ripetuta più volte: ' +
+        'serve per vedere cosa ha giocato e cosa gli manca, non per ricavare percentuali.';
+    });
+  })();
+  document.getElementById('g-orden').addEventListener('change', pintarGirls);
+
+  // Abre la ficha de una caja desde cualquier sitio: cambia a la pestaña
+  // Cajas y despliega esa fila. Busca la fila por nombre en vez de por
+  // indice porque el orden de la lista lo cambia el usuario.
+  function abrirCaja(nombre) {
+    var tab = document.querySelector('nav.tabs button[data-t="cajas"]');
+    if (tab) tab.click();
+    var cont = document.getElementById('l-cajas');
+    if (!cont) return;
+    var bars = cont.querySelectorAll('.bar');
+    for (var i = 0; i < bars.length; i++) {
+      var nm = bars[i].querySelector('.nm');
+      var txt = nm ? (nm.firstChild ? nm.firstChild.textContent : nm.textContent) : '';
+      if ((txt || '').trim() === nombre) {
+        if (bars[i].getAttribute('aria-expanded') !== 'true') bars[i].click();
+        bars[i].scrollIntoView({ block: 'center', behavior: 'smooth' });
+        return;
+      }
+    }
+  }
+
+  (function () {
+    var con = D.films.filter(function (f) { return f.img; });
+    var dos = con.concat(con);   // duplicado para que el bucle no corte
+    var tira = document.getElementById('tira');
+    tira.innerHTML = dos.map(function (f) {
+      // Botones, no imagenes sueltas: esto navega, asi que tiene que
+      // funcionar con teclado y anunciar a donde lleva.
+      return '<button type="button" class="poster" data-film="' +
+        esc(f.film).replace(/"/g, '&quot;') + '" title="' + esc(f.film) +
+        '" aria-label="Vedi la scheda di ' + esc(f.film) + '">' +
+        '<img src="' + f.img + '" alt="" loading="lazy"' +
+        (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '></button>';
+    }).join('');
+    // Arrastrar para mover. Hay que distinguir arrastre de clic: si no,
+    // soltar despues de mover abria una ficha que nadie habia pedido.
+    var baja = false, x0 = 0, s0 = 0, movido = 0;
+    tira.addEventListener('pointerdown', function (e) {
+      baja = true; movido = 0; x0 = e.clientX; s0 = tira.scrollLeft;
+      tira.classList.add('arrastrando');
+    });
+    tira.addEventListener('pointermove', function (e) {
+      if (!baja) return;
+      var d = e.clientX - x0;
+      movido = Math.max(movido, Math.abs(d));
+      tira.scrollLeft = s0 - d;
+    });
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) {
+      tira.addEventListener(ev, function () { baja = false; tira.classList.remove('arrastrando'); });
+    });
+
+    tira.addEventListener('click', function (e) {
+      if (movido > 6) { movido = 0; return; }   // fue un arrastre, no un clic
+      var b = e.target.closest('.poster');
+      if (b) abrirCaja(b.dataset.film);
+    });
+
+    // Flechas a los lados.
+    var marq = document.getElementById('marq');
+    function flecha(clase, signo, etiqueta, glifo) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'flecha ' + clase;
+      b.setAttribute('aria-label', etiqueta); b.textContent = glifo;
+      b.addEventListener('click', function () {
+        pausa(5000);
+        tira.scrollBy({ left: signo * Math.round(tira.clientWidth * 0.8), behavior: 'smooth' });
+      });
+      marq.appendChild(b);
+      return b;
+    }
+    var izq = flecha('izq', -1, 'Vedi le copertine precedenti', '‹');
+    var der = flecha('der', 1, 'Vedi le copertine successive', '›');
+
+    function estadoFlechas() {
+      izq.hidden = tira.scrollLeft < 8;
+      der.hidden = tira.scrollLeft > tira.scrollWidth - tira.clientWidth - 8;
+    }
+    tira.addEventListener('scroll', estadoFlechas);
+    estadoFlechas();
+
+    // Avance automatico suave, que para en cuanto el usuario toca algo:
+    // la cinta sigue viva, pero deja de pelearse con quien quiere leerla.
+    // Se para al tocarlo, pero vuelve solo a los 4 segundos quieto: pararlo
+    // para siempre dejaba la cinta muerta en cuanto alguien la rozaba.
+    var parado = false, reloj = null;
+    function pausa(ms) {
+      parado = true;
+      clearTimeout(reloj);
+      reloj = setTimeout(function () { parado = false; }, ms || 4000);
+    }
+    ['pointerdown', 'wheel', 'keydown', 'focusin'].forEach(function (ev) {
+      tira.addEventListener(ev, function () { pausa(); }, { passive: true });
+    });
+    // Con el raton encima no avanza, y al salir sigue: el hover no lleva
+    // reloj porque mientras apuntas a un poster no quieres que se escape.
+    marq.addEventListener('pointerenter', function () { clearTimeout(reloj); parado = true; });
+    marq.addEventListener('pointerleave', function () { pausa(1200); });
+
+    var mitad = 0;
+    requestAnimationFrame(function () { mitad = tira.scrollWidth / 2; });
+    setInterval(function () {
+      if (parado || !mitad) return;
+      // La lista va duplicada: al llegar a la mitad se salta al principio
+      // sin transicion y el bucle parece infinito.
+      if (tira.scrollLeft >= mitad) {
+        tira.style.scrollBehavior = 'auto';
+        tira.scrollLeft -= mitad;
+        tira.style.scrollBehavior = '';
+      }
+      tira.scrollLeft += 1;
+    }, 40);
+  })();
+
+  leyenda();
+  pintarMis();
+  pintarMatriz();
+  detalleCelda('Hans', 'Camp Happy Trail');
+  pintarCajas();
+  pintarTemporadas();
+  pintarKillers();
+  pintarMapas();
+  pintarGirls();
+  pintarTops();
+
+  // El hash puede venir en el enlace de entrada o cambiar despues, si el
+  // visitante usa atras o pulsa otra entrada del mismo menu.
+  function desdeHash() {
+    var t = (location.hash || '').replace('#', '');
+    if (t) abrirPestana(t);
+  }
+  desdeHash();
+  window.addEventListener('hashchange', desdeHash);
+
+  // ---------- encuesta ----------
+  (async function encuesta() {
+    var caja = document.getElementById('enc');
+    // Fuera de claude.ai (la copia publicada en web) no existe `claude`, y
+    // leerlo lanzaba un ReferenceError que se tragaba la promesa y dejaba
+    // un error en consola en cada carga. La encuesta simplemente no va ahí.
+    if (typeof claude === 'undefined' || !claude || !claude.use) {
+      if (caja) caja.hidden = true;
+      return;
+    }
+    var db = await claude.use('db');
+    var user = await claude.use('user');
+    if (!db || !user) { if (caja) caja.hidden = true; return; }   // vista sin db
+
+    var uid = null;
+    try { uid = await user.id(); } catch (e) { uid = null; }
+    var puedo = false;
+    try { puedo = (await user.can('data.write')) !== false; } catch (e) { puedo = true; }
+
+    var OPC = D.temporadas.map(function (T) { return { id: T.id, n: T.nombre }; });
+    var conteo = {}, miVoto = null, total = 0;
+
+    function pinta() {
+      var max = Math.max.apply(null, OPC.map(function (o) { return conteo[o.id] || 0; }).concat([1]));
+      document.getElementById('enc-o').innerHTML = OPC.map(function (o) {
+        var n = conteo[o.id] || 0;
+        var p = total ? n / total : 0;
+        return '<button type="button" class="voto' + (miVoto === o.id ? ' mio' : '') + '"' +
+          (puedo && uid ? '' : ' disabled') + ' data-o="' + o.id + '">' +
+          '<span class="bg" style="width:' + (total ? (n / max * 100) : 0).toFixed(1) + '%"></span>' +
+          '<span class="et">' + o.n + '</span>' +
+          '<span class="np">' + n + '</span>' +
+          '<span class="pcv">' + (total ? (p * 100).toFixed(0) + '%' : '—') + '</span></button>';
+      }).join('');
+
+      document.getElementById('enc-p').textContent = !uid
+        ? 'Accedi per votare.'
+        : !puedo
+          ? 'Puoi vedere i risultati, ma non votare con il tuo livello di accesso.'
+          : (miVoto ? 'Hai votato. Tocca un’altra per cambiare. ' : 'Un voto a persona, e puoi cambiarlo. ') +
+            total + (total === 1 ? ' voto' : ' voti');
+
+      document.getElementById('enc-o').querySelectorAll('.voto:not([disabled])').forEach(function (b) {
+        b.addEventListener('click', async function () {
+          if (miVoto === b.dataset.o) return;
+          try { await db.doc('votos/' + uid).set({ t: b.dataset.o, ts: Date.now() }); }
+          catch (e) { document.getElementById('enc-p').textContent = 'Impossibile salvare il voto.'; }
+        });
+      });
+    }
+
+    caja.hidden = false;
+    pinta();
+
+    db.collection('votos').onSnapshot(function (snap) {
+      conteo = {}; total = 0; miVoto = null;
+      snap.docs.forEach(function (d) {
+        var v = d.data() || {};
+        if (!v.t) return;
+        conteo[v.t] = (conteo[v.t] || 0) + 1; total++;
+        if (d.id === uid) miVoto = v.t;
+      });
+      pinta();
+    }, function () { caja.hidden = true; });
+  })();
+})();
+</script>

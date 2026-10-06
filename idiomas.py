@@ -32,7 +32,7 @@ LOCALE = {"es": "es_ES", "en": "en_US", "fr": "fr_FR", "de": "de_DE", "it": "it_
 T = {
 "en": {
     "nav": ["Stats", "Openings", "All pages"],
-    "es_nota": " (Spanish)",
+    "es_nota": "",
     "killer_eb": "Killer · {n} maps with data",
     "killer_h1": "{wr} win rate",
     "intro": "Across <b>{g} recorded games</b>, the Final Girl beats {k} {wr} of the time. The average for the whole game is {media}, so ",
@@ -55,7 +55,7 @@ T = {
     "peor": "The worst draw is <b>{c}</b>: with it in play the game is won only {wr} of the time, across {g} games.",
     "foro_k": "What players say",
     "salir": "How to start the game",
-    "salir_p": "The four openings and when to use each one are in the <a href=\"../salidas.html\" hreflang=\"es\">opening strategies</a> (Spanish). To compare this killer on every map, see the <a href=\"../index.html\" hreflang=\"es\">full interactive stats</a> (Spanish).",
+    "salir_p": "The four openings and when to use each one are in the <a href=\"salidas.html\">opening strategies</a>. To compare this killer on every map, see the <a href=\"index.html\">full interactive stats</a>.",
     "k_title": "{k} in Final Girl: win rate by map and how to beat {k}",
     "k_desc": "The Final Girl wins {wr} against {k} across {g} games. Best and worst maps, hardest Dark Powers and Finales, and tips.",
     "box_eb": "Box · {f} · {g} games",
@@ -73,23 +73,23 @@ T = {
     "setups_sub": "From the hardest to the easiest. At least {n} games.",
     "setups_gap": "Between <b>{a}</b> and <b>{b}</b> there are <b>{d} points</b> of difference. The starting setup matters more than it looks.",
     "foro_c": "Tips from players", "reviews": "What reviews say",
-    "salir_c": "The four openings, with which one to use depending on the setup, are in the <a href=\"../salidas.html\" hreflang=\"es\">opening strategies</a> (Spanish).",
+    "salir_c": "The four openings, with which one to use depending on the setup, are in the <a href=\"salidas.html\">opening strategies</a>.",
     "c_title": "{c} (Final Girl): stats and tips, {wr} win rate",
     "c_desc": "{k} on {l}. Won {wr} of {g} games. Setups, Dark Powers, Finales and tips.",
-    "pie": "Data from the <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">public tracking sheet</a> kept by the Final Girl community (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">log your games</a>). Back to <a href=\"index.html\">all killers and boxes</a>.",
+    "pie": "Data from the <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">public tracking sheet</a> kept by the Final Girl community (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">log your games</a>). Back to <a href=\"fichas.html\">all killers and boxes</a>.",
     "hub_title": "Final Girl stats: win rate of every killer and box ({n} games)",
     "hub_desc": "Win rate of every killer and every box in Final Girl, from {n} community games. Hardest killers, best maps, Dark Powers and Finales.",
     "hub_eb": "{n} real games · {j} players",
     "hub_h1": "Final Girl<span class=\"roja\">stats</span>",
     "hub_dek": "How often the Final Girl survives each killer and each box, from {n} games logged by the community. Average win rate: <b>{media}</b>.",
-    "hub_lab": "Want to cross any killer with any map? The <a href=\"../index.html\" hreflang=\"es\">full interactive lab</a> is in Spanish, but it is mostly numbers and charts.",
+    "hub_lab": "Want to cross any killer with any map? Use the <a href=\"index.html\">full interactive stats</a>.",
     "hub_k": "Killers, hardest first", "hub_c": "Boxes, hardest first",
     "hub_th_k": ["Killer", "Win rate", "Games"], "hub_th_c": ["Box", "Win rate", "Games"],
     "hub_reg": "Played a game? <a href=\"{f}\" target=\"_blank\" rel=\"noopener\">Log it on the community form</a>: every game sharpens these numbers.",
 },
 "fr": {
     "nav": ["Stats", "Ouvertures", "Fiches"],
-    "es_nota": " (espagnol)",
+    "es_nota": "",
     "killer_eb": "Killer · {n} cartes avec données",
     "killer_h1": "{wr} de victoires",
     "intro": "Sur <b>{g} parties enregistrées</b>, la Final Girl bat {k} dans {wr} des cas. La moyenne du jeu est de {media}, donc ",
@@ -112,7 +112,7 @@ T = {
     "peor": "Le pire tirage est <b>{c}</b> : avec elle en jeu, la partie n'est gagnée que dans {wr} des cas, sur {g} parties.",
     "foro_k": "Ce qu'en disent les joueurs",
     "salir": "Comment démarrer la partie",
-    "salir_p": "Les quatre ouvertures et quand utiliser chacune sont dans les <a href=\"../salidas.html\" hreflang=\"es\">stratégies d'ouverture</a> (espagnol). Pour comparer ce killer sur toutes les cartes, voir les <a href=\"../index.html\" hreflang=\"es\">statistiques interactives</a> (espagnol).",
+    "salir_p": "Les quatre ouvertures et quand utiliser chacune sont dans les <a href=\"salidas.html\">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href=\"index.html\">statistiques interactives</a>.",
     "k_title": "{k} dans Final Girl : victoires par carte et comment le battre",
     "k_desc": "La Final Girl gagne {wr} contre {k} sur {g} parties. Meilleures et pires cartes, Dark Powers et Finales les plus durs, et conseils.",
     "box_eb": "Boîte · {f} · {g} parties",
@@ -130,23 +130,23 @@ T = {
     "setups_sub": "Du plus dur au plus facile. Au moins {n} parties.",
     "setups_gap": "Entre <b>{a}</b> et <b>{b}</b>, il y a <b>{d} points</b> d'écart. La mise en place compte plus qu'il n'y paraît.",
     "foro_c": "Conseils de joueurs", "reviews": "Ce qu'en disent les critiques",
-    "salir_c": "Les quatre ouvertures, avec laquelle choisir selon la mise en place, sont dans les <a href=\"../salidas.html\" hreflang=\"es\">stratégies d'ouverture</a> (espagnol).",
+    "salir_c": "Les quatre ouvertures, avec laquelle choisir selon la mise en place, sont dans les <a href=\"salidas.html\">stratégies d'ouverture</a>.",
     "c_title": "{c} (Final Girl) : stats et conseils, {wr} de victoires",
     "c_desc": "{k} sur {l}. Gagnée dans {wr} des {g} parties. Setups, Dark Powers, Finales et conseils.",
-    "pie": "Données issues de la <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">feuille de suivi publique</a> de la communauté Final Girl (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">enregistrez vos parties</a>). Retour à <a href=\"index.html\">tous les killers et boîtes</a>.",
+    "pie": "Données issues de la <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">feuille de suivi publique</a> de la communauté Final Girl (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">enregistrez vos parties</a>). Retour à <a href=\"fichas.html\">tous les killers et boîtes</a>.",
     "hub_title": "Statistiques Final Girl : victoires par killer et par boîte ({n} parties)",
     "hub_desc": "Taux de victoire de chaque killer et de chaque boîte de Final Girl, sur {n} parties de la communauté. Killers les plus durs, meilleures cartes, Dark Powers et Finales.",
     "hub_eb": "{n} parties réelles · {j} joueurs",
     "hub_h1": "Final Girl<span class=\"roja\">statistiques</span>",
     "hub_dek": "À quelle fréquence la Final Girl survit à chaque killer et à chaque boîte, sur {n} parties enregistrées par la communauté. Moyenne : <b>{media}</b>.",
-    "hub_lab": "Envie de croiser n'importe quel killer avec n'importe quelle carte ? Le <a href=\"../index.html\" hreflang=\"es\">laboratoire interactif complet</a> est en espagnol, mais c'est surtout des chiffres et des graphiques.",
+    "hub_lab": "Envie de croiser n'importe quel killer avec n'importe quelle carte ? Voir les <a href=\"index.html\">statistiques interactives complètes</a>.",
     "hub_k": "Killers, du plus dur au plus facile", "hub_c": "Boîtes, de la plus dure à la plus facile",
     "hub_th_k": ["Killer", "Victoires", "Parties"], "hub_th_c": ["Boîte", "Victoires", "Parties"],
     "hub_reg": "Vous avez joué ? <a href=\"{f}\" target=\"_blank\" rel=\"noopener\">Enregistrez la partie sur le formulaire communautaire</a> : chaque partie affine ces chiffres.",
 },
 "de": {
     "nav": ["Statistik", "Eröffnungen", "Übersicht"],
-    "es_nota": " (Spanisch)",
+    "es_nota": "",
     "killer_eb": "Killer · {n} Karten mit Daten",
     "killer_h1": "{wr} Siegquote",
     "intro": "In <b>{g} erfassten Partien</b> besiegt das Final Girl {k} in {wr} der Fälle. Der Schnitt des ganzen Spiels liegt bei {media}, also ",
@@ -169,7 +169,7 @@ T = {
     "peor": "Die schlimmste Karte ist <b>{c}</b>: Mit ihr im Spiel wird nur in {wr} der Fälle gewonnen, bei {g} Partien.",
     "foro_k": "Was Spieler sagen",
     "salir": "Wie man die Partie beginnt",
-    "salir_p": "Die vier Eröffnungen und wann man welche nutzt, stehen in den <a href=\"../salidas.html\" hreflang=\"es\">Eröffnungsstrategien</a> (Spanisch). Um diesen Killer auf allen Karten zu vergleichen, siehe die <a href=\"../index.html\" hreflang=\"es\">interaktive Statistik</a> (Spanisch).",
+    "salir_p": "Die vier Eröffnungen und wann man welche nutzt, stehen in den <a href=\"salidas.html\">Eröffnungsstrategien</a>. Um diesen Killer auf allen Karten zu vergleichen, siehe die <a href=\"index.html\">interaktive Statistik</a>.",
     "k_title": "{k} in Final Girl: Siegquote nach Karte und wie man ihn schlägt",
     "k_desc": "Das Final Girl gewinnt {wr} gegen {k} in {g} Partien. Beste und schlechteste Karten, härteste Dark Powers und Finales, Tipps.",
     "box_eb": "Box · {f} · {g} Partien",
@@ -187,23 +187,23 @@ T = {
     "setups_sub": "Vom härtesten zum leichtesten. Mindestens {n} Partien.",
     "setups_gap": "Zwischen <b>{a}</b> und <b>{b}</b> liegen <b>{d} Punkte</b>. Der Aufbau wiegt schwerer, als man denkt.",
     "foro_c": "Tipps von Spielern", "reviews": "Was Rezensionen sagen",
-    "salir_c": "Die vier Eröffnungen, und welche je nach Aufbau passt, stehen in den <a href=\"../salidas.html\" hreflang=\"es\">Eröffnungsstrategien</a> (Spanisch).",
+    "salir_c": "Die vier Eröffnungen, und welche je nach Aufbau passt, stehen in den <a href=\"salidas.html\">Eröffnungsstrategien</a>.",
     "c_title": "{c} (Final Girl): Statistik und Tipps, {wr} Siegquote",
     "c_desc": "{k} auf {l}. {wr} von {g} Partien gewonnen. Setups, Dark Powers, Finales und Tipps.",
-    "pie": "Daten aus der <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">öffentlichen Tabelle</a> der Final-Girl-Community (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">trag deine Partien ein</a>). Zurück zu <a href=\"index.html\">allen Killern und Boxen</a>.",
+    "pie": "Daten aus der <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">öffentlichen Tabelle</a> der Final-Girl-Community (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">trag deine Partien ein</a>). Zurück zu <a href=\"fichas.html\">allen Killern und Boxen</a>.",
     "hub_title": "Final Girl Statistik: Siegquote jedes Killers und jeder Box ({n} Partien)",
     "hub_desc": "Siegquote jedes Killers und jeder Box von Final Girl, aus {n} Community-Partien. Härteste Killer, beste Karten, Dark Powers und Finales.",
     "hub_eb": "{n} echte Partien · {j} Spieler",
     "hub_h1": "Final Girl<span class=\"roja\">Statistik</span>",
     "hub_dek": "Wie oft das Final Girl jeden Killer und jede Box überlebt, aus {n} von der Community erfassten Partien. Schnitt: <b>{media}</b>.",
-    "hub_lab": "Jeden Killer mit jeder Karte kreuzen? Das <a href=\"../index.html\" hreflang=\"es\">komplette interaktive Labor</a> ist auf Spanisch, besteht aber vor allem aus Zahlen und Diagrammen.",
+    "hub_lab": "Jeden Killer mit jeder Karte kreuzen? Dafür gibt es die <a href=\"index.html\">komplette interaktive Statistik</a>.",
     "hub_k": "Killer, härteste zuerst", "hub_c": "Boxen, härteste zuerst",
     "hub_th_k": ["Killer", "Siegquote", "Partien"], "hub_th_c": ["Box", "Siegquote", "Partien"],
     "hub_reg": "Eine Partie gespielt? <a href=\"{f}\" target=\"_blank\" rel=\"noopener\">Trag sie im Community-Formular ein</a>: Jede Partie schärft diese Zahlen.",
 },
 "it": {
     "nav": ["Statistiche", "Aperture", "Schede"],
-    "es_nota": " (spagnolo)",
+    "es_nota": "",
     "killer_eb": "Killer · {n} mappe con dati",
     "killer_h1": "{wr} di vittorie",
     "intro": "Su <b>{g} partite registrate</b>, la Final Girl batte {k} nel {wr} dei casi. La media di tutto il gioco è {media}, quindi ",
@@ -226,7 +226,7 @@ T = {
     "peor": "La pescata peggiore è <b>{c}</b>: con lei in gioco la partita si vince solo nel {wr} dei casi, su {g} partite.",
     "foro_k": "Cosa dicono i giocatori",
     "salir": "Come iniziare la partita",
-    "salir_p": "Le quattro aperture e quando usarle sono nelle <a href=\"../salidas.html\" hreflang=\"es\">strategie di apertura</a> (spagnolo). Per confrontare questo killer su ogni mappa, vedi le <a href=\"../index.html\" hreflang=\"es\">statistiche interattive</a> (spagnolo).",
+    "salir_p": "Le quattro aperture e quando usarle sono nelle <a href=\"salidas.html\">strategie di apertura</a>. Per confrontare questo killer su ogni mappa, vedi le <a href=\"index.html\">statistiche interattive</a>.",
     "k_title": "{k} in Final Girl: vittorie per mappa e come batterlo",
     "k_desc": "La Final Girl vince il {wr} contro {k} su {g} partite. Mappe migliori e peggiori, Dark Powers e Finali più duri, e consigli.",
     "box_eb": "Scatola · {f} · {g} partite",
@@ -244,16 +244,16 @@ T = {
     "setups_sub": "Dal più duro al più facile. Almeno {n} partite.",
     "setups_gap": "Tra <b>{a}</b> e <b>{b}</b> ci sono <b>{d} punti</b> di differenza. La preparazione iniziale pesa più di quanto sembri.",
     "foro_c": "Consigli di chi l'ha giocata", "reviews": "Cosa dicono le recensioni",
-    "salir_c": "Le quattro aperture, con quale usare in base alla preparazione, sono nelle <a href=\"../salidas.html\" hreflang=\"es\">strategie di apertura</a> (spagnolo).",
+    "salir_c": "Le quattro aperture, con quale usare in base alla preparazione, sono nelle <a href=\"salidas.html\">strategie di apertura</a>.",
     "c_title": "{c} (Final Girl): statistiche e consigli, {wr} di vittorie",
     "c_desc": "{k} su {l}. Vinta nel {wr} di {g} partite. Setup, Dark Powers, Finali e consigli.",
-    "pie": "Dati dal <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">foglio pubblico</a> della community di Final Girl (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">registra le tue partite</a>). Torna a <a href=\"index.html\">tutti i killer e le scatole</a>.",
+    "pie": "Dati dal <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">foglio pubblico</a> della community di Final Girl (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">registra le tue partite</a>). Torna a <a href=\"fichas.html\">tutti i killer e le scatole</a>.",
     "hub_title": "Statistiche Final Girl: vittorie per killer e scatola ({n} partite)",
     "hub_desc": "Percentuale di vittoria di ogni killer e ogni scatola di Final Girl, su {n} partite della community. Killer più duri, mappe migliori, Dark Powers e Finali.",
     "hub_eb": "{n} partite reali · {j} giocatori",
     "hub_h1": "Final Girl<span class=\"roja\">statistiche</span>",
     "hub_dek": "Quanto spesso la Final Girl sopravvive a ogni killer e a ogni scatola, su {n} partite registrate dalla community. Media: <b>{media}</b>.",
-    "hub_lab": "Vuoi incrociare qualsiasi killer con qualsiasi mappa? Il <a href=\"../index.html\" hreflang=\"es\">laboratorio interattivo completo</a> è in spagnolo, ma è soprattutto numeri e grafici.",
+    "hub_lab": "Vuoi incrociare qualsiasi killer con qualsiasi mappa? Usa le <a href=\"index.html\">statistiche interattive complete</a>.",
     "hub_k": "Killer, dal più duro", "hub_c": "Scatole, dalla più dura",
     "hub_th_k": ["Killer", "Vittorie", "Partite"], "hub_th_c": ["Scatola", "Vittorie", "Partite"],
     "hub_reg": "Hai giocato una partita? <a href=\"{f}\" target=\"_blank\" rel=\"noopener\">Registrala nel modulo della community</a>: ogni partita affina questi numeri.",
@@ -467,13 +467,15 @@ def generar(M):
             pags.append((P.slug(nombre) + ".html", *pagina_killer(nombre, k, lang, tx), None))
         for f in P.D["films"]:
             pags.append((P.slug(f["film"]) + ".html", *pagina_caja(f, lang, tx), f.get("img")))
-        pags.append(("index.html", *hub(lang, pags), None))
+        pags.append(("fichas.html", *hub(lang, pags), None))
         hechos[lang] = {p[0] for p in pags}
         for p in pags:
             sitemap.append((lang, p[0]))
-        pags_de = pags
-        # se escriben al final, cuando ya se sabe qué idiomas existen
-        hechos[lang + "_pags"] = pags_de
+        hechos[lang + "_pags"] = pags
+        for salida in ("index.html", "salidas.html"):
+            if (AQUI / "src" / "i18n" / f"{salida.split('.')[0].replace('index', 'cuerpo')}.{lang}.html").exists():
+                hechos[lang].add(salida)
+                sitemap.append((lang, salida))
 
     def existe_en(salida):
         return lambda l: salida in hechos.get(l, set())
@@ -482,15 +484,11 @@ def generar(M):
         if lang not in hechos:
             continue
         t = T[lang]
-        nav = (f'<nav class="nav-sitio" aria-label="Sections">'
-               f'<a href="index.html">{t["nav"][2]}</a>'
-               f'<a href="../index.html" hreflang="es">{t["nav"][0]}{t["es_nota"]}</a>'
-               f'<a href="../salidas.html" hreflang="es">{t["nav"][1]}{t["es_nota"]}</a></nav>'
-               + "<style" + M.NAV.split("<style", 1)[1].replace("{{", "{").replace("}}", "}"))
+        nav = nav_de(lang, M).format(act_index="", act_salidas="", act_fichas="")
         for salida, title, desc, cuerpo, img in hechos[lang + "_pags"]:
             url = f"{dominio}/{lang}/{'' if salida == 'index.html' else salida}"
             cuerpo = cuerpo.replace("{FORM}", M.FORM)
-            if salida == "index.html":
+            if salida == "fichas.html":
                 head, rest = cuerpo.split("</header>", 1)
                 cuerpo_html = ('<div class="wrap"><header class="top">' + head
                                + selector(lang, salida, existe_en(salida)) + "</header>" + rest)
@@ -513,7 +511,10 @@ def generar(M):
                     + '<footer><p>' + t["pie"].format(h=M.HOJA, f=M.FORM) + "</p></footer></div>"
                     + M.PIE)
             (AQUI / lang / salida).write_text(html, encoding="utf-8")
-        print(f"{lang}/  {len(hechos[lang + '_pags'])} páginas")
+        for salida in ("index.html", "salidas.html"):
+            if salida in hechos[lang]:
+                grande(lang, salida, M, existe_en(salida))
+        print(f"{lang}/  {len(hechos[lang])} páginas")
 
     return sitemap, existe_en
 
@@ -541,3 +542,153 @@ def parchear_es(ruta, salida, dominio, existe):
     sel = selector("es", salida, existe)
     s = re.sub(r"(</h1>)", r"\1" + sel.replace("\\", "\\\\"), s, count=1)
     ruta.write_text(s, encoding="utf-8")
+
+
+# --------------------------------------------------------------------------
+# Las dos páginas grandes (estadísticas y salidas)
+# --------------------------------------------------------------------------
+# Están escritas a mano, así que su traducción vive en src/i18n/<pagina>.<idioma>.html.
+# Esos ficheros NO llevan los datos: tienen marcas /*@@D@@*/ que se rellenan
+# aquí con los datos del día, sacados de la versión española. Así refrescar
+# los datos no obliga a volver a traducir nada.
+#
+# Si alguien cambia el texto español, la traducción no se entera: hay que
+# volver a pasarla. traduccion_vieja() avisa al montar.
+
+NAV_TXT = {
+    "en": ["Stats", "Openings", "All pages", "More sections", "Matrix", "Tops", "Boxes", "Series", "Killers", "Maps", "Final Girls", "Players", "Sections"],
+    "fr": ["Stats", "Ouvertures", "Fiches", "Plus de sections", "Matrice", "Tops", "Boîtes", "Saisons", "Killers", "Cartes", "Final Girls", "Joueurs", "Sections"],
+    "de": ["Statistik", "Eröffnungen", "Übersicht", "Weitere Bereiche", "Matrix", "Tops", "Boxen", "Staffeln", "Killer", "Karten", "Final Girls", "Spieler", "Bereiche"],
+    "it": ["Statistiche", "Aperture", "Schede", "Altre sezioni", "Matrice", "Top", "Scatole", "Stagioni", "Killer", "Mappe", "Final Girls", "Giocatori", "Sezioni"],
+}
+
+TITULOS = {
+    "en": {"index.html": ("Final Girl stats: win rates from {n} real games",
+                          "Win rate of every killer on every map in Final Girl, from {n} community games. Which box is hardest and where each killer loses."),
+           "salidas.html": ("Final Girl openings: the 4 openings and when to use each",
+                            "The 4 Final Girl openings turn by turn: which to use depending on weapons in sight or victims nearby, dice, and common rules mistakes.")},
+    "fr": {"index.html": ("Statistiques Final Girl : victoires sur {n} parties réelles",
+                          "Victoires de chaque killer sur chaque carte de Final Girl, sur {n} parties de la communauté. Quelle boîte est la plus dure et où chaque killer perd."),
+           "salidas.html": ("Ouvertures Final Girl : les 4 ouvertures et quand les utiliser",
+                            "Les 4 ouvertures de Final Girl tour par tour : laquelle choisir selon les armes en vue ou les victimes proches, dés et erreurs de règles courantes.")},
+    "de": {"index.html": ("Final Girl Statistik: Siegquoten aus {n} echten Partien",
+                          "Siegquote jedes Killers auf jeder Karte von Final Girl, aus {n} Community-Partien. Welche Box am härtesten ist und wo jeder Killer verliert."),
+           "salidas.html": ("Final Girl Eröffnungen: die 4 Eröffnungen und wann man sie nutzt",
+                            "Die 4 Eröffnungen von Final Girl Zug für Zug: welche je nach sichtbaren Waffen oder nahen Opfern, Würfel und häufige Regelfehler.")},
+    "it": {"index.html": ("Statistiche Final Girl: vittorie su {n} partite reali",
+                          "Vittorie di ogni killer su ogni mappa di Final Girl, su {n} partite della community. Quale scatola è più dura e dove perde ogni killer."),
+           "salidas.html": ("Aperture di Final Girl: le 4 aperture e quando usarle",
+                            "Le 4 aperture di Final Girl turno per turno: quale usare in base alle armi in vista o alle vittime vicine, dadi ed errori di regole comuni.")},
+}
+
+
+def nav_de(lang, M):
+    t = NAV_TXT[lang]
+    es = ["Estadísticas", "Salidas", "Fichas", "Más secciones", "Matriz", "Tops", "Cajas", "Temporadas", "Killers", "Mapas", "Final Girls", "Jugadores", "Secciones"]
+    nav = M.NAV
+    for a, b in zip(es, t):
+        nav = nav.replace(f">{a}<", f">{b}<").replace(f'aria-label="{a}"', f'aria-label="{b}"')
+    return nav
+
+
+def _lineas_datos(fuente):
+    """Las líneas 'var X = {...};' de la página española, por nombre."""
+    out = {}
+    for l in (AQUI / "src" / fuente).read_text(encoding="utf-8").split("\n"):
+        m = re.match(r"\s*var (\w+) = ([\[{].*);\s*$", l)
+        if m and len(l) > 3000:
+            out[m.group(1)] = m.group(2)
+    return out
+
+
+def _traducir_datos(obj, lang, tx, mapa):
+    def walk(o, ruta):
+        if isinstance(o, dict):
+            return {k: walk(v, ruta + [k]) for k, v in o.items()}
+        if isinstance(o, list):
+            return [walk(v, ruta) for v in o]
+        if isinstance(o, str):
+            if len(ruta) >= 3 and ruta[0] == "consejos":
+                return tx["cons"].get(ruta[1], {}).get(ruta[2], o)
+            if o in mapa:
+                return mapa[o].get(lang, o)
+        return o
+    return walk(obj, [])
+
+
+def cifras(lang):
+    m = P.D["meta"]
+    c = {"partidas": num(m["total"], lang), "jugadores": str(m.get("jugadores", "")),
+         "media": pc(m["wr"], lang)}
+    for k in ("combis", "combisOk", "top25", "top1", "unicas"):
+        if m.get(k) is not None:
+            c[k] = str(m[k])
+    for k in ("wrTop10", "wrResto"):
+        if m.get(k) is not None:
+            c[k] = pc(m[k], lang)
+    return c
+
+
+def grande(lang, salida, M, existe):
+    base = "cuerpo" if salida == "index.html" else "salidas"
+    fuente_es = "cuerpo.html" if salida == "index.html" else "salidas-cuerpo.html"
+    cuerpo = (AQUI / "src" / "i18n" / f"{base}.{lang}.html").read_text(encoding="utf-8")
+    tx = textos(lang)
+    mapa = json.loads((AQUI / "src" / "i18n" / "datos.json").read_text(encoding="utf-8"))
+    for nombre, valor in _lineas_datos(fuente_es).items():
+        marca = f"/*@@{nombre}@@*/"
+        if marca not in cuerpo:
+            continue
+        if nombre == "D":
+            valor = json.dumps(_traducir_datos(json.loads(valor), lang, tx, mapa),
+                               ensure_ascii=False)
+        cuerpo = cuerpo.replace(marca, valor, 1)
+    if "/*@@" in cuerpo:
+        raise SystemExit(f"{base}.{lang}: marca de datos sin rellenar")
+
+    cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
+    for clave, valor in cifras(lang).items():
+        cuerpo = re.sub(r'(<span data-dato="%s">)[^<]*(</span>)' % clave,
+                        r"\g<1>" + valor + r"\g<2>", cuerpo)
+    if "var DESC = {};" in cuerpo:
+        desc = {k: dict(P.DESC.get(k, {}), **{x: v[x] for x in ("q", "j") if v.get(x)})
+                for k, v in tx["desc"].items()}
+        cuerpo = cuerpo.replace("var DESC = {};", "var DESC = " + json.dumps(desc, ensure_ascii=False) + ";", 1)
+    for viejo, nuevo in M.ENLACES.items():
+        cuerpo = cuerpo.replace(viejo, nuevo)
+    # Imágenes: la página vive un nivel más abajo.
+    cuerpo = re.sub(r"""(["'(])(img|assets)/""", r"\1../\2/", cuerpo)
+
+    act = {"act_index": "", "act_salidas": "", "act_fichas": ""}
+    act["act_index" if salida == "index.html" else "act_salidas"] = ' aria-current="page"'
+    nav = nav_de(lang, M).format(**act)
+    if "nav-sitio" not in cuerpo:
+        for ancla in ('<header class="hero">', '<header class="top">'):
+            if ancla in cuerpo:
+                cuerpo = cuerpo.replace(ancla, nav + ancla, 1)
+                break
+    else:
+        # la de salidas trae su propia barra en español
+        cuerpo = re.sub(r'<nav class="nav-sitio".*?</nav>', nav.split("<style")[0].strip(), cuerpo, count=1, flags=re.S)
+    if salida == "salidas.html":
+        cuerpo += M.UNIFICAR_ESTILO
+    if salida == "index.html":
+        # Igual que en la española: "Laboratorio" no lo busca nadie.
+        cuerpo = re.sub(r"<h1>.*?</h1>", f'<h1>{NAV_TXT[lang][0]}<span class="roja">Final Girl</span></h1>',
+                        cuerpo, count=1, flags=re.S)
+    cuerpo = re.sub(r"(</h1>)", lambda m: m.group(1) + selector(lang, salida, existe), cuerpo, count=1)
+
+    n = num(P.D["meta"]["total"], lang)
+    title, desc = (x.format(n=n) for x in TITULOS[lang][salida])
+    url = f"{M.DOMINIO}/{lang}/{'' if salida == 'index.html' else salida}"
+    img = "img/vhs-final-girl.jpg" if salida == "index.html" else "img/the-happy-trails-horror.jpg"
+    html = (M.CABECERA.format(
+                title=title, desc=desc[:158], url=url, imgurl=f"{M.DOMINIO}/{img}",
+                ogtitle=title, ogdesc=desc[:158], jsonld=jsonld(title, desc, url, lang, M),
+                robots="index,follow,max-image-preview:large" if M.INDEXAR else "noindex,nofollow")
+            .replace('<html lang="es">', f'<html lang="{lang}">')
+            .replace('content="es_ES"', f'content="{LOCALE[lang]}"')
+            .replace('content="La página que todo fan de Final Girl necesitaba"', 'content="Final Girl Stats"')
+            .replace("</head>", alternativos(salida, M.DOMINIO, existe) + "\n" + ESTILO_IDIOMAS + "</head>")
+            + cuerpo + M.PIE)
+    (AQUI / lang / salida).write_text(html, encoding="utf-8")

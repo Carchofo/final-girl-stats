@@ -1,0 +1,981 @@
+<title>Stratégies d’ouverture de Final Girl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+    --paper:   #f6f2f0;
+    --surface: #ffffff;
+    --sunk:    #ece5e3;
+    --ink:     #191316;
+    --muted:   #6d6066;
+    --line:    #e2d8d6;
+    --line-hi: #cfc1bf;
+    --blood:   #a3232b;
+    --blood-s: #f3e2e2;
+    --verde:   #2c6b4c;
+    --ambar:   #9a6b0d;
+    --rojo:    #a3232b;
+    --shadow:  0 1px 2px rgba(25,19,22,.06), 0 6px 18px rgba(25,19,22,.05);
+
+    --f-disp: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;
+    --f-body: "Newsreader", Georgia, "Times New Roman", serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper:   #131013;
+      --surface: #1c181b;
+      --sunk:    #241f23;
+      --ink:     #efe7e8;
+      --muted:   #a1919a;
+      --line:    #2e262b;
+      --line-hi: #453a40;
+      --blood:   #e0666d;
+      --blood-s: #33191d;
+      --verde:   #62b98c;
+      --ambar:   #d6a33c;
+      --rojo:    #e0666d;
+      --shadow:  0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:   #131013;
+    --surface: #1c181b;
+    --sunk:    #241f23;
+    --ink:     #efe7e8;
+    --muted:   #a1919a;
+    --line:    #2e262b;
+    --line-hi: #453a40;
+    --blood:   #e0666d;
+    --blood-s: #33191d;
+    --verde:   #62b98c;
+    --ambar:   #d6a33c;
+    --rojo:    #e0666d;
+    --shadow:  0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---------- cabecera ---------- */
+  header.top {
+    padding-block: 40px 26px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--f-disp);
+    font-weight: 800;
+    font-size: clamp(44px, 13vw, 78px);
+    line-height: .88;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 0 0 14px;
+  }
+  .dek {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 54ch;
+    margin: 0;
+  }
+
+  /* ---------- secciones ---------- */
+  section { padding-block: 40px 8px; }
+  h2 {
+    font-family: var(--f-disp);
+    font-weight: 700;
+    font-size: clamp(27px, 6vw, 36px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .005em;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  h2 .num {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blood);
+    letter-spacing: .1em;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 22px;
+    max-width: 58ch;
+  }
+  h3 {
+    font-family: var(--f-disp);
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    margin: 0;
+  }
+
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; }
+  em { font-style: italic; color: var(--muted); }
+
+  /* ---------- selector ---------- */
+  .picker {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .q > span {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .toggle {
+    display: inline-flex;
+    flex: none;
+    border: 1px solid var(--line-hi);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--sunk);
+  }
+  .toggle button {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 6px 13px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .12s, color .12s;
+  }
+  .toggle button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .toggle button:focus-visible {
+    outline: 2px solid var(--blood);
+    outline-offset: -2px;
+  }
+
+  .verdict {
+    padding: 16px;
+    background: var(--blood-s);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .verdict .tag {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    background: var(--blood);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 2px;
+    flex: none;
+    margin-top: 2px;
+  }
+  :root[data-theme="dark"] .verdict .tag,
+  .verdict .tag { color: #fff; }
+  .verdict b {
+    font-family: var(--f-disp);
+    font-size: 21px;
+    text-transform: uppercase;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+  .verdict small {
+    font-size: 14.5px;
+    color: var(--ink);
+    opacity: .82;
+  }
+
+  /* ---------- salidas ---------- */
+  .salida {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--line-hi);
+    border-radius: 3px;
+    padding: 18px 18px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 16px;
+    transition: border-left-color .18s;
+  }
+  .salida.on { border-left-color: var(--blood); }
+  .salida-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .letra {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--blood);
+  }
+  .cuando {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  .cuando b { color: var(--ink); font-weight: 600; }
+
+  ol.turnos {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  ol.turnos li {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-size: 15px;
+  }
+  ol.turnos .t {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 2px solid var(--line-hi);
+    padding-top: 5px;
+  }
+  .riesgo {
+    font-size: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 11px;
+    color: var(--muted);
+  }
+  .riesgo b {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--blood);
+    margin-right: 6px;
+  }
+
+  /* ---------- tablas ---------- */
+  .tabla-wrap { overflow-x: auto; margin-bottom: 16px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 340px;
+    font-size: 15px;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 12px 9px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--line-hi);
+    white-space: nowrap;
+  }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-size: 14px; padding-right: 0; }
+  tr:last-child td { border-bottom: 0; }
+
+  .chip {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip.v { background: color-mix(in srgb, var(--verde) 15%, transparent); color: var(--verde); }
+  .chip.a { background: color-mix(in srgb, var(--ambar) 18%, transparent); color: var(--ambar); }
+  .chip.r { background: color-mix(in srgb, var(--rojo) 15%, transparent); color: var(--rojo); }
+
+  /* ---------- avisos ---------- */
+  .aviso {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--blood);
+    border-radius: 3px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .aviso h3 { margin-bottom: 8px; }
+  .aviso p { font-size: 15px; }
+
+  ul.check {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 11px;
+  }
+  ul.check li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    font-size: 15px;
+    align-items: start;
+  }
+  ul.check li::before {
+    content: "✕";
+    font-family: var(--f-mono);
+    font-size: 13px;
+    color: var(--blood);
+    line-height: 1.5;
+  }
+
+  ul.plain { margin: 0 0 12px; padding-left: 20px; }
+  ul.plain li { margin-bottom: 7px; font-size: 15px; }
+
+  .kbd {
+    font-family: var(--f-mono);
+    font-size: .88em;
+    background: var(--sunk);
+    padding: 1px 5px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  footer a { color: var(--blood); text-decoration: none; border-bottom: 1px solid currentColor; }
+  footer a:hover { opacity: .75; }
+  footer p { margin-bottom: 8px; }
+
+
+  /* ---------- estadisticas ---------- */
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; margin-bottom:22px; }
+  .kpi { background:var(--surface); padding:14px 16px; }
+  .kpi b { font-family:var(--f-disp); font-size:31px; line-height:1; display:block; font-variant-numeric:tabular-nums; }
+  .kpi span { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); display:block; margin-top:5px; }
+
+  .barlist { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .bar { display:grid; grid-template-columns:1fr 54px 46px; gap:10px; align-items:center;
+         background:var(--surface); border:0; width:100%; text-align:left; padding:9px 13px; cursor:pointer;
+         font:inherit; color:inherit; position:relative; }
+  .bar:hover { background:var(--sunk); }
+  .bar[aria-pressed="true"] { background:var(--blood-s); }
+  .bar:focus-visible { outline:2px solid var(--blood); outline-offset:-2px; }
+  .bar .fill { position:absolute; inset:0 auto 0 0; background:color-mix(in srgb, var(--blood) 11%, transparent); pointer-events:none; }
+  .bar > * { position:relative; }
+  .bar .nm { font-size:14.5px; line-height:1.25; }
+  .bar .nm i { font-style:normal; color:var(--muted); font-size:12.5px; display:block; }
+  .bar .pc { font-family:var(--f-mono); font-size:15px; font-variant-numeric:tabular-nums; text-align:right; font-weight:500; }
+  .bar .pl { font-family:var(--f-mono); font-size:11px; color:var(--muted); text-align:right; }
+  .mine { font-family:var(--f-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase;
+          background:var(--ink); color:var(--paper); padding:2px 5px; border-radius:2px; margin-left:6px; vertical-align:2px; }
+
+  .detalle { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--blood);
+             border-radius:3px; padding:18px; margin-top:16px; box-shadow:var(--shadow); }
+  .detalle h3 { margin-bottom:3px; }
+  .detalle .loc { font-size:14px; color:var(--muted); margin:0 0 16px; }
+  .split { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:18px; }
+  .split div { background:var(--sunk); border-radius:3px; padding:11px 13px; }
+  .split b { font-family:var(--f-mono); font-size:19px; display:block; font-variant-numeric:tabular-nums; }
+  .split span { font-size:12.5px; color:var(--muted); display:block; margin-top:2px; line-height:1.3; }
+  .sec-t { font-family:var(--f-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--blood); margin:18px 0 8px; }
+  .mini { width:100%; border-collapse:collapse; font-size:14.5px; }
+  .mini td { padding:6px 0; border-bottom:1px solid var(--line); }
+  .mini td:last-child, .mini td:nth-last-child(2) { text-align:right; font-family:var(--f-mono); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .mini td:nth-last-child(2) { padding-right:14px; }
+  .mini td:last-child { font-size:11.5px; color:var(--muted); }
+  .mini tr:last-child td { border-bottom:0; }
+  .mini .peor td:first-child { font-weight:600; }
+  .mini .peor td:nth-last-child(2) { color:var(--rojo); }
+  .mini .mejor td:nth-last-child(2) { color:var(--verde); }
+
+  .mini td.org { text-align:left !important; font-family:var(--f-body) !important; font-size:12.5px; color:var(--muted); }
+  details.mas { margin-top:16px; border-top:1px solid var(--line); padding-top:14px; }
+  details.mas summary { font-family:var(--f-mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+                        color:var(--blood); cursor:pointer; list-style:none; }
+  details.mas summary::-webkit-details-marker { display:none; }
+  details.mas summary::before { content:"+ "; }
+  details.mas[open] summary::before { content:"– "; }
+  details.mas > div { padding-top:14px; }
+  @media (max-width:420px){ .bar { grid-template-columns:1fr 50px; } .bar .pl { display:none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+  @media (max-width: 420px) {
+    .q { flex-direction: column; align-items: flex-start; gap: 9px; }
+    ol.turnos li { grid-template-columns: 1fr; gap: 3px; }
+    ol.turnos .t { border-top: 0; padding-top: 0; }
+  }
+</style>
+
+<div class="wrap">
+
+
+<header class="top">
+  <p class="eyebrow">Stratégies d’ouverture · jeu en solo</p>
+  <h1>Ouvertures de<br>Final Girl</h1>
+  <p class="dek">Quatre ouvertures appuyées par le forum BGG, à quoi sert chacune, et comment choisir en regardant le plateau au tour 1.</p>
+</header>
+
+<section>
+  <h2><span class="num">01</span> Regarde la table</h2>
+  <p class="sub">Trois questions après la mise en place. La recommandation se met à jour toute seule.</p>
+
+  <div class="picker">
+    <div class="q">
+      <span>Y a-t-il une arme <b>de mêlée</b> face visible sur une pioche d’objets ?<br><em>Hache, batte, couteau. Les armes à distance ne comptent pas.</em></span>
+      <span class="toggle" role="group" aria-label="Arme de mêlée visible">
+        <button type="button" data-k="arma" data-v="1" aria-pressed="false">Oui</button>
+        <button type="button" data-k="arma" data-v="0" aria-pressed="false">Non</button>
+      </span>
+    </div>
+    <div class="q">
+      <span>As-tu des <b>victimes regroupées</b> à portée, sur le chemin d’une sortie ?</span>
+      <span class="toggle" role="group" aria-label="Victimes regroupées à proximité">
+        <button type="button" data-k="vict" data-v="1" aria-pressed="false">Oui</button>
+        <button type="button" data-k="vict" data-v="0" aria-pressed="false">Non</button>
+      </span>
+    </div>
+    <div class="q">
+      <span>Le killer démarre-t-il <b>à deux cases ou moins</b> de toi ou d’un groupe de victimes ?</span>
+      <span class="toggle" role="group" aria-label="Killer proche">
+        <button type="button" data-k="kill" data-v="1" aria-pressed="false">Oui</button>
+        <button type="button" data-k="kill" data-v="0" aria-pressed="false">Non</button>
+      </span>
+    </div>
+    <div class="verdict">
+      <span class="tag" id="v-tag">—</span>
+      <span>
+        <b id="v-name">Réponds aux trois</b>
+        <small id="v-why">En attendant, les quatre ouvertures sont ci-dessous. Si tu ne dois retenir qu’une chose : le tour 1 sert à l’économie, pas à l’action.</small>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span> Les quatre ouvertures</h2>
+  <p class="sub">Un tour, c’est : tu joues des cartes, puis tu <strong>achètes</strong> avec le temps qui reste. Acheter clôt ton tour, il ne l’ouvre pas : ce que tu achètes se joue au tour suivant.</p>
+
+  <div class="aviso" style="border-top-color:var(--line-hi)">
+    <h3>Les trois règles du temps</h3>
+    <ul class="plain" style="margin-bottom:0">
+      <li>Le nombre dans le coin est le coût d’<strong>achat</strong>. Jouer une carte ne coûte pas de temps ; tu n’en perds que si le résultat porte l’icône.</li>
+      <li><strong>Le temps non dépensé est perdu</strong> au retour à 6. S’il t’en reste, achète quelque chose même sans besoin : ça sert de carburant pour convertir.</li>
+      <li><strong>Tu ne peux pas acheter ce que tu as joué ou défaussé ce tour-là</strong>, même les cartes de coût 0. Elles retournent au tableau et se récupèrent à un tour ultérieur.</li>
+    </ul>
+  </div>
+
+  <article class="salida" id="s-a">
+    <div class="salida-head"><span class="letra">Ouverture A</span><h3>Économie totale</h3></div>
+    <p class="cuando"><b>À quoi ça sert :</b> arriver à 3 dés au tour 2 et ne plus regarder l’horreur. Contre les killers qui crachent des icônes d’horreur, comme Hans.</p>
+    <ol class="turnos">
+      <li><span class="t">Tour 1<br>action</span><span>Tu ne joues rien. Tu défausses toute la main sauf les 2 Focus : <span class="kbd">+4 Temps</span>, total 10.</span></li>
+      <li><span class="t">Tour 1<br>achats</span><span>2× Distraction, Improvise, Close Call.</span></li>
+      <li><span class="t">Tour 2</span><span>Improvise d’abord. Puis les deux Distraction. Les Focus servent de carburant pour convertir les 3 et 4.</span></li>
+      <li><span class="t">Ensuite</span><span>Une fois en vert, Sprint et Search sans arrêt.</span></li>
+    </ol>
+    <p class="riesgo"><b>Risque</b> Tu sacrifies tout le tour 1. Si le killer démarre sur un groupe de victimes, le bloodlust monte avant que tu aies fait quoi que ce soit. Son propre auteur rapporte des résultats mitigés.</p>
+  </article>
+
+  <article class="salida" id="s-b">
+    <div class="salida-head"><span class="letra">Ouverture B</span><h3>Horreur douce</h3></div>
+    <p class="cuando"><b>À quoi ça sert :</b> comme A, mais sans sacrifier le tour. C’est l’ouverture par défaut et celle qui rapporte le plus de victoires.</p>
+    <ol class="turnos">
+      <li><span class="t">Tour 1<br>action</span><span>Tu joues un Focus et tu te déplaces avec les Walk là où tu veux être. Tu défausses ce que tu n’utilises pas pour du temps.</span></li>
+      <li><span class="t">Tour 1<br>achats</span><span>Une Distraction et un Close Call. Dépense le reste n’importe comment.</span></li>
+      <li><span class="t">Tour 2</span><span>Tu joues la Distraction. Te voilà à 3 dés.</span></li>
+      <li><span class="t">Milieu</span><span>Seulement Sprint et Search. Sauver et fouiller. Ignore le reste sauf si l’horreur s’envole.</span></li>
+      <li><span class="t">Fin</span><span>Tu accumules Retaliate et des cartes d’attaque. Tu attends qu’il vienne.</span></li>
+    </ol>
+    <p class="riesgo"><b>Note</b> Focus redevient intéressant à partir de l’horreur 5 ou 6, pas avant : il te rend du temps.</p>
+  </article>
+
+  <article class="salida" id="s-c">
+    <div class="salida-head"><span class="letra">Ouverture C</span><h3>Sauvetage agressif</h3></div>
+    <p class="cuando"><b>À quoi ça sert :</b> figer le killer. C’est l’ouverture des parties gagnées sans arme, et la meilleure si la carte met des victimes regroupées à proximité.</p>
+    <ol class="turnos">
+      <li><span class="t">Tour 1</span><span>Tu avances avec les deux Walk vers le groupe. Tu achètes Sprint, et un second si tu peux.</span></li>
+      <li><span class="t">Tours 2-4</span><span>Tu ignores complètement le killer. Sprint et sauvetage, le plus vite possible.</span></li>
+      <li><span class="t">Route</span><span>Planifie le trajet en comptant les bonus de sauvetage : un détour de 2 cases est gratuit s’ils te donnent du mouvement libre.</span></li>
+      <li><span class="t">Objectif</span><span>Remplir la carte de Final Girl et la retourner. Ultimate débloquée.</span></li>
+      <li><span class="t">Ensuite</span><span>Fouille, et seulement après, combat.</span></li>
+    </ol>
+    <p class="riesgo"><b>Pourquoi ça marche</b> Chaque victime morte fait monter le bloodlust, et le bloodlust, c’est ses dégâts et son mouvement. Parties rapportées : 10 victimes sauvées ont laissé Hans bloqué à 2 de dégâts et 1 de mouvement toute la partie.</p>
+  </article>
+
+  <article class="salida" id="s-d">
+    <div class="salida-head"><span class="letra">Ouverture D</span><h3>L’arme d’abord</h3></div>
+    <p class="cuando"><b>À quoi ça sert :</b> seulement quand tu vois une arme de mêlée face visible à la mise en place. Une arme fait plus que doubler tes dégâts ; rien d’autre n’en est capable.</p>
+    <ol class="turnos">
+      <li><span class="t">Avant</span><span>Vérifie <b>quelle case</b> donne sur cette pioche. Chaque case de fouille est liée à une pioche précise, pas à la plus proche.</span></li>
+      <li><span class="t">Tour 1<br>action</span><span>Tu joues tes deux Walk vers cette case, en faisant un détour par les victimes. Tu défausses Weak Attack et Short Rest pour du temps.</span></li>
+      <li><span class="t">Tour 1<br>achats</span><span>Search et Sprint, 2 chacune. S’il te reste du temps, la seconde Search ou un Close Call : <b>le temps non dépensé est perdu.</b></span></li>
+      <li><span class="t">Tour 2</span><span>Sprint pour arriver et Search sur place.</span></li>
+      <li><span class="t">Creuser</span><span>Utilise <b>les deux</b> Search. La première prend la carte du dessus, la seconde creuse plus bas.</span></li>
+      <li><span class="t">Ensuite</span><span>Tu reviens à l’ouverture B ou C, l’arme en main.</span></li>
+    </ol>
+    <p class="riesgo"><b>Risque</b> Pendant que tu creuses, il tue. Si l’arme est loin et les victimes proches, C l’emporte.</p>
+  </article>
+
+  <article class="salida" id="s-lejos" style="border-left-color:var(--line-hi)">
+    <div class="salida-head"><span class="letra">Variante</span><h3>Et si l’arme est loin ?</h3></div>
+    <p class="cuando"><b>Ce qui coûte vraiment, ce n’est pas la distance, c’est l’endroit par où tu passes.</b> S’éloigner du killer ne coûte presque rien, même loin : Hans et compagnie sont lents et tu peux fouiller le bout de la carte avant qu’il arrive. Le croiser coûte cher, même tout près.</p>
+    <ul class="plain">
+      <li><strong>Mesure en tours, pas en cases.</strong> Avec Walk et Sprint, tu avances d’environ 3 cases par tour. La pioche Terror compte 10 cartes : trois tours de trajet, c’est un tiers de la partie avant le Finale.</li>
+      <li><strong>Rends le trajet rentable.</strong> Passe par les victimes. Les bonus de sauvetage incluent du mouvement libre : un détour de deux cases est donc gratuit et freine en plus le bloodlust. Ça transforme l’ouverture D en C sans renoncer à l’arme.</li>
+      <li><strong>Il y a deux autres pioches.</strong> Tu ne vois que la carte du dessus de chacune : 3 objets sur 12. La pioche voisine cache 4 cartes que tu n’as pas regardées. Creuser près bat souvent voyager loin.</li>
+      <li><strong>Prédis sa route.</strong> Il va toujours vers le plus proche, et en cas d’égalité vers le groupe avec le plus de victimes. Choisis la pioche située à l’opposé de là où il va aller.</li>
+    </ul>
+    <p class="riesgo"><b>Règle rapide</b> Plus de deux tours de trajet et des victimes qui meurent dans une autre direction : oublie l’arme que tu vois, prends l’ouverture C et fouille la pioche qui se trouve sur ton chemin.</p>
+  </article>
+</section>
+
+<section>
+  <h2><span class="num">03</span> Le burst</h2>
+  <p class="sub">Le schéma d’attaque. Ne frappe pas un coup par tour : monte ta main et décharge tout en un seul tour.</p>
+  <div class="aviso">
+    <ol class="turnos">
+      <li><span class="t">Prépare</span><span>Termine ta phase d’action avec <b>Retaliate + Furious Strike + Weak Attack</b> en main. Et un Close Call.</span></li>
+      <li><span class="t">Appât</span><span>Entre dans sa case, ou laisse-le venir.</span></li>
+      <li><span class="t">Sa phase</span><span>Il t’attaque → Retaliate. <b>Dégâts, et l’arme compte.</b></span></li>
+      <li><span class="t">Ta phase</span><span>Weak Attack et Furious Strike. <b>L’arme compte dans les deux.</b></span></li>
+      <li><span class="t">Tu sors</span><span>Carte de mouvement et dehors. Ne finis pas le tour dans sa case.</span></li>
+    </ol>
+    <p class="riesgo" style="margin-top:14px"><b>Trois coups</b> Trois instances de dégâts en un tour, toutes avec le bonus de l’arme. Dont une gratuite, car elle vient de son tour et non de ta phase d’action.</p>
+  </div>
+  <ul class="plain">
+    <li><strong>Retaliate ne tombe qu’un tour sur deux</strong>, il faut la racheter. Alterne avec Guard.</li>
+    <li>Si tu l’achèves <strong>avec Retaliate, la phase du killer s’arrête net</strong>. S’il se relève, tu passes directement à ta phase d’action au lieu d’encaisser le reste de son tour. Mieux vaut l’achever pendant sa phase que pendant la tienne.</li>
+    <li>Les modificateurs de l’arme <strong>ne s’appliquent que si la carte a déjà infligé 1 de dégât</strong>. Attaque ratée avec une hache = rien.</li>
+    <li><strong>Tu n’es pas obligé d’utiliser l’arme équipée</strong> (confirmé par l’auteur). Tu peux frapper à mains nues si l’arme te dessert.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">04</span> Armes</h2>
+  <p class="sub">Ce que les gens prennent pour de la malchance, c’est souvent ça.</p>
+  <div class="tabla-wrap">
+    <table>
+      <thead><tr><th>Arme</th><th>Valeur</th><th>Pourquoi</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hache</b></td><td><span class="chip v">La meilleure</span></td><td>Gros dégâts et fonctionne avec Retaliate</td></tr>
+        <tr><td><b>Batte</b></td><td><span class="chip v">Très bonne</span></td><td>Mêlée, sans défaut</td></tr>
+        <tr><td><b>Couteau</b></td><td><span class="chip a">Correct</span></td><td>Peu de dégâts mais compte comme arme</td></tr>
+        <tr><td><b>À distance</b></td><td><span class="chip r">Pas une arme</span></td><td>Voir ci-dessous</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="aviso">
+    <h3>Le piège des armes à distance</h3>
+    <p>On ne peut les utiliser <strong>ni avec Retaliate ni avec les cartes d’attaque</strong>. La seule exception est l’Old Revolver avec Weak Attack. Et plusieurs ont une portée minimale supérieure à 0 : <strong>tu ne peux pas attaquer le killer s’il est dans ta case</strong>.</p>
+    <p>Si tu en trouves une, refouille et lâche-la. Fais comme si tu n’avais trouvé aucune arme.</p>
+    <p>Seul bon usage : tirer de loin pour grignoter les marqueurs de vie supplémentaires des <strong>Minor Dark Power</strong> sans t’approcher.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span> Dés et défense</h2>
+  <p class="sub">Probabilité d’obtenir les 2 réussites qui activent la bonne ligne d’une carte.</p>
+  <div class="tabla-wrap">
+    <table>
+      <thead><tr><th>Zone d’horreur</th><th class="n">Dés</th><th class="n">Main vide</th><th class="n">Avec des cartes à brûler</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip r">Rouge</span></td><td class="n">1</td><td class="n">0 %</td><td class="n">0 %</td></tr>
+        <tr><td><span class="chip a">Jaune</span></td><td class="n">2</td><td class="n">11 %</td><td class="n">44 %</td></tr>
+        <tr><td><span class="chip v">Vert</span></td><td class="n">3</td><td class="n">26 %</td><td class="n">74 %</td></tr>
+        <tr><td><span class="chip v">Vert + adrénaline</span></td><td class="n">4</td><td class="n">41 %</td><td class="n">89 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="plain">
+    <li><strong>La main pèse plus que le troisième dé.</strong> 2 dés avec une main pleine battent 3 dés avec une main vide.</li>
+    <li><strong>Adrénaline :</strong> +1 dé tant que tu es sur ton Final Health token, +2 si le killer y est aussi. Certains se laissent descendre à 1 de vie exprès.</li>
+    <li><strong>Baisser l’horreur, ce n’est pas progresser, c’est tenir la position.</strong> Si tu es à 5 et que tu baisses de 2, la carte Terror te ramène à 5. Si tu ne baisses pas, elle te laisse à 7 et à un seul dé.</li>
+  </ul>
+
+  <div class="aviso">
+    <h3>Deux couteaux, ce sont deux attaques</h3>
+    <p>Ce n’est pas une attaque qui fait le double. Ce sont deux attaques à la suite, chacune avec les dégâts complets. <strong>Une carte de réaction couvre une attaque.</strong> Tu peux empiler deux Guard sur la même attaque, mais un Guard ne couvre jamais deux attaques.</p>
+    <div class="tabla-wrap" style="margin:14px 0 0">
+      <table>
+        <thead><tr><th>Hans, attaque 3, deux couteaux</th><th class="n">Sans défense</th><th class="n">1 Guard</th><th class="n">2 Guard</th></tr></thead>
+        <tbody>
+          <tr><td>Attaque 1</td><td class="n">−3</td><td class="n">0</td><td class="n">0</td></tr>
+          <tr><td>Attaque 2</td><td class="n">−3</td><td class="n">−3</td><td class="n">0</td></tr>
+          <tr><td><b>Total</b></td><td class="n"><b>−6</b></td><td class="n"><b>−3</b></td><td class="n"><b>0</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span> Ce qui coûte des parties</h2>
+  <p class="sub">Des erreurs que les joueurs du forum avouent eux-mêmes.</p>
+  <ul class="check">
+    <li>Payer de nouveau le coût de la carte en la jouant. <strong>Le coût ne vaut qu’à l’achat.</strong></li>
+    <li>Convertir deux résultats partiels avec deux cartes. C’est <strong>2 cartes par dé</strong> : deux 3 coûtent quatre cartes.</li>
+    <li>Jouer une carte importante sans 2 ou 3 cartes de réserve en main pour convertir.</li>
+    <li>Ne pas défausser de cartes face cachée pour <span class="kbd">+1 Temps</span>. C’est de là que viennent Critical Blow et Ambush.</li>
+    <li>Acheter les deux Close Call en même temps. Achètes-en une et <strong>laisse l’autre dans le tableau</strong> pour la manche suivante.</li>
+    <li>Ne pas acheter avec le temps restant. Des cartes que tu ne joueras pas restent du carburant de conversion.</li>
+    <li>Finir le tour dans la case du killer. Beaucoup poignardent gratuitement celui qu’ils ont à côté au début de leur phase.</li>
+    <li>Se cacher. On ne gagne qu’en le tuant, et il devient plus fort à chaque tour. Entrer, frapper, sortir.</li>
+    <li>Oublier que la limite de <strong>10 cartes en main s’applique toujours</strong>, pas seulement à l’achat. Et la défausse forcée ne donne pas de temps.</li>
+    <li>Utiliser Guard ou Retaliate contre une perte de vie due à une icône. Elles ne valent que contre de vraies attaques.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">07</span> Astuces de carte</h2>
+  <ul class="plain">
+    <li><strong>Impasses :</strong> laisses-y des victimes. Le killer dépense 2 ou 3 manches pour obtenir une seule mort.</li>
+    <li><strong>Pas de botte, pas de mouvement.</strong> Si l’action du killer ne porte pas d’icône de mouvement, il ne bouge pas, même si sa cible est très loin.</li>
+    <li><strong>Deux bottes, ce sont deux mouvements séparés</strong>, pas un long. Ça compte avec les objets qui freinent : le Padlock en arrête un et il continue avec l’autre.</li>
+    <li><strong>Cible :</strong> toujours la plus proche. En cas d’égalité, le groupe avec le plus de victimes. Tu peux t’en servir pour le détourner.</li>
+    <li><strong>Les victimes de ta case encaissent l’attaque avant toi</strong>, sauf si tu es la cible déclarée. Bouclier humain légal, au prix du bloodlust.</li>
+    <li><strong>Fireworks, Bear Trap et Pepper Spray</strong> contrôlent par où il passe. Un piège lui fait perdre des tours entiers.</li>
+  </ul>
+</section>
+
+
+<section id="stats">
+  <h2><span class="num">08</span> Ce que disent <span data-dato="partidas">13.920</span> parties</h2>
+  <p class="sub">Données réelles de la feuille de suivi communautaire, pas des estimations. Dernière partie enregistrée : <b id="st-last"></b>. Environ 8 nouvelles par jour.</p>
+
+  <div class="kpis">
+    <div class="kpi"><b id="k-tot"></b><span>Parties</span></div>
+    <div class="kpi"><b id="k-wr"></b><span>Victoires</span></div>
+    <div class="kpi"><b id="k-best"></b><span>Boîte la plus facile</span></div>
+    <div class="kpi"><b id="k-worst"></b><span>Boîte la plus dure</span></div>
+  </div>
+
+  <p class="sub" style="margin-bottom:10px">Chaque boîte telle qu’elle vient, son killer avec sa localisation. Touche-en une pour voir le détail.</p>
+  <div class="barlist" id="st-films"></div>
+  <div class="detalle" id="st-det"></div>
+
+  <details class="mas"><summary>Localisations, de la plus dure à la plus facile</summary><div>
+    <div class="tabla-wrap"><table class="mini" id="st-locs"></table></div>
+    <p class="riesgo" style="margin-top:12px"><b>Attention</b> Ici chaque localisation est mesurée contre tous les killers, pas seulement le sien. C’est pourquoi Sacred Groves sort pire que n’importe quelle boîte complète : c’est la carte qui punit le plus, quel que soit le killer.</p>
+  </div></details>
+
+  <details class="mas"><summary>Final Girls, classées par victoires</summary><div>
+    <div class="tabla-wrap"><table class="mini" id="st-girls"></table></div>
+    <p class="riesgo" style="margin-top:12px"><b>Attention</b> Minimum 20 parties. L’écart entre la meilleure et la pire est d’environ 20 points, bien moins qu’entre les boîtes : bien choisir la boîte pèse plus que bien choisir la fille.</p>
+  </div></details>
+
+  <details class="mas"><summary>État de la partie</summary><div>
+    <div class="tabla-wrap"><table class="mini" id="st-estado"></table></div>
+    <p class="riesgo" style="margin-top:12px"><b>Lis-le à l’envers</b> Les tranches avec peu de parties sont celles qui finissent tôt. Que « Finale non révélé » ait un moins bon winrate signifie que les parties perdues se perdent <b>avant</b> d’arriver au Finale. Et le Final Health token te sauve 42 % du temps, mais lui 86 % : quand tu crois l’avoir tué, tu ne l’as presque jamais tué.</p>
+  </div></details>
+</section>
+
+
+<section id="killers">
+  <h2><span class="num">09</span> Contre chaque killer</h2>
+  <p class="sub">Les 26, d’abord les tiens puis du plus dur au plus facile. Quelle ouverture utiliser, ce qui va te tuer, et quels Dark Power et Finale craindre. L’ouverture est un avis personnel basé sur les règles de chaque boîte et sur le forum ; la source de chaque avertissement est indiquée.</p>
+  <div class="barlist" id="kx-list"></div>
+  <div class="detalle" id="kx-det"></div>
+  <p class="riesgo" style="margin-top:14px"><b>Seuils</b> Win rate visible à partir de 5 parties ; Dark Power et Finale les plus durs seulement avec 20 parties ou plus. Sans données suffisantes, la case reste vide.</p>
+</section>
+
+<footer>
+  <p>Compilé à partir des forums de BoardGameGeek, du règlement officiel de Van Ryder Games et des réponses de l’auteur A.J. Porfirio. Les coûts exacts de chaque carte sont imprimés dans le coin inférieur droit de tes cartes.</p>
+  <p>Pour fouiner dans toutes les données, y compris la matrice de chaque killer sur chaque carte : <a href="https://claude.ai/artifact/BEA6n9fvejJWTBwwzn75dp">Laboratoire Final Girl</a>.</p>
+  <p>Fils de discussion : <a href="https://boardgamegeek.com/thread/3073862/general-strategytips-guide-for-final-girl">Guide général de stratégie</a> · <a href="https://boardgamegeek.com/thread/3366324/tips-for-those-struggling-with-hans">Struggling with Hans</a> · <a href="https://boardgamegeek.com/thread/2907249/need-help-with-final-girl">Need help</a> · <a href="https://boardgamegeek.com/thread/3293184/strategy-tips">Strategy tips</a> · <a href="https://boardgamegeek.com/thread/3099277/3-dice-asap-strategy">3 dice ASAP</a> · <a href="https://boardgamegeek.com/thread/3042215/do-you-have-to-use-your-weapon">Do you have to use your weapon</a></p>
+</footer>
+
+</div>
+
+<script>
+  var estado = { arma: null, vict: null, kill: null };
+
+  var SALIDAS = {
+    A: { id: 's-a', nombre: 'Ouverture A · Économie totale' },
+    B: { id: 's-b', nombre: 'Ouverture B · Horreur douce' },
+    C: { id: 's-c', nombre: 'Ouverture C · Sauvetage agressif' },
+    D: { id: 's-d', nombre: 'Ouverture D · L’arme d’abord' }
+  };
+
+  function decidir(e) {
+    // El killer encima cambia todo: no puedes regalar el turno 1.
+    if (e.kill === 1) {
+      if (e.vict === 1) return ['C', 'Il est sur toi et il y a des victimes à sauver. Chaque mort fait monter son bloodlust, alors sors-les tout de suite. Pas question de sacrifier le tour 1.'];
+      if (e.arma === 1) return ['D', 'Il est proche mais il n’y a pas de victimes à perdre. Va chercher l’arme avant qu’il ne t’atteigne, et garde un Guard sur toi.'];
+      return ['B', 'Il est sur toi et il n’y a ni arme ni victimes à portée. Baisse l’horreur sans perdre le tour et prépare Guard et Retaliate.'];
+    }
+    // Con margen, el mapa decide.
+    if (e.vict === 1) return ['C', 'Killer loin et victimes regroupées : c’est la fenêtre de sauvetage. Tu figes son bloodlust et tu retournes la carte de Final Girl.'];
+    if (e.arma === 1) return ['D', 'Killer loin et une arme de mêlée en vue. Tu ne l’auras jamais à meilleur prix qu’en ce moment.'];
+    return ['A', 'Rien d’urgent sur le plateau : c’est le seul moment où tu peux te permettre de sacrifier le tour 1 et d’arriver à 3 dés au tour 2.'];
+  }
+
+  function pintar() {
+    var listo = estado.arma !== null && estado.vict !== null && estado.kill !== null;
+    var tag = document.getElementById('v-tag');
+    var nombre = document.getElementById('v-name');
+    var porque = document.getElementById('v-why');
+
+    document.querySelectorAll('.salida').forEach(function (el) { el.classList.remove('on'); });
+
+    if (!listo) {
+      tag.textContent = '—';
+      nombre.textContent = 'Réponds aux trois';
+      porque.textContent = 'En attendant, les quatre ouvertures sont ci-dessous. Si tu ne dois retenir qu’une chose : le tour 1 sert à l’économie, pas à l’action.';
+      return;
+    }
+
+    var r = decidir(estado);
+    var s = SALIDAS[r[0]];
+    tag.textContent = r[0];
+    nombre.textContent = s.nombre;
+    porque.textContent = r[1];
+    var card = document.getElementById(s.id);
+    if (card) card.classList.add('on');
+  }
+
+  document.querySelectorAll('.toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.dataset.k, v = parseInt(b.dataset.v, 10);
+      estado[k] = (estado[k] === v) ? null : v;
+      b.parentNode.querySelectorAll('button').forEach(function (o) {
+        o.setAttribute('aria-pressed', String(estado[k] === parseInt(o.dataset.v, 10)));
+      });
+      pintar();
+    });
+  });
+
+  pintar();
+</script>
+
+<script>
+  var ST = /*@@ST@@*/;
+  var MIAS = ['The Happy Trails Horror','Into the Void','A Knock at the Door','Once Upon a Full Moon','Madness in the Dark'];
+  var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
+  var esMia = function (f) { return MIAS.indexOf(f) !== -1; };
+
+  function filas(tb, arr, fmt) {
+    tb.innerHTML = arr.map(fmt).join('');
+  }
+
+  function detalle(f) {
+    var d = document.getElementById('st-det');
+    var h = '<h3>' + f.film + '</h3>' +
+      '<p class="loc">' + f.killer + ' dans ' + f.loc + '</p>' +
+      '<div class="split">' +
+        '<div><b>' + pc(f.wr) + '</b><span>Cette boîte telle quelle<br>' + f.plays + ' parties</span></div>' +
+        (f.killWr !== null ? '<div><b>' + pc(f.killWr) + '</b><span>' + f.killer + ' contre<br>n’importe quelle carte</span></div>' : '') +
+        (f.locWr !== null ? '<div><b>' + pc(f.locWr) + '</b><span>' + f.loc + ' contre<br>n’importe quel killer</span></div>' : '') +
+      '</div>';
+
+    Object.keys(f.secs).forEach(function (k) {
+      var rows = f.secs[k].slice().sort(function (a, b) { return a[1] - b[1]; });
+      var titulo = k === 'Dark Power' ? 'Dark Powers, du plus au moins dévastateur'
+                 : k === 'Finale' ? 'Finales, du plus au moins dévastateur'
+                 : k;
+      h += '<p class="sec-t">' + titulo + '</p><div class="tabla-wrap"><table class="mini">' +
+        rows.map(function (r, i) {
+          var cls = i === 0 ? 'peor' : (i === rows.length - 1 ? 'mejor' : '');
+          return '<tr class="' + cls + '"><td>' + r[0] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+        }).join('') + '</table></div>';
+    });
+
+    if (f.setups.length) {
+      var s = f.setups.slice().sort(function (a, b) { return a[1] - b[1]; });
+      h += '<p class="sec-t">Cartes Setup, de la pire à la meilleure</p><div class="tabla-wrap"><table class="mini">' +
+        s.map(function (r, i) {
+          var cls = i === 0 ? 'peor' : (i === s.length - 1 ? 'mejor' : '');
+          return '<tr class="' + cls + '"><td>' + r[0] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+        }).join('') + '</table></div>';
+    }
+    d.innerHTML = h;
+  }
+
+  function pintarStats() {
+    var m = ST.meta;
+    document.getElementById('st-last').textContent = m.last;
+    document.getElementById('k-tot').textContent = m.total.toLocaleString('fr');
+    document.getElementById('k-wr').textContent = pc(m.wr);
+
+    var orden = ST.films.slice().sort(function (a, b) { return b.wr - a.wr; });
+    document.getElementById('k-best').textContent = pc(orden[0].wr);
+    document.getElementById('k-worst').textContent = pc(orden[orden.length - 1].wr);
+
+    var max = orden[0].wr;
+    document.getElementById('st-films').innerHTML = orden.map(function (f, i) {
+      return '<button type="button" class="bar" data-i="' + ST.films.indexOf(f) + '" aria-pressed="false">' +
+        '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
+        '<span class="nm">' + f.film + (esMia(f.film) ? '<span class="mine">Ta boîte</span>' : '') +
+        '<i>' + f.killer + ' · ' + f.loc + '</i></span>' +
+        '<span class="pc">' + pc(f.wr) + '</span>' +
+        '<span class="pl">' + f.plays + '</span></button>';
+    }).join('');
+
+    document.querySelectorAll('#st-films .bar').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.querySelectorAll('#st-films .bar').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        detalle(ST.films[parseInt(b.dataset.i, 10)]);
+      });
+    });
+
+    filas(document.getElementById('st-locs'), ST.locs, function (r) {
+      return '<tr><td>' + r[0] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+    });
+    filas(document.getElementById('st-girls'), ST.girls, function (r) {
+      return '<tr><td>' + r[0] + '</td><td class="org">' + r[3] + '</td><td>' + pc(r[1]) + '</td><td>' + r[2] + '</td></tr>';
+    });
+    filas(document.getElementById('st-estado'), ST.meta.estado, function (r) {
+      return '<tr><td>' + r[0] + '</td><td>' + pc(r[2]) + '</td><td>' + r[1] + '</td></tr>';
+    });
+
+    var inicial = ST.films.filter(function (f) { return esMia(f.film); })
+                          .sort(function (a, b) { return b.plays - a.plays; })[0] || ST.films[0];
+    detalle(inicial);
+    var btn = document.querySelector('#st-films .bar[data-i="' + ST.films.indexOf(inicial) + '"]');
+    if (btn) btn.setAttribute('aria-pressed', 'true');
+  }
+
+  pintarStats();
+</script>
+
+
+<script>
+  var KX = [{"k": "The Intruders", "box": "A Knock at the Door", "wr": 0.6258, "n": 914, "mio": true, "base": "Horror 3, mais 6 de vie pour chacun des trois. Ce n’est pas un killer, ce sont trois corps qui couvrent le plateau en même temps.", "s": "B", "por": "Ce sont trois corps de 6 de vie qui couvrent le plateau en même temps : il n’y a pas de fenêtre sûre pour sacrifier le tour 1.", "ojo": "L’un des trois est toujours l’actif et cela change. Il a son propre système pour fabriquer des armes. Les parties perdues se perdent tôt : avec Finale non révélé on ne gagne que 28 %, donc survivre aux premiers tours est la clé.", "src": "reglas+datos", "set": null, "ev": [["Finale", "We Know Where You Live", 0.5833, 84, 0.7412]], "dp": ["No Remorse", 0.6018, 226], "fin": ["We Know Where You Live", 0.5833, 84], "ficha": "https://finalgirlstats.com/the-intruders.html"}, {"k": "Hans", "box": "The Happy Trails Horror", "wr": 0.6365, "n": 1436, "mio": true, "base": "Pas de règles spéciales : il attaque, point. Il commence avec 12 de vie et Horror 4, et avant le Finale sa phase est simple : choisir une cible et attaquer.", "s": "A ou C", "por": "Il est lent et n’a pas de règles propres : tu as le temps de monter l’économie. S’il y a des victimes regroupées, la C le laisse bloqué à un bloodlust bas.", "ojo": "Il frappe très fort et poignarde gratuitement celui qui est à côté de lui. Garde un ou deux Guard et ne finis jamais le tour dans sa case. Tu peux gagner la course et fouiller le bout de la carte avant qu’il arrive.", "src": "foro", "set": [["Capture the Flag", 0.7778, 99], ["Skinny Dipping", 0.5977, 87], 2.66], "ev": [["Dark Power", "Dark Obsession", 0.4815, 351, 0.68], ["Finale", "Death Blow", 0.5116, 86, 0.6743]], "dp": ["Dark Obsession", 0.4815, 351], "fin": ["Death Blow", 0.5116, 86], "ficha": "https://finalgirlstats.com/hans.html"}, {"k": "Ratchet Lady", "box": "Madness in the Dark", "wr": 0.6657, "n": 682, "mio": true, "base": "5 d’Horror et 6 de vie, sans plafond de vie. Elle vient avec des minions, les Maniacs, et en échange tu disposes de cartes d’action Calm.", "s": "C", "por": "Ce n’est pas elle qui te poursuit, elle t’envoie des maniaques. Mobilité et sauvetage rapide.", "ojo": "Elle se soigne sans plafond tant que tu ne l’attaques pas, et les Maniacs infligent une perte de vie directe qui n’est PAS bloquée par Guard ni Retaliate. Les cartes défensives servent peu : garde toujours une attaque sous la main.", "src": "foro", "set": [["A Solitary Life", 0.6538, 26], ["Padded Rooms", 0.4, 35], 1.96], "ev": [], "dp": ["Shield of Madness", 0.5545, 110], "fin": ["Hold Her Down", 0.6214, 103], "ficha": "https://finalgirlstats.com/ratchet-lady.html"}, {"k": "Big Bad Wolf", "box": "Once Upon a Full Moon", "wr": 0.7064, "n": 722, "mio": true, "base": "9 de vie et Horror 5. Il a deux modes : il commence en Track et passe en Slay quand le Dark Power est révélé. Plusieurs Terror Cards font des choses différentes selon le mode.", "s": "B ou D", "por": "Petit plateau : l’arme est souvent proche. Il commence en mode Track et passe en Slay quand le Dark Power est révélé.", "ojo": "Son Dark Power A Killing Machine annule les dégâts de Retaliate et de toute réaction qui renvoie les coups (elle bloque toujours, mais tu ne lui fais rien). S’il sort, le burst de la section 03 ne marche plus : change de plan et attaque pendant ta phase.", "src": "foro", "set": null, "ev": [["Dark Power", "A Killing Machine", 0.5088, 114, 0.7413], ["Finale", "Tasty Treats", 0.6061, 99, 0.8243]], "dp": ["A Killing Machine", 0.5088, 114], "fin": ["Tasty Treats", 0.6061, 99], "ficha": "https://finalgirlstats.com/big-bad-wolf.html"}, {"k": "Evomorph", "box": "Into the Void", "wr": 0.7534, "n": 876, "mio": true, "base": "Il évolue en tuant. Il commence en larve lente mais dévastatrice, passe en jeune rapide et fragile, et finit en adulte lent et fort. Sa vie monte de 4 à 10.", "s": "C", "por": "Il évolue en tuant. Chaque victime sauvée est une évolution qu’il ne fait pas.", "ojo": "Il a des victoires alternatives : autodétruire le vaisseau et s’échapper, ou l’éjecter par un sas. Si le combat tourne mal, change d’objectif au lieu d’insister.", "src": "foro", "set": [["Junction Danger", 0.8409, 44], ["Born In Flames", 0.619, 42], 2.32], "ev": [["Finale", "The Perfect Organism", 0.5909, 110, 0.7701]], "dp": ["Acid Blood", 0.7149, 228], "fin": ["The Perfect Organism", 0.5909, 110], "ficha": "https://finalgirlstats.com/evomorph.html"}, {"k": "Terror from the Grave", "box": null, "wr": 0.5077, "n": 520, "mio": false, "base": "Format court de genre zombie : la pression ne vient pas d’un ennemi fort mais du nombre.", "s": "B", "por": "Genre zombie : la pression vient du nombre, pas d’un ennemi fort.", "ojo": "Le Dark Power Legion est l’un des pires du jeu (38 % de victoires). Il y a peu d’informations vérifiées sur ce film.", "src": "poca", "set": null, "ev": [["Dark Power", "Legion", 0.3841, 164, 0.5684]], "dp": ["Legion", 0.3841, 164], "fin": ["Their Numbers Are Endless", 0.6837, 98], "ficha": "https://finalgirlstats.com/terror-from-the-grave.html"}, {"k": "Razorface", "box": "Hell to Pay", "wr": 0.5382, "n": 511, "mio": false, "base": "9 de vie et Horror 5. Tu commences avec 3 cartes Affliction sur toi et pour le tuer pour de bon tu dois purger chacune en remplissant sa condition.", "s": "B", "por": "Tu commences avec 3 Afflictions sur toi : la partie consiste à les purger, pas à courir.", "ojo": "Pour le tuer pour de bon, il faut purger chaque Affliction en remplissant sa condition. Le Dark Power Life Drain est le pire de la boîte (43 %).", "src": "reglas+datos", "set": null, "ev": [], "dp": ["Life Drain", 0.4338, 136], "fin": ["I Feast On Your Pain", 0.5532, 94], "ficha": "https://finalgirlstats.com/razorface.html"}, {"k": "Poltergeist", "box": "The Haunting of Creech Manor", "wr": 0.5611, "n": 884, "mio": false, "base": "Le cas à part : il n’a pas de vie et on ne peut pas l’attaquer. On gagne en trouvant Carolyn dans les pioches d’objets et en sortant avec elle.", "s": "C", "por": "Il n’a pas de vie et on ne peut pas lui faire de dégâts. On gagne en trouvant Carolyn et en sortant avec elle.", "ojo": "Les armes et les cartes d’attaque ne servent à rien ici. C’est la seule boîte où chercher une arme est du temps perdu : tout au mouvement, à la fouille et au sauvetage. Jamais l’ouverture D.", "src": "foro", "set": null, "ev": [], "dp": ["Forgetting Something?", 0.5032, 157], "fin": ["She Will Soon Be Lost", 0.5102, 98], "ficha": "https://finalgirlstats.com/poltergeist.html"}, {"k": "Krampus", "box": "The North Pole Nightmare", "wr": 0.584, "n": 601, "mio": false, "base": "10 de vie et Horror 4. Sa phase enchaîne beaucoup : il attaque, rechoisit une cible, se déplace et laisse un cadeau.", "s": "B", "por": "Sa phase enchaîne beaucoup : il attaque, rechoisit une cible, se déplace et laisse un cadeau.", "ojo": "Les cadeaux ont un effet aléatoire, bon ou mauvais, et tu peux tenter de les ouvrir. Le Finale Past Midnight est l’un des pires du jeu (39 %). Il amène son propre véhicule, le renne.", "src": "reglas+datos", "set": [["Toys! Toys! Toys!", 0.6667, 36], ["Back With Lumber", 0.3333, 33], 2.77], "ev": [["Finale", "Past Midnight", 0.3939, 66, 0.6081]], "dp": ["Explosive Gifts", 0.5238, 147], "fin": ["Past Midnight", 0.3939, 66], "ficha": "https://finalgirlstats.com/krampus.html"}, {"k": "Terror from Above", "box": null, "wr": 0.5887, "n": 462, "mio": false, "base": "Format court : il amène Melanie comme Final Girl et il n’y a pas de monstre unique à frapper, mais une nuée.", "s": "B", "por": "Format court sans monstre unique : il n’y a pas de corps sur lequel faire un burst.", "ojo": "C’est une nuée. Il y a peu d’informations vérifiées sur ce film ; fie-toi aux données de Dark Powers et de Finales ci-dessous.", "src": "poca", "set": null, "ev": [], "dp": ["Birdnado", 0.4904, 104], "fin": ["Insurmountable Odds", 0.3881, 67], "ficha": "https://finalgirlstats.com/terror-from-above.html"}, {"k": "Berith", "box": "A Demon in the Shadows", "wr": 0.6016, "n": 128, "mio": false, "base": "Horror 3 et 7 de vie, ceux d’Ursula. Il faut l’expulser sans la tuer, en utilisant Divine Blessings pour augmenter ses chances de s’en sortir vivante. Il ne bouge pas dans la première partie de sa phase.", "s": "B", "por": "Victoire en deux temps : vaincre Ursula puis la ranimer avec Divine Blessings.", "ojo": "Placer les 14 jetons de Malice est une défaite immédiate, et les cases de Malice remplacent ton dé par le dé maudit. Il faut l’expulser sans la tuer.", "src": "reglas", "set": null, "ev": [], "dp": ["Keeping Ursula Alive", 0.5161, 31], "fin": ["Hell on Earth", 0.7, 20], "ficha": "https://finalgirlstats.com/berith.html"}, {"k": "Terror from Beyond", "box": null, "wr": 0.6061, "n": 33, "mio": false, "base": "", "s": null, "por": null, "ojo": "Pas encore d’informations vérifiées. Seulement des données de parties.", "src": "poca", "set": null, "ev": [], "dp": null, "fin": null, "ficha": null}, {"k": "Slayer", "box": "The Falconwood Files", "wr": 0.6067, "n": 511, "mio": false, "base": "11 de vie, le plus gros sac de sa série, avec Horror 4.", "s": "B", "por": "11 de vie, le plus gros sac de sa série : combat long, mieux vaut ne pas sacrifier de tours.", "ojo": "Il y a une dimension miroir cachée, version parallèle de chaque case, et des missions avec récompenses au choix. Le Finale Your Time is Up est le plus dur (46 %).", "src": "reglas+datos", "set": [["4th of July Weekend", 0.8276, 29], ["Back to School", 0.5652, 23], 2.07], "ev": [["Finale", "Your Time is Up", 0.46, 50, 0.7228]], "dp": ["It's In My Head!", 0.5385, 78], "fin": ["Your Time is Up", 0.46, 50], "ficha": "https://finalgirlstats.com/slayer.html"}, {"k": "Billy", "box": "Bad Times at Buddyland", "wr": 0.6069, "n": 173, "mio": false, "base": "Il amène des minions qui apparaissent pendant la partie et agissent avant lui. Il récupère aussi 1 de vie à chaque phase s’il y a une source d’énergie active, donc lui couper le courant fait partie du plan.", "s": "C", "por": "Ses Buddies agissent avant lui et le protègent : tu ne peux pas l’attaquer s’il y a un Buddy dans sa case.", "ojo": "Il se soigne à chaque phase tant qu’1 des 4 sources d’énergie reste active. Dépense du temps pour les désactiver tôt. Attention au Finale épique : Boris arrive et il faut tuer les deux.", "src": "reglas", "set": null, "ev": [["Finale", "Encore", 0.3824, 34, 0.6914]], "dp": ["Merciless Minions", 0.4615, 26], "fin": ["Encore", 0.3824, 34], "ficha": "https://finalgirlstats.com/billy.html"}, {"k": "Inkanyamba", "box": "Slaughter in the Groves", "wr": 0.6378, "n": 588, "mio": false, "base": "9 de vie et Horror 4. Il augmente sa propre Killer Wrath à chaque phase tant qu’elle est basse, donc il devient plus dangereux plus la partie dure.", "s": "C", "por": "Il devient plus dangereux plus la partie dure (sa Killer Wrath monte) : la partie longue le favorise.", "ojo": "Sa Colère s’ajoute à la Colère Divine de Sacred Groves et elles agissent en même temps. C’est la boîte la plus dure du jeu ; si tu veux le jouer sans souffrir, sors-le de sa carte.", "src": "foro", "set": null, "ev": [], "dp": ["Volatile Temper", 0.5405, 148], "fin": ["Savage Whirlwind", 0.4242, 99], "ficha": "https://finalgirlstats.com/inkanyamba.html"}, {"k": "The Eyeless", "box": "Don't Make a Sound", "wr": 0.6436, "n": 491, "mio": false, "base": "Monstre qui chasse au son, avec A Quiet Place et Tremors en référence. Il amène Meghan et Ronda.", "s": "B", "por": "Il chasse au son : moins tu en fais au début, moins tu l’attires.", "ojo": "Tes propres actions font du bruit, l’attirent et l’activent. Planifie quelles actions tu fais et où.", "src": "reglas", "set": null, "ev": [], "dp": ["Reactive Swipe", 0.625, 112], "fin": ["No More Running", 0.62, 100], "ficha": "https://finalgirlstats.com/the-eyeless.html"}, {"k": "Raptors", "box": "The Raptor Games", "wr": 0.6452, "n": 62, "mio": false, "base": "Horreur de dinosaures avec Jurassic Park en référence. Il amène Maud et Christina.", "s": "C", "por": "Le T-Rex mange dans un ordre fixe : les victimes d’abord. Sauver coûte 1 temps de plus, alors planifie.", "ojo": "La vie de la meute est le nombre de raptors, sans plafond. Le T-Rex ne peut pas être tué et bouge de 2 par manche. Les clôtures électriques bloquent le mouvement et le tir selon un dé à l’Upkeep.", "src": "reglas", "set": null, "ev": [], "dp": null, "fin": null, "ficha": "https://finalgirlstats.com/raptors.html"}, {"k": "Geppetto", "box": "Carnage at the Carnival", "wr": 0.6501, "n": 783, "mio": false, "base": "8 de vie et Horror 4. Chaque phase génère une marionnette avant de bouger, donc le plateau se remplit de minions si tu ne nettoies pas.", "s": "B", "por": "Tu ne peux pas le tuer tant que ses 3 pantins sont là, donc pas d’urgence pour l’arme : d’abord nettoyer les minions.", "ojo": "Immortal Master : retire les pantins avant d’essayer de l’achever. Et attention en fouillant, les pièges d’objets ici sont vilains : ne fouille que le nécessaire.", "src": "foro", "set": null, "ev": [], "dp": ["Join the Family", 0.6047, 129], "fin": ["No Strings Attached", 0.7302, 126], "ficha": "https://finalgirlstats.com/geppetto.html"}, {"k": "Mort", "box": "Shriek", "wr": 0.6965, "n": 313, "mio": false, "base": "Horror 3 et pas de vie tant qu’il n’est pas révélé. Il commence comme l’un des 10 suspects, tous des killers d’autres films : il faut interroger et faire pression sur cinq d’entre eux pour les écarter.", "s": "C", "por": "Les victimes ne paniquent pas tant qu’il n’est pas démasqué : c’est ta fenêtre de sauvetage.", "ojo": "Il est caché parmi 10 suspects. Interroger et Contraindre éliminent des suspects ; en attendant, certaines cartes Terror font agir comme killer un suspect au hasard.", "src": "reglas", "set": null, "ev": [], "dp": ["Relentless Paranoia", 0.6316, 76], "fin": ["Mort as H.U.N.T.E.R.", 0.5714, 28], "ficha": "https://finalgirlstats.com/mort.html"}, {"k": "Hunter", "box": "The Killer from Tomorrow", "wr": 0.7085, "n": 470, "mio": false, "base": "15 de vie et Horror 5, mais cette vie ne compte que pour le Mark X. Un compteur remplace le Mark V par le Mark X près de la fin.", "s": "C", "por": "Il y a une victime VIP, le Sauveur, qu’il faut protéger.", "ojo": "Deux phases : Mark V et Mark X, avec des stats différentes. Ses 15 de vie ne comptent que pour le Mark X ; les dégâts au Mark V lui arrachent des pièces avant le changement de phase.", "src": "reglas", "set": [["Black Friday", 0.8182, 33], ["Special Delivery", 0.4815, 27], 2.75], "ev": [], "dp": ["Reinforced Endoskeleton", 0.6364, 112], "fin": ["Mark X-1000", 0.7179, 39], "ficha": "https://finalgirlstats.com/hunter.html"}, {"k": "The Organism", "box": "Panic at Station 2891", "wr": 0.7347, "n": 750, "mio": false, "base": "Chaque variante commence avec une vie différente (5, 6 et 7) mais toutes démarrent à Horror 5, le niveau d’ouverture le plus élevé de la série 2.", "s": "C", "por": "Les victimes sont infectées et mutent en killers indépendants. Les tester tôt, c’est sauver.", "ojo": "Teste au plus vite les deux victimes exposées les plus proches du laboratoire et laisse la troisième muter seule. Garde un organisme en vie avec peu de vie : il te donne le dé d’adrénaline. Avec un organisme on gagne 87 % ; avec trois, 54 %. La hache est idéale. Tu peux envoyer des victimes à l’hélicoptère par radio sans y être.", "src": "foro+datos", "set": null, "ev": [], "dp": null, "fin": ["Regenerative Assimilation", 0.6703, 185], "ficha": "https://finalgirlstats.com/the-organism.html"}, {"k": "Tormentor", "box": "The Marrek Murders", "wr": 0.7361, "n": 595, "mio": false, "base": "Horreur de torture, avec Saw comme référence évidente. Il amène Mandy et Cassie comme Final Girls.", "s": "D", "por": "Il n’apparaît pas sur le plateau avant le Finale : tu as toute la première partie pour t’armer et monter le burst.", "ojo": "Avant le Finale, il n’y a que des pièges mortels à désamorcer. Profites-en pour avoir une arme et une main prêtes quand il sortira.", "src": "reglas", "set": null, "ev": [], "dp": ["Horrifying Traps", 0.7113, 142], "fin": ["No Rest for the Weary", 0.75, 68], "ficha": "https://finalgirlstats.com/tormentor.html"}, {"k": "Volk'ar", "box": "The Green Terror", "wr": 0.7403, "n": 77, "mio": false, "base": "10 de vie et Horror 4.", "s": "B", "por": "Mouvement caché avec une pioche de routes : tu ne sais pas où il est tant que tu ne le révèles pas.", "ojo": "Une attaque réussie révèle sa route ; une attaque ratée déclenche l’embuscade. N’attaque qu’avec de bonnes probabilités (section 05).", "src": "reglas", "set": null, "ev": [], "dp": ["Stress of the Unknown", 0.7667, 30], "fin": ["Self Destruct", 0.5, 24], "ficha": "https://finalgirlstats.com/volk-ar.html"}, {"k": "Dr. Fright", "box": "Frightmare on Maple Lane", "wr": 0.7435, "n": 850, "mio": false, "base": "Il démarre avec 9 de vie et Horror 4. Il joue avec l’état de sommeil : une partie du danger est de ne pas pouvoir distinguer où tu es.", "s": "B", "por": "L’un des killers les plus faciles selon les données. Ouverture par défaut.", "ojo": "Il te faut la carte Convince pour entrer dans les maisons occupées : pense-y en planifiant la route de sauvetage. Le monde des rêves et Boiler Room changent l’endroit où tu es.", "src": "reglas", "set": [["Block Party", 0.9062, 32], ["Revenge", 0.6522, 46], 2.57], "ev": [], "dp": ["Shock Factor", 0.6715, 137], "fin": ["Everyone Must Die", 0.7094, 117], "ficha": "https://finalgirlstats.com/dr-fright.html"}, {"k": "Grimlash", "box": "A Rotten Harvest", "wr": 0.7814, "n": 183, "mio": false, "base": "10 de vie et Horror 4. Il distribue Harvest Madness, qui te donne des capacités en plus mais finit par te tuer. Chaque victime qui tombe lui en ajoute une.", "s": "C", "por": "Chaque victime qui tombe lui ajoute Harvest Madness, et les enfants enlèvent des victimes pour l’autel.", "ojo": "Dépasser le niveau 3 de Folie est une défaite immédiate. Un cœur soigne OU baisse la folie, jamais les deux : surveille la piste avant de te soigner.", "src": "reglas", "set": null, "ev": [], "dp": ["Root-bound Curse", 0.6591, 44], "fin": ["God of Blood and Grain", 0.65, 20], "ficha": "https://finalgirlstats.com/grimlash.html"}, {"k": "Terror from Destiny", "box": null, "wr": 0.7984, "n": 258, "mio": false, "base": "Inspiré de Destination finale : il n’y a pas de corps à attaquer, le danger est la chaîne d’accidents.", "s": "B", "por": "Pas de corps à attaquer : le danger est la chaîne d’accidents. C’est le film avec le plus de victoires (80 %).", "ojo": "Il y a peu d’informations vérifiées sur ce film.", "src": "poca", "set": null, "ev": [], "dp": ["Double Trouble", 0.7532, 77], "fin": null, "ficha": "https://finalgirlstats.com/terror-from-destiny.html"}];
+  var SRC = { foro: 'Forum BGG', reglas: 'Règles de la boîte', datos: 'Données', poca: 'Peu d’information' };
+  (function () {
+    var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
+    var fuente = function (s) { return s.split('+').map(function (t) { return SRC[t]; }).join(' · '); };
+    var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+    function det(x) {
+      var h = '<h3>' + esc(x.k) + '</h3><p class="loc">' + (x.box ? esc(x.box) : 'Film court') + '</p>';
+      h += '<div class="split">' +
+        (x.n >= 5 ? '<div><b>' + pc(x.wr) + '</b><span>Victoires contre lui<br>' + x.n + ' parties' + (x.n < 20 ? ' · peu' : '') + '</span></div>' : '') +
+        (x.s ? '<div><b>Ouverture ' + x.s + '</b><span>' + esc(x.por) + '</span></div>' : '') +
+        '</div>';
+      if (x.base) h += '<p class="sec-t">Comment il est</p><p>' + esc(x.base) + '</p>';
+      h += '<p class="sec-t">Ce qui te tue · ' + fuente(x.src) + '</p><p>' + esc(x.ojo) + '</p>';
+      if (x.set) {
+        h += '<p class="sec-t">Carte Setup · ici, ça compte</p><p><b>Pour apprendre, commence avec ' + esc(x.set[0][0]) + '</b> : c’est le Setup avec le plus de victoires (' + pc(x.set[0][1]) + ', ' + x.set[0][2] + ' parties). Quand tu le maîtrises, essaie ' + esc(x.set[1][0]) + ', le plus dur (' + pc(x.set[1][1]) + ', ' + x.set[1][2] + ' parties).' +
+          (x.set[2] < 2.3 ? ' <em>Écart à la limite du fiable : peu de parties.</em>' : '') + '</p>';
+      }
+      if (x.ev.length) {
+        h += '<div class="aviso" style="margin:16px 0 0"><h3>Déséquilibré : écarte-le</h3>' + x.ev.map(function (e) {
+          return '<p><b>' + e[0] + ' ' + esc(e[1]) + '</b> : ' + pc(e[2]) + ' de victoires en ' + e[3] + ' parties, contre ' + pc(e[4]) + ' pour le reste.</p>';
+        }).join('') + '<p class="riesgo"><b>Écarte-le</b> Retire-le de la pioche avant de mélanger. C’est ta partie : tu joues seul et tu montes la table comme tu veux.</p></div>';
+      }
+      if (x.dp || x.fin) {
+        h += '<p class="sec-t">Ce qui coule le plus, selon les données</p><div class="tabla-wrap"><table class="mini">' +
+          (x.dp ? '<tr class="peor"><td>Dark Power : ' + esc(x.dp[0]) + '</td><td>' + pc(x.dp[1]) + '</td><td>' + x.dp[2] + '</td></tr>' : '') +
+          (x.fin ? '<tr class="peor"><td>Finale : ' + esc(x.fin[0]) + '</td><td>' + pc(x.fin[1]) + '</td><td>' + x.fin[2] + '</td></tr>' : '') +
+          '</table></div>';
+      }
+      if (x.ficha) h += '<p style="margin-top:12px"><a href="' + x.ficha + '" style="color:var(--blood)">Fiche complète de ' + esc(x.k) + ' →</a></p>';
+      document.getElementById('kx-det').innerHTML = h;
+    }
+    var lista = document.getElementById('kx-list');
+    lista.innerHTML = KX.map(function (x, i) {
+      return '<button type="button" class="bar" data-i="' + i + '" aria-pressed="false">' +
+        '<span class="fill" style="width:' + (x.wr * 100).toFixed(1) + '%"></span>' +
+        '<span class="nm">' + esc(x.k) + (x.mio ? '<span class="mine">Le tien</span>' : '') +
+        '<i>' + (x.s ? 'Ouverture ' + x.s : 'Pas d’ouverture recommandée') + '</i></span>' +
+        '<span class="pc">' + (x.n >= 5 ? pc(x.wr) : '—') + '</span>' +
+        '<span class="pl">' + x.n + '</span></button>';
+    }).join('');
+    lista.querySelectorAll('.bar').forEach(function (b) {
+      b.addEventListener('click', function () {
+        lista.querySelectorAll('.bar').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        det(KX[parseInt(b.dataset.i, 10)]);
+      });
+    });
+    lista.querySelector('.bar').setAttribute('aria-pressed', 'true');
+    det(KX[0]);
+  })();
+</script>
+
+<style>
+  /* Identidad unificada con el Laboratorio: oscuro siempre, Jost.
+     Va al final a proposito: a igual especificidad gana la ultima regla, y
+     el selector repite las tres formas del tema antiguo porque
+     ":root:not([data-theme=light])" pesa mas que ":root" a secas. */
+  :root,
+  :root:not([data-theme="light"]),
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:#0b0a0b; --surface:#151315; --sunk:#1d1a1d; --ink:#f2ecec;
+    --muted:#9c8f93; --line:#262227; --line-hi:#3a333a;
+    --blood:#e0454f; --blood-s:#2a1216; --mid:#3a3438;
+    --verde:#4caf7d; --ambar:#d7a43a; --rojo:#e0454f;
+    --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 34px rgba(0,0,0,.45);
+    --f-disp:"Jost","Futura","Century Gothic",sans-serif;
+    --f-body:"Jost","Futura","Century Gothic",Helvetica,sans-serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  body { background:var(--paper); color:var(--ink); font-family:var(--f-body); }
+  header.top { border-bottom-color:var(--blood); }
+  h1 { letter-spacing:-.02em; }
+</style>
