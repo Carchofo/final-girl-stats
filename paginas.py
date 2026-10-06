@@ -359,7 +359,7 @@ def pagina_caja(f):
     h.append('<p>Las cuatro aperturas, con cuál usar según lo que veas en el montaje, '
              'están en la <a href="salidas.html">estrategias de salida</a>.</p>')
 
-    titulo = f'{f["film"]}: estadísticas y consejos ({pc(f["wr"],0)} de victorias)'
+    titulo = f'{f["film"]} (Final Girl): estadísticas y consejos, {pc(f["wr"],0)} de victorias'
     desc = (f'{f["killer"]} en {f["loc"]}. Se gana el {pc(f["wr"])} sobre {f["plays"]} partidas. '
             f'Hojas de preparación, Dark Powers, Finales y consejos.')
     return titulo, desc[:155], '\n'.join(h)

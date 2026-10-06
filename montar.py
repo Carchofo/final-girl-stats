@@ -509,16 +509,62 @@ url_reg = f"{DOMINIO}/registrar.html"
     + plantilla + PIE, encoding="utf-8")
 print("registrar.html  (suelto: sin enlaces, sin sitemap, noindex fijo)")
 
+# --- otros idiomas --------------------------------------------------------
+# EN, FR, DE, IT de las fichas y una portada por idioma. Las españolas
+# reciben despues sus hreflang apuntando a las traducciones.
+import idiomas
+import sys
+otras, existe_en = idiomas.generar(sys.modules[__name__])
+for p in PAGINAS:
+    idiomas.parchear_es(AQUI / p["salida"], p["salida"], DOMINIO, existe_en(p["salida"]))
+
+# --- 404 -------------------------------------------------------------------
+# GitHub Pages sirve 404.html para cualquier URL que no exista. Sin ella el
+# visitante ve la pagina generica de GitHub y se va.
+(AQUI / "404.html").write_text(
+    CABECERA.format(
+        title="Página no encontrada · Final Girl Stats", desc="Esta página no existe.",
+        url=f"{DOMINIO}/404.html", imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle="Final Girl Stats", ogdesc="", jsonld="{}", robots="noindex,follow",
+    ).replace("</head>", '<link rel="stylesheet" href="/estilos.css"></head>')
+    + '<div class="wrap"><header class="top"><p class="eyebrow">404</p>'
+      '<h1>Aquí no hay<span class="roja">nadie</span></h1>'
+      '<p class="dek">Esta página no existe. Nothing here.</p></header>'
+      '<p><a href="/">Estadísticas</a> · <a href="/fichas.html">Fichas</a> · '
+      '<a href="/en/">English</a> · <a href="/fr/">Français</a> · '
+      '<a href="/de/">Deutsch</a> · <a href="/it/">Italiano</a></p></div>' + PIE,
+    encoding="utf-8")
+
 # --- sitemap y robots -----------------------------------------------------
+# Cada URL lleva sus alternativas de idioma y la fecha de los datos: es lo
+# que Google usa para decidir cuando volver.
+import datetime
+HOY = datetime.date.today().isoformat()
+
+def _alt(salida):
+    base = "" if salida == "index.html" else salida
+    ex = existe_en(salida)
+    if not any(ex(l) for l in idiomas.IDIOMAS):
+        return ""
+    r = f'<xhtml:link rel="alternate" hreflang="es" href="{DOMINIO}/{base}"/>'
+    for l in idiomas.IDIOMAS:
+        if ex(l):
+            r += f'<xhtml:link rel="alternate" hreflang="{l}" href="{DOMINIO}/{l}/{base}"/>'
+    return r
+
 urls = "".join(
     f"<url><loc>{DOMINIO}/{'' if p['salida']=='index.html' else p['salida']}</loc>"
-    f"<priority>{p['prioridad']}</priority></url>"
+    f"<lastmod>{HOY}</lastmod><priority>{p['prioridad']}</priority>{_alt(p['salida'])}</url>"
     for p in PAGINAS
+) + "".join(
+    f"<url><loc>{DOMINIO}/{l}/{'' if s=='index.html' else s}</loc>"
+    f"<lastmod>{HOY}</lastmod><priority>{'0.9' if s=='index.html' else '0.7'}</priority>{_alt(s)}</url>"
+    for l, s in otras
 )
 if INDEXAR:
     (AQUI / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n'
-        f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n'
+        f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">{urls}</urlset>\n'
     , encoding="utf-8")
     (AQUI / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     print("sitemap.xml y robots.txt  -- INDEXABLE")
