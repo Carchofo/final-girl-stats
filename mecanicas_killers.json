@@ -2,30 +2,35 @@
  "Hans": {
   "es": {
    "mecanicas": [
+    "Movimiento base: no se mueve en su Killer Action; ataca a quien esté en su casilla.",
     "No tiene reglas especiales de juego.",
     "Antes de revelar el Finale, empieza la fase del Killer con: Target Final Girl or Victim > Attack."
    ]
   },
   "en": {
    "mecanicas": [
+    "Base movement: does not move in its Killer Action; attacks whoever is in its space.",
     "Has no special gameplay rules.",
     "Before the Finale is revealed, he starts the Killer phase with: Target Final Girl or Victim > Attack."
    ]
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : ne se déplace pas pendant sa Killer Action ; attaque qui se trouve sur sa case.",
     "N'a aucune règle de jeu spéciale.",
     "Avant la révélation du Finale, il commence la phase du Killer par : Target Final Girl or Victim > Attack."
    ]
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action nicht; greift an, wer auf seinem Feld steht.",
     "Hat keine besonderen Spielregeln.",
     "Bevor das Finale aufgedeckt wird, beginnt er die Killer-Phase mit: Target Final Girl or Victim > Attack."
    ]
   },
   "it": {
    "mecanicas": [
+    "Movimento base: non si muove nella sua Killer Action; attacca chi si trova nel suo spazio.",
     "Non ha regole di gioco speciali.",
     "Prima che il Finale sia rivelato, inizia la fase del Killer con: Target Final Girl or Victim > Attack."
    ]
@@ -145,6 +150,7 @@
  "Inkanyamba": {
   "es": {
    "mecanicas": [
+    "Movimiento base: no se mueve en su Killer Action; ataca a quien esté en su casilla.",
     "Usa la carta Killer Wrath con un marcador que empieza en el nivel 2 y va de 1 a 10.",
     "Antes del Finale: si Killer Wrath está en 1-2, súbelo 1 > Target Final Girl or Victim > Attack.",
     "Unleash Killer Wrath aplica los efectos del nivel actual, como subir Horror, una acción del Killer o más vida.",
@@ -153,6 +159,7 @@
   },
   "en": {
    "mecanicas": [
+    "Base movement: does not move in its Killer Action; attacks whoever is in its space.",
     "Uses the Killer Wrath card with a marker starting at level 2, ranging from 1 to 10.",
     "Before the Finale: if Killer Wrath is 1-2, increase it by 1 > Target Final Girl or Victim > Attack.",
     "Unleash Killer Wrath applies the current level's effects, such as raising Horror, a Killer action or extra Health.",
@@ -161,6 +168,7 @@
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : ne se déplace pas pendant sa Killer Action ; attaque qui se trouve sur sa case.",
     "Utilise la carte Killer Wrath avec un marqueur qui commence au niveau 2, entre 1 et 10.",
     "Avant le Finale : si Killer Wrath est à 1-2, augmentez-le de 1 > Target Final Girl or Victim > Attack.",
     "Unleash Killer Wrath applique les effets du niveau actuel : hausse d'Horror, action du Killer ou points de vie.",
@@ -169,6 +177,7 @@
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action nicht; greift an, wer auf seinem Feld steht.",
     "Nutzt die Killer-Wrath-Karte mit einem Marker, der auf Stufe 2 beginnt (Bereich 1 bis 10).",
     "Vor dem Finale: Ist Killer Wrath auf 1-2, um 1 erhöhen > Target Final Girl or Victim > Attack.",
     "Unleash Killer Wrath wendet die Effekte der aktuellen Stufe an, etwa Horror-Anstieg, eine Killer-Aktion oder mehr Health.",
@@ -177,6 +186,7 @@
   },
   "it": {
    "mecanicas": [
+    "Movimento base: non si muove nella sua Killer Action; attacca chi si trova nel suo spazio.",
     "Usa la carta Killer Wrath con un segnalino che parte dal livello 2, tra 1 e 10.",
     "Prima del Finale: se Killer Wrath è a 1-2, aumentalo di 1 > Target Final Girl or Victim > Attack.",
     "Unleash Killer Wrath applica gli effetti del livello attuale, come aumentare l'Horror, un'azione del Killer o più vita.",
@@ -187,6 +197,7 @@
  "Evomorph": {
   "es": {
    "mecanicas": [
+    "Movimiento base: se mueve en su Killer Action antes de atacar.",
     "Evoluciona: empieza como Hatchling (10 de daño, 1 de velocidad, 4 de vida ampliable hasta 10).",
     "Con el Bloodlust pasa a Youngling (rápido y débil) y luego a Adult (lento y fuerte).",
     "Al llegar a Youngling hace Vanish: se ignora la siguiente fase del Killer y se roba una carta Ambush. En Adult se revela el Dark Power.",
@@ -195,6 +206,7 @@
   },
   "en": {
    "mecanicas": [
+    "Base movement: moves in its Killer Action before attacking.",
     "Evolves: starts as a Hatchling (10 Damage, 1 Speed, 4 Health, up to 10).",
     "As Bloodlust rises it becomes a Youngling (fast, weak), then an Adult (slower, stronger).",
     "On reaching Youngling it Vanishes: the next Killer phase is replaced by an Ambush card. At Adult the Dark Power is revealed.",
@@ -203,6 +215,7 @@
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : se déplace pendant sa Killer Action avant d'attaquer.",
     "Évolue : commence en Hatchling (10 dégâts, vitesse 1, 4 points de vie, jusqu'à 10).",
     "Avec le Bloodlust, devient Youngling (rapide, faible) puis Adult (plus lent, plus fort).",
     "En Youngling, il fait Vanish : la phase du Killer suivante est remplacée par une carte Ambush. En Adult, le Dark Power est révélé.",
@@ -211,6 +224,7 @@
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action vor dem Angriff.",
     "Entwickelt sich: beginnt als Hatchling (10 Damage, 1 Speed, 4 Health, bis 10).",
     "Mit steigendem Bloodlust wird es Youngling (schnell, schwach), dann Adult (langsamer, stärker).",
     "Als Youngling macht es Vanish: Die nächste Killer-Phase wird durch eine Ambush-Karte ersetzt. Als Adult wird die Dark Power aufgedeckt.",
@@ -219,6 +233,7 @@
   },
   "it": {
    "mecanicas": [
+    "Movimento base: si muove nella sua Killer Action prima di attaccare.",
     "Evolve: inizia come Hatchling (10 danni, velocità 1, 4 di vita, fino a 10).",
     "Con il Bloodlust diventa Youngling (veloce, debole) e poi Adult (più lento, più forte).",
     "Da Youngling fa Vanish: la fase del Killer successiva è sostituita da una carta Ambush. Da Adult viene rivelato il Dark Power.",
@@ -303,30 +318,35 @@
  "Ratchet Lady": {
   "es": {
    "mecanicas": [
+    "Movimiento base: no se mueve en su Killer Action; ataca a quien esté en su casilla.",
     "La acompañan Minions llamados Maniacs; tienes acceso a las cartas de acción Calm.",
     "Antes del Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
    ]
   },
   "en": {
    "mecanicas": [
+    "Base movement: does not move in its Killer Action; attacks whoever is in its space.",
     "Accompanied by Minions called Maniacs; you have access to Calm Action cards.",
     "Before the Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
    ]
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : ne se déplace pas pendant sa Killer Action ; attaque qui se trouve sur sa case.",
     "Accompagnée de Minions appelés Maniacs ; vous avez accès aux cartes Action Calm.",
     "Avant le Finale : Minions : Target Final Girl > Move ; Killer : Target Final Girl or Victim > Attack."
    ]
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action nicht; greift an, wer auf seinem Feld steht.",
     "Wird von Minions namens Maniacs begleitet; du hast Zugriff auf Calm-Aktionskarten.",
     "Vor dem Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
    ]
   },
   "it": {
    "mecanicas": [
+    "Movimento base: non si muove nella sua Killer Action; attacca chi si trova nel suo spazio.",
     "È accompagnata da Minions chiamati Maniacs; hai accesso alle carte Azione Calm.",
     "Prima del Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
    ]
@@ -335,6 +355,7 @@
  "Krampus": {
   "es": {
    "mecanicas": [
+    "Movimiento base: ataca primero y luego se mueve, en su Killer Action.",
     "Antes del Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
     "Deja fichas de Present boca abajo en o junto a su espacio según una tirada y los números de Panic; nunca dos en el mismo espacio.",
     "Los Presents pueden ser buenos o malos; los de Krampus o Santa hacen robar del mazo de Presents correspondiente.",
@@ -343,6 +364,7 @@
   },
   "en": {
    "mecanicas": [
+    "Base movement: attacks first and then moves, in its Killer Action.",
     "Before the Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
     "Leaves facedown Present tokens in or next to his space by die roll and Panic numbers; never two in one space.",
     "Presents can be good or bad; Krampus or Santa icons draw from the matching Presents deck.",
@@ -351,6 +373,7 @@
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : attaque d'abord puis se déplace, pendant sa Killer Action.",
     "Avant le Finale : Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
     "Laisse des jetons Present face cachée dans ou près de sa case selon un dé et les numéros de Panic ; jamais deux sur une case.",
     "Les Presents peuvent être bons ou mauvais ; les icônes Krampus ou Santa font piocher dans le paquet Presents correspondant.",
@@ -359,6 +382,7 @@
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: greift zuerst an und bewegt sich dann, in seiner Killer Action.",
     "Vor dem Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
     "Legt verdeckte Present-Marker in oder neben sein Feld per Würfelwurf und Panic-Zahlen; nie zwei auf einem Feld.",
     "Presents können gut oder schlecht sein; Krampus- oder Santa-Symbole ziehen aus dem passenden Presents-Deck.",
@@ -367,6 +391,7 @@
   },
   "it": {
    "mecanicas": [
+    "Movimento base: prima attacca e poi si muove, nella sua Killer Action.",
     "Prima del Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
     "Lascia segnalini Present coperti nel suo spazio o adiacenti tramite dado e numeri di Panic; mai due nello stesso spazio.",
     "I Presents possono essere positivi o negativi; le icone Krampus o Santa fanno pescare dal mazzo Presents corrispondente.",
@@ -414,6 +439,7 @@
  "Hunter": {
   "es": {
    "mecanicas": [
+    "Movimiento base: se mueve en su Killer Action antes de atacar.",
     "Antes del Finale: Target Final Girl > Movement > Attack.",
     "Primero te enfrentas al Mark V, cuyo daño se cuenta con 5 fichas Cybernetic Part; cada una requiere 2 de daño en la misma fase.",
     "Su Bloodlust solo sube si daña a la Final Girl o a un aliado, o si recibe daño, como máximo una vez por fase.",
@@ -422,6 +448,7 @@
   },
   "en": {
    "mecanicas": [
+    "Base movement: moves in its Killer Action before attacking.",
     "Before the Finale: Target Final Girl > Movement > Attack.",
     "First you face the Mark V, tracked by 5 Cybernetic Part tokens; each needs 2 damage in the same phase.",
     "Bloodlust only rises when it damages the Final Girl or an ally, or is damaged, at most once per phase.",
@@ -430,6 +457,7 @@
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : se déplace pendant sa Killer Action avant d'attaquer.",
     "Avant le Finale : Target Final Girl > Movement > Attack.",
     "Vous affrontez d'abord le Mark V, suivi par 5 jetons Cybernetic Part ; chacun demande 2 dégâts dans la même phase.",
     "Le Bloodlust ne monte que s'il blesse la Final Girl ou un allié, ou s'il est blessé, une fois par phase au plus.",
@@ -438,6 +466,7 @@
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action vor dem Angriff.",
     "Vor dem Finale: Target Final Girl > Movement > Attack.",
     "Zuerst kämpfst du gegen den Mark V, verfolgt über 5 Cybernetic-Part-Marker; jeder braucht 2 Schaden in derselben Phase.",
     "Bloodlust steigt nur, wenn er das Final Girl oder einen Verbündeten verletzt oder selbst Schaden nimmt, höchstens einmal pro Phase.",
@@ -446,6 +475,7 @@
   },
   "it": {
    "mecanicas": [
+    "Movimento base: si muove nella sua Killer Action prima di attaccare.",
     "Prima del Finale: Target Final Girl > Movement > Attack.",
     "Prima affronti il Mark V, tracciato da 5 segnalini Cybernetic Part; ciascuno richiede 2 danni nella stessa fase.",
     "Il Bloodlust sale solo se danneggia la Final Girl o un alleato, o se viene danneggiato, al massimo una volta per fase.",
@@ -456,30 +486,35 @@
  "Billy": {
   "es": {
    "mecanicas": [
+    "Movimiento base: no se mueve en su Killer Action; ataca a quien esté en su casilla.",
     "Tiene Minions que pueden aparecer durante la partida y actúan antes que él.",
     "Antes del Finale, tras los Minions: +1 de vida si hay una power source activa > Target Victim/Final Girl > Strike once."
    ]
   },
   "en": {
    "mecanicas": [
+    "Base movement: does not move in its Killer Action; attacks whoever is in its space.",
     "Has Minions that can spawn during the game and act before him.",
     "Before the Finale, after Minions: +1 Health if a power source is active > Target Victim/Final Girl > Strike once."
    ]
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : ne se déplace pas pendant sa Killer Action ; attaque qui se trouve sur sa case.",
     "A des Minions qui peuvent apparaître en cours de partie et agissent avant lui.",
     "Avant le Finale, après les Minions : +1 point de vie si une power source est active > Target Victim/Final Girl > Strike once."
    ]
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action nicht; greift an, wer auf seinem Feld steht.",
     "Hat Minions, die im Spiel erscheinen können und vor ihm handeln.",
     "Vor dem Finale, nach den Minions: +1 Health, wenn eine power source aktiv ist > Target Victim/Final Girl > Strike once."
    ]
   },
   "it": {
    "mecanicas": [
+    "Movimento base: non si muove nella sua Killer Action; attacca chi si trova nel suo spazio.",
     "Ha Minions che possono apparire durante la partita e agiscono prima di lui.",
     "Prima del Finale, dopo i Minions: +1 di vita se una power source è attiva > Target Victim/Final Girl > Strike once."
    ]
@@ -488,6 +523,7 @@
  "Grimlash": {
   "es": {
    "mecanicas": [
+    "Movimiento base: se mueve en su Killer Action antes de atacar.",
     "Empieza con 4 de Horror y 10 de vida.",
     "Inflige Harvest Madness, que da habilidades extra a la Final Girl pero acaba causando la muerte.",
     "Fase inicial del Killer: Target Final Girl or Victim > Move 1 > Attack > si murió una Victim, 1 Harvest Madness."
@@ -495,6 +531,7 @@
   },
   "en": {
    "mecanicas": [
+    "Base movement: moves in its Killer Action before attacking.",
     "Starts at 4 Horror and 10 Health.",
     "Inflicts Harvest Madness, which grants the Final Girl extra abilities but eventually causes death.",
     "Initial Killer phase: Target Final Girl or Victim > Move 1 > Attack > if a Victim was killed, 1 Harvest Madness."
@@ -502,6 +539,7 @@
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : se déplace pendant sa Killer Action avant d'attaquer.",
     "Commence avec 4 d'Horror et 10 points de vie.",
     "Inflige la Harvest Madness, qui donne des capacités à la Final Girl mais finit par causer la mort.",
     "Phase initiale du Killer : Target Final Girl or Victim > Move 1 > Attack > si une Victim est tuée, 1 Harvest Madness."
@@ -509,6 +547,7 @@
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action vor dem Angriff.",
     "Startet mit 4 Horror und 10 Health.",
     "Verursacht Harvest Madness, die dem Final Girl Fähigkeiten gibt, aber schließlich zum Tod führt.",
     "Anfängliche Killer-Phase: Target Final Girl or Victim > Move 1 > Attack > wurde ein Victim getötet, 1 Harvest Madness."
@@ -516,6 +555,7 @@
   },
   "it": {
    "mecanicas": [
+    "Movimento base: si muove nella sua Killer Action prima di attaccare.",
     "Inizia con 4 di Horror e 10 di vita.",
     "Infligge la Harvest Madness, che dà abilità extra alla Final Girl ma alla fine causa la morte.",
     "Fase iniziale del Killer: Target Final Girl or Victim > Move 1 > Attack > se una Victim è stata uccisa, 1 Harvest Madness."
@@ -599,6 +639,7 @@
  "Mort": {
   "es": {
    "mecanicas": [
+    "Movimiento base: se mueve en su Killer Action antes de atacar.",
     "Empieza como uno de 10 Suspects (Killers de otras Feature Films); debes Interrogate y Coerce a cinco, convirtiéndolos en Informants.",
     "Al revelarse su disfraz o agotarse el mazo de Terror, adopta su forma final.",
     "Antes del Finale: roba una ficha Suspect para el Active Killer > Target Victim or Final Girl > Move > Attack."
@@ -606,6 +647,7 @@
   },
   "en": {
    "mecanicas": [
+    "Base movement: moves in its Killer Action before attacking.",
     "Starts as one of 10 Suspects (Killers from other Feature Films); you must Interrogate and Coerce five, turning them into Informants.",
     "When his disguise is revealed or the Terror deck runs out, he takes his final form.",
     "Before the Finale: draw a Suspect token for the Active Killer > Target Victim or Final Girl > Move > Attack."
@@ -613,6 +655,7 @@
   },
   "fr": {
    "mecanicas": [
+    "Déplacement de base : se déplace pendant sa Killer Action avant d'attaquer.",
     "Commence comme l'un de 10 Suspects (Killers d'autres Feature Films) ; vous devez Interrogate et Coerce cinq d'entre eux, devenus Informants.",
     "Quand son déguisement est révélé ou que le paquet Terror est épuisé, il prend sa forme finale.",
     "Avant le Finale : piochez un jeton Suspect pour l'Active Killer > Target Victim or Final Girl > Move > Attack."
@@ -620,6 +663,7 @@
   },
   "de": {
    "mecanicas": [
+    "Grundbewegung: bewegt sich in seiner Killer Action vor dem Angriff.",
     "Beginnt als einer von 10 Suspects (Killer aus anderen Feature Films); du musst fünf per Interrogate und Coerce zu Informants machen.",
     "Wird seine Verkleidung enthüllt oder ist das Terror-Deck leer, nimmt er seine finale Form an.",
     "Vor dem Finale: Suspect-Marker für den Active Killer ziehen > Target Victim or Final Girl > Move > Attack."
@@ -627,6 +671,7 @@
   },
   "it": {
    "mecanicas": [
+    "Movimento base: si muove nella sua Killer Action prima di attaccare.",
     "Inizia come uno di 10 Suspects (Killer di altri Feature Films); devi fare Interrogate e Coerce su cinque, trasformandoli in Informants.",
     "Quando il suo travestimento è rivelato o il mazzo Terror finisce, assume la sua forma finale.",
     "Prima del Finale: pesca un segnalino Suspect per l'Active Killer > Target Victim or Final Girl > Move > Attack."
