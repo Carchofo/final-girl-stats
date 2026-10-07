@@ -647,6 +647,8 @@ def grande(lang, salida, M, existe):
         raise SystemExit(f"{base}.{lang}: marca de datos sin rellenar")
 
     cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
+    if salida == "index.html":
+        cuerpo = filtrar_jugadores(cuerpo, lang)
     for clave, valor in cifras(lang).items():
         cuerpo = re.sub(r'(<span data-dato="%s">)[^<]*(</span>)' % clave,
                         r"\g<1>" + valor + r"\g<2>", cuerpo)
@@ -692,3 +694,47 @@ def grande(lang, salida, M, existe):
             .replace("</head>", alternativos(salida, M.DOMINIO, existe) + "\n" + ESTILO_IDIOMAS + "</head>")
             + cuerpo + M.PIE)
     (AQUI / lang / salida).write_text(html, encoding="utf-8")
+
+
+# --------------------------------------------------------------------------
+# Jugadores que han pedido no salir
+# --------------------------------------------------------------------------
+# excluir_nicks.json es una lista de nicks (mayúsculas no importan). Se
+# quitan de la pestaña Jugadores en todos los idiomas. Sus partidas siguen
+# contando en todas las cifras: lo que desaparece es su ficha personal.
+CONTACTO = "contacto@finalgirlstats.com"
+
+AVISO_NICK = {
+    "es": "¿Eres tú y prefieres no salir? Escribe a {c} con tu nick y te quitamos de esta lista. Tus partidas seguirán contando en las cifras, pero sin tu nombre.",
+    "en": "Is that you and you'd rather not be listed? Email {c} with your nickname and we'll remove you. Your games will still count in the numbers, just without your name.",
+    "fr": "C'est vous et vous préférez ne pas apparaître ? Écrivez à {c} avec votre pseudo et nous vous retirerons. Vos parties compteront toujours dans les chiffres, sans votre nom.",
+    "de": "Bist du das und möchtest nicht gelistet sein? Schreib an {c} mit deinem Nick und wir entfernen dich. Deine Partien zählen weiter in den Zahlen, nur ohne deinen Namen.",
+    "it": "Sei tu e preferisci non comparire? Scrivi a {c} con il tuo nick e ti togliamo. Le tue partite continueranno a contare nei numeri, ma senza il tuo nome.",
+}
+
+
+def excluidos():
+    f = AQUI / "excluir_nicks.json"
+    return {n.strip().lower() for n in json.loads(f.read_text(encoding="utf-8"))} if f.exists() else set()
+
+
+def filtrar_jugadores(cuerpo, lang):
+    """Quita los nicks excluidos de UJ y añade el aviso de borrado."""
+    fuera = excluidos()
+    def limpia(m):
+        uj = json.loads(m.group(2))
+        uj = {k: v for k, v in uj.items() if k.strip().lower() not in fuera}
+        return m.group(1) + json.dumps(uj, ensure_ascii=False, separators=(",", ":")) + ";"
+    def limpia_um(m):
+        um = json.loads(m.group(2))
+        if isinstance(um.get("u"), dict):
+            um["u"] = {k: v for k, v in um["u"].items() if k.strip().lower() not in fuera}
+        return m.group(1) + json.dumps(um, ensure_ascii=False, separators=(",", ":")) + ";"
+    if fuera:
+        cuerpo = re.sub(r"(var UJ = )(\{.*?\});(?=\n)", limpia, cuerpo, count=1, flags=re.S)
+        cuerpo = re.sub(r"(var UM = )(\{.*?\});(?=\n)", limpia_um, cuerpo, count=1, flags=re.S)
+    c = f'<a href="mailto:{CONTACTO}">{CONTACTO}</a>'
+    aviso = f'<p class="sub" id="ju-borrar" style="font-size:12.5px">{AVISO_NICK[lang].format(c=c)}</p>'
+    if 'id="ju-borrar"' not in cuerpo:
+        cuerpo = cuerpo.replace('<div class="barlist" id="ju-lista">', aviso + '<div class="barlist" id="ju-lista">', 1)
+    return cuerpo

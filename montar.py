@@ -320,6 +320,9 @@ for p in PAGINAS:
     # va dentro del <body>. Aqui ya hay uno en el <head>: dejar los dos
     # confunde al buscador sobre cual es el bueno.
     cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
+    if p["salida"] == "index.html":
+        import idiomas
+        cuerpo = idiomas.filtrar_jugadores(cuerpo, "es")
 
     # Las cifras que van en el HTML servido (y no pintadas por JavaScript,
     # que el buscador no las veria) se rellenan aqui desde los datos. Antes
