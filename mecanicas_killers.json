@@ -1,0 +1,668 @@
+{
+ "Hans": {
+  "es": {
+   "mecanicas": [
+    "No tiene reglas especiales de juego.",
+    "Antes de revelar el Finale, empieza la fase del Killer con: Target Final Girl or Victim > Attack."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Has no special gameplay rules.",
+    "Before the Finale is revealed, he starts the Killer phase with: Target Final Girl or Victim > Attack."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "N'a aucune règle de jeu spéciale.",
+    "Avant la révélation du Finale, il commence la phase du Killer par : Target Final Girl or Victim > Attack."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Hat keine besonderen Spielregeln.",
+    "Bevor das Finale aufgedeckt wird, beginnt er die Killer-Phase mit: Target Final Girl or Victim > Attack."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Non ha regole di gioco speciali.",
+    "Prima che il Finale sia rivelato, inizia la fase del Killer con: Target Final Girl or Victim > Attack."
+   ]
+  }
+ },
+ "Dr. Fright": {
+  "es": {
+   "mecanicas": [
+    "Usa los estados Awake y Asleep mediante la carta Awake/Asleep y el mazo Boiler Room; empiezas Awake.",
+    "Awake: no puede atacarte ni tú a él; las acciones contra la Final Girl o Victim solo afectan a Victims.",
+    "Asleep: estás en la Boiler Room, puede atacarte, no puedes salvar Victims y resuelves una carta Boiler Room al final de la fase del Killer.",
+    "Solo puede recibir daño en la Boiler Room. Puedes dormirte voluntariamente con Short Rest o Long Rest."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Uses Awake and Asleep states via the Awake/Asleep card and the Boiler Room deck; you start Awake.",
+    "Awake: he cannot attack you and you cannot attack him; Final Girl or Victim actions target Victims only.",
+    "Asleep: you are in the Boiler Room, he can attack you, you cannot save Victims, and you resolve one Boiler Room card at the end of the Killer phase.",
+    "He can only be damaged in the Boiler Room. Short Rest or Long Rest let you fall Asleep voluntarily."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Utilise les états Awake et Asleep via la carte Awake/Asleep et le paquet Boiler Room ; vous commencez Awake.",
+    "Awake : il ne peut pas vous attaquer et vous non plus ; les actions Final Girl or Victim ne visent que les Victims.",
+    "Asleep : vous êtes dans la Boiler Room, il peut vous attaquer, vous ne pouvez pas sauver de Victims et vous résolvez une carte Boiler Room en fin de phase du Killer.",
+    "Il ne peut être blessé que dans la Boiler Room. Short Rest ou Long Rest permettent de s'endormir volontairement."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Nutzt die Zustände Awake und Asleep über die Awake/Asleep-Karte und das Boiler-Room-Deck; du startest Awake.",
+    "Awake: Er kann dich nicht angreifen und du ihn nicht; Final-Girl-or-Victim-Aktionen zielen nur auf Victims.",
+    "Asleep: Du bist im Boiler Room, er kann dich angreifen, du kannst keine Victims retten und handelst am Ende der Killer-Phase eine Boiler-Room-Karte ab.",
+    "Er kann nur im Boiler Room Schaden nehmen. Mit Short Rest oder Long Rest schläfst du freiwillig ein."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Usa gli stati Awake e Asleep tramite la carta Awake/Asleep e il mazzo Boiler Room; inizi Awake.",
+    "Awake: lui non può attaccarti né tu lui; le azioni Final Girl or Victim colpiscono solo le Victims.",
+    "Asleep: sei nella Boiler Room, può attaccarti, non puoi salvare Victims e risolvi una carta Boiler Room alla fine della fase del Killer.",
+    "Può subire danni solo nella Boiler Room. Short Rest o Long Rest ti fanno addormentare volontariamente."
+   ]
+  }
+ },
+ "Geppetto": {
+  "es": {
+   "mecanicas": [
+    "Despliega hasta 3 Puppets (Minions) desde la carta Puppets; antes del Finale genera 1 Puppet en cada fase del Killer.",
+    "Los Puppets tienen 1 de vida, hacen 1 de daño, usan el Movement de Geppetto y deben terminar a 2 espacios o menos de él.",
+    "Las acciones de Terror cards que no especifican lo contrario las resuelve cada Puppet y luego Geppetto."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Deploys up to 3 Puppets (Minions) from the Puppets card; before the Finale he spawns 1 Puppet each Killer phase.",
+    "Puppets have 1 Health, deal 1 Damage, share Geppetto's Movement and must end within 2 spaces of him.",
+    "Terror card actions not limited to Puppets are resolved by each Puppet, then by Geppetto."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Déploie jusqu'à 3 Puppets (Minions) depuis la carte Puppets ; avant le Finale, il en fait apparaître 1 à chaque phase du Killer.",
+    "Les Puppets ont 1 point de vie, infligent 1 dégât, partagent le Movement de Geppetto et doivent finir à 2 cases ou moins de lui.",
+    "Les actions des Terror cards non réservées aux Puppets sont résolues par chaque Puppet, puis par Geppetto."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Setzt bis zu 3 Puppets (Minions) von der Puppets-Karte ein; vor dem Finale erscheint in jeder Killer-Phase 1 Puppet.",
+    "Puppets haben 1 Health, verursachen 1 Damage, teilen Geppettos Movement und müssen höchstens 2 Felder von ihm entfernt enden.",
+    "Aktionen von Terror cards, die nicht auf Puppets beschränkt sind, führt jeder Puppet und danach Geppetto aus."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Schiera fino a 3 Puppets (Minions) dalla carta Puppets; prima del Finale ne genera 1 a ogni fase del Killer.",
+    "I Puppets hanno 1 di vita, infliggono 1 danno, condividono il Movement di Geppetto e devono finire entro 2 spazi da lui.",
+    "Le azioni delle Terror cards non riservate ai Puppets vengono risolte da ogni Puppet e poi da Geppetto."
+   ]
+  }
+ },
+ "Poltergeist": {
+  "es": {
+   "mecanicas": [
+    "No tiene vida y no puede ser dañada por ataques.",
+    "Para ganar debes encontrar a Carolyn en los mazos de Items y llegar a un espacio Exit con ella en tu inventario."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Has no Health and cannot be harmed by attacks.",
+    "To win, find Carolyn in the Item decks and reach an Exit space with her in your inventory."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "N'a pas de points de vie et ne peut pas être blessée par des attaques.",
+    "Pour gagner, trouvez Carolyn dans les paquets d'Items et atteignez une case Exit avec elle dans votre inventaire."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Hat keine Health und kann durch Angriffe nicht verletzt werden.",
+    "Zum Sieg musst du Carolyn in den Item-Decks finden und mit ihr im Inventar ein Exit-Feld erreichen."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Non ha vita e non può essere danneggiata dagli attacchi.",
+    "Per vincere devi trovare Carolyn nei mazzi Item e raggiungere uno spazio Exit con lei nell'inventario."
+   ]
+  }
+ },
+ "Inkanyamba": {
+  "es": {
+   "mecanicas": [
+    "Usa la carta Killer Wrath con un marcador que empieza en el nivel 2 y va de 1 a 10.",
+    "Antes del Finale: si Killer Wrath está en 1-2, súbelo 1 > Target Final Girl or Victim > Attack.",
+    "Unleash Killer Wrath aplica los efectos del nivel actual, como subir Horror, una acción del Killer o más vida.",
+    "Las cartas de acción Atonement, jugadas en la fase de Acción, son la principal forma de reducir Wrath."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Uses the Killer Wrath card with a marker starting at level 2, ranging from 1 to 10.",
+    "Before the Finale: if Killer Wrath is 1-2, increase it by 1 > Target Final Girl or Victim > Attack.",
+    "Unleash Killer Wrath applies the current level's effects, such as raising Horror, a Killer action or extra Health.",
+    "Atonement Action cards, played in the Action phase, are the main way to reduce Wrath."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Utilise la carte Killer Wrath avec un marqueur qui commence au niveau 2, entre 1 et 10.",
+    "Avant le Finale : si Killer Wrath est à 1-2, augmentez-le de 1 > Target Final Girl or Victim > Attack.",
+    "Unleash Killer Wrath applique les effets du niveau actuel : hausse d'Horror, action du Killer ou points de vie.",
+    "Les cartes Action Atonement, jouées en phase d'Action, sont le principal moyen de réduire le Wrath."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Nutzt die Killer-Wrath-Karte mit einem Marker, der auf Stufe 2 beginnt (Bereich 1 bis 10).",
+    "Vor dem Finale: Ist Killer Wrath auf 1-2, um 1 erhöhen > Target Final Girl or Victim > Attack.",
+    "Unleash Killer Wrath wendet die Effekte der aktuellen Stufe an, etwa Horror-Anstieg, eine Killer-Aktion oder mehr Health.",
+    "Atonement-Aktionskarten, gespielt in der Aktionsphase, sind der Hauptweg, Wrath zu senken."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Usa la carta Killer Wrath con un segnalino che parte dal livello 2, tra 1 e 10.",
+    "Prima del Finale: se Killer Wrath è a 1-2, aumentalo di 1 > Target Final Girl or Victim > Attack.",
+    "Unleash Killer Wrath applica gli effetti del livello attuale, come aumentare l'Horror, un'azione del Killer o più vita.",
+    "Le carte Azione Atonement, giocate nella fase Azione, sono il modo principale per ridurre il Wrath."
+   ]
+  }
+ },
+ "Evomorph": {
+  "es": {
+   "mecanicas": [
+    "Evoluciona: empieza como Hatchling (10 de daño, 1 de velocidad, 4 de vida ampliable hasta 10).",
+    "Con el Bloodlust pasa a Youngling (rápido y débil) y luego a Adult (lento y fuerte).",
+    "Al llegar a Youngling hace Vanish: se ignora la siguiente fase del Killer y se roba una carta Ambush. En Adult se revela el Dark Power.",
+    "Antes del Finale: Target Victim > Move > Attack."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Evolves: starts as a Hatchling (10 Damage, 1 Speed, 4 Health, up to 10).",
+    "As Bloodlust rises it becomes a Youngling (fast, weak), then an Adult (slower, stronger).",
+    "On reaching Youngling it Vanishes: the next Killer phase is replaced by an Ambush card. At Adult the Dark Power is revealed.",
+    "Before the Finale: Target Victim > Move > Attack."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Évolue : commence en Hatchling (10 dégâts, vitesse 1, 4 points de vie, jusqu'à 10).",
+    "Avec le Bloodlust, devient Youngling (rapide, faible) puis Adult (plus lent, plus fort).",
+    "En Youngling, il fait Vanish : la phase du Killer suivante est remplacée par une carte Ambush. En Adult, le Dark Power est révélé.",
+    "Avant le Finale : Target Victim > Move > Attack."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Entwickelt sich: beginnt als Hatchling (10 Damage, 1 Speed, 4 Health, bis 10).",
+    "Mit steigendem Bloodlust wird es Youngling (schnell, schwach), dann Adult (langsamer, stärker).",
+    "Als Youngling macht es Vanish: Die nächste Killer-Phase wird durch eine Ambush-Karte ersetzt. Als Adult wird die Dark Power aufgedeckt.",
+    "Vor dem Finale: Target Victim > Move > Attack."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Evolve: inizia come Hatchling (10 danni, velocità 1, 4 di vita, fino a 10).",
+    "Con il Bloodlust diventa Youngling (veloce, debole) e poi Adult (più lento, più forte).",
+    "Da Youngling fa Vanish: la fase del Killer successiva è sostituita da una carta Ambush. Da Adult viene rivelato il Dark Power.",
+    "Prima del Finale: Target Victim > Move > Attack."
+   ]
+  }
+ },
+ "The Organism": {
+  "es": {
+   "mecanicas": [
+    "Tres Victims se sustituyen al azar por Exposed Victims que pueden ser Organisms.",
+    "Un Test Kit, el espacio Lab o su muerte roban una carta Test Result: SAFE la convierte en Victim normal; ASSIMILATED la convierte en Organism.",
+    "Los Mutated Organisms son Killers, no Minions, y actúan uno a uno empezando por el de la izquierda del tablero del Killer.",
+    "En el Finale cada Organism tiene acciones adicionales al inicio de la fase del Killer."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Three Victims are randomly replaced with Exposed Victims that may be Organisms.",
+    "A Test Kit, the Lab space or their death draws a Test Result card: SAFE makes a normal Victim; ASSIMILATED makes an Organism.",
+    "Mutated Organisms are Killers, not Minions, acting one at a time from the leftmost on the Killer board.",
+    "In the Finale each Organism gets extra Killer actions at the start of the Killer phase."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Trois Victims sont remplacées au hasard par des Exposed Victims pouvant être des Organisms.",
+    "Un Test Kit, la case Lab ou leur mort fait piocher une carte Test Result : SAFE donne une Victim normale ; ASSIMILATED donne un Organism.",
+    "Les Mutated Organisms sont des Killers, pas des Minions, et agissent un par un en partant de la gauche du plateau du Killer.",
+    "Au Finale, chaque Organism a des actions supplémentaires au début de la phase du Killer."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Drei Victims werden zufällig durch Exposed Victims ersetzt, die Organisms sein können.",
+    "Ein Test Kit, das Lab-Feld oder ihr Tod zieht eine Test-Result-Karte: SAFE ergibt ein normales Victim, ASSIMILATED ein Organism.",
+    "Mutated Organisms sind Killer, keine Minions, und handeln nacheinander, beginnend links auf dem Killer-Board.",
+    "Im Finale hat jedes Organism zu Beginn der Killer-Phase zusätzliche Killer-Aktionen."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Tre Victims sono sostituite a caso da Exposed Victims che possono essere Organisms.",
+    "Un Test Kit, lo spazio Lab o la loro morte fanno pescare una carta Test Result: SAFE dà una Victim normale; ASSIMILATED un Organism.",
+    "I Mutated Organisms sono Killer, non Minions, e agiscono uno alla volta partendo da sinistra sul tabellone del Killer.",
+    "Nel Finale ogni Organism ha azioni aggiuntive all'inizio della fase del Killer."
+   ]
+  }
+ },
+ "The Intruders": {
+  "es": {
+   "mecanicas": [
+    "Son un trío de Killers que empiezan en el mismo espacio; solo el Active Killer actúa con Killer actions y Terror cards.",
+    "El Active Killer cambia cuando otro es atacado o dañado, por efecto de cartas, o cuando el activo muere (pasa al superior)."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "A trio of Killers starting in the same space; only the Active Killer resolves Killer actions and Terror cards.",
+    "The Active Killer changes when another is attacked or damaged, via card effects, or when the active one dies (the top-most takes over)."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Un trio de Killers commençant dans la même case ; seul l'Active Killer résout les actions du Killer et les Terror cards.",
+    "L'Active Killer change quand un autre est attaqué ou blessé, via des effets de cartes, ou quand l'actif meurt (le plus haut prend le relais)."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Ein Trio von Killern im selben Startfeld; nur der Active Killer führt Killer-Aktionen und Terror cards aus.",
+    "Der Active Killer wechselt, wenn ein anderer angegriffen oder verletzt wird, durch Karteneffekte oder wenn der aktive stirbt (der oberste übernimmt)."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Un trio di Killer che parte dallo stesso spazio; solo l'Active Killer risolve azioni del Killer e Terror cards.",
+    "L'Active Killer cambia quando un altro viene attaccato o danneggiato, per effetti di carte, o quando quello attivo muore (subentra quello più in alto)."
+   ]
+  }
+ },
+ "Big Bad Wolf": {
+  "es": {
+   "mecanicas": [
+    "Killer de iniciación de la Serie 2, con dos modos: Track y Slay.",
+    "Empieza en Track Mode y pasa a Slay Mode al revelar el Dark Power; algunas Terror cards varían según el modo."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Starter Killer of Series 2, with two modes: Track and Slay.",
+    "Starts in Track Mode and switches to Slay Mode when the Dark Power is revealed; some Terror cards differ by mode."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Killer d'initiation de la Série 2, avec deux modes : Track et Slay.",
+    "Commence en Track Mode et passe en Slay Mode à la révélation du Dark Power ; certaines Terror cards varient selon le mode."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Einsteiger-Killer der Serie 2 mit zwei Modi: Track und Slay.",
+    "Startet im Track Mode und wechselt beim Aufdecken der Dark Power in den Slay Mode; manche Terror cards hängen vom Modus ab."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Killer introduttivo della Serie 2, con due modalità: Track e Slay.",
+    "Inizia in Track Mode e passa a Slay Mode quando viene rivelato il Dark Power; alcune Terror cards cambiano in base alla modalità."
+   ]
+  }
+ },
+ "Ratchet Lady": {
+  "es": {
+   "mecanicas": [
+    "La acompañan Minions llamados Maniacs; tienes acceso a las cartas de acción Calm.",
+    "Antes del Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Accompanied by Minions called Maniacs; you have access to Calm Action cards.",
+    "Before the Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Accompagnée de Minions appelés Maniacs ; vous avez accès aux cartes Action Calm.",
+    "Avant le Finale : Minions : Target Final Girl > Move ; Killer : Target Final Girl or Victim > Attack."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Wird von Minions namens Maniacs begleitet; du hast Zugriff auf Calm-Aktionskarten.",
+    "Vor dem Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "È accompagnata da Minions chiamati Maniacs; hai accesso alle carte Azione Calm.",
+    "Prima del Finale: Minions: Target Final Girl > Move; Killer: Target Final Girl or Victim > Attack."
+   ]
+  }
+ },
+ "Krampus": {
+  "es": {
+   "mecanicas": [
+    "Antes del Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
+    "Deja fichas de Present boca abajo en o junto a su espacio según una tirada y los números de Panic; nunca dos en el mismo espacio.",
+    "Los Presents pueden ser buenos o malos; los de Krampus o Santa hacen robar del mazo de Presents correspondiente.",
+    "Puedes abrirlos en la fase de Acción; un Victim en un espacio con Present debe abrirlo."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Before the Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
+    "Leaves facedown Present tokens in or next to his space by die roll and Panic numbers; never two in one space.",
+    "Presents can be good or bad; Krampus or Santa icons draw from the matching Presents deck.",
+    "You may open them in the Action phase; a Victim sharing a space with a Present must open it."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Avant le Finale : Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
+    "Laisse des jetons Present face cachée dans ou près de sa case selon un dé et les numéros de Panic ; jamais deux sur une case.",
+    "Les Presents peuvent être bons ou mauvais ; les icônes Krampus ou Santa font piocher dans le paquet Presents correspondant.",
+    "Vous pouvez les ouvrir en phase d'Action ; une Victim sur une case avec un Present doit l'ouvrir."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Vor dem Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
+    "Legt verdeckte Present-Marker in oder neben sein Feld per Würfelwurf und Panic-Zahlen; nie zwei auf einem Feld.",
+    "Presents können gut oder schlecht sein; Krampus- oder Santa-Symbole ziehen aus dem passenden Presents-Deck.",
+    "Du darfst sie in der Aktionsphase öffnen; ein Victim auf einem Feld mit Present muss es öffnen."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Prima del Finale: Target Final Girl or Victim > Attack > Target Final Girl or Victim > Movement > Leave a Present.",
+    "Lascia segnalini Present coperti nel suo spazio o adiacenti tramite dado e numeri di Panic; mai due nello stesso spazio.",
+    "I Presents possono essere positivi o negativi; le icone Krampus o Santa fanno pescare dal mazzo Presents corrispondente.",
+    "Puoi aprirli nella fase Azione; una Victim nello stesso spazio di un Present deve aprirlo."
+   ]
+  }
+ },
+ "Razorface": {
+  "es": {
+   "mecanicas": [
+    "Empiezas con 3 cartas Affliction; para matarlo debes purgar cada una cumpliendo su Purge Requirement en la fase de Acción.",
+    "Una Affliction imposible se retira y se roba otra; pierdes si debes robar y no quedan.",
+    "Su ficha de Final Health solo se revela sin Afflictions en juego; ese daño se ignora mientras las haya."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "You start with 3 Affliction cards; to kill him you must Purge each by meeting its Purge Requirement in the Action phase.",
+    "An impossible Affliction is removed and replaced; you lose if you must draw one and none remain.",
+    "His Final Health token can only be revealed with no Afflictions in play; such damage is ignored otherwise."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Vous commencez avec 3 cartes Affliction ; pour le tuer, purgez-les en remplissant leur Purge Requirement en phase d'Action.",
+    "Une Affliction impossible est retirée et remplacée ; vous perdez s'il faut en piocher une et qu'il n'en reste plus.",
+    "Son jeton Final Health ne peut être révélé sans Affliction en jeu ; sinon ces dégâts sont ignorés."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Du startest mit 3 Affliction-Karten; um ihn zu töten, musst du jede durch ihr Purge Requirement in der Aktionsphase purgen.",
+    "Eine unmögliche Affliction wird entfernt und ersetzt; du verlierst, wenn du ziehen musst und keine mehr übrig ist.",
+    "Sein Final-Health-Marker darf nur ohne Afflictions im Spiel aufgedeckt werden; sonst wird dieser Schaden ignoriert."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Inizi con 3 carte Affliction; per ucciderlo devi purgarle soddisfacendo il loro Purge Requirement nella fase Azione.",
+    "Un'Affliction impossibile viene rimossa e sostituita; perdi se devi pescarne una e non ne restano.",
+    "Il suo segnalino Final Health si rivela solo senza Afflictions in gioco; altrimenti quel danno viene ignorato."
+   ]
+  }
+ },
+ "Hunter": {
+  "es": {
+   "mecanicas": [
+    "Antes del Finale: Target Final Girl > Movement > Attack.",
+    "Primero te enfrentas al Mark V, cuyo daño se cuenta con 5 fichas Cybernetic Part; cada una requiere 2 de daño en la misma fase.",
+    "Su Bloodlust solo sube si daña a la Final Girl o a un aliado, o si recibe daño, como máximo una vez por fase.",
+    "Al perder todas sus partes, el Mark V se apaga y su Dark Power pasa a la carta Mark V Ally; luego llega el Mark X."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Before the Finale: Target Final Girl > Movement > Attack.",
+    "First you face the Mark V, tracked by 5 Cybernetic Part tokens; each needs 2 damage in the same phase.",
+    "Bloodlust only rises when it damages the Final Girl or an ally, or is damaged, at most once per phase.",
+    "When all parts are gone the Mark V shuts down and its Dark Power goes under the Mark V Ally card; the Mark X follows."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Avant le Finale : Target Final Girl > Movement > Attack.",
+    "Vous affrontez d'abord le Mark V, suivi par 5 jetons Cybernetic Part ; chacun demande 2 dégâts dans la même phase.",
+    "Le Bloodlust ne monte que s'il blesse la Final Girl ou un allié, ou s'il est blessé, une fois par phase au plus.",
+    "Sans pièces, le Mark V s'éteint et son Dark Power passe sous la carte Mark V Ally ; le Mark X suit."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Vor dem Finale: Target Final Girl > Movement > Attack.",
+    "Zuerst kämpfst du gegen den Mark V, verfolgt über 5 Cybernetic-Part-Marker; jeder braucht 2 Schaden in derselben Phase.",
+    "Bloodlust steigt nur, wenn er das Final Girl oder einen Verbündeten verletzt oder selbst Schaden nimmt, höchstens einmal pro Phase.",
+    "Ohne Teile schaltet sich der Mark V ab und seine Dark Power kommt unter die Mark-V-Ally-Karte; danach folgt der Mark X."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Prima del Finale: Target Final Girl > Movement > Attack.",
+    "Prima affronti il Mark V, tracciato da 5 segnalini Cybernetic Part; ciascuno richiede 2 danni nella stessa fase.",
+    "Il Bloodlust sale solo se danneggia la Final Girl o un alleato, o se viene danneggiato, al massimo una volta per fase.",
+    "Persi tutti i pezzi, il Mark V si spegne e il suo Dark Power va sotto la carta Mark V Ally; poi arriva il Mark X."
+   ]
+  }
+ },
+ "Billy": {
+  "es": {
+   "mecanicas": [
+    "Tiene Minions que pueden aparecer durante la partida y actúan antes que él.",
+    "Antes del Finale, tras los Minions: +1 de vida si hay una power source activa > Target Victim/Final Girl > Strike once."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Has Minions that can spawn during the game and act before him.",
+    "Before the Finale, after Minions: +1 Health if a power source is active > Target Victim/Final Girl > Strike once."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "A des Minions qui peuvent apparaître en cours de partie et agissent avant lui.",
+    "Avant le Finale, après les Minions : +1 point de vie si une power source est active > Target Victim/Final Girl > Strike once."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Hat Minions, die im Spiel erscheinen können und vor ihm handeln.",
+    "Vor dem Finale, nach den Minions: +1 Health, wenn eine power source aktiv ist > Target Victim/Final Girl > Strike once."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Ha Minions che possono apparire durante la partita e agiscono prima di lui.",
+    "Prima del Finale, dopo i Minions: +1 di vita se una power source è attiva > Target Victim/Final Girl > Strike once."
+   ]
+  }
+ },
+ "Grimlash": {
+  "es": {
+   "mecanicas": [
+    "Empieza con 4 de Horror y 10 de vida.",
+    "Inflige Harvest Madness, que da habilidades extra a la Final Girl pero acaba causando la muerte.",
+    "Fase inicial del Killer: Target Final Girl or Victim > Move 1 > Attack > si murió una Victim, 1 Harvest Madness."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Starts at 4 Horror and 10 Health.",
+    "Inflicts Harvest Madness, which grants the Final Girl extra abilities but eventually causes death.",
+    "Initial Killer phase: Target Final Girl or Victim > Move 1 > Attack > if a Victim was killed, 1 Harvest Madness."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Commence avec 4 d'Horror et 10 points de vie.",
+    "Inflige la Harvest Madness, qui donne des capacités à la Final Girl mais finit par causer la mort.",
+    "Phase initiale du Killer : Target Final Girl or Victim > Move 1 > Attack > si une Victim est tuée, 1 Harvest Madness."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Startet mit 4 Horror und 10 Health.",
+    "Verursacht Harvest Madness, die dem Final Girl Fähigkeiten gibt, aber schließlich zum Tod führt.",
+    "Anfängliche Killer-Phase: Target Final Girl or Victim > Move 1 > Attack > wurde ein Victim getötet, 1 Harvest Madness."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Inizia con 4 di Horror e 10 di vita.",
+    "Infligge la Harvest Madness, che dà abilità extra alla Final Girl ma alla fine causa la morte.",
+    "Fase iniziale del Killer: Target Final Girl or Victim > Move 1 > Attack > se una Victim è stata uccisa, 1 Harvest Madness."
+   ]
+  }
+ },
+ "Berith": {
+  "es": {
+   "mecanicas": [
+    "Debes expulsar a Berith del cuerpo de Ursula sin matarla para siempre, usando Divine Blessings para mejorar su supervivencia.",
+    "Antes del Finale ataca una vez a la Final Girl o a una Victim, sin moverse.",
+    "El juego suele llamarlo Ursula."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "You must drive Berith out of Ursula's body without killing her permanently, using Divine Blessings to improve her survival.",
+    "Before the Finale it targets the Final Girl or a Victim and attacks once, without moving.",
+    "The game usually calls it Ursula."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Vous devez chasser Berith du corps d'Ursula sans la tuer définitivement, avec les Divine Blessings pour améliorer sa survie.",
+    "Avant le Finale, il cible la Final Girl ou une Victim et attaque une fois, sans se déplacer.",
+    "Le jeu l'appelle généralement Ursula."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Du musst Berith aus Ursulas Körper vertreiben, ohne sie endgültig zu töten; Divine Blessings verbessern ihre Überlebenschance.",
+    "Vor dem Finale wählt er das Final Girl oder ein Victim und greift einmal an, ohne sich zu bewegen.",
+    "Das Spiel nennt ihn meist Ursula."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Devi scacciare Berith dal corpo di Ursula senza ucciderla definitivamente, usando le Divine Blessings per aumentarne la sopravvivenza.",
+    "Prima del Finale bersaglia la Final Girl o una Victim e attacca una volta, senza muoversi.",
+    "Il gioco lo chiama di solito Ursula."
+   ]
+  }
+ },
+ "Volk'ar": {
+  "es": {
+   "mecanicas": [
+    "Su mecánica principal es el movimiento oculto: no se coloca su meeple, sino marcadores Origin y cartas Movement boca abajo.",
+    "Atacas el Path (movimiento potencial) y solo se revela su ubicación si el ataque hace daño.",
+    "Usa cartas Track Action en el Action Tableau y la carta Attack Resolution."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Its main mechanic is hidden movement: its meeple is not placed; Origin markers and facedown Movement cards are used instead.",
+    "You attack the Path (potential movement), and its location is revealed only if the attack deals damage.",
+    "Uses Track Action cards in the Action Tableau and the Attack Resolution card."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Sa mécanique principale est le mouvement caché : pas de meeple, mais des marqueurs Origin et des cartes Movement face cachée.",
+    "Vous attaquez le Path (mouvement potentiel) ; sa position n'est révélée que si l'attaque inflige des dégâts.",
+    "Utilise des cartes Track Action dans l'Action Tableau et la carte Attack Resolution."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Hauptmechanik ist verdeckte Bewegung: Statt des Meeples werden Origin-Marker und verdeckte Movement-Karten genutzt.",
+    "Du greifst den Path (mögliche Bewegung) an; sein Standort wird nur aufgedeckt, wenn der Angriff Schaden verursacht.",
+    "Nutzt Track-Action-Karten im Action Tableau und die Attack-Resolution-Karte."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "La sua meccanica principale è il movimento nascosto: niente meeple, ma segnalini Origin e carte Movement coperte.",
+    "Attacchi il Path (movimento potenziale) e la sua posizione si rivela solo se l'attacco infligge danni.",
+    "Usa carte Track Action nell'Action Tableau e la carta Attack Resolution."
+   ]
+  }
+ },
+ "Mort": {
+  "es": {
+   "mecanicas": [
+    "Empieza como uno de 10 Suspects (Killers de otras Feature Films); debes Interrogate y Coerce a cinco, convirtiéndolos en Informants.",
+    "Al revelarse su disfraz o agotarse el mazo de Terror, adopta su forma final.",
+    "Antes del Finale: roba una ficha Suspect para el Active Killer > Target Victim or Final Girl > Move > Attack."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "Starts as one of 10 Suspects (Killers from other Feature Films); you must Interrogate and Coerce five, turning them into Informants.",
+    "When his disguise is revealed or the Terror deck runs out, he takes his final form.",
+    "Before the Finale: draw a Suspect token for the Active Killer > Target Victim or Final Girl > Move > Attack."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Commence comme l'un de 10 Suspects (Killers d'autres Feature Films) ; vous devez Interrogate et Coerce cinq d'entre eux, devenus Informants.",
+    "Quand son déguisement est révélé ou que le paquet Terror est épuisé, il prend sa forme finale.",
+    "Avant le Finale : piochez un jeton Suspect pour l'Active Killer > Target Victim or Final Girl > Move > Attack."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Beginnt als einer von 10 Suspects (Killer aus anderen Feature Films); du musst fünf per Interrogate und Coerce zu Informants machen.",
+    "Wird seine Verkleidung enthüllt oder ist das Terror-Deck leer, nimmt er seine finale Form an.",
+    "Vor dem Finale: Suspect-Marker für den Active Killer ziehen > Target Victim or Final Girl > Move > Attack."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Inizia come uno di 10 Suspects (Killer di altri Feature Films); devi fare Interrogate e Coerce su cinque, trasformandoli in Informants.",
+    "Quando il suo travestimento è rivelato o il mazzo Terror finisce, assume la sua forma finale.",
+    "Prima del Finale: pesca un segnalino Suspect per l'Active Killer > Target Victim or Final Girl > Move > Attack."
+   ]
+  }
+ }
+}

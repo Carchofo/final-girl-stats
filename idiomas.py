@@ -23,6 +23,7 @@ import json
 import pathlib
 import re
 
+import mecanicas
 import paginas as P
 
 AQUI = pathlib.Path(__file__).parent
@@ -304,6 +305,7 @@ def pagina_killer(nombre, k, lang, tx):
             u = "https://finalgirl.fandom.com/wiki/" + wiki.replace(" ", "_")
             h.append(f'<p class="sub">{t["wiki"].format(u=u)}</p>')
 
+    h.append(mecanicas.killer(nombre, lang))
     if caja:
         h.append("<p>" + t["caja"].format(u=P.slug(caja) + ".html", c=caja)
                  + (t["pareja"].format(l=propio) if propio else ".") + "</p>")
@@ -317,7 +319,7 @@ def pagina_killer(nombre, k, lang, tx):
                 ds = ds.replace(".", ",")
             h.append(f'<div class="aviso"><h3>{t["mapa_h3"]}</h3><p>'
                      + t["mapa_p"].format(l=propio, a=pc(aqui[1], lang), wr=wr, d=ds)
-                     + (t["mapa_neg"] if dd < 0 else t["mapa_pos"])
+                     + (t["mapa_neg"] if dd > 0 else t["mapa_pos"])
                      + t["mapa_fin"].format(m=mejor[0], mw=pc(mejor[1], lang),
                                             p=peor[0], pw=pc(peor[1], lang))
                      + "</p></div>")
@@ -367,6 +369,8 @@ def pagina_caja(f, lang, tx):
         filas = [x for x in ([t["nivel"], c.get("nivel")], [t["elmapa"], c.get("mapa")]) if x[1]]
         if filas:
             h.append(P.tabla(["", ""], filas))
+    h.append(mecanicas.killer(f["killer"], lang))
+    h.append(mecanicas.mapa(f["loc"], lang))
     if k:
         h.append(f'<h2>{t["elkiller"]}</h2><p>'
                  + t["elkiller_p"].format(u=P.slug(f["killer"]) + ".html", k=f["killer"],

@@ -12,6 +12,8 @@ Uso:  python3 paginas.py     (lo llama montar.py)
 """
 import json
 import pathlib
+
+import mecanicas
 import re
 import unicodedata
 
@@ -225,6 +227,8 @@ def pagina_killer(nombre, k):
                      f'<a href="{u}" target="_blank" rel="noopener">Final Girl Wiki</a>, '
                      f'bajo licencia CC BY-SA.</p>')
 
+    h.append(mecanicas.killer(nombre, 'es'))
+
     if caja:
         h.append(f'<p>Viene en la caja <a href="{slug(caja)}.html"><b>{caja}</b></a>'
                  + (f', emparejado con <b>{propio}</b>.' if propio else '.') + '</p>')
@@ -238,8 +242,8 @@ def pagina_killer(nombre, k):
             h.append('<div class="aviso"><h3>El mapa cambia la pelea</h3>'
                      f'<p>En {propio}, su localización de caja, gana el <b>{pc(aqui[1])}</b>, '
                      f'frente al {pc(k["wr"])} que saca repartido por todos los mapas: '
-                     f'<b>{"+" if d>0 else ""}{d:.1f} puntos</b>. '
-                     + ('El mapa juega a tu favor, no al suyo.' if d < 0
+                     f'<b>{"+" if d>0 else ""}{d:.1f}'.replace('.', ',') + ' puntos</b>. '
+                     + ('El mapa juega a tu favor, no al suyo.' if d > 0
                         else 'Esa localización le sienta bien: no te confíes por su media.')
                      + f' Donde más gana es {mejor[0]} ({pc(mejor[1])}) y donde menos, '
                        f'{peor[0]} ({pc(peor[1])}).</p></div>')
@@ -298,7 +302,7 @@ def pagina_caja(f):
     dif = (f['wr'] - MEDIA) * 100
     h.append(f'<p class="dek">{f["killer"]} en {f["loc"]}. '
              f'Sobre {f["plays"]} partidas registradas se gana el {pc(f["wr"])} de las veces, '
-             + (f'{abs(dif):.1f} puntos por {"encima" if dif>0 else "debajo"} de la media del juego '
+             + (f'{abs(dif):.1f}'.replace('.', ',') + f' puntos por {"encima" if dif>0 else "debajo"} de la media del juego '
                 f'({pc(MEDIA)}).' if abs(dif) >= 1 else f'justo en la media del juego ({pc(MEDIA)}).')
              + '</p>')
 
@@ -316,6 +320,9 @@ def pagina_caja(f):
             h.append(tabla(['', ''], [x for x in (
                 ['Nivel', c.get('nivel', '—')],
                 ['El mapa', c.get('mapa', '—')]) if x[1]]))
+
+    h.append(mecanicas.killer(f['killer'], 'es'))
+    h.append(mecanicas.mapa(f['loc'], 'es'))
 
     if k:
         h.append('<h2>El killer</h2>')

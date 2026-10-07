@@ -1,0 +1,956 @@
+{
+ "Buddyland": {
+  "extras": [],
+  "es": {
+   "disposicion": "16 espacios y 2 salidas (norte y sur). Espacios de búsqueda: The Ball Pit, Dining Area y Prize Counter; otros espacios con nombre: Bathroom, Janitor's Closet, Jungle Gym, Kitchen y Party Room. Los 4 espacios centrales forman el Arcade.",
+   "mecanicas": [
+    "Los espacios del Arcade, en el centro del tablero, aparecen en varios efectos de cartas.",
+    "Los tokens Power Source se colocan por el tablero antes de robar la carta de Setup y aparecen en varios efectos de cartas.",
+    "Hay que apagar los Power Source para impedir que Billy se cure."
+   ]
+  },
+  "en": {
+   "disposicion": "16 spaces and 2 exits (north and south). Search spaces: The Ball Pit, Dining Area and Prize Counter; other named spaces: Bathroom, Janitor's Closet, Jungle Gym, Kitchen and Party Room. The central 4 spaces form the Arcade.",
+   "mecanicas": [
+    "The Arcade spaces in the middle of the board feature in various card effects.",
+    "Power Source tokens are placed around the board before the Setup card is drawn and feature in various card effects.",
+    "Turning Power Sources off keeps Billy from healing."
+   ]
+  },
+  "fr": {
+   "disposicion": "16 cases et 2 sorties (nord et sud). Cases de fouille : The Ball Pit, Dining Area et Prize Counter ; autres cases nommées : Bathroom, Janitor's Closet, Jungle Gym, Kitchen et Party Room. Les 4 cases centrales forment l'Arcade.",
+   "mecanicas": [
+    "Les cases de l'Arcade, au centre du plateau, interviennent dans divers effets de cartes.",
+    "Les jetons Power Source sont placés sur le plateau avant de tirer la carte Setup et interviennent dans divers effets.",
+    "Il faut éteindre les Power Source pour empêcher Billy de se soigner."
+   ]
+  },
+  "de": {
+   "disposicion": "16 Felder und 2 Ausgänge (Norden und Süden). Suchfelder: The Ball Pit, Dining Area und Prize Counter; weitere benannte Felder: Bathroom, Janitor's Closet, Jungle Gym, Kitchen und Party Room. Die 4 mittleren Felder bilden die Arcade.",
+   "mecanicas": [
+    "Die Arcade-Felder in der Mitte des Spielplans kommen in verschiedenen Karteneffekten vor.",
+    "Power-Source-Marker werden vor dem Ziehen der Setup-Karte verteilt und kommen in verschiedenen Karteneffekten vor.",
+    "Power Sources abzuschalten verhindert, dass Billy sich heilt."
+   ]
+  },
+  "it": {
+   "disposicion": "16 spazi e 2 uscite (nord e sud). Spazi di ricerca: The Ball Pit, Dining Area e Prize Counter; altri spazi con nome: Bathroom, Janitor's Closet, Jungle Gym, Kitchen e Party Room. I 4 spazi centrali formano l'Arcade.",
+   "mecanicas": [
+    "Gli spazi dell'Arcade, al centro del tabellone, compaiono in vari effetti delle carte.",
+    "I segnalini Power Source si piazzano sul tabellone prima di pescare la carta Setup e compaiono in vari effetti.",
+    "Spegnere i Power Source impedisce a Billy di curarsi."
+   ]
+  }
+ },
+ "Camp Happy Trail": {
+  "extras": [],
+  "es": {
+   "disposicion": "18 espacios y 3 salidas (una arriba y una en cada esquina inferior). Espacios de búsqueda: Cabins, Dock y Utility Shed; otros con nombre: Cliff, Firepit, Lake y Makeout Point.",
+   "mecanicas": [
+    "No tiene reglas especiales de localización."
+   ]
+  },
+  "en": {
+   "disposicion": "18 spaces and 3 exits (one at the top, one in each bottom corner). Search spaces: Cabins, Dock and Utility Shed; other named locations: Cliff, Firepit, Lake and Makeout Point.",
+   "mecanicas": [
+    "No special location rules."
+   ]
+  },
+  "fr": {
+   "disposicion": "18 cases et 3 sorties (une en haut, une dans chaque coin inférieur). Cases de fouille : Cabins, Dock et Utility Shed ; autres lieux nommés : Cliff, Firepit, Lake et Makeout Point.",
+   "mecanicas": [
+    "Aucune règle spéciale de lieu."
+   ]
+  },
+  "de": {
+   "disposicion": "18 Felder und 3 Ausgänge (einer oben, je einer in den unteren Ecken). Suchfelder: Cabins, Dock und Utility Shed; weitere benannte Orte: Cliff, Firepit, Lake und Makeout Point.",
+   "mecanicas": [
+    "Keine besonderen Ortsregeln."
+   ]
+  },
+  "it": {
+   "disposicion": "18 spazi e 3 uscite (una in alto, una per ciascun angolo inferiore). Spazi di ricerca: Cabins, Dock e Utility Shed; altri luoghi con nome: Cliff, Firepit, Lake e Makeout Point.",
+   "mecanicas": [
+    "Nessuna regola speciale di luogo."
+   ]
+  }
+ },
+ "Carnival of Blood": {
+  "extras": [
+   "Item Traps (3)",
+   "Terror Traps (3)"
+  ],
+  "es": {
+   "disposicion": "17 espacios y 3 salidas (las puertas de entrada y salida en las esquinas superior izquierda e inferior derecha, y el Clown Car cerca del centro). Espacios de búsqueda: Forest of Horrors, House of Mirrors y Things to Astonish; otros con nombre: Animal Cages y The Big Top.",
+   "mecanicas": [
+    "Item Traps: se barajan en el mazo de Items.",
+    "Terror Traps: pueden robarse durante la fase del Killer.",
+    "Cada trampa tiene efectos perjudiciales distintos y puede afectar a la Final Girl y a las Victims del espacio."
+   ]
+  },
+  "en": {
+   "disposicion": "17 spaces and 3 exits (entrance and exit gates in the top-left and bottom-right corners, and the Clown Car near the center). Search spaces: Forest of Horrors, House of Mirrors and Things to Astonish; other named spaces: Animal Cages and The Big Top.",
+   "mecanicas": [
+    "Item Traps are shuffled into the Item deck.",
+    "Terror Traps can be drawn during the Killer phase.",
+    "Each trap has different detrimental effects and can affect the Final Girl and any Victims in the space."
+   ]
+  },
+  "fr": {
+   "disposicion": "17 cases et 3 sorties (portes d'entrée et de sortie aux coins supérieur gauche et inférieur droit, et le Clown Car près du centre). Cases de fouille : Forest of Horrors, House of Mirrors et Things to Astonish ; autres cases nommées : Animal Cages et The Big Top.",
+   "mecanicas": [
+    "Les Item Traps sont mélangés dans le paquet d'Items.",
+    "Les Terror Traps peuvent être piochés pendant la phase du Killer.",
+    "Chaque piège a des effets néfastes différents et peut toucher la Final Girl et les Victims de la case."
+   ]
+  },
+  "de": {
+   "disposicion": "17 Felder und 3 Ausgänge (Ein- und Ausgangstor oben links und unten rechts sowie das Clown Car nahe der Mitte). Suchfelder: Forest of Horrors, House of Mirrors und Things to Astonish; weitere benannte Felder: Animal Cages und The Big Top.",
+   "mecanicas": [
+    "Item Traps werden in den Item-Stapel gemischt.",
+    "Terror Traps können in der Killer-Phase gezogen werden.",
+    "Jede Falle hat eigene nachteilige Effekte und kann das Final Girl und Victims im Feld treffen."
+   ]
+  },
+  "it": {
+   "disposicion": "17 spazi e 3 uscite (cancelli di entrata e uscita negli angoli in alto a sinistra e in basso a destra, e il Clown Car vicino al centro). Spazi di ricerca: Forest of Horrors, House of Mirrors e Things to Astonish; altri spazi con nome: Animal Cages e The Big Top.",
+   "mecanicas": [
+    "Le Item Traps vanno mescolate nel mazzo degli Item.",
+    "Le Terror Traps possono essere pescate durante la fase del Killer.",
+    "Ogni trappola ha effetti dannosi diversi e può colpire la Final Girl e le Victims nello spazio."
+   ]
+  }
+ },
+ "Creech Manor": {
+  "extras": [],
+  "es": {
+   "disposicion": "Vista lateral de una mansión de cinco plantas con 21 espacios, 3 de ellos de movimiento en un solo sentido. 3 salidas, todas fuera de la mansión. Espacios de búsqueda: Attic, Closet y Garage; otros con nombre: Foyer, Ballroom y Trophy Room.",
+   "mecanicas": [
+    "Dos de las ventanas llevan en un solo sentido a la planta baja; la tercera tiene una escalera de vuelta y es de doble sentido.",
+    "La planta superior tiene una ruta de un solo sentido hacia el baño de debajo."
+   ]
+  },
+  "en": {
+   "disposicion": "Side-on view of a five-story manor with 21 spaces, 3 of them one-way movement spaces. 3 exits, all outside the manor. Search spaces: Attic, Closet and Garage; other named locations: Foyer, Ballroom and Trophy Room.",
+   "mecanicas": [
+    "Two of the windows are one-way routes down to the ground floor; the third has a ladder back up, so it is two-way.",
+    "The top floor has a one-way route to the bathroom below."
+   ]
+  },
+  "fr": {
+   "disposicion": "Vue de côté d'un manoir de cinq étages avec 21 cases, dont 3 à sens unique. 3 sorties, toutes hors du manoir. Cases de fouille : Attic, Closet et Garage ; autres lieux nommés : Foyer, Ballroom et Trophy Room.",
+   "mecanicas": [
+    "Deux fenêtres mènent à sens unique au rez-de-chaussée ; la troisième a une échelle pour remonter et est à double sens.",
+    "Le dernier étage a un passage à sens unique vers la salle de bain en dessous."
+   ]
+  },
+  "de": {
+   "disposicion": "Seitenansicht eines fünfstöckigen Herrenhauses mit 21 Feldern, davon 3 Einbahn-Bewegungsfelder. 3 Ausgänge, alle außerhalb des Hauses. Suchfelder: Attic, Closet und Garage; weitere benannte Orte: Foyer, Ballroom und Trophy Room.",
+   "mecanicas": [
+    "Zwei Fenster führen nur in eine Richtung ins Erdgeschoss; das dritte hat eine Leiter zurück nach oben und ist beidseitig.",
+    "Das oberste Stockwerk hat einen Einbahnweg ins Badezimmer darunter."
+   ]
+  },
+  "it": {
+   "disposicion": "Vista laterale di una villa di cinque piani con 21 spazi, 3 dei quali a senso unico. 3 uscite, tutte fuori dalla villa. Spazi di ricerca: Attic, Closet e Garage; altri luoghi con nome: Foyer, Ballroom e Trophy Room.",
+   "mecanicas": [
+    "Due finestre portano a senso unico al piano terra; la terza ha una scala per risalire ed è a doppio senso.",
+    "L'ultimo piano ha un percorso a senso unico verso il bagno sottostante."
+   ]
+  }
+ },
+ "Falconwood": {
+  "extras": [
+   "Mission Sheets (5)"
+  ],
+  "es": {
+   "disposicion": "24 espacios y 3 salidas (norte, sur y sureste). Espacios de búsqueda: Government Lab, Police Station y Shopping Mall; otros con nombre: Best Friend's House, Community Pool, Fanghorn Forest, Library, School y Town Fair.",
+   "mecanicas": [
+    "River Crossings: los espacios unidos por líneas azules no cuentan como adyacentes y no se pueden cruzar salvo que un evento especial lo indique.",
+    "Al empezar se elige una Mission; completarla es obligatorio para ganar.",
+    "No se puede girar el último marcador de vida del Killer hasta completar la Mission.",
+    "Completar la Mission otorga un Friend: una Special Victim que no entra en pánico y entra contigo en el espacio del Killer."
+   ]
+  },
+  "en": {
+   "disposicion": "24 spaces and 3 exits (north, south and southeast). Search spaces: Government Lab, Police Station and Shopping Mall; other named spaces: Best Friend's House, Community Pool, Fanghorn Forest, Library, School and Town Fair.",
+   "mecanicas": [
+    "River Crossings: spaces linked by blue lines are not adjacent and cannot normally be crossed unless a special event allows it.",
+    "At the start you choose a Mission; completing it is mandatory to win.",
+    "You cannot turn over the Killer's final health marker until the Mission is completed.",
+    "Completing the Mission grants a Friend: a Special Victim who will not panic and enters the Killer's space with you."
+   ]
+  },
+  "fr": {
+   "disposicion": "24 cases et 3 sorties (nord, sud et sud-est). Cases de fouille : Government Lab, Police Station et Shopping Mall ; autres cases nommées : Best Friend's House, Community Pool, Fanghorn Forest, Library, School et Town Fair.",
+   "mecanicas": [
+    "River Crossings : les cases reliées par des lignes bleues ne sont pas adjacentes et ne se traversent pas, sauf si un événement spécial le permet.",
+    "Au début, on choisit une Mission ; l'accomplir est obligatoire pour gagner.",
+    "On ne peut pas retourner le dernier marqueur de vie du Killer avant d'avoir accompli la Mission.",
+    "Accomplir la Mission donne un Friend : une Special Victim qui ne panique pas et entre avec vous dans la case du Killer."
+   ]
+  },
+  "de": {
+   "disposicion": "24 Felder und 3 Ausgänge (Norden, Süden und Südosten). Suchfelder: Government Lab, Police Station und Shopping Mall; weitere benannte Felder: Best Friend's House, Community Pool, Fanghorn Forest, Library, School und Town Fair.",
+   "mecanicas": [
+    "River Crossings: durch blaue Linien verbundene Felder gelten nicht als benachbart und sind nur durch ein spezielles Ereignis passierbar.",
+    "Zu Spielbeginn wählt man eine Mission; sie zu erfüllen ist Pflicht für den Sieg.",
+    "Der letzte Lebensmarker des Killers darf erst nach erfüllter Mission umgedreht werden.",
+    "Die erfüllte Mission bringt einen Friend: eine Special Victim, die nicht in Panik gerät und mit dir ins Feld des Killers geht."
+   ]
+  },
+  "it": {
+   "disposicion": "24 spazi e 3 uscite (nord, sud e sud-est). Spazi di ricerca: Government Lab, Police Station e Shopping Mall; altri spazi con nome: Best Friend's House, Community Pool, Fanghorn Forest, Library, School e Town Fair.",
+   "mecanicas": [
+    "River Crossings: gli spazi uniti da linee blu non sono adiacenti e non si attraversano salvo un evento speciale.",
+    "All'inizio si sceglie una Mission; completarla è obbligatorio per vincere.",
+    "Non si può girare l'ultimo segnalino vita del Killer finché la Mission non è completata.",
+    "Completare la Mission dà un Friend: una Special Victim che non va nel panico ed entra con te nello spazio del Killer."
+   ]
+  }
+ },
+ "Hellscape": {
+  "extras": [
+   "Hellscape tiles",
+   "Hellshift"
+  ],
+  "es": {
+   "disposicion": "17 espacios (9 en el tablero principal y 8 en las losetas cambiantes de Hellscape). 3 salidas: suroeste, noreste y el Nexus central, que también es espacio de búsqueda junto a House of Mutilation y Sepulchre of Blood.",
+   "mecanicas": [
+    "Cuatro losetas de Hellscape de doble cara rodean el perímetro del tablero.",
+    "En cada fase de Upkeep se tiran dados especiales: una loseta se voltea o dos losetas intercambian su posición.",
+    "Otros efectos también cambian las losetas, y el jugador puede moverlas con ciertos Items o con la carta de Acción Hellshift.",
+    "Hellshift: 2 éxitos, reordenas todas las losetas; 1 éxito, intercambias una loseta y -1 Time; 0 éxitos, -2 Time."
+   ]
+  },
+  "en": {
+   "disposicion": "17 spaces (9 on the main board and 8 on the shifting Hellscape tiles). 3 exits: southwest, northeast and the central Nexus, which is also a Search space alongside the House of Mutilation and the Sepulchre of Blood.",
+   "mecanicas": [
+    "Four double-sided Hellscape tiles sit around the outer perimeter of the board.",
+    "Each Upkeep phase special dice are rolled: either a tile flips or two tiles swap places.",
+    "Other effects can change the tiles, and the player can move them with certain Items or the unique Action card Hellshift.",
+    "Hellshift: 2 successes rearrange all tiles; 1 success swaps one tile and -1 Time; 0 successes -2 Time."
+   ]
+  },
+  "fr": {
+   "disposicion": "17 cases (9 sur le plateau principal et 8 sur les tuiles mouvantes de Hellscape). 3 sorties : sud-ouest, nord-est et le Nexus central, qui est aussi une case de fouille avec House of Mutilation et Sepulchre of Blood.",
+   "mecanicas": [
+    "Quatre tuiles Hellscape recto verso entourent le périmètre du plateau.",
+    "À chaque phase d'Upkeep, des dés spéciaux déterminent si une tuile se retourne ou si deux tuiles échangent leur place.",
+    "D'autres effets modifient les tuiles, et le joueur peut les déplacer via certains Items ou la carte Action Hellshift.",
+    "Hellshift : 2 succès, réorganiser toutes les tuiles ; 1 succès, échanger une tuile et -1 Time ; 0 succès, -2 Time."
+   ]
+  },
+  "de": {
+   "disposicion": "17 Felder (9 auf dem Hauptplan und 8 auf den beweglichen Hellscape-Plättchen). 3 Ausgänge: Südwesten, Nordosten und der zentrale Nexus, der mit House of Mutilation und Sepulchre of Blood auch Suchfeld ist.",
+   "mecanicas": [
+    "Vier doppelseitige Hellscape-Plättchen liegen am Außenrand des Spielplans.",
+    "In jeder Upkeep-Phase entscheiden Spezialwürfel, ob ein Plättchen umgedreht wird oder zwei Plättchen die Plätze tauschen.",
+    "Andere Effekte verändern die Plättchen ebenfalls; der Spieler kann sie mit bestimmten Items oder der Aktionskarte Hellshift bewegen.",
+    "Hellshift: 2 Erfolge alle Plättchen neu anordnen; 1 Erfolg ein Plättchen tauschen und -1 Time; 0 Erfolge -2 Time."
+   ]
+  },
+  "it": {
+   "disposicion": "17 spazi (9 sul tabellone principale e 8 sulle tessere mobili di Hellscape). 3 uscite: sud-ovest, nord-est e il Nexus centrale, che è anche spazio di ricerca insieme a House of Mutilation e Sepulchre of Blood.",
+   "mecanicas": [
+    "Quattro tessere Hellscape a doppia faccia circondano il perimetro del tabellone.",
+    "In ogni fase di Upkeep si tirano dadi speciali: una tessera si gira oppure due tessere si scambiano di posto.",
+    "Altri effetti cambiano le tessere, e il giocatore può spostarle con certi Item o con la carta Azione Hellshift.",
+    "Hellshift: 2 successi riordini tutte le tessere; 1 successo scambi una tessera e -1 Time; 0 successi -2 Time."
+   ]
+  }
+ },
+ "L'Armes Abbey": {
+  "extras": [
+   "Malice (14)",
+   "Blessed Die",
+   "Cursed Die",
+   "Tokens (18)"
+  ],
+  "es": {
+   "disposicion": "18 espacios y 3 salidas (noreste, sureste y suroeste). Espacios de búsqueda: Sacristy, Museum y Kitchen. Seis espacios son Field Spaces (icono de trigo) y uno al noreste es el Altar of the Old Gods.",
+   "mecanicas": [
+    "La partida empieza con 4 tokens de Malice: uno en el espacio del Killer y uno en cada uno de tres espacios adyacentes.",
+    "Varias cartas añaden Malice en el espacio del Killer activo o el más cercano posible; si hay que colocar un 15º token, pierdes.",
+    "En un espacio con Malice debes sustituir un dado rojo normal por el Cursed Die negro. La carta de Acción Benediction retira un token de Malice.",
+    "Blessed Die: dos estrellas en el 6, una en el 2 y solo una cara en blanco (1).",
+    "Cursed Die: Partial Success en lugar de la estrella del 5 y Lose 1 Health en el 1."
+   ]
+  },
+  "en": {
+   "disposicion": "18 spaces and 3 exits (northeast, southeast and southwest). Search spaces: Sacristy, Museum and Kitchen. Six spaces are Field Spaces (wheat icon) and one in the northeast is the Altar of the Old Gods.",
+   "mecanicas": [
+    "The game starts with 4 Malice tokens: one in the Killer's space and one in each of three adjacent spaces.",
+    "Various cards add Malice in the Active Killer's space or the closest possible space; if a 15th token would be placed, you lose.",
+    "In a space with Malice you must replace one regular red die with the black Cursed Die. The Benediction Action card removes a Malice token.",
+    "Blessed Die: two stars on the 6, one star on the 2, and only one blank face (1).",
+    "Cursed Die: Partial Success replaces the star on the 5, and a Lose 1 Health symbol is on the 1."
+   ]
+  },
+  "fr": {
+   "disposicion": "18 cases et 3 sorties (nord-est, sud-est et sud-ouest). Cases de fouille : Sacristy, Museum et Kitchen. Six cases sont des Field Spaces (icône de blé) et une au nord-est est l'Altar of the Old Gods.",
+   "mecanicas": [
+    "La partie commence avec 4 jetons Malice : un dans la case du Killer et un dans chacune de trois cases adjacentes.",
+    "Diverses cartes ajoutent de la Malice dans la case du Killer actif ou la plus proche possible ; si un 15e jeton doit être posé, vous perdez.",
+    "Dans une case avec Malice, remplacez un dé rouge normal par le Cursed Die noir. La carte Action Benediction retire un jeton Malice.",
+    "Blessed Die : deux étoiles sur le 6, une sur le 2 et une seule face vide (1).",
+    "Cursed Die : Partial Success remplace l'étoile du 5 et un symbole Lose 1 Health figure sur le 1."
+   ]
+  },
+  "de": {
+   "disposicion": "18 Felder und 3 Ausgänge (Nordosten, Südosten und Südwesten). Suchfelder: Sacristy, Museum und Kitchen. Sechs Felder sind Field Spaces (Weizensymbol), eines im Nordosten ist der Altar of the Old Gods.",
+   "mecanicas": [
+    "Das Spiel beginnt mit 4 Malice-Markern: einer im Feld des Killers und je einer in drei benachbarten Feldern.",
+    "Verschiedene Karten legen Malice ins Feld des aktiven Killers oder das nächstmögliche Feld; müsste ein 15. Marker gelegt werden, verlierst du.",
+    "In einem Feld mit Malice musst du einen normalen roten Würfel durch den schwarzen Cursed Die ersetzen. Die Aktionskarte Benediction entfernt einen Malice-Marker.",
+    "Blessed Die: zwei Sterne auf der 6, ein Stern auf der 2 und nur eine leere Seite (1).",
+    "Cursed Die: Partial Success ersetzt den Stern auf der 5, auf der 1 steht Lose 1 Health."
+   ]
+  },
+  "it": {
+   "disposicion": "18 spazi e 3 uscite (nord-est, sud-est e sud-ovest). Spazi di ricerca: Sacristy, Museum e Kitchen. Sei spazi sono Field Spaces (icona del grano) e uno a nord-est è l'Altar of the Old Gods.",
+   "mecanicas": [
+    "La partita inizia con 4 segnalini Malice: uno nello spazio del Killer e uno in ciascuno di tre spazi adiacenti.",
+    "Varie carte aggiungono Malice nello spazio del Killer attivo o nel più vicino possibile; se si dovesse piazzare un 15° segnalino, perdi.",
+    "In uno spazio con Malice devi sostituire un dado rosso normale con il Cursed Die nero. La carta Azione Benediction rimuove un segnalino Malice.",
+    "Blessed Die: due stelle sul 6, una sul 2 e una sola faccia vuota (1).",
+    "Cursed Die: Partial Success al posto della stella sul 5 e un simbolo Lose 1 Health sull'1."
+   ]
+  }
+ },
+ "Maple Lane": {
+  "extras": [
+   "Convince"
+  ],
+  "es": {
+   "disposicion": "21 espacios dispuestos como un cruce de cuatro calles con tres casas por cuadrante. 4 salidas, una al final de cada calle. Todas las casas son espacios de búsqueda y cada cuadrante comparte un pool de Items; espacios con nombre: Intersection, The Boyfriend's House y The Smalley's House.",
+   "mecanicas": [
+    "Cada cuadrante de casas comparte un pool de tres cartas de Item.",
+    "Una casa registrada con éxito no puede volver a registrarse.",
+    "Para entrar en una casa con Victims debes jugar con éxito la carta de Acción Convince, incluida con esta localización."
+   ]
+  },
+  "en": {
+   "disposicion": "21 spaces laid out as a four-way intersection with three houses per quadrant. 4 exits, one at the end of each road. All houses are search spaces, each quadrant sharing an Item pool; named spaces: Intersection, The Boyfriend's House and The Smalley's House.",
+   "mecanicas": [
+    "Each quadrant of houses shares an Item pool of three cards.",
+    "Once a house is searched successfully, it cannot be searched again.",
+    "To enter a house space containing Victims you must successfully play the Convince Action card included with this location."
+   ]
+  },
+  "fr": {
+   "disposicion": "21 cases disposées en carrefour à quatre branches avec trois maisons par quadrant. 4 sorties, une au bout de chaque route. Toutes les maisons sont des cases de fouille et chaque quadrant partage une réserve d'Items ; cases nommées : Intersection, The Boyfriend's House et The Smalley's House.",
+   "mecanicas": [
+    "Chaque quadrant de maisons partage une réserve de trois cartes Item.",
+    "Une maison fouillée avec succès ne peut plus être fouillée.",
+    "Pour entrer dans une maison contenant des Victims, il faut réussir la carte Action Convince fournie avec ce lieu."
+   ]
+  },
+  "de": {
+   "disposicion": "21 Felder als Kreuzung mit vier Straßen und drei Häusern pro Quadrant. 4 Ausgänge, je einer am Ende jeder Straße. Alle Häuser sind Suchfelder, jeder Quadrant teilt einen Item-Pool; benannte Felder: Intersection, The Boyfriend's House und The Smalley's House.",
+   "mecanicas": [
+    "Jeder Häuser-Quadrant teilt sich einen Item-Pool aus drei Karten.",
+    "Ein erfolgreich durchsuchtes Haus kann nicht erneut durchsucht werden.",
+    "Um ein Haus mit Victims zu betreten, muss die mitgelieferte Aktionskarte Convince erfolgreich gespielt werden."
+   ]
+  },
+  "it": {
+   "disposicion": "21 spazi disposti come un incrocio a quattro vie con tre case per quadrante. 4 uscite, una alla fine di ogni strada. Tutte le case sono spazi di ricerca e ogni quadrante condivide un pool di Item; spazi con nome: Intersection, The Boyfriend's House e The Smalley's House.",
+   "mecanicas": [
+    "Ogni quadrante di case condivide un pool di tre carte Item.",
+    "Una casa perquisita con successo non può essere perquisita di nuovo.",
+    "Per entrare in una casa con Victims devi giocare con successo la carta Azione Convince inclusa con questo luogo."
+   ]
+  }
+ },
+ "Marrek Warehouse": {
+  "extras": [
+   "Climb",
+   "Leap"
+  ],
+  "es": {
+   "disposicion": "21 espacios (4 de ellos Rack spaces). 3 salidas: Main Entrance, Loading Dock A y Loading Dock B. Espacios de búsqueda: Manager's Office, Receiving Area y Supply Cage; el único otro con nombre es The Pit.",
+   "mecanicas": [
+    "Todas las salidas empiezan cerradas y no se pueden salvar Victims por ellas hasta desbloquearlas, ya sea por tus medios o automáticamente con el mazo de Terror.",
+    "Los Rack spaces están en alto: Victims y Enemies se mueven a ellos con normalidad, pero tú necesitas las cartas Climb y/o Leap.",
+    "Climb y Leap se obtienen descartando Walk (una de ellas) o Sprint (ambas).",
+    "Climb mueve a un Rack adyacente; Leap mueve directamente a otro Rack. Fallar Leap obliga a mover 1 espacio y -2 Health."
+   ]
+  },
+  "en": {
+   "disposicion": "21 spaces (4 of them Rack spaces). 3 exits: Main Entrance, Loading Dock A and Loading Dock B. Search spaces: Manager's Office, Receiving Area and Supply Cage; the only other named space is The Pit.",
+   "mecanicas": [
+    "Every Exit starts locked, so no Victims can be saved there until it is unlocked by you or automatically via the Terror deck.",
+    "Rack spaces are high above the board: Victims and Enemies move there normally, but you need the Climb and/or Leap Action cards.",
+    "Climb or Leap is gained by discarding Walk; discarding Sprint gains both.",
+    "Climb moves to an adjacent Rack space; Leap moves directly to another Rack space. Failing Leap forces you to move 1 space and -2 Health."
+   ]
+  },
+  "fr": {
+   "disposicion": "21 cases (dont 4 Rack spaces). 3 sorties : Main Entrance, Loading Dock A et Loading Dock B. Cases de fouille : Manager's Office, Receiving Area et Supply Cage ; la seule autre case nommée est The Pit.",
+   "mecanicas": [
+    "Chaque sortie commence verrouillée : aucune Victim ne peut y être sauvée tant qu'elle n'est pas déverrouillée, par vous ou automatiquement via le paquet Terror.",
+    "Les Rack spaces sont en hauteur : Victims et Enemies s'y déplacent normalement, mais vous devez utiliser les cartes Climb et/ou Leap.",
+    "On obtient Climb ou Leap en défaussant Walk ; défausser Sprint donne les deux.",
+    "Climb déplace vers un Rack adjacent ; Leap déplace directement vers un autre Rack. Un échec de Leap force à bouger d'1 case et -2 Health."
+   ]
+  },
+  "de": {
+   "disposicion": "21 Felder (4 davon Rack-Felder). 3 Ausgänge: Main Entrance, Loading Dock A und Loading Dock B. Suchfelder: Manager's Office, Receiving Area und Supply Cage; einziges weiteres benanntes Feld ist The Pit.",
+   "mecanicas": [
+    "Alle Ausgänge sind anfangs verschlossen; dort können keine Victims gerettet werden, bis sie entriegelt werden, selbst oder automatisch über den Terror-Stapel.",
+    "Rack-Felder liegen hoch über dem Boden: Victims und Enemies bewegen sich normal dorthin, du brauchst aber die Aktionskarten Climb und/oder Leap.",
+    "Climb oder Leap erhält man durch Abwerfen von Walk; Abwerfen von Sprint bringt beide.",
+    "Climb bewegt auf ein benachbartes Rack-Feld, Leap direkt auf ein anderes. Misslingt Leap, musst du 1 Feld ziehen und -2 Health."
+   ]
+  },
+  "it": {
+   "disposicion": "21 spazi (4 dei quali Rack spaces). 3 uscite: Main Entrance, Loading Dock A e Loading Dock B. Spazi di ricerca: Manager's Office, Receiving Area e Supply Cage; l'unico altro spazio con nome è The Pit.",
+   "mecanicas": [
+    "Ogni uscita inizia chiusa: non si possono salvare Victims finché non viene sbloccata, da te o automaticamente tramite il mazzo Terror.",
+    "I Rack spaces sono in alto: Victims ed Enemies ci si muovono normalmente, ma tu hai bisogno delle carte Climb e/o Leap.",
+    "Si ottiene Climb o Leap scartando Walk; scartando Sprint si ottengono entrambe.",
+    "Climb muove su un Rack adiacente; Leap muove direttamente su un altro Rack. Fallire Leap obbliga a muovere di 1 spazio e -2 Health."
+   ]
+  }
+ },
+ "Pesadilla Verde": {
+  "extras": [
+   "Huey token"
+  ],
+  "es": {
+   "disposicion": "18 espacios y 2 salidas (noroeste y sureste, la Cave). Espacios de búsqueda: Ancient Ruins, Rebel Camp y Supply Depot; otros con nombre: Waterfall, Upper River, Central River, Lower River (estos cuatro forman el River), Cursed Temple, Clearing y Cave.",
+   "mecanicas": [
+    "El espacio con el token Huey es una salida: estando allí puedes salvar cualquier número de Victims y luego se retira el Huey, dejando el Clearing, que no es salida.",
+    "El Huey no puede volver a usarse salvo que un efecto lo devuelva al tablero.",
+    "River: río abajo (Waterfall > Upper > Central > Lower River) puedes avanzar cuanto quieras gastando un solo espacio de movimiento.",
+    "Soldiers: todas las Victims normales son Soldiers; actúan como Victims, pero te siguen al espacio del Killer y pueden recibir órdenes."
+   ]
+  },
+  "en": {
+   "disposicion": "18 spaces and 2 exits (northwest and southeast, the Cave). Search spaces: Ancient Ruins, Rebel Camp and Supply Depot; other named spaces: Waterfall, Upper River, Central River, Lower River (these four form the River), Cursed Temple, Clearing and Cave.",
+   "mecanicas": [
+    "The Huey token's space is an Exit: there you can save any number of Victims, then the Huey is removed, revealing the Clearing, which is not an Exit.",
+    "The Huey cannot be used again unless a game effect returns it to the board.",
+    "River: travelling downriver (Waterfall > Upper > Central > Lower River) you can move as far as you want for one space of movement.",
+    "Soldiers: every normal Victim is a Soldier; they act like Victims but will follow you into the Killer's space and can be given orders."
+   ]
+  },
+  "fr": {
+   "disposicion": "18 cases et 2 sorties (nord-ouest et sud-est, la Cave). Cases de fouille : Ancient Ruins, Rebel Camp et Supply Depot ; autres cases nommées : Waterfall, Upper River, Central River, Lower River (ces quatre forment le River), Cursed Temple, Clearing et Cave.",
+   "mecanicas": [
+    "La case du jeton Huey est une sortie : on peut y sauver n'importe quel nombre de Victims, puis le Huey est retiré, révélant le Clearing, qui n'est pas une sortie.",
+    "Le Huey ne peut plus servir sauf si un effet le remet sur le plateau.",
+    "River : en descendant le fleuve (Waterfall > Upper > Central > Lower River), on avance aussi loin qu'on veut pour une seule case de mouvement.",
+    "Soldiers : chaque Victim normale est un Soldier ; ils agissent comme des Victims mais vous suivent dans la case du Killer et peuvent recevoir des ordres."
+   ]
+  },
+  "de": {
+   "disposicion": "18 Felder und 2 Ausgänge (Nordwesten und Südosten, die Cave). Suchfelder: Ancient Ruins, Rebel Camp und Supply Depot; weitere benannte Felder: Waterfall, Upper River, Central River, Lower River (diese vier bilden den River), Cursed Temple, Clearing und Cave.",
+   "mecanicas": [
+    "Das Feld mit dem Huey-Marker ist ein Ausgang: dort rettest du beliebig viele Victims, danach wird der Huey entfernt und das Clearing aufgedeckt, das kein Ausgang ist.",
+    "Der Huey ist nicht erneut nutzbar, außer ein Effekt bringt ihn zurück.",
+    "River: flussabwärts (Waterfall > Upper > Central > Lower River) darfst du für einen Bewegungspunkt beliebig weit ziehen.",
+    "Soldiers: jede normale Victim ist ein Soldier; sie verhalten sich wie Victims, folgen dir aber ins Feld des Killers und können Befehle erhalten."
+   ]
+  },
+  "it": {
+   "disposicion": "18 spazi e 2 uscite (nord-ovest e sud-est, la Cave). Spazi di ricerca: Ancient Ruins, Rebel Camp e Supply Depot; altri spazi con nome: Waterfall, Upper River, Central River, Lower River (questi quattro formano il River), Cursed Temple, Clearing e Cave.",
+   "mecanicas": [
+    "Lo spazio con il segnalino Huey è un'uscita: lì puoi salvare qualsiasi numero di Victims, poi l'Huey viene rimosso rivelando il Clearing, che non è un'uscita.",
+    "L'Huey non si può riusare a meno che un effetto non lo rimetta sul tabellone.",
+    "River: scendendo il fiume (Waterfall > Upper > Central > Lower River) puoi avanzare quanto vuoi con un solo spazio di movimento.",
+    "Soldiers: ogni Victim normale è un Soldier; si comportano come Victims ma ti seguono nello spazio del Killer e possono ricevere ordini."
+   ]
+  }
+ },
+ "Sacred Groves": {
+  "extras": [
+   "Divine Wrath Track",
+   "Atonement"
+  ],
+  "es": {
+   "disposicion": "19 espacios y 3 salidas (oeste, norte y sureste). Espacios de búsqueda: Groundskeeper's Shed, Lost & Found y Welcome Center. Tres Sacred Spaces: Burial Ground, Holy Groves y Sacred Shrine.",
+   "mecanicas": [
+    "Un marcador de Divine Wrath sube durante la partida; al desatarse (por cartas de Terror o al revelar el Finale) aplica un efecto perjudicial según su nivel.",
+    "La localización añade efectos al marcador de Bloodlust, que desatan o aumentan la Divine Wrath.",
+    "Varios efectos suben la Divine Wrath según el número de Victims en los Sacred Spaces.",
+    "La carta de Acción Atonement reduce la Divine Wrath: 3 éxitos a 1, 2 éxitos a la mitad (redondeando arriba), 1 éxito en 1."
+   ]
+  },
+  "en": {
+   "disposicion": "19 spaces and 3 exits (west, north and southeast). Search spaces: Groundskeeper's Shed, Lost & Found and Welcome Center. Three Sacred Spaces: Burial Ground, Holy Groves and Sacred Shrine.",
+   "mecanicas": [
+    "A Divine Wrath tracker rises during the game; when unleashed (via Terror cards or when the Finale is revealed) it applies a detrimental effect based on its level.",
+    "The location adds effects to the Bloodlust tracker that unleash or increase Divine Wrath.",
+    "Several effects increase Divine Wrath by the number of Victims at Sacred Spaces.",
+    "The Atonement Action card reduces Divine Wrath: 3 successes to 1, 2 successes by half (rounded up), 1 success by 1."
+   ]
+  },
+  "fr": {
+   "disposicion": "19 cases et 3 sorties (ouest, nord et sud-est). Cases de fouille : Groundskeeper's Shed, Lost & Found et Welcome Center. Trois Sacred Spaces : Burial Ground, Holy Groves et Sacred Shrine.",
+   "mecanicas": [
+    "Une piste de Divine Wrath monte au fil de la partie ; quand elle est déchaînée (par des cartes Terror ou à la révélation du Finale), elle applique un effet néfaste selon son niveau.",
+    "Le lieu ajoute des effets à la piste de Bloodlust, qui déchaînent ou augmentent la Divine Wrath.",
+    "Plusieurs effets augmentent la Divine Wrath du nombre de Victims sur les Sacred Spaces.",
+    "La carte Action Atonement réduit la Divine Wrath : 3 succès à 1, 2 succès de moitié (arrondi au supérieur), 1 succès de 1."
+   ]
+  },
+  "de": {
+   "disposicion": "19 Felder und 3 Ausgänge (Westen, Norden und Südosten). Suchfelder: Groundskeeper's Shed, Lost & Found und Welcome Center. Drei Sacred Spaces: Burial Ground, Holy Groves und Sacred Shrine.",
+   "mecanicas": [
+    "Eine Divine-Wrath-Leiste steigt im Spielverlauf; wird sie entfesselt (durch Terror-Karten oder beim Aufdecken des Finale), gibt es einen nachteiligen Effekt je nach Stufe.",
+    "Der Ort ergänzt die Bloodlust-Leiste um Effekte, die Divine Wrath entfesseln oder erhöhen.",
+    "Mehrere Effekte erhöhen Divine Wrath um die Anzahl der Victims auf Sacred Spaces.",
+    "Die Aktionskarte Atonement senkt Divine Wrath: 3 Erfolge auf 1, 2 Erfolge um die Hälfte (aufgerundet), 1 Erfolg um 1."
+   ]
+  },
+  "it": {
+   "disposicion": "19 spazi e 3 uscite (ovest, nord e sud-est). Spazi di ricerca: Groundskeeper's Shed, Lost & Found e Welcome Center. Tre Sacred Spaces: Burial Ground, Holy Groves e Sacred Shrine.",
+   "mecanicas": [
+    "Un tracciato di Divine Wrath sale durante la partita; quando viene scatenata (con carte Terror o alla rivelazione del Finale) applica un effetto dannoso in base al livello.",
+    "Il luogo aggiunge effetti al tracciato di Bloodlust che scatenano o aumentano la Divine Wrath.",
+    "Diversi effetti aumentano la Divine Wrath del numero di Victims sui Sacred Spaces.",
+    "La carta Azione Atonement riduce la Divine Wrath: 3 successi a 1, 2 successi della metà (per eccesso), 1 successo di 1."
+   ]
+  }
+ },
+ "Santa's Village": {
+  "extras": [],
+  "es": {
+   "disposicion": "16 espacios y 3 salidas (noroeste, suroeste y sureste). Espacios de búsqueda: Santa's House, Santa's Workshop y Stables; otros con nombre: Runway y Village Center.",
+   "mecanicas": [
+    "Las Victims son Elves.",
+    "Al entrar en un espacio con Elves pierdes 1 Time por cada Elf presente."
+   ]
+  },
+  "en": {
+   "disposicion": "16 spaces and 3 exits (northwest, southwest and southeast). Search spaces: Santa's House, Santa's Workshop and Stables; other named spaces: Runway and Village Center.",
+   "mecanicas": [
+    "The Victims are Elves instead.",
+    "Entering a space with Elves, you lose 1 Time for each Elf present."
+   ]
+  },
+  "fr": {
+   "disposicion": "16 cases et 3 sorties (nord-ouest, sud-ouest et sud-est). Cases de fouille : Santa's House, Santa's Workshop et Stables ; autres cases nommées : Runway et Village Center.",
+   "mecanicas": [
+    "Les Victims sont des Elves.",
+    "En entrant dans une case avec des Elves, vous perdez 1 Time par Elf présent."
+   ]
+  },
+  "de": {
+   "disposicion": "16 Felder und 3 Ausgänge (Nordwesten, Südwesten und Südosten). Suchfelder: Santa's House, Santa's Workshop und Stables; weitere benannte Felder: Runway und Village Center.",
+   "mecanicas": [
+    "Die Victims sind Elves.",
+    "Betrittst du ein Feld mit Elves, verlierst du 1 Time pro anwesendem Elf."
+   ]
+  },
+  "it": {
+   "disposicion": "16 spazi e 3 uscite (nord-ovest, sud-ovest e sud-est). Spazi di ricerca: Santa's House, Santa's Workshop e Stables; altri spazi con nome: Runway e Village Center.",
+   "mecanicas": [
+    "Le Victims sono Elves.",
+    "Entrando in uno spazio con Elves perdi 1 Time per ogni Elf presente."
+   ]
+  }
+ },
+ "Shady Acres": {
+  "extras": [
+   "Ancient Curses (8)",
+   "Children"
+  ],
+  "es": {
+   "disposicion": "18 espacios y 2 salidas (sureste y noroeste). Espacios de búsqueda: Old Barn, McCoy Farmhouse y Ralph's Garage. Seis espacios son Field Spaces (icono de trigo) y uno al noreste es el Altar of the Old Gods.",
+   "mecanicas": [
+    "Los Children son Enemies (no Minions) y actúan en la fase del Killer antes que Minions y Killer, con su token de acción: Target Final Girl or Victim > Move > Abduct.",
+    "Con 1 o 2, Abduct lleva una Victim y un Child al Altar of the Old Gods y sacrifica a la Victim (sube el Bloodlust como de costumbre).",
+    "Cada Victim sacrificada va encima del mazo de Ancient Curses; al sacrificar tres Victims se roba una carta de ese mazo.",
+    "En cada fase de Upkeep aparece un Child, salvo que ya estén los tres en el tablero o no queden Victims."
+   ]
+  },
+  "en": {
+   "disposicion": "18 spaces and 2 exits (southeast and northwest). Search spaces: Old Barn, McCoy Farmhouse and Ralph's Garage. Six spaces are Field Spaces (wheat icon) and one in the northeast is the Altar of the Old Gods.",
+   "mecanicas": [
+    "The Children are Enemies (not Minions) and act in the Killer phase before the Minion or Killer, using their action token: Target Final Girl or Victim > Move > Abduct.",
+    "On a 1 or 2, Abduct removes a Victim and a Child to the Altar of the Old Gods and sacrifices the Victim (increasing Bloodlust as usual).",
+    "Each sacrificed Victim goes on top of the Ancient Curses deck; when three Victims have been sacrificed, a card is drawn from it.",
+    "One Child spawns each Upkeep phase, unless all three Children or zero Victims are already on the board."
+   ]
+  },
+  "fr": {
+   "disposicion": "18 cases et 2 sorties (sud-est et nord-ouest). Cases de fouille : Old Barn, McCoy Farmhouse et Ralph's Garage. Six cases sont des Field Spaces (icône de blé) et une au nord-est est l'Altar of the Old Gods.",
+   "mecanicas": [
+    "Les Children sont des Enemies (pas des Minions) et agissent en phase du Killer avant le Minion ou le Killer, avec leur jeton : Target Final Girl or Victim > Move > Abduct.",
+    "Sur 1 ou 2, Abduct emmène une Victim et un Child à l'Altar of the Old Gods et sacrifie la Victim (Bloodlust augmente comme d'habitude).",
+    "Chaque Victim sacrifiée va sur le dessus du paquet Ancient Curses ; après trois sacrifices, on en pioche une carte.",
+    "Un Child apparaît à chaque phase d'Upkeep, sauf si les trois sont déjà sur le plateau ou s'il ne reste aucune Victim."
+   ]
+  },
+  "de": {
+   "disposicion": "18 Felder und 2 Ausgänge (Südosten und Nordwesten). Suchfelder: Old Barn, McCoy Farmhouse und Ralph's Garage. Sechs Felder sind Field Spaces (Weizensymbol), eines im Nordosten ist der Altar of the Old Gods.",
+   "mecanicas": [
+    "Die Children sind Enemies (keine Minions) und handeln in der Killer-Phase vor Minion und Killer mit ihrem Aktionsmarker: Target Final Girl or Victim > Move > Abduct.",
+    "Bei 1 oder 2 bringt Abduct eine Victim und ein Child zum Altar of the Old Gods und opfert die Victim (Bloodlust steigt wie üblich).",
+    "Jede geopferte Victim kommt oben auf den Ancient-Curses-Stapel; sind drei Victims geopfert, wird eine Karte davon gezogen.",
+    "In jeder Upkeep-Phase erscheint ein Child, außer alle drei sind schon im Spiel oder es gibt keine Victims."
+   ]
+  },
+  "it": {
+   "disposicion": "18 spazi e 2 uscite (sud-est e nord-ovest). Spazi di ricerca: Old Barn, McCoy Farmhouse e Ralph's Garage. Sei spazi sono Field Spaces (icona del grano) e uno a nord-est è l'Altar of the Old Gods.",
+   "mecanicas": [
+    "I Children sono Enemies (non Minions) e agiscono nella fase del Killer prima di Minion e Killer, col loro segnalino: Target Final Girl or Victim > Move > Abduct.",
+    "Con 1 o 2, Abduct porta una Victim e un Child all'Altar of the Old Gods e sacrifica la Victim (il Bloodlust sale come al solito).",
+    "Ogni Victim sacrificata va in cima al mazzo Ancient Curses; dopo tre sacrifici se ne pesca una carta.",
+    "In ogni fase di Upkeep compare un Child, a meno che non siano già tutti e tre sul tabellone o non ci siano Victims."
+   ]
+  }
+ },
+ "Station 2891": {
+  "extras": [
+   "Helicopter card",
+   "Fly Faster"
+  ],
+  "es": {
+   "disposicion": "20 espacios y una sola salida, el helipuerto al sur. Espacios de búsqueda: Commander's Hut, Supply Closet y Tool Shed; otros con nombre: Kitchen, Lab, Radio Room y Rec Room. Dos espacios son pasillos y cinco son exteriores, incluido el helipuerto.",
+   "mecanicas": [
+    "Con el Helicopter en el helipuerto puedes meter hasta tres Victims, que ya no pueden ser objetivo ni morir.",
+    "Esas Victims no cuentan como salvadas hasta que el Helicopter llega al Arctic Airport de su carta aparte.",
+    "El Helicopter avanza con la carta de Acción Fly Faster o con el icono de Helicopter de algunas cartas de Terror.",
+    "Frostbite: tú, cada Victim y cada Enemy en espacio exterior ganáis un token de Frostbite, o perdéis 1 Health si ya lo teníais.",
+    "En cada fase de Upkeep se descartan los tokens de Frostbite de quien esté en interior."
+   ]
+  },
+  "en": {
+   "disposicion": "20 spaces and one exit, the helipad to the south. Search spaces: Commander's Hut, Supply Closet and Tool Shed; other named spaces: Kitchen, Lab, Radio Room and Rec Room. Two spaces are hallways and five are outside spaces, including the helipad.",
+   "mecanicas": [
+    "With the Helicopter on the helipad you can place up to three Victims in it, so they cannot be targeted or killed.",
+    "Those Victims are not saved until the Helicopter reaches the Arctic Airport space on its separate card.",
+    "The Helicopter moves via the Fly Faster Action card or the Helicopter icon on several Terror cards.",
+    "Frostbite: you, each Victim and each Enemy in an outdoor space gain a Frostbite token, or lose 1 Health if already frostbitten.",
+    "Each Upkeep phase, discard all Frostbite tokens for anyone indoors."
+   ]
+  },
+  "fr": {
+   "disposicion": "20 cases et une seule sortie, l'héliport au sud. Cases de fouille : Commander's Hut, Supply Closet et Tool Shed ; autres cases nommées : Kitchen, Lab, Radio Room et Rec Room. Deux cases sont des couloirs et cinq sont extérieures, dont l'héliport.",
+   "mecanicas": [
+    "Quand le Helicopter est sur l'héliport, on peut y placer jusqu'à trois Victims, qui ne peuvent alors plus être ciblées ni tuées.",
+    "Ces Victims ne sont sauvées qu'une fois le Helicopter arrivé à l'Arctic Airport sur sa carte séparée.",
+    "Le Helicopter avance via la carte Action Fly Faster ou l'icône Helicopter de plusieurs cartes Terror.",
+    "Frostbite : vous, chaque Victim et chaque Enemy en extérieur gagnez un jeton Frostbite, ou perdez 1 Health si vous en avez déjà un.",
+    "À chaque phase d'Upkeep, défaussez les jetons Frostbite de toute personne à l'intérieur."
+   ]
+  },
+  "de": {
+   "disposicion": "20 Felder und ein einziger Ausgang, der Hubschrauberlandeplatz im Süden. Suchfelder: Commander's Hut, Supply Closet und Tool Shed; weitere benannte Felder: Kitchen, Lab, Radio Room und Rec Room. Zwei Felder sind Flure, fünf sind Außenfelder, inklusive Landeplatz.",
+   "mecanicas": [
+    "Steht der Helicopter auf dem Landeplatz, kannst du bis zu drei Victims hineinsetzen; sie können dann nicht anvisiert oder getötet werden.",
+    "Diese Victims gelten erst als gerettet, wenn der Helicopter das Feld Arctic Airport auf seiner eigenen Karte erreicht.",
+    "Der Helicopter bewegt sich durch die Aktionskarte Fly Faster oder das Helicopter-Symbol auf mehreren Terror-Karten.",
+    "Frostbite: du, jede Victim und jeder Enemy auf einem Außenfeld erhalten einen Frostbite-Marker oder verlieren 1 Health, falls schon vorhanden.",
+    "In jeder Upkeep-Phase werden die Frostbite-Marker aller Figuren im Inneren abgeworfen."
+   ]
+  },
+  "it": {
+   "disposicion": "20 spazi e una sola uscita, l'eliporto a sud. Spazi di ricerca: Commander's Hut, Supply Closet e Tool Shed; altri spazi con nome: Kitchen, Lab, Radio Room e Rec Room. Due spazi sono corridoi e cinque sono esterni, eliporto compreso.",
+   "mecanicas": [
+    "Con l'Helicopter sull'eliporto puoi farvi salire fino a tre Victims, che non possono più essere bersagliate né uccise.",
+    "Quelle Victims non contano come salvate finché l'Helicopter non raggiunge l'Arctic Airport sulla sua carta separata.",
+    "L'Helicopter si muove con la carta Azione Fly Faster o con l'icona Helicopter di diverse carte Terror.",
+    "Frostbite: tu, ogni Victim e ogni Enemy in uno spazio esterno guadagnate un segnalino Frostbite, o perdete 1 Health se già lo avete.",
+    "In ogni fase di Upkeep si scartano i segnalini Frostbite di chi è all'interno."
+   ]
+  }
+ },
+ "Storybook Woods": {
+  "extras": [],
+  "es": {
+   "disposicion": "15 espacios y 2 salidas (noreste y suroeste). Espacios de búsqueda: Gingerbread House, Grandma's House y Village; otros con nombre: Clearing, Dell, Glen y Meadow.",
+   "mecanicas": [
+    "Es una localización más pequeña de lo habitual, con menos espacios.",
+    "Un río serpentea por el mapa y al principio solo se cruza por los puentes.",
+    "Al cruzar un puente solo te puede seguir una Victim en lugar de las dos habituales."
+   ]
+  },
+  "en": {
+   "disposicion": "15 spaces and 2 exits (northeast and southwest). Search spaces: Gingerbread House, Grandma's House and Village; other named spaces: Clearing, Dell, Glen and Meadow.",
+   "mecanicas": [
+    "A smaller-than-average Location with fewer spaces.",
+    "A river winds through the map; at first it can only be crossed via bridges.",
+    "Only one Victim can follow you across a bridge instead of the usual two."
+   ]
+  },
+  "fr": {
+   "disposicion": "15 cases et 2 sorties (nord-est et sud-ouest). Cases de fouille : Gingerbread House, Grandma's House et Village ; autres cases nommées : Clearing, Dell, Glen et Meadow.",
+   "mecanicas": [
+    "Lieu plus petit que la moyenne, avec moins de cases.",
+    "Une rivière serpente sur la carte ; au départ, on ne peut la traverser que par les ponts.",
+    "Une seule Victim peut vous suivre sur un pont au lieu des deux habituelles."
+   ]
+  },
+  "de": {
+   "disposicion": "15 Felder und 2 Ausgänge (Nordosten und Südwesten). Suchfelder: Gingerbread House, Grandma's House und Village; weitere benannte Felder: Clearing, Dell, Glen und Meadow.",
+   "mecanicas": [
+    "Ein unterdurchschnittlich kleiner Ort mit weniger Feldern.",
+    "Ein Fluss windet sich durch die Karte; anfangs ist er nur über Brücken überquerbar.",
+    "Über eine Brücke kann dir nur eine Victim folgen statt der üblichen zwei."
+   ]
+  },
+  "it": {
+   "disposicion": "15 spazi e 2 uscite (nord-est e sud-ovest). Spazi di ricerca: Gingerbread House, Grandma's House e Village; altri spazi con nome: Clearing, Dell, Glen e Meadow.",
+   "mecanicas": [
+    "Luogo più piccolo della media, con meno spazi.",
+    "Un fiume attraversa la mappa; all'inizio si può superare solo tramite i ponti.",
+    "Su un ponte ti può seguire una sola Victim invece delle solite due."
+   ]
+  }
+ },
+ "Sunnydaze Mall": {
+  "extras": [
+   "Savior Cards (10)",
+   "Trust",
+   "Build Trust"
+  ],
+  "es": {
+   "disposicion": "22 espacios y 2 salidas (sureste y noroeste, la Service Entrance). Cinco son Railing spaces que dan al Food Court. Espacios de búsqueda: Military Surplus 'R Us, Stan's Sporting Goods y Zap Shack; otras tiendas: Boards 'N Bones, Joystick Heroes y Smokin' Subject; además Atrium y Security.",
+   "mecanicas": [
+    "The Savior: el Killer lo ataca a él en lugar de a ti al resolver cartas de Terror; si muere, pierdes de inmediato. Empieza con 4 Health.",
+    "Trust: se sube con la carta Build Trust y limita al Savior; solo en el nivel 4 puede salir del tablero y usar todas sus acciones de Ally.",
+    "Railings: la Final Girl o el Savior pueden saltar al Food Court arriesgándose a recibir daño; los Enemies no saltan.",
+    "Quien reciba daño en un Railing cae al Food Court y pierde Health adicional.",
+    "Stores: quien reciba daño en una tienda atraviesa una pared hacia otro espacio, la destruye (ambos espacios pasan a ser adyacentes) y recibe daño."
+   ]
+  },
+  "en": {
+   "disposicion": "22 spaces and 2 exits (southeast and northwest, the Service Entrance). Five are Railing spaces leading to the Food Court. Search spaces: Military Surplus 'R Us, Stan's Sporting Goods and Zap Shack; other Stores: Boards 'N Bones, Joystick Heroes and Smokin' Subject; plus the Atrium and Security.",
+   "mecanicas": [
+    "The Savior: the Killer targets him instead of you when resolving Terror cards; if he dies the game is lost immediately. He starts with 4 Health.",
+    "Trust: raised with the Build Trust card and limits the Savior; only at level 4 can he exit the board and use all Ally actions.",
+    "Railings: the Final Girl or Savior can jump to the Food Court at the risk of damage; Enemies will not jump.",
+    "Anyone damaged on a Railing space is sent to the Food Court and loses additional Health.",
+    "Stores: anyone damaged in a Store is sent through a wall into another space, destroying it (making them adjacent) and taking damage."
+   ]
+  },
+  "fr": {
+   "disposicion": "22 cases et 2 sorties (sud-est et nord-ouest, la Service Entrance). Cinq sont des Railing spaces donnant sur le Food Court. Cases de fouille : Military Surplus 'R Us, Stan's Sporting Goods et Zap Shack ; autres boutiques : Boards 'N Bones, Joystick Heroes et Smokin' Subject ; plus Atrium et Security.",
+   "mecanicas": [
+    "The Savior : le Killer le cible à votre place en résolvant les cartes Terror ; s'il meurt, la partie est perdue aussitôt. Il commence avec 4 Health.",
+    "Trust : augmente avec la carte Build Trust et limite le Savior ; il ne peut quitter le plateau et utiliser toutes ses actions d'Ally qu'au niveau 4.",
+    "Railings : la Final Girl ou le Savior peuvent sauter vers le Food Court au risque de subir des dégâts ; les Enemies ne sautent pas.",
+    "Quiconque subit des dégâts sur un Railing est envoyé au Food Court et perd de la Health supplémentaire.",
+    "Stores : quiconque subit des dégâts dans une boutique traverse un mur vers une autre case, le détruit (les cases deviennent adjacentes) et subit des dégâts."
+   ]
+  },
+  "de": {
+   "disposicion": "22 Felder und 2 Ausgänge (Südosten und Nordwesten, der Service Entrance). Fünf sind Railing-Felder mit Zugang zum Food Court. Suchfelder: Military Surplus 'R Us, Stan's Sporting Goods und Zap Shack; weitere Stores: Boards 'N Bones, Joystick Heroes und Smokin' Subject; dazu Atrium und Security.",
+   "mecanicas": [
+    "The Savior: der Killer visiert beim Abhandeln von Terror-Karten ihn statt dich an; stirbt er, ist das Spiel sofort verloren. Er startet mit 4 Health.",
+    "Trust: steigt durch die Karte Build Trust und schränkt den Savior ein; erst auf Stufe 4 darf er den Plan verlassen und alle Ally-Aktionen nutzen.",
+    "Railings: Final Girl oder Savior können in den Food Court springen und riskieren dabei Schaden; Enemies springen nicht.",
+    "Wer auf einem Railing-Feld Schaden nimmt, landet im Food Court und verliert zusätzlich Health.",
+    "Stores: wer in einem Store Schaden nimmt, fliegt durch eine Wand in ein anderes Feld, zerstört sie (die Felder werden benachbart) und nimmt Schaden."
+   ]
+  },
+  "it": {
+   "disposicion": "22 spazi e 2 uscite (sud-est e nord-ovest, la Service Entrance). Cinque sono Railing spaces che danno sul Food Court. Spazi di ricerca: Military Surplus 'R Us, Stan's Sporting Goods e Zap Shack; altri negozi: Boards 'N Bones, Joystick Heroes e Smokin' Subject; più Atrium e Security.",
+   "mecanicas": [
+    "The Savior: il Killer bersaglia lui al posto tuo risolvendo le carte Terror; se muore la partita è persa subito. Inizia con 4 Health.",
+    "Trust: sale con la carta Build Trust e limita il Savior; solo al livello 4 può uscire dal tabellone e usare tutte le azioni da Ally.",
+    "Railings: la Final Girl o il Savior possono saltare nel Food Court rischiando danni; gli Enemies non saltano.",
+    "Chi subisce danni su un Railing viene mandato nel Food Court e perde Health aggiuntiva.",
+    "Stores: chi subisce danni in un negozio sfonda una parete verso un altro spazio, la distrugge (gli spazi diventano adiacenti) e subisce danni."
+   ]
+  }
+ },
+ "USS Konrad": {
+  "extras": [
+   "Keycards"
+  ],
+  "es": {
+   "disposicion": "16 espacios y 3 salidas (las cápsulas de escape de las esquinas inferior izquierda, inferior derecha y superior derecha). Espacios de búsqueda: Armory, Mess Hall y Storage; el resto son salas de Special Function: Bridge, Furnace, Hangar y Trash Compactor.",
+   "mecanicas": [
+    "Las Keycards se consiguen registrando espacios o mediante eventos.",
+    "Se gastan en funciones del tablero, desde abrir conductos de mantenimiento como atajos que el Killer no puede usar hasta usar la nave para dañar al Killer.",
+    "El coste en Keycards de cada acción sube con su efectividad."
+   ]
+  },
+  "en": {
+   "disposicion": "16 spaces and 3 exits (escape pods in the lower-left, lower-right and upper-right corners). Search spaces: Armory, Mess Hall and Storage; the remaining named locations are Special Function rooms: Bridge, Furnace, Hangar and Trash Compactor.",
+   "mecanicas": [
+    "Keycards are collected from searching or from events.",
+    "They are spent on board functions, from unlocking maintenance shafts as shortcuts the Killer cannot use to weaponizing the ship to harm the Killer.",
+    "The Keycard cost of each action rises with its effectiveness."
+   ]
+  },
+  "fr": {
+   "disposicion": "16 cases et 3 sorties (capsules de sauvetage aux coins inférieur gauche, inférieur droit et supérieur droit). Cases de fouille : Armory, Mess Hall et Storage ; les autres lieux nommés sont des salles Special Function : Bridge, Furnace, Hangar et Trash Compactor.",
+   "mecanicas": [
+    "Les Keycards s'obtiennent en fouillant ou via des événements.",
+    "Elles se dépensent pour des fonctions du plateau, de l'ouverture de conduits de maintenance (raccourcis interdits au Killer) à l'usage du vaisseau pour blesser le Killer.",
+    "Le coût en Keycards de chaque action augmente avec son efficacité."
+   ]
+  },
+  "de": {
+   "disposicion": "16 Felder und 3 Ausgänge (Rettungskapseln unten links, unten rechts und oben rechts). Suchfelder: Armory, Mess Hall und Storage; die übrigen benannten Orte sind Special-Function-Räume: Bridge, Furnace, Hangar und Trash Compactor.",
+   "mecanicas": [
+    "Keycards erhält man durch Durchsuchen oder durch Ereignisse.",
+    "Sie werden für Funktionen des Spielplans ausgegeben, vom Öffnen von Wartungsschächten als Abkürzungen, die der Killer nicht nutzen kann, bis zum Einsatz des Schiffs gegen den Killer.",
+    "Die Keycard-Kosten jeder Aktion steigen mit ihrer Wirksamkeit."
+   ]
+  },
+  "it": {
+   "disposicion": "16 spazi e 3 uscite (capsule di salvataggio negli angoli in basso a sinistra, in basso a destra e in alto a destra). Spazi di ricerca: Armory, Mess Hall e Storage; gli altri luoghi con nome sono stanze Special Function: Bridge, Furnace, Hangar e Trash Compactor.",
+   "mecanicas": [
+    "Le Keycards si ottengono perquisendo o tramite eventi.",
+    "Si spendono in funzioni del tabellone, dall'aprire condotti di manutenzione come scorciatoie che il Killer non può usare al rivolgere la nave contro il Killer.",
+    "Il costo in Keycards di ogni azione cresce con la sua efficacia."
+   ]
+  }
+ },
+ "Utopia": {
+  "extras": [
+   "Sand Snake cards"
+  ],
+  "es": {
+   "disposicion": "17 espacios y 3 salidas (noreste, sureste y el Mountain Pass al suroeste). Espacios de búsqueda: Bunker, General Store y Sheep Farm; otros con nombre: Crossroads, Electrical Tower, House, Jeep Trail, Old Road, Scrapyard, Trailer Park y Water Tower. Los 3 restantes son Boulder spaces.",
+   "mecanicas": [
+    "Al final de cada fase del Killer se roban dos cartas de Sand Snake y se siguen sus instrucciones.",
+    "Las Sand Snakes no pueden ser atacadas, aunque el daño que hacen se puede reducir; los Boulder spaces están a salvo de ellas.",
+    "Algunas cartas de Terror y Events hunden espacios convirtiéndolos en Sinkholes: las Victims allí mueren y el jugador y los Enemies reciben 1 de daño y huyen en pánico.",
+    "Un Sinkhole no se puede pisar ni atravesar el resto de la partida."
+   ]
+  },
+  "en": {
+   "disposicion": "17 spaces and 3 exits (northeast, southeast and the Mountain Pass to the southwest). Search spaces: Bunker, General Store and Sheep Farm; other named spaces: Crossroads, Electrical Tower, House, Jeep Trail, Old Road, Scrapyard, Trailer Park and Water Tower. The remaining 3 are Boulder spaces.",
+   "mecanicas": [
+    "At the end of each Killer phase, draw two Sand Snake cards and follow their instructions.",
+    "Sand Snakes cannot be attacked, though their damage can be reduced; Boulder spaces are safe from them.",
+    "Some Terror cards and Events collapse spaces into Sinkholes: Victims there are killed, and the player and Enemies take 1 Damage and panic out.",
+    "A Sinkhole cannot be moved to or through for the rest of the game."
+   ]
+  },
+  "fr": {
+   "disposicion": "17 cases et 3 sorties (nord-est, sud-est et le Mountain Pass au sud-ouest). Cases de fouille : Bunker, General Store et Sheep Farm ; autres cases nommées : Crossroads, Electrical Tower, House, Jeep Trail, Old Road, Scrapyard, Trailer Park et Water Tower. Les 3 restantes sont des Boulder spaces.",
+   "mecanicas": [
+    "À la fin de chaque phase du Killer, piochez deux cartes Sand Snake et suivez leurs instructions.",
+    "Les Sand Snakes ne peuvent pas être attaqués, mais leurs dégâts peuvent être réduits ; les Boulder spaces sont à l'abri.",
+    "Certaines cartes Terror et Events effondrent des cases en Sinkholes : les Victims y meurent, le joueur et les Enemies subissent 1 dégât et fuient en panique.",
+    "Un Sinkhole ne peut plus être atteint ni traversé jusqu'à la fin de la partie."
+   ]
+  },
+  "de": {
+   "disposicion": "17 Felder und 3 Ausgänge (Nordosten, Südosten und der Mountain Pass im Südwesten). Suchfelder: Bunker, General Store und Sheep Farm; weitere benannte Felder: Crossroads, Electrical Tower, House, Jeep Trail, Old Road, Scrapyard, Trailer Park und Water Tower. Die übrigen 3 sind Boulder-Felder.",
+   "mecanicas": [
+    "Am Ende jeder Killer-Phase werden zwei Sand-Snake-Karten gezogen und ausgeführt.",
+    "Sand Snakes können nicht angegriffen werden, ihr Schaden lässt sich aber verringern; Boulder-Felder sind vor ihnen sicher.",
+    "Manche Terror-Karten und Events lassen Felder zu Sinkholes einstürzen: Victims dort sterben, Spieler und Enemies nehmen 1 Schaden und fliehen in Panik.",
+    "Ein Sinkhole kann für den Rest des Spiels weder betreten noch durchquert werden."
+   ]
+  },
+  "it": {
+   "disposicion": "17 spazi e 3 uscite (nord-est, sud-est e il Mountain Pass a sud-ovest). Spazi di ricerca: Bunker, General Store e Sheep Farm; altri spazi con nome: Crossroads, Electrical Tower, House, Jeep Trail, Old Road, Scrapyard, Trailer Park e Water Tower. I 3 restanti sono Boulder spaces.",
+   "mecanicas": [
+    "Alla fine di ogni fase del Killer si pescano due carte Sand Snake e se ne seguono le istruzioni.",
+    "Le Sand Snakes non possono essere attaccate, ma il loro danno può essere ridotto; i Boulder spaces sono al sicuro.",
+    "Alcune carte Terror ed Events fanno crollare spazi in Sinkholes: le Victims lì muoiono, giocatore ed Enemies subiscono 1 danno e fuggono in preda al panico.",
+    "Un Sinkhole non può essere raggiunto né attraversato per il resto della partita."
+   ]
+  }
+ },
+ "Wingard Cottage": {
+  "extras": [
+   "Supply Items (4)",
+   "Crafted Items"
+  ],
+  "es": {
+   "disposicion": "20 espacios (10 interiores y 10 exteriores) y 3 salidas (noreste, suroeste y sureste, esta última el Driveway). Espacios de búsqueda: Boathouse, Garage y Shed; otros con nombre: Bathroom, Family Room, Foyer, Kitchen, Lakefront, Laundry Room, Porch y dos Bedrooms. El Lake al noroeste está rotulado pero no es visitable.",
+   "mecanicas": [
+    "En cuatro espacios puedes gastar Time para coger su Supply Item: Discarded Tools (Garage), Nails (Shed), Rope (Boathouse) y Wood (espacio al norte del Garage).",
+    "Con los Supply Items, el Item y el Time que pide una receta se fabrica el Crafted Item correspondiente.",
+    "Los Items y Supply Items usados se descartan."
+   ]
+  },
+  "en": {
+   "disposicion": "20 spaces (10 indoor, 10 outdoor) and 3 exits (northeast, southwest and southeast, the latter labelled the Driveway). Search spaces: Boathouse, Garage and Shed; other named spaces: Bathroom, Family Room, Foyer, Kitchen, Lakefront, Laundry Room, Porch and two Bedrooms. The Lake to the northwest is labelled but not visitable.",
+   "mecanicas": [
+    "In four spaces you can spend Time to pick up their Supply Item: Discarded Tools (Garage), Nails (Shed), Rope (Boathouse) and Wood (space north of the Garage).",
+    "Combining the right Supply Items with the Item and Time a recipe requires creates that Crafted Item.",
+    "The used Items and Supply Items are discarded."
+   ]
+  },
+  "fr": {
+   "disposicion": "20 cases (10 intérieures, 10 extérieures) et 3 sorties (nord-est, sud-ouest et sud-est, cette dernière nommée Driveway). Cases de fouille : Boathouse, Garage et Shed ; autres cases nommées : Bathroom, Family Room, Foyer, Kitchen, Lakefront, Laundry Room, Porch et deux Bedrooms. Le Lake au nord-ouest est indiqué mais non visitable.",
+   "mecanicas": [
+    "Dans quatre cases, on peut dépenser du Time pour prendre leur Supply Item : Discarded Tools (Garage), Nails (Shed), Rope (Boathouse) et Wood (case au nord du Garage).",
+    "En combinant les bons Supply Items avec l'Item et le Time exigés par une recette, on fabrique le Crafted Item correspondant.",
+    "Les Items et Supply Items utilisés sont défaussés."
+   ]
+  },
+  "de": {
+   "disposicion": "20 Felder (10 innen, 10 außen) und 3 Ausgänge (Nordosten, Südwesten und Südosten, letzterer als Driveway bezeichnet). Suchfelder: Boathouse, Garage und Shed; weitere benannte Felder: Bathroom, Family Room, Foyer, Kitchen, Lakefront, Laundry Room, Porch und zwei Bedrooms. Der Lake im Nordwesten ist beschriftet, aber nicht betretbar.",
+   "mecanicas": [
+    "Auf vier Feldern kann man Time ausgeben, um deren Supply Item zu nehmen: Discarded Tools (Garage), Nails (Shed), Rope (Boathouse) und Wood (Feld nördlich der Garage).",
+    "Mit den passenden Supply Items plus dem Item und der Time eines Rezepts stellt man das jeweilige Crafted Item her.",
+    "Die verwendeten Items und Supply Items werden abgeworfen."
+   ]
+  },
+  "it": {
+   "disposicion": "20 spazi (10 interni e 10 esterni) e 3 uscite (nord-est, sud-ovest e sud-est, quest'ultima indicata come Driveway). Spazi di ricerca: Boathouse, Garage e Shed; altri spazi con nome: Bathroom, Family Room, Foyer, Kitchen, Lakefront, Laundry Room, Porch e due Bedrooms. Il Lake a nord-ovest è indicato ma non visitabile.",
+   "mecanicas": [
+    "In quattro spazi puoi spendere Time per prendere il loro Supply Item: Discarded Tools (Garage), Nails (Shed), Rope (Boathouse) e Wood (spazio a nord del Garage).",
+    "Combinando i Supply Items giusti con l'Item e il Time richiesti da una ricetta si crea il Crafted Item corrispondente.",
+    "Gli Items e Supply Items usati vengono scartati."
+   ]
+  }
+ },
+ "Wolfe Asylum": {
+  "extras": [
+   "Amped (5)",
+   "Side Effects (10)",
+   "Pills"
+  ],
+  "es": {
+   "disposicion": "20 espacios y 3 salidas (arriba a la izquierda, abajo en el centro y en el centro a la derecha). Espacios de búsqueda: Doctor's Office, Utility Closet y Medical Storage; otros con nombre: Operating Theater, Common Room y Solitary Confinement.",
+   "mecanicas": [
+    "Incluye las mecánicas de Pills y Stunned.",
+    "Recoger una Pill cuesta 1 Time tras terminar el movimiento en su espacio; su color se revela al cogerla.",
+    "Una Pill: Yellow 1 Health, Purple mover 1 espacio, Pink -1 Horror; sin cartas de Side Effects.",
+    "Dos Pills dan efectos mayores y obligan a robar 2 Side Effects; las tres (Yellow + Purple + Pink) dan una carta Amped y 3 Side Effects."
+   ]
+  },
+  "en": {
+   "disposicion": "20 spaces and 3 exits (top left, bottom center and right middle). Search spaces: Doctor's Office, Utility Closet and Medical Storage; other named locations: Operating Theater, Common Room and Solitary Confinement.",
+   "mecanicas": [
+    "Includes Pills and Stunned gameplay.",
+    "Picking up a Pill costs 1 Time after ending movement in its space; its color is revealed on pickup.",
+    "One Pill: Yellow 1 Health, Purple move 1 space, Pink minus 1 Horror; no Side Effects cards.",
+    "Two Pills give stronger effects and draw 2 Side Effects; all three (Yellow + Purple + Pink) draw an Amped card and 3 Side Effects."
+   ]
+  },
+  "fr": {
+   "disposicion": "20 cases et 3 sorties (en haut à gauche, en bas au centre et au milieu à droite). Cases de fouille : Doctor's Office, Utility Closet et Medical Storage ; autres lieux nommés : Operating Theater, Common Room et Solitary Confinement.",
+   "mecanicas": [
+    "Inclut les mécaniques Pills et Stunned.",
+    "Ramasser une Pill coûte 1 Time après avoir fini son déplacement dans sa case ; sa couleur est révélée à ce moment.",
+    "Une Pill : Yellow 1 Health, Purple déplacement d'1 case, Pink -1 Horror ; pas de cartes Side Effects.",
+    "Deux Pills donnent des effets plus forts et font piocher 2 Side Effects ; les trois (Yellow + Purple + Pink) donnent une carte Amped et 3 Side Effects."
+   ]
+  },
+  "de": {
+   "disposicion": "20 Felder und 3 Ausgänge (oben links, unten Mitte und rechts Mitte). Suchfelder: Doctor's Office, Utility Closet und Medical Storage; weitere benannte Orte: Operating Theater, Common Room und Solitary Confinement.",
+   "mecanicas": [
+    "Enthält die Mechaniken Pills und Stunned.",
+    "Eine Pill aufzunehmen kostet 1 Time, nachdem man die Bewegung in ihrem Feld beendet hat; ihre Farbe wird dabei aufgedeckt.",
+    "Eine Pill: Yellow 1 Health, Purple 1 Feld bewegen, Pink -1 Horror; keine Side-Effects-Karten.",
+    "Zwei Pills geben stärkere Effekte und 2 Side Effects; alle drei (Yellow + Purple + Pink) geben eine Amped-Karte und 3 Side Effects."
+   ]
+  },
+  "it": {
+   "disposicion": "20 spazi e 3 uscite (in alto a sinistra, in basso al centro e a destra al centro). Spazi di ricerca: Doctor's Office, Utility Closet e Medical Storage; altri luoghi con nome: Operating Theater, Common Room e Solitary Confinement.",
+   "mecanicas": [
+    "Include le meccaniche Pills e Stunned.",
+    "Raccogliere una Pill costa 1 Time dopo aver terminato il movimento nel suo spazio; il colore si rivela raccogliendola.",
+    "Una Pill: Yellow 1 Health, Purple muovi di 1 spazio, Pink -1 Horror; nessuna carta Side Effects.",
+    "Due Pills danno effetti più forti e fanno pescare 2 Side Effects; tutte e tre (Yellow + Purple + Pink) danno una carta Amped e 3 Side Effects."
+   ]
+  }
+ }
+}
