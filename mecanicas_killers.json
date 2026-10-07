@@ -268,38 +268,6 @@
    ]
   }
  },
- "The Intruders": {
-  "es": {
-   "mecanicas": [
-    "Son un trío de Killers que empiezan en el mismo espacio; solo el Active Killer actúa con Killer actions y Terror cards.",
-    "El Active Killer cambia cuando otro es atacado o dañado, por efecto de cartas, o cuando el activo muere (pasa al superior)."
-   ]
-  },
-  "en": {
-   "mecanicas": [
-    "A trio of Killers starting in the same space; only the Active Killer resolves Killer actions and Terror cards.",
-    "The Active Killer changes when another is attacked or damaged, via card effects, or when the active one dies (the top-most takes over)."
-   ]
-  },
-  "fr": {
-   "mecanicas": [
-    "Un trio de Killers commençant dans la même case ; seul l'Active Killer résout les actions du Killer et les Terror cards.",
-    "L'Active Killer change quand un autre est attaqué ou blessé, via des effets de cartes, ou quand l'actif meurt (le plus haut prend le relais)."
-   ]
-  },
-  "de": {
-   "mecanicas": [
-    "Ein Trio von Killern im selben Startfeld; nur der Active Killer führt Killer-Aktionen und Terror cards aus.",
-    "Der Active Killer wechselt, wenn ein anderer angegriffen oder verletzt wird, durch Karteneffekte oder wenn der aktive stirbt (der oberste übernimmt)."
-   ]
-  },
-  "it": {
-   "mecanicas": [
-    "Un trio di Killer che parte dallo stesso spazio; solo l'Active Killer risolve azioni del Killer e Terror cards.",
-    "L'Active Killer cambia quando un altro viene attaccato o danneggiato, per effetti di carte, o quando quello attivo muore (subentra quello più in alto)."
-   ]
-  }
- },
  "Big Bad Wolf": {
   "es": {
    "mecanicas": [
