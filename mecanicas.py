@@ -34,6 +34,11 @@ T = {
 }
 
 
+FUENTE2 = {"es": "Aclaración del diseñador en BGG", "en": "Designer clarification on BGG",
+           "fr": "Précision du créateur sur BGG", "de": "Klarstellung des Designers auf BGG",
+           "it": "Chiarimento del designer su BGG"}
+
+
 def _url(clave):
     t = (CACHE.get(clave) or {}).get("titulo") or clave
     return WIKI + t.replace(" ", "_")
@@ -52,8 +57,12 @@ def killer(nombre, lang):
     if not d.get("mecanicas"):
         return ""
     t = T[lang]
+    extra = ""
+    if (KILLERS.get(nombre) or {}).get("fuente"):
+        # Aclaración del diseñador en BGG: manda sobre la wiki.
+        extra = f' <a href="{KILLERS[nombre]["fuente"]}" target="_blank" rel="noopener">{FUENTE2[lang]}</a>.'
     return (f'<h2>{t["k"].format(n=nombre)}</h2>' + _lista(d["mecanicas"])
-            + f'<p class="sub">{t["src"].format(u=_url(nombre))}</p>')
+            + f'<p class="sub">{t["src"].format(u=_url(nombre))}{extra}</p>')
 
 
 def mapa(loc, lang):

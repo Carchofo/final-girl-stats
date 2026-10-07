@@ -632,5 +632,48 @@
     "Prima del Finale: pesca un segnalino Suspect per l'Active Killer > Target Victim or Final Girl > Move > Attack."
    ]
   }
+ },
+ "The Intruders": {
+  "es": {
+   "mecanicas": [
+    "Trío de killers con 6 de vida cada uno; empiezan en Horror 3 y en la misma casilla.",
+    "La Killer Action de su hoja es para «todos los asesinos»: cada uno, de arriba abajo, ataca a quien esté en su casilla. No se mueven en esa acción.",
+    "Las Terror Cards solo las resuelve el Active Killer.",
+    "El Active Killer cambia al atacar o dañar a otro, por efecto de cartas, o cuando muere el activo."
+   ]
+  },
+  "en": {
+   "mecanicas": [
+    "A trio of killers with 6 health each; they start at Horror 3 in the same space.",
+    "The Killer Action on their sheet is for \"All Killers\": each one, from the top down, attacks whoever is in its space. They do not move as part of it.",
+    "Only the Active Killer resolves Terror Cards.",
+    "The Active Killer changes when another one is attacked or damaged, through card effects, or when the active one dies."
+   ]
+  },
+  "fr": {
+   "mecanicas": [
+    "Un trio de killers avec 6 de vie chacun ; ils commencent à Horror 3 sur la même case.",
+    "La Killer Action de leur fiche concerne « tous les killers » : chacun, de haut en bas, attaque qui se trouve sur sa case. Ils ne se déplacent pas pendant cette action.",
+    "Seul l'Active Killer résout les Terror Cards.",
+    "L'Active Killer change quand un autre est attaqué ou blessé, via certaines cartes, ou quand l'actif meurt."
+   ]
+  },
+  "de": {
+   "mecanicas": [
+    "Ein Trio von Killern mit je 6 Leben; sie starten bei Horror 3 auf demselben Feld.",
+    "Die Killer Action auf ihrem Bogen gilt für „alle Killer“: Jeder greift, von oben nach unten, an, wer auf seinem Feld steht. Dabei bewegen sie sich nicht.",
+    "Nur der Active Killer handelt Terror Cards ab.",
+    "Der Active Killer wechselt, wenn ein anderer angegriffen oder verletzt wird, durch Karteneffekte oder wenn der aktive stirbt."
+   ]
+  },
+  "it": {
+   "mecanicas": [
+    "Un trio di killer con 6 di vita ciascuno; iniziano a Horror 3 nello stesso spazio.",
+    "La Killer Action della loro scheda è per «tutti i killer»: ognuno, dall'alto in basso, attacca chi si trova nel suo spazio. Non si muovono durante questa azione.",
+    "Solo l'Active Killer risolve le Terror Cards.",
+    "L'Active Killer cambia quando un altro viene attaccato o danneggiato, per effetto di carte, o quando l'attivo muore."
+   ]
+  },
+  "fuente": "https://boardgamegeek.com/thread/3084829/intruders-all-killers"
  }
 }
