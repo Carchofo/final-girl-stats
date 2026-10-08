@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Scatola · Especial · 122 partite</p>
-<h1>Shriek<span class="roja">70,5% di vittorie</span></h1><p class="idiomas"><a href="../shriek.html" hreflang="es">ES</a> · <a href="../en/shriek.html" hreflang="en">EN</a> · <a href="../fr/shriek.html" hreflang="fr">FR</a> · <a href="../de/shriek.html" hreflang="de">DE</a> · <a href="../it/shriek.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Shriek">Shriek<span class="roja">70,5% di vittorie</span></h1><p class="idiomas"><a href="../shriek.html" hreflang="es">ES</a> · <a href="../en/shriek.html" hreflang="en">EN</a> · <a href="../fr/shriek.html" hreflang="fr">FR</a> · <a href="../de/shriek.html" hreflang="de">DE</a> · <a href="../it/shriek.html" hreflang="it" aria-current="true">IT</a></p>
 <p class="dek">Mort su Mega BGCon. Su 122 partite registrate si vince nel 70,5% dei casi, 5,0 punti sopra la media del gioco (65,5%).</p>
 <h2>Cosa la rende particolare</h2>
 <p>Mort non parte sulla plancia: è nascosto tra 10 sospettati piazzati a caso. Le carte Interrogate e Coerce rivelano indizi che eliminano sospettati finché ne resta uno. Finché non viene smascherato, certe carte Terror lasciano agire un sospettato casuale come killer. Le vittime non vanno nel panico finché non viene smascherato. Un omaggio ironico a Scream. È l'uscita più recente, e c'è ancora poca esperienza.</p>
@@ -131,6 +131,15 @@
 <h2>Carte Finale</h2>
 <div class="tabla-wrap"><table><thead><tr><th>Carta Finale</th><th class=n>Vittorie</th><th class=n>Partite</th></tr></thead><tbody><tr><td>Mort as H.U.N.T.E.R.</td><td class=n>57,1%</td><td class=n>28</td></tr><tr><td>Secret Epic Finale</td><td class=n>61,0%</td><td class=n>41</td></tr><tr><td>Mort as Dr. Fright</td><td class=n>64,3%</td><td class=n>28</td></tr><tr><td>Mort as Ratchet Lady</td><td class=n>71,8%</td><td class=n>39</td></tr><tr><td>Mort as Tormentor</td><td class=n>73,9%</td><td class=n>23</td></tr><tr><td>Mort as Razorface</td><td class=n>75,0%</td><td class=n>28</td></tr><tr><td>Mort as Big Bad Wolf</td><td class=n>78,3%</td><td class=n>23</td></tr><tr><td>Mort as Geppetto</td><td class=n>81,8%</td><td class=n>22</td></tr><tr><td>Mort as Hans</td><td class=n>85,0%</td><td class=n>20</td></tr><tr><td>Mort as Krampus</td><td class=n>87,1%</td><td class=n>31</td></tr></tbody></table></div>
 <h2>Come iniziare la partita</h2><p>Le quattro aperture, con quale usare in base alla preparazione, sono nelle <a href="salidas.html">strategie di apertura</a>.</p><footer><p>Dati dal <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">foglio pubblico</a> della community di Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">registra le tue partite</a>). Torna a <a href="fichas.html">tutti i killer e le scatole</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

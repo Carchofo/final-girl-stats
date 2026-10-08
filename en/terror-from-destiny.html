@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 6 maps with data</p>
-<h1>Terror from Destiny<span class="roja">79.8% win rate</span></h1><p class="idiomas"><a href="../terror-from-destiny.html" hreflang="es">ES</a> · <a href="../en/terror-from-destiny.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/terror-from-destiny.html" hreflang="fr">FR</a> · <a href="../de/terror-from-destiny.html" hreflang="de">DE</a> · <a href="../it/terror-from-destiny.html" hreflang="it">IT</a></p>
+<h1 data-caja="">Terror from Destiny<span class="roja">79.8% win rate</span></h1><p class="idiomas"><a href="../terror-from-destiny.html" hreflang="es">ES</a> · <a href="../en/terror-from-destiny.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/terror-from-destiny.html" hreflang="fr">FR</a> · <a href="../de/terror-from-destiny.html" hreflang="de">DE</a> · <a href="../it/terror-from-destiny.html" hreflang="it">IT</a></p>
 <p class="dek">Across <b>258 recorded games</b>, the Final Girl beats Terror from Destiny 79.8% of the time. The average for the whole game is 65.5%, so that is above average: one of the easier killers.</p>
 <h2>Who is Terror from Destiny</h2><p>Third vignette, from Series 3. The killer is Fate itself, with Gabrielle as the Final Girl.</p>
 <h3>How Terror from Destiny plays</h3><p>Inspired by Final Destination: there is no body to attack, the danger is the chain of accidents.</p>
@@ -131,6 +131,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Finale card</th><th class=n>Win rate</th><th class=n>Games</th></tr></thead><tbody><tr><td>Unrevealed</td><td class=n>68.2%</td><td class=n>22</td></tr><tr><td>Death at 30,000 ft</td><td class=n>80.0%</td><td class=n>75</td></tr><tr><td>Highway to Hell</td><td class=n>82.3%</td><td class=n>62</td></tr><tr><td>Deathcoaster</td><td class=n>82.3%</td><td class=n>96</td></tr></tbody></table></div>
 <p>The worst draw is <b>Unrevealed</b>: with it in play the game is won only 68.2% of the time, across 22 games.</p>
 <h2>How to start the game</h2><p>The four openings and when to use each one are in the <a href="salidas.html">opening strategies</a>. To compare this killer on every map, see the <a href="index.html">full interactive stats</a>.</p><footer><p>Data from the <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">public tracking sheet</a> kept by the Final Girl community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">log your games</a>). Back to <a href="fichas.html">all killers and boxes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

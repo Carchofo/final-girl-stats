@@ -602,6 +602,9 @@
   .bar-cab.conth { grid-template-columns:34px 1fr 56px 46px; }
   .bar-cab.conth::before { content:""; }
   .bar-cab span:nth-last-child(-n+2) { text-align:right; }
+  .mx th.mia { color:var(--blood); }
+  .mx th.mia div::after, .mx tbody th.mia::after { content:" ●"; font-size:8px; vertical-align:2px; }
+  details.mis > summary { border-left:3px solid var(--blood); padding-left:10px; }
 </style>
 
 <nav class="nav-sitio" aria-label="Sections">
@@ -998,9 +1001,9 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     if (orden === 'dif') locs.sort(function (a, b) { return (med[a] || 1) - (med[b] || 1); });
     else locs.sort(function (a, b) { return a.localeCompare(b, 'fr'); });
 
-    var h = '<thead><tr><th></th>' + ks.map(function (k) { return '<th><div>' + k + '</div></th>'; }).join('') + '</tr></thead><tbody>';
+    var h = '<thead><tr><th></th>' + ks.map(function (k) { return '<th' + (misKillers[k] ? ' class="mia"' : '') + '><div>' + k + '</div></th>'; }).join('') + '</tr></thead><tbody>';
     locs.forEach(function (loc) {
-      h += '<tr><th>' + loc + '</th>';
+      h += '<tr><th' + (misLocs[loc] ? ' class="mia"' : '') + '>' + loc + '</th>';
       ks.forEach(function (k) {
         var c = celda(k, loc);
         if (!c || c.g < minCelda()) { h += '<td><div class="cell nd">·</div></td>'; return; }
@@ -1360,6 +1363,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     return '<div class="top"><h3>' + titulo + '</h3><p class="sub">' + sub + '</p><ol>' +
       filas.map(function (f) {
         return '<li><span class="n">' + (f.href ? '<a href="' + f.href + '">' + esc(f.n) + '</a>' : esc(f.n)) +
+          (f.mia ? '<span class="mine">À vous</span>' : '') +
           (f.s ? '<i>' + esc(f.s) + '</i>' : '') + '</span>' +
           '<span class="v">' + f.v + (f.g ? '<em>' + f.g + '</em>' : '') + '</span></li>';
       }).join('') + '</ol></div>';
@@ -1372,11 +1376,11 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
 
     // Killers, por lo que dejan ganar.
     var ks = Object.keys(D.killers).map(function (k) {
-      return { n: k, s: D.killers[k].box || 'Killer alternatif', wr: D.killers[k].wr, g: D.killers[k].g,
+      return { mia: !!misKillers[k], n: k, s: D.killers[k].box || 'Killer alternatif', wr: D.killers[k].wr, g: D.killers[k].g,
                href: FICHA[k] || null };
     }).filter(function (x) { return x.g >= 100; });
     var porWr = function (a, b) { return a.wr - b.wr; };
-    var fmt = function (x) { return { n: x.n, s: x.s, v: pc(x.wr), g: 'victoires · ' + x.g + ' parties', href: x.href }; };
+    var fmt = function (x) { return { mia: x.mia, n: x.n, s: x.s, v: pc(x.wr), g: 'victoires · ' + x.g + ' parties', href: x.href }; };
 
     h += tarjetaTop('Les killers les plus durs', 'Minimum 100 parties. Plus c’est bas, plus vous souffrez.',
                     ks.slice().sort(porWr).slice(0, 5).map(fmt));
@@ -1385,7 +1389,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
 
     // Mapas.
     var ls = D.locs.filter(function (r) { return r[2] >= 100; })
-      .map(function (r) { return { n: r[0], wr: r[1], g: r[2] }; });
+      .map(function (r) { return { n: r[0], wr: r[1], g: r[2], mia: !!misLocs[r[0]] }; });
     h += tarjetaTop('Les lieux les plus durs', 'Minimum 100 parties, contre n’importe quel killer.',
                     ls.slice().sort(porWr).slice(0, 5).map(fmt));
 
@@ -1394,7 +1398,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     Object.keys(D.cells).forEach(function (loc) {
       Object.keys(D.cells[loc]).forEach(function (k) {
         var c = D.cells[loc][k];
-        if (c[0] >= 30) combos.push({ n: k, s: 'à ' + loc, wr: c[1], g: c[0], href: FICHA[k] || null });
+        if (c[0] >= 30) combos.push({ mia: !!(misKillers[k] && misLocs[loc]), n: k, s: 'à ' + loc, wr: c[1], g: c[0], href: FICHA[k] || null });
       });
     });
     h += tarjetaTop('Les combinaisons impossibles', 'Killer et lieu ensemble, minimum 30 parties.',
@@ -1407,7 +1411,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
       var out = [];
       Object.keys(D.killers).forEach(function (k) {
         (D.killers[k].secs[clave] || []).forEach(function (x) {
-          if (x[0] !== 'Unrevealed' && x[2] >= 50) out.push({ n: x[0], s: k, wr: x[1], g: x[2], href: FICHA[k] || null });
+          if (x[0] !== 'Unrevealed' && x[2] >= 50) out.push({ mia: !!misKillers[k], n: x[0], s: k, wr: x[1], g: x[2], href: FICHA[k] || null });
         });
       });
       return out.sort(porWr).slice(0, 5).map(fmt);
@@ -2005,6 +2009,15 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
 })();
 </script>
 
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

@@ -289,7 +289,7 @@ def pagina_killer(nombre, k, lang, tx):
     aqui = next((m for m in mapas if m[0] == propio), None)
     wr = pc(k["wr"], lang)
     h = [f'<p class="eyebrow">{t["killer_eb"].format(n=len(mapas))}</p>',
-         f'<h1>{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
+         f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
     dif = (k["wr"] - P.MEDIA) * 100
     intro = t["intro"].format(g=num(k["g"], lang), k=nombre, wr=wr, media=pc(P.MEDIA, lang))
     intro += t["intro_up"] if dif > 4 else t["intro_down"] if dif < -4 else t["intro_eq"]
@@ -354,7 +354,7 @@ def pagina_caja(f, lang, tx):
     k = P.KILLERS.get(f["killer"], {})
     wr = pc(f["wr"], lang)
     h = [f'<p class="eyebrow">{t["box_eb"].format(f=f.get("fnum", ""), g=f["plays"])}</p>',
-         f'<h1>{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
+         f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
     dif = (f["wr"] - P.MEDIA) * 100
     media = pc(P.MEDIA, lang)
     ds = f"{abs(dif):.1f}" if lang == "en" else f"{abs(dif):.1f}".replace(".", ",")
@@ -413,10 +413,10 @@ def hub(lang, generadas):
          f'<p class="dek">{t["hub_dek"].format(n=n, media=pc(m["wr"], lang))}</p></header>',
          f'<p>{t["hub_lab"]}</p>',
          f'<h2>{t["hub_k"]}</h2>',
-         P.tabla(t["hub_th_k"], [[f'<a href="{P.slug(nm)}.html">{nm}</a>', pc(k["wr"], lang), num(k["g"], lang)]
+         P.tabla(t["hub_th_k"], [[f'<a href="{P.slug(nm)}.html" data-caja="{k.get("box") or ""}">{nm}</a>', pc(k["wr"], lang), num(k["g"], lang)]
                                  for nm, k in ks]),
          f'<h2>{t["hub_c"]}</h2>',
-         P.tabla(t["hub_th_c"], [[f'<a href="{P.slug(f["film"])}.html">{f["film"]}</a>', pc(f["wr"], lang), f["plays"]]
+         P.tabla(t["hub_th_c"], [[f'<a href="{P.slug(f["film"])}.html" data-caja="{f["film"]}">{f["film"]}</a>', pc(f["wr"], lang), f["plays"]]
                                  for f in cs]),
          f'<div class="aviso"><p>{t["hub_reg"].format(f="{FORM}")}</p></div>']
     return (t["hub_title"].format(n=n), t["hub_desc"].format(n=n)[:158], "\n".join(h))

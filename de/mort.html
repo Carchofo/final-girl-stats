@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 3 Karten mit Daten</p>
-<h1>Mort<span class="roja">69,4 % Siegquote</span></h1><p class="idiomas"><a href="../mort.html" hreflang="es">ES</a> · <a href="../en/mort.html" hreflang="en">EN</a> · <a href="../fr/mort.html" hreflang="fr">FR</a> · <a href="../de/mort.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/mort.html" hreflang="it">IT</a></p>
+<h1 data-caja="Shriek">Mort<span class="roja">69,4 % Siegquote</span></h1><p class="idiomas"><a href="../mort.html" hreflang="es">ES</a> · <a href="../en/mort.html" hreflang="en">EN</a> · <a href="../fr/mort.html" hreflang="fr">FR</a> · <a href="../de/mort.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/mort.html" hreflang="it">IT</a></p>
 <p class="dek">In <b>314 erfassten Partien</b> besiegt das Final Girl Mort in 69,4 % der Fälle. Der Schnitt des ganzen Spiels liegt bei 65,5 %, also genau im Schnitt.</p>
 <h2>Wer ist Mort</h2><p>Grauer Kapuzenpulli, rot-schwarze Hose und eine einäugige Geistermaske. Der Killer von Shriek, das auf einer Brettspielmesse spielt.</p>
 <h3>Wie Mort spielt</h3><p>Horror 3 und keine Lebenspunkte, bis er enttarnt wird. Er startet als einer von 10 Verdächtigen, allesamt Killer aus anderen Filmen: Du musst fünf von ihnen verhören und unter Druck setzen, um sie auszuschließen.</p>
@@ -132,6 +132,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Finale-Karte</th><th class=n>Siegquote</th><th class=n>Partien</th></tr></thead><tbody><tr><td>Mort as H.U.N.T.E.R.</td><td class=n>57,1 %</td><td class=n>28</td></tr><tr><td>Secret Epic Finale</td><td class=n>61,0 %</td><td class=n>41</td></tr><tr><td>Mort as Dr. Fright</td><td class=n>64,3 %</td><td class=n>28</td></tr><tr><td>Mort as Ratchet Lady</td><td class=n>71,8 %</td><td class=n>39</td></tr><tr><td>Mort as Tormentor</td><td class=n>73,9 %</td><td class=n>23</td></tr><tr><td>Mort as Razorface</td><td class=n>75,0 %</td><td class=n>28</td></tr><tr><td>Mort as Big Bad Wolf</td><td class=n>78,3 %</td><td class=n>23</td></tr><tr><td>Mort as Geppetto</td><td class=n>81,8 %</td><td class=n>22</td></tr><tr><td>Mort as Hans</td><td class=n>85,0 %</td><td class=n>20</td></tr><tr><td>Mort as Krampus</td><td class=n>87,1 %</td><td class=n>31</td></tr></tbody></table></div>
 <p>Die schlimmste Karte ist <b>Mort as H.U.N.T.E.R.</b>: Mit ihr im Spiel wird nur in 57,1 % der Fälle gewonnen, bei 28 Partien.</p>
 <h2>Wie man die Partie beginnt</h2><p>Die vier Eröffnungen und wann man welche nutzt, stehen in den <a href="salidas.html">Eröffnungsstrategien</a>. Um diesen Killer auf allen Karten zu vergleichen, siehe die <a href="index.html">interaktive Statistik</a>.</p><footer><p>Daten aus der <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">öffentlichen Tabelle</a> der Final-Girl-Community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">trag deine Partien ein</a>). Zurück zu <a href="fichas.html">allen Killern und Boxen</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

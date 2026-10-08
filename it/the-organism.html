@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 mappe con dati</p>
-<h1>The Organism<span class="roja">73,5% di vittorie</span></h1><p class="idiomas"><a href="../the-organism.html" hreflang="es">ES</a> · <a href="../en/the-organism.html" hreflang="en">EN</a> · <a href="../fr/the-organism.html" hreflang="fr">FR</a> · <a href="../de/the-organism.html" hreflang="de">DE</a> · <a href="../it/the-organism.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Panic at Station 2891">The Organism<span class="roja">73,5% di vittorie</span></h1><p class="idiomas"><a href="../the-organism.html" hreflang="es">ES</a> · <a href="../en/the-organism.html" hreflang="en">EN</a> · <a href="../fr/the-organism.html" hreflang="fr">FR</a> · <a href="../de/the-organism.html" hreflang="de">DE</a> · <a href="../it/the-organism.html" hreflang="it" aria-current="true">IT</a></p>
 <p class="dek">Su <b>750 partite registrate</b>, la Final Girl batte The Organism nel 73,5% dei casi. La media di tutto il gioco è 65,5%, quindi è sopra la media: uno dei killer più abbordabili.</p>
 <h2>Chi è The Organism</h2><p>Umanoidi mutati coperti di pustole, in tre varianti: Veloce, Forte e Resistente.</p>
 <h3>Come gioca The Organism</h3><p>Ogni variante parte con una salute diversa (5, 6 e 7), ma tutte partono con Horror 5, il livello iniziale più alto della Serie 2.</p>
@@ -131,6 +131,15 @@
 <p>La pescata peggiore è <b>Regenerative Assimilation</b>: con lei in gioco la partita si vince solo nel 67,0% dei casi, su 185 partite.</p>
 <h2>Cosa dicono i giocatori</h2><div class="aviso"><p>Strategia dal forum: testa il prima possibile le due vittime esposte più vicine al laboratorio e lascia che la terza muti da sola. Tenere vivo un organismo a bassa salute ti dà il dado dell'adrenalina ed evita gli effetti "se non c'è nessun organismo". L'ascia è ideale perché hanno poca salute. E puoi mandare le vittime all'elicottero via radio senza essere lì di persona.</p></div>
 <h2>Come iniziare la partita</h2><p>Le quattro aperture e quando usarle sono nelle <a href="salidas.html">strategie di apertura</a>. Per confrontare questo killer su ogni mappa, vedi le <a href="index.html">statistiche interattive</a>.</p><footer><p>Dati dal <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">foglio pubblico</a> della community di Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">registra le tue partite</a>). Torna a <a href="fichas.html">tutti i killer e le scatole</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

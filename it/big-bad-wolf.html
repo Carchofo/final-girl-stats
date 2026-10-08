@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 10 mappe con dati</p>
-<h1>Big Bad Wolf<span class="roja">70,6% di vittorie</span></h1><p class="idiomas"><a href="../big-bad-wolf.html" hreflang="es">ES</a> · <a href="../en/big-bad-wolf.html" hreflang="en">EN</a> · <a href="../fr/big-bad-wolf.html" hreflang="fr">FR</a> · <a href="../de/big-bad-wolf.html" hreflang="de">DE</a> · <a href="../it/big-bad-wolf.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Once Upon a Full Moon">Big Bad Wolf<span class="roja">70,6% di vittorie</span></h1><p class="idiomas"><a href="../big-bad-wolf.html" hreflang="es">ES</a> · <a href="../en/big-bad-wolf.html" hreflang="en">EN</a> · <a href="../fr/big-bad-wolf.html" hreflang="fr">FR</a> · <a href="../de/big-bad-wolf.html" hreflang="de">DE</a> · <a href="../it/big-bad-wolf.html" hreflang="it" aria-current="true">IT</a></p>
 <p class="dek">Su <b>722 partite registrate</b>, la Final Girl batte Big Bad Wolf nel 70,6% dei casi. La media di tutto il gioco è 65,5%, quindi è sopra la media: uno dei killer più abbordabili.</p>
 <h2>Chi è Big Bad Wolf</h2><p>Un gigantesco lupo mannaro albino dal pelo bianco e gli occhi rossi luminosi.</p>
 <h3>Come gioca Big Bad Wolf</h3><p>9 punti salute e Horror 5. Ha due modalità: parte in Track e passa a Slay quando viene rivelato il Dark Power. Diverse carte Terror fanno cose diverse a seconda della modalità.</p>
@@ -133,6 +133,15 @@
 <p>La pescata peggiore è <b>Tasty Treats</b>: con lei in gioco la partita si vince solo nel 60,6% dei casi, su 99 partite.</p>
 <h2>Cosa dicono i giocatori</h2><div class="aviso"><p>Attenzione a una cosa: ha un Dark Power che annulla il danno di Retaliate e di qualsiasi reazione che colpisce di rimando. Blocca comunque l'attacco, ma non gli fai nulla. Se esce, cambia piano.</p></div>
 <h2>Come iniziare la partita</h2><p>Le quattro aperture e quando usarle sono nelle <a href="salidas.html">strategie di apertura</a>. Per confrontare questo killer su ogni mappa, vedi le <a href="index.html">statistiche interattive</a>.</p><footer><p>Dati dal <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">foglio pubblico</a> della community di Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">registra le tue partite</a>). Torna a <a href="fichas.html">tutti i killer e le scatole</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

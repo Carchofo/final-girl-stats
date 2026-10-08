@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Scatola · S1·F4 · 233 partite</p>
-<h1>Carnage at the Carnival<span class="roja">44,2% di vittorie</span></h1><p class="idiomas"><a href="../carnage-at-the-carnival.html" hreflang="es">ES</a> · <a href="../en/carnage-at-the-carnival.html" hreflang="en">EN</a> · <a href="../fr/carnage-at-the-carnival.html" hreflang="fr">FR</a> · <a href="../de/carnage-at-the-carnival.html" hreflang="de">DE</a> · <a href="../it/carnage-at-the-carnival.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Carnage at the Carnival">Carnage at the Carnival<span class="roja">44,2% di vittorie</span></h1><p class="idiomas"><a href="../carnage-at-the-carnival.html" hreflang="es">ES</a> · <a href="../en/carnage-at-the-carnival.html" hreflang="en">EN</a> · <a href="../fr/carnage-at-the-carnival.html" hreflang="fr">FR</a> · <a href="../de/carnage-at-the-carnival.html" hreflang="de">DE</a> · <a href="../it/carnage-at-the-carnival.html" hreflang="it" aria-current="true">IT</a></p>
 <p class="dek">Geppetto su Carnival of Blood. Su 233 partite registrate si vince nel 44,2% dei casi, 21,3 punti sotto la media del gioco (65,5%).</p>
 <h2>Cosa la rende particolare</h2>
 <p>3 marionette come tirapiedi. Regola del Maestro Immortale: non puoi uccidere Geppetto finché tutte e 3 sono in gioco. Trappole sugli oggetti e sulle carte Terror. Può sembrare troppo facile se elimini presto le marionette.</p>
@@ -131,6 +131,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Carta Finale</th><th class=n>Vittorie</th><th class=n>Partite</th></tr></thead><tbody><tr><td>Unrevealed</td><td class=n>56,9%</td><td class=n>387</td></tr><tr><td>No Strings Attached</td><td class=n>73,0%</td><td class=n>126</td></tr><tr><td>Remember Them?</td><td class=n>73,5%</td><td class=n>102</td></tr><tr><td>I Made Your Friends</td><td class=n>74,5%</td><td class=n>102</td></tr><tr><td>Puppet Bombs</td><td class=n>81,0%</td><td class=n>42</td></tr></tbody></table></div>
 <h2>Consigli di chi l'ha giocata</h2><div class="aviso"><p>Attenzione quando cerchi qui: le trappole sugli oggetti sono cattive. E non cercare di finirlo prima di aver tolto le marionette.</p></div>
 <h2>Come iniziare la partita</h2><p>Le quattro aperture, con quale usare in base alla preparazione, sono nelle <a href="salidas.html">strategie di apertura</a>.</p><footer><p>Dati dal <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">foglio pubblico</a> della community di Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">registra le tue partite</a>). Torna a <a href="fichas.html">tutti i killer e le scatole</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

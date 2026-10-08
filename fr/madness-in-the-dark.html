@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Boîte · S2·F5 · 148 parties</p>
-<h1>Madness in the Dark<span class="roja">50,0 % de victoires</span></h1><p class="idiomas"><a href="../madness-in-the-dark.html" hreflang="es">ES</a> · <a href="../en/madness-in-the-dark.html" hreflang="en">EN</a> · <a href="../fr/madness-in-the-dark.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/madness-in-the-dark.html" hreflang="de">DE</a> · <a href="../it/madness-in-the-dark.html" hreflang="it">IT</a></p>
+<h1 data-caja="Madness in the Dark">Madness in the Dark<span class="roja">50,0 % de victoires</span></h1><p class="idiomas"><a href="../madness-in-the-dark.html" hreflang="es">ES</a> · <a href="../en/madness-in-the-dark.html" hreflang="en">EN</a> · <a href="../fr/madness-in-the-dark.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/madness-in-the-dark.html" hreflang="de">DE</a> · <a href="../it/madness-in-the-dark.html" hreflang="it">IT</a></p>
 <p class="dek">Ratchet Lady sur Wolfe Asylum. Sur 148 parties enregistrées, on gagne dans 50,0 % des cas, 15,5 points en dessous de la moyenne du jeu (65,5 %).</p>
 <h2>Ce qui la rend unique</h2>
 <p>Elle se soigne sans limite tant que tu ne l'attaques pas. Cartes Amped (actions améliorées) via le système de pilules. Décrite comme imprévisible : cela dépend énormément du moment où tu t'en prends à elle.</p>
@@ -132,6 +132,15 @@
 <h2>Conseils de joueurs</h2><div class="aviso"><p>Elle ne te poursuit pas elle-même ; elle envoie des Maniacs qui ne viennent que pour toi, sans relâche. Et attention : les Maniacs causent une perte de vie directe, qui ne peut PAS être bloquée par Guard ni Retaliate. Les cartes défensives servent à peu de chose ici. Mise sur la mobilité, sauve vite et garde toujours une attaque en main.</p></div>
 <h2>Ce qu'en disent les critiques</h2><div class="aviso"><p><b>Très bien noté pour son design, et l'un des plus difficiles du jeu. Trois avis concordent : l'asile et les pilules sont adorés, Ratchet Lady frustre. Pas une boîte pour débuter.</b></p></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures, avec laquelle choisir selon la mise en place, sont dans les <a href="salidas.html">stratégies d'ouverture</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

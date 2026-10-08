@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S2·F1 · 202 Partien</p>
-<h1>Into the Void<span class="roja">74,8 % Siegquote</span></h1><p class="idiomas"><a href="../into-the-void.html" hreflang="es">ES</a> · <a href="../en/into-the-void.html" hreflang="en">EN</a> · <a href="../fr/into-the-void.html" hreflang="fr">FR</a> · <a href="../de/into-the-void.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/into-the-void.html" hreflang="it">IT</a></p>
+<h1 data-caja="Into the Void">Into the Void<span class="roja">74,8 % Siegquote</span></h1><p class="idiomas"><a href="../into-the-void.html" hreflang="es">ES</a> · <a href="../en/into-the-void.html" hreflang="en">EN</a> · <a href="../fr/into-the-void.html" hreflang="fr">FR</a> · <a href="../de/into-the-void.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/into-the-void.html" hreflang="it">IT</a></p>
 <p class="dek">Evomorph auf USS Konrad. In 202 erfassten Partien wird in 74,8 % der Fälle gewonnen, 9,2 Punkte über dem Spielschnitt (65,5 %).</p>
 <h2>Was sie besonders macht</h2>
 <p>Entwickelt sich in 3 Stufen (Hatchling → Youngling → Adult). Nach dem ersten Opfer versteckt er sich und greift aus dem Hinterhalt an. Eine der vielseitigsten Boxen zum Mischen, weil ihre Mechanik auf jeder Karte funktioniert. Die Regeln sind leicht, sobald sie einmal sitzen.</p>
@@ -131,6 +131,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Finale-Karte</th><th class=n>Siegquote</th><th class=n>Partien</th></tr></thead><tbody><tr><td>The Perfect Organism</td><td class=n>59,1 %</td><td class=n>110</td></tr><tr><td>Blitz of Death</td><td class=n>63,0 %</td><td class=n>100</td></tr><tr><td>Unrevealed</td><td class=n>78,7 %</td><td class=n>506</td></tr><tr><td>Death in the Dark</td><td class=n>85,6 %</td><td class=n>111</td></tr><tr><td>Impenetrable Armor</td><td class=n>89,5 %</td><td class=n>38</td></tr></tbody></table></div>
 <h2>Tipps von Spielern</h2><div class="aviso"><p>Neben dem Töten gibt es alternative Siege: das Schiff selbst zerstören und entkommen oder ihn durch eine Schleuse ins All befördern. Wenn der Kampf gegen dich läuft, wechsle das Ziel.</p></div>
 <h2>Wie man die Partie beginnt</h2><p>Die vier Eröffnungen, und welche je nach Aufbau passt, stehen in den <a href="salidas.html">Eröffnungsstrategien</a>.</p><footer><p>Daten aus der <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">öffentlichen Tabelle</a> der Final-Girl-Community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">trag deine Partien ein</a>). Zurück zu <a href="fichas.html">allen Killern und Boxen</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

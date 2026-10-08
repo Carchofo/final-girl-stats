@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 11 cartes avec données</p>
-<h1>Ratchet Lady<span class="roja">66,6 % de victoires</span></h1><p class="idiomas"><a href="../ratchet-lady.html" hreflang="es">ES</a> · <a href="../en/ratchet-lady.html" hreflang="en">EN</a> · <a href="../fr/ratchet-lady.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/ratchet-lady.html" hreflang="de">DE</a> · <a href="../it/ratchet-lady.html" hreflang="it">IT</a></p>
+<h1 data-caja="Madness in the Dark">Ratchet Lady<span class="roja">66,6 % de victoires</span></h1><p class="idiomas"><a href="../ratchet-lady.html" hreflang="es">ES</a> · <a href="../en/ratchet-lady.html" hreflang="en">EN</a> · <a href="../fr/ratchet-lady.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/ratchet-lady.html" hreflang="de">DE</a> · <a href="../it/ratchet-lady.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>683 parties enregistrées</b>, la Final Girl bat Ratchet Lady dans 66,6 % des cas. La moyenne du jeu est de 65,5 %, donc c'est pile dans la moyenne.</p>
 <h2>Qui est Ratchet Lady</h2><p>Une infirmière en blouse déchirée, la tête bandée sur les yeux. Il lui manque la main droite, remplacée par une armature métallique, et elle porte un couteau.</p>
 <h3>Comment joue Ratchet Lady</h3><p>Horror 5 et 6 points de vie, sans limite maximale de vie. Elle vient avec des sbires, les Maniacs, et en échange tu reçois des cartes d'action Calm.</p>
@@ -134,6 +134,15 @@
 <p>Le pire tirage est <b>Hold Her Down</b> : avec elle en jeu, la partie n'est gagnée que dans 62,1 % des cas, sur 103 parties.</p>
 <h2>Ce qu'en disent les joueurs</h2><div class="aviso"><p>Elle ne te poursuit pas elle-même ; elle envoie des Maniacs qui ne viennent que pour toi, sans relâche. Et attention : les Maniacs causent une perte de vie directe, qui ne peut PAS être bloquée par Guard ni Retaliate. Les cartes défensives servent à peu de chose ici. Mise sur la mobilité, sauve vite et garde toujours une attaque en main.</p></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S3·F5 · 173 games</p>
-<h1>Don't Make a Sound<span class="roja">56.1% win rate</span></h1><p class="idiomas"><a href="../don-t-make-a-sound.html" hreflang="es">ES</a> · <a href="../en/don-t-make-a-sound.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/don-t-make-a-sound.html" hreflang="fr">FR</a> · <a href="../de/don-t-make-a-sound.html" hreflang="de">DE</a> · <a href="../it/don-t-make-a-sound.html" hreflang="it">IT</a></p>
+<h1 data-caja="Don't Make a Sound">Don't Make a Sound<span class="roja">56.1% win rate</span></h1><p class="idiomas"><a href="../don-t-make-a-sound.html" hreflang="es">ES</a> · <a href="../en/don-t-make-a-sound.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/don-t-make-a-sound.html" hreflang="fr">FR</a> · <a href="../de/don-t-make-a-sound.html" hreflang="de">DE</a> · <a href="../it/don-t-make-a-sound.html" hreflang="it">IT</a></p>
 <p class="dek">The Eyeless on Utopia. Across 173 recorded games it is won 56.1% of the time, 9.5 points below the game average (65.5%).</p>
 <h2>What makes it different</h2>
 <p>Noise mechanic: your own actions make noise, which draws the killer in and activates it. An interesting concept, but the community feels it is not taken all the way.</p>
@@ -131,6 +131,15 @@
 <h2>Finale cards</h2>
 <div class="tabla-wrap"><table><thead><tr><th>Finale card</th><th class=n>Win rate</th><th class=n>Games</th></tr></thead><tbody><tr><td>Unrevealed</td><td class=n>53.2%</td><td class=n>158</td></tr><tr><td>No More Running</td><td class=n>62.0%</td><td class=n>100</td></tr><tr><td>It Knows My Moves</td><td class=n>63.5%</td><td class=n>96</td></tr><tr><td>It Can Hear Everything</td><td class=n>68.6%</td><td class=n>86</td></tr><tr><td>Final Slash</td><td class=n>98.0%</td><td class=n>50</td></tr></tbody></table></div>
 <h2>How to start the game</h2><p>The four openings, with which one to use depending on the setup, are in the <a href="salidas.html">opening strategies</a>.</p><footer><p>Data from the <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">public tracking sheet</a> kept by the Final Girl community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">log your games</a>). Back to <a href="fichas.html">all killers and boxes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

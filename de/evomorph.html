@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 Karten mit Daten</p>
-<h1>Evomorph<span class="roja">75,4 % Siegquote</span></h1><p class="idiomas"><a href="../evomorph.html" hreflang="es">ES</a> · <a href="../en/evomorph.html" hreflang="en">EN</a> · <a href="../fr/evomorph.html" hreflang="fr">FR</a> · <a href="../de/evomorph.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/evomorph.html" hreflang="it">IT</a></p>
+<h1 data-caja="Into the Void">Evomorph<span class="roja">75,4 % Siegquote</span></h1><p class="idiomas"><a href="../evomorph.html" hreflang="es">ES</a> · <a href="../en/evomorph.html" hreflang="en">EN</a> · <a href="../fr/evomorph.html" hreflang="fr">FR</a> · <a href="../de/evomorph.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/evomorph.html" hreflang="it">IT</a></p>
 <p class="dek">In <b>877 erfassten Partien</b> besiegt das Final Girl Evomorph in 75,4 % der Fälle. Der Schnitt des ganzen Spiels liegt bei 65,5 %, also darüber: einer der leichteren Killer.</p>
 <h2>Wer ist Evomorph</h2><p>Ein insektoider Alien mit weiß-rotem Exoskelett, Skorpionschwanz und ohne sichtbare Augen. Er wurde versteckt in der Fracht an Bord gebracht.</p>
 <h3>Wie Evomorph spielt</h3><p>Er entwickelt sich durch Töten weiter. Er startet als langsamer, aber vernichtender Hatchling, wird zum schnellen und zerbrechlichen Youngling und endet als langsamer, starker Adult. Seine Lebenspunkte steigen von 4 auf 10.</p>
@@ -133,6 +133,15 @@
 <p>Die schlimmste Karte ist <b>The Perfect Organism</b>: Mit ihr im Spiel wird nur in 59,1 % der Fälle gewonnen, bei 110 Partien.</p>
 <h2>Was Spieler sagen</h2><div class="aviso"><p>Neben dem Töten gibt es alternative Siege: das Schiff selbst zerstören und entkommen oder ihn durch eine Schleuse ins All befördern. Wenn der Kampf gegen dich läuft, wechsle das Ziel.</p></div>
 <h2>Wie man die Partie beginnt</h2><p>Die vier Eröffnungen und wann man welche nutzt, stehen in den <a href="salidas.html">Eröffnungsstrategien</a>. Um diesen Killer auf allen Karten zu vergleichen, siehe die <a href="index.html">interaktive Statistik</a>.</p><footer><p>Daten aus der <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">öffentlichen Tabelle</a> der Final-Girl-Community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">trag deine Partien ein</a>). Zurück zu <a href="fichas.html">allen Killern und Boxen</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

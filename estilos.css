@@ -559,5 +559,8 @@
   .bar-cab.conth { grid-template-columns:34px 1fr 56px 46px; }
   .bar-cab.conth::before { content:""; }
   .bar-cab span:nth-last-child(-n+2) { text-align:right; }
+  .mx th.mia { color:var(--blood); }
+  .mx th.mia div::after, .mx tbody th.mia::after { content:" ●"; font-size:8px; vertical-align:2px; }
+  details.mis > summary { border-left:3px solid var(--blood); padding-left:10px; }
 
 .reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}

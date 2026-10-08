@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 8 mapas con datos</p>
-<h1>Krampus<span class="roja">en 58,3% de victorias</span></h1><p class="idiomas"><a href="krampus.html" hreflang="es" aria-current="true">ES</a> · <a href="en/krampus.html" hreflang="en">EN</a> · <a href="fr/krampus.html" hreflang="fr">FR</a> · <a href="de/krampus.html" hreflang="de">DE</a> · <a href="it/krampus.html" hreflang="it">IT</a></p>
+<h1 data-caja="The North Pole Nightmare">Krampus<span class="roja">en 58,3% de victorias</span></h1><p class="idiomas"><a href="krampus.html" hreflang="es" aria-current="true">ES</a> · <a href="en/krampus.html" hreflang="en">EN</a> · <a href="fr/krampus.html" hreflang="fr">FR</a> · <a href="de/krampus.html" hreflang="de">DE</a> · <a href="it/krampus.html" hreflang="it">IT</a></p>
 <p class="dek">Sobre <b>602 partidas</b> registradas, la Final Girl gana el 58,3% de las veces contra Krampus. La media de todo el juego es 65,5%, así que está por debajo: es de los duros.</p>
 <h2>Quién es</h2>
 <p>Criatura bípeda con cuernos enormes, pelaje gris y lengua de reptil. Según el lore fue humano antes de su destierro.</p>
@@ -139,6 +139,15 @@
 
 <h2>Cómo salir contra él</h2>
 <p>Las cuatro aperturas y cuándo usar cada una están en la <a href="salidas.html">estrategias de salida</a>. Para cruzar a este killer con cualquier otro mapa, la matriz completa está en <a href="index.html">las estadísticas</a>.</p><footer><p>Datos de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">hoja pública de seguimiento</a> de la comunidad de Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">registra tus partidas</a>). Vuelve a <a href="index.html">todas las estadísticas</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 6 Karten mit Daten</p>
-<h1>Hunter<span class="roja">70,9 % Siegquote</span></h1><p class="idiomas"><a href="../hunter.html" hreflang="es">ES</a> · <a href="../en/hunter.html" hreflang="en">EN</a> · <a href="../fr/hunter.html" hreflang="fr">FR</a> · <a href="../de/hunter.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/hunter.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Killer from Tomorrow">Hunter<span class="roja">70,9 % Siegquote</span></h1><p class="idiomas"><a href="../hunter.html" hreflang="es">ES</a> · <a href="../en/hunter.html" hreflang="en">EN</a> · <a href="../fr/hunter.html" hreflang="fr">FR</a> · <a href="../de/hunter.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/hunter.html" hreflang="it">IT</a></p>
 <p class="dek">In <b>470 erfassten Partien</b> besiegt das Final Girl Hunter in 70,9 % der Fälle. Der Schnitt des ganzen Spiels liegt bei 65,5 %, also darüber: einer der leichteren Killer.</p>
 <h2>Wer ist Hunter</h2><p>Ein Androiden-Jäger. Tatsächlich sind es zwei: der Mark V, groß und mit Kapuze, der sich als Mensch tarnt, und der Mark X, agiler und besser gebaut.</p>
 <h3>Wie Hunter spielt</h3><p>15 Lebenspunkte und Horror 5, aber diese Lebenspunkte zählen nur für den Mark X. Ein Zähler tauscht gegen Ende den Mark V gegen den Mark X aus.</p>
@@ -133,6 +133,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Finale-Karte</th><th class=n>Siegquote</th><th class=n>Partien</th></tr></thead><tbody><tr><td>Unrevealed</td><td class=n>43,5 %</td><td class=n>168</td></tr><tr><td>Mark X-1000</td><td class=n>71,8 %</td><td class=n>39</td></tr><tr><td>"Termination Mode... Active"</td><td class=n>75,0 %</td><td class=n>72</td></tr><tr><td>Adaptive A.I.</td><td class=n>92,5 %</td><td class=n>94</td></tr><tr><td>Relentless Pursuit</td><td class=n>94,8 %</td><td class=n>96</td></tr></tbody></table></div>
 <p>Die schlimmste Karte ist <b>Unrevealed</b>: Mit ihr im Spiel wird nur in 43,5 % der Fälle gewonnen, bei 168 Partien.</p>
 <h2>Wie man die Partie beginnt</h2><p>Die vier Eröffnungen und wann man welche nutzt, stehen in den <a href="salidas.html">Eröffnungsstrategien</a>. Um diesen Killer auf allen Karten zu vergleichen, siehe die <a href="index.html">interaktive Statistik</a>.</p><footer><p>Daten aus der <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">öffentlichen Tabelle</a> der Final-Girl-Community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">trag deine Partien ein</a>). Zurück zu <a href="fichas.html">allen Killern und Boxen</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

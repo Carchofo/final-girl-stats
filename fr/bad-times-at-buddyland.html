@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Boîte · S4·F1 · 89 parties</p>
-<h1>Bad Times at Buddyland<span class="roja">60,7 % de victoires</span></h1><p class="idiomas"><a href="../bad-times-at-buddyland.html" hreflang="es">ES</a> · <a href="../en/bad-times-at-buddyland.html" hreflang="en">EN</a> · <a href="../fr/bad-times-at-buddyland.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/bad-times-at-buddyland.html" hreflang="de">DE</a> · <a href="../it/bad-times-at-buddyland.html" hreflang="it">IT</a></p>
+<h1 data-caja="Bad Times at Buddyland">Bad Times at Buddyland<span class="roja">60,7 % de victoires</span></h1><p class="idiomas"><a href="../bad-times-at-buddyland.html" hreflang="es">ES</a> · <a href="../en/bad-times-at-buddyland.html" hreflang="en">EN</a> · <a href="../fr/bad-times-at-buddyland.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/bad-times-at-buddyland.html" hreflang="de">DE</a> · <a href="../it/bad-times-at-buddyland.html" hreflang="it">IT</a></p>
 <p class="dek">Billy sur Buddyland. Sur 89 parties enregistrées, on gagne dans 60,7 % des cas, 4,9 points en dessous de la moyenne du jeu (65,5 %).</p>
 <div class="aviso"><h3>Échantillon réduit</h3><p>Seulement 89 parties enregistrées. Réparties entre Dark Powers, Finales et Setups, chaque détail en compte très peu : à prendre comme un indice, pas comme un fait.</p></div>
 <h2>Ce qui la rend unique</h2>
@@ -132,6 +132,15 @@
 <h2>Cartes Finale</h2>
 <div class="tabla-wrap"><table><thead><tr><th>Carte Finale</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td>Encore</td><td class=n>40,0 %</td><td class=n>35</td></tr><tr><td>Power Surge</td><td class=n>40,7 %</td><td class=n>27</td></tr><tr><td>Unrevealed</td><td class=n>62,0 %</td><td class=n>50</td></tr><tr><td>Sizzling Power</td><td class=n>79,3 %</td><td class=n>29</td></tr><tr><td>It's Showtime!</td><td class=n>88,0 %</td><td class=n>25</td></tr></tbody></table></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures, avec laquelle choisir selon la mise en place, sont dans les <a href="salidas.html">stratégies d'ouverture</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

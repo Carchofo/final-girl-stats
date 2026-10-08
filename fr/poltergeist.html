@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 cartes avec données</p>
-<h1>Poltergeist<span class="roja">56,1 % de victoires</span></h1><p class="idiomas"><a href="../poltergeist.html" hreflang="es">ES</a> · <a href="../en/poltergeist.html" hreflang="en">EN</a> · <a href="../fr/poltergeist.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/poltergeist.html" hreflang="de">DE</a> · <a href="../it/poltergeist.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Haunting of Creech Manor">Poltergeist<span class="roja">56,1 % de victoires</span></h1><p class="idiomas"><a href="../poltergeist.html" hreflang="es">ES</a> · <a href="../en/poltergeist.html" hreflang="en">EN</a> · <a href="../fr/poltergeist.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/poltergeist.html" hreflang="de">DE</a> · <a href="../it/poltergeist.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>884 parties enregistrées</b>, la Final Girl bat Poltergeist dans 56,1 % des cas. La moyenne du jeu est de 65,5 %, donc c'est en dessous : un des plus coriaces.</p>
 <h2>Qui est Poltergeist</h2><p>Helen Creech, une femme spectrale en robe longue aux yeux lumineux, qui hante sa propre maison.</p>
 <h3>Comment joue Poltergeist</h3><p>L'exception : elle n'a pas de points de vie et on ne peut pas l'attaquer. On gagne en retrouvant Carolyn dans les paquets d'objets et en s'échappant avec elle.</p>
@@ -134,6 +134,15 @@
 <p>Le pire tirage est <b>She Will Soon Be Lost</b> : avec elle en jeu, la partie n'est gagnée que dans 51,0 % des cas, sur 98 parties.</p>
 <h2>Ce qu'en disent les joueurs</h2><div class="aviso"><p>Les armes sont inutiles ici, tout comme les cartes d'attaque. C'est la seule boîte où chercher une arme est une perte de temps : tout passe par le déplacement, la fouille et le sauvetage.</p></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

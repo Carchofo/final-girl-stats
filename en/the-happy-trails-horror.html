@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S1·F1 · 548 games</p>
-<h1>The Happy Trails Horror<span class="roja">64.0% win rate</span></h1><p class="idiomas"><a href="../the-happy-trails-horror.html" hreflang="es">ES</a> · <a href="../en/the-happy-trails-horror.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/the-happy-trails-horror.html" hreflang="fr">FR</a> · <a href="../de/the-happy-trails-horror.html" hreflang="de">DE</a> · <a href="../it/the-happy-trails-horror.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Happy Trails Horror">The Happy Trails Horror<span class="roja">64.0% win rate</span></h1><p class="idiomas"><a href="../the-happy-trails-horror.html" hreflang="es">ES</a> · <a href="../en/the-happy-trails-horror.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/the-happy-trails-horror.html" hreflang="fr">FR</a> · <a href="../de/the-happy-trails-horror.html" hreflang="de">DE</a> · <a href="../it/the-happy-trails-horror.html" hreflang="it">IT</a></p>
 <p class="dek">Hans on Camp Happy Trail. Across 548 recorded games it is won 64.0% of the time, 1.5 points below the game average (65.5%).</p>
 <h2>What makes it different</h2>
 <p>No rules of its own. It is the core rulebook and nothing else. That is why it is the box to start with: nothing distracts you from learning the game.</p>
@@ -131,6 +131,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Finale card</th><th class=n>Win rate</th><th class=n>Games</th></tr></thead><tbody><tr><td>Death Blow</td><td class=n>51.2%</td><td class=n>86</td></tr><tr><td>Unrevealed</td><td class=n>59.3%</td><td class=n>378</td></tr><tr><td>Bloodbath</td><td class=n>59.6%</td><td class=n>329</td></tr><tr><td>Dark, Darker, Darkest</td><td class=n>67.1%</td><td class=n>295</td></tr><tr><td>Butcher Bloodlust</td><td class=n>76.8%</td><td class=n>285</td></tr></tbody></table></div>
 <h2>Tips from players</h2><div class="aviso"><p>He is slow and plodding, but he hits extremely hard. Always carry one or two Guards. You can outrun him and loot the far end of the map before he gets there. Don't end your turn on his space: he stabs whoever is next to him for free.</p></div>
 <h2>How to start the game</h2><p>The four openings, with which one to use depending on the setup, are in the <a href="salidas.html">opening strategies</a>.</p><footer><p>Data from the <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">public tracking sheet</a> kept by the Final Girl community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">log your games</a>). Back to <a href="fichas.html">all killers and boxes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

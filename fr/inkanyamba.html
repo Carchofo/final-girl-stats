@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 11 cartes avec données</p>
-<h1>Inkanyamba<span class="roja">63,8 % de victoires</span></h1><p class="idiomas"><a href="../inkanyamba.html" hreflang="es">ES</a> · <a href="../en/inkanyamba.html" hreflang="en">EN</a> · <a href="../fr/inkanyamba.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/inkanyamba.html" hreflang="de">DE</a> · <a href="../it/inkanyamba.html" hreflang="it">IT</a></p>
+<h1 data-caja="Slaughter in the Groves">Inkanyamba<span class="roja">63,8 % de victoires</span></h1><p class="idiomas"><a href="../inkanyamba.html" hreflang="es">ES</a> · <a href="../en/inkanyamba.html" hreflang="en">EN</a> · <a href="../fr/inkanyamba.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/inkanyamba.html" hreflang="de">DE</a> · <a href="../it/inkanyamba.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>588 parties enregistrées</b>, la Final Girl bat Inkanyamba dans 63,8 % des cas. La moyenne du jeu est de 65,5 %, donc c'est pile dans la moyenne.</p>
 <h2>Qui est Inkanyamba</h2><p>Un homme masqué qui se croit un vengeur sacré et a oublié son propre nom. Il se bat avec deux dagues.</p>
 <h3>Comment joue Inkanyamba</h3><p>9 points de vie et Horror 4. Il augmente lui-même sa Killer Wrath à chaque phase tant qu'elle est basse : plus la partie dure, plus il devient dangereux.</p>
@@ -134,6 +134,15 @@
 <p>Le pire tirage est <b>Savage Whirlwind</b> : avec elle en jeu, la partie n'est gagnée que dans 42,4 % des cas, sur 99 parties.</p>
 <h2>Ce qu'en disent les joueurs</h2><div class="aviso"><p>Les données le confirment : c'est la boîte la plus difficile du jeu. Si tu veux jouer Inkanyamba sans souffrir, sors-le de Sacred Groves.</p></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

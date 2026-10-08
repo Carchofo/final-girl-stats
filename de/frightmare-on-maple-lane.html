@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S1·F5 · 172 Partien</p>
-<h1>Frightmare on Maple Lane<span class="roja">75,6 % Siegquote</span></h1><p class="idiomas"><a href="../frightmare-on-maple-lane.html" hreflang="es">ES</a> · <a href="../en/frightmare-on-maple-lane.html" hreflang="en">EN</a> · <a href="../fr/frightmare-on-maple-lane.html" hreflang="fr">FR</a> · <a href="../de/frightmare-on-maple-lane.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/frightmare-on-maple-lane.html" hreflang="it">IT</a></p>
+<h1 data-caja="Frightmare on Maple Lane">Frightmare on Maple Lane<span class="roja">75,6 % Siegquote</span></h1><p class="idiomas"><a href="../frightmare-on-maple-lane.html" hreflang="es">ES</a> · <a href="../en/frightmare-on-maple-lane.html" hreflang="en">EN</a> · <a href="../fr/frightmare-on-maple-lane.html" hreflang="fr">FR</a> · <a href="../de/frightmare-on-maple-lane.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/frightmare-on-maple-lane.html" hreflang="it">IT</a></p>
 <p class="dek">Dr. Fright auf Maple Lane. In 172 erfassten Partien wird in 75,6 % der Fälle gewonnen, 10,1 Punkte über dem Spielschnitt (65,5 %).</p>
 <h2>Was sie besonders macht</h2>
 <p>Traumwelt und Heizungskeller. Du brauchst die Convince-Karte, um besetzte Häuser zu betreten. Geteilte Meinungen. Oft wird sie als mechanisch schwächste Box der Serie 1 bezeichnet, hat aber ihre Verteidiger.</p>
@@ -131,6 +131,15 @@
 <h2>Finale-Karten</h2>
 <div class="tabla-wrap"><table><thead><tr><th>Finale-Karte</th><th class=n>Siegquote</th><th class=n>Partien</th></tr></thead><tbody><tr><td>Everyone Must Die</td><td class=n>70,9 %</td><td class=n>117</td></tr><tr><td>Unrevealed</td><td class=n>71,2 %</td><td class=n>423</td></tr><tr><td>Time to Die</td><td class=n>71,4 %</td><td class=n>119</td></tr><tr><td>Dream Warfare</td><td class=n>82,5 %</td><td class=n>57</td></tr><tr><td>Face Your Fright</td><td class=n>86,9 %</td><td class=n>122</td></tr></tbody></table></div>
 <h2>Wie man die Partie beginnt</h2><p>Die vier Eröffnungen, und welche je nach Aufbau passt, stehen in den <a href="salidas.html">Eröffnungsstrategien</a>.</p><footer><p>Daten aus der <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">öffentlichen Tabelle</a> der Final-Girl-Community (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">trag deine Partien ein</a>). Zurück zu <a href="fichas.html">allen Killern und Boxen</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

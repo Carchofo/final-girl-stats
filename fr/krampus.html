@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 8 cartes avec données</p>
-<h1>Krampus<span class="roja">58,3 % de victoires</span></h1><p class="idiomas"><a href="../krampus.html" hreflang="es">ES</a> · <a href="../en/krampus.html" hreflang="en">EN</a> · <a href="../fr/krampus.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/krampus.html" hreflang="de">DE</a> · <a href="../it/krampus.html" hreflang="it">IT</a></p>
+<h1 data-caja="The North Pole Nightmare">Krampus<span class="roja">58,3 % de victoires</span></h1><p class="idiomas"><a href="../krampus.html" hreflang="es">ES</a> · <a href="../en/krampus.html" hreflang="en">EN</a> · <a href="../fr/krampus.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/krampus.html" hreflang="de">DE</a> · <a href="../it/krampus.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>602 parties enregistrées</b>, la Final Girl bat Krampus dans 58,3 % des cas. La moyenne du jeu est de 65,5 %, donc c'est en dessous : un des plus coriaces.</p>
 <h2>Qui est Krampus</h2><p>Une créature bipède aux cornes énormes, au pelage gris et à la langue de reptile. Selon le lore, il était humain avant son bannissement.</p>
 <h3>Comment joue Krampus</h3><p>10 points de vie et Horror 4. Sa phase enchaîne beaucoup : il attaque, choisit de nouveau une cible, se déplace et laisse un cadeau.</p>
@@ -133,6 +133,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Carte Finale</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td>Past Midnight</td><td class=n>39,4 %</td><td class=n>66</td></tr><tr><td>Unholy Gifts</td><td class=n>53,9 %</td><td class=n>89</td></tr><tr><td>Bamf!</td><td class=n>57,1 %</td><td class=n>91</td></tr><tr><td>Unrevealed</td><td class=n>60,5 %</td><td class=n>261</td></tr><tr><td>Soul Lust</td><td class=n>70,2 %</td><td class=n>94</td></tr></tbody></table></div>
 <p>Le pire tirage est <b>Past Midnight</b> : avec elle en jeu, la partie n'est gagnée que dans 39,4 % des cas, sur 66 parties.</p>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

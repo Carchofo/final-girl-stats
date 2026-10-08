@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 11 mappe con dati</p>
-<h1>Inkanyamba<span class="roja">63,8% di vittorie</span></h1><p class="idiomas"><a href="../inkanyamba.html" hreflang="es">ES</a> · <a href="../en/inkanyamba.html" hreflang="en">EN</a> · <a href="../fr/inkanyamba.html" hreflang="fr">FR</a> · <a href="../de/inkanyamba.html" hreflang="de">DE</a> · <a href="../it/inkanyamba.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Slaughter in the Groves">Inkanyamba<span class="roja">63,8% di vittorie</span></h1><p class="idiomas"><a href="../inkanyamba.html" hreflang="es">ES</a> · <a href="../en/inkanyamba.html" hreflang="en">EN</a> · <a href="../fr/inkanyamba.html" hreflang="fr">FR</a> · <a href="../de/inkanyamba.html" hreflang="de">DE</a> · <a href="../it/inkanyamba.html" hreflang="it" aria-current="true">IT</a></p>
 <p class="dek">Su <b>588 partite registrate</b>, la Final Girl batte Inkanyamba nel 63,8% dei casi. La media di tutto il gioco è 65,5%, quindi è proprio nella media.</p>
 <h2>Chi è Inkanyamba</h2><p>Un uomo mascherato che si crede un vendicatore sacro e ha dimenticato il proprio nome. Combatte con due pugnali.</p>
 <h3>Come gioca Inkanyamba</h3><p>9 punti salute e Horror 4. A ogni fase aumenta la sua Killer Wrath finché è bassa, quindi diventa più pericoloso più la partita si allunga.</p>
@@ -134,6 +134,15 @@
 <p>La pescata peggiore è <b>Savage Whirlwind</b>: con lei in gioco la partita si vince solo nel 42,4% dei casi, su 99 partite.</p>
 <h2>Cosa dicono i giocatori</h2><div class="aviso"><p>I dati lo confermano: è la scatola più difficile del gioco. Se vuoi giocare Inkanyamba senza soffrire, toglilo da Sacred Groves.</p></div>
 <h2>Come iniziare la partita</h2><p>Le quattro aperture e quando usarle sono nelle <a href="salidas.html">strategie di apertura</a>. Per confrontare questo killer su ogni mappa, vedi le <a href="index.html">statistiche interattive</a>.</p><footer><p>Dati dal <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">foglio pubblico</a> della community di Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">registra le tue partite</a>). Torna a <a href="fichas.html">tutti i killer e le scatole</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

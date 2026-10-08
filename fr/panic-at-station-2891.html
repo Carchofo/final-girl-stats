@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Boîte · S2·F2 · 164 parties</p>
-<h1>Panic at Station 2891<span class="roja">65,2 % de victoires</span></h1><p class="idiomas"><a href="../panic-at-station-2891.html" hreflang="es">ES</a> · <a href="../en/panic-at-station-2891.html" hreflang="en">EN</a> · <a href="../fr/panic-at-station-2891.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/panic-at-station-2891.html" hreflang="de">DE</a> · <a href="../it/panic-at-station-2891.html" hreflang="it">IT</a></p>
+<h1 data-caja="Panic at Station 2891">Panic at Station 2891<span class="roja">65,2 % de victoires</span></h1><p class="idiomas"><a href="../panic-at-station-2891.html" hreflang="es">ES</a> · <a href="../en/panic-at-station-2891.html" hreflang="en">EN</a> · <a href="../fr/panic-at-station-2891.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/panic-at-station-2891.html" hreflang="de">DE</a> · <a href="../it/panic-at-station-2891.html" hreflang="it">IT</a></p>
 <p class="dek">The Organism sur Station 2891. Sur 164 parties enregistrées, on gagne dans 65,2 % des cas, pile dans la moyenne du jeu (65,5 %).</p>
 <h2>Ce qui la rend unique</h2>
 <p>Les victimes sont testées pour l'infection. Les infectées deviennent des tueurs indépendants. On l'accuse d'avoir un Upkeep lourd ; d'autres disent que les deux systèmes supplémentaires tournent bien une fois compris.</p>
@@ -129,6 +129,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Carte Finale</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td>Regenerative Assimilation</td><td class=n>67,0 %</td><td class=n>185</td></tr><tr><td>Unrevealed</td><td class=n>71,4 %</td><td class=n>171</td></tr><tr><td>Reductive Assimilation</td><td class=n>72,2 %</td><td class=n>162</td></tr><tr><td>Final Assimilation</td><td class=n>75,9 %</td><td class=n>54</td></tr><tr><td>Cognitive Assimilation</td><td class=n>81,9 %</td><td class=n>171</td></tr></tbody></table></div>
 <h2>Conseils de joueurs</h2><div class="aviso"><p>Stratégie du forum : teste dès que possible les deux victimes exposées les plus proches du labo et laisse la troisième muter toute seule. Garder un organisme en vie à faible vie te donne le dé d'adrénaline et évite les effets « s'il n'y a aucun organisme ». La hache est idéale car ils ont peu de vie. Et tu peux envoyer des victimes à l'hélicoptère par radio sans y être toi-même.</p></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures, avec laquelle choisir selon la mise en place, sont dans les <a href="salidas.html">stratégies d'ouverture</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

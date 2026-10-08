@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 1 cartes avec données</p>
-<h1>Billy<span class="roja">60,9 % de victoires</span></h1><p class="idiomas"><a href="../billy.html" hreflang="es">ES</a> · <a href="../en/billy.html" hreflang="en">EN</a> · <a href="../fr/billy.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/billy.html" hreflang="de">DE</a> · <a href="../it/billy.html" hreflang="it">IT</a></p>
+<h1 data-caja="Bad Times at Buddyland">Billy<span class="roja">60,9 % de victoires</span></h1><p class="idiomas"><a href="../billy.html" hreflang="es">ES</a> · <a href="../en/billy.html" hreflang="en">EN</a> · <a href="../fr/billy.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/billy.html" hreflang="de">DE</a> · <a href="../it/billy.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>174 parties enregistrées</b>, la Final Girl bat Billy dans 60,9 % des cas. La moyenne du jeu est de 65,5 %, donc c'est en dessous : un des plus coriaces.</p>
 <h2>Qui est Billy</h2><p>Un grand ours animatronique abîmé, sans carénage sur le bras gauche.</p>
 <h3>Comment joue Billy</h3><p>Il apporte des sbires qui apparaissent en cours de partie et agissent avant lui. Il se soigne aussi de 1 à chaque phase tant qu'une source d'énergie est active : couper le courant fait donc partie du plan.</p>
@@ -129,6 +129,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Carte Finale</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td>Encore</td><td class=n>40,0 %</td><td class=n>35</td></tr><tr><td>Power Surge</td><td class=n>40,7 %</td><td class=n>27</td></tr><tr><td>Unrevealed</td><td class=n>62,0 %</td><td class=n>50</td></tr><tr><td>Sizzling Power</td><td class=n>79,3 %</td><td class=n>29</td></tr><tr><td>It's Showtime!</td><td class=n>88,0 %</td><td class=n>25</td></tr></tbody></table></div>
 <p>Le pire tirage est <b>Encore</b> : avec elle en jeu, la partie n'est gagnée que dans 40,0 % des cas, sur 35 parties.</p>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

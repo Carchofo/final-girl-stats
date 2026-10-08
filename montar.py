@@ -265,7 +265,19 @@ CABECERA = """<!doctype html>
 # Contador de visitas sin cuenta ni cookies (hits.sh). Ver el total:
 # https://hits.sh/finalgirlstats.com.svg?view=today-total (cada vista suma 1).
 CONTADOR = '<img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">'
-PIE = "\n" + CONTADOR + "\n</body>\n</html>\n"
+# "Mis cajas": la página grande guarda en el navegador las cajas que tiene
+# cada uno (fg-mis-cajas). Aquí se leen para resaltarlas también en las
+# fichas sueltas: todo en el navegador, no se envía nada.
+MIS_CAJAS_JS = """<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>"""
+PIE = "\n" + MIS_CAJAS_JS + "\n" + CONTADOR + "\n</body>\n</html>\n"
 
 
 def estilos():
@@ -440,7 +452,7 @@ def enlaces(tipo, titulo, nota):
     items = [g for g in generadas if g["tipo"] == tipo]
     items.sort(key=lambda g: g["title"])
     li = "".join(
-        f'<li><a href="{g["salida"]}">{g["title"].split(":")[0].split(" en Final Girl")[0]}</a></li>'
+        f'<li><a href="{g["salida"]}" data-caja="{g.get("caja", "")}">{g["title"].split(":")[0].split(" en Final Girl")[0]}</a></li>'
         for g in items)
     return f'<h2>{titulo}</h2><p class="sub">{nota}</p><ul class="indice">{li}</ul>'
 

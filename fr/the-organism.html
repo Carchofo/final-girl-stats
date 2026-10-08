@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 cartes avec données</p>
-<h1>The Organism<span class="roja">73,5 % de victoires</span></h1><p class="idiomas"><a href="../the-organism.html" hreflang="es">ES</a> · <a href="../en/the-organism.html" hreflang="en">EN</a> · <a href="../fr/the-organism.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/the-organism.html" hreflang="de">DE</a> · <a href="../it/the-organism.html" hreflang="it">IT</a></p>
+<h1 data-caja="Panic at Station 2891">The Organism<span class="roja">73,5 % de victoires</span></h1><p class="idiomas"><a href="../the-organism.html" hreflang="es">ES</a> · <a href="../en/the-organism.html" hreflang="en">EN</a> · <a href="../fr/the-organism.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/the-organism.html" hreflang="de">DE</a> · <a href="../it/the-organism.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>750 parties enregistrées</b>, la Final Girl bat The Organism dans 73,5 % des cas. La moyenne du jeu est de 65,5 %, donc c'est au-dessus : un des killers les plus abordables.</p>
 <h2>Qui est The Organism</h2><p>Des humanoïdes mutants couverts de pustules, en trois variantes : Rapide, Fort et Résistant.</p>
 <h3>Comment joue The Organism</h3><p>Chaque variante commence avec des points de vie différents (5, 6 et 7), mais toutes démarrent à Horror 5, le niveau de départ le plus élevé de la Série 2.</p>
@@ -131,6 +131,15 @@
 <p>Le pire tirage est <b>Regenerative Assimilation</b> : avec elle en jeu, la partie n'est gagnée que dans 67,0 % des cas, sur 185 parties.</p>
 <h2>Ce qu'en disent les joueurs</h2><div class="aviso"><p>Stratégie du forum : teste dès que possible les deux victimes exposées les plus proches du labo et laisse la troisième muter toute seule. Garder un organisme en vie à faible vie te donne le dé d'adrénaline et évite les effets « s'il n'y a aucun organisme ». La hache est idéale car ils ont peu de vie. Et tu peux envoyer des victimes à l'hélicoptère par radio sans y être toi-même.</p></div>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>

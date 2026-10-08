@@ -202,7 +202,7 @@ def pagina_killer(nombre, k):
     aqui = next((m for m in mapas if m[0] == propio), None)
 
     h = [f'<p class="eyebrow">Killer · {len(mapas)} mapas con datos</p>',
-         f'<h1>{nombre}<span class="roja">en {pc(k["wr"])} de victorias</span></h1>']
+         f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">en {pc(k["wr"])} de victorias</span></h1>']
 
     intro = (f'Sobre <b>{k["g"]} partidas</b> registradas, la Final Girl gana el '
              f'{pc(k["wr"])} de las veces contra {nombre}. '
@@ -297,7 +297,7 @@ def pagina_caja(f):
     c = CONSEJOS.get(f['film'], {})
     k = KILLERS.get(f['killer'], {})
     h = [f'<p class="eyebrow">Caja · {f.get("fnum","")} · {f["plays"]} partidas</p>',
-         f'<h1>{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
+         f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
 
     dif = (f['wr'] - MEDIA) * 100
     h.append(f'<p class="dek">{f["killer"]} en {f["loc"]}. '
@@ -378,11 +378,11 @@ def generar():
         if k.get('g', 0) < 60:        # sin volumen no hay página que sostener
             continue
         t, d, cuerpo = pagina_killer(nombre, k)
-        out.append({'salida': slug(nombre) + '.html', 'title': t, 'desc': d,
+        out.append({'caja': k.get('box') or '', 'salida': slug(nombre) + '.html', 'title': t, 'desc': d,
                     'cuerpo': cuerpo, 'prioridad': '0.7', 'tipo': 'killer'})
     for f in D['films']:
         t, d, cuerpo = pagina_caja(f)
-        out.append({'salida': slug(f['film']) + '.html', 'title': t, 'desc': d,
+        out.append({'caja': f['film'], 'salida': slug(f['film']) + '.html', 'title': t, 'desc': d,
                     'cuerpo': cuerpo, 'prioridad': '0.7', 'tipo': 'caja',
                     'img': f.get('img')})
     return out

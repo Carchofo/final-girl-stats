@@ -115,7 +115,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 3 cartes avec données</p>
-<h1>Mort<span class="roja">69,4 % de victoires</span></h1><p class="idiomas"><a href="../mort.html" hreflang="es">ES</a> · <a href="../en/mort.html" hreflang="en">EN</a> · <a href="../fr/mort.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/mort.html" hreflang="de">DE</a> · <a href="../it/mort.html" hreflang="it">IT</a></p>
+<h1 data-caja="Shriek">Mort<span class="roja">69,4 % de victoires</span></h1><p class="idiomas"><a href="../mort.html" hreflang="es">ES</a> · <a href="../en/mort.html" hreflang="en">EN</a> · <a href="../fr/mort.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/mort.html" hreflang="de">DE</a> · <a href="../it/mort.html" hreflang="it">IT</a></p>
 <p class="dek">Sur <b>314 parties enregistrées</b>, la Final Girl bat Mort dans 69,4 % des cas. La moyenne du jeu est de 65,5 %, donc c'est pile dans la moyenne.</p>
 <h2>Qui est Mort</h2><p>Sweat à capuche gris, pantalon rouge et noir et masque de fantôme à un œil. Le tueur de Shriek, qui se déroule dans une convention de jeux de société.</p>
 <h3>Comment joue Mort</h3><p>Horror 3 et aucun point de vie tant qu'il n'est pas révélé. Il commence parmi 10 suspects, tous des tueurs d'autres films : il faut interroger et mettre la pression à cinq d'entre eux pour les écarter.</p>
@@ -132,6 +132,15 @@
 <div class="tabla-wrap"><table><thead><tr><th>Carte Finale</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td>Mort as H.U.N.T.E.R.</td><td class=n>57,1 %</td><td class=n>28</td></tr><tr><td>Secret Epic Finale</td><td class=n>61,0 %</td><td class=n>41</td></tr><tr><td>Mort as Dr. Fright</td><td class=n>64,3 %</td><td class=n>28</td></tr><tr><td>Mort as Ratchet Lady</td><td class=n>71,8 %</td><td class=n>39</td></tr><tr><td>Mort as Tormentor</td><td class=n>73,9 %</td><td class=n>23</td></tr><tr><td>Mort as Razorface</td><td class=n>75,0 %</td><td class=n>28</td></tr><tr><td>Mort as Big Bad Wolf</td><td class=n>78,3 %</td><td class=n>23</td></tr><tr><td>Mort as Geppetto</td><td class=n>81,8 %</td><td class=n>22</td></tr><tr><td>Mort as Hans</td><td class=n>85,0 %</td><td class=n>20</td></tr><tr><td>Mort as Krampus</td><td class=n>87,1 %</td><td class=n>31</td></tr></tbody></table></div>
 <p>Le pire tirage est <b>Mort as H.U.N.T.E.R.</b> : avec elle en jeu, la partie n'est gagnée que dans 57,1 % des cas, sur 28 parties.</p>
 <h2>Comment démarrer la partie</h2><p>Les quatre ouvertures et quand utiliser chacune sont dans les <a href="salidas.html">stratégies d'ouverture</a>. Pour comparer ce killer sur toutes les cartes, voir les <a href="index.html">statistiques interactives</a>.</p><footer><p>Données issues de la <a href="https://docs.google.com/spreadsheets/d/1xSl_BhqfVdHnYIYtuiWIIzr1BjD4ToLAYvDCWebNKGY/edit" target="_blank" rel="noopener">feuille de suivi publique</a> de la communauté Final Girl (<a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Y8_bLqYdGlhHaf1VIod8FQfCH3r9qch6LXo0oyBeCJENiw/viewform" target="_blank" rel="noopener">enregistrez vos parties</a>). Retour à <a href="fichas.html">tous les killers et boîtes</a>.</p></footer></div>
+<style>.fg-tuya{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+background:var(--blood);color:#fff;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+h1 .fg-tuya{font-size:12px;vertical-align:middle}a.fg-mia{color:var(--blood)}</style>
+<script>(function(){var m=[];try{m=JSON.parse(localStorage.getItem('fg-mis-cajas'))||[]}catch(e){}
+if(!m.length)return;var L={es:'Tuya',en:'Yours',fr:'À vous',de:'Deine',it:'Tua'};
+var t=L[document.documentElement.lang]||L.en;
+document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
+if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
+if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>
