@@ -20,9 +20,12 @@ AQUI = pathlib.Path(__file__).parent
 FORM = "https://docs.google.com/forms/d/e/1FAIpQLSeAWTzHjQvttvkZkpPQxGMZZoflJdXF5aZqsm44p42JItNDFQ/formResponse"
 HOJA = "1pFBklqcyVw17038m-NPmq7Q_CVnMBMELxNN6lyFTMZU"
 # Tres casillas por categoría: el 1º suma 3 puntos, el 2º 2 y el 3º 1.
-ENTRADAS = {"easiest_box_1": "1941202498", "easiest_box_2": "1055419443", "easiest_box_3": "1425232451", "hardest_box_1": "359424908", "hardest_box_2": "1001047716", "hardest_box_3": "337431242", "most_immersive_box_1": "1588180815", "most_immersive_box_2": "232916496", "most_immersive_box_3": "1020920136", "worst_box_1": "376232544", "worst_box_2": "1036205401", "worst_box_3": "781557868", "best_killer_1": "1383692492", "best_killer_2": "1023437847", "best_killer_3": "916331605", "best_location_1": "1137060530", "best_location_2": "1908626071", "best_location_3": "2048900617", "best_series_1": "770362820", "best_series_2": "1839676813", "best_series_3": "890327225", "simplest_killer_1": "360846821", "simplest_killer_2": "1158631747", "simplest_killer_3": "40424145", "most_complex_killer_1": "1031299552", "most_complex_killer_2": "1872729929", "most_complex_killer_3": "1263855913"}
+ENTRADAS = {"easiest_box_1": "1941202498", "easiest_box_2": "1055419443", "easiest_box_3": "1425232451", "hardest_box_1": "359424908", "hardest_box_2": "1001047716", "hardest_box_3": "337431242", "most_immersive_box_1": "1588180815", "most_immersive_box_2": "232916496", "most_immersive_box_3": "1020920136", "worst_box_1": "376232544", "worst_box_2": "1036205401", "worst_box_3": "781557868", "best_killer_1": "1383692492", "best_killer_2": "1023437847", "best_killer_3": "916331605", "best_location_1": "1137060530", "best_location_2": "1908626071", "best_location_3": "2048900617", "best_series_1": "770362820", "best_series_2": "1839676813", "best_series_3": "890327225", "best_box_1": "360846821", "best_box_2": "1158631747", "best_box_3": "40424145", "most_complex_killer_1": "1031299552", "most_complex_killer_2": "1872729929", "most_complex_killer_3": "1263855913"}
 COLUMNAS = ["easiest_box", "hardest_box", "most_immersive_box", "worst_box", "best_killer",
-            "best_location", "best_series", "simplest_killer", "most_complex_killer"]
+            "best_location", "best_series", "best_box", "most_complex_killer"]
+# Orden en pantalla (COLUMNAS es el orden de las columnas de la hoja, no tocar).
+ORDEN = ["best_series", "best_box", "best_killer", "easiest_box", "hardest_box", "most_immersive_box",
+         "worst_box", "best_location", "most_complex_killer"]
 PUNTOS = [3, 2, 1]
 
 T = {
@@ -34,7 +37,7 @@ T = {
         "q": {"easiest_box": "Caja más fácil", "hardest_box": "Caja más difícil", "most_immersive_box": "Caja más inmersiva",
               "worst_box": "Peor caja", "best_killer": "Mejor killer", "best_location": "Mejor localización",
               "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl",
-              "simplest_killer": "Killer más sencillo de reglas", "most_complex_killer": "Killer más complejo de reglas"}},
+              "best_box": "Mejor película (caja)", "most_complex_killer": "Killer más complejo de reglas"}},
  "en": {"tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
         "sub": "What players think, not what the data says. Cast your vote: every question is optional, skip the ones you don't know.",
         "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
@@ -43,7 +46,7 @@ T = {
         "q": {"easiest_box": "Easiest box", "hardest_box": "Hardest box", "most_immersive_box": "Most immersive box",
               "worst_box": "Worst box", "best_killer": "Best killer", "best_location": "Best location",
               "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl",
-              "simplest_killer": "Simplest killer (rules)", "most_complex_killer": "Most complex killer (rules)"}},
+              "best_box": "Best movie (box)", "most_complex_killer": "Most complex killer (rules)"}},
  "fr": {"tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
         "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.",
         "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
@@ -52,7 +55,7 @@ T = {
         "q": {"easiest_box": "Boîte la plus facile", "hardest_box": "Boîte la plus difficile", "most_immersive_box": "Boîte la plus immersive",
               "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu",
               "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl",
-              "simplest_killer": "Killer aux règles les plus simples", "most_complex_killer": "Killer aux règles les plus complexes"}},
+              "best_box": "Meilleur film (boîte)", "most_complex_killer": "Killer aux règles les plus complexes"}},
  "de": {"tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
         "sub": "Was die Spieler denken, nicht was die Daten sagen. Stimm ab: Jede Frage ist optional.",
         "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
@@ -61,7 +64,7 @@ T = {
         "q": {"easiest_box": "Leichteste Box", "hardest_box": "Schwerste Box", "most_immersive_box": "Atmosphärischste Box",
               "worst_box": "Schlechteste Box", "best_killer": "Bester Killer", "best_location": "Bester Schauplatz",
               "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl",
-              "simplest_killer": "Killer mit den einfachsten Regeln", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
+              "best_box": "Bester Film (Box)", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
  "it": {"tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
         "sub": "Cosa pensano i giocatori, non cosa dicono i dati. Vota: ogni domanda è facoltativa.",
         "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
@@ -70,7 +73,7 @@ T = {
         "q": {"easiest_box": "Scatola più facile", "hardest_box": "Scatola più difficile", "most_immersive_box": "Scatola più immersiva",
               "worst_box": "Scatola peggiore", "best_killer": "Miglior killer", "best_location": "Miglior ambientazione",
               "best_setup": "Miglior Setup", "best_series": "Miglior stagione", "best_final_girl": "Miglior Final Girl",
-              "simplest_killer": "Killer con le regole più semplici", "most_complex_killer": "Killer con le regole più complesse"}},
+              "best_box": "Miglior film (scatola)", "most_complex_killer": "Killer con le regole più complesse"}},
 }
 
 
@@ -80,7 +83,7 @@ def _opciones():
 
 def seccion(lang):
     t = T[lang]
-    cfg = {"form": FORM, "hoja": HOJA, "e": ENTRADAS, "cols": COLUMNAS, "p": PUNTOS, "o": _opciones(), "t": t}
+    cfg = {"form": FORM, "hoja": HOJA, "e": ENTRADAS, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS, "o": _opciones(), "t": t}
     return f'''
 <section id="v-tops" hidden>
   <h2>{t["h2"]}</h2>
@@ -153,8 +156,14 @@ def seccion(lang):
   }}
 
   function pintar() {{
-    res.innerHTML = C.cols.map(function (id, i) {{
-      var ya = votada(id);
+    // Guarda lo que el visitante tiene a medias para no perderlo al repintar.
+    var abiertas = {{}};
+    res.querySelectorAll('.ct-card').forEach(function (c) {{
+      var v = c.querySelector('.ct-voto');
+      if (v && !v.hidden) abiertas[c.getAttribute('data-id')] = [].map.call(c.querySelectorAll('select'), function (x) {{ return x.value; }});
+    }});
+    res.innerHTML = C.orden.map(function (id) {{
+      var i = C.cols.indexOf(id), ya = votada(id);
       return '<div class="ct-card" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' + ranking(id, i) +
         (ya ? '<p class="ct-ok">' + esc(C.t.gracias) + '</p>'
             : '<button type="button" class="ct-abrir">' + esc(C.t.votar) + '</button>' +
@@ -164,6 +173,12 @@ def seccion(lang):
               }}).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div>') +
         '</div>';
     }}).join('');
+    Object.keys(abiertas).forEach(function (id) {{
+      var c = res.querySelector('.ct-card[data-id="' + id + '"]');
+      if (!c || !c.querySelector('.ct-voto')) return;
+      c.querySelector('.ct-abrir').hidden = true; c.querySelector('.ct-voto').hidden = false;
+      c.querySelectorAll('select').forEach(function (x, k) {{ x.value = abiertas[id][k]; }});
+    }});
     res.querySelectorAll('.ct-abrir').forEach(function (b) {{
       b.onclick = function () {{ b.hidden = true; b.nextElementSibling.hidden = false; }};
     }});
