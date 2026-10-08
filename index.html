@@ -713,7 +713,6 @@
 
 <nav class="tabs" role="tablist">
   <button role="tab" data-t="matriz" aria-selected="true">Matriz</button>
-  <button role="tab" data-t="tops" aria-selected="false">Tops</button>
   <button role="tab" data-t="cajas" aria-selected="false">Cajas</button>
   <button role="tab" data-t="temporadas" aria-selected="false">Temporadas</button>
   <button role="tab" data-t="killers" aria-selected="false">Killers</button>
@@ -741,6 +740,12 @@
   <div class="mwrap"><table class="mx" id="mx"></table></div>
   <div class="leg" id="leg"></div>
   <div class="panel" id="p-mx"></div>
+  <div class="tops-datos" style="margin-top:34px">
+  <h2 id="tops">Los extremos</h2>
+  <p class="sub">Lo mejor y lo peor de cada cosa, sobre las <span data-dato="partidas">13.920</span> partidas. Cada lista pide un mínimo de partidas para entrar: sin ese mínimo, lo primero serían siempre rarezas jugadas tres veces.</p>
+  <div class="tops" id="l-tops-datos"></div>
+  <p class="nota"><b>Cómo leerlo</b> El porcentaje es lo que gana la Final Girl, no el killer. Un número bajo es un killer duro.</p>
+  </div>
 </section>
 
 <section id="v-cajas" hidden>
@@ -811,12 +816,7 @@
   <p class="nota"><b>Ojo</b> Entre la mejor y la peor hay unos 20 puntos, bastante menos que entre cajas. Y las de arriba con pocas partidas son promos que se juegan poco y por gente veterana. Elegir bien la caja pesa más que elegir bien la chica.</p>
 </section>
 
-<section id="v-tops" hidden>
-  <h2>Los extremos</h2>
-  <p class="sub">Lo mejor y lo peor de cada cosa, sobre las <span data-dato="partidas">13.920</span> partidas. Cada lista pide un mínimo de partidas para entrar: sin ese mínimo, lo primero serían siempre rarezas jugadas tres veces.</p>
-  <div class="tops" id="tops"></div>
-  <p class="nota"><b>Cómo leerlo</b> El porcentaje es lo que gana la Final Girl, no el killer. Un número bajo es un killer duro.</p>
-</section>
+
 
 <dialog id="dlg">
   <div class="dlg-head"><h3 id="dlg-t">Las salidas</h3><button type="button" id="dlg-x">Cerrar</button></div>
@@ -1445,7 +1445,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
   }
 
   function pintarTops() {
-    var el = document.getElementById('tops');
+    var el = document.getElementById('l-tops-datos');
     if (!el || el.innerHTML) return;
     var h = '';
 
@@ -1720,7 +1720,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     b.addEventListener('click', function () {
       document.querySelectorAll('nav.tabs button').forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
       b.setAttribute('aria-selected', 'true');
-      ['matriz', 'tops', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
+      ['matriz', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
         document.getElementById('v-' + t).hidden = (t !== b.dataset.t);
       });
     });

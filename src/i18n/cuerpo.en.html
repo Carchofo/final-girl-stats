@@ -598,7 +598,6 @@
 
 <nav class="tabs" role="tablist">
   <button role="tab" data-t="matriz" aria-selected="true">Matrix</button>
-  <button role="tab" data-t="tops" aria-selected="false">Tops</button>
   <button role="tab" data-t="cajas" aria-selected="false">Boxes</button>
   <button role="tab" data-t="temporadas" aria-selected="false">Seasons</button>
   <button role="tab" data-t="killers" aria-selected="false">Killers</button>
@@ -626,6 +625,12 @@
   <div class="mwrap"><table class="mx" id="mx"></table></div>
   <div class="leg" id="leg"></div>
   <div class="panel" id="p-mx"></div>
+  <div class="tops-datos" style="margin-top:34px">
+  <h2 id="tops">The extremes</h2>
+  <p class="sub">The best and the worst of everything, across the <span data-dato="partidas">13.920</span> games. Each list requires a minimum number of games to qualify: without it, the top entries would always be oddities played three times.</p>
+  <div class="tops" id="l-tops-datos"></div>
+  <p class="nota"><b>How to read it</b> The percentage is how often the Final Girl wins, not the killer. A low number means a tough killer.</p>
+  </div>
 </section>
 
 <section id="v-cajas" hidden>
@@ -696,12 +701,7 @@
   <p class="nota"><b>Heads up</b> Between the best and the worst there are about 20 points, quite a bit less than between boxes. And the ones at the top with few games are promos that are rarely played, and by veterans. Choosing the right box matters more than choosing the right girl.</p>
 </section>
 
-<section id="v-tops" hidden>
-  <h2>The extremes</h2>
-  <p class="sub">The best and the worst of everything, across the <span data-dato="partidas">13.920</span> games. Each list requires a minimum number of games to qualify: without it, the top entries would always be oddities played three times.</p>
-  <div class="tops" id="tops"></div>
-  <p class="nota"><b>How to read it</b> The percentage is how often the Final Girl wins, not the killer. A low number means a tough killer.</p>
-</section>
+
 
 <dialog id="dlg">
   <div class="dlg-head"><h3 id="dlg-t">Exit strategies</h3><button type="button" id="dlg-x">Close</button></div>
@@ -1251,7 +1251,7 @@ var D = /*@@D@@*/;
   }
 
   function pintarTops() {
-    var el = document.getElementById('tops');
+    var el = document.getElementById('l-tops-datos');
     if (!el || el.innerHTML) return;
     var h = '';
 
@@ -1526,7 +1526,7 @@ var D = /*@@D@@*/;
     b.addEventListener('click', function () {
       document.querySelectorAll('nav.tabs button').forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
       b.setAttribute('aria-selected', 'true');
-      ['matriz', 'tops', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
+      ['matriz', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
         document.getElementById('v-' + t).hidden = (t !== b.dataset.t);
       });
     });

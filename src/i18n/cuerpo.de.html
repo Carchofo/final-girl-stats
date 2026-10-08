@@ -598,7 +598,6 @@
 
 <nav class="tabs" role="tablist">
   <button role="tab" data-t="matriz" aria-selected="true">Matrix</button>
-  <button role="tab" data-t="tops" aria-selected="false">Tops</button>
   <button role="tab" data-t="cajas" aria-selected="false">Boxen</button>
   <button role="tab" data-t="temporadas" aria-selected="false">Staffeln</button>
   <button role="tab" data-t="killers" aria-selected="false">Killers</button>
@@ -626,6 +625,12 @@
   <div class="mwrap"><table class="mx" id="mx"></table></div>
   <div class="leg" id="leg"></div>
   <div class="panel" id="p-mx"></div>
+  <div class="tops-datos" style="margin-top:34px">
+  <h2 id="tops">Die Extreme</h2>
+  <p class="sub">Das Beste und das Schlechteste von allem, auf Basis der <span data-dato="partidas">13.920</span> Partien. Jede Liste verlangt eine Mindestzahl an Partien: Ohne diese Schwelle stünden ganz oben immer Raritäten, die dreimal gespielt wurden.</p>
+  <div class="tops" id="l-tops-datos"></div>
+  <p class="nota"><b>So liest du es</b> Die Quote ist das, was das Final Girl gewinnt, nicht der Killer. Eine niedrige Zahl bedeutet einen harten Killer.</p>
+  </div>
 </section>
 
 <section id="v-cajas" hidden>
@@ -696,12 +701,7 @@
   <p class="nota"><b>Achtung</b> Zwischen der besten und der schlechtesten liegen etwa 20 Punkte, deutlich weniger als zwischen Boxen. Und die oberen mit wenigen Partien sind Promos, die selten und von erfahrenen Spielern gespielt werden. Die richtige Box zu wählen wiegt mehr, als das richtige Mädchen zu wählen.</p>
 </section>
 
-<section id="v-tops" hidden>
-  <h2>Die Extreme</h2>
-  <p class="sub">Das Beste und das Schlechteste von allem, auf Basis der <span data-dato="partidas">13.920</span> Partien. Jede Liste verlangt eine Mindestzahl an Partien: Ohne diese Schwelle stünden ganz oben immer Raritäten, die dreimal gespielt wurden.</p>
-  <div class="tops" id="tops"></div>
-  <p class="nota"><b>So liest du es</b> Die Quote ist das, was das Final Girl gewinnt, nicht der Killer. Eine niedrige Zahl bedeutet einen harten Killer.</p>
-</section>
+
 
 <dialog id="dlg">
   <div class="dlg-head"><h3 id="dlg-t">Die Eröffnungen</h3><button type="button" id="dlg-x">Schließen</button></div>
@@ -1251,7 +1251,7 @@ var D = /*@@D@@*/;
   }
 
   function pintarTops() {
-    var el = document.getElementById('tops');
+    var el = document.getElementById('l-tops-datos');
     if (!el || el.innerHTML) return;
     var h = '';
 
@@ -1526,7 +1526,7 @@ var D = /*@@D@@*/;
     b.addEventListener('click', function () {
       document.querySelectorAll('nav.tabs button').forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
       b.setAttribute('aria-selected', 'true');
-      ['matriz', 'tops', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
+      ['matriz', 'cajas', 'temporadas', 'killers', 'mapas', 'girls', 'jug'].forEach(function (t) {
         document.getElementById('v-' + t).hidden = (t !== b.dataset.t);
       });
     });
