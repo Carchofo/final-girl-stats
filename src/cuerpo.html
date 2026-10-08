@@ -590,16 +590,6 @@
   <div class="kpi"><b id="k5">61</b><span>Final Girls</span></div>
 </div>
 
-<details class="mis" id="mis">
-  <summary id="mis-sum">Mis cajas</summary>
-  <div class="misgrid" id="mis-grid"></div>
-  <div class="misfoot">
-    <button type="button" id="mis-none">Ninguna</button>
-    <button type="button" id="mis-all">Todas</button>
-    <span id="mis-temps"></span>
-    <span id="mis-info"></span>
-  </div>
-</details>
 
 <nav class="tabs" role="tablist">
   <button role="tab" data-t="matriz" aria-selected="true">Matriz</button>
@@ -713,6 +703,17 @@
   <div class="dlg-body" id="dlg-b"></div>
 </dialog>
 
+<details class="mis" id="mis" style="margin-top:34px">
+  <summary id="mis-sum">Mis cajas</summary>
+  <div class="misgrid" id="mis-grid"></div>
+  <div class="misfoot">
+    <button type="button" id="mis-none">Ninguna</button>
+    <button type="button" id="mis-all">Todas</button>
+    <span id="mis-temps"></span>
+    <span id="mis-info"></span>
+  </div>
+</details>
+
 <footer>
   <p>Fuente: hoja pública de seguimiento de la comunidad de Final Girl, última partida registrada el <b id="f-last"></b>. La correspondencia de cada Final Girl con su caja viene del comparador de cajas de ReDesign, no de la hoja.</p>
   <p>Las celdas vacías de la matriz son combinaciones con muy pocas partidas para significar nada. La escala de color va de rojo, por debajo de la media global, a azul, por encima, con el gris justo en la media.</p>
@@ -739,13 +740,6 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
     return [];
   })();
-  // La primera visita, el panel abierto: si no se ve, nadie marca nada.
-  document.addEventListener('DOMContentLoaded', function () {
-    var d = document.getElementById('mis'); if (!d) return;
-    var visto = false; try { visto = localStorage.getItem('fg-mis-visto') === '1'; } catch (e) {}
-    if (!visto && !MIAS.length) d.open = true;
-    d.addEventListener('toggle', function () { try { localStorage.setItem('fg-mis-visto', '1'); } catch (e) {} });
-  });
   function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
 
   var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };

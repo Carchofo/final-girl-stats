@@ -590,16 +590,6 @@
   <div class="kpi"><b id="k5">61</b><span>Final Girls</span></div>
 </div>
 
-<details class="mis" id="mis">
-  <summary id="mis-sum">Mes boîtes</summary>
-  <div class="misgrid" id="mis-grid"></div>
-  <div class="misfoot">
-    <button type="button" id="mis-none">Aucune</button>
-    <button type="button" id="mis-all">Toutes</button>
-    <span id="mis-temps"></span>
-    <span id="mis-info"></span>
-  </div>
-</details>
 
 <nav class="tabs" role="tablist">
   <button role="tab" data-t="matriz" aria-selected="true">Matrice</button>
@@ -713,6 +703,17 @@
   <div class="dlg-body" id="dlg-b"></div>
 </dialog>
 
+<details class="mis" id="mis" style="margin-top:34px">
+  <summary id="mis-sum">Mes boîtes</summary>
+  <div class="misgrid" id="mis-grid"></div>
+  <div class="misfoot">
+    <button type="button" id="mis-none">Aucune</button>
+    <button type="button" id="mis-all">Toutes</button>
+    <span id="mis-temps"></span>
+    <span id="mis-info"></span>
+  </div>
+</details>
+
 <footer>
   <p>Source : feuille publique de suivi de la communauté Final Girl, dernière partie enregistrée le <b id="f-last"></b>. La correspondance de chaque Final Girl avec sa boîte vient du comparateur de boîtes de ReDesign, pas de la feuille.</p>
   <p>Les cellules vides de la matrice sont des combinaisons avec trop peu de parties pour signifier quoi que ce soit. L’échelle de couleur va du rouge, sous la moyenne globale, au bleu, au-dessus, avec le gris juste à la moyenne.</p>
@@ -739,13 +740,6 @@ var D = /*@@D@@*/;
     try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
     return [];
   })();
-  // La primera visita, el panel abierto: si no se ve, nadie marca nada.
-  document.addEventListener('DOMContentLoaded', function () {
-    var d = document.getElementById('mis'); if (!d) return;
-    var visto = false; try { visto = localStorage.getItem('fg-mis-visto') === '1'; } catch (e) {}
-    if (!visto && !MIAS.length) d.open = true;
-    d.addEventListener('toggle', function () { try { localStorage.setItem('fg-mis-visto', '1'); } catch (e) {} });
-  });
   function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
 
   var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };

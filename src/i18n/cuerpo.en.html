@@ -590,16 +590,6 @@
   <div class="kpi"><b id="k5">61</b><span>Final Girls</span></div>
 </div>
 
-<details class="mis" id="mis">
-  <summary id="mis-sum">My boxes</summary>
-  <div class="misgrid" id="mis-grid"></div>
-  <div class="misfoot">
-    <button type="button" id="mis-none">None</button>
-    <button type="button" id="mis-all">All</button>
-    <span id="mis-temps"></span>
-    <span id="mis-info"></span>
-  </div>
-</details>
 
 <nav class="tabs" role="tablist">
   <button role="tab" data-t="matriz" aria-selected="true">Matrix</button>
@@ -713,6 +703,17 @@
   <div class="dlg-body" id="dlg-b"></div>
 </dialog>
 
+<details class="mis" id="mis" style="margin-top:34px">
+  <summary id="mis-sum">My boxes</summary>
+  <div class="misgrid" id="mis-grid"></div>
+  <div class="misfoot">
+    <button type="button" id="mis-none">None</button>
+    <button type="button" id="mis-all">All</button>
+    <span id="mis-temps"></span>
+    <span id="mis-info"></span>
+  </div>
+</details>
+
 <footer>
   <p>Source: the Final Girl community’s public tracking sheet, last game logged on <b id="f-last"></b>. Each Final Girl’s box mapping comes from ReDesign’s box comparator, not from the sheet.</p>
   <p>Empty cells in the matrix are combinations with too few games to mean anything. The colour scale runs from red, below the overall average, to blue, above it, with grey right at the average.</p>
@@ -739,13 +740,6 @@ var D = /*@@D@@*/;
     try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
     return [];
   })();
-  // La primera visita, el panel abierto: si no se ve, nadie marca nada.
-  document.addEventListener('DOMContentLoaded', function () {
-    var d = document.getElementById('mis'); if (!d) return;
-    var visto = false; try { visto = localStorage.getItem('fg-mis-visto') === '1'; } catch (e) {}
-    if (!visto && !MIAS.length) d.open = true;
-    d.addEventListener('toggle', function () { try { localStorage.setItem('fg-mis-visto', '1'); } catch (e) {} });
-  });
   function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
 
   var pc = function (x) { return (x * 100).toFixed(1) + '%'; };
