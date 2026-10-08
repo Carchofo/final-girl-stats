@@ -559,6 +559,11 @@
   @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
   @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
   .wr-lbl { font-family:var(--f-mono); font-size:11px; letter-spacing:.06em; color:var(--muted); font-weight:400; }
+  .bar-cab { display:grid; grid-template-columns:1fr 56px 46px; gap:10px; padding:2px 13px 6px;
+             font-family:var(--f-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  .bar-cab.conth { grid-template-columns:34px 1fr 56px 46px; }
+  .bar-cab.conth::before { content:""; }
+  .bar-cab span:nth-last-child(-n+2) { text-align:right; }
 </style>
 
 <header class="hero">
@@ -992,7 +997,7 @@ var D = /*@@D@@*/;
         return st.desc ? -r : r;
       });
       var max = Math.max.apply(null, s.map(function (f) { return f.wr; }));
-      el.innerHTML = s.map(function (f, i) {
+      el.innerHTML = '<div class="bar-cab' + (s.some(function (f) { return f.img; }) ? ' conth' : '') + '"><span></span><span>Siegquote</span><span>Partien</span></div>' + s.map(function (f, i) {
         return '<button type="button" class="bar' + (f.img ? ' conth' : '') + '" data-i="' + i + '" aria-expanded="false">' +
           '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
           (f.img ? '<img class="th" src="' + f.img + '" alt="" loading="lazy"' +
@@ -1256,7 +1261,7 @@ var D = /*@@D@@*/;
                href: FICHA[k] || null };
     }).filter(function (x) { return x.g >= 100; });
     var porWr = function (a, b) { return a.wr - b.wr; };
-    var fmt = function (x) { return { n: x.n, s: x.s, v: pc(x.wr), g: x.g + ' Part.', href: x.href }; };
+    var fmt = function (x) { return { n: x.n, s: x.s, v: pc(x.wr), g: 'Siegquote · ' + x.g + ' Part.', href: x.href }; };
 
     h += tarjetaTop('Die härtesten Killer', 'Mindestens 100 Partien. Je niedriger, desto schlimmer für dich.',
                     ks.slice().sort(porWr).slice(0, 5).map(fmt));
@@ -1562,7 +1567,7 @@ var D = /*@@D@@*/;
       var r = filas();
       var o = document.getElementById('ju-orden').value;
       var max = r.length ? Math.max.apply(null, r.map(function (n) { return UJ[n].n; })) : 1;
-      lista.innerHTML = r.slice(0, 60).map(function (n) {
+      lista.innerHTML = (r.length ? '<div class="bar-cab' + '' + '"><span></span><span>Siegquote</span><span>Partien</span></div>' : '') + r.slice(0, 60).map(function (n) {
         var u = UJ[n];
         return '<button type="button" class="bar" data-n="' + n.replace(/"/g, '&quot;') + '"' +
           ' aria-pressed="' + (sel === n) + '">' +
