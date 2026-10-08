@@ -697,7 +697,7 @@
 
 <div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
 
-<div class="kpis">
+<div class="kpis" data-nosnippet>
   <div class="kpi"><b id="k1"></b><span>Partidas</span></div>
   <div class="kpi"><b id="k2"></b><span>Victorias</span></div>
   <div class="kpi"><b id="k3">26</b><span>Killers</span></div>
@@ -716,7 +716,7 @@
   <button role="tab" data-t="jug" aria-selected="false">Jugadores</button>
 </nav>
 
-<section id="v-matriz">
+<section id="v-matriz" data-nosnippet>
   <h2>Cada killer en cada mapa</h2>
   <p class="sub">Filas, localizaciones. Columnas, killers. El número es el porcentaje de victorias. Recuadro negro = la pareja tal y como viene en su caja. Toca cualquier celda. <a href="registrar.html" class="reg-link">¿Has jugado? Registra tu partida en 30 segundos →</a></p>
   <style>.reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}</style>
@@ -742,7 +742,7 @@
   <p class="nota"><b>Cómo leerlo</b> El porcentaje es lo que gana la Final Girl, no el killer. Un número bajo es un killer duro.</p>
   </div>
 </section>
-<section id="v-tops" hidden>
+<section id="v-tops" data-nosnippet hidden>
   <h2>Tops de la comunidad</h2>
   <p class="sub">Lo que dice la gente, no los datos.</p>
   <a class="ct-tl" href="tops.html">Tier list completa →</a> <a class="ct-ir" href="#ct-votar">Vota tus tops ↓</a>
@@ -971,25 +971,25 @@
 </script>
 
 
-<section id="v-cajas" hidden>
+<section id="v-cajas" data-nosnippet hidden>
   <h2>Cajas tal y como vienen</h2>
   <p class="sub">Su killer con su localización, como sale de la caja. Toca una para el desglose completo.</p>
   <div class="barlist" id="l-cajas"></div>
 </section>
 
-<section id="v-killers" hidden>
+<section id="v-killers" data-nosnippet hidden>
   <h2>Killers</h2>
   <p class="sub">Contra todas las localizaciones, no solo la suya. Dentro, sus Dark Powers y Finales ordenados por lo que te cuestan.</p>
   <div class="barlist" id="l-killers"></div>
 </section>
 
-<section id="v-mapas" hidden>
+<section id="v-mapas" data-nosnippet hidden>
   <h2>Localizaciones</h2>
   <p class="sub">Contra todos los killers. Dentro, sus cartas de Setup y qué killers se le dan mejor y peor.</p>
   <div class="barlist" id="l-mapas"></div>
 </section>
 
-<section id="v-temporadas" hidden>
+<section id="v-temporadas" data-nosnippet hidden>
   <h2>Cajas y temporadas</h2>
   <p class="sub">Las 22 Feature Films por orden de publicación. Toca una ficha para su desglose: mecánica, Dark Powers, Finales, Setups y reviews. El porcentaje de cada temporada es el de sus cajas tal y como vienen, no el de cruzarlas.</p>
   <div class="enc" id="enc" hidden>
@@ -1002,7 +1002,7 @@
 </section>
 
 
-<section id="v-jug" hidden>
+<section id="v-jug" data-nosnippet hidden>
   <h2>Quién hay detrás de los datos</h2>
   <p class="sub">Las <span data-dato="partidas">13.920</span> partidas no salen de ninguna parte: las registra gente, una a una. Están <b id="ju-n"></b>, desde quien lleva una hasta quien lleva casi mil. Búscate, y si no apareces, ya sabes lo que falta.</p>
 
@@ -1022,7 +1022,7 @@
   <p class="riesgo" style="margin-top:16px"><b>Por qué importa</b> Son <span data-dato="jugadores">669</span> personas, pero veinticinco de ellas hacen el <span data-dato="top25">46</span>% de los datos, y la que más aporta sola el <span data-dato="top1">6,7</span>%. Un <span data-dato="unicas">33</span>% ha registrado una única partida. Quien registra mucho gana más que la media, pero poco: <span data-dato="wrTop10">70,1%</span> los diez primeros contra <span data-dato="wrResto">64,9%</span> el resto. Por eso las comparaciones entre cajas aguantan y los valores absolutos hay que cogerlos con pinzas.</p>
 </section>
 
-<section id="v-girls" hidden>
+<section id="v-girls" data-nosnippet hidden>
   <h2>Final Girls</h2>
   <p class="sub">Mínimo 20 partidas. Con la caja de la que sale cada una.</p>
   <div class="ctrl">

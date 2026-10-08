@@ -684,7 +684,7 @@ def grande(lang, salida, M, existe):
     if salida == "index.html":
         import tops
         cuerpo = tops.poner(cuerpo, lang)
-        cuerpo = ocultar_pestanas(cuerpo)
+        cuerpo = sin_snippet(ocultar_pestanas(cuerpo))
     if salida == "index.html":
         # Igual que en la española: "Laboratorio" no lo busca nadie.
         cuerpo = re.sub(r"<h1>.*?</h1>", f'<h1>{NAV_TXT[lang][0]}<span class="roja">Final Girl</span></h1>',
@@ -736,6 +736,14 @@ def ocultar_pestanas(html):
         html = re.sub(r'\s*<button role="tab" data-t="' + t + r'"[^>]*>[^<]*</button>', "", html)
         html = re.sub(r'\s*<a href="(?:\.\./)?index\.html#' + t + r'">[^<]*</a>', "", html)
     return html
+
+
+def sin_snippet(html):
+    """Google armaba la descripción del resultado con las cifras sueltas
+    (KPIs, tablas). data-nosnippet le impide usarlas: tira de la frase de
+    presentación o de la meta description."""
+    html = html.replace('<div class="kpis">', '<div class="kpis" data-nosnippet>')
+    return re.sub(r'<section id="(v-[a-z]+)"', r'<section id="\1" data-nosnippet', html)
 
 
 def excluidos():

@@ -697,7 +697,7 @@
 
 <div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
 
-<div class="kpis">
+<div class="kpis" data-nosnippet>
   <div class="kpi"><b id="k1"></b><span>Partien</span></div>
   <div class="kpi"><b id="k2"></b><span>Siegquote</span></div>
   <div class="kpi"><b id="k3">26</b><span>Killers</span></div>
@@ -716,7 +716,7 @@
   <button role="tab" data-t="jug" aria-selected="false">Spieler</button>
 </nav>
 
-<section id="v-matriz">
+<section id="v-matriz" data-nosnippet>
   <h2>Jeder Killer auf jedem Schauplatz</h2>
   <p class="sub">Zeilen: Schauplätze. Spalten: Killer. Die Zahl ist die Siegquote. Schwarzer Rahmen = das Paar so, wie es in der Box liegt. Tippe auf eine beliebige Zelle. <a href="registrar.html" class="reg-link">Schon gespielt? Trag deine Partie in 30 Sekunden ein →</a></p>
   <style>.reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}</style>
@@ -742,7 +742,7 @@
   <p class="nota"><b>So liest du es</b> Die Quote ist das, was das Final Girl gewinnt, nicht der Killer. Eine niedrige Zahl bedeutet einen harten Killer.</p>
   </div>
 </section>
-<section id="v-tops" hidden>
+<section id="v-tops" data-nosnippet hidden>
   <h2>Community-Tops</h2>
   <p class="sub">Was die Spieler denken, nicht was die Daten sagen.</p>
   <a class="ct-tl" href="tops.html">Komplette Tier List →</a> <a class="ct-ir" href="#ct-votar">Stimm ab ↓</a>
@@ -971,25 +971,25 @@
 </script>
 
 
-<section id="v-cajas" hidden>
+<section id="v-cajas" data-nosnippet hidden>
   <h2>Boxen so, wie sie geliefert werden</h2>
   <p class="sub">Ihr Killer mit ihrem Schauplatz, wie aus der Box. Tippe auf eine für die komplette Aufschlüsselung.</p>
   <div class="barlist" id="l-cajas"></div>
 </section>
 
-<section id="v-killers" hidden>
+<section id="v-killers" data-nosnippet hidden>
   <h2>Killers</h2>
   <p class="sub">Gegen alle Schauplätze, nicht nur den eigenen. Darin seine Dark Powers und Finales, sortiert danach, wie viel sie dich kosten.</p>
   <div class="barlist" id="l-killers"></div>
 </section>
 
-<section id="v-mapas" hidden>
+<section id="v-mapas" data-nosnippet hidden>
   <h2>Schauplätze</h2>
   <p class="sub">Gegen alle Killer. Darin seine Setup-Karten und welche Killer ihm am besten und am schlechtesten liegen.</p>
   <div class="barlist" id="l-mapas"></div>
 </section>
 
-<section id="v-temporadas" hidden>
+<section id="v-temporadas" data-nosnippet hidden>
   <h2>Boxen und Staffeln</h2>
   <p class="sub">Die 22 Feature Films in Veröffentlichungsreihenfolge. Tippe auf eine Karte für die Aufschlüsselung: Mechanik, Dark Powers, Finales, Setups und Reviews. Die Quote jeder Staffel ist die ihrer Boxen so, wie sie geliefert werden, nicht die der Kreuzungen.</p>
   <div class="enc" id="enc" hidden>
@@ -1002,7 +1002,7 @@
 </section>
 
 
-<section id="v-jug" hidden>
+<section id="v-jug" data-nosnippet hidden>
   <h2>Wer hinter den Daten steckt</h2>
   <p class="sub">Die <span data-dato="partidas">13.920</span> Partien kommen nicht aus dem Nichts: Menschen erfassen sie, eine nach der anderen. Das sind <b id="ju-n"></b>, von jemandem mit einer Partie bis zu fast tausend. Such dich, und wenn du nicht auftauchst, weißt du, was fehlt.</p>
 
@@ -1022,7 +1022,7 @@
   <p class="riesgo" style="margin-top:16px"><b>Warum das wichtig ist</b> Es sind <span data-dato="jugadores">669</span> Personen, aber fünfundzwanzig von ihnen liefern <span data-dato="top25">46</span>% der Daten, und die aktivste allein <span data-dato="top1">6,7</span>%. <span data-dato="unicas">33</span>% haben nur eine einzige Partie erfasst. Wer viel einträgt, gewinnt mehr als der Durchschnitt, aber nur wenig: <span data-dato="wrTop10">70,1 %</span> bei den ersten zehn gegenüber <span data-dato="wrResto">64,9 %</span> beim Rest. Deshalb halten Vergleiche zwischen Boxen stand, während man die absoluten Werte mit Vorsicht genießen muss.</p>
 </section>
 
-<section id="v-girls" hidden>
+<section id="v-girls" data-nosnippet hidden>
   <h2>Final Girls</h2>
   <p class="sub">Mindestens 20 Partien. Mit der Box, aus der jede stammt.</p>
   <div class="ctrl">

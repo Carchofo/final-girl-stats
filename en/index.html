@@ -697,7 +697,7 @@
 
 <div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
 
-<div class="kpis">
+<div class="kpis" data-nosnippet>
   <div class="kpi"><b id="k1"></b><span>Games</span></div>
   <div class="kpi"><b id="k2"></b><span>Wins</span></div>
   <div class="kpi"><b id="k3">26</b><span>Killers</span></div>
@@ -716,7 +716,7 @@
   <button role="tab" data-t="jug" aria-selected="false">Players</button>
 </nav>
 
-<section id="v-matriz">
+<section id="v-matriz" data-nosnippet>
   <h2>Every killer on every map</h2>
   <p class="sub">Rows are locations. Columns are killers. The number is the win rate. Black outline = the pairing as it comes in its box. Tap any cell. <a href="registrar.html" class="reg-link">Played a game? Log it in 30 seconds →</a></p>
   <style>.reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}</style>
@@ -742,7 +742,7 @@
   <p class="nota"><b>How to read it</b> The percentage is how often the Final Girl wins, not the killer. A low number means a tough killer.</p>
   </div>
 </section>
-<section id="v-tops" hidden>
+<section id="v-tops" data-nosnippet hidden>
   <h2>Community tops</h2>
   <p class="sub">What players think, not what the data says.</p>
   <a class="ct-tl" href="tops.html">Full tier list →</a> <a class="ct-ir" href="#ct-votar">Vote your tops ↓</a>
@@ -971,25 +971,25 @@
 </script>
 
 
-<section id="v-cajas" hidden>
+<section id="v-cajas" data-nosnippet hidden>
   <h2>Boxes as they come</h2>
   <p class="sub">Its killer with its location, as it comes in the box. Tap one for the full breakdown.</p>
   <div class="barlist" id="l-cajas"></div>
 </section>
 
-<section id="v-killers" hidden>
+<section id="v-killers" data-nosnippet hidden>
   <h2>Killers</h2>
   <p class="sub">Against every location, not just its own. Inside, its Dark Powers and Finales ranked by how much they cost you.</p>
   <div class="barlist" id="l-killers"></div>
 </section>
 
-<section id="v-mapas" hidden>
+<section id="v-mapas" data-nosnippet hidden>
   <h2>Locations</h2>
   <p class="sub">Against every killer. Inside, its Setup cards and which killers it handles best and worst.</p>
   <div class="barlist" id="l-mapas"></div>
 </section>
 
-<section id="v-temporadas" hidden>
+<section id="v-temporadas" data-nosnippet hidden>
   <h2>Boxes and seasons</h2>
   <p class="sub">The 22 Feature Films in release order. Tap a card for its breakdown: mechanics, Dark Powers, Finales, Setups and reviews. Each season’s percentage is that of its boxes as they come, not of crossing them.</p>
   <div class="enc" id="enc" hidden>
@@ -1002,7 +1002,7 @@
 </section>
 
 
-<section id="v-jug" hidden>
+<section id="v-jug" data-nosnippet hidden>
   <h2>Who is behind the data</h2>
   <p class="sub">The <span data-dato="partidas">13,920</span> games don’t come from nowhere: people log them, one by one. They are <b id="ju-n"></b>, from those with one game to those with almost a thousand. Look yourself up, and if you’re not there, you know what’s missing.</p>
 
@@ -1022,7 +1022,7 @@
   <p class="riesgo" style="margin-top:16px"><b>Why it matters</b> That is <span data-dato="jugadores">669</span> people, but twenty-five of them make up <span data-dato="top25">46</span>% of the data, and the top contributor alone <span data-dato="top1">6,7</span>%. <span data-dato="unicas">33</span>% have logged a single game. Those who log a lot win more than average, but only a little: <span data-dato="wrTop10">70.1%</span> for the top ten against <span data-dato="wrResto">64.9%</span> for the rest. That is why comparisons between boxes hold up while absolute values should be taken with a pinch of salt.</p>
 </section>
 
-<section id="v-girls" hidden>
+<section id="v-girls" data-nosnippet hidden>
   <h2>Final Girls</h2>
   <p class="sub">Minimum 20 games. With the box each one comes from.</p>
   <div class="ctrl">

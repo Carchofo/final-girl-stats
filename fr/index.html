@@ -697,7 +697,7 @@
 
 <div class="marquee" id="marq" aria-hidden="true"><div class="tira" id="tira"></div></div>
 
-<div class="kpis">
+<div class="kpis" data-nosnippet>
   <div class="kpi"><b id="k1"></b><span>Parties</span></div>
   <div class="kpi"><b id="k2"></b><span>Victoires</span></div>
   <div class="kpi"><b id="k3">26</b><span>Killers</span></div>
@@ -716,7 +716,7 @@
   <button role="tab" data-t="jug" aria-selected="false">Joueurs</button>
 </nav>
 
-<section id="v-matriz">
+<section id="v-matriz" data-nosnippet>
   <h2>Chaque killer dans chaque lieu</h2>
   <p class="sub">Lignes : lieux. Colonnes : killers. Le nombre est le pourcentage de victoires. Cadre noir = le duo tel qu’il vient dans sa boîte. Touchez n’importe quelle cellule. <a href="registrar.html" class="reg-link">Vous avez joué ? Enregistrez votre partie en 30 secondes →</a></p>
   <style>.reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}</style>
@@ -742,7 +742,7 @@
   <p class="nota"><b>Comment le lire</b> Le pourcentage est celui de victoires de la Final Girl, pas du killer. Un nombre bas, c’est un killer coriace.</p>
   </div>
 </section>
-<section id="v-tops" hidden>
+<section id="v-tops" data-nosnippet hidden>
   <h2>Tops de la communauté</h2>
   <p class="sub">L'avis des joueurs, pas celui des chiffres.</p>
   <a class="ct-tl" href="tops.html">Tier list complète →</a> <a class="ct-ir" href="#ct-votar">Votez vos tops ↓</a>
@@ -971,25 +971,25 @@
 </script>
 
 
-<section id="v-cajas" hidden>
+<section id="v-cajas" data-nosnippet hidden>
   <h2>Boîtes telles qu’elles viennent</h2>
   <p class="sub">Son killer avec son lieu, comme dans la boîte. Touchez-en une pour le détail complet.</p>
   <div class="barlist" id="l-cajas"></div>
 </section>
 
-<section id="v-killers" hidden>
+<section id="v-killers" data-nosnippet hidden>
   <h2>Killers</h2>
   <p class="sub">Contre tous les lieux, pas seulement le sien. À l’intérieur, ses Dark Powers et Finales classés selon ce qu’ils vous coûtent.</p>
   <div class="barlist" id="l-killers"></div>
 </section>
 
-<section id="v-mapas" hidden>
+<section id="v-mapas" data-nosnippet hidden>
   <h2>Lieux</h2>
   <p class="sub">Contre tous les killers. À l’intérieur, ses cartes de Setup et les killers qui lui réussissent le mieux et le moins bien.</p>
   <div class="barlist" id="l-mapas"></div>
 </section>
 
-<section id="v-temporadas" hidden>
+<section id="v-temporadas" data-nosnippet hidden>
   <h2>Boîtes et saisons</h2>
   <p class="sub">Les 22 Feature Films par ordre de parution. Touchez une fiche pour le détail : mécanique, Dark Powers, Finales, Setups et avis. Le pourcentage de chaque saison est celui de ses boîtes telles qu’elles viennent, pas celui des croisements.</p>
   <div class="enc" id="enc" hidden>
@@ -1002,7 +1002,7 @@
 </section>
 
 
-<section id="v-jug" hidden>
+<section id="v-jug" data-nosnippet hidden>
   <h2>Qui se cache derrière les données</h2>
   <p class="sub">Les <span data-dato="partidas">13 920</span> parties ne sortent de nulle part : ce sont des gens qui les enregistrent, une à une. Ils sont <b id="ju-n"></b>, de celui qui en a une à celui qui en a presque mille. Cherchez-vous, et si vous n’y êtes pas, vous savez ce qu’il reste à faire.</p>
 
@@ -1022,7 +1022,7 @@
   <p class="riesgo" style="margin-top:16px"><b>Pourquoi c’est important</b> Ils sont <span data-dato="jugadores">669</span>, mais vingt-cinq d’entre eux font <span data-dato="top25">46</span>% des données, et le plus prolifique à lui seul <span data-dato="top1">6,7</span>%. <span data-dato="unicas">33</span>% n’ont enregistré qu’une seule partie. Ceux qui enregistrent beaucoup gagnent plus que la moyenne, mais de peu : <span data-dato="wrTop10">70,1 %</span> pour les dix premiers contre <span data-dato="wrResto">64,9 %</span> pour les autres. C’est pourquoi les comparaisons entre boîtes tiennent la route, alors que les valeurs absolues sont à prendre avec des pincettes.</p>
 </section>
 
-<section id="v-girls" hidden>
+<section id="v-girls" data-nosnippet hidden>
   <h2>Final Girls</h2>
   <p class="sub">Minimum 20 parties. Avec la boîte d’où vient chacune.</p>
   <div class="ctrl">
