@@ -596,6 +596,7 @@
 
   @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
   @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
+  .wr-lbl { font-family:var(--f-mono); font-size:11px; letter-spacing:.06em; color:var(--muted); font-weight:400; }
 </style>
 
 <nav class="nav-sitio" aria-label="Sezioni">
@@ -1472,7 +1473,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     cont.innerHTML = D.temporadas.map(function (T) {
       return '<div class="temp"><div class="temp-h"><h3>' + T.nombre + '</h3>' +
         '<span>' + T.cajas.length + ' scatole · ' + T.plays + ' partite</span>' +
-        '<span class="wr">' + pc(T.wr) + '</span></div>' +
+        '<span class="wr">' + pc(T.wr) + ' <small class="wr-lbl">di vittorie</small></span></div>' +
         '<div class="fichas" data-t="' + T.id + '">' + T.cajas.map(function (n) {
           var f = D.films.filter(function (x) { return x.film === n; })[0];
           var col = paso(f.wr) === 5 ? '#6f676b' : ['#b02c2c','#e05252','#ec8585','#f4b0b0','#fbd9d9','#6f676b','#cde2fb','#9ec5f4','#6da7ec','#3987e5','#1c5cab'][paso(f.wr)];
@@ -1486,7 +1487,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
               '<span class="f-k">' + f.killer + '<br>' + f.loc + '</span>' +
               '<span class="f-bar"><span class="f-dot" style="background:' + col + '"></span>' +
                 '<span class="f-wr">' + pc(f.wr) + '</span>' +
-                '<span class="f-pl">' + f.plays + ' partite</span></span>' +
+                '<span class="f-pl">di vittorie · ' + f.plays + ' partite</span></span>' +
             '</span></button>';
         }).join('') + '</div></div>';
     }).join('');
