@@ -472,6 +472,8 @@ def generar(M):
         for f in P.D["films"]:
             pags.append((P.slug(f["film"]) + ".html", *pagina_caja(f, lang, tx), f.get("img")))
         pags.append(("fichas.html", *hub(lang, pags), None))
+        import tierlist
+        pags.append(("tops.html", *tierlist.pagina(lang), None))
         hechos[lang] = {p[0] for p in pags}
         for p in pags:
             sitemap.append((lang, p[0]))

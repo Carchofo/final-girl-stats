@@ -612,6 +612,7 @@
   <a href="index.html" aria-current="page">Statistik</a>
   <a href="salidas.html">Eröffnungen</a>
   <a href="fichas.html">Übersicht</a>
+  <a href="tops.html">Tier list</a>
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Weitere Bereiche">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
@@ -746,7 +747,7 @@
 <section id="v-tops" hidden>
   <h2>Community-Tops</h2>
   <p class="sub">Was die Spieler denken, nicht was die Daten sagen.</p>
-  <a class="ct-ir" href="#ct-votar">Stimm ab ↓</a>
+  <a class="ct-tl" href="tops.html">Komplette Tier List →</a> <a class="ct-ir" href="#ct-votar">Stimm ab ↓</a>
   <div id="ct-res" class="ct-res"></div>
   <h2 id="ct-votar" class="ct-h2v">Abstimmen</h2>
   <p class="sub">Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.</p>
@@ -755,6 +756,7 @@
 <style>
   .ct-ir { display:inline-block; margin:6px 0 4px; background:var(--blood); color:#fff !important; text-decoration:none;
             border-radius:3px; padding:9px 18px; font-weight:600; font-size:14px; }
+  .ct-tl { margin-right:14px; font-weight:600; font-size:14px; color:var(--blood); }
   .ct-h2v { margin-top:34px; scroll-margin-top:16px; }
   .ct-res { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:16px; }
   .ct-card { background:var(--surface); border:1px solid var(--line); border-top:2px solid var(--blood); border-radius:3px; padding:12px 14px; min-width:0; }

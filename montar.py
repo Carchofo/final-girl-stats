@@ -80,6 +80,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
   <a href="index.html"{act_index}>Estadísticas</a>
   <a href="salidas.html"{act_salidas}>Salidas</a>
   <a href="fichas.html"{act_fichas}>Fichas</a>
+  <a href="tops.html">Tier list</a>
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Más secciones">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
@@ -492,7 +493,29 @@ url_fichas = f"{DOMINIO}/fichas.html"
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + fichas + PIE, encoding="utf-8")
 print("fichas.html (índice de las", len(generadas), "páginas)")
 
+# --- tier list ---------------------------------------------------------------
+# Para quien busca "tier list", "ranking" o "tops": la tier list por datos va
+# escrita en el HTML (el ranking de la pestaña Tops se carga con JS y un
+# buscador apenas lo ve), y debajo los tops que vota la comunidad.
+import tierlist
+tl_title, tl_desc, tl_cuerpo = tierlist.pagina("es")
+url_tl = f"{DOMINIO}/tops.html"
+(AQUI / "tops.html").write_text(
+    CABECERA.format(
+        title=tl_title, desc=tl_desc, url=url_tl, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle=tl_title, ogdesc=tl_desc,
+        jsonld=jsonld_de({"title": tl_title, "desc": tl_desc}, url_tl),
+        robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
+    + NAV.format(act_index="", act_salidas="", act_fichas="").replace('href="tops.html">', 'href="tops.html" aria-current="page">', 1)
+    + '<div class="wrap"><header class="top">' + tl_cuerpo
+    + '<footer><p>Datos de la <a href="' + HOJA + '" target="_blank" rel="noopener">hoja pública</a> de la comunidad. '
+      'Vuelve a <a href="index.html">todas las estadísticas</a> o a las <a href="fichas.html">fichas</a>.</p></footer></div>'
+    + PIE, encoding="utf-8")
+print("tops.html (tier list)")
+
 PAGINAS += [{"salida": "fichas.html", "prioridad": "0.9"}]
+PAGINAS += [{"salida": "tops.html", "prioridad": "0.9"}]
 PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
 # --- borrador de registro de partidas --------------------------------------

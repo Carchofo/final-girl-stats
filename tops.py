@@ -275,6 +275,11 @@ def poner(cuerpo, lang):
     cuerpo = cuerpo[:j] + f'\n  <button role="tab" data-t="tops" aria-selected="false">{t["tab"]}</button>' + cuerpo[j:]
     k = cuerpo.find('<section id="v-matriz">')
     k = cuerpo.find('</section>', k) + len('</section>')
-    cuerpo = cuerpo[:k] + seccion(lang) + cuerpo[k:]
+    # Enlace a la tier list completa: es la página que se posiciona por "tier list".
+    tl = {"es": "Tier list completa", "en": "Full tier list", "fr": "Tier list complète",
+          "de": "Komplette Tier List", "it": "Tier list completa"}[lang]
+    sec = seccion(lang).replace('<a class="ct-ir"', f'<a class="ct-tl" href="tops.html">{tl} →</a> <a class="ct-ir"', 1)
+    sec = sec.replace("  .ct-h2v {", "  .ct-tl { margin-right:14px; font-weight:600; font-size:14px; color:var(--blood); }\n  .ct-h2v {", 1)
+    cuerpo = cuerpo[:k] + sec + cuerpo[k:]
     # La lista de pestañas que entiende el #hash del enlace.
     return cuerpo.replace("'matriz', 'cajas'", "'matriz', 'tops', 'cajas'", 1)
