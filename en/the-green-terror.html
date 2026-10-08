@@ -112,6 +112,23 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !m.hidden) { pon(false); b.focus(); }
   });
+  /* Si el enlace apunta a esta misma pagina y la URL ya acaba en ese #hash
+     (pasa al cambiar de pestana por dentro), el navegador no hace nada y el
+     menu parece roto. Aqui se fuerza el cambio y se cierra el menu. */
+  m.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var u = new URL(a.href, location.href);
+    var aqui = function (p) { return p.replace(/\/$/, '/index.html'); };
+    if (aqui(u.pathname) !== aqui(location.pathname)) return;
+    e.preventDefault();
+    pon(false);
+    if (location.hash === u.hash) {
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    } else {
+      location.hash = u.hash;
+    }
+  });
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S4·F4 · 43 games</p>
