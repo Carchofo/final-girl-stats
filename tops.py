@@ -29,7 +29,7 @@ ORDEN = ["best_series", "best_box", "best_killer", "easiest_box", "hardest_box",
 PUNTOS = [3, 2, 1]
 
 T = {
- "es": {"sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops ↓", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
+ "es": {"todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops ↓", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
         "sub": "Lo que dice la gente, no los datos. Vota lo tuyo: todas las preguntas son opcionales y puedes dejar las que no sepas.",
         "votar": "Votar", "gracias": "¡Gracias! Tu voto ya cuenta.", "ya": "Ya has votado desde este navegador. Así va la cosa:",
         "nada": "—", "votos": "votos", "voto": "voto", "sin": "Aún no hay votos. Sé el primero.",
@@ -38,7 +38,7 @@ T = {
               "worst_box": "Peor caja", "best_killer": "Mejor killer", "best_location": "Mejor localización",
               "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl",
               "best_box": "Mejor película (caja)", "most_complex_killer": "Killer más complejo de reglas"}},
- "en": {"sub0": "What players think, not what the data says.", "ir": "Vote your tops ↓", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
+ "en": {"todo": "See all {n}", "menos": "See less", "sub0": "What players think, not what the data says.", "ir": "Vote your tops ↓", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
         "sub": "What players think, not what the data says. Cast your vote: every question is optional, skip the ones you don't know.",
         "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "No votes yet. Be the first.",
@@ -47,7 +47,7 @@ T = {
               "worst_box": "Worst box", "best_killer": "Best killer", "best_location": "Best location",
               "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl",
               "best_box": "Best movie (box)", "most_complex_killer": "Most complex killer (rules)"}},
- "fr": {"sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops ↓", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
+ "fr": {"todo": "Voir les {n}", "menos": "Voir moins", "sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops ↓", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
         "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.",
         "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "Pas encore de votes. Soyez le premier.",
@@ -56,7 +56,7 @@ T = {
               "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu",
               "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl",
               "best_box": "Meilleur film (boîte)", "most_complex_killer": "Killer aux règles les plus complexes"}},
- "de": {"sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab ↓", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
+ "de": {"todo": "Alle {n} zeigen", "menos": "Weniger", "sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab ↓", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
         "sub": "Was die Spieler denken, nicht was die Daten sagen. Stimm ab: Jede Frage ist optional.",
         "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
         "nada": "—", "votos": "Stimmen", "voto": "Stimme", "sin": "Noch keine Stimmen. Sei die erste Stimme.",
@@ -65,7 +65,7 @@ T = {
               "worst_box": "Schlechteste Box", "best_killer": "Bester Killer", "best_location": "Bester Schauplatz",
               "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl",
               "best_box": "Bester Film (Box)", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
- "it": {"sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top ↓", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
+ "it": {"todo": "Vedi tutti i {n}", "menos": "Vedi meno", "sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top ↓", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
         "sub": "Cosa pensano i giocatori, non cosa dicono i dati. Vota: ogni domanda è facoltativa.",
         "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
         "nada": "—", "votos": "voti", "voto": "voto", "sin": "Ancora nessun voto. Sii il primo.",
@@ -144,6 +144,10 @@ def seccion(lang):
   .ct-row .nm {{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
   .ct-row .n {{ font-family:var(--f-mono); font-size:12px; color:var(--muted); white-space:nowrap; }}
   .ct-vacio {{ margin:0; }}
+  .ct-mas {{ display:none !important; }}
+  .ct-todo .ct-mas {{ display:flex !important; }}
+  .ct-ver {{ margin-left:14px; background:none; border:0; padding:0; font:inherit; font-size:13px; color:var(--muted); cursor:pointer; text-decoration:underline; }}
+  .ct-ver:hover {{ color:var(--ink); }}
   .ct-a {{ display:inline-block; margin-top:8px; font-size:13px; font-weight:600; color:var(--blood); text-decoration:none; }}
   .ct-luz {{ animation:ctluz 1.6s ease-out; }}
   @keyframes ctluz {{ 0%,40% {{ border-color:var(--blood); box-shadow:0 0 0 3px color-mix(in srgb,var(--blood) 35%,transparent); }} 100% {{ box-shadow:none; }} }}
@@ -180,7 +184,7 @@ def seccion(lang):
         if (v) {{ pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }}
       }});
     }});
-    var top = Object.keys(pts).sort(function (a, b) {{ return pts[b] - pts[a] || votos[b] - votos[a]; }}).slice(0, 5);
+    var top = Object.keys(pts).sort(function (a, b) {{ return pts[b] - pts[a] || votos[b] - votos[a]; }});
     if (!top.length) return '<p class="sub ct-vacio">' + esc(C.t.sin) + '</p>';
     var max = pts[top[0]];
     function cifra(n) {{ return pts[n] + ' ' + C.t.pts + ' · ' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos); }}
@@ -188,7 +192,7 @@ def seccion(lang):
     var h = '<div class="ct-uno">' + (C.img[top[0]] ? '<img src="' + C.img[top[0]] + '" alt="" loading="lazy">' : '') +
       '<span>' + esc(top[0]) + '<i>' + cifra(top[0]) + '</i></span></div>';
     return h + top.slice(1).map(function (n, k) {{
-      return '<div class="ct-row"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i>' +
+      return '<div class="ct-row' + (k >= 4 ? ' ct-mas' : '') + '"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i>' +
         (C.img[n] ? '<img src="' + C.img[n] + '" alt="" loading="lazy">' : '') +
         '<span class="nm">' + (k + 2) + '. ' + esc(n) + '</span><span class="n">' + cifra(n) + '</span></div>';
     }}).join('');
@@ -196,11 +200,20 @@ def seccion(lang):
 
   function pintar() {{
     res.innerHTML = C.orden.map(function (id) {{
-      return '<div class="ct-card"><h3>' + esc(C.t.q[id]) + '</h3>' + ranking(id) +
-        '<a class="ct-a" href="#ct-votar" data-id="' + id + '">' + esc(C.t.votar) + ' ↓</a></div>';
+      var h = ranking(id), extra = (h.match(/ct-mas/g) || []).length;
+      return '<div class="ct-card' + (abiertos[id] ? ' ct-todo' : '') + '" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' + h +
+        '<a class="ct-a" href="#ct-votar" data-id="' + id + '">' + esc(C.t.votar) + ' ↓</a>' +
+        (extra ? '<button type="button" class="ct-ver">' + esc(abiertos[id] ? C.t.menos : C.t.todo.replace('{{n}}', extra + 5)) + '</button>' : '') + '</div>';
     }}).join('');
   }}
   // Desde cada top, a su formulario: baja, lo resalta y abre el 1º.
+  // Ver el ranking entero: se recuerda al repintar.
+  var abiertos = {{}};
+  res.addEventListener('click', function (e) {{
+    var v = e.target.closest('.ct-ver'); if (!v) return;
+    var c = v.closest('.ct-card'), id = c.getAttribute('data-id');
+    abiertos[id] = !abiertos[id]; pintar();
+  }});
   res.addEventListener('click', function (e) {{
     var a = e.target.closest('.ct-a'); if (!a) return;
     e.preventDefault();
