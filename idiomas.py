@@ -678,6 +678,7 @@ def grande(lang, salida, M, existe):
         cuerpo = re.sub(r'<nav class="nav-sitio".*?</nav>', nav.split("<style")[0].strip(), cuerpo, count=1, flags=re.S)
     if salida == "salidas.html":
         cuerpo += M.UNIFICAR_ESTILO
+    cuerpo = poner_aviso_movil(cuerpo, lang)
     if salida == "index.html":
         # Igual que en la española: "Laboratorio" no lo busca nadie.
         cuerpo = re.sub(r"<h1>.*?</h1>", f'<h1>{NAV_TXT[lang][0]}<span class="roja">Final Girl</span></h1>',
@@ -742,3 +743,40 @@ def filtrar_jugadores(cuerpo, lang):
     if 'id="ju-borrar"' not in cuerpo:
         cuerpo = cuerpo.replace('<div class="barlist" id="ju-lista">', aviso + '<div class="barlist" id="ju-lista">', 1)
     return cuerpo
+
+
+# --------------------------------------------------------------------------
+# Aviso en el móvil
+# --------------------------------------------------------------------------
+# La matriz y las tablas grandes se leen mal en una pantalla estrecha. Mejor
+# decirlo que dejar que alguien piense que la web está rota. Solo se ve por
+# debajo de 700 px y se puede cerrar; se recuerda en el navegador.
+AVISO_MOVIL = {
+    "es": "Estás en el móvil: la página funciona, pero la matriz y las tablas grandes se ven mejor en un ordenador o con el móvil en horizontal.",
+    "en": "You're on a phone: everything works, but the matrix and big tables read better on a computer or with your phone in landscape.",
+    "fr": "Vous êtes sur mobile : tout fonctionne, mais la matrice et les grands tableaux se lisent mieux sur ordinateur ou en mode paysage.",
+    "de": "Du bist am Handy: Alles funktioniert, aber die Matrix und großen Tabellen lesen sich am Computer oder im Querformat besser.",
+    "it": "Sei sul telefono: tutto funziona, ma la matrice e le tabelle grandi si leggono meglio su computer o con il telefono in orizzontale.",
+}
+
+
+def aviso_movil(lang):
+    return ('<div class="aviso-movil" id="aviso-movil" hidden><p>' + AVISO_MOVIL[lang]
+            + '</p><button type="button" aria-label="OK">✕</button></div>'
+            '<style>.aviso-movil{display:none}'
+            '@media (max-width:700px){.aviso-movil:not([hidden]){display:flex;gap:10px;align-items:flex-start;'
+            'margin:10px 0 4px;padding:10px 12px;background:var(--surface);border:1px solid var(--line);'
+            'border-left:3px solid var(--blood);border-radius:3px;font-size:13px;line-height:1.45;color:var(--muted)}'
+            '.aviso-movil p{margin:0;flex:1}.aviso-movil button{background:none;border:0;color:var(--muted);'
+            'font-size:16px;line-height:1;cursor:pointer;padding:2px 4px}}</style>'
+            '<script>(function(){var a=document.getElementById("aviso-movil");if(!a)return;'
+            'var visto=false;try{visto=localStorage.getItem("fg-aviso-movil")==="1"}catch(e){}'
+            'if(!visto)a.hidden=false;a.querySelector("button").onclick=function(){a.hidden=true;'
+            'try{localStorage.setItem("fg-aviso-movil","1")}catch(e){}}})();</script>')
+
+
+def poner_aviso_movil(cuerpo, lang):
+    if 'id="aviso-movil"' in cuerpo:
+        return cuerpo
+    i = cuerpo.find("</nav>")
+    return cuerpo if i < 0 else cuerpo[:i + 6] + aviso_movil(lang) + cuerpo[i + 6:]

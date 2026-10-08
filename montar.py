@@ -375,6 +375,8 @@ for p in PAGINAS:
     # en 50 páginas se lee como insistencia. Queda solo en el pie, donde se
     # ha ganado el derecho a pedir.
 
+    import idiomas
+    cuerpo = idiomas.poner_aviso_movil(cuerpo, "es")
     if p.get("unificar_estilo"):
         # DESPUES del cuerpo: a igual especificidad gana la ultima regla, y
         # el cuerpo trae las suyas.
