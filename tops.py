@@ -104,6 +104,18 @@ def seccion(lang):
   .ct-form button {{ grid-column:1/-1; justify-self:start; background:var(--blood); color:#fff; border:0; border-radius:3px;
                      padding:10px 22px; font:inherit; font-weight:600; letter-spacing:.04em; cursor:pointer; }}
   .ct-form button[disabled] {{ opacity:.6; cursor:default; }}
+  .ct-abrir, .ct-enviar {{ margin-top:10px; background:none; color:var(--blood); border:1px solid var(--blood); border-radius:3px;
+                           padding:6px 14px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; }}
+  .ct-enviar {{ background:var(--blood); color:#fff; align-self:flex-start; }}
+  .ct-enviar[disabled] {{ opacity:.6; }}
+  .ct-voto {{ display:flex; flex-direction:column; gap:6px; margin-top:10px; }}
+  .ct-voto[hidden] {{ display:none; }}
+  .ct-voto label {{ display:flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:11px; color:var(--muted); }}
+  .ct-voto label span {{ width:30px; flex:none; }}
+  .ct-voto select {{ flex:1; min-width:0; width:100%; font:inherit; font-size:13.5px; padding:6px; background:var(--sunk);
+                      color:var(--ink); border:1px solid var(--line); border-radius:3px; }}
+  .ct-ok {{ margin:10px 0 0; font-size:12.5px; color:var(--muted); }}
+  .ct-vacio {{ margin:0; }}
   .ct-res {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:16px; }}
   .ct-card {{ background:var(--surface); border:1px solid var(--line); border-top:2px solid var(--blood); border-radius:3px; padding:12px 14px; }}
   .ct-card h3 {{ margin:0 0 8px; font-size:15px; }}
@@ -115,58 +127,64 @@ def seccion(lang):
 <script>
 (function () {{
   var C = {json.dumps(cfg, ensure_ascii=False)};
-  var K = 'fg-tops-votado';
   var form = document.getElementById('ct-form'), msg = document.getElementById('ct-msg'), res = document.getElementById('ct-res');
+  form.hidden = true;
   function esc(s) {{ return String(s).replace(/[&<>"]/g, function (c) {{ return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]; }}); }}
-  var votado = false; try {{ votado = localStorage.getItem(K) === '1'; }} catch (e) {{}}
+  // Un voto por categoría y navegador.
+  function votada(id) {{ try {{ return localStorage.getItem('fg-top-' + id) === '1'; }} catch (e) {{ return false; }} }}
+  var RK = C.t.rk.split('|'), FILAS = [];
+  msg.textContent = C.t.sub2;
 
-  var RK = C.t.rk.split('|');
-  form.innerHTML = '<p class="sub ct-full">' + esc(C.t.sub2) + '</p>' + C.cols.map(function (id) {{
-    return '<fieldset class="ct-cat"><legend>' + esc(C.t.q[id]) + '</legend>' + [1, 2, 3].map(function (r) {{
-      return '<label><span>' + RK[r - 1] + '</span><select name="' + id + '_' + r + '"><option value="">' + C.t.nada + '</option>' +
-        C.o[id].map(function (o) {{ return '<option>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
-    }}).join('') + '</fieldset>';
-  }}).join('') + '<button type="submit">' + esc(C.t.votar) + '</button>';
-  if (votado) {{ form.hidden = true; msg.textContent = C.t.ya; }}
-
-  form.addEventListener('submit', function (ev) {{
-    ev.preventDefault();
-    var d = new URLSearchParams(), alguno = false;
-    C.cols.forEach(function (id) {{
-      var usados = {{}};
-      [1, 2, 3].forEach(function (r) {{
-        var v = form.elements[id + '_' + r].value;
-        if (v && !usados[v]) {{ usados[v] = 1; d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }}
+  function ranking(id, i) {{
+    var pts = {{}}, votos = {{}};
+    FILAS.forEach(function (f) {{
+      [0, 1, 2].forEach(function (r) {{
+        var v = f[i * 3 + r];
+        if (v) {{ pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }}
       }});
     }});
-    if (!alguno) return;
-    var b = form.querySelector('button'); b.disabled = true; b.textContent = C.t.enviando;
-    // no-cors: Google no deja leer la respuesta, pero el voto llega.
-    fetch(C.form, {{ method: 'POST', mode: 'no-cors', body: d }}).finally(function () {{
-      try {{ localStorage.setItem(K, '1'); }} catch (e) {{}}
-      form.hidden = true; msg.textContent = C.t.gracias;
-      setTimeout(cargar, 2500);
-    }});
-  }});
-
-  function pintar(filas) {{
-    if (!filas.length) {{ res.innerHTML = '<p class="sub">' + esc(C.t.sin) + '</p>'; return; }}
-    res.innerHTML = C.cols.map(function (id, i) {{
-      var pts = {{}}, votos = {{}};
-      filas.forEach(function (f) {{
-        [0, 1, 2].forEach(function (r) {{
-          var v = f[i * 3 + r];
-          if (v) {{ pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }}
-        }});
-      }});
-      var top = Object.keys(pts).sort(function (a, b) {{ return pts[b] - pts[a] || votos[b] - votos[a]; }}).slice(0, 5);
-      if (!top.length) return '';
-      var max = pts[top[0]];
-      return '<div class="ct-card"><h3>' + esc(C.t.q[id]) + '</h3>' + top.map(function (n) {{
-        return '<div class="ct-row"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i><span>' + esc(n) +
-          '</span><span class="n">' + pts[n] + ' ' + C.t.pts + ' · ' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos) + '</span></div>';
-      }}).join('') + '</div>';
+    var top = Object.keys(pts).sort(function (a, b) {{ return pts[b] - pts[a] || votos[b] - votos[a]; }}).slice(0, 5);
+    if (!top.length) return '<p class="sub ct-vacio">' + esc(C.t.sin) + '</p>';
+    var max = pts[top[0]];
+    return top.map(function (n) {{
+      return '<div class="ct-row"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i><span>' + esc(n) +
+        '</span><span class="n">' + pts[n] + ' ' + C.t.pts + ' · ' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos) + '</span></div>';
     }}).join('');
+  }}
+
+  function pintar() {{
+    res.innerHTML = C.cols.map(function (id, i) {{
+      var ya = votada(id);
+      return '<div class="ct-card" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' + ranking(id, i) +
+        (ya ? '<p class="ct-ok">' + esc(C.t.gracias) + '</p>'
+            : '<button type="button" class="ct-abrir">' + esc(C.t.votar) + '</button>' +
+              '<div class="ct-voto" hidden>' + [1, 2, 3].map(function (r) {{
+                return '<label><span>' + RK[r - 1] + '</span><select data-r="' + r + '"><option value="">' + C.t.nada + '</option>' +
+                  C.o[id].map(function (o) {{ return '<option>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
+              }}).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div>') +
+        '</div>';
+    }}).join('');
+    res.querySelectorAll('.ct-abrir').forEach(function (b) {{
+      b.onclick = function () {{ b.hidden = true; b.nextElementSibling.hidden = false; }};
+    }});
+    res.querySelectorAll('.ct-enviar').forEach(function (b) {{
+      b.onclick = function () {{
+        var card = b.closest('.ct-card'), id = card.getAttribute('data-id');
+        var d = new URLSearchParams(), usados = {{}}, alguno = false;
+        card.querySelectorAll('select').forEach(function (sel) {{
+          var v = sel.value, r = sel.getAttribute('data-r');
+          if (v && !usados[v]) {{ usados[v] = 1; d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }}
+        }});
+        if (!alguno) return;
+        b.disabled = true; b.textContent = C.t.enviando;
+        // no-cors: Google no deja leer la respuesta, pero el voto llega.
+        fetch(C.form, {{ method: 'POST', mode: 'no-cors', body: d }}).finally(function () {{
+          try {{ localStorage.setItem('fg-top-' + id, '1'); }} catch (e) {{}}
+          setTimeout(cargar, 2500);
+          pintar();
+        }});
+      }};
+    }});
   }}
 
   // JSONP de la API de visualización: la hoja es de solo lectura por enlace.
@@ -181,7 +199,7 @@ def seccion(lang):
         }}).map(function (row) {{
           return row.c.slice(1).map(function (c) {{ return c && c.v ? String(c.v) : ''; }});
         }});
-        pintar(filas);
+        FILAS = filas; pintar();
       }} catch (e) {{ res.innerHTML = '<p class="sub">' + esc(C.t.error) + '</p>'; }}
       delete window[cb];
     }};

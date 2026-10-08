@@ -765,6 +765,18 @@
   .ct-form button { grid-column:1/-1; justify-self:start; background:var(--blood); color:#fff; border:0; border-radius:3px;
                      padding:10px 22px; font:inherit; font-weight:600; letter-spacing:.04em; cursor:pointer; }
   .ct-form button[disabled] { opacity:.6; cursor:default; }
+  .ct-abrir, .ct-enviar { margin-top:10px; background:none; color:var(--blood); border:1px solid var(--blood); border-radius:3px;
+                           padding:6px 14px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; }
+  .ct-enviar { background:var(--blood); color:#fff; align-self:flex-start; }
+  .ct-enviar[disabled] { opacity:.6; }
+  .ct-voto { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
+  .ct-voto[hidden] { display:none; }
+  .ct-voto label { display:flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:11px; color:var(--muted); }
+  .ct-voto label span { width:30px; flex:none; }
+  .ct-voto select { flex:1; min-width:0; width:100%; font:inherit; font-size:13.5px; padding:6px; background:var(--sunk);
+                      color:var(--ink); border:1px solid var(--line); border-radius:3px; }
+  .ct-ok { margin:10px 0 0; font-size:12.5px; color:var(--muted); }
+  .ct-vacio { margin:0; }
   .ct-res { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:16px; }
   .ct-card { background:var(--surface); border:1px solid var(--line); border-top:2px solid var(--blood); border-radius:3px; padding:12px 14px; }
   .ct-card h3 { margin:0 0 8px; font-size:15px; }
@@ -776,58 +788,64 @@
 <script>
 (function () {
   var C = {"form": "https://docs.google.com/forms/d/e/1FAIpQLSeAWTzHjQvttvkZkpPQxGMZZoflJdXF5aZqsm44p42JItNDFQ/formResponse", "hoja": "1pFBklqcyVw17038m-NPmq7Q_CVnMBMELxNN6lyFTMZU", "e": {"easiest_box_1": "1941202498", "easiest_box_2": "1055419443", "easiest_box_3": "1425232451", "hardest_box_1": "359424908", "hardest_box_2": "1001047716", "hardest_box_3": "337431242", "most_immersive_box_1": "1588180815", "most_immersive_box_2": "232916496", "most_immersive_box_3": "1020920136", "worst_box_1": "376232544", "worst_box_2": "1036205401", "worst_box_3": "781557868", "best_killer_1": "1383692492", "best_killer_2": "1023437847", "best_killer_3": "916331605", "best_location_1": "1137060530", "best_location_2": "1908626071", "best_location_3": "2048900617", "best_series_1": "770362820", "best_series_2": "1839676813", "best_series_3": "890327225", "simplest_killer_1": "360846821", "simplest_killer_2": "1158631747", "simplest_killer_3": "40424145", "most_complex_killer_1": "1031299552", "most_complex_killer_2": "1872729929", "most_complex_killer_3": "1263855913"}, "cols": ["easiest_box", "hardest_box", "most_immersive_box", "worst_box", "best_killer", "best_location", "best_series", "simplest_killer", "most_complex_killer"], "p": [3, 2, 1], "o": {"easiest_box": ["A Demon in the Shadows", "A Knock at the Door", "A Rotten Harvest", "Bad Times at Buddyland", "Carnage at the Carnival", "Don't Make a Sound", "Frightmare on Maple Lane", "Hell to Pay", "Into the Void", "Madness in the Dark", "Once Upon a Full Moon", "Panic at Station 2891", "Shriek", "Slaughter in the Groves", "The Falconwood Files", "The Green Terror", "The Happy Trails Horror", "The Haunting of Creech Manor", "The Killer from Tomorrow", "The Marrek Murders", "The North Pole Nightmare", "The Raptor Games"], "hardest_box": ["A Demon in the Shadows", "A Knock at the Door", "A Rotten Harvest", "Bad Times at Buddyland", "Carnage at the Carnival", "Don't Make a Sound", "Frightmare on Maple Lane", "Hell to Pay", "Into the Void", "Madness in the Dark", "Once Upon a Full Moon", "Panic at Station 2891", "Shriek", "Slaughter in the Groves", "The Falconwood Files", "The Green Terror", "The Happy Trails Horror", "The Haunting of Creech Manor", "The Killer from Tomorrow", "The Marrek Murders", "The North Pole Nightmare", "The Raptor Games"], "most_immersive_box": ["A Demon in the Shadows", "A Knock at the Door", "A Rotten Harvest", "Bad Times at Buddyland", "Carnage at the Carnival", "Don't Make a Sound", "Frightmare on Maple Lane", "Hell to Pay", "Into the Void", "Madness in the Dark", "Once Upon a Full Moon", "Panic at Station 2891", "Shriek", "Slaughter in the Groves", "The Falconwood Files", "The Green Terror", "The Happy Trails Horror", "The Haunting of Creech Manor", "The Killer from Tomorrow", "The Marrek Murders", "The North Pole Nightmare", "The Raptor Games"], "worst_box": ["A Demon in the Shadows", "A Knock at the Door", "A Rotten Harvest", "Bad Times at Buddyland", "Carnage at the Carnival", "Don't Make a Sound", "Frightmare on Maple Lane", "Hell to Pay", "Into the Void", "Madness in the Dark", "Once Upon a Full Moon", "Panic at Station 2891", "Shriek", "Slaughter in the Groves", "The Falconwood Files", "The Green Terror", "The Happy Trails Horror", "The Haunting of Creech Manor", "The Killer from Tomorrow", "The Marrek Murders", "The North Pole Nightmare", "The Raptor Games"], "best_killer": ["Berith", "Big Bad Wolf", "Billy", "Dr. Fright", "Evomorph", "Geppetto", "Grimlash", "Hans", "Hunter", "Inkanyamba", "Krampus", "Mort", "Poltergeist", "Raptors", "Ratchet Lady", "Razorface", "Slayer", "Terror from Above", "Terror from Beyond", "Terror from Destiny", "Terror from the Grave", "The Eyeless", "The Intruders", "The Organism", "Tormentor", "Volk'ar"], "best_location": ["Buddyland", "Camp Happy Trail", "Carnival of Blood", "Creech Manor", "Falconwood", "Hellscape", "Isla Lagarto", "L'Armes Abbey", "Maple Lane", "Marrek Warehouse", "Mega BGCon", "Pesadilla Verde", "Sacred Groves", "Santa's Village", "Shady Acres", "Station 2891", "Storybook Woods", "Sunnydaze Mall", "USS Konrad", "Utopia", "Wingard Cottage", "Wolfe Asylum"], "best_series": ["Series 1", "Series 2", "Series 3", "Series 4"], "simplest_killer": ["Berith", "Big Bad Wolf", "Billy", "Dr. Fright", "Evomorph", "Geppetto", "Grimlash", "Hans", "Hunter", "Inkanyamba", "Krampus", "Mort", "Poltergeist", "Raptors", "Ratchet Lady", "Razorface", "Slayer", "Terror from Above", "Terror from Beyond", "Terror from Destiny", "Terror from the Grave", "The Eyeless", "The Intruders", "The Organism", "Tormentor", "Volk'ar"], "most_complex_killer": ["Berith", "Big Bad Wolf", "Billy", "Dr. Fright", "Evomorph", "Geppetto", "Grimlash", "Hans", "Hunter", "Inkanyamba", "Krampus", "Mort", "Poltergeist", "Raptors", "Ratchet Lady", "Razorface", "Slayer", "Terror from Above", "Terror from Beyond", "Terror from Destiny", "Terror from the Grave", "The Eyeless", "The Intruders", "The Organism", "Tormentor", "Volk'ar"]}, "t": {"tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté", "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.", "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :", "nada": "—", "votos": "votes", "voto": "vote", "sin": "Pas encore de votes. Soyez le premier.", "error": "Impossible de charger les résultats pour le moment.", "enviando": "Envoi…", "q": {"easiest_box": "Boîte la plus facile", "hardest_box": "Boîte la plus difficile", "most_immersive_box": "Boîte la plus immersive", "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu", "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl", "simplest_killer": "Killer aux règles les plus simples", "most_complex_killer": "Killer aux règles les plus complexes"}}};
-  var K = 'fg-tops-votado';
   var form = document.getElementById('ct-form'), msg = document.getElementById('ct-msg'), res = document.getElementById('ct-res');
+  form.hidden = true;
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-  var votado = false; try { votado = localStorage.getItem(K) === '1'; } catch (e) {}
+  // Un voto por categoría y navegador.
+  function votada(id) { try { return localStorage.getItem('fg-top-' + id) === '1'; } catch (e) { return false; } }
+  var RK = C.t.rk.split('|'), FILAS = [];
+  msg.textContent = C.t.sub2;
 
-  var RK = C.t.rk.split('|');
-  form.innerHTML = '<p class="sub ct-full">' + esc(C.t.sub2) + '</p>' + C.cols.map(function (id) {
-    return '<fieldset class="ct-cat"><legend>' + esc(C.t.q[id]) + '</legend>' + [1, 2, 3].map(function (r) {
-      return '<label><span>' + RK[r - 1] + '</span><select name="' + id + '_' + r + '"><option value="">' + C.t.nada + '</option>' +
-        C.o[id].map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('') + '</select></label>';
-    }).join('') + '</fieldset>';
-  }).join('') + '<button type="submit">' + esc(C.t.votar) + '</button>';
-  if (votado) { form.hidden = true; msg.textContent = C.t.ya; }
-
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var d = new URLSearchParams(), alguno = false;
-    C.cols.forEach(function (id) {
-      var usados = {};
-      [1, 2, 3].forEach(function (r) {
-        var v = form.elements[id + '_' + r].value;
-        if (v && !usados[v]) { usados[v] = 1; d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }
+  function ranking(id, i) {
+    var pts = {}, votos = {};
+    FILAS.forEach(function (f) {
+      [0, 1, 2].forEach(function (r) {
+        var v = f[i * 3 + r];
+        if (v) { pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }
       });
     });
-    if (!alguno) return;
-    var b = form.querySelector('button'); b.disabled = true; b.textContent = C.t.enviando;
-    // no-cors: Google no deja leer la respuesta, pero el voto llega.
-    fetch(C.form, { method: 'POST', mode: 'no-cors', body: d }).finally(function () {
-      try { localStorage.setItem(K, '1'); } catch (e) {}
-      form.hidden = true; msg.textContent = C.t.gracias;
-      setTimeout(cargar, 2500);
-    });
-  });
-
-  function pintar(filas) {
-    if (!filas.length) { res.innerHTML = '<p class="sub">' + esc(C.t.sin) + '</p>'; return; }
-    res.innerHTML = C.cols.map(function (id, i) {
-      var pts = {}, votos = {};
-      filas.forEach(function (f) {
-        [0, 1, 2].forEach(function (r) {
-          var v = f[i * 3 + r];
-          if (v) { pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }
-        });
-      });
-      var top = Object.keys(pts).sort(function (a, b) { return pts[b] - pts[a] || votos[b] - votos[a]; }).slice(0, 5);
-      if (!top.length) return '';
-      var max = pts[top[0]];
-      return '<div class="ct-card"><h3>' + esc(C.t.q[id]) + '</h3>' + top.map(function (n) {
-        return '<div class="ct-row"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i><span>' + esc(n) +
-          '</span><span class="n">' + pts[n] + ' ' + C.t.pts + ' · ' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos) + '</span></div>';
-      }).join('') + '</div>';
+    var top = Object.keys(pts).sort(function (a, b) { return pts[b] - pts[a] || votos[b] - votos[a]; }).slice(0, 5);
+    if (!top.length) return '<p class="sub ct-vacio">' + esc(C.t.sin) + '</p>';
+    var max = pts[top[0]];
+    return top.map(function (n) {
+      return '<div class="ct-row"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i><span>' + esc(n) +
+        '</span><span class="n">' + pts[n] + ' ' + C.t.pts + ' · ' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos) + '</span></div>';
     }).join('');
+  }
+
+  function pintar() {
+    res.innerHTML = C.cols.map(function (id, i) {
+      var ya = votada(id);
+      return '<div class="ct-card" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' + ranking(id, i) +
+        (ya ? '<p class="ct-ok">' + esc(C.t.gracias) + '</p>'
+            : '<button type="button" class="ct-abrir">' + esc(C.t.votar) + '</button>' +
+              '<div class="ct-voto" hidden>' + [1, 2, 3].map(function (r) {
+                return '<label><span>' + RK[r - 1] + '</span><select data-r="' + r + '"><option value="">' + C.t.nada + '</option>' +
+                  C.o[id].map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('') + '</select></label>';
+              }).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div>') +
+        '</div>';
+    }).join('');
+    res.querySelectorAll('.ct-abrir').forEach(function (b) {
+      b.onclick = function () { b.hidden = true; b.nextElementSibling.hidden = false; };
+    });
+    res.querySelectorAll('.ct-enviar').forEach(function (b) {
+      b.onclick = function () {
+        var card = b.closest('.ct-card'), id = card.getAttribute('data-id');
+        var d = new URLSearchParams(), usados = {}, alguno = false;
+        card.querySelectorAll('select').forEach(function (sel) {
+          var v = sel.value, r = sel.getAttribute('data-r');
+          if (v && !usados[v]) { usados[v] = 1; d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }
+        });
+        if (!alguno) return;
+        b.disabled = true; b.textContent = C.t.enviando;
+        // no-cors: Google no deja leer la respuesta, pero el voto llega.
+        fetch(C.form, { method: 'POST', mode: 'no-cors', body: d }).finally(function () {
+          try { localStorage.setItem('fg-top-' + id, '1'); } catch (e) {}
+          setTimeout(cargar, 2500);
+          pintar();
+        });
+      };
+    });
   }
 
   // JSONP de la API de visualización: la hoja es de solo lectura por enlace.
@@ -842,7 +860,7 @@
         }).map(function (row) {
           return row.c.slice(1).map(function (c) { return c && c.v ? String(c.v) : ''; });
         });
-        pintar(filas);
+        FILAS = filas; pintar();
       } catch (e) { res.innerHTML = '<p class="sub">' + esc(C.t.error) + '</p>'; }
       delete window[cb];
     };
