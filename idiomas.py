@@ -684,6 +684,7 @@ def grande(lang, salida, M, existe):
     if salida == "index.html":
         import tops
         cuerpo = tops.poner(cuerpo, lang)
+        cuerpo = ocultar_pestanas(cuerpo)
     if salida == "index.html":
         # Igual que en la española: "Laboratorio" no lo busca nadie.
         cuerpo = re.sub(r"<h1>.*?</h1>", f'<h1>{NAV_TXT[lang][0]}<span class="roja">Final Girl</span></h1>',
@@ -721,6 +722,20 @@ AVISO_NICK = {
     "de": "Bist du das und möchtest nicht gelistet sein? Schreib an {c} mit deinem Nick und wir entfernen dich. Deine Partien zählen weiter in den Zahlen, nur ohne deinen Namen.",
     "it": "Sei tu e preferisci non comparire? Scrivi a {c} con il tuo nick e ti togliamo. Le tue partite continueranno a contare nei numeri, ma senza il tuo nome.",
 }
+
+
+# Pestañas de la portada apagadas por ahora. Para volver a encender una,
+# quítala de aquí: el código y los datos siguen en su sitio.
+PESTANAS_OCULTAS = {"girls"}
+
+
+def ocultar_pestanas(html):
+    """Quita el botón de la pestaña y su enlace del menú "+". La sección
+    sigue en la página pero oculta, y sin botón no hay forma de abrirla."""
+    for t in PESTANAS_OCULTAS:
+        html = re.sub(r'\s*<button role="tab" data-t="' + t + r'"[^>]*>[^<]*</button>', "", html)
+        html = re.sub(r'\s*<a href="(?:\.\./)?index\.html#' + t + r'">[^<]*</a>', "", html)
+    return html
 
 
 def excluidos():

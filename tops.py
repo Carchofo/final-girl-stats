@@ -98,6 +98,10 @@ def _imagenes():
         img.setdefault(f["loc"], portada)
         arte = f"img/art/{paginas.slug(f['killer'])}.jpg"
         img.setdefault(f["killer"], arte if (AQUI / arte).exists() else portada)
+    # Las temporadas tienen su propio arte (img/temporadas/serie-N.jpg).
+    for n in range(1, 10):
+        if (AQUI / f"img/temporadas/serie-{n}.jpg").exists():
+            img["Series " + str(n)] = f"img/temporadas/serie-{n}.jpg"
     for t in D["temporadas"]:
         if t["id"].startswith("S") and t["cajas"]:
             p = f"img/{paginas.slug(t['cajas'][0])}.jpg"
@@ -134,6 +138,9 @@ def seccion(lang):
   /* Portadas: el logo va arriba y la cara en el centro-abajo. El arte de killer, centrado arriba. */
   .ct-uno img[src*="art/"], .ct-row img[src*="art/"] {{ object-position:center 25%; }}
   .ct-row img {{ object-position:center 62%; }}
+  /* Arte de temporada: los killers van arriba. */
+  .ct-uno img[src*="temporadas/"] {{ object-position:center 18%; }}
+  .ct-row img[src*="temporadas/"] {{ object-position:center 20%; }}
   .ct-uno span {{ position:absolute; left:0; right:0; bottom:0; padding:22px 10px 7px; font-weight:700; font-size:15px; color:#fff;
                   background:linear-gradient(transparent,rgba(0,0,0,.85)); display:flex; justify-content:space-between; gap:8px; }}
   .ct-uno span i {{ font-style:normal; font-family:var(--f-mono); font-size:12px; font-weight:400; opacity:.85; white-space:nowrap; }}

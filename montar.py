@@ -155,6 +155,9 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
 }})();
 </script>
 """
+import idiomas as _idiomas
+NAV = _idiomas.ocultar_pestanas(NAV)  # pestañas apagadas: ver idiomas.PESTANAS_OCULTAS
+
 
 # La estrategias de salida viene del artifact anterior al rediseño: tema claro,
 # Big Shoulders y Newsreader. La de estadisticas es oscura con Jost. Dos
@@ -393,6 +396,7 @@ for p in PAGINAS:
     if p["salida"] == "index.html":
         import tops
         cuerpo = tops.poner(cuerpo, "es")
+        cuerpo = idiomas.ocultar_pestanas(cuerpo)
     if p.get("unificar_estilo"):
         # DESPUES del cuerpo: a igual especificidad gana la ultima regla, y
         # el cuerpo trae las suyas.
