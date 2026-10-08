@@ -21,7 +21,8 @@ FORM = "https://docs.google.com/forms/d/e/1FAIpQLSeMu7wzCoW5v_4VNMMvg2HARI5c0rTg
 HOJA = "1HcwE8UFDByRGln_h4_RZk1ds-Xo3xPIrWfeXV7brwVM"
 ENTRADAS = {"easiest_box": "1037940783", "hardest_box": "990824240", "most_immersive_box": "959760338",
             "worst_box": "1386136466", "best_killer": "1501686861", "best_location": "1356803176",
-            "best_setup": "674130540", "best_series": "414320778", "best_final_girl": "589723174"}
+            "best_setup": "674130540", "best_series": "414320778", "best_final_girl": "589723174",
+            "simplest_killer": "1967221705", "most_complex_killer": "2122986646"}
 # Orden de las columnas en la hoja (después de Timestamp), igual que el formulario.
 COLUMNAS = list(ENTRADAS)
 
@@ -33,7 +34,8 @@ T = {
         "error": "No se han podido cargar los resultados ahora mismo.", "enviando": "Enviando…",
         "q": {"easiest_box": "Caja más fácil", "hardest_box": "Caja más difícil", "most_immersive_box": "Caja más inmersiva",
               "worst_box": "Peor caja", "best_killer": "Mejor killer", "best_location": "Mejor localización",
-              "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl"}},
+              "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl",
+              "simplest_killer": "Killer más sencillo de reglas", "most_complex_killer": "Killer más complejo de reglas"}},
  "en": {"tab": "Tops", "h2": "Community tops",
         "sub": "What players think, not what the data says. Cast your vote: every question is optional, skip the ones you don't know.",
         "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
@@ -41,7 +43,8 @@ T = {
         "error": "Results couldn't be loaded right now.", "enviando": "Sending…",
         "q": {"easiest_box": "Easiest box", "hardest_box": "Hardest box", "most_immersive_box": "Most immersive box",
               "worst_box": "Worst box", "best_killer": "Best killer", "best_location": "Best location",
-              "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl"}},
+              "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl",
+              "simplest_killer": "Simplest killer (rules)", "most_complex_killer": "Most complex killer (rules)"}},
  "fr": {"tab": "Tops", "h2": "Tops de la communauté",
         "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.",
         "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
@@ -49,7 +52,8 @@ T = {
         "error": "Impossible de charger les résultats pour le moment.", "enviando": "Envoi…",
         "q": {"easiest_box": "Boîte la plus facile", "hardest_box": "Boîte la plus difficile", "most_immersive_box": "Boîte la plus immersive",
               "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu",
-              "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl"}},
+              "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl",
+              "simplest_killer": "Killer aux règles les plus simples", "most_complex_killer": "Killer aux règles les plus complexes"}},
  "de": {"tab": "Tops", "h2": "Community-Tops",
         "sub": "Was die Spieler denken, nicht was die Daten sagen. Stimm ab: Jede Frage ist optional.",
         "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
@@ -57,7 +61,8 @@ T = {
         "error": "Die Ergebnisse konnten gerade nicht geladen werden.", "enviando": "Wird gesendet…",
         "q": {"easiest_box": "Leichteste Box", "hardest_box": "Schwerste Box", "most_immersive_box": "Atmosphärischste Box",
               "worst_box": "Schlechteste Box", "best_killer": "Bester Killer", "best_location": "Bester Schauplatz",
-              "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl"}},
+              "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl",
+              "simplest_killer": "Killer mit den einfachsten Regeln", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
  "it": {"tab": "Top", "h2": "Top della community",
         "sub": "Cosa pensano i giocatori, non cosa dicono i dati. Vota: ogni domanda è facoltativa.",
         "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
@@ -65,7 +70,8 @@ T = {
         "error": "Non è stato possibile caricare i risultati ora.", "enviando": "Invio…",
         "q": {"easiest_box": "Scatola più facile", "hardest_box": "Scatola più difficile", "most_immersive_box": "Scatola più immersiva",
               "worst_box": "Scatola peggiore", "best_killer": "Miglior killer", "best_location": "Miglior ambientazione",
-              "best_setup": "Miglior Setup", "best_series": "Miglior stagione", "best_final_girl": "Miglior Final Girl"}},
+              "best_setup": "Miglior Setup", "best_series": "Miglior stagione", "best_final_girl": "Miglior Final Girl",
+              "simplest_killer": "Killer con le regole più semplici", "most_complex_killer": "Killer con le regole più complesse"}},
 }
 
 
