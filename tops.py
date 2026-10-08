@@ -141,6 +141,9 @@ def seccion(lang):
   .ct-row .nm {{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
   .ct-row .n {{ font-family:var(--f-mono); font-size:12px; color:var(--muted); white-space:nowrap; }}
   .ct-vacio {{ margin:0; }}
+  .ct-a {{ display:inline-block; margin-top:8px; font-size:13px; font-weight:600; color:var(--blood); text-decoration:none; }}
+  .ct-luz {{ animation:ctluz 1.6s ease-out; }}
+  @keyframes ctluz {{ 0%,40% {{ border-color:var(--blood); box-shadow:0 0 0 3px color-mix(in srgb,var(--blood) 35%,transparent); }} 100% {{ box-shadow:none; }} }}
   .ct-form {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px 14px; margin:14px 0 6px; }}
   .ct-cat {{ min-width:0; border:1px solid var(--line); border-radius:3px; padding:10px 12px 12px; display:flex; flex-direction:column; gap:6px; }}
   .ct-cat h3 {{ margin:0 0 2px; font-size:14px; }}
@@ -190,9 +193,19 @@ def seccion(lang):
 
   function pintar() {{
     res.innerHTML = C.orden.map(function (id) {{
-      return '<div class="ct-card"><h3>' + esc(C.t.q[id]) + '</h3>' + ranking(id) + '</div>';
+      return '<div class="ct-card"><h3>' + esc(C.t.q[id]) + '</h3>' + ranking(id) +
+        '<a class="ct-a" href="#ct-votar" data-id="' + id + '">' + esc(C.t.votar) + ' ↓</a></div>';
     }}).join('');
   }}
+  // Desde cada top, a su formulario: baja, lo resalta y abre el 1º.
+  res.addEventListener('click', function (e) {{
+    var a = e.target.closest('.ct-a'); if (!a) return;
+    e.preventDefault();
+    var c = form.querySelector('.ct-cat[data-id="' + a.getAttribute('data-id') + '"]');
+    c.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+    c.classList.remove('ct-luz'); void c.offsetWidth; c.classList.add('ct-luz');
+    var s = c.querySelector('select'); if (s) setTimeout(function () {{ s.focus({{ preventScroll: true }}); }}, 400);
+  }});
 
   // El formulario se pinta una vez y no se toca al recargar resultados:
   // lo que el visitante tenga a medias no se pierde.
