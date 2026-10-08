@@ -610,14 +610,14 @@
 
 <nav class="nav-sitio" aria-label="Bereiche">
   <a href="index.html" aria-current="page">Statistik</a>
+  <a href="tops.html#comunidad">Tops</a>
+  <a href="tops.html">Tier list</a>
   <a href="salidas.html">Eröffnungen</a>
   <a href="fichas.html">Übersicht</a>
-  <a href="tops.html">Tier list</a>
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Weitere Bereiche">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
-  <a href="index.html#matriz">Stats</a>
-  <a href="index.html#tops">Tops</a>
+  <a href="index.html#tops">Extreme</a>
   <a href="index.html#cajas">Filme</a>
   <a href="index.html#temporadas">Staffeln</a>
   <a href="index.html#killers">Killer</a>
@@ -656,7 +656,7 @@
   .nav-mas a { color:var(--muted); text-decoration:none; padding:7px 0; }
   .nav-mas a:hover { color:var(--blood); }
   @media (max-width:560px) {
-    .nav-sitio { justify-content:center; gap:16px; }
+    .nav-sitio { justify-content:center; gap:6px 14px; flex-wrap:wrap; font-size:12px; letter-spacing:.04em; }
     /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
        descuadraria el centro. */
     .nav-sitio .mas { margin-left:0; }

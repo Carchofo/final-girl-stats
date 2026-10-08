@@ -39,14 +39,14 @@
 <body>
 <nav class="nav-sitio" aria-label="Sections">
   <a href="index.html">Stats</a>
+  <a href="tops.html#comunidad">Tops</a>
+  <a href="tops.html">Tier list</a>
   <a href="salidas.html">Openings</a>
   <a href="fichas.html">All pages</a>
-  <a href="tops.html">Tier list</a>
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="More sections">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
-  <a href="index.html#matriz">Stats</a>
-  <a href="index.html#tops">Tops</a>
+  <a href="index.html#tops">Extremes</a>
   <a href="index.html#cajas">Movies</a>
   <a href="index.html#temporadas">Series</a>
   <a href="index.html#killers">Killers</a>
@@ -85,7 +85,7 @@
   .nav-mas a { color:var(--muted); text-decoration:none; padding:7px 0; }
   .nav-mas a:hover { color:var(--blood); }
   @media (max-width:560px) {
-    .nav-sitio { justify-content:center; gap:16px; }
+    .nav-sitio { justify-content:center; gap:6px 14px; flex-wrap:wrap; font-size:12px; letter-spacing:.04em; }
     /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
        descuadraria el centro. */
     .nav-sitio .mas { margin-left:0; }

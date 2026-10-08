@@ -78,14 +78,14 @@ ENLACES = {
 
 NAV = """<nav class="nav-sitio" aria-label="Secciones">
   <a href="index.html"{act_index}>Estadísticas</a>
+  <a href="tops.html#comunidad">Tops</a>
+  <a href="tops.html">Tier list</a>
   <a href="salidas.html"{act_salidas}>Salidas</a>
   <a href="fichas.html"{act_fichas}>Fichas</a>
-  <a href="tops.html">Tier list</a>
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Más secciones">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
-  <a href="index.html#matriz">Stats</a>
-  <a href="index.html#tops">Tops</a>
+  <a href="index.html#tops">Extremos</a>
   <a href="index.html#cajas">Películas</a>
   <a href="index.html#temporadas">Temporadas</a>
   <a href="index.html#killers">Killers</a>
@@ -125,7 +125,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
   .nav-mas a {{ color:var(--muted); text-decoration:none; padding:7px 0; }}
   .nav-mas a:hover {{ color:var(--blood); }}
   @media (max-width:560px) {{
-    .nav-sitio {{ justify-content:center; gap:16px; }}
+    .nav-sitio {{ justify-content:center; gap:6px 14px; flex-wrap:wrap; font-size:12px; letter-spacing:.04em; }}
     /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
        descuadraria el centro. */
     .nav-sitio .mas {{ margin-left:0; }}
@@ -471,8 +471,13 @@ fichas = (
       '<h1>Todas las<span class="roja">fichas</span></h1>'
       '<p class="dek">Una página por killer y por caja, con sus porcentajes de victoria, '
       'sus cartas más duras y los consejos de quien las ha jugado.</p></header>'
-    + enlaces("killer", "Killers", "Dónde gana y dónde pierde cada uno, y qué Dark Powers y Finales castigan más.")
-    + enlaces("caja", "Cajas", "Cada caja con su killer y su mapa, hojas de preparación y qué tiene de particular.")
+    + '<nav class="chips" aria-label="Tipos de ficha">'
+      '<a href="#killers">Killers</a><a href="#peliculas">Películas</a>'
+      '<a href="#temporadas">Temporadas</a><a href="#localizaciones">Localizaciones</a></nav>'
+    + enlaces("killer", "Killers", "Dónde gana y dónde pierde cada uno, y qué Dark Powers y Finales castigan más.").replace("<h2>", '<h2 id="killers">', 1)
+    + enlaces("caja", "Películas", "Cada película (caja) con su killer y su mapa, hojas de preparación y qué tiene de particular.").replace("<h2>", '<h2 id="peliculas">', 1)
+    + '<h2 id="temporadas">Temporadas</h2><p class="sub">Aún sin ficha propia. Mira sus cifras en <a href="index.html#temporadas">estadísticas de temporadas</a>.</p>'
+    + '<h2 id="localizaciones">Localizaciones</h2><p class="sub">Aún sin ficha propia. Mira sus cifras en <a href="index.html#mapas">estadísticas de mapas</a>.</p>'
     + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> '
       'o a la <a href="salidas.html">estrategias de salida</a>.</p></footer></div>'
     + '''<style>
@@ -482,6 +487,11 @@ fichas = (
   .indice li { background:var(--surface); }
   .indice a { display:block; padding:11px 14px; color:var(--ink); text-decoration:none; font-size:14.5px; }
   .indice a:hover { background:var(--blood-s); color:var(--blood); }
+  .chips { display:flex; gap:8px; overflow-x:auto; padding:4px 0 18px; -webkit-overflow-scrolling:touch; }
+  .chips a { flex:none; border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:13px;
+             letter-spacing:.04em; text-transform:uppercase; color:var(--muted); text-decoration:none; }
+  .chips a:hover { color:var(--blood); border-color:var(--blood); }
+  h2[id] { scroll-margin-top:12px; }
 </style>'''
 )
 url_fichas = f"{DOMINIO}/fichas.html"
