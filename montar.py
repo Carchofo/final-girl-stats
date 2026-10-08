@@ -389,6 +389,9 @@ for p in PAGINAS:
 
     import idiomas
     cuerpo = idiomas.poner_aviso_movil(cuerpo, "es")
+    if p["salida"] == "index.html":
+        import tops
+        cuerpo = tops.poner(cuerpo, "es")
     if p.get("unificar_estilo"):
         # DESPUES del cuerpo: a igual especificidad gana la ultima regla, y
         # el cuerpo trae las suyas.

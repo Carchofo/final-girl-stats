@@ -680,6 +680,9 @@ def grande(lang, salida, M, existe):
         cuerpo += M.UNIFICAR_ESTILO
     cuerpo = poner_aviso_movil(cuerpo, lang)
     if salida == "index.html":
+        import tops
+        cuerpo = tops.poner(cuerpo, lang)
+    if salida == "index.html":
         # Igual que en la española: "Laboratorio" no lo busca nadie.
         cuerpo = re.sub(r"<h1>.*?</h1>", f'<h1>{NAV_TXT[lang][0]}<span class="roja">Final Girl</span></h1>',
                         cuerpo, count=1, flags=re.S)
