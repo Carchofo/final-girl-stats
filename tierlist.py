@@ -80,7 +80,8 @@ ESTILO = """<style>
   .tl-items { display:flex; flex-wrap:wrap; gap:8px; padding:8px; min-height:60px; }
   .tl-it { position:relative; width:104px; height:104px; border-radius:3px; overflow:hidden; background:var(--sunk);
            color:#fff; text-decoration:none; display:block; }
-  .tl-it img { width:100%; height:100%; object-fit:cover; object-position:center 25%; display:block; }
+  .tl-it img { width:100%; height:100%; object-fit:cover; object-position:center 62%; display:block; }
+  .tl-it img[src*="art/"] { object-position:center 25%; }
   .tl-it span { position:absolute; left:0; right:0; bottom:0; padding:16px 5px 4px; font-size:11.5px; line-height:1.2;
                 font-weight:600; background:linear-gradient(transparent,rgba(0,0,0,.9)); }
   .tl-it b { display:block; font-family:var(--f-mono); font-size:10.5px; font-weight:400; opacity:.85; }
