@@ -567,6 +567,7 @@
   .mx th.mia { color:var(--blood); }
   .mx th.mia div::after, .mx tbody th.mia::after { content:" ●"; font-size:8px; vertical-align:2px; }
   details.mis > summary { border-left:3px solid var(--blood); padding-left:10px; }
+  #mis-temps button { margin-left:6px; }
 </style>
 
 <header class="hero">
@@ -595,6 +596,7 @@
   <div class="misfoot">
     <button type="button" id="mis-none">Keine</button>
     <button type="button" id="mis-all">Alle</button>
+    <span id="mis-temps"></span>
     <span id="mis-info"></span>
   </div>
 </details>
@@ -737,6 +739,13 @@ var D = /*@@D@@*/;
     try { var v = JSON.parse(localStorage.getItem(CLAVE)); if (Array.isArray(v)) return v; } catch (e) {}
     return [];
   })();
+  // La primera visita, el panel abierto: si no se ve, nadie marca nada.
+  document.addEventListener('DOMContentLoaded', function () {
+    var d = document.getElementById('mis'); if (!d) return;
+    var visto = false; try { visto = localStorage.getItem('fg-mis-visto') === '1'; } catch (e) {}
+    if (!visto && !MIAS.length) d.open = true;
+    d.addEventListener('toggle', function () { try { localStorage.setItem('fg-mis-visto', '1'); } catch (e) {} });
+  });
   function guardarMias() { try { localStorage.setItem(CLAVE, JSON.stringify(MIAS)); } catch (e) {} }
 
   var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
@@ -1429,6 +1438,16 @@ var D = /*@@D@@*/;
     document.getElementById('mis-grid').innerHTML = orden.map(function (n, i) {
       return '<label><input type="checkbox" data-f="' + i + '"' + (MIAS.indexOf(n) !== -1 ? ' checked' : '') + '>' + n + '</label>';
     }).join('');
+    // Un toque por temporada: mucha gente compra la caja grande entera.
+    document.getElementById('mis-temps').innerHTML = D.temporadas.map(function (T, i) {
+      return '<button type="button" data-t="' + i + '">+ ' + T.nombre + '</button>';
+    }).join('');
+    document.querySelectorAll('#mis-temps button').forEach(function (b) {
+      b.onclick = function () {
+        D.temporadas[+b.getAttribute('data-t')].cajas.forEach(function (n) { if (MIAS.indexOf(n) === -1) MIAS.push(n); });
+        guardarMias(); recalcMias(); pintarMis(); repintarTodo();
+      };
+    });
     document.querySelectorAll('#mis-grid input').forEach(function (cb, i) {
       cb.addEventListener('change', function () {
         var n = orden[i], j = MIAS.indexOf(n);

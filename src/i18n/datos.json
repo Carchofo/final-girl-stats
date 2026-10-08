@@ -1,115 +1,230 @@
 {
-"Temporada 1": {"en": "Series 1", "fr": "Saison 1", "de": "Staffel 1", "it": "Stagione 1"},
-"Temporada 2": {"en": "Series 2", "fr": "Saison 2", "de": "Staffel 2", "it": "Stagione 2"},
-"Temporada 3": {"en": "Series 3", "fr": "Saison 3", "de": "Staffel 3", "it": "Stagione 3"},
-"Temporada 4": {"en": "Series 4", "fr": "Saison 4", "de": "Staffel 4", "it": "Stagione 4"},
-"Otras": {"en": "Other", "fr": "Autres", "de": "Andere", "it": "Altre"},
-"Final Health: sobrevives tú": {"en": "Final Health: you survive", "fr": "Final Health : vous survivez", "de": "Final Health: du überlebst", "it": "Final Health: sopravvivi tu"},
-"Final Health: sobrevive él": {"en": "Final Health: the killer survives", "fr": "Final Health : le killer survit", "de": "Final Health: der Killer überlebt", "it": "Final Health: sopravvive il killer"},
-"Final Health: los dos": {"en": "Final Health: both", "fr": "Final Health : les deux", "de": "Final Health: beide", "it": "Final Health: entrambi"},
-"Final Health: ninguno": {"en": "Final Health: neither", "fr": "Final Health : aucun", "de": "Final Health: keiner", "it": "Final Health: nessuno"},
-"Finale sin revelar": {"en": "Finale not revealed", "fr": "Finale non révélé", "de": "Finale nicht aufgedeckt", "it": "Finale non rivelato"},
-"Finale revelado": {"en": "Finale revealed", "fr": "Finale révélé", "de": "Finale aufgedeckt", "it": "Finale rivelato"},
-"Dark Power sin revelar": {"en": "Dark Power not revealed", "fr": "Dark Power non révélé", "de": "Dark Power nicht aufgedeckt", "it": "Dark Power non rivelato"},
-"Dark Power revelado": {"en": "Dark Power revealed", "fr": "Dark Power révélé", "de": "Dark Power aufgedeckt", "it": "Dark Power rivelato"},
-"Dificultad normal": {"en": "Normal difficulty", "fr": "Difficulté normale", "de": "Normale Schwierigkeit", "it": "Difficoltà normale"},
-"Promo premium (S4)": {"en": "Premium promo (S4)", "fr": "Promo premium (S4)", "de": "Premium-Promo (S4)", "it": "Promo premium (S4)"},
-"Promo de la tienda de Van Ryder": {"en": "Van Ryder store promo", "fr": "Promo de la boutique Van Ryder", "de": "Promo aus dem Van-Ryder-Shop", "it": "Promo dello store Van Ryder"},
-"Muy valorada por diseño, y de las más duras del juego. Tres reviews coinciden: el manicomio y las pastillas encantan, la Ratchet Lady frustra. No es caja para empezar.": {
- "en": "Highly rated for design, and one of the hardest in the game. Three reviews agree: the asylum and the pills are loved, Ratchet Lady frustrates. Not a box to start with.",
- "fr": "Très appréciée pour son design, et l'une des plus dures du jeu. Trois critiques s'accordent : l'asile et les pilules plaisent, Ratchet Lady frustre. Pas une boîte pour débuter.",
- "de": "Für ihr Design sehr geschätzt und eine der härtesten im Spiel. Drei Rezensionen sind sich einig: Anstalt und Pillen begeistern, Ratchet Lady frustriert. Keine Box für den Einstieg.",
- "it": "Molto apprezzata per il design, e tra le più dure del gioco. Tre recensioni concordano: il manicomio e le pillole piacciono, Ratchet Lady frustra. Non è una scatola per iniziare."},
-"El Wolfe Asylum es de las localizaciones mejor valoradas del juego. «Probablemente mi favorita», «top tier location».": {
- "en": "Wolfe Asylum is one of the best-rated locations in the game. \"Probably my favourite\", \"top tier location\".",
- "fr": "Wolfe Asylum est l'un des lieux les mieux notés du jeu. « Probablement mon préféré », « top tier location ».",
- "de": "Wolfe Asylum gehört zu den bestbewerteten Schauplätzen des Spiels. „Wahrscheinlich mein Favorit“, „top tier location“.",
- "it": "Wolfe Asylum è tra le ambientazioni più apprezzate del gioco. «Probabilmente la mia preferita», «top tier location»."},
-"El sistema de pastillas es lo más elogiado. Juntas tres y sacas una carta Amped, que es muy potente.": {
- "en": "The pill system is the most praised part. Collect three and you get an Amped card, which is very strong.",
- "fr": "Le système de pilules est le plus salué. On en réunit trois et on obtient une carte Amped, très puissante.",
- "de": "Das Pillensystem wird am meisten gelobt. Sammle drei und du bekommst eine Amped-Karte, die sehr stark ist.",
- "it": "Il sistema delle pillole è la parte più lodata. Ne raccogli tre e ottieni una carta Amped, molto potente."},
-"Los maniacos gustan como sistema de minions, y las cartas de Calmar dan respuesta al jugador.": {
- "en": "The Maniacs work well as a minion system, and the Calm cards give the player an answer.",
- "fr": "Les Maniacs plaisent comme système de sbires, et les cartes Calm donnent une réponse au joueur.",
- "de": "Die Maniacs kommen als Minion-System gut an, und die Calm-Karten geben dem Spieler eine Antwort.",
- "it": "I Maniacs piacciono come sistema di minion, e le carte Calm danno una risposta al giocatore."},
-"El mapa funciona bien con otros killers, no solo con el suyo.": {
- "en": "The map works well with other killers, not just its own.",
- "fr": "La carte fonctionne bien avec d'autres killers, pas seulement le sien.",
- "de": "Die Karte funktioniert auch mit anderen Killern gut, nicht nur mit ihrem eigenen.",
- "it": "La mappa funziona bene con altri killer, non solo con il suo."},
-"Su curación sin tope es lo que rompe a la gente. «Si dejas que se te vaya de las manos, es extremadamente difícil de tratar».": {
- "en": "Her uncapped healing is what breaks people. \"If you let it get out of hand, she is extremely hard to deal with\".",
- "fr": "Son soin sans plafond est ce qui brise les joueurs. « Si on la laisse filer, elle devient extrêmement difficile à gérer ».",
- "de": "Ihre Heilung ohne Obergrenze ist es, woran Spieler scheitern. „Wenn du sie entgleiten lässt, ist sie extrem schwer in den Griff zu bekommen“.",
- "it": "La sua cura senza limite è ciò che spezza i giocatori. «Se le lasci prendere il sopravvento, è estremamente difficile da gestire»."},
-"Las pastillas cuestan de aprovechar bien, aunque sean fáciles de recoger.": {
- "en": "The pills are hard to use well, even though they are easy to pick up.",
- "fr": "Les pilules sont difficiles à bien exploiter, même si elles sont faciles à ramasser.",
- "de": "Die Pillen sind schwer gut zu nutzen, auch wenn sie leicht einzusammeln sind.",
- "it": "Le pillole sono difficili da sfruttare bene, anche se sono facili da raccogliere."},
-"Exceso de reglas en algunas cartas de evento, que añaden complicación sin aportar.": {
- "en": "Too many rules on some event cards, adding complexity without adding much.",
- "fr": "Trop de règles sur certaines cartes événement, qui compliquent sans apporter grand-chose.",
- "de": "Zu viele Regeln auf manchen Ereigniskarten, die verkomplizieren, ohne etwas beizutragen.",
- "it": "Troppe regole su alcune carte evento, che complicano senza aggiungere nulla."},
-"Hay armas con pegas serias: munición limitada o pérdida de vida al usarlas.": {
- "en": "Some weapons have serious drawbacks: limited ammo or losing health when you use them.",
- "fr": "Certaines armes ont de sérieux défauts : munitions limitées ou perte de vie à l'utilisation.",
- "de": "Manche Waffen haben ernste Nachteile: begrenzte Munition oder Lebensverlust beim Einsatz.",
- "it": "Alcune armi hanno seri difetti: munizioni limitate o perdita di vita quando le usi."},
-"Ve a por ella pronto y a menudo. Es el consejo que más se repite: si esperas, se vuelve casi imposible de matar.": {
- "en": "Go after her early and often. It is the most repeated tip: if you wait, she becomes almost impossible to kill.",
- "fr": "Attaquez-la tôt et souvent. C'est le conseil le plus répété : si vous attendez, elle devient presque impossible à tuer.",
- "de": "Greif sie früh und oft an. Das ist der häufigste Tipp: Wenn du wartest, wird sie fast unmöglich zu töten.",
- "it": "Attaccala presto e spesso. È il consiglio più ripetuto: se aspetti, diventa quasi impossibile da uccidere."},
-"Pero saca tiempo para un arma igualmente. Quien ganó lo hizo con las dos cosas.": {
- "en": "But still make time for a weapon. Those who won did both.",
- "fr": "Mais prenez quand même le temps de trouver une arme. Ceux qui ont gagné ont fait les deux.",
- "de": "Nimm dir aber trotzdem Zeit für eine Waffe. Wer gewonnen hat, hat beides getan.",
- "it": "Ma trova comunque il tempo per un'arma. Chi ha vinto ha fatto entrambe le cose."},
-"Ella es pasiva al principio: solo sus maniacos te persiguen, ella aguanta posición. Si la mueves sin icono de bota, te estás inventando un killer mucho peor.": {
- "en": "She is passive at first: only her Maniacs chase you, she holds her position. If you move her without a boot icon, you are inventing a much worse killer.",
- "fr": "Elle est passive au début : seuls ses Maniacs vous poursuivent, elle reste en place. Si vous la déplacez sans icône de botte, vous inventez un killer bien pire.",
- "de": "Anfangs ist sie passiv: Nur ihre Maniacs jagen dich, sie hält ihre Position. Wenn du sie ohne Stiefel-Symbol bewegst, erfindest du einen viel schlimmeren Killer.",
- "it": "All'inizio è passiva: ti inseguono solo i suoi Maniacs, lei mantiene la posizione. Se la muovi senza l'icona dello stivale, ti stai inventando un killer molto peggiore."},
-"Las pastillas son fáciles de encontrar y hay sitios que dan dos. Cada Amp cuesta tres.": {
- "en": "Pills are easy to find and some spaces give two. Each Amp costs three.",
- "fr": "Les pilules sont faciles à trouver et certains lieux en donnent deux. Chaque Amp en coûte trois.",
- "de": "Pillen sind leicht zu finden, und manche Felder geben zwei. Jeder Amp kostet drei.",
- "it": "Le pillole sono facili da trovare e alcuni spazi ne danno due. Ogni Amp ne costa tre."},
-"Un veterano de 150+ partidas dice que es mucho más fácil sacándola de su manicomio": {
- "en": "A veteran with 150+ games says she is much easier outside her asylum",
- "fr": "Un vétéran de plus de 150 parties dit qu'elle est bien plus facile hors de son asile",
- "de": "Ein Veteran mit über 150 Partien sagt, sie sei außerhalb ihrer Anstalt viel leichter",
- "it": "Un veterano con oltre 150 partite dice che è molto più facile fuori dal suo manicomio"},
-"Cierto y por mucho: 66,6% de media en cualquier mapa, pero 50,0% en Wolfe Asylum. Es su peor mapa de largo. En Camp Happy Trails sube al 80,4% y en Station 2891 al 81,8%.": {
- "en": "True, by a lot: 66.6% on average on any map, but 50.0% in Wolfe Asylum. It is her worst map by far. In Camp Happy Trails it rises to 80.4% and in Station 2891 to 81.8%.",
- "fr": "Vrai, et de loin : 66,6 % en moyenne sur n'importe quelle carte, mais 50,0 % à Wolfe Asylum. C'est de loin sa pire carte. À Camp Happy Trails on monte à 80,4 % et à Station 2891 à 81,8 %.",
- "de": "Stimmt, und zwar deutlich: 66,6 % im Schnitt auf jeder Karte, aber 50,0 % in Wolfe Asylum. Mit Abstand ihre schlechteste Karte. In Camp Happy Trails steigt der Wert auf 80,4 % und in Station 2891 auf 81,8 %.",
- "it": "Vero, e di molto: 66,6% di media su qualsiasi mappa, ma 50,0% a Wolfe Asylum. È di gran lunga la sua mappa peggiore. A Camp Happy Trails sale all'80,4% e a Station 2891 all'81,8%."},
-"Dice además que es peor en mapas con curación extra": {
- "en": "He also says she is worse on maps with extra healing",
- "fr": "Il ajoute qu'elle est pire sur les cartes avec du soin en plus",
- "de": "Er sagt außerdem, sie sei auf Karten mit zusätzlicher Heilung schlimmer",
- "it": "Dice inoltre che è peggio sulle mappe con cure extra"},
-"Encaja: el Wolfe Asylum con otros killers da 63,2%, cerca de la media. Lo brutal es la pareja, no cada mitad.": {
- "en": "It fits: Wolfe Asylum with other killers gives 63.2%, close to the average. What is brutal is the pairing, not each half.",
- "fr": "Ça colle : Wolfe Asylum avec d'autres killers donne 63,2 %, proche de la moyenne. Ce qui est brutal, c'est la paire, pas chaque moitié.",
- "de": "Passt: Wolfe Asylum mit anderen Killern ergibt 63,2 %, nahe am Schnitt. Brutal ist die Kombination, nicht jede Hälfte.",
- "it": "Torna: Wolfe Asylum con altri killer dà 63,2%, vicino alla media. Brutale è la coppia, non ciascuna metà."},
-"Una review señala el finale «Hold Her Down» como brutalmente difícil": {
- "en": "One review calls the \"Hold Her Down\" finale brutally hard",
- "fr": "Une critique désigne le finale « Hold Her Down » comme brutalement difficile",
- "de": "Eine Rezension nennt das Finale „Hold Her Down“ brutal schwer",
- "it": "Una recensione indica il finale «Hold Her Down» come brutalmente difficile"},
-"Confirmado: 62,1% sobre 103 partidas, su peor finale. Su peor Dark Power es Shield of Madness, 55,5% sobre 110.": {
- "en": "Confirmed: 62.1% over 103 games, her worst finale. Her worst Dark Power is Shield of Madness, 55.5% over 110.",
- "fr": "Confirmé : 62,1 % sur 103 parties, son pire finale. Son pire Dark Power est Shield of Madness, 55,5 % sur 110.",
- "de": "Bestätigt: 62,1 % bei 103 Partien, ihr schlimmstes Finale. Ihr schlimmster Dark Power ist Shield of Madness, 55,5 % bei 110.",
- "it": "Confermato: 62,1% su 103 partite, il suo finale peggiore. Il suo Dark Power peggiore è Shield of Madness, 55,5% su 110."},
-"Review de Zatu Games": {"en": "Zatu Games review", "fr": "Critique de Zatu Games", "de": "Rezension von Zatu Games", "it": "Recensione di Zatu Games"},
-"Review de Dude Take Your Turn": {"en": "Dude Take Your Turn review", "fr": "Critique de Dude Take Your Turn", "de": "Rezension von Dude Take Your Turn", "it": "Recensione di Dude Take Your Turn"}
+ "Temporada 1": {
+  "en": "Series 1",
+  "fr": "Saison 1",
+  "de": "Staffel 1",
+  "it": "Stagione 1"
+ },
+ "Temporada 2": {
+  "en": "Series 2",
+  "fr": "Saison 2",
+  "de": "Staffel 2",
+  "it": "Stagione 2"
+ },
+ "Temporada 3": {
+  "en": "Series 3",
+  "fr": "Saison 3",
+  "de": "Staffel 3",
+  "it": "Stagione 3"
+ },
+ "Temporada 4": {
+  "en": "Series 4",
+  "fr": "Saison 4",
+  "de": "Staffel 4",
+  "it": "Stagione 4"
+ },
+ "Otras": {
+  "en": "Other",
+  "fr": "Autres",
+  "de": "Andere",
+  "it": "Altre"
+ },
+ "Final Health: sobrevives tú": {
+  "en": "Final Health: you survive",
+  "fr": "Final Health : vous survivez",
+  "de": "Final Health: du überlebst",
+  "it": "Final Health: sopravvivi tu"
+ },
+ "Final Health: sobrevive él": {
+  "en": "Final Health: the killer survives",
+  "fr": "Final Health : le killer survit",
+  "de": "Final Health: der Killer überlebt",
+  "it": "Final Health: sopravvive il killer"
+ },
+ "Final Health: los dos": {
+  "en": "Final Health: both",
+  "fr": "Final Health : les deux",
+  "de": "Final Health: beide",
+  "it": "Final Health: entrambi"
+ },
+ "Final Health: ninguno": {
+  "en": "Final Health: neither",
+  "fr": "Final Health : aucun",
+  "de": "Final Health: keiner",
+  "it": "Final Health: nessuno"
+ },
+ "Finale sin revelar": {
+  "en": "Finale not revealed",
+  "fr": "Finale non révélé",
+  "de": "Finale nicht aufgedeckt",
+  "it": "Finale non rivelato"
+ },
+ "Finale revelado": {
+  "en": "Finale revealed",
+  "fr": "Finale révélé",
+  "de": "Finale aufgedeckt",
+  "it": "Finale rivelato"
+ },
+ "Dark Power sin revelar": {
+  "en": "Dark Power not revealed",
+  "fr": "Dark Power non révélé",
+  "de": "Dark Power nicht aufgedeckt",
+  "it": "Dark Power non rivelato"
+ },
+ "Dark Power revelado": {
+  "en": "Dark Power revealed",
+  "fr": "Dark Power révélé",
+  "de": "Dark Power aufgedeckt",
+  "it": "Dark Power rivelato"
+ },
+ "Dificultad normal": {
+  "en": "Normal difficulty",
+  "fr": "Difficulté normale",
+  "de": "Normale Schwierigkeit",
+  "it": "Difficoltà normale"
+ },
+ "Promo premium (S4)": {
+  "en": "Premium promo (S4)",
+  "fr": "Promo premium (S4)",
+  "de": "Premium-Promo (S4)",
+  "it": "Promo premium (S4)"
+ },
+ "Promo de la tienda de Van Ryder": {
+  "en": "Van Ryder store promo",
+  "fr": "Promo de la boutique Van Ryder",
+  "de": "Promo aus dem Van-Ryder-Shop",
+  "it": "Promo dello store Van Ryder"
+ },
+ "Muy valorada por diseño, y de las más duras del juego. Tres reviews coinciden: el manicomio y las pastillas encantan, la Ratchet Lady frustra. No es caja para empezar.": {
+  "en": "Highly rated for design, and one of the hardest in the game. Three reviews agree: the asylum and the pills are loved, Ratchet Lady frustrates. Not a box to start with.",
+  "fr": "Très appréciée pour son design, et l'une des plus dures du jeu. Trois critiques s'accordent : l'asile et les pilules plaisent, Ratchet Lady frustre. Pas une boîte pour débuter.",
+  "de": "Für ihr Design sehr geschätzt und eine der härtesten im Spiel. Drei Rezensionen sind sich einig: Anstalt und Pillen begeistern, Ratchet Lady frustriert. Keine Box für den Einstieg.",
+  "it": "Molto apprezzata per il design, e tra le più dure del gioco. Tre recensioni concordano: il manicomio e le pillole piacciono, Ratchet Lady frustra. Non è una scatola per iniziare."
+ },
+ "El Wolfe Asylum es de las localizaciones mejor valoradas del juego. «Probablemente mi favorita», «top tier location».": {
+  "en": "Wolfe Asylum is one of the best-rated locations in the game. \"Probably my favourite\", \"top tier location\".",
+  "fr": "Wolfe Asylum est l'un des lieux les mieux notés du jeu. « Probablement mon préféré », « top tier location ».",
+  "de": "Wolfe Asylum gehört zu den bestbewerteten Schauplätzen des Spiels. „Wahrscheinlich mein Favorit“, „top tier location“.",
+  "it": "Wolfe Asylum è tra le ambientazioni più apprezzate del gioco. «Probabilmente la mia preferita», «top tier location»."
+ },
+ "El sistema de pastillas es lo más elogiado. Juntas tres y sacas una carta Amped, que es muy potente.": {
+  "en": "The pill system is the most praised part. Collect three and you get an Amped card, which is very strong.",
+  "fr": "Le système de pilules est le plus salué. On en réunit trois et on obtient une carte Amped, très puissante.",
+  "de": "Das Pillensystem wird am meisten gelobt. Sammle drei und du bekommst eine Amped-Karte, die sehr stark ist.",
+  "it": "Il sistema delle pillole è la parte più lodata. Ne raccogli tre e ottieni una carta Amped, molto potente."
+ },
+ "Los maniacos gustan como sistema de minions, y las cartas de Calmar dan respuesta al jugador.": {
+  "en": "The Maniacs work well as a minion system, and the Calm cards give the player an answer.",
+  "fr": "Les Maniacs plaisent comme système de sbires, et les cartes Calm donnent une réponse au joueur.",
+  "de": "Die Maniacs kommen als Minion-System gut an, und die Calm-Karten geben dem Spieler eine Antwort.",
+  "it": "I Maniacs piacciono come sistema di minion, e le carte Calm danno una risposta al giocatore."
+ },
+ "El mapa funciona bien con otros killers, no solo con el suyo.": {
+  "en": "The map works well with other killers, not just its own.",
+  "fr": "La carte fonctionne bien avec d'autres killers, pas seulement le sien.",
+  "de": "Die Karte funktioniert auch mit anderen Killern gut, nicht nur mit ihrem eigenen.",
+  "it": "La mappa funziona bene con altri killer, non solo con il suo."
+ },
+ "Su curación sin tope es lo que rompe a la gente. «Si dejas que se te vaya de las manos, es extremadamente difícil de tratar».": {
+  "en": "Her uncapped healing is what breaks people. \"If you let it get out of hand, she is extremely hard to deal with\".",
+  "fr": "Son soin sans plafond est ce qui brise les joueurs. « Si on la laisse filer, elle devient extrêmement difficile à gérer ».",
+  "de": "Ihre Heilung ohne Obergrenze ist es, woran Spieler scheitern. „Wenn du sie entgleiten lässt, ist sie extrem schwer in den Griff zu bekommen“.",
+  "it": "La sua cura senza limite è ciò che spezza i giocatori. «Se le lasci prendere il sopravvento, è estremamente difficile da gestire»."
+ },
+ "Las pastillas cuestan de aprovechar bien, aunque sean fáciles de recoger.": {
+  "en": "The pills are hard to use well, even though they are easy to pick up.",
+  "fr": "Les pilules sont difficiles à bien exploiter, même si elles sont faciles à ramasser.",
+  "de": "Die Pillen sind schwer gut zu nutzen, auch wenn sie leicht einzusammeln sind.",
+  "it": "Le pillole sono difficili da sfruttare bene, anche se sono facili da raccogliere."
+ },
+ "Exceso de reglas en algunas cartas de evento, que añaden complicación sin aportar.": {
+  "en": "Too many rules on some event cards, adding complexity without adding much.",
+  "fr": "Trop de règles sur certaines cartes événement, qui compliquent sans apporter grand-chose.",
+  "de": "Zu viele Regeln auf manchen Ereigniskarten, die verkomplizieren, ohne etwas beizutragen.",
+  "it": "Troppe regole su alcune carte evento, che complicano senza aggiungere nulla."
+ },
+ "Hay armas con pegas serias: munición limitada o pérdida de vida al usarlas.": {
+  "en": "Some weapons have serious drawbacks: limited ammo or losing health when you use them.",
+  "fr": "Certaines armes ont de sérieux défauts : munitions limitées ou perte de vie à l'utilisation.",
+  "de": "Manche Waffen haben ernste Nachteile: begrenzte Munition oder Lebensverlust beim Einsatz.",
+  "it": "Alcune armi hanno seri difetti: munizioni limitate o perdita di vita quando le usi."
+ },
+ "Ve a por ella pronto y a menudo. Es el consejo que más se repite: si esperas, se vuelve casi imposible de matar.": {
+  "en": "Go after her early and often. It is the most repeated tip: if you wait, she becomes almost impossible to kill.",
+  "fr": "Attaquez-la tôt et souvent. C'est le conseil le plus répété : si vous attendez, elle devient presque impossible à tuer.",
+  "de": "Greif sie früh und oft an. Das ist der häufigste Tipp: Wenn du wartest, wird sie fast unmöglich zu töten.",
+  "it": "Attaccala presto e spesso. È il consiglio più ripetuto: se aspetti, diventa quasi impossibile da uccidere."
+ },
+ "Pero saca tiempo para un arma igualmente. Quien ganó lo hizo con las dos cosas.": {
+  "en": "But still make time for a weapon. Those who won did both.",
+  "fr": "Mais prenez quand même le temps de trouver une arme. Ceux qui ont gagné ont fait les deux.",
+  "de": "Nimm dir aber trotzdem Zeit für eine Waffe. Wer gewonnen hat, hat beides getan.",
+  "it": "Ma trova comunque il tempo per un'arma. Chi ha vinto ha fatto entrambe le cose."
+ },
+ "Ella es pasiva al principio: solo sus maniacos te persiguen, ella aguanta posición. Si la mueves sin icono de bota, te estás inventando un killer mucho peor.": {
+  "en": "She is passive at first: only her Maniacs chase you, she holds her position. If you move her without a boot icon, you are inventing a much worse killer.",
+  "fr": "Elle est passive au début : seuls ses Maniacs vous poursuivent, elle reste en place. Si vous la déplacez sans icône de botte, vous inventez un killer bien pire.",
+  "de": "Anfangs ist sie passiv: Nur ihre Maniacs jagen dich, sie hält ihre Position. Wenn du sie ohne Stiefel-Symbol bewegst, erfindest du einen viel schlimmeren Killer.",
+  "it": "All'inizio è passiva: ti inseguono solo i suoi Maniacs, lei mantiene la posizione. Se la muovi senza l'icona dello stivale, ti stai inventando un killer molto peggiore."
+ },
+ "Las pastillas son fáciles de encontrar y hay sitios que dan dos. Cada Amp cuesta tres.": {
+  "en": "Pills are easy to find and some spaces give two. Each Amp costs three.",
+  "fr": "Les pilules sont faciles à trouver et certains lieux en donnent deux. Chaque Amp en coûte trois.",
+  "de": "Pillen sind leicht zu finden, und manche Felder geben zwei. Jeder Amp kostet drei.",
+  "it": "Le pillole sono facili da trovare e alcuni spazi ne danno due. Ogni Amp ne costa tre."
+ },
+ "Un veterano de 150+ partidas dice que es mucho más fácil sacándola de su manicomio": {
+  "en": "A veteran with 150+ games says she is much easier outside her asylum",
+  "fr": "Un vétéran de plus de 150 parties dit qu'elle est bien plus facile hors de son asile",
+  "de": "Ein Veteran mit über 150 Partien sagt, sie sei außerhalb ihrer Anstalt viel leichter",
+  "it": "Un veterano con oltre 150 partite dice che è molto più facile fuori dal suo manicomio"
+ },
+ "Cierto y por mucho: 66,6% de media en cualquier mapa, pero 50,0% en Wolfe Asylum. Es su peor mapa de largo. En Camp Happy Trails sube al 80,4% y en Station 2891 al 81,8%.": {
+  "en": "True, by a lot: 66.6% on average on any map, but 50.0% in Wolfe Asylum. It is her worst map by far. In Camp Happy Trails it rises to 80.4% and in Station 2891 to 81.8%.",
+  "fr": "Vrai, et de loin : 66,6 % en moyenne sur n'importe quelle carte, mais 50,0 % à Wolfe Asylum. C'est de loin sa pire carte. À Camp Happy Trails on monte à 80,4 % et à Station 2891 à 81,8 %.",
+  "de": "Stimmt, und zwar deutlich: 66,6 % im Schnitt auf jeder Karte, aber 50,0 % in Wolfe Asylum. Mit Abstand ihre schlechteste Karte. In Camp Happy Trails steigt der Wert auf 80,4 % und in Station 2891 auf 81,8 %.",
+  "it": "Vero, e di molto: 66,6% di media su qualsiasi mappa, ma 50,0% a Wolfe Asylum. È di gran lunga la sua mappa peggiore. A Camp Happy Trails sale all'80,4% e a Station 2891 all'81,8%."
+ },
+ "Dice además que es peor en mapas con curación extra": {
+  "en": "He also says she is worse on maps with extra healing",
+  "fr": "Il ajoute qu'elle est pire sur les cartes avec du soin en plus",
+  "de": "Er sagt außerdem, sie sei auf Karten mit zusätzlicher Heilung schlimmer",
+  "it": "Dice inoltre che è peggio sulle mappe con cure extra"
+ },
+ "Encaja: el Wolfe Asylum con otros killers da 63,2%, cerca de la media. Lo brutal es la pareja, no cada mitad.": {
+  "en": "It fits: Wolfe Asylum with other killers gives 63.2%, close to the average. What is brutal is the pairing, not each half.",
+  "fr": "Ça colle : Wolfe Asylum avec d'autres killers donne 63,2 %, proche de la moyenne. Ce qui est brutal, c'est la paire, pas chaque moitié.",
+  "de": "Passt: Wolfe Asylum mit anderen Killern ergibt 63,2 %, nahe am Schnitt. Brutal ist die Kombination, nicht jede Hälfte.",
+  "it": "Torna: Wolfe Asylum con altri killer dà 63,2%, vicino alla media. Brutale è la coppia, non ciascuna metà."
+ },
+ "Una review señala el finale «Hold Her Down» como brutalmente difícil": {
+  "en": "One review calls the \"Hold Her Down\" finale brutally hard",
+  "fr": "Une critique désigne le finale « Hold Her Down » comme brutalement difficile",
+  "de": "Eine Rezension nennt das Finale „Hold Her Down“ brutal schwer",
+  "it": "Una recensione indica il finale «Hold Her Down» come brutalmente difficile"
+ },
+ "Confirmado: 62,1% sobre 103 partidas, su peor finale. Su peor Dark Power es Shield of Madness, 55,5% sobre 110.": {
+  "en": "Confirmed: 62.1% over 103 games, her worst finale. Her worst Dark Power is Shield of Madness, 55.5% over 110.",
+  "fr": "Confirmé : 62,1 % sur 103 parties, son pire finale. Son pire Dark Power est Shield of Madness, 55,5 % sur 110.",
+  "de": "Bestätigt: 62,1 % bei 103 Partien, ihr schlimmstes Finale. Ihr schlimmster Dark Power ist Shield of Madness, 55,5 % bei 110.",
+  "it": "Confermato: 62,1% su 103 partite, il suo finale peggiore. Il suo Dark Power peggiore è Shield of Madness, 55,5% su 110."
+ },
+ "Review de Zatu Games": {
+  "en": "Zatu Games review",
+  "fr": "Critique de Zatu Games",
+  "de": "Rezension von Zatu Games",
+  "it": "Recensione di Zatu Games"
+ },
+ "Review de Dude Take Your Turn": {
+  "en": "Dude Take Your Turn review",
+  "fr": "Critique de Dude Take Your Turn",
+  "de": "Rezension von Dude Take Your Turn",
+  "it": "Recensione di Dude Take Your Turn"
+ },
+ "Especiales": {
+  "en": "Specials",
+  "fr": "Spéciales",
+  "de": "Specials",
+  "it": "Speciali"
+ }
 }
