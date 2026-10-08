@@ -29,7 +29,7 @@ ORDEN = ["best_series", "best_box", "best_killer", "easiest_box", "hardest_box",
 PUNTOS = [3, 2, 1]
 
 T = {
- "es": {"todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops ↓", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
+ "es": {"vtop": "Votar en los tops →", "vchip": "Votar", "todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops ↓", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
         "sub": "Lo que dice la gente, no los datos. Vota lo tuyo: todas las preguntas son opcionales y puedes dejar las que no sepas.",
         "votar": "Votar", "gracias": "¡Gracias! Tu voto ya cuenta.", "ya": "Ya has votado desde este navegador. Así va la cosa:",
         "nada": "—", "votos": "votos", "voto": "voto", "sin": "Aún no hay votos. Sé el primero.",
@@ -38,7 +38,7 @@ T = {
               "worst_box": "Peor caja", "best_killer": "Mejor killer", "best_location": "Mejor localización",
               "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl",
               "best_box": "Mejor película (caja)", "most_complex_killer": "Killer más complejo de reglas"}},
- "en": {"todo": "See all {n}", "menos": "See less", "sub0": "What players think, not what the data says.", "ir": "Vote your tops ↓", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
+ "en": {"vtop": "Vote in the tops →", "vchip": "Vote", "todo": "See all {n}", "menos": "See less", "sub0": "What players think, not what the data says.", "ir": "Vote your tops ↓", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
         "sub": "What players think, not what the data says. Cast your vote: every question is optional, skip the ones you don't know.",
         "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "No votes yet. Be the first.",
@@ -47,7 +47,7 @@ T = {
               "worst_box": "Worst box", "best_killer": "Best killer", "best_location": "Best location",
               "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl",
               "best_box": "Best movie (box)", "most_complex_killer": "Most complex killer (rules)"}},
- "fr": {"todo": "Voir les {n}", "menos": "Voir moins", "sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops ↓", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
+ "fr": {"vtop": "Voter dans les tops →", "vchip": "Voter", "todo": "Voir les {n}", "menos": "Voir moins", "sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops ↓", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
         "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.",
         "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "Pas encore de votes. Soyez le premier.",
@@ -56,7 +56,7 @@ T = {
               "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu",
               "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl",
               "best_box": "Meilleur film (boîte)", "most_complex_killer": "Killer aux règles les plus complexes"}},
- "de": {"todo": "Alle {n} zeigen", "menos": "Weniger", "sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab ↓", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
+ "de": {"vtop": "In den Tops abstimmen →", "vchip": "Abstimmen", "todo": "Alle {n} zeigen", "menos": "Weniger", "sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab ↓", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
         "sub": "Was die Spieler denken, nicht was die Daten sagen. Stimm ab: Jede Frage ist optional.",
         "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
         "nada": "—", "votos": "Stimmen", "voto": "Stimme", "sin": "Noch keine Stimmen. Sei die erste Stimme.",
@@ -65,7 +65,7 @@ T = {
               "worst_box": "Schlechteste Box", "best_killer": "Bester Killer", "best_location": "Bester Schauplatz",
               "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl",
               "best_box": "Bester Film (Box)", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
- "it": {"todo": "Vedi tutti i {n}", "menos": "Vedi meno", "sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top ↓", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
+ "it": {"vtop": "Vota nei top →", "vchip": "Vota", "todo": "Vedi tutti i {n}", "menos": "Vedi meno", "sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top ↓", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
         "sub": "Cosa pensano i giocatori, non cosa dicono i dati. Vota: ogni domanda è facoltativa.",
         "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
         "nada": "—", "votos": "voti", "voto": "voto", "sin": "Ancora nessun voto. Sii il primo.",
@@ -152,6 +152,10 @@ def seccion(lang):
   .ct-row .n {{ font-family:var(--f-mono); font-size:12px; color:var(--muted); white-space:nowrap; }}
   .ct-vacio {{ margin:0; }}
   .ct-mas {{ display:none !important; }}
+  .ct-vlink {{ display:inline-block; margin:6px 0 4px; font-size:13px; font-weight:600; color:var(--blood); text-decoration:none; }}
+  .ct-vchip {{ display:inline-block; margin-top:6px; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+               color:#fff; background:var(--blood); border-radius:2px; padding:3px 7px; cursor:pointer; text-decoration:none; width:max-content; }}
+  .ct-vtemp {{ margin:0 0 0 12px; align-self:center; }}
   .ct-todo .ct-mas {{ display:flex !important; }}
   .ct-ver {{ margin-left:14px; background:none; border:0; padding:0; font:inherit; font-size:13px; color:var(--muted); cursor:pointer; text-decoration:underline; }}
   .ct-ver:hover {{ color:var(--ink); }}
@@ -258,6 +262,62 @@ def seccion(lang):
       }});
     }};
   }});
+
+  // Desde las otras pestañas (temporadas, películas, killers, mapas): un
+  // enlace "Votar" que abre Tops en su categoría con esa opción ya puesta.
+  function irAVotar(cat, val) {{
+    var b = document.querySelector('nav.tabs button[data-t="tops"]'); if (b) b.click();
+    var c = form.querySelector('.ct-cat[data-id="' + cat + '"]'); if (!c) return;
+    var sels = [].slice.call(c.querySelectorAll('select'));
+    if (val && sels.length && !sels.some(function (x) {{ return x.value === val; }})) {{
+      var libre = sels.filter(function (x) {{ return !x.value; }})[0];
+      if (libre) libre.value = val;
+    }}
+    setTimeout(function () {{
+      c.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+      c.classList.remove('ct-luz'); void c.offsetWidth; c.classList.add('ct-luz');
+    }}, 60);
+  }}
+  window.fgVotar = irAVotar;
+  var LISTAS = {{ 'l-killers': 'best_killer', 'l-mapas': 'best_location', 'l-cajas': 'best_box', 'l-temps': 'best_box' }};
+  function decorar() {{
+    Object.keys(LISTAS).forEach(function (lid) {{
+      var l = document.getElementById(lid); if (!l) return;
+      var cat = LISTAS[lid];
+      l.querySelectorAll('.rowdetail').forEach(function (d) {{
+        if (d.querySelector('.ct-vlink')) return;
+        var h = d.querySelector('h3'); if (!h) return;
+        var v = h.textContent.trim(); if (C.o[cat].indexOf(v) < 0) return;
+        var a = document.createElement('a'); a.href = '#tops'; a.className = 'ct-vlink';
+        a.setAttribute('data-cat', cat); a.setAttribute('data-val', v); a.textContent = C.t.vtop;
+        h.parentNode.insertBefore(a, h.nextSibling);
+      }});
+      l.querySelectorAll('.ficha .f-body').forEach(function (b) {{
+        if (b.querySelector('.ct-vchip')) return;
+        var v = b.closest('.ficha').getAttribute('data-f'); if (C.o.best_box.indexOf(v) < 0) return;
+        var x = document.createElement('span'); x.className = 'ct-vchip'; x.setAttribute('role', 'link');
+        x.setAttribute('data-cat', 'best_box'); x.setAttribute('data-val', v); x.textContent = C.t.vchip + ' ↗';
+        b.appendChild(x);
+      }});
+      l.querySelectorAll('.temp-h').forEach(function (h) {{
+        if (h.querySelector('.ct-vchip')) return;
+        var f = h.nextElementSibling, id = f && f.getAttribute('data-t'), v = id && /^S\d+$/.test(id) ? 'Series ' + id.slice(1) : '';
+        if (C.o.best_series.indexOf(v) < 0) return;
+        var x = document.createElement('a'); x.href = '#tops'; x.className = 'ct-vchip ct-vtemp';
+        x.setAttribute('data-cat', 'best_series'); x.setAttribute('data-val', v); x.textContent = C.t.vchip + ' ↗';
+        h.appendChild(x);
+      }});
+    }});
+  }}
+  document.addEventListener('click', function (e) {{
+    var a = e.target.closest('.ct-vlink, .ct-vchip'); if (!a) return;
+    e.preventDefault(); e.stopPropagation();
+    irAVotar(a.getAttribute('data-cat'), a.getAttribute('data-val'));
+  }}, true);
+  var pend = 0;
+  new MutationObserver(function () {{ if (!pend) pend = setTimeout(function () {{ pend = 0; decorar(); }}, 80); }})
+    .observe(document.body, {{ childList: true, subtree: true }});
+  decorar();
 
   // JSONP de la API de visualización: la hoja es de solo lectura por enlace.
   var n = 0;
