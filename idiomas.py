@@ -562,10 +562,10 @@ def parchear_es(ruta, salida, dominio, existe):
 # volver a pasarla. traduccion_vieja() avisa al montar.
 
 NAV_TXT = {
-    "en": ["Stats", "Openings", "All pages", "More sections", "Matrix", "Tops", "Boxes", "Series", "Killers", "Maps", "Final Girls", "Players", "Sections"],
-    "fr": ["Stats", "Ouvertures", "Fiches", "Plus de sections", "Matrice", "Tops", "Boîtes", "Saisons", "Killers", "Cartes", "Final Girls", "Joueurs", "Sections"],
-    "de": ["Statistik", "Eröffnungen", "Übersicht", "Weitere Bereiche", "Matrix", "Tops", "Boxen", "Staffeln", "Killer", "Karten", "Final Girls", "Spieler", "Bereiche"],
-    "it": ["Statistiche", "Aperture", "Schede", "Altre sezioni", "Matrice", "Top", "Scatole", "Stagioni", "Killer", "Mappe", "Final Girls", "Giocatori", "Sezioni"],
+    "en": ["Stats", "Openings", "All pages", "More sections", "Stats", "Tops", "Boxes", "Series", "Killers", "Maps", "Final Girls", "Players", "Sections"],
+    "fr": ["Stats", "Ouvertures", "Fiches", "Plus de sections", "Stats", "Tops", "Boîtes", "Saisons", "Killers", "Cartes", "Final Girls", "Joueurs", "Sections"],
+    "de": ["Statistik", "Eröffnungen", "Übersicht", "Weitere Bereiche", "Stats", "Tops", "Boxen", "Staffeln", "Killer", "Karten", "Final Girls", "Spieler", "Bereiche"],
+    "it": ["Statistiche", "Aperture", "Schede", "Altre sezioni", "Stats", "Top", "Scatole", "Stagioni", "Killer", "Mappe", "Final Girls", "Giocatori", "Sezioni"],
 }
 
 TITULOS = {
@@ -590,7 +590,7 @@ TITULOS = {
 
 def nav_de(lang, M):
     t = NAV_TXT[lang]
-    es = ["Estadísticas", "Salidas", "Fichas", "Más secciones", "Matriz", "Tops", "Cajas", "Temporadas", "Killers", "Mapas", "Final Girls", "Jugadores", "Secciones"]
+    es = ["Estadísticas", "Salidas", "Fichas", "Más secciones", "Stats", "Tops", "Cajas", "Temporadas", "Killers", "Mapas", "Final Girls", "Jugadores", "Secciones"]
     nav = M.NAV
     for a, b in zip(es, t):
         nav = nav.replace(f">{a}<", f">{b}<").replace(f'aria-label="{a}"', f'aria-label="{b}"')

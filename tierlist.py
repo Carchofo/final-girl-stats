@@ -86,10 +86,93 @@ ESTILO = """<style>
                 font-weight:600; background:linear-gradient(transparent,rgba(0,0,0,.9)); }
   .tl-it b { display:block; font-family:var(--f-mono); font-size:10.5px; font-weight:400; opacity:.85; }
   .tl-ley { font-size:13px; }
+  #comunidad { margin-top:40px; }
+  .tl-faq { margin-bottom:10px; }
+  .tl-faq details { border-top:1px solid var(--line); padding:10px 2px; }
+  .tl-faq details:last-child { border-bottom:1px solid var(--line); }
+  .tl-faq summary { cursor:pointer; font-weight:600; }
+  .tl-faq p { margin:8px 0 2px; color:var(--muted); }
   .tl-it .fg-tuya { display:block; width:max-content; margin:0 0 2px; font-size:9px; }
   .tl-it:has(.fg-tuya) { outline:2px solid var(--blood); outline-offset:-2px; }
   @media (max-width:560px){ .tl-l { width:40px; font-size:20px; } .tl-it { width:84px; height:84px; } }
 </style>"""
+
+
+# Preguntas que la gente busca tal cual. Las respuestas salen de los datos.
+FAQ = {
+ "es": {"h": "Preguntas frecuentes",
+        "q": ["¿Cuál es la caja más difícil de Final Girl?", "¿Cuál es la caja más fácil de Final Girl?",
+              "¿Cuál es el killer más difícil de Final Girl?", "¿Cuál es el killer más fácil?",
+              "¿Qué localización es la más dura?", "¿Cómo se hace esta tier list?"],
+        "a": ["{c0}, con un {c0w} de victorias en {c0g} partidas. Le siguen {c1} ({c1w}) y {c2} ({c2w}).",
+              "{cz}, con un {czw} de victorias en {czg} partidas. Detrás van {cy} ({cyw}) y {cx} ({cxw}).",
+              "{k0}: solo se le gana el {k0w} de las veces ({k0g} partidas). Después, {k1} ({k1w}) y {k2} ({k2w}).",
+              "{kz}, con un {kzw} de victorias en {kzg} partidas.",
+              "{m0}, con un {m0w} de victorias en {m0g} partidas.",
+              "Con el % de victorias de {n} partidas reales que la comunidad apunta en una hoja pública. S es menos del 55% de victorias y D, el 75% o más. Se actualiza con los datos."]},
+ "en": {"h": "FAQ",
+        "q": ["What is the hardest Final Girl box?", "What is the easiest Final Girl box?",
+              "Who is the hardest killer in Final Girl?", "Who is the easiest killer?",
+              "Which location is the hardest?", "How is this tier list made?"],
+        "a": ["{c0}, with a win rate of {c0w} over {c0g} games. Next come {c1} ({c1w}) and {c2} ({c2w}).",
+              "{cz}, with a win rate of {czw} over {czg} games. Then {cy} ({cyw}) and {cx} ({cxw}).",
+              "{k0}: players beat it only {k0w} of the time ({k0g} games). Then {k1} ({k1w}) and {k2} ({k2w}).",
+              "{kz}, with a win rate of {kzw} over {kzg} games.",
+              "{m0}, with a win rate of {m0w} over {m0g} games.",
+              "From the win rate of {n} real games the community logs in a public sheet. S is under 55% wins, D is 75% or more. It updates with the data."]},
+ "fr": {"h": "Questions fréquentes",
+        "q": ["Quelle est la boîte la plus difficile de Final Girl ?", "Quelle est la boîte la plus facile ?",
+              "Quel est le killer le plus difficile de Final Girl ?", "Quel est le killer le plus facile ?",
+              "Quel lieu est le plus dur ?", "Comment cette tier list est-elle faite ?"],
+        "a": ["{c0}, avec {c0w} de victoires sur {c0g} parties. Suivent {c1} ({c1w}) et {c2} ({c2w}).",
+              "{cz}, avec {czw} de victoires sur {czg} parties. Puis {cy} ({cyw}) et {cx} ({cxw}).",
+              "{k0} : on ne le bat que {k0w} du temps ({k0g} parties). Puis {k1} ({k1w}) et {k2} ({k2w}).",
+              "{kz}, avec {kzw} de victoires sur {kzg} parties.",
+              "{m0}, avec {m0w} de victoires sur {m0g} parties.",
+              "À partir du taux de victoire de {n} parties réelles notées par la communauté dans une feuille publique. S : moins de 55 % de victoires, D : 75 % ou plus. Mise à jour avec les données."]},
+ "de": {"h": "Häufige Fragen",
+        "q": ["Welche Final-Girl-Box ist am schwersten?", "Welche Box ist am leichtesten?",
+              "Welcher Killer ist in Final Girl am schwersten?", "Welcher Killer ist am leichtesten?",
+              "Welcher Schauplatz ist am härtesten?", "Wie entsteht diese Tier List?"],
+        "a": ["{c0}, mit {c0w} Siegen in {c0g} Partien. Danach {c1} ({c1w}) und {c2} ({c2w}).",
+              "{cz}, mit {czw} Siegen in {czg} Partien. Dann {cy} ({cyw}) und {cx} ({cxw}).",
+              "{k0}: Nur {k0w} der Partien werden gewonnen ({k0g} Partien). Danach {k1} ({k1w}) und {k2} ({k2w}).",
+              "{kz}, mit {kzw} Siegen in {kzg} Partien.",
+              "{m0}, mit {m0w} Siegen in {m0g} Partien.",
+              "Aus der Siegquote von {n} echten Partien, die die Community in einer öffentlichen Tabelle einträgt. S: unter 55 % Siege, D: 75 % oder mehr. Wird mit den Daten aktualisiert."]},
+ "it": {"h": "Domande frequenti",
+        "q": ["Qual è la scatola più difficile di Final Girl?", "Qual è la scatola più facile?",
+              "Qual è il killer più difficile di Final Girl?", "Qual è il killer più facile?",
+              "Quale ambientazione è la più dura?", "Come è fatta questa tier list?"],
+        "a": ["{c0}, con il {c0w} di vittorie su {c0g} partite. Seguono {c1} ({c1w}) e {c2} ({c2w}).",
+              "{cz}, con il {czw} di vittorie su {czg} partite. Poi {cy} ({cyw}) e {cx} ({cxw}).",
+              "{k0}: si vince solo il {k0w} delle volte ({k0g} partite). Poi {k1} ({k1w}) e {k2} ({k2w}).",
+              "{kz}, con il {kzw} di vittorie su {kzg} partite.",
+              "{m0}, con il {m0w} di vittorie su {m0g} partite.",
+              "Dalla percentuale di vittorie di {n} partite reali che la community registra in un foglio pubblico. S: meno del 55% di vittorie, D: 75% o più. Si aggiorna con i dati."]},
+}
+
+
+def _faq(lang, cajas, killers, mapas, n):
+    import json as _j
+    f = FAQ[lang]
+    v = {"n": n}
+    for pre, items in (("c", cajas), ("k", killers), ("m", mapas)):
+        o = sorted(items, key=lambda x: x[1])
+        for i, it in enumerate(o[:3]):
+            v[f"{pre}{i}"], v[f"{pre}{i}w"], v[f"{pre}{i}g"] = it[0], I.pc(it[1], lang, 0), I.num(it[2], lang)
+        for letra, it in zip("zyx", o[::-1][:3]):
+            v[f"{pre}{letra}"], v[f"{pre}{letra}w"], v[f"{pre}{letra}g"] = it[0], I.pc(it[1], lang, 0), I.num(it[2], lang)
+    pares = [(q, a.format(**v)) for q, a in zip(f["q"], f["a"])]
+    html = f'<h2 id="faq">{f["h"]}</h2><div class="tl-faq">' + "".join(
+        f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in pares) + "</div>"
+    ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": lang,
+          "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in pares]}
+    lista = {"@context": "https://schema.org", "@type": "ItemList", "name": T[lang]["cajas"],
+             "itemListOrder": "https://schema.org/ItemListOrderAscending",
+             "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": c[0]}
+                                 for i, c in enumerate(sorted(cajas, key=lambda x: x[1]))]}
+    return html + "".join('<script type="application/ld+json">' + _j.dumps(x, ensure_ascii=False) + "</script>" for x in (ld, lista))
 
 
 def _tramo(wr):
@@ -138,9 +221,11 @@ def pagina(lang):
          f'<h2>{t["cajas"]}</h2>', _tier(cajas, lang, pre, True),
          f'<h2>{t["killers"]}</h2><p class="sub">{t["nota_k"]}</p>', _tier(killers, lang, pre),
          f'<h2>{t["mapas"]}</h2><p class="sub">{t["nota_m"]}</p>', _tier(mapas, lang, pre),
+         _faq(lang, cajas, killers, mapas, n),
          f'<h2 id="comunidad">{t["com"]}</h2><p class="sub">{t["com_sub"]}</p>',
          # La sección de la pestaña Tops, visible y sin su propio título.
          tops.seccion(lang).replace('<section id="v-tops" hidden>', '<section id="v-tops">', 1)
-             .replace(f'<h2>{tops.T[lang]["h2"]}</h2>', "", 1),
+             .replace(f'<h2>{tops.T[lang]["h2"]}</h2>', "", 1)
+             .replace(f'<p class="sub">{tops.T[lang]["sub0"]}</p>', "", 1),
          ESTILO]
     return (t["title"].format(n=n), t["desc"].format(n=n)[:158], "\n".join(h))
