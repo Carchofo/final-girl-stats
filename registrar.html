@@ -363,6 +363,27 @@ var t=L[document.documentElement.lang]||L.en;
 document.querySelectorAll('[data-caja]').forEach(function(e){var c=e.getAttribute('data-caja');
 if(!c||m.indexOf(c)<0)return;var b=document.createElement('span');b.className='fg-tuya';b.textContent=t;
 if(e.tagName==='A'){e.classList.add('fg-mia');e.after(b)}else{var r=e.querySelector('.roja');e.insertBefore(b,r)}})})();</script>
+<script>(function(){try{
+var ok={es:1,en:1,fr:1,de:1,it:1},cur=document.documentElement.lang;document.addEventListener('click',function(e){var x=e.target.closest('.idiomas a[hreflang]');if(x)try{localStorage.setItem('fg-idioma',x.getAttribute('hreflang'))}catch(e){}});
+
+var pref=(localStorage.getItem('fg-idioma')||'');if(pref==='no'||pref===cur)return;
+var want=pref||(navigator.languages||[navigator.language]).map(function(l){return(l||'').slice(0,2).toLowerCase()}).filter(function(l){return ok[l]})[0];
+if(!want&&!pref)want='en';
+if(!want||want===cur)return;
+var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)return;
+// Primera visita sin preferencia a una página en español con navegador en
+// otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
+if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
+try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
+var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var d=document.createElement('div');d.className='fg-lang';
+d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
+d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
+document.body.insertBefore(d,document.body.firstChild);
+}catch(e){}})();</script>
+<style>.fg-lang{display:flex;justify-content:center;align-items:center;gap:14px;padding:8px 16px;background:var(--blood);font-size:14px;font-weight:600}
+.fg-lang a{color:#fff;text-decoration:none}.fg-lang button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer;line-height:1}</style>
 <img src="https://hits.sh/finalgirlstats.com.svg" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
 </body>
 </html>
