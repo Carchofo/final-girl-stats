@@ -218,16 +218,17 @@ def pagina(lang):
     h = [f'<p class="eyebrow">{t["eb"].format(n=n)}</p>',
          f'<h1>{t["h1"]}</h1>',
          f'<p class="dek">{t["dek"].format(n=n)}</p></header>',
+         f'<h2 id="comunidad">{t["com"]}</h2><p class="sub">{t["com_sub"]}</p>',
+         # La sección de la pestaña Tops, visible y sin su propio título.
+         tops.seccion(lang).replace('<section id="v-tops" hidden>', '<section id="v-tops">', 1)
+             .replace(f'<h2>{tops.T[lang]["h2"]}</h2>', "", 1)
+             .replace(f'<p class="sub">{tops.T[lang]["sub0"]}</p>', "", 1),
+         '<div id="tier" style="margin-top:44px"></div>',
          f'<p class="sub tl-ley">{t["leyenda"].format(media=I.pc(m["wr"], lang))}</p>',
          f'<p class="tl-aviso">{t["aviso"]}</p>',
          f'<h2>{t["cajas"]}</h2>', _tier(cajas, lang, pre, True),
          f'<h2>{t["killers"]}</h2><p class="sub">{t["nota_k"]}</p>', _tier(killers, lang, pre),
          f'<h2>{t["mapas"]}</h2><p class="sub">{t["nota_m"]}</p>', _tier(mapas, lang, pre),
          _faq(lang, cajas, killers, mapas, n),
-         f'<h2 id="comunidad">{t["com"]}</h2><p class="sub">{t["com_sub"]}</p>',
-         # La sección de la pestaña Tops, visible y sin su propio título.
-         tops.seccion(lang).replace('<section id="v-tops" hidden>', '<section id="v-tops">', 1)
-             .replace(f'<h2>{tops.T[lang]["h2"]}</h2>', "", 1)
-             .replace(f'<p class="sub">{tops.T[lang]["sub0"]}</p>', "", 1),
          ESTILO]
     return (t["title"].format(n=n), t["desc"].format(n=n)[:158], "\n".join(h))
