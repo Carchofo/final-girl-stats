@@ -34,7 +34,7 @@ AFILIADOS = {
         "tags": {
             "ES": {"dom": "amazon.es",    "tag": ""},
             "US": {"dom": "amazon.com",   "tag": "finalgirlstat-20"},
-            "GB": {"dom": "amazon.co.uk", "tag": ""},
+            "GB": {"dom": "amazon.co.uk", "tag": "finalgirlstat-21"},
             "DE": {"dom": "amazon.de",    "tag": ""},
             "FR": {"dom": "amazon.fr",    "tag": ""},
             "IT": {"dom": "amazon.it",    "tag": ""},
