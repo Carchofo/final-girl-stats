@@ -449,9 +449,9 @@ def selector(lang, salida, existe):
         for l, u in items) + "</p>")
 
 
-ESTILO_IDIOMAS = ('<style>.idiomas{font-family:var(--f-mono);font-size:14px;letter-spacing:.06em;'
+ESTILO_IDIOMAS = ('<style>.idiomas{font-family:var(--f-mono);font-size:16px;letter-spacing:.06em;'
                   'margin:10px 0 0;color:var(--muted)}.idiomas a{color:var(--muted);text-decoration:none}'
-                  '.idiomas .flag{font-size:20px;vertical-align:-3px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}.idiomas a[aria-current]{color:var(--blood)}.idiomas a:hover{color:var(--ink)}</style>')
+                  '.idiomas .flag{font-size:26px;vertical-align:-5px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}.idiomas a[aria-current]{color:var(--blood)}.idiomas a:hover{color:var(--ink)}</style>')
 
 
 def generar(M):
