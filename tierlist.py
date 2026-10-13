@@ -70,7 +70,20 @@ T = {
 }
 
 ESTILO = """<style>
-  .tl { margin:10px 0 26px; border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  /* Cada tier list, como la pantalla de una tele vieja: carcasa, cristal
+     curvo (viñeteado), líneas de barrido y un parpadeo mínimo. */
+  .tl { position:relative; margin:10px 0 30px; border-radius:22px; overflow:hidden;
+        border:14px solid #2b201b; outline:2px solid #4a372c; outline-offset:-1px;
+        box-shadow:0 0 0 3px #14100e, 0 18px 40px rgba(0,0,0,.65), inset 0 0 0 1px #000; }
+  .tl::after { content:""; position:absolute; inset:0; pointer-events:none; border-radius:9px; z-index:2;
+               background:
+                 repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px),
+                 radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.55) 100%);
+               box-shadow:inset 0 0 40px rgba(0,0,0,.7), inset 0 0 6px rgba(255,255,255,.05);
+               animation:tlcrt 5s steps(1) infinite; }
+  @keyframes tlcrt { 0%, 92%, 100% { opacity:1; } 94% { opacity:.82; } 96% { opacity:.95; } }
+  @media (prefers-reduced-motion: reduce) { .tl::after { animation:none; } }
+  @media (max-width:560px) { .tl { border-width:8px; border-radius:14px; } }
   .tl-fila { display:flex; border-top:1px solid var(--line); background:var(--surface); }
   .tl-fila:first-child { border-top:0; }
   .tl-l { flex:none; width:56px; display:flex; align-items:center; justify-content:center;
