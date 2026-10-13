@@ -139,6 +139,40 @@
 <p class="sub">Données de jeu tirées du <a href="https://finalgirl.fandom.com/wiki/Evomorph" target="_blank" rel="noopener">Final Girl Wiki</a>, sous licence CC BY-SA.</p>
 <h2>Comment fonctionne Evomorph</h2><ul class="mec"><li>Déplacement de base : se déplace pendant sa Killer Action avant d'attaquer.</li><li>Évolue : commence en Hatchling (10 dégâts, vitesse 1, 4 points de vie, jusqu'à 10).</li><li>Avec le Bloodlust, devient Youngling (rapide, faible) puis Adult (plus lent, plus fort).</li><li>En Youngling, il fait Vanish : la phase du Killer suivante est remplacée par une carte Ambush. En Adult, le Dark Power est révélé.</li><li>Avant le Finale : Target Victim > Move > Attack.</li></ul><style>.top ul.mec{list-style:disc;padding-left:22px;margin:0 0 12px}.top ul.mec li{display:list-item;border:0;padding:3px 0}.top ul.mec li::before{content:none}</style><p class="sub">Résumé de la page du <a href="https://finalgirl.fandom.com/wiki/Evomorph" target="_blank" rel="noopener">Final Girl Wiki</a> (CC BY-SA).</p>
 <p>Fourni dans la boîte <a href="into-the-void.html"><b>Into the Void</b></a>, associé à <b>USS Konrad</b>.</p>
+<h2>Où la trouver</h2><div class="aviso"><p class="sub" style="margin-bottom:10px">Liens affiliés : si vous achetez, je touche une petite commission, sans surcoût pour vous. Cela ne change rien aux données ci-dessus.</p><p><a class="tienda" href="https://www.amazon.com/s?k=Final+Girl+Into+the+Void&tag=finalgirlstat-20" data-geo='{"US": "https://www.amazon.com/s?k=Final+Girl+Into+the+Void&tag=finalgirlstat-20"}' target="_blank" rel="noopener sponsored nofollow">Amazon</a></p></div><script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
+
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>
 <h2>Meilleures et pires cartes contre Evomorph</h2>
 <p class="sub">Taux de victoire de la Final Girl sur chaque lieu, avec au moins 20 parties enregistrées.</p>
 <div class="tabla-wrap"><table><thead><tr><th>Lieu</th><th class=n>Victoires</th><th class=n>Parties</th></tr></thead><tbody><tr><td>Hellscape</td><td class=n>88,9 %</td><td class=n>54</td></tr><tr><td>Storybook Woods</td><td class=n>81,5 %</td><td class=n>65</td></tr><tr><td>Santa's Village</td><td class=n>80,4 %</td><td class=n>46</td></tr><tr><td>Wingard Cottage</td><td class=n>79,7 %</td><td class=n>64</td></tr><tr><td>Maple Lane</td><td class=n>79,6 %</td><td class=n>54</td></tr><tr><td>Station 2891</td><td class=n>77,9 %</td><td class=n>68</td></tr><tr><td>USS Konrad</td><td class=n>74,8 %</td><td class=n>202</td></tr><tr><td>Sunnydaze Mall</td><td class=n>71,1 %</td><td class=n>45</td></tr><tr><td>Utopia</td><td class=n>69,8 %</td><td class=n>63</td></tr><tr><td>Camp Happy Trail</td><td class=n>69,6 %</td><td class=n>69</td></tr><tr><td>Carnival of Blood</td><td class=n>68,6 %</td><td class=n>51</td></tr><tr><td>Wolfe Asylum</td><td class=n>68,2 %</td><td class=n>22</td></tr></tbody></table></div>

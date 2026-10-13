@@ -309,6 +309,7 @@ def pagina_killer(nombre, k, lang, tx):
     if caja:
         h.append("<p>" + t["caja"].format(u=P.slug(caja) + ".html", c=caja)
                  + (t["pareja"].format(l=propio) if propio else ".") + "</p>")
+        h.append(P.bloque_tienda(caja, lang))
 
     if aqui and len(mapas) >= 2:
         dd = (aqui[1] - k["wr"]) * 100
@@ -395,6 +396,7 @@ def pagina_caja(f, lang, tx):
     r = tx.get("rev", {}).get(f["film"])
     if r:
         h.append(f'<h2>{t["reviews"]}</h2><div class="aviso"><p><b>{r}</b></p></div>')
+    h.append(P.bloque_tienda(f["film"], lang))
     h.append(f'<h2>{t["salir"]}</h2><p>{t["salir_c"]}</p>')
     title = t["c_title"].format(c=f["film"], wr=pc(f["wr"], lang, 0))
     desc = t["c_desc"].format(k=f["killer"], l=f["loc"], wr=wr, g=f["plays"])

@@ -153,7 +153,40 @@
 <p class="sub">De la que más castiga a la que menos. Mínimo 20 partidas.</p>
 <div class="tabla-wrap"><table><thead><tr><th>Cartas de Finale</th><th class=n>Victorias</th><th class=n>Partidas</th></tr></thead><tbody><tr><td>She Will Soon Be Lost</td><td class=n>51,0%</td><td class=n>98</td></tr><tr><td>Unrevealed</td><td class=n>54,3%</td><td class=n>567</td></tr><tr><td>Relentless Assault</td><td class=n>55,8%</td><td class=n>86</td></tr><tr><td>Nothing is Easy</td><td class=n>64,2%</td><td class=n>81</td></tr><tr><td>Demonic Posession</td><td class=n>85,2%</td><td class=n>27</td></tr></tbody></table></div>
 <p>La peor papeleta es <b>She Will Soon Be Lost</b>: con ella encima la partida se gana solo el 51,0% de las veces, sobre 98 partidas.</p>
+<h2>Dónde conseguirla</h2><div class="aviso"><p class="sub" style="margin-bottom:10px">Enlaces de afiliado: si compras, a mí me llega una comisión y a ti te cuesta lo mismo. No cambian lo que dicen los datos de arriba.</p><p><a class="tienda" href="https://www.amazon.com/s?k=Final+Girl+The+Haunting+of+Creech+Manor&tag=finalgirlstat-20" data-geo='{"US": "https://www.amazon.com/s?k=Final+Girl+The+Haunting+of+Creech+Manor&tag=finalgirlstat-20"}' target="_blank" rel="noopener sponsored nofollow">Amazon</a></p></div><script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
 
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>
 <h2>Qué dice quien lo ha jugado</h2>
 <div class="aviso"><p>Aquí las armas no valen para nada y las cartas de ataque tampoco. Es la única caja donde buscar arma es tiempo tirado: todo va a movimiento, búsqueda y rescate.</p></div>
 <h2>Cómo salir contra él</h2>

@@ -33,7 +33,7 @@ AFILIADOS = {
         "url": "https://www.{dom}/s?k={q}&tag={tag}",
         "tags": {
             "ES": {"dom": "amazon.es",    "tag": ""},
-            "US": {"dom": "amazon.com",   "tag": ""},
+            "US": {"dom": "amazon.com",   "tag": "finalgirlstat-20"},
             "GB": {"dom": "amazon.co.uk", "tag": ""},
             "DE": {"dom": "amazon.de",    "tag": ""},
             "FR": {"dom": "amazon.fr",    "tag": ""},
@@ -96,7 +96,16 @@ def mapas_de(killer):
     return sorted(r, key=lambda x: -x[1])
 
 
-def bloque_tienda(nombre):
+TIENDA_T = {
+    "es": ("Dónde conseguirla", "Enlaces de afiliado: si compras, a mí me llega una comisión y a ti te cuesta lo mismo. No cambian lo que dicen los datos de arriba."),
+    "en": ("Where to get it", "Affiliate links: if you buy, I get a small commission at no extra cost to you. It doesn't change what the data above says."),
+    "fr": ("Où la trouver", "Liens affiliés : si vous achetez, je touche une petite commission, sans surcoût pour vous. Cela ne change rien aux données ci-dessus."),
+    "de": ("Wo man sie bekommt", "Affiliate-Links: Wenn du kaufst, bekomme ich eine kleine Provision, für dich ohne Mehrkosten. An den Daten oben ändert das nichts."),
+    "it": ("Dove trovarla", "Link di affiliazione: se compri, ricevo una piccola commissione senza costi in più per te. Non cambia quello che dicono i dati sopra."),
+}
+
+
+def bloque_tienda(nombre, lang="es"):
     """Enlaces de compra, solo si hay algún afiliado configurado.
 
     Geolocalizado en el navegador: cada país tiene su Amazon y su tag, y
@@ -136,10 +145,9 @@ def bloque_tienda(nombre):
     if not enlaces:
         return ""
 
-    return ('<h2>Dónde conseguirla</h2>'
-            '<div class="aviso"><p class="sub" style="margin-bottom:10px">'
-            'Enlaces de afiliado: si compras, a mí me llega una comisión y a ti '
-            'te cuesta lo mismo. No cambian lo que dicen los datos de arriba.</p>'
+    h2, aviso = TIENDA_T.get(lang, TIENDA_T["es"])
+    return (f'<h2>{h2}</h2>'
+            f'<div class="aviso"><p class="sub" style="margin-bottom:10px">{aviso}</p>'
             f'<p>{" ".join(enlaces)}</p></div>' + JS_GEO)
 
 

@@ -139,6 +139,40 @@
 <p class="sub">Game details from the <a href="https://finalgirl.fandom.com/wiki/The_Marrek_Murders" target="_blank" rel="noopener">Final Girl Wiki</a>, under a CC BY-SA licence.</p>
 
 <p>Comes in the <a href="the-marrek-murders.html"><b>The Marrek Murders</b></a> box, paired with <b>Marrek Warehouse</b>.</p>
+<h2>Where to get it</h2><div class="aviso"><p class="sub" style="margin-bottom:10px">Affiliate links: if you buy, I get a small commission at no extra cost to you. It doesn't change what the data above says.</p><p><a class="tienda" href="https://www.amazon.com/s?k=Final+Girl+The+Marrek+Murders&tag=finalgirlstat-20" data-geo='{"US": "https://www.amazon.com/s?k=Final+Girl+The+Marrek+Murders&tag=finalgirlstat-20"}' target="_blank" rel="noopener sponsored nofollow">Amazon</a></p></div><script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
+
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>
 <h2>Best and worst maps for Tormentor</h2>
 <p class="sub">Final Girl win rate on each location, with at least 20 recorded games.</p>
 <div class="tabla-wrap"><table><thead><tr><th>Location</th><th class=n>Win rate</th><th class=n>Games</th></tr></thead><tbody><tr><td>Wingard Cottage</td><td class=n>85.7%</td><td class=n>56</td></tr><tr><td>Maple Lane</td><td class=n>81.0%</td><td class=n>58</td></tr><tr><td>Wolfe Asylum</td><td class=n>80.8%</td><td class=n>73</td></tr><tr><td>Marrek Warehouse</td><td class=n>71.3%</td><td class=n>164</td></tr><tr><td>Carnival of Blood</td><td class=n>69.6%</td><td class=n>79</td></tr><tr><td>Creech Manor</td><td class=n>61.4%</td><td class=n>44</td></tr><tr><td>Sacred Groves</td><td class=n>48.6%</td><td class=n>37</td></tr></tbody></table></div>

@@ -139,6 +139,40 @@
 <p class="sub">Spieldaten aus dem <a href="https://finalgirl.fandom.com/wiki/Don't_Make_a_Sound" target="_blank" rel="noopener">Final Girl Wiki</a>, unter CC-BY-SA-Lizenz.</p>
 
 <p>Enthalten in der Box <a href="don-t-make-a-sound.html"><b>Don't Make a Sound</b></a>, zusammen mit <b>Utopia</b>.</p>
+<h2>Wo man sie bekommt</h2><div class="aviso"><p class="sub" style="margin-bottom:10px">Affiliate-Links: Wenn du kaufst, bekomme ich eine kleine Provision, für dich ohne Mehrkosten. An den Daten oben ändert das nichts.</p><p><a class="tienda" href="https://www.amazon.com/s?k=Final+Girl+Don%27t+Make+a+Sound&tag=finalgirlstat-20" data-geo='{"US": "https://www.amazon.com/s?k=Final+Girl+Don%27t+Make+a+Sound&tag=finalgirlstat-20"}' target="_blank" rel="noopener sponsored nofollow">Amazon</a></p></div><script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
+
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>
 <div class="aviso"><h3>Die Karte verändert den Kampf</h3><p>Auf Utopia, dem Schauplatz seiner Box, gewinnt das Final Girl <b>56,1 %</b>, gegenüber 64,4 % über alle Karten: <b>-8,3 Punkte</b>. Dieser Schauplatz liegt dem Killer: Verlass dich nicht auf den Schnitt. Die beste Karte ist USS Konrad (87,0 %), die schlechteste Utopia (56,1 %).</p></div>
 <h2>Beste und schlechteste Karten gegen The Eyeless</h2>
 <p class="sub">Siegquote des Final Girl auf jedem Schauplatz, mit mindestens 20 erfassten Partien.</p>

@@ -139,6 +139,40 @@
 <p class="sub">Dati di gioco tratti dalla <a href="https://finalgirl.fandom.com/wiki/Dr._Fright" target="_blank" rel="noopener">Final Girl Wiki</a>, con licenza CC BY-SA.</p>
 <h2>Come funziona Dr. Fright</h2><ul class="mec"><li>Usa gli stati Awake e Asleep tramite la carta Awake/Asleep e il mazzo Boiler Room; inizi Awake.</li><li>Awake: lui non può attaccarti né tu lui; le azioni Final Girl or Victim colpiscono solo le Victims.</li><li>Asleep: sei nella Boiler Room, può attaccarti, non puoi salvare Victims e risolvi una carta Boiler Room alla fine della fase del Killer.</li><li>Può subire danni solo nella Boiler Room. Short Rest o Long Rest ti fanno addormentare volontariamente.</li></ul><style>.top ul.mec{list-style:disc;padding-left:22px;margin:0 0 12px}.top ul.mec li{display:list-item;border:0;padding:3px 0}.top ul.mec li::before{content:none}</style><p class="sub">Riassunto dalla pagina della <a href="https://finalgirl.fandom.com/wiki/Dr._Fright" target="_blank" rel="noopener">Final Girl Wiki</a> (CC BY-SA).</p>
 <p>Incluso nella scatola <a href="frightmare-on-maple-lane.html"><b>Frightmare on Maple Lane</b></a>, abbinato a <b>Maple Lane</b>.</p>
+<h2>Dove trovarla</h2><div class="aviso"><p class="sub" style="margin-bottom:10px">Link di affiliazione: se compri, ricevo una piccola commissione senza costi in più per te. Non cambia quello che dicono i dati sopra.</p><p><a class="tienda" href="https://www.amazon.com/s?k=Final+Girl+Frightmare+on+Maple+Lane&tag=finalgirlstat-20" data-geo='{"US": "https://www.amazon.com/s?k=Final+Girl+Frightmare+on+Maple+Lane&tag=finalgirlstat-20"}' target="_blank" rel="noopener sponsored nofollow">Amazon</a></p></div><script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
+
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>
 <h2>Mappe migliori e peggiori contro Dr. Fright</h2>
 <p class="sub">Percentuale di vittoria della Final Girl su ogni ambientazione, con almeno 20 partite registrate.</p>
 <div class="tabla-wrap"><table><thead><tr><th>Ambientazione</th><th class=n>Vittorie</th><th class=n>Partite</th></tr></thead><tbody><tr><td>Hellscape</td><td class=n>94,0%</td><td class=n>67</td></tr><tr><td>USS Konrad</td><td class=n>90,6%</td><td class=n>32</td></tr><tr><td>Santa's Village</td><td class=n>83,6%</td><td class=n>55</td></tr><tr><td>Marrek Warehouse</td><td class=n>80,0%</td><td class=n>45</td></tr><tr><td>Camp Happy Trail</td><td class=n>78,0%</td><td class=n>82</td></tr><tr><td>Maple Lane</td><td class=n>75,6%</td><td class=n>172</td></tr><tr><td>Wolfe Asylum</td><td class=n>74,1%</td><td class=n>58</td></tr><tr><td>Station 2891</td><td class=n>70,6%</td><td class=n>51</td></tr><tr><td>Storybook Woods</td><td class=n>69,8%</td><td class=n>63</td></tr><tr><td>Sacred Groves</td><td class=n>61,8%</td><td class=n>55</td></tr><tr><td>Creech Manor</td><td class=n>60,4%</td><td class=n>48</td></tr><tr><td>Carnival of Blood</td><td class=n>59,4%</td><td class=n>69</td></tr></tbody></table></div>

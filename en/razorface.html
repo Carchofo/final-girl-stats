@@ -139,6 +139,40 @@
 <p class="sub">Game details from the <a href="https://finalgirl.fandom.com/wiki/Razorface" target="_blank" rel="noopener">Final Girl Wiki</a>, under a CC BY-SA licence.</p>
 <h2>How Razorface works</h2><ul class="mec"><li>You start with 3 Affliction cards; to kill him you must Purge each by meeting its Purge Requirement in the Action phase.</li><li>An impossible Affliction is removed and replaced; you lose if you must draw one and none remain.</li><li>His Final Health token can only be revealed with no Afflictions in play; such damage is ignored otherwise.</li></ul><style>.top ul.mec{list-style:disc;padding-left:22px;margin:0 0 12px}.top ul.mec li{display:list-item;border:0;padding:3px 0}.top ul.mec li::before{content:none}</style><p class="sub">Summarised from the <a href="https://finalgirl.fandom.com/wiki/Razorface" target="_blank" rel="noopener">Final Girl Wiki</a> page (CC BY-SA).</p>
 <p>Comes in the <a href="hell-to-pay.html"><b>Hell to Pay</b></a> box, paired with <b>Hellscape</b>.</p>
+<h2>Where to get it</h2><div class="aviso"><p class="sub" style="margin-bottom:10px">Affiliate links: if you buy, I get a small commission at no extra cost to you. It doesn't change what the data above says.</p><p><a class="tienda" href="https://www.amazon.com/s?k=Final+Girl+Hell+to+Pay&tag=finalgirlstat-20" data-geo='{"US": "https://www.amazon.com/s?k=Final+Girl+Hell+to+Pay&tag=finalgirlstat-20"}' target="_blank" rel="noopener sponsored nofollow">Amazon</a></p></div><script>
+(function () {
+  var ZONAS = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Africa/Ceuta':'ES',
+    'Europe/London':'GB','Europe/Dublin':'GB',
+    'Europe/Berlin':'DE','Europe/Vienna':'DE','Europe/Zurich':'DE',
+    'Europe/Paris':'FR','Europe/Brussels':'FR',
+    'Europe/Rome':'IT','Europe/Malta':'IT',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX',
+    'America/Toronto':'CA','America/Vancouver':'CA','America/Edmonton':'CA',
+    'America/Winnipeg':'CA','America/Halifax':'CA','America/Montreal':'CA'
+  };
+  var pais = null;
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    pais = ZONAS[tz] || (tz.indexOf('Australia/') === 0 ? 'AU'
+                      : (tz.indexOf('America/') === 0 ? 'US' : null));
+  } catch (e) {}
+
+  document.querySelectorAll('a.tienda[data-geo]').forEach(function (a) {
+    try {
+      var m = JSON.parse(a.getAttribute('data-geo'));
+      if (pais && m[pais]) a.href = m[pais];
+    } catch (e) {}
+  });
+  // Tiendas de un solo pais: ocultas salvo que el visitante viva alli.
+  document.querySelectorAll('a.tienda[data-solo]').forEach(function (a) {
+    try {
+      var p = JSON.parse(a.getAttribute('data-solo'));
+      if (pais && p.indexOf(pais) !== -1) a.hidden = false;
+    } catch (e) {}
+  });
+})();
+</script>
 <div class="aviso"><h3>The map changes the fight</h3><p>On Hellscape, its box location, the Final Girl wins <b>62.2%</b>, against 53.8% across all maps: <b>+8.4 points</b>. The map works for you, not for the killer. The best map is Storybook Woods (71.0%) and the worst is Sacred Groves (27.1%).</p></div>
 <h2>Best and worst maps for Razorface</h2>
 <p class="sub">Final Girl win rate on each location, with at least 20 recorded games.</p>
