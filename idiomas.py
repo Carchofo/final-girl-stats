@@ -601,6 +601,8 @@ def nav_de(lang, M):
     nav = M.NAV
     for a, b in zip(es, t):
         nav = nav.replace(f">{a}<", f">{b}<").replace(f'aria-label="{a}"', f'aria-label="{b}"')
+    serie = {"en": "Series", "fr": "Saison", "de": "Staffel", "it": "Stagione"}[lang]
+    nav = re.sub(r">Temporada (\d+)<", lambda m: f">{serie} {m.group(1)}<", nav)
     return nav
 
 

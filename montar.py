@@ -176,6 +176,46 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
 import idiomas as _idiomas
 NAV = _idiomas.ocultar_pestanas(NAV)  # pestañas apagadas: ver idiomas.PESTANAS_OCULTAS
 
+# --- panel desplegable de "Fichas" ------------------------------------------
+# Al pasar por "Fichas" (o tabular hasta ella) se abre debajo un panel con
+# todo lo que hay: killers y películas con su ficha, temporadas y mapas. Son
+# enlaces normales en el HTML: también le sirven a Google para llegar a todo.
+# En el móvil no hay hover: "Fichas" lleva a su página, que tiene la lista.
+def _mega():
+    D = paginas.D
+    ks = sorted(n for n, k in paginas.KILLERS.items() if k.get("g", 0) >= 60)
+    cs = sorted(f["film"] for f in D["films"])
+    ts = [t["nombre"] for t in D["temporadas"] if re.fullmatch(r"S\d+", t["id"])]
+    ls = sorted({f["loc"] for f in D["films"]})
+    def col(tit, items):
+        return (f'<div><p class="mega-t">{tit}</p>' +
+                "".join(f'<a href="{u}">{n}</a>' for n, u in items) + "</div>")
+    return ('<div class="mega" role="menu">' +
+            col("Killers", [(n, paginas.slug(n) + ".html") for n in ks]) +
+            col("Películas", [(n, paginas.slug(n) + ".html") for n in cs]) +
+            col("Temporadas", [(n, "index.html#temporadas") for n in ts]) +
+            col("Mapas", [(n, "index.html#mapas") for n in ls]) + "</div>")
+
+_MEGA_CSS = """<style>
+  .nav-drop {{ position:static; }}
+  .nav-drop .mega {{ display:none; position:absolute; left:0; right:0; top:100%; z-index:60; padding:18px 20px;
+                     grid-template-columns:2fr 2.6fr .7fr 2fr; gap:6px 24px; background:var(--surface,#151012);
+                     border:1px solid var(--line); border-top:2px solid var(--blood); border-radius:0 0 4px 4px;
+                     box-shadow:0 16px 40px rgba(0,0,0,.6); text-transform:none; letter-spacing:0; }}
+  .nav-drop:hover .mega, .nav-drop:focus-within .mega {{ display:grid; }}
+  .mega div {{ display:flex; flex-direction:column; }}
+  .mega div:not(:nth-child(3)) {{ display:block; column-count:2; column-gap:18px; }}
+  .mega div:not(:nth-child(3)) a {{ display:block; break-inside:avoid; }}
+  .mega div:not(:nth-child(3)) .mega-t {{ column-span:all; }}
+  .mega .mega-t {{ margin:0 0 8px; font-family:var(--f-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--blood); }}
+  .nav-sitio .mega a {{ padding:3px 0; border:0; font-size:13.5px; color:var(--ink); }}
+  .nav-sitio .mega a:hover {{ color:var(--blood); }}
+  @media (max-width:760px), (hover:none) {{ .nav-drop .mega {{ display:none !important; }} }}
+</style>"""
+_a = '<a href="fichas.html"{act_fichas}>Fichas</a>'
+assert _a in NAV
+NAV = NAV.replace(_a, '<span class="nav-drop">' + _a + _mega() + '</span>', 1).replace("</nav>", "</nav>" + _MEGA_CSS, 1)
+
 
 # La estrategias de salida viene del artifact anterior al rediseño: tema claro,
 # Big Shoulders y Newsreader. La de estadisticas es oscura con Jost. Dos
