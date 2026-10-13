@@ -29,7 +29,7 @@ ORDEN = ["best_series", "best_box", "best_killer", "easiest_box", "hardest_box",
 PUNTOS = [3, 2, 1]
 
 T = {
- "es": {"vtop": "Votar en los tops →", "vchip": "Votar", "todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops ↓", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
+ "es": {"comp": "Comparte tu top", "copiado": "¡Copiado! Pégalo donde quieras", "comp_txt": "Mi top 3 de Final Girl · {q}: {l}. Vota el tuyo →", "vtop": "Votar en los tops →", "vchip": "Votar", "todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops ↓", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
         "sub": "Lo que dice la gente, no los datos. Vota lo tuyo: todas las preguntas son opcionales y puedes dejar las que no sepas.",
         "votar": "Votar", "gracias": "¡Gracias! Tu voto ya cuenta.", "ya": "Ya has votado desde este navegador. Así va la cosa:",
         "nada": "—", "votos": "votos", "voto": "voto", "sin": "Aún no hay votos. Sé el primero.",
@@ -38,7 +38,7 @@ T = {
               "worst_box": "Peor caja", "best_killer": "Mejor killer", "best_location": "Mejor localización",
               "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl",
               "best_box": "Mejor película (caja)", "most_complex_killer": "Killer más complejo de reglas"}},
- "en": {"vtop": "Vote in the tops →", "vchip": "Vote", "todo": "See all {n}", "menos": "See less", "sub0": "What players think, not what the data says.", "ir": "Vote your tops ↓", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
+ "en": {"comp": "Share your top", "copiado": "Copied! Paste it anywhere", "comp_txt": "My Final Girl top 3 · {q}: {l}. Vote yours →", "vtop": "Vote in the tops →", "vchip": "Vote", "todo": "See all {n}", "menos": "See less", "sub0": "What players think, not what the data says.", "ir": "Vote your tops ↓", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
         "sub": "What players think, not what the data says. Cast your vote: every question is optional, skip the ones you don't know.",
         "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "No votes yet. Be the first.",
@@ -47,7 +47,7 @@ T = {
               "worst_box": "Worst box", "best_killer": "Best killer", "best_location": "Best location",
               "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl",
               "best_box": "Best movie (box)", "most_complex_killer": "Most complex killer (rules)"}},
- "fr": {"vtop": "Voter dans les tops →", "vchip": "Voter", "todo": "Voir les {n}", "menos": "Voir moins", "sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops ↓", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
+ "fr": {"comp": "Partagez votre top", "copiado": "Copié ! Collez-le où vous voulez", "comp_txt": "Mon top 3 Final Girl · {q} : {l}. Votez le vôtre →", "vtop": "Voter dans les tops →", "vchip": "Voter", "todo": "Voir les {n}", "menos": "Voir moins", "sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops ↓", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
         "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.",
         "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "Pas encore de votes. Soyez le premier.",
@@ -56,7 +56,7 @@ T = {
               "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu",
               "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl",
               "best_box": "Meilleur film (boîte)", "most_complex_killer": "Killer aux règles les plus complexes"}},
- "de": {"vtop": "In den Tops abstimmen →", "vchip": "Abstimmen", "todo": "Alle {n} zeigen", "menos": "Weniger", "sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab ↓", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
+ "de": {"comp": "Teile deine Top 3", "copiado": "Kopiert! Füg es überall ein", "comp_txt": "Meine Final-Girl-Top-3 · {q}: {l}. Stimm selbst ab →", "vtop": "In den Tops abstimmen →", "vchip": "Abstimmen", "todo": "Alle {n} zeigen", "menos": "Weniger", "sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab ↓", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
         "sub": "Was die Spieler denken, nicht was die Daten sagen. Stimm ab: Jede Frage ist optional.",
         "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
         "nada": "—", "votos": "Stimmen", "voto": "Stimme", "sin": "Noch keine Stimmen. Sei die erste Stimme.",
@@ -65,7 +65,7 @@ T = {
               "worst_box": "Schlechteste Box", "best_killer": "Bester Killer", "best_location": "Bester Schauplatz",
               "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl",
               "best_box": "Bester Film (Box)", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
- "it": {"vtop": "Vota nei top →", "vchip": "Vota", "todo": "Vedi tutti i {n}", "menos": "Vedi meno", "sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top ↓", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
+ "it": {"comp": "Condividi il tuo top", "copiado": "Copiato! Incollalo dove vuoi", "comp_txt": "Il mio top 3 di Final Girl · {q}: {l}. Vota il tuo →", "vtop": "Vota nei top →", "vchip": "Vota", "todo": "Vedi tutti i {n}", "menos": "Vedi meno", "sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top ↓", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
         "sub": "Cosa pensano i giocatori, non cosa dicono i dati. Vota: ogni domanda è facoltativa.",
         "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
         "nada": "—", "votos": "voti", "voto": "voto", "sin": "Ancora nessun voto. Sii il primo.",
@@ -115,7 +115,8 @@ def seccion(lang):
     pre = "" if lang == "es" else "../"
     img = {k: pre + v for k, v in _imagenes().items()}
     cfg = {"form": FORM, "hoja": HOJA, "e": ENTRADAS, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
-           "o": _opciones(), "img": img, "t": t}
+           "o": _opciones(), "img": img, "t": t,
+           "url": "finalgirlstats.com/" + ("" if lang == "es" else lang + "/") + "tops.html"}
     return f'''
 <section id="v-tops" hidden>
   <h2>{t["h2"]}</h2>
@@ -172,6 +173,7 @@ def seccion(lang):
   .ct-enviar {{ margin-top:6px; align-self:flex-start; background:var(--blood); color:#fff; border:0; border-radius:3px;
                 padding:7px 16px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; }}
   .ct-enviar[disabled] {{ opacity:.6; cursor:default; }}
+  .ct-share {{ margin-top:8px; background:var(--blood); color:#fff; border:0; border-radius:3px; padding:7px 14px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; }}
   .ct-ok {{ margin:4px 0 0; font-size:12.5px; color:var(--muted); }}
 </style>
 <script>
@@ -247,10 +249,10 @@ def seccion(lang):
   form.querySelectorAll('.ct-enviar').forEach(function (b) {{
     b.onclick = function () {{
       var card = b.closest('.ct-cat'), id = card.getAttribute('data-id');
-      var d = new URLSearchParams(), usados = {{}}, alguno = false;
+      var d = new URLSearchParams(), usados = {{}}, alguno = false, elegidos = [];
       card.querySelectorAll('select').forEach(function (sel) {{
         var v = sel.value, r = sel.getAttribute('data-r');
-        if (v && !usados[v]) {{ usados[v] = 1; d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }}
+        if (v && !usados[v]) {{ usados[v] = 1; elegidos.push(v); d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }}
       }});
       if (!alguno) return;
       b.disabled = true; b.textContent = C.t.enviando;
@@ -258,6 +260,15 @@ def seccion(lang):
       fetch(C.form, {{ method: 'POST', mode: 'no-cors', body: d }}).finally(function () {{
         try {{ localStorage.setItem('fg-top-' + id, '1'); }} catch (e) {{}}
         card.innerHTML = '<h3>' + esc(C.t.q[id]) + '</h3><p class="ct-ok">' + esc(C.t.gracias) + '</p>';
+        // Compartir el top recién votado: menú del sistema en el móvil, portapapeles si no.
+        var txt = C.t.comp_txt.replace('{{q}}', C.t.q[id]).replace('{{l}}', elegidos.map(function (x, k) {{ return (k + 1) + '. ' + x; }}).join(' ')) + ' ' + C.url;
+        var sb = document.createElement('button'); sb.type = 'button'; sb.className = 'ct-share'; sb.textContent = C.t.comp;
+        sb.onclick = function () {{
+          if (navigator.share) {{ navigator.share({{ text: txt }}).catch(function () {{}}); return; }}
+          (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {{ sb.textContent = C.t.copiado; }},
+            function () {{ window.prompt(C.t.comp, txt); }});
+        }};
+        card.appendChild(sb);
         setTimeout(cargar, 2500);
       }});
     }};
