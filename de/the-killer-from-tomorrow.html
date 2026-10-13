@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S3·F1 · 140 Partien</p>
-<h1 data-caja="The Killer from Tomorrow">The Killer from Tomorrow<span class="roja">60,7 % Siegquote</span></h1><p class="idiomas"><a href="../the-killer-from-tomorrow.html" hreflang="es">ES</a> · <a href="../en/the-killer-from-tomorrow.html" hreflang="en">EN</a> · <a href="../fr/the-killer-from-tomorrow.html" hreflang="fr">FR</a> · <a href="../de/the-killer-from-tomorrow.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/the-killer-from-tomorrow.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Killer from Tomorrow">The Killer from Tomorrow<span class="roja">60,7 % Siegquote</span></h1><p class="idiomas"><a href="../the-killer-from-tomorrow.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/the-killer-from-tomorrow.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/the-killer-from-tomorrow.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/the-killer-from-tomorrow.html" hreflang="de" aria-current="true">🇩🇪 DE</a> · <a href="../it/the-killer-from-tomorrow.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Hunter auf Sunnydaze Mall. In 140 erfassten Partien wird in 60,7 % der Fälle gewonnen, 4,8 Punkte unter dem Spielschnitt (65,5 %).</p>
 <h2>Was sie besonders macht</h2>
 <p>Zwei Stufen (Mark V → Mark X) mit unterschiedlichen Werten. Schaden reißt kybernetische Teile ab, bevor er die Stufe wechselt. Es gibt ein VIP-Opfer, den Savior, der beschützt werden muss. Frustrierend auf der eigenen Karte, weil die Rettung des Saviors stark von den Würfeln abhängt. Besser auf anderen Karten. Außerdem gehört er zu den regelintensivsten Killern des Spiels.</p>
@@ -169,9 +169,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

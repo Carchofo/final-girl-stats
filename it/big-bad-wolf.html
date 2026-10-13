@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 10 mappe con dati</p>
-<h1 data-caja="Once Upon a Full Moon">Big Bad Wolf<span class="roja">70,6% di vittorie</span></h1><p class="idiomas"><a href="../big-bad-wolf.html" hreflang="es">ES</a> · <a href="../en/big-bad-wolf.html" hreflang="en">EN</a> · <a href="../fr/big-bad-wolf.html" hreflang="fr">FR</a> · <a href="../de/big-bad-wolf.html" hreflang="de">DE</a> · <a href="../it/big-bad-wolf.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Once Upon a Full Moon">Big Bad Wolf<span class="roja">70,6% di vittorie</span></h1><p class="idiomas"><a href="../big-bad-wolf.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/big-bad-wolf.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/big-bad-wolf.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/big-bad-wolf.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/big-bad-wolf.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>722 partite registrate</b>, la Final Girl batte Big Bad Wolf nel 70,6% dei casi. La media di tutto il gioco è 65,5%, quindi è sopra la media: uno dei killer più abbordabili.</p>
 <h2>Chi è Big Bad Wolf</h2><p>Un gigantesco lupo mannaro albino dal pelo bianco e gli occhi rossi luminosi.</p>
 <h3>Come gioca Big Bad Wolf</h3><p>9 punti salute e Horror 5. Ha due modalità: parte in Track e passa a Slay quando viene rivelato il Dark Power. Diverse carte Terror fanno cose diverse a seconda della modalità.</p>
@@ -171,9 +171,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 7 maps with data</p>
-<h1 data-caja="The Marrek Murders">Tormentor<span class="roja">73.6% win rate</span></h1><p class="idiomas"><a href="../tormentor.html" hreflang="es">ES</a> · <a href="../en/tormentor.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/tormentor.html" hreflang="fr">FR</a> · <a href="../de/tormentor.html" hreflang="de">DE</a> · <a href="../it/tormentor.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Marrek Murders">Tormentor<span class="roja">73.6% win rate</span></h1><p class="idiomas"><a href="../tormentor.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/tormentor.html" hreflang="en" aria-current="true">🇬🇧 EN</a> · <a href="../fr/tormentor.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/tormentor.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/tormentor.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Across <b>595 recorded games</b>, the Final Girl beats Tormentor 73.6% of the time. The average for the whole game is 65.5%, so that is above average: one of the easier killers.</p>
 <h2>Who is Tormentor</h2><p>The killer of The Marrek Murders, the fourth film in Series 3, set in the Marrek warehouse.</p>
 <h3>How Tormentor plays</h3><p>Torture horror, with Saw as the clear reference. It brings Mandy and Cassie as Final Girls.</p>
@@ -170,9 +170,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

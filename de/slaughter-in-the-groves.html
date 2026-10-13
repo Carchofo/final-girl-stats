@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S1·F3 · 141 Partien</p>
-<h1 data-caja="Slaughter in the Groves">Slaughter in the Groves<span class="roja">38,3 % Siegquote</span></h1><p class="idiomas"><a href="../slaughter-in-the-groves.html" hreflang="es">ES</a> · <a href="../en/slaughter-in-the-groves.html" hreflang="en">EN</a> · <a href="../fr/slaughter-in-the-groves.html" hreflang="fr">FR</a> · <a href="../de/slaughter-in-the-groves.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/slaughter-in-the-groves.html" hreflang="it">IT</a></p>
+<h1 data-caja="Slaughter in the Groves">Slaughter in the Groves<span class="roja">38,3 % Siegquote</span></h1><p class="idiomas"><a href="../slaughter-in-the-groves.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/slaughter-in-the-groves.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/slaughter-in-the-groves.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/slaughter-in-the-groves.html" hreflang="de" aria-current="true">🇩🇪 DE</a> · <a href="../it/slaughter-in-the-groves.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Inkanyamba auf Sacred Groves. In 141 erfassten Partien wird in 38,3 % der Fälle gewonnen, 27,2 Punkte unter dem Spielschnitt (65,5 %).</p>
 <h2>Was sie besonders macht</h2>
 <p>Die Wrath-Leiste des Killers addiert sich zum Divine Wrath der Karte. Beide wirken gleichzeitig. Konsens: Diese Kombination ist brutal. Inkanyamba auf einer anderen Karte ist deutlich besser machbar.</p>
@@ -170,9 +170,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

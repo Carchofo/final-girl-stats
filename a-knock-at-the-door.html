@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Caja · S2·F3 · 206 partidas</p>
-<h1 data-caja="A Knock at the Door">A Knock at the Door<span class="roja">60,7% de victorias</span></h1><p class="idiomas"><a href="a-knock-at-the-door.html" hreflang="es" aria-current="true">ES</a> · <a href="en/a-knock-at-the-door.html" hreflang="en">EN</a> · <a href="fr/a-knock-at-the-door.html" hreflang="fr">FR</a> · <a href="de/a-knock-at-the-door.html" hreflang="de">DE</a> · <a href="it/a-knock-at-the-door.html" hreflang="it">IT</a></p>
+<h1 data-caja="A Knock at the Door">A Knock at the Door<span class="roja">60,7% de victorias</span></h1><p class="idiomas"><a href="a-knock-at-the-door.html" hreflang="es" aria-current="true">🇪🇸 ES</a> · <a href="en/a-knock-at-the-door.html" hreflang="en">🇬🇧 EN</a> · <a href="fr/a-knock-at-the-door.html" hreflang="fr">🇫🇷 FR</a> · <a href="de/a-knock-at-the-door.html" hreflang="de">🇩🇪 DE</a> · <a href="it/a-knock-at-the-door.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">The Intruders en Wingard Cottage. Sobre 206 partidas registradas se gana el 60,7% de las veces, 4,8 puntos por debajo de la media del juego (65,5%).</p>
 <h2>Qué tiene de particular</h2>
 <p>3 killers a la vez, uno de ellos siempre el «activo» y va cambiando. Sistema propio de crafteo de armas. Pese a los tres killers, se sigue sorprendentemente bien. Nunca abruma.</p>
@@ -172,9 +172,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

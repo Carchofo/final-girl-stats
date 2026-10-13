@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 Karten mit Daten</p>
-<h1 data-caja="">Terror from Above<span class="roja">58,4 % Siegquote</span></h1><p class="idiomas"><a href="../terror-from-above.html" hreflang="es">ES</a> · <a href="../en/terror-from-above.html" hreflang="en">EN</a> · <a href="../fr/terror-from-above.html" hreflang="fr">FR</a> · <a href="../de/terror-from-above.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/terror-from-above.html" hreflang="it">IT</a></p>
+<h1 data-caja="">Terror from Above<span class="roja">58,4 % Siegquote</span></h1><p class="idiomas"><a href="../terror-from-above.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/terror-from-above.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/terror-from-above.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/terror-from-above.html" hreflang="de" aria-current="true">🇩🇪 DE</a> · <a href="../it/terror-from-above.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">In <b>466 erfassten Partien</b> besiegt das Final Girl Terror from Above in 58,4 % der Fälle. Der Schnitt des ganzen Spiels liegt bei 65,5 %, also darunter: einer der harten.</p>
 <h2>Wer ist Terror from Above</h2><p>Die erste Vignette des Spiels, aus Serie 1. Der Killer sind die Vögel, eine direkte Hommage an den Film von 1963.</p>
 <h3>Wie Terror from Above spielt</h3><p>Kurzformat: Es bringt Melanie als Final Girl mit, und es gibt kein einzelnes Monster, das man treffen kann, sondern einen Schwarm.</p>
@@ -169,9 +169,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

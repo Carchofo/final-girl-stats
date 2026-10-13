@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S1·F2 · 238 Partien</p>
-<h1 data-caja="The Haunting of Creech Manor">The Haunting of Creech Manor<span class="roja">42,0 % Siegquote</span></h1><p class="idiomas"><a href="../the-haunting-of-creech-manor.html" hreflang="es">ES</a> · <a href="../en/the-haunting-of-creech-manor.html" hreflang="en">EN</a> · <a href="../fr/the-haunting-of-creech-manor.html" hreflang="fr">FR</a> · <a href="../de/the-haunting-of-creech-manor.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/the-haunting-of-creech-manor.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Haunting of Creech Manor">The Haunting of Creech Manor<span class="roja">42,0 % Siegquote</span></h1><p class="idiomas"><a href="../the-haunting-of-creech-manor.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/the-haunting-of-creech-manor.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/the-haunting-of-creech-manor.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/the-haunting-of-creech-manor.html" hreflang="de" aria-current="true">🇩🇪 DE</a> · <a href="../it/the-haunting-of-creech-manor.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Poltergeist auf Creech Manor. In 238 erfassten Partien wird in 42,0 % der Fälle gewonnen, 23,5 Punkte unter dem Spielschnitt (65,5 %).</p>
 <h2>Was sie besonders macht</h2>
 <p>Der Poltergeist hat KEINE Lebenspunkte und kann nicht beschädigt werden. Du gewinnst, indem du Carolyn findest und herausbringst. Die Einbahnstraßen machen die Bewegung noch umständlicher.</p>
@@ -169,9 +169,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

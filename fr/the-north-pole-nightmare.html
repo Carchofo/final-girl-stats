@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Boîte · Especial · 180 parties</p>
-<h1 data-caja="The North Pole Nightmare">The North Pole Nightmare<span class="roja">46,7 % de victoires</span></h1><p class="idiomas"><a href="../the-north-pole-nightmare.html" hreflang="es">ES</a> · <a href="../en/the-north-pole-nightmare.html" hreflang="en">EN</a> · <a href="../fr/the-north-pole-nightmare.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/the-north-pole-nightmare.html" hreflang="de">DE</a> · <a href="../it/the-north-pole-nightmare.html" hreflang="it">IT</a></p>
+<h1 data-caja="The North Pole Nightmare">The North Pole Nightmare<span class="roja">46,7 % de victoires</span></h1><p class="idiomas"><a href="../the-north-pole-nightmare.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/the-north-pole-nightmare.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/the-north-pole-nightmare.html" hreflang="fr" aria-current="true">🇫🇷 FR</a> · <a href="../de/the-north-pole-nightmare.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/the-north-pole-nightmare.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Krampus sur Santa's Village. Sur 180 parties enregistrées, on gagne dans 46,7 % des cas, 18,9 points en dessous de la moyenne du jeu (65,5 %).</p>
 <h2>Ce qui la rend unique</h2>
 <p>Système de cadeaux : les elfes (les victimes) révèlent des cadeaux à l'effet bon ou mauvais aléatoire, et tu peux risquer de les ouvrir. Elle apporte son propre véhicule, les rennes. Avec Shriek, la seule boîte livrée avec des figurines. Krampus commence avec 10 points de vie et Horror 4, d'après une source de la communauté.</p>
@@ -168,9 +168,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

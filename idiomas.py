@@ -434,6 +434,9 @@ def alternativos(salida_es, dominio, existe):
     return "\n".join(out)
 
 
+BANDERA = {"es": "🇪🇸", "en": "🇬🇧", "fr": "🇫🇷", "de": "🇩🇪", "it": "🇮🇹"}
+
+
 def selector(lang, salida, existe):
     """Enlaces a las otras versiones de la misma página."""
     base = "" if salida == "index.html" else salida
@@ -442,7 +445,7 @@ def selector(lang, salida, existe):
         (l, f"{pre}{l}/{base or 'index.html'}" if lang == "es" else f"../{l}/{base or 'index.html'}")
         for l in IDIOMAS if existe(l)]
     return ('<p class="idiomas">' + " · ".join(
-        f'<a href="{u}" hreflang="{l}"' + (' aria-current="true"' if l == lang else "") + f'>{l.upper()}</a>'
+        f'<a href="{u}" hreflang="{l}"' + (' aria-current="true"' if l == lang else "") + f'>{BANDERA[l]} {l.upper()}</a>'
         for l, u in items) + "</p>")
 
 

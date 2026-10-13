@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Boîte · S4·F1 · 89 parties</p>
-<h1 data-caja="Bad Times at Buddyland">Bad Times at Buddyland<span class="roja">60,7 % de victoires</span></h1><p class="idiomas"><a href="../bad-times-at-buddyland.html" hreflang="es">ES</a> · <a href="../en/bad-times-at-buddyland.html" hreflang="en">EN</a> · <a href="../fr/bad-times-at-buddyland.html" hreflang="fr" aria-current="true">FR</a> · <a href="../de/bad-times-at-buddyland.html" hreflang="de">DE</a> · <a href="../it/bad-times-at-buddyland.html" hreflang="it">IT</a></p>
+<h1 data-caja="Bad Times at Buddyland">Bad Times at Buddyland<span class="roja">60,7 % de victoires</span></h1><p class="idiomas"><a href="../bad-times-at-buddyland.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/bad-times-at-buddyland.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/bad-times-at-buddyland.html" hreflang="fr" aria-current="true">🇫🇷 FR</a> · <a href="../de/bad-times-at-buddyland.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/bad-times-at-buddyland.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Billy sur Buddyland. Sur 89 parties enregistrées, on gagne dans 60,7 % des cas, 4,9 points en dessous de la moyenne du jeu (65,5 %).</p>
 <div class="aviso"><h3>Échantillon réduit</h3><p>Seulement 89 parties enregistrées. Réparties entre Dark Powers, Finales et Setups, chaque détail en compte très peu : à prendre comme un indice, pas comme un fait.</p></div>
 <h2>Ce qui la rend unique</h2>
@@ -170,9 +170,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 13 mappe con dati</p>
-<h1 data-caja="The Happy Trails Horror">Hans<span class="roja">63,7% di vittorie</span></h1><p class="idiomas"><a href="../hans.html" hreflang="es">ES</a> · <a href="../en/hans.html" hreflang="en">EN</a> · <a href="../fr/hans.html" hreflang="fr">FR</a> · <a href="../de/hans.html" hreflang="de">DE</a> · <a href="../it/hans.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="The Happy Trails Horror">Hans<span class="roja">63,7% di vittorie</span></h1><p class="idiomas"><a href="../hans.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/hans.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/hans.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/hans.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/hans.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>1.439 partite registrate</b>, la Final Girl batte Hans nel 63,7% dei casi. La media di tutto il gioco è 65,5%, quindi è proprio nella media.</p>
 <h2>Chi è Hans</h2><p>Un uomo enorme con un grembiule da macellaio e una maschera di maiale in ferro, che trascina una mazza. È il killer del primo film della Serie 1 e quello che ti insegna a giocare.</p>
 <h3>Come gioca Hans</h3><p>Nessuna regola speciale: attacca, e basta. Parte con 12 punti salute e Horror 4, e prima del Finale la sua fase è semplice: scegliere un bersaglio e attaccare.</p>
@@ -171,9 +171,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

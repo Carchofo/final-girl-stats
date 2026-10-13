@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 10 Karten mit Daten</p>
-<h1 data-caja="Carnage at the Carnival">Geppetto<span class="roja">64,9 % Siegquote</span></h1><p class="idiomas"><a href="../geppetto.html" hreflang="es">ES</a> · <a href="../en/geppetto.html" hreflang="en">EN</a> · <a href="../fr/geppetto.html" hreflang="fr">FR</a> · <a href="../de/geppetto.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/geppetto.html" hreflang="it">IT</a></p>
+<h1 data-caja="Carnage at the Carnival">Geppetto<span class="roja">64,9 % Siegquote</span></h1><p class="idiomas"><a href="../geppetto.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/geppetto.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/geppetto.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/geppetto.html" hreflang="de" aria-current="true">🇩🇪 DE</a> · <a href="../it/geppetto.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">In <b>784 erfassten Partien</b> besiegt das Final Girl Geppetto in 64,9 % der Fälle. Der Schnitt des ganzen Spiels liegt bei 65,5 %, also genau im Schnitt.</p>
 <h2>Wer ist Geppetto</h2><p>Ein großer, bleicher Zirkusdirektor mit Zylinder und einem Grinsen von Ohr zu Ohr. Er verwandelt Menschen in lebende Marionetten und nimmt sie in seine Familie auf.</p>
 <h3>Wie Geppetto spielt</h3><p>9 Lebenspunkte und Horror 4. In jeder Phase lässt er vor seiner Bewegung eine Marionette erscheinen, sodass sich das Spielfeld mit Handlangern füllt, wenn du sie nicht beseitigst.</p>
@@ -172,9 +172,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

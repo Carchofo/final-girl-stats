@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S3·F3 · 126 Partien</p>
-<h1 data-caja="The Falconwood Files">The Falconwood Files<span class="roja">70,6 % Siegquote</span></h1><p class="idiomas"><a href="../the-falconwood-files.html" hreflang="es">ES</a> · <a href="../en/the-falconwood-files.html" hreflang="en">EN</a> · <a href="../fr/the-falconwood-files.html" hreflang="fr">FR</a> · <a href="../de/the-falconwood-files.html" hreflang="de" aria-current="true">DE</a> · <a href="../it/the-falconwood-files.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Falconwood Files">The Falconwood Files<span class="roja">70,6 % Siegquote</span></h1><p class="idiomas"><a href="../the-falconwood-files.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/the-falconwood-files.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/the-falconwood-files.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/the-falconwood-files.html" hreflang="de" aria-current="true">🇩🇪 DE</a> · <a href="../it/the-falconwood-files.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Slayer auf Falconwood. In 126 erfassten Partien wird in 70,6 % der Fälle gewonnen, 5,1 Punkte über dem Spielschnitt (65,5 %).</p>
 <h2>Was sie besonders macht</h2>
 <p>Es gibt eine versteckte Spiegeldimension, eine Parallelversion jedes Feldes. Ein Missionssystem mit wählbaren Belohnungen. Für den Wiederspielwert hoch bewertet: Die Wahl der Missionen lässt jede Partie anders verlaufen.</p>
@@ -169,9 +169,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

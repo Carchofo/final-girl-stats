@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Caja · S4·F4 · 43 partidas</p>
-<h1 data-caja="The Green Terror">The Green Terror<span class="roja">79,1% de victorias</span></h1><p class="idiomas"><a href="the-green-terror.html" hreflang="es" aria-current="true">ES</a> · <a href="en/the-green-terror.html" hreflang="en">EN</a> · <a href="fr/the-green-terror.html" hreflang="fr">FR</a> · <a href="de/the-green-terror.html" hreflang="de">DE</a> · <a href="it/the-green-terror.html" hreflang="it">IT</a></p>
+<h1 data-caja="The Green Terror">The Green Terror<span class="roja">79,1% de victorias</span></h1><p class="idiomas"><a href="the-green-terror.html" hreflang="es" aria-current="true">🇪🇸 ES</a> · <a href="en/the-green-terror.html" hreflang="en">🇬🇧 EN</a> · <a href="fr/the-green-terror.html" hreflang="fr">🇫🇷 FR</a> · <a href="de/the-green-terror.html" hreflang="de">🇩🇪 DE</a> · <a href="it/the-green-terror.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Volk'ar en Pesadilla Verde. Sobre 43 partidas registradas se gana el 79,1% de las veces, 13,5 puntos por encima de la media del juego (65,5%).</p>
 <div class="aviso"><h3>Cuidado con la muestra</h3><p>Solo 43 partidas registradas. Repartidas entre Dark Powers, Finales y hojas de preparación, cada desglose queda en muy pocas: tómalos como indicio, no como hecho.</p></div>
 <h2>Qué tiene de particular</h2>
@@ -168,9 +168,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

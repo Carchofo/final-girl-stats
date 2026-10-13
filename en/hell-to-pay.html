@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Box · S3·F2 · 127 games</p>
-<h1 data-caja="Hell to Pay">Hell to Pay<span class="roja">62.2% win rate</span></h1><p class="idiomas"><a href="../hell-to-pay.html" hreflang="es">ES</a> · <a href="../en/hell-to-pay.html" hreflang="en" aria-current="true">EN</a> · <a href="../fr/hell-to-pay.html" hreflang="fr">FR</a> · <a href="../de/hell-to-pay.html" hreflang="de">DE</a> · <a href="../it/hell-to-pay.html" hreflang="it">IT</a></p>
+<h1 data-caja="Hell to Pay">Hell to Pay<span class="roja">62.2% win rate</span></h1><p class="idiomas"><a href="../hell-to-pay.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/hell-to-pay.html" hreflang="en" aria-current="true">🇬🇧 EN</a> · <a href="../fr/hell-to-pay.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/hell-to-pay.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/hell-to-pay.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Razorface on Hellscape. Across 127 recorded games it is won 62.2% of the time, 3.3 points below the game average (65.5%).</p>
 <h2>What makes it different</h2>
 <p>Afflictions work as optional objectives on top of the normal win condition. A community favourite as a Series 3 starting point: demanding without being overwhelming.</p>
@@ -168,9 +168,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

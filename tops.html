@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Por dificultad · 13.920 partidas reales</p>
-<h1>Tier list de dificultad<span class="roja">Final Girl</span></h1><p class="idiomas"><a href="tops.html" hreflang="es" aria-current="true">ES</a> · <a href="en/tops.html" hreflang="en">EN</a> · <a href="fr/tops.html" hreflang="fr">FR</a> · <a href="de/tops.html" hreflang="de">DE</a> · <a href="it/tops.html" hreflang="it">IT</a></p>
+<h1>Tier list de dificultad<span class="roja">Final Girl</span></h1><p class="idiomas"><a href="tops.html" hreflang="es" aria-current="true">🇪🇸 ES</a> · <a href="en/tops.html" hreflang="en">🇬🇧 EN</a> · <a href="fr/tops.html" hreflang="fr">🇫🇷 FR</a> · <a href="de/tops.html" hreflang="de">🇩🇪 DE</a> · <a href="it/tops.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Cajas, killers y localizaciones ordenados de S a D por dificultad. No es una opinión: sale del % de victorias de 13.920 partidas registradas por la comunidad. Debajo, los tops que vota la gente.</p></header>
 <p class="sub tl-ley">S: menos del 55% de victorias, lo más duro · A: 55–62% · B: 62–69% · C: 69–75% · D: 75% o más, lo más asequible. Media de todas las partidas: 65,5%.</p>
 <p class="tl-aviso">Ojo: son solo las partidas que la gente registra, no todas las que se juegan. Puede haber sesgo (se apuntan más las victorias) y algunas cajas tienen pocas partidas. Tómalo como guía, no como verdad absoluta.</p>
@@ -421,9 +421,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

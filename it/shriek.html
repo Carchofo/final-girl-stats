@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Scatola · Especial · 122 partite</p>
-<h1 data-caja="Shriek">Shriek<span class="roja">70,5% di vittorie</span></h1><p class="idiomas"><a href="../shriek.html" hreflang="es">ES</a> · <a href="../en/shriek.html" hreflang="en">EN</a> · <a href="../fr/shriek.html" hreflang="fr">FR</a> · <a href="../de/shriek.html" hreflang="de">DE</a> · <a href="../it/shriek.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Shriek">Shriek<span class="roja">70,5% di vittorie</span></h1><p class="idiomas"><a href="../shriek.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/shriek.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/shriek.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/shriek.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/shriek.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Mort su Mega BGCon. Su 122 partite registrate si vince nel 70,5% dei casi, 5,0 punti sopra la media del gioco (65,5%).</p>
 <h2>Cosa la rende particolare</h2>
 <p>Mort non parte sulla plancia: è nascosto tra 10 sospettati piazzati a caso. Le carte Interrogate e Coerce rivelano indizi che eliminano sospettati finché ne resta uno. Finché non viene smascherato, certe carte Terror lasciano agire un sospettato casuale come killer. Le vittime non vanno nel panico finché non viene smascherato. Un omaggio ironico a Scream. È l'uscita più recente, e c'è ancora poca esperienza.</p>
@@ -169,9 +169,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

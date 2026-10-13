@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 mapas con datos</p>
-<h1 data-caja="Into the Void">Evomorph<span class="roja">en 75,4% de victorias</span></h1><p class="idiomas"><a href="evomorph.html" hreflang="es" aria-current="true">ES</a> · <a href="en/evomorph.html" hreflang="en">EN</a> · <a href="fr/evomorph.html" hreflang="fr">FR</a> · <a href="de/evomorph.html" hreflang="de">DE</a> · <a href="it/evomorph.html" hreflang="it">IT</a></p>
+<h1 data-caja="Into the Void">Evomorph<span class="roja">en 75,4% de victorias</span></h1><p class="idiomas"><a href="evomorph.html" hreflang="es" aria-current="true">🇪🇸 ES</a> · <a href="en/evomorph.html" hreflang="en">🇬🇧 EN</a> · <a href="fr/evomorph.html" hreflang="fr">🇫🇷 FR</a> · <a href="de/evomorph.html" hreflang="de">🇩🇪 DE</a> · <a href="it/evomorph.html" hreflang="it">🇮🇹 IT</a></p>
 <p class="dek">Sobre <b>877 partidas</b> registradas, la Final Girl gana el 75,4% de las veces contra Evomorph. La media de todo el juego es 65,5%, así que está por encima: es de los killers que menos problemas da.</p>
 <h2>Quién es</h2>
 <p>Un alien insectoide de exoesqueleto blanco y rojo, con cola de escorpión y sin ojos visibles. Lo subieron a bordo escondido en la carga.</p>
@@ -178,9 +178,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

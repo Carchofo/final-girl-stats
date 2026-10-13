@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 6 mappe con dati</p>
-<h1 data-caja="The Killer from Tomorrow">Hunter<span class="roja">70,9% di vittorie</span></h1><p class="idiomas"><a href="../hunter.html" hreflang="es">ES</a> · <a href="../en/hunter.html" hreflang="en">EN</a> · <a href="../fr/hunter.html" hreflang="fr">FR</a> · <a href="../de/hunter.html" hreflang="de">DE</a> · <a href="../it/hunter.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="The Killer from Tomorrow">Hunter<span class="roja">70,9% di vittorie</span></h1><p class="idiomas"><a href="../hunter.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/hunter.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/hunter.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/hunter.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/hunter.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>470 partite registrate</b>, la Final Girl batte Hunter nel 70,9% dei casi. La media di tutto il gioco è 65,5%, quindi è sopra la media: uno dei killer più abbordabili.</p>
 <h2>Chi è Hunter</h2><p>Un cacciatore androide. In realtà ce ne sono due: il Mark V, alto e incappucciato, che si traveste da umano, e il Mark X, più agile e meglio costruito.</p>
 <h3>Come gioca Hunter</h3><p>15 punti salute e Horror 5, ma quella salute conta solo per il Mark X. Un contatore sostituisce il Mark V con il Mark X verso la fine.</p>
@@ -171,9 +171,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

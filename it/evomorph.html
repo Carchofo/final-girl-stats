@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 mappe con dati</p>
-<h1 data-caja="Into the Void">Evomorph<span class="roja">75,4% di vittorie</span></h1><p class="idiomas"><a href="../evomorph.html" hreflang="es">ES</a> · <a href="../en/evomorph.html" hreflang="en">EN</a> · <a href="../fr/evomorph.html" hreflang="fr">FR</a> · <a href="../de/evomorph.html" hreflang="de">DE</a> · <a href="../it/evomorph.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Into the Void">Evomorph<span class="roja">75,4% di vittorie</span></h1><p class="idiomas"><a href="../evomorph.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/evomorph.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/evomorph.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/evomorph.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/evomorph.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>877 partite registrate</b>, la Final Girl batte Evomorph nel 75,4% dei casi. La media di tutto il gioco è 65,5%, quindi è sopra la media: uno dei killer più abbordabili.</p>
 <h2>Chi è Evomorph</h2><p>Un alieno insettoide con un esoscheletro bianco e rosso, una coda di scorpione e nessun occhio visibile. È stato portato a bordo nascosto nel carico.</p>
 <h3>Come gioca Evomorph</h3><p>Evolve uccidendo. Parte come un Hatchling lento ma schiacciante, diventa uno Youngling veloce e fragile, e finisce come un Adult lento e forte. La sua salute sale da 4 fino a 10.</p>
@@ -171,9 +171,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

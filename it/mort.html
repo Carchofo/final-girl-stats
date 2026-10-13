@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 3 mappe con dati</p>
-<h1 data-caja="Shriek">Mort<span class="roja">69,4% di vittorie</span></h1><p class="idiomas"><a href="../mort.html" hreflang="es">ES</a> · <a href="../en/mort.html" hreflang="en">EN</a> · <a href="../fr/mort.html" hreflang="fr">FR</a> · <a href="../de/mort.html" hreflang="de">DE</a> · <a href="../it/mort.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Shriek">Mort<span class="roja">69,4% di vittorie</span></h1><p class="idiomas"><a href="../mort.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/mort.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/mort.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/mort.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/mort.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>314 partite registrate</b>, la Final Girl batte Mort nel 69,4% dei casi. La media di tutto il gioco è 65,5%, quindi è proprio nella media.</p>
 <h2>Chi è Mort</h2><p>Felpa grigia con cappuccio, pantaloni rossi e neri e una maschera da fantasma con un occhio solo. Il killer di Shriek, ambientato a una convention di giochi da tavolo.</p>
 <h3>Come gioca Mort</h3><p>Horror 3 e nessuna salute finché non viene rivelato. Parte come uno di 10 sospettati, tutti killer di altri film: devi interrogare e mettere sotto pressione cinque di loro per escluderli.</p>
@@ -170,9 +170,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

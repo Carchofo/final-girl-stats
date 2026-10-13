@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Scatola · S4·F5 · 41 partite</p>
-<h1 data-caja="The Raptor Games">The Raptor Games<span class="roja">53,7% di vittorie</span></h1><p class="idiomas"><a href="../the-raptor-games.html" hreflang="es">ES</a> · <a href="../en/the-raptor-games.html" hreflang="en">EN</a> · <a href="../fr/the-raptor-games.html" hreflang="fr">FR</a> · <a href="../de/the-raptor-games.html" hreflang="de">DE</a> · <a href="../it/the-raptor-games.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="The Raptor Games">The Raptor Games<span class="roja">53,7% di vittorie</span></h1><p class="idiomas"><a href="../the-raptor-games.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/the-raptor-games.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/the-raptor-games.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/the-raptor-games.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/the-raptor-games.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Raptors su Isla Lagarto. Su 41 partite registrate si vince nel 53,7% dei casi, 11,9 punti sotto la media del gioco (65,5%).</p>
 <div class="aviso"><h3>Campione ridotto</h3><p>Solo 41 partite registrate. Divise tra Dark Powers, Finali e Setup, ogni dettaglio ne conta pochissime: prendilo come un indizio, non come un fatto.</p></div>
 <h2>Cosa la rende particolare</h2>
@@ -163,9 +163,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

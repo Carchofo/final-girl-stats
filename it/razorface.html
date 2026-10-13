@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 7 mappe con dati</p>
-<h1 data-caja="Hell to Pay">Razorface<span class="roja">53,8% di vittorie</span></h1><p class="idiomas"><a href="../razorface.html" hreflang="es">ES</a> · <a href="../en/razorface.html" hreflang="en">EN</a> · <a href="../fr/razorface.html" hreflang="fr">FR</a> · <a href="../de/razorface.html" hreflang="de">DE</a> · <a href="../it/razorface.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="Hell to Pay">Razorface<span class="roja">53,8% di vittorie</span></h1><p class="idiomas"><a href="../razorface.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/razorface.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/razorface.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/razorface.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/razorface.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>511 partite registrate</b>, la Final Girl batte Razorface nel 53,8% dei casi. La media di tutto il gioco è 65,5%, quindi è sotto la media: uno dei più duri.</p>
 <h2>Chi è Razorface</h2><p>Un umanoide demoniaco senza labbra né naso, con il corpo coperto di tagli rituali e ganci incatenati nella pelle.</p>
 <h3>Come gioca Razorface</h3><p>9 punti salute e Horror 5. Parti con 3 carte Affliction su di lui, e per ucciderlo davvero devi purgare ciascuna soddisfacendo il suo requisito.</p>
@@ -171,9 +171,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);

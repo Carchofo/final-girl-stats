@@ -132,7 +132,7 @@
 })();
 </script>
 <div class="wrap"><header class="top"><p class="eyebrow">Killer · 12 mappe con dati</p>
-<h1 data-caja="The Haunting of Creech Manor">Poltergeist<span class="roja">56,1% di vittorie</span></h1><p class="idiomas"><a href="../poltergeist.html" hreflang="es">ES</a> · <a href="../en/poltergeist.html" hreflang="en">EN</a> · <a href="../fr/poltergeist.html" hreflang="fr">FR</a> · <a href="../de/poltergeist.html" hreflang="de">DE</a> · <a href="../it/poltergeist.html" hreflang="it" aria-current="true">IT</a></p>
+<h1 data-caja="The Haunting of Creech Manor">Poltergeist<span class="roja">56,1% di vittorie</span></h1><p class="idiomas"><a href="../poltergeist.html" hreflang="es">🇪🇸 ES</a> · <a href="../en/poltergeist.html" hreflang="en">🇬🇧 EN</a> · <a href="../fr/poltergeist.html" hreflang="fr">🇫🇷 FR</a> · <a href="../de/poltergeist.html" hreflang="de">🇩🇪 DE</a> · <a href="../it/poltergeist.html" hreflang="it" aria-current="true">🇮🇹 IT</a></p>
 <p class="dek">Su <b>884 partite registrate</b>, la Final Girl batte Poltergeist nel 56,1% dei casi. La media di tutto il gioco è 65,5%, quindi è sotto la media: uno dei più duri.</p>
 <h2>Chi è Poltergeist</h2><p>Helen Creech, una donna spettrale con un lungo abito e gli occhi luminosi, che si aggira per casa sua.</p>
 <h3>Come gioca Poltergeist</h3><p>L'eccezione: non ha salute e non può essere attaccata. Si vince trovando Carolyn nei mazzi oggetti e fuggendo con lei.</p>
@@ -172,9 +172,9 @@ var l=document.querySelector('link[rel=alternate][hreflang="'+want+'"]');if(!l)r
 // otro idioma: se lleva a la traducción. Los robots se quedan (indexan el ES).
 if(!pref&&cur==='es'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){
 try{localStorage.setItem('fg-idioma',want)}catch(e){}location.replace(l.href+location.hash);return}
-var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
+var F={es:'🇪🇸',en:'🇬🇧',fr:'🇫🇷',de:'🇩🇪',it:'🇮🇹'};var T={es:'Esta página también está en español',en:'This page is also available in English',fr:'Cette page existe aussi en français',de:'Diese Seite gibt es auch auf Deutsch',it:'Questa pagina è disponibile anche in italiano'};
 var d=document.createElement('div');d.className='fg-lang';
-d.innerHTML='<a href="'+l.href+'">'+T[want]+' →</a><button type="button" aria-label="×">×</button>';
+d.innerHTML='<a href="'+l.href+'">'+F[want]+' '+T[want]+' →</a><button type="button" aria-label="×">×</button>';
 d.querySelector('a').onclick=function(){try{localStorage.setItem('fg-idioma',want)}catch(e){}};
 d.querySelector('button').onclick=function(){try{localStorage.setItem('fg-idioma','no')}catch(e){}d.remove()};
 document.body.insertBefore(d,document.body.firstChild);
