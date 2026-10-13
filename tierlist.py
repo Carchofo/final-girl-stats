@@ -22,7 +22,7 @@ TRAMOS = [("S", 0.55), ("A", 0.62), ("B", 0.69), ("C", 0.75)]
 MIN_MAPA = 60
 
 T = {
- "es": {"title": "Tier list de dificultad de Final Girl: cajas, killers y mapas ({n} partidas)",
+ "es": {"aviso": "Ojo: son solo las partidas que la gente registra, no todas las que se juegan. Puede haber sesgo (se apuntan más las victorias) y algunas cajas tienen pocas partidas. Tómalo como guía, no como verdad absoluta.", "title": "Tier list de dificultad de Final Girl: cajas, killers y mapas ({n} partidas)",
         "desc": "Tier list de Final Girl con datos reales: cajas, killers y mapas de S a D por % de victorias en {n} partidas, y los tops que vota la comunidad.",
         "eb": "Por dificultad · {n} partidas reales", "h1": "Tier list de dificultad<span class=\"roja\">Final Girl</span>",
         "dek": "Cajas, killers y localizaciones ordenados de S a D por dificultad. No es una opinión: sale del % de victorias de {n} partidas registradas por la comunidad. Debajo, los tops que vota la gente.",
@@ -31,7 +31,7 @@ T = {
         "nota_k": "Solo killers con 60 partidas o más.", "nota_m": "Solo localizaciones con 60 partidas o más.",
         "vic": "victorias", "part": "part.", "com": "Tops de la comunidad",
         "com_sub": "Aquí no mandan los datos sino los votos: mejor temporada, mejor película, mejor killer, la caja más fácil, la más difícil, la más inmersiva, la peor y la mejor localización. Vota el tuyo."},
- "en": {"title": "Final Girl difficulty tier list: boxes, killers and maps ({n} games)",
+ "en": {"aviso": "Heads up: these are only the games people log, not every game played. There may be some bias (wins get logged more often) and some boxes have few games. Take it as a guide, not gospel.", "title": "Final Girl difficulty tier list: boxes, killers and maps ({n} games)",
         "desc": "Final Girl tier list from real data: every box, killer and map ranked S to D by win rate across {n} games, plus community-voted tops.",
         "eb": "By difficulty · {n} real games", "h1": "Final Girl<span class=\"roja\">difficulty tier list</span>",
         "dek": "Boxes, killers and locations ranked S to D by difficulty. Not an opinion: it comes from the win rate of {n} games logged by the community. Below, the tops players vote for.",
@@ -40,7 +40,7 @@ T = {
         "nota_k": "Only killers with 60+ games.", "nota_m": "Only locations with 60+ games.",
         "vic": "wins", "part": "games", "com": "Community tops",
         "com_sub": "Here votes rule, not data: best series, best movie, best killer, easiest box, hardest, most immersive, worst and best location. Cast yours."},
- "fr": {"title": "Tier list Final Girl : classement des boîtes, killers et cartes ({n} parties)",
+ "fr": {"aviso": "Attention : ce sont seulement les parties enregistrées, pas toutes celles jouées. Il peut y avoir un biais (on note plus souvent les victoires) et certaines boîtes ont peu de parties. C'est un repère, pas une vérité absolue.", "title": "Tier list Final Girl : classement des boîtes, killers et cartes ({n} parties)",
         "desc": "Tier list Final Girl : boîtes, killers et lieux de S à D selon le taux de victoire sur {n} parties, et les tops votés par la communauté.",
         "eb": "Par difficulté · {n} parties réelles", "h1": "Tier list de difficulté<span class=\"roja\">Final Girl</span>",
         "dek": "Boîtes, killers et lieux classés de S à D par difficulté. Ce n'est pas un avis : cela vient du taux de victoire de {n} parties enregistrées par la communauté. En dessous, les tops votés par les joueurs.",
@@ -49,7 +49,7 @@ T = {
         "nota_k": "Seulement les killers avec 60 parties ou plus.", "nota_m": "Seulement les lieux avec 60 parties ou plus.",
         "vic": "victoires", "part": "parties", "com": "Tops de la communauté",
         "com_sub": "Ici ce sont les votes qui comptent : meilleure saison, meilleur film, meilleur killer, boîte la plus facile, la plus difficile, la plus immersive, la pire et le meilleur lieu. Votez."},
- "de": {"title": "Final Girl Tier List: Boxen, Killer und Karten im Ranking ({n} Partien)",
+ "de": {"aviso": "Hinweis: Das sind nur die eingetragenen Partien, nicht alle gespielten. Es kann eine Verzerrung geben (Siege werden öfter eingetragen), und manche Boxen haben wenige Partien. Eher Orientierung als absolute Wahrheit.", "title": "Final Girl Tier List: Boxen, Killer und Karten im Ranking ({n} Partien)",
         "desc": "Final Girl Tier List aus echten Daten: Boxen, Killer und Schauplätze von S bis D nach Siegquote aus {n} Partien, dazu Community-Tops.",
         "eb": "Nach Schwierigkeit · {n} echte Partien", "h1": "Final Girl<span class=\"roja\">Schwierigkeits-Tier-List</span>",
         "dek": "Boxen, Killer und Schauplätze von S bis D nach Schwierigkeit. Keine Meinung: Grundlage ist die Siegquote aus {n} Partien der Community. Darunter die Tops, über die die Spieler abstimmen.",
@@ -58,7 +58,7 @@ T = {
         "nota_k": "Nur Killer mit mindestens 60 Partien.", "nota_m": "Nur Schauplätze mit mindestens 60 Partien.",
         "vic": "Siege", "part": "Partien", "com": "Community-Tops",
         "com_sub": "Hier zählen Stimmen, nicht Daten: beste Staffel, bester Film, bester Killer, leichteste Box, schwerste, atmosphärischste, schlechteste und bester Schauplatz. Stimm ab."},
- "it": {"title": "Tier list Final Girl: classifica di scatole, killer e mappe ({n} partite)",
+ "it": {"aviso": "Attenzione: sono solo le partite registrate, non tutte quelle giocate. Può esserci una distorsione (le vittorie si registrano più spesso) e alcune scatole hanno poche partite. Prendila come guida, non come verità assoluta.", "title": "Tier list Final Girl: classifica di scatole, killer e mappe ({n} partite)",
         "desc": "Tier list di Final Girl: scatole, killer e mappe da S a D per percentuale di vittorie su {n} partite, più i top votati dalla community.",
         "eb": "Per difficoltà · {n} partite reali", "h1": "Tier list di difficoltà<span class=\"roja\">Final Girl</span>",
         "dek": "Scatole, killer e ambientazioni da S a D per difficoltà. Non è un'opinione: viene dalla percentuale di vittorie di {n} partite registrate dalla community. Sotto, i top votati dai giocatori.",
@@ -86,6 +86,7 @@ ESTILO = """<style>
                 font-weight:600; background:linear-gradient(transparent,rgba(0,0,0,.9)); }
   .tl-it b { display:block; font-family:var(--f-mono); font-size:10.5px; font-weight:400; opacity:.85; }
   .tl-ley { font-size:13px; }
+  .tl-aviso { font-size:13px; color:var(--muted); border-left:2px solid var(--blood); padding:6px 10px; margin:8px 0 18px; background:var(--surface); }
   #comunidad { margin-top:40px; }
   .tl-faq { margin-bottom:10px; }
   .tl-faq details { border-top:1px solid var(--line); padding:10px 2px; }
@@ -218,6 +219,7 @@ def pagina(lang):
          f'<h1>{t["h1"]}</h1>',
          f'<p class="dek">{t["dek"].format(n=n)}</p></header>',
          f'<p class="sub tl-ley">{t["leyenda"].format(media=I.pc(m["wr"], lang))}</p>',
+         f'<p class="tl-aviso">{t["aviso"]}</p>',
          f'<h2>{t["cajas"]}</h2>', _tier(cajas, lang, pre, True),
          f'<h2>{t["killers"]}</h2><p class="sub">{t["nota_k"]}</p>', _tier(killers, lang, pre),
          f'<h2>{t["mapas"]}</h2><p class="sub">{t["nota_m"]}</p>', _tier(mapas, lang, pre),
