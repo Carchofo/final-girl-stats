@@ -15,35 +15,35 @@ import paginas as P
 import tops
 
 T = {
- "es": {"title": "Crea tu tier list de Final Girl: películas, killers y localizaciones",
+ "es": {"anadir": "Añadir fila", "quitar": "Quitar fila", "title": "Crea tu tier list de Final Girl: películas, killers y localizaciones",
         "desc": "Haz tu propia tier list de Final Girl arrastrando las cajas, los killers o los mapas. Descárgala como imagen o compártela con un enlace.",
         "eb": "Tier list maker · gratis, sin registro", "h1": "Crea tu<span class=\"roja\">tier list</span>",
         "dek": "Arrastra cada foto a su fila (en el móvil: toca la foto y luego la fila). Cuando acabes, descárgala como imagen o comparte el enlace.",
         "modos": ["Películas", "Killers", "Localizaciones"], "sin": "Sin colocar", "bajar": "Descargar imagen",
         "comp": "Copiar enlace", "copiado": "¡Enlace copiado!", "reset": "Empezar de nuevo",
         "tit_def": "Mi tier list de Final Girl", "tit_lbl": "Título", "datos": "¿Y según los datos? Mira la tier list de dificultad →"},
- "en": {"title": "Final Girl tier list maker: rank movies, killers and locations",
+ "en": {"anadir": "Add row", "quitar": "Remove row", "title": "Final Girl tier list maker: rank movies, killers and locations",
         "desc": "Make your own Final Girl tier list by dragging boxes, killers or maps. Download it as an image or share it with a link. Free, no sign-up.",
         "eb": "Tier list maker · free, no sign-up", "h1": "Final Girl<span class=\"roja\">tier list maker</span>",
         "dek": "Drag each picture to its row (on mobile: tap the picture, then the row). When you're done, download it as an image or share the link.",
         "modos": ["Movies", "Killers", "Locations"], "sin": "Unranked", "bajar": "Download image",
         "comp": "Copy link", "copiado": "Link copied!", "reset": "Start over",
         "tit_def": "My Final Girl tier list", "tit_lbl": "Title", "datos": "What does the data say? See the difficulty tier list →"},
- "fr": {"title": "Créer sa tier list Final Girl : films, killers et lieux",
+ "fr": {"anadir": "Ajouter une ligne", "quitar": "Supprimer la ligne", "title": "Créer sa tier list Final Girl : films, killers et lieux",
         "desc": "Faites votre propre tier list Final Girl en glissant les boîtes, les killers ou les lieux. Téléchargez l'image ou partagez le lien.",
         "eb": "Tier list maker · gratuit, sans inscription", "h1": "Créez votre<span class=\"roja\">tier list</span>",
         "dek": "Glissez chaque image dans sa ligne (sur mobile : touchez l'image puis la ligne). Ensuite, téléchargez l'image ou partagez le lien.",
         "modos": ["Films", "Killers", "Lieux"], "sin": "Non classés", "bajar": "Télécharger l'image",
         "comp": "Copier le lien", "copiado": "Lien copié !", "reset": "Recommencer",
         "tit_def": "Ma tier list Final Girl", "tit_lbl": "Titre", "datos": "Et selon les données ? Voir la tier list de difficulté →"},
- "de": {"title": "Final Girl Tier-List-Maker: Filme, Killer und Schauplätze",
+ "de": {"anadir": "Reihe hinzufügen", "quitar": "Reihe entfernen", "title": "Final Girl Tier-List-Maker: Filme, Killer und Schauplätze",
         "desc": "Erstelle deine eigene Final-Girl-Tier-List: Boxen, Killer oder Schauplätze per Drag-and-drop. Als Bild herunterladen oder per Link teilen.",
         "eb": "Tier-List-Maker · gratis, ohne Anmeldung", "h1": "Erstelle deine<span class=\"roja\">Tier List</span>",
         "dek": "Zieh jedes Bild in seine Reihe (am Handy: Bild antippen, dann die Reihe). Danach als Bild herunterladen oder den Link teilen.",
         "modos": ["Filme", "Killer", "Schauplätze"], "sin": "Nicht eingeordnet", "bajar": "Bild herunterladen",
         "comp": "Link kopieren", "copiado": "Link kopiert!", "reset": "Neu anfangen",
         "tit_def": "Meine Final-Girl-Tier-List", "tit_lbl": "Titel", "datos": "Was sagen die Daten? Zur Schwierigkeits-Tier-List →"},
- "it": {"title": "Crea la tua tier list di Final Girl: film, killer e ambientazioni",
+ "it": {"anadir": "Aggiungi riga", "quitar": "Rimuovi riga", "title": "Crea la tua tier list di Final Girl: film, killer e ambientazioni",
         "desc": "Crea la tua tier list di Final Girl trascinando scatole, killer o mappe. Scaricala come immagine o condividila con un link.",
         "eb": "Tier list maker · gratis, senza registrazione", "h1": "Crea la tua<span class=\"roja\">tier list</span>",
         "dek": "Trascina ogni immagine nella sua riga (da mobile: tocca l'immagine e poi la riga). Alla fine scaricala come immagine o condividi il link.",
@@ -100,6 +100,12 @@ def pagina(lang):
   .tm-fila:first-child {{ border-top:0; }}
   .tm-l {{ flex:none; width:64px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:24px; color:#fff; }}
   .tm-l input {{ width:100%; background:none; border:0; color:#fff; font:inherit; text-align:center; }}
+  .tm-fila {{ position:relative; }}
+  .tm-del {{ flex:none; width:30px; border:0; background:var(--sunk); color:var(--muted); font-size:18px; cursor:pointer; }}
+  .tm-del:hover {{ color:#fff; background:var(--blood); }}
+  .tm-add {{ display:block; width:100%; padding:8px; border:0; border-top:1px dashed var(--line); background:var(--sunk);
+             color:var(--muted); font:inherit; font-size:13px; font-weight:600; cursor:pointer; }}
+  .tm-add:hover {{ color:var(--ink); }}
   .tm-zona {{ display:flex; flex-wrap:wrap; gap:6px; padding:6px; min-height:84px; flex:1; }}
   .tm-zona.sobre {{ background:color-mix(in srgb,var(--blood) 12%,transparent); }}
   .tm-pool {{ border:1px dashed var(--line); border-radius:3px; background:var(--sunk); }}
@@ -124,9 +130,13 @@ def pagina(lang):
 (function () {{
   var C = {json.dumps(cfg, ensure_ascii=False)};
   var filasEl = document.getElementById('tm-filas'), pool = document.getElementById('tm-pool');
+  // Filas variables: se pueden añadir y quitar. Colores en ciclo.
+  var PAL = C.f.map(function (f) {{ return f[1]; }}).concat(['#2f5f8a', '#5a3f8a', '#7a7a7a', '#8a2f6b']);
+  var BASE = ['S', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+  function color(k) {{ return PAL[k % PAL.length]; }}
   var modo = 0, estado = null, etiquetas = C.f.map(function (f) {{ return f[0]; }}), sel = null;
   function esc(s) {{ return String(s).replace(/[&<>"]/g, function (c) {{ return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]; }}); }}
-  function vacio() {{ return {{ filas: C.f.map(function () {{ return []; }}), pool: C.g[modo].map(function (_, i) {{ return i; }}) }}; }}
+  function vacio() {{ return {{ filas: etiquetas.map(function () {{ return []; }}), pool: C.g[modo].map(function (_, i) {{ return i; }}) }}; }}
 
   // --- enlace: #m=0&t=Título&e=S,A,..&r=3.5.7|2|... (índices en base 36)
   function aHash() {{
@@ -138,11 +148,12 @@ def pagina(lang):
   function deHash() {{
     var h = location.hash.slice(1); if (h.indexOf('m=') < 0) return false;
     var q = {{}}; h.split('&').forEach(function (kv) {{ var i = kv.indexOf('='); q[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }});
-    modo = Math.min(2, +q.m || 0); estado = vacio();
+    modo = Math.min(2, +q.m || 0);
     if (q.t) document.getElementById('tm-titulo').value = q.t;
-    if (q.e) {{ var e = q.e.split(','); if (e.length === C.f.length) etiquetas = e; }}
+    if (q.e) {{ var e = q.e.split(','); if (e.length >= 1 && e.length <= 12) etiquetas = e; }}
+    estado = vacio();
     (q.r || '').split('|').forEach(function (f, k) {{
-      if (k >= C.f.length || !f) return;
+      if (k >= etiquetas.length || !f) return;
       f.split('.').forEach(function (x) {{
         var i = parseInt(x, 36), j = estado.pool.indexOf(i);
         if (j >= 0) {{ estado.pool.splice(j, 1); estado.filas[k].push(i); }}
@@ -157,10 +168,21 @@ def pagina(lang):
       '<span>' + esc(it[0]) + '</span></div>';
   }}
   function pintar() {{
-    filasEl.innerHTML = C.f.map(function (f, k) {{
-      return '<div class="tm-fila"><div class="tm-l" style="background:' + f[1] + '"><input value="' + esc(etiquetas[k]) + '" data-k="' + k + '" maxlength="6"></div>' +
-        '<div class="tm-zona" data-fila="' + k + '">' + estado.filas[k].map(ficha).join('') + '</div></div>';
-    }}).join('');
+    filasEl.innerHTML = etiquetas.map(function (et, k) {{
+      return '<div class="tm-fila"><div class="tm-l" style="background:' + color(k) + '"><input value="' + esc(et) + '" data-k="' + k + '" maxlength="6"></div>' +
+        '<div class="tm-zona" data-fila="' + k + '">' + estado.filas[k].map(ficha).join('') + '</div>' +
+        (etiquetas.length > 1 ? '<button type="button" class="tm-del" data-k="' + k + '" aria-label="' + esc(C.t.quitar) + '" title="' + esc(C.t.quitar) + '">×</button>' : '') + '</div>';
+    }}).join('') + '<button type="button" class="tm-add">+ ' + esc(C.t.anadir) + '</button>';
+    filasEl.querySelectorAll('.tm-del').forEach(function (b) {{
+      b.onclick = function () {{
+        var k = +b.getAttribute('data-k');
+        estado.pool = estado.pool.concat(estado.filas[k]); estado.filas.splice(k, 1); etiquetas.splice(k, 1); sel = null; pintar();
+      }};
+    }});
+    filasEl.querySelector('.tm-add').onclick = function () {{
+      if (etiquetas.length >= 12) return;
+      etiquetas.push(BASE[etiquetas.length] || String(etiquetas.length + 1)); estado.filas.push([]); pintar();
+    }};
     pool.innerHTML = estado.pool.map(ficha).join('');
     document.querySelectorAll('.tm-modos button').forEach(function (b) {{ b.setAttribute('aria-pressed', +b.getAttribute('data-m') === modo); }});
     filasEl.querySelectorAll('.tm-l input').forEach(function (inp) {{ inp.oninput = function () {{ etiquetas[+inp.getAttribute('data-k')] = inp.value; aHash(); }}; }});
@@ -217,7 +239,7 @@ def pagina(lang):
     b.onclick = function () {{ modo = +b.getAttribute('data-m'); estado = vacio(); sel = null; pintar(); }};
   }});
   document.getElementById('tm-titulo').oninput = aHash;
-  document.getElementById('tm-reset').onclick = function () {{ estado = vacio(); etiquetas = C.f.map(function (f) {{ return f[0]; }}); sel = null; pintar(); }};
+  document.getElementById('tm-reset').onclick = function () {{ etiquetas = C.f.map(function (f) {{ return f[0]; }}); estado = vacio(); sel = null; pintar(); }};
   document.getElementById('tm-comp').onclick = function () {{
     var b = this, url = location.href;
     if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {{ navigator.share({{ title: document.getElementById('tm-titulo').value, url: url }}).catch(function () {{}}); return; }}
@@ -241,7 +263,7 @@ def pagina(lang):
       var y = cab;
       estado.filas.forEach(function (f, k) {{
         var h = alturas[k];
-        x.fillStyle = C.f[k][1]; x.fillRect(0, y, L, h - 2);
+        x.fillStyle = color(k); x.fillRect(0, y, L, h - 2);
         x.fillStyle = '#fff'; x.font = '800 30px system-ui, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
         x.fillText(etiquetas[k], L / 2, y + h / 2); x.textAlign = 'left'; x.textBaseline = 'alphabetic';
         x.fillStyle = '#1a1416'; x.fillRect(L, y, W - L, h - 2);
