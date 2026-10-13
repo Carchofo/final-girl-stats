@@ -160,7 +160,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
     var a = e.target.closest('a');
     if (!a) return;
     var u = new URL(a.href, location.href);
-    var aqui = function (p) {{ return p.replace(/\/$/, '/index.html'); }};
+    var aqui = function (p) {{ return p.replace(/\\/$/, '/index.html'); }};
     if (aqui(u.pathname) !== aqui(location.pathname)) return;
     e.preventDefault();
     pon(false);

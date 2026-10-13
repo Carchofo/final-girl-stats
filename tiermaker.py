@@ -108,6 +108,7 @@ def pagina(lang):
             touch-action:none; user-select:none; -webkit-user-select:none; }}
   .tm-it img {{ width:100%; height:100%; object-fit:cover; object-position:center 62%; pointer-events:none; display:block; }}
   .tm-it img[src*="art/"] {{ object-position:center 25%; }}
+  .tm-it img[src*="loc/"] {{ object-fit:contain; background:#0d0a0b; padding:6px 4px 20px; box-sizing:border-box; }}
   .tm-it span {{ position:absolute; left:0; right:0; bottom:0; padding:12px 3px 3px; font-size:9.5px; line-height:1.15; font-weight:600;
                  color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.9)); pointer-events:none; }}
   .tm-it.sel {{ outline:3px solid var(--blood); outline-offset:-3px; }}
@@ -248,9 +249,15 @@ def pagina(lang):
           var cx = L + G + (n % POR) * (S + G), cy = y + G + Math.floor(n / POR) * (S + G), im = mapa[i];
           x.fillStyle = '#2a2224'; x.fillRect(cx, cy, S, S);
           if (im) {{
+            if (/loc\\//.test(C.g[modo][i][1])) {{
+              // Logo: entero, centrado, sin recortar.
+              var k2 = Math.min((S - 8) / im.width, (S - 30) / im.height), w2 = im.width * k2, h2 = im.height * k2;
+              x.fillStyle = '#0d0a0b'; x.fillRect(cx, cy, S, S); x.drawImage(im, cx + (S - w2) / 2, cy + 4 + (S - 30 - h2) / 2, w2, h2);
+            }} else {{
             var art = /art\\//.test(C.g[modo][i][1]), lado = Math.min(im.width, im.height);
             var sx = (im.width - lado) / 2, sy = art ? (im.height - lado) * 0.25 : (im.height - lado) * 0.62;
             x.drawImage(im, sx, sy, lado, lado, cx, cy, S, S);
+            }}
           }}
           x.fillStyle = 'rgba(0,0,0,.75)'; x.fillRect(cx, cy + S - 22, S, 22);
           x.fillStyle = '#fff'; x.font = '600 10px system-ui, sans-serif';

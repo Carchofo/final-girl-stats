@@ -95,7 +95,8 @@ def _imagenes():
         if not (AQUI / portada).exists():
             continue
         img.setdefault(f["film"], portada)
-        img.setdefault(f["loc"], portada)
+        logo = f"img/loc/{paginas.slug(f['loc'])}.png"
+        img.setdefault(f["loc"], logo if (AQUI / logo).exists() else portada)
         arte = f"img/art/{paginas.slug(f['killer'])}.jpg"
         img.setdefault(f["killer"], arte if (AQUI / arte).exists() else portada)
     # Las temporadas tienen su propio arte (img/temporadas/serie-N.jpg).
@@ -140,6 +141,8 @@ def seccion(lang):
   /* Portadas: el logo va arriba y la cara en el centro-abajo. El arte de killer, centrado arriba. */
   .ct-uno img[src*="art/"], .ct-row img[src*="art/"] {{ object-position:center 25%; }}
   .ct-row img {{ object-position:center 62%; }}
+  /* Logos de localización: enteros sobre fondo oscuro, sin recortar. */
+  .ct-uno img[src*="loc/"], .ct-row img[src*="loc/"] {{ object-fit:contain; background:#0d0a0b; padding:6px; box-sizing:border-box; }}
   /* Arte de temporada: los killers van arriba. */
   .ct-uno img[src*="temporadas/"] {{ object-position:center 18%; }}
   .ct-row img[src*="temporadas/"] {{ object-position:center 20%; }}
@@ -296,9 +299,9 @@ def seccion(lang):
   // Amazon por país, según la zona horaria (sin llamar a nadie). Si el país
   // no tiene tag, se usa el de EE. UU.
   var ZONA = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
-  var PAIS = /^Europe\/(Madrid)|Atlantic\/Canary/.test(ZONA) ? 'ES' : /^Europe\/(London|Dublin)/.test(ZONA) ? 'GB' :
-    /^Europe\/(Berlin|Vienna|Zurich)/.test(ZONA) ? 'DE' : /^Europe\/(Paris|Brussels)/.test(ZONA) ? 'FR' :
-    /^Europe\/(Rome)/.test(ZONA) ? 'IT' : /^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|Montreal)/.test(ZONA) ? 'CA' : 'US';
+  var PAIS = /^Europe\\/(Madrid)|Atlantic\\/Canary/.test(ZONA) ? 'ES' : /^Europe\\/(London|Dublin)/.test(ZONA) ? 'GB' :
+    /^Europe\\/(Berlin|Vienna|Zurich)/.test(ZONA) ? 'DE' : /^Europe\\/(Paris|Brussels)/.test(ZONA) ? 'FR' :
+    /^Europe\\/(Rome)/.test(ZONA) ? 'IT' : /^America\\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|Montreal)/.test(ZONA) ? 'CA' : 'US';
   function amazon(caja) {{
     var a = C.amz[PAIS] || C.amz.US; if (!a) return null;
     return 'https://www.' + a.dom + '/s?k=' + encodeURIComponent('Final Girl ' + caja) + '&tag=' + a.tag;
@@ -335,7 +338,7 @@ def seccion(lang):
       }});
       l.querySelectorAll('.temp-h').forEach(function (h) {{
         if (h.querySelector('.ct-vchip')) return;
-        var f = h.nextElementSibling, id = f && f.getAttribute('data-t'), v = id && /^S\d+$/.test(id) ? 'Series ' + id.slice(1) : '';
+        var f = h.nextElementSibling, id = f && f.getAttribute('data-t'), v = id && /^S\\d+$/.test(id) ? 'Series ' + id.slice(1) : '';
         if (C.o.best_series.indexOf(v) < 0) return;
         var x = document.createElement('a'); x.href = '#tops'; x.className = 'ct-vchip ct-vtemp';
         x.setAttribute('data-cat', 'best_series'); x.setAttribute('data-val', v); x.textContent = C.t.vchip + ' ↗';
