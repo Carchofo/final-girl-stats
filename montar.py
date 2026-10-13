@@ -85,6 +85,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Más secciones">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
+  <a href="crear-tier-list.html">Crea tu tier list</a>
   <a href="index.html#tops">Extremos</a>
   <a href="index.html#cajas">Películas</a>
   <a href="index.html#temporadas">Temporadas</a>
@@ -278,7 +279,7 @@ CABECERA = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128373;</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 </head>
 <body>
 """
@@ -597,6 +598,24 @@ print("tops.html (tier list)")
 
 PAGINAS += [{"salida": "fichas.html", "prioridad": "0.9"}]
 PAGINAS += [{"salida": "tops.html", "prioridad": "0.9"}]
+
+# --- crear tier list ---------------------------------------------------------
+import tiermaker
+tm_title, tm_desc, tm_cuerpo = tiermaker.pagina("es")
+url_tm = f"{DOMINIO}/crear-tier-list.html"
+(AQUI / "crear-tier-list.html").write_text(
+    CABECERA.format(
+        title=tm_title, desc=tm_desc, url=url_tm, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle=tm_title, ogdesc=tm_desc,
+        jsonld=jsonld_de({"title": tm_title, "desc": tm_desc}, url_tm),
+        robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
+    + NAV.format(act_index="", act_salidas="", act_fichas="")
+    + '<div class="wrap"><header class="top">' + tm_cuerpo
+    + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> o a los <a href="tops.html">tops y la tier list</a>.</p></footer></div>'
+    + PIE, encoding="utf-8")
+print("crear-tier-list.html")
+PAGINAS += [{"salida": "crear-tier-list.html", "prioridad": "0.8"}]
 PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
 # --- borrador de registro de partidas --------------------------------------
