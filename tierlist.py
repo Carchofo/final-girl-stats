@@ -87,6 +87,8 @@ ESTILO = """<style>
                 font-weight:600; background:linear-gradient(transparent,rgba(0,0,0,.9)); }
   .tl-it b { display:block; font-family:var(--f-mono); font-size:10.5px; font-weight:400; opacity:.85; }
   .tl-ley { font-size:13px; }
+  .tm-ctabox { display:flex; align-items:center; gap:18px; margin:6px 0 14px; }
+  .tm-tv { display:block; width:132px; height:auto; }
   .tm-cta { display:inline-block; background:var(--blood); color:#fff !important; text-decoration:none; padding:9px 16px; border-radius:3px; font-weight:600; font-size:14px; }
   .tl-aviso { font-size:13px; color:var(--muted); border-left:2px solid var(--blood); padding:6px 10px; margin:8px 0 18px; background:var(--surface); }
   #comunidad { margin-top:40px; }
@@ -228,7 +230,8 @@ def pagina(lang):
              .replace(f'<h2>{tops.T[lang]["h2"]}</h2>', "", 1)
              .replace(f'<p class="sub">{tops.T[lang]["sub0"]}</p>', "", 1),
          '<div id="tier" style="margin-top:44px"></div>',
-         f'<p><a class="tm-cta" href="crear-tier-list.html">{CREA[lang]} →</a></p>',
+         f'<div class="tm-ctabox"><a class="tm-cta" href="crear-tier-list.html">{CREA[lang]} →</a>'
+         f'<a href="crear-tier-list.html" aria-hidden="true" tabindex="-1"><img class="tm-tv" src="{pre}img/tv.webp" alt="" width="132" height="105" loading="lazy"></a></div>',
          f'<p class="sub tl-ley">{t["leyenda"].format(media=I.pc(m["wr"], lang))}</p>',
          f'<p class="tl-aviso">{t["aviso"]}</p>',
          f'<h2>{t["cajas"]}</h2>', _tier(cajas, lang, pre, True),
