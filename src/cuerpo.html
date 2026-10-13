@@ -775,6 +775,8 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
     D.films.forEach(function (f) {
       if (MIAS.indexOf(f.film) !== -1) { misKillers[f.killer] = 1; misLocs[f.loc] = 1; }
     });
+    // Viñetas (killers sin caja propia): se marcan por su nombre.
+    Object.keys(D.killers).forEach(function (k) { if (!D.killers[k].box && MIAS.indexOf(k) !== -1) misKillers[k] = 1; });
   }
   recalcMias();
 
@@ -1428,7 +1430,7 @@ var D = {"meta": {"total": 13920, "wr": 0.6553, "perDay": 8.13, "last": "2 oct 2
 
 
   function pintarMis() {
-    var orden = D.films.map(function (f) { return f.film; }).sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    var orden = D.films.map(function (f) { return f.film; }).concat(Object.keys(D.killers).filter(function (k) { return !D.killers[k].box; })).sort(function (a, b) { return a.localeCompare(b, 'es'); });
     document.getElementById('mis-grid').innerHTML = orden.map(function (n, i) {
       return '<label><input type="checkbox" data-f="' + i + '"' + (MIAS.indexOf(n) !== -1 ? ' checked' : '') + '>' + n + '</label>';
     }).join('');
