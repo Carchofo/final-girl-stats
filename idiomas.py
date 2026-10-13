@@ -445,13 +445,13 @@ def selector(lang, salida, existe):
         (l, f"{pre}{l}/{base or 'index.html'}" if lang == "es" else f"../{l}/{base or 'index.html'}")
         for l in IDIOMAS if existe(l)]
     return ('<p class="idiomas">' + " · ".join(
-        f'<a href="{u}" hreflang="{l}"' + (' aria-current="true"' if l == lang else "") + f'>{BANDERA[l]} {l.upper()}</a>'
+        f'<a href="{u}" hreflang="{l}"' + (' aria-current="true"' if l == lang else "") + f'><span class="flag">{BANDERA[l]}</span> {l.upper()}</a>'
         for l, u in items) + "</p>")
 
 
-ESTILO_IDIOMAS = ('<style>.idiomas{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;'
+ESTILO_IDIOMAS = ('<style>.idiomas{font-family:var(--f-mono);font-size:14px;letter-spacing:.06em;'
                   'margin:10px 0 0;color:var(--muted)}.idiomas a{color:var(--muted);text-decoration:none}'
-                  '.idiomas a[aria-current]{color:var(--blood)}.idiomas a:hover{color:var(--ink)}</style>')
+                  '.idiomas .flag{font-size:20px;vertical-align:-3px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}.idiomas a[aria-current]{color:var(--blood)}.idiomas a:hover{color:var(--ink)}</style>')
 
 
 def generar(M):
