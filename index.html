@@ -1745,8 +1745,12 @@ var D = {"meta": {"total": 14288, "wr": 0.6536, "perDay": 8.29, "last": "13 oct 
     'Berith': 'berith', "Volk'ar": 'volk-ar', 'Billy': 'billy',
     'The Intruders': 'the-intruders', 'Mort': 'mort', 'Raptors': 'raptors',
     'Evomorph': 'evomorph', 'Krampus': 'krampus', 'Razorface': 'razorface',
-    'The Organism': 'the-organism'
+    'The Organism': 'the-organism', 'Hunter': 'hunter',
+    'Terror from Above': 'terror-from-above', 'Terror from Destiny': 'terror-from-destiny',
+    'Terror from the Grave': 'terror-from-the-grave'
   };
+  // Encuadre propio cuando la cara no cae arriba del dibujo.
+  var ARTE_POS = { 'Krampus': '50% 70%' };
 
   // Quien es y como juega. Los datos del juego salen de la Final Girl Wiki,
   // que se enlaza debajo: es la fuente y ademas hay mas de lo que cabe aqui.
@@ -1874,7 +1878,7 @@ var D = {"meta": {"total": 14288, "wr": 0.6536, "perDay": 8.29, "last": "13 oct 
     });
     lista(document.getElementById('l-killers'), filas, function (row) {
       var v = D.killers[row.key];
-      var h = (ARTE[row.key] ? '<img class="art" src="img/art/' + ARTE[row.key] + '.jpg" alt="" loading="lazy">' : '') +
+      var h = (ARTE[row.key] ? '<img class="art" src="img/art/' + ARTE[row.key] + '.jpg" alt="" loading="lazy"' + (ARTE_POS[row.key] ? ' style="object-position:' + ARTE_POS[row.key] + '"' : '') + '>' : '') +
         '<h3>' + row.key + '</h3><p class="loc">' + (v.box ? 'Sale en ' + v.box : 'Killer alternativo, sin caja propia') + '</p>' +
         '<div class="split"><div><b>' + pc(v.wr) + '</b><span>Contra cualquier mapa<br>' + v.g + ' partidas</span></div></div>' +
         quienEs(row.key) +
