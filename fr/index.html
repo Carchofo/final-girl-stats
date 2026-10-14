@@ -543,6 +543,19 @@
   @keyframes fg-grano { 0%{transform:translate(0,0)} 25%{transform:translate(-6%,4%)} 50%{transform:translate(5%,-7%)} 75%{transform:translate(-3%,-4%)} 100%{transform:translate(0,0)} }
   @keyframes fg-tracking { 0%,70%{transform:translateY(-80px)} 100%{transform:translateY(110vh)} }
   @media (prefers-reduced-motion: reduce) { html::before, html::after { animation:none; } html::after { display:none; } }
+  /* Cinta adhesiva en las tarjetas, como recortes pegados en una pared.
+     Un trozo por tarjeta, torcido, con los extremos rasgados. Las pares
+     lo llevan a la derecha para que no parezca un patron. */
+  .panel, .enc, .rowdetail, .top:not(header) { position:relative; }
+  .panel::after, .enc::after, .rowdetail::after, .top:not(header)::after {
+    content:""; position:absolute; top:-11px; left:22px; width:86px; height:22px; z-index:2; pointer-events:none;
+    background:linear-gradient(180deg, rgba(232,220,190,.30), rgba(214,200,165,.22));
+    box-shadow:0 1px 2px rgba(0,0,0,.35); transform:rotate(-4deg);
+    clip-path:polygon(0 8%,6% 0,12% 10%,18% 2%,24% 9%,30% 0,100% 0,100% 0,94% 12%,100% 24%,95% 38%,100% 52%,94% 66%,100% 80%,96% 92%,100% 100%,0 100%,5% 86%,0 72%,6% 58%,0 44%,5% 30%,0 18%);
+  }
+  .panel:nth-of-type(even)::after, .enc:nth-of-type(even)::after, .top:not(header):nth-of-type(even)::after {
+    left:auto; right:26px; transform:rotate(5deg);
+  }
   /* Titulares de poster de slasher: Anton condensada y tinta gastada.
      La mascara de ruido abre poros en las letras, como un cartel
      fotocopiado mil veces. */
