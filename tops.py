@@ -99,6 +99,11 @@ def _imagenes():
         img.setdefault(f["loc"], logo if (AQUI / logo).exists() else portada)
         arte = f"img/art/{paginas.slug(f['killer'])}.jpg"
         img.setdefault(f["killer"], arte if (AQUI / arte).exists() else portada)
+    # Killers sin caja propia (viñetas): su imagen en img/art si la hay.
+    for k in paginas.KILLERS:
+        arte = f"img/art/{paginas.slug(k)}.jpg"
+        if k not in img and (AQUI / arte).exists():
+            img[k] = arte
     # Las temporadas tienen su propio arte (img/temporadas/serie-N.jpg).
     for n in range(1, 10):
         if (AQUI / f"img/temporadas/serie-{n}.jpg").exists():
