@@ -384,6 +384,8 @@
     if (a.mov) {
       a.clon.remove();
       var bajo = document.elementFromPoint(e.clientX, e.clientY), z = bajo && bajo.closest('.tm-zona'), otro = bajo && bajo.closest('.tm-it');
+      // Mitad derecha del objetivo: colocar detrás (delante del siguiente).
+      if (otro) { var rc = otro.getBoundingClientRect(); if (e.clientX > rc.left + rc.width / 2 || +otro.getAttribute('data-i') === a.i) { otro = otro.nextElementSibling; while (otro && (!otro.classList.contains('tm-it') || +otro.getAttribute('data-i') === a.i)) otro = otro.nextElementSibling; } }
       if (z) mover(a.i, +z.getAttribute('data-fila'), otro && +otro.getAttribute('data-i') !== a.i ? +otro.getAttribute('data-i') : null);
       else a.el.style.opacity = '';
       sel = null; return;
