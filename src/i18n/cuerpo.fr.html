@@ -489,6 +489,23 @@
     mix-blend-mode:multiply;
   }
 
+  /* Grano de cinta VHS: ruido SVG que salta de sitio a saltos, mas una
+     banda de tracking que baja de vez en cuando. Encima de todo, sin
+     eventos de raton, y quieto si el sistema pide menos movimiento. */
+  html::before {
+    content:""; position:fixed; inset:-50%; z-index:101; pointer-events:none; opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:fg-grano .5s steps(4) infinite;
+  }
+  html::after {
+    content:""; position:fixed; left:0; right:0; top:0; height:70px; z-index:101; pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(255,255,255,.035) 45%, rgba(255,255,255,.06) 50%, rgba(255,255,255,.035) 55%, transparent);
+    transform:translateY(-80px); animation:fg-tracking 11s linear infinite;
+  }
+  @keyframes fg-grano { 0%{transform:translate(0,0)} 25%{transform:translate(-6%,4%)} 50%{transform:translate(5%,-7%)} 75%{transform:translate(-3%,-4%)} 100%{transform:translate(0,0)} }
+  @keyframes fg-tracking { 0%,70%{transform:translateY(-80px)} 100%{transform:translateY(110vh)} }
+  @media (prefers-reduced-motion: reduce) { html::before, html::after { animation:none; } html::after { display:none; } }
+
   /* De animacion a scroll real: ahora que cada poster abre su ficha, una
      cinta que se mueve sola y no se puede parar es un incordio. Se mueve
      con rueda, arrastre, flechas del teclado y los botones de los lados.
