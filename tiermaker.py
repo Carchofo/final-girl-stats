@@ -341,6 +341,59 @@ def pagina(lang):
 
   // --- imagen: se dibuja en un canvas y se descarga como PNG
   function cargar(src) {{ return new Promise(function (ok) {{ if (!src) return ok(null); var im = new Image(); im.onload = function () {{ ok(im); }}; im.onerror = function () {{ ok(null); }}; im.src = src; }}); }}
+  // La imagen se mete dentro de la tele: mueble, bisel, pantalla curva con el
+  // filtro del canal, barrido y reflejo, y el panel con ruleta y altavoz.
+  var FILTROS = ['none', 'sepia(.35) contrast(1.2) hue-rotate(-15deg)', 'grayscale(1) contrast(1.4) brightness(.9)',
+                 'grayscale(1) sepia(1) hue-rotate(70deg) saturate(3) brightness(.95)', 'contrast(1.3) brightness(1.1) saturate(1.6)'];
+  function rr(x, X, Y, W, H, r) {{ x.beginPath(); x.moveTo(X + r, Y); x.arcTo(X + W, Y, X + W, Y + H, r); x.arcTo(X + W, Y + H, X, Y + H, r);
+    x.arcTo(X, Y + H, X, Y, r); x.arcTo(X, Y, X + W, Y, r); x.closePath(); }}
+  function enTele(cv) {{
+    var sw = cv.width / 2, sh = cv.height / 2, M = 34, B = 26, P = 190, G = 22;
+    var W = M + B + sw + B + G + P + M, H = M + B + sh + B + M, o = document.createElement('canvas');
+    o.width = W * 2; o.height = H * 2; var x = o.getContext('2d'); x.scale(2, 2);
+    // mueble de madera
+    var g = x.createLinearGradient(0, 0, W, 0); g.addColorStop(0, '#2a160b'); g.addColorStop(.5, '#4a2a16'); g.addColorStop(1, '#25130a');
+    rr(x, 0, 0, W, H, 22); x.fillStyle = g; x.fill();
+    x.save(); rr(x, 0, 0, W, H, 22); x.clip(); x.globalAlpha = .35;
+    for (var yy = 0; yy < H; yy += 4) {{ x.fillStyle = (yy / 4) % 3 ? '#1c0e06' : '#5a3720'; x.fillRect(0, yy, W, 1.5); }}
+    x.restore();
+    // bisel del tubo
+    var bx = M, by = M, bw = sw + B * 2, bh = sh + B * 2;
+    var gb = x.createLinearGradient(bx, by, bx + bw, by + bh); gb.addColorStop(0, '#4a4a4d'); gb.addColorStop(.4, '#222225'); gb.addColorStop(1, '#151517');
+    rr(x, bx, by, bw, bh, 26); x.fillStyle = gb; x.fill();
+    rr(x, bx + 10, by + 10, bw - 20, bh - 20, 30); x.fillStyle = '#1b1b1e'; x.fill();
+    // pantalla: la tier list con el filtro del canal, recortada en curva
+    var px = bx + B, py = by + B;
+    x.save(); rr(x, px, py, sw, sh, 30); x.clip();
+    x.fillStyle = '#0d1117'; x.fillRect(px, py, sw, sh);
+    x.filter = FILTROS[canal] || 'none'; x.drawImage(cv, px, py, sw, sh); x.filter = 'none';
+    x.fillStyle = 'rgba(0,0,0,.22)'; for (var sy = py; sy < py + sh; sy += 3) x.fillRect(px, sy, sw, 1);
+    var gv = x.createRadialGradient(px + sw / 2, py + sh / 2, Math.min(sw, sh) * .35, px + sw / 2, py + sh / 2, Math.max(sw, sh) * .7);
+    gv.addColorStop(0, 'rgba(0,0,0,0)'); gv.addColorStop(1, 'rgba(0,0,0,.55)'); x.fillStyle = gv; x.fillRect(px, py, sw, sh);
+    var gg = x.createLinearGradient(px, py, px + sw * .6, py + sh * .6); gg.addColorStop(0, 'rgba(255,255,255,.12)'); gg.addColorStop(1, 'rgba(255,255,255,0)');
+    x.fillStyle = gg; x.fillRect(px, py, sw, sh);
+    x.restore();
+    // panel derecho
+    var qx = bx + bw + G, qy = M, qh = H - M * 2;
+    rr(x, qx, qy, P, qh, 14); x.fillStyle = '#1c1917'; x.fill();
+    rr(x, qx + 14, qy + 14, P - 28, 46, 5); x.fillStyle = '#3a3633'; x.fill();
+    x.fillStyle = '#fbbf24'; x.font = '700 13px ui-monospace, monospace'; x.textAlign = 'center'; x.fillText('TELEVISION', qx + P / 2, qy + 35);
+    x.fillStyle = '#d6d3d1'; x.font = '10px ui-monospace, monospace'; x.fillText(C.t.modos[modo].toUpperCase(), qx + P / 2, qy + 51);
+    var gy = qy + 76, gh = 150, go = x.createLinearGradient(qx, gy, qx + P, gy + gh);
+    go.addColorStop(0, '#c59b27'); go.addColorStop(.3, '#f3e08a'); go.addColorStop(.7, '#a67c1e'); go.addColorStop(1, '#e5c158');
+    rr(x, qx + 14, gy, P - 28, gh, 8); x.fillStyle = go; x.fill();
+    var cx = qx + P / 2, cy = gy + 72;
+    x.beginPath(); x.arc(cx, cy, 46, 0, 7); x.fillStyle = '#292524'; x.fill(); x.lineWidth = 4; x.strokeStyle = '#1c1917'; x.stroke();
+    x.beginPath(); x.arc(cx, cy, 30, 0, 7); x.fillStyle = '#151515'; x.fill();
+    x.save(); x.translate(cx, cy); x.rotate(canal * 72 * Math.PI / 180); x.fillStyle = '#fbbf24'; x.fillRect(-3, -28, 6, 18); x.restore();
+    x.fillStyle = '#451a03'; x.font = '700 10px ui-monospace, monospace'; x.fillText('CH 0' + (canal + 1) + ' · ' + CANALES[canal], cx, gy + gh - 12);
+    var ry = gy + gh + 16, rh = qh - (ry - qy) - 60;
+    if (rh > 30) {{ rr(x, qx + 14, ry, P - 28, rh, 6); x.fillStyle = '#101010'; x.fill();
+      x.fillStyle = '#3a3a3a'; for (var k = ry + 6; k < ry + rh - 4; k += 7) x.fillRect(qx + 20, k, P - 40, 2); }}
+    x.fillStyle = '#e03b48'; x.font = '700 14px system-ui, sans-serif'; x.fillText('finalgirlstats.com', qx + P / 2, qy + qh - 20);
+    x.textAlign = 'left';
+    return o;
+  }}
   document.getElementById('tm-bajar').onclick = function () {{
     var S = 96, G = 6, L = 90, POR = 9, W = L + G + POR * (S + G) + G, cab = 64, pie = 34;
     var alturas = estado.filas.map(function (f) {{ return Math.max(1, Math.ceil(f.length / POR)) * (S + G) + G; }});
@@ -382,7 +435,7 @@ def pagina(lang):
       }});
       x.fillStyle = '#e03b48'; x.font = '700 14px system-ui, sans-serif'; x.textAlign = 'right';
       x.fillText('finalgirlstats.com', W - 14, H - 12);
-      var a = document.createElement('a'); a.download = 'final-girl-tier-list.png'; a.href = cv.toDataURL('image/png'); a.click();
+      var a = document.createElement('a'); a.download = 'final-girl-tier-list.png'; a.href = enTele(cv).toDataURL('image/png'); a.click();
     }});
   }};
 
