@@ -15,35 +15,35 @@ import paginas as P
 import tops
 
 T = {
- "es": {"anadir": "Añadir fila", "quitar": "Quitar fila", "title": "Crea tu tier list de Final Girl: películas, killers y localizaciones",
+ "es": {"sel": "Programa", "anadir": "Añadir fila", "quitar": "Quitar fila", "title": "Crea tu tier list de Final Girl: películas, killers y localizaciones",
         "desc": "Haz tu propia tier list de Final Girl arrastrando las cajas, los killers o los mapas. Descárgala como imagen o compártela con un enlace.",
         "eb": "Tier list maker · gratis, sin registro", "h1": "Crea tu<span class=\"roja\">tier list</span>",
         "dek": "Arrastra cada foto a su fila (en el móvil: toca la foto y luego la fila). Cuando acabes, descárgala como imagen o comparte el enlace.",
         "modos": ["Películas", "Killers", "Localizaciones"], "sin": "Sin colocar", "bajar": "Descargar imagen",
         "comp": "Copiar enlace", "copiado": "¡Enlace copiado!", "reset": "Empezar de nuevo",
         "tit_def": "Mi tier list de Final Girl", "tit_lbl": "Título", "datos": "¿Y según los datos? Mira la tier list de dificultad →"},
- "en": {"anadir": "Add row", "quitar": "Remove row", "title": "Final Girl tier list maker: rank movies, killers and locations",
+ "en": {"sel": "Program", "anadir": "Add row", "quitar": "Remove row", "title": "Final Girl tier list maker: rank movies, killers and locations",
         "desc": "Make your own Final Girl tier list by dragging boxes, killers or maps. Download it as an image or share it with a link. Free, no sign-up.",
         "eb": "Tier list maker · free, no sign-up", "h1": "Final Girl<span class=\"roja\">tier list maker</span>",
         "dek": "Drag each picture to its row (on mobile: tap the picture, then the row). When you're done, download it as an image or share the link.",
         "modos": ["Movies", "Killers", "Locations"], "sin": "Unranked", "bajar": "Download image",
         "comp": "Copy link", "copiado": "Link copied!", "reset": "Start over",
         "tit_def": "My Final Girl tier list", "tit_lbl": "Title", "datos": "What does the data say? See the difficulty tier list →"},
- "fr": {"anadir": "Ajouter une ligne", "quitar": "Supprimer la ligne", "title": "Créer sa tier list Final Girl : films, killers et lieux",
+ "fr": {"sel": "Programme", "anadir": "Ajouter une ligne", "quitar": "Supprimer la ligne", "title": "Créer sa tier list Final Girl : films, killers et lieux",
         "desc": "Faites votre propre tier list Final Girl en glissant les boîtes, les killers ou les lieux. Téléchargez l'image ou partagez le lien.",
         "eb": "Tier list maker · gratuit, sans inscription", "h1": "Créez votre<span class=\"roja\">tier list</span>",
         "dek": "Glissez chaque image dans sa ligne (sur mobile : touchez l'image puis la ligne). Ensuite, téléchargez l'image ou partagez le lien.",
         "modos": ["Films", "Killers", "Lieux"], "sin": "Non classés", "bajar": "Télécharger l'image",
         "comp": "Copier le lien", "copiado": "Lien copié !", "reset": "Recommencer",
         "tit_def": "Ma tier list Final Girl", "tit_lbl": "Titre", "datos": "Et selon les données ? Voir la tier list de difficulté →"},
- "de": {"anadir": "Reihe hinzufügen", "quitar": "Reihe entfernen", "title": "Final Girl Tier-List-Maker: Filme, Killer und Schauplätze",
+ "de": {"sel": "Programm", "anadir": "Reihe hinzufügen", "quitar": "Reihe entfernen", "title": "Final Girl Tier-List-Maker: Filme, Killer und Schauplätze",
         "desc": "Erstelle deine eigene Final-Girl-Tier-List: Boxen, Killer oder Schauplätze per Drag-and-drop. Als Bild herunterladen oder per Link teilen.",
         "eb": "Tier-List-Maker · gratis, ohne Anmeldung", "h1": "Erstelle deine<span class=\"roja\">Tier List</span>",
         "dek": "Zieh jedes Bild in seine Reihe (am Handy: Bild antippen, dann die Reihe). Danach als Bild herunterladen oder den Link teilen.",
         "modos": ["Filme", "Killer", "Schauplätze"], "sin": "Nicht eingeordnet", "bajar": "Bild herunterladen",
         "comp": "Link kopieren", "copiado": "Link kopiert!", "reset": "Neu anfangen",
         "tit_def": "Meine Final-Girl-Tier-List", "tit_lbl": "Titel", "datos": "Was sagen die Daten? Zur Schwierigkeits-Tier-List →"},
- "it": {"anadir": "Aggiungi riga", "quitar": "Rimuovi riga", "title": "Crea la tua tier list di Final Girl: film, killer e ambientazioni",
+ "it": {"sel": "Programma", "anadir": "Aggiungi riga", "quitar": "Rimuovi riga", "title": "Crea la tua tier list di Final Girl: film, killer e ambientazioni",
         "desc": "Crea la tua tier list di Final Girl trascinando scatole, killer o mappe. Scaricala come immagine o condividila con un link.",
         "eb": "Tier list maker · gratis, senza registrazione", "h1": "Crea la tua<span class=\"roja\">tier list</span>",
         "dek": "Trascina ogni immagine nella sua riga (da mobile: tocca l'immagine e poi la riga). Alla fine scaricala come immagine o condividi il link.",
@@ -90,6 +90,10 @@ def pagina(lang):
       <div class="tv-ring"><i style="top:2px">2</i><i style="right:6px">4</i><i style="bottom:2px">7</i><i style="left:4px">11</i>
         <button type="button" class="tv-knob" id="tv-knob" tabindex="-1"><span></span></button></div>
       <span class="tv-gold-n" id="tv-chname">CH 01 · STANDARD</span></div>
+    <div class="tv-gold tv-gold2"><span class="tv-gold-t">{t["sel"]}</span>
+      <div class="tv-ring tv-ring3"><i style="top:6px;left:8px">1</i><i style="top:2px">2</i><i style="top:6px;right:8px">3</i>
+        <button type="button" class="tv-knob" id="tv-knob2" tabindex="-1"><span></span></button></div>
+      <span class="tv-gold-n" id="tv-modo"></span></div>
     <div class="tv-grille"></div>
     <div class="tv-ctrl">
       <button type="button" id="tv-lines" tabindex="-1" title="Scanlines">≡</button>
@@ -156,6 +160,8 @@ def pagina(lang):
               transition:transform .25s cubic-bezier(.175,.885,.32,1.275); }}
   .tv-knob::before {{ content:""; position:absolute; top:4px; left:50%; width:6px; height:24px; margin-left:-3px; border-radius:3px; background:#fbbf24; }}
   .tv-knob span {{ position:absolute; inset:21px; border-radius:50%; background:#1c1917; border:1px solid #44403c; }}
+  .tv-gold2 .tv-ring {{ width:96px; height:96px; }}
+  .tv-gold2 .tv-knob {{ width:58px; height:58px; }} .tv-gold2 .tv-knob span {{ inset:17px; }}
   .tv-grille {{ flex:1; min-height:70px; border-radius:6px; border:1px solid #292524;
                 background:repeating-linear-gradient(180deg,#1e1e1e,#1e1e1e 4px,#3a3a3a 5px,#101010 8px); box-shadow:inset 0 0 8px rgba(0,0,0,.9); }}
   .tv-ctrl {{ display:flex; align-items:center; justify-content:space-around; padding:9px; border-radius:8px; background:rgba(12,10,9,.8); border:1px solid #292524; }}
@@ -175,6 +181,8 @@ def pagina(lang):
     .tv-ring {{ width:46px; height:46px; border-width:2px; }} .tv-ring i {{ display:none; }}
     .tv-knob {{ width:36px; height:36px; }} .tv-knob::before {{ top:2px; height:12px; width:4px; margin-left:-2px; }} .tv-knob span {{ inset:11px; }}
     .tv-gold-n {{ font-size:10px; }}
+    .tv-gold2 .tv-ring {{ width:46px; height:46px; }} .tv-gold2 .tv-knob {{ width:36px; height:36px; }} .tv-gold2 .tv-knob span {{ inset:11px; }}
+    .tv-panel {{ flex-wrap:wrap; }} .tv-gold {{ min-width:140px; }}
     .tv-ctrl {{ padding:4px 6px; gap:6px; }} .tv-ctrl button {{ width:32px; height:32px; font-size:15px; }}
   }}
   .tm-fila {{ display:flex; border-top:1px solid var(--line); background:var(--surface); }}
@@ -266,6 +274,8 @@ def pagina(lang):
     }};
     pool.innerHTML = estado.pool.map(ficha).join('');
     document.querySelectorAll('.tm-modos button').forEach(function (b) {{ b.setAttribute('aria-pressed', +b.getAttribute('data-m') === modo); }});
+    var k2 = document.getElementById('tv-knob2');
+    if (k2) {{ k2.style.transform = 'rotate(' + ((modo - 1) * 50) + 'deg)'; document.getElementById('tv-modo').textContent = C.t.modos[modo].toUpperCase(); }}
     filasEl.querySelectorAll('.tm-l input').forEach(function (inp) {{ inp.oninput = function () {{ etiquetas[+inp.getAttribute('data-k')] = inp.value; aHash(); }}; }});
     aHash();
   }}
@@ -383,6 +393,10 @@ def pagina(lang):
     canal = (canal + 1) % CANALES.length; this.style.transform = 'rotate(' + (canal * 72) + 'deg)';
     filasEl.classList.remove('ch2', 'ch3', 'ch4', 'ch5'); if (canal) filasEl.classList.add('ch' + (canal + 1));
     var t = 'CH 0' + (canal + 1) + ' · ' + CANALES[canal]; document.getElementById('tv-chname').textContent = t; aviso(t);
+  }};
+  document.getElementById('tv-knob2').onclick = function () {{
+    if (!encendida) return;
+    modo = (modo + 1) % 3; estado = vacio(); sel = null; pintar(); aviso(C.t.modos[modo].toUpperCase());
   }};
   document.getElementById('tv-lines').onclick = function () {{ document.getElementById('tv-scan').classList.toggle('off'); }};
   document.getElementById('tv-power').onclick = function () {{
