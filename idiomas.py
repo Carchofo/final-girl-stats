@@ -481,6 +481,9 @@ def generar(M):
         pags.append(("tops.html", *tierlist.pagina(lang), None))
         import tiermaker
         pags.append(("crear-tier-list.html", *tiermaker.pagina(lang), None))
+        import registrar
+        if lang in registrar.TX:
+            pags.append(("registrar.html", *registrar.pagina(lang, M), None))
         hechos[lang] = {p[0] for p in pags}
         for p in pags:
             sitemap.append((lang, p[0]))
