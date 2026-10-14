@@ -522,7 +522,7 @@ def generar(M):
                     .replace('content="es_ES"', f'content="{LOCALE[lang]}"')
                     .replace('content="La página que todo fan de Final Girl necesitaba"', 'content="Final Girl Stats"')
                     .replace("</head>", alternativos(salida, dominio, existe_en(salida))
-                             + '\n<link rel="stylesheet" href="../estilos.css">' + ESTILO_IDIOMAS + "</head>")
+                             + '\n<link rel="stylesheet" href="../estilos.css?v=' + M.CSS_V + '">' + ESTILO_IDIOMAS + "</head>")
                     + nav + cuerpo_html
                     + '<footer><p>' + t["pie"].format(h=M.HOJA, f=M.FORM) + "</p></footer></div>"
                     + M.PIE)

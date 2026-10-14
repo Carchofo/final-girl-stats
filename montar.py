@@ -534,6 +534,10 @@ for p in PAGINAS:
 CSS = estilos()
 (AQUI / "estilos.css").write_text(
     re.sub(r"</?style>", "", CSS), encoding="utf-8")
+# Version en el enlace: GitHub Pages cachea el CSS 10 min y sin ella
+# las paginas nuevas se ven con el estilo viejo.
+import hashlib
+CSS_V = hashlib.md5(CSS.encode()).hexdigest()[:8]
 print("estilos.css")
 
 generadas = paginas.generar()
@@ -557,7 +561,7 @@ for g in generadas:
         ogdesc=g["desc"],
         jsonld=jsonld_de(g, url),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
-    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + cuerpo + PIE
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>') + cuerpo + PIE
     (AQUI / g["salida"]).write_text(html, encoding="utf-8")
 print(f"{len(generadas)} páginas de killer y caja")
 
@@ -613,7 +617,7 @@ url_fichas = f"{DOMINIO}/fichas.html"
         ogdesc="Una página por cada killer y cada caja, con victorias por mapa y consejos.",
         jsonld=jsonld_de({"title": "Fichas de Final Girl", "desc": "Índice de killers y cajas."}, url_fichas),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
-    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>') + fichas + PIE, encoding="utf-8")
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>') + fichas + PIE, encoding="utf-8")
 print("fichas.html (índice de las", len(generadas), "páginas)")
 
 # --- tier list ---------------------------------------------------------------
@@ -629,7 +633,7 @@ url_tl = f"{DOMINIO}/tops.html"
         ogtitle=tl_title, ogdesc=tl_desc,
         jsonld=jsonld_de({"title": tl_title, "desc": tl_desc}, url_tl),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
-    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>')
     + NAV.format(act_index="", act_salidas="", act_fichas="").replace('href="tops.html">', 'href="tops.html" aria-current="page">', 1)
     + '<div class="wrap"><header class="top">' + tl_cuerpo
     + '<footer><p>Datos de la <a href="' + HOJA + '" target="_blank" rel="noopener">hoja pública</a> de la comunidad. '
@@ -650,7 +654,7 @@ url_tm = f"{DOMINIO}/crear-tier-list.html"
         ogtitle=tm_title, ogdesc=tm_desc,
         jsonld=jsonld_de({"title": tm_title, "desc": tm_desc}, url_tm),
         robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
-    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>')
     + NAV.format(act_index="", act_salidas="", act_fichas="")
     + '<div class="wrap"><header class="top">' + tm_cuerpo
     + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a> o a los <a href="tops.html">tops y la tier list</a>.</p></footer></div>'
@@ -688,7 +692,7 @@ url_reg = f"{DOMINIO}/registrar.html"
         ogdesc="Tres pasos con desplegables, 30 segundos.",
         jsonld=jsonld_de({"title": "Registrar una partida", "desc": "Borrador."}, url_reg),
         robots="index,follow" if INDEXAR else "noindex,nofollow",
-    ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>')
     + NAV.format(act_index="", act_salidas="", act_fichas="")
     + plantilla + PIE, encoding="utf-8")
 print("registrar.html")
@@ -711,7 +715,7 @@ for p in PAGINAS:
         title="Página no encontrada · Final Girl Stats", desc="Esta página no existe.",
         url=f"{DOMINIO}/404.html", imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
         ogtitle="Final Girl Stats", ogdesc="", jsonld="{}", robots="noindex,follow",
-    ).replace("</head>", '<link rel="stylesheet" href="/estilos.css"></head>')
+    ).replace("</head>", '<link rel="stylesheet" href="/estilos.css?v=' + CSS_V + '"></head>')
     + '<div class="wrap"><header class="top"><p class="eyebrow">404</p>'
       '<h1>Aquí no hay<span class="roja">nadie</span></h1>'
       '<p class="dek">Esta página no existe. Nothing here.</p></header>'
