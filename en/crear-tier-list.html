@@ -154,7 +154,25 @@
   <div class="tm-modos" role="tablist"><button type="button" data-m="0" aria-pressed="true">Movies</button><button type="button" data-m="1">Killers</button><button type="button" data-m="2">Locations</button></div>
   <label class="tm-tit">Title <input id="tm-titulo" maxlength="60" value="My Final Girl tier list"></label>
 </div>
-<div id="tm-filas" class="tm-filas"></div>
+<div class="tv-cab">
+  <div class="tv-bezel"><div class="tv-inner"><div class="tv-screen" id="tv-screen">
+    <div class="tv-scan" id="tv-scan"></div><div class="tv-glare"></div><div class="tv-badge" id="tv-badge"></div>
+    <div id="tm-filas" class="tm-filas"></div>
+  </div></div></div>
+  <div class="tv-panel" aria-hidden="true">
+    <div class="tv-plate"><b>TELEVISION</b><span>SOLID STATE COLOR</span></div>
+    <div class="tv-gold"><span class="tv-gold-t">CHANNEL</span>
+      <div class="tv-ring"><i style="top:2px">2</i><i style="right:6px">4</i><i style="bottom:2px">7</i><i style="left:4px">11</i>
+        <button type="button" class="tv-knob" id="tv-knob" tabindex="-1"><span></span></button></div>
+      <span class="tv-gold-n" id="tv-chname">CH 01 · STANDARD</span></div>
+    <div class="tv-grille"></div>
+    <div class="tv-ctrl">
+      <button type="button" id="tv-lines" tabindex="-1" title="Scanlines">≡</button>
+      <span class="tv-led" id="tv-led"></span>
+      <button type="button" id="tv-power" class="tv-pwr" tabindex="-1" title="Power">⏻</button>
+    </div>
+  </div>
+</div>
 <p class="sub tm-sinl">Unranked</p>
 <div id="tm-pool" class="tm-pool tm-zona" data-fila="-1"></div>
 <div class="tm-acc">
@@ -170,17 +188,63 @@
   .tm-modos button[aria-pressed="true"] { background:var(--blood); color:#fff; border-color:var(--blood); }
   .tm-tit { font-size:13px; color:var(--muted); display:flex; gap:8px; align-items:center; }
   .tm-tit input { font:inherit; font-size:14px; padding:6px 8px; background:var(--sunk); color:var(--ink); border:1px solid var(--line); border-radius:3px; width:240px; max-width:60vw; }
-  /* Las filas, dentro de una tele vieja (como la tier list de dificultad). */
-  .tm-filas { position:relative; border-radius:22px; overflow:hidden; border:14px solid #2b201b;
-               outline:2px solid #4a372c; outline-offset:-1px;
-               box-shadow:0 0 0 3px #14100e, 0 18px 40px rgba(0,0,0,.65); }
-  .tm-filas::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:3;
-                      background:repeating-linear-gradient(0deg, rgba(0,0,0,.2) 0 1px, transparent 1px 3px),
-                                 radial-gradient(ellipse at center, transparent 58%, rgba(0,0,0,.5) 100%);
-                      box-shadow:inset 0 0 40px rgba(0,0,0,.7); animation:tmcrt 5s steps(1) infinite; }
-  @keyframes tmcrt { 0%, 92%, 100% { opacity:1; } 94% { opacity:.82; } 96% { opacity:.95; } }
-  @media (prefers-reduced-motion: reduce) { .tm-filas::after { animation:none; } }
-  @media (max-width:560px) { .tm-filas { border-width:8px; border-radius:14px; } }
+  /* Tele de madera (CSS): mueble, bisel de tubo, pantalla curva con reflejo y
+     barrido, y panel con ruleta de canales (filtros), altavoz y encendido. */
+  .tv-cab { display:flex; gap:18px; padding:22px; border-radius:16px; border:4px solid rgba(40,20,8,.85);
+             background:linear-gradient(90deg,rgba(0,0,0,.4),rgba(255,255,255,.05) 20%,rgba(0,0,0,.2) 50%,rgba(255,255,255,.05) 80%,rgba(0,0,0,.5)),
+                        repeating-linear-gradient(0deg,#2b170c 0,#3d2212 4px,#201007 8px,#482a17 12px);
+             box-shadow:0 25px 50px -12px rgba(0,0,0,.9), inset 0 2px 4px rgba(255,255,255,.2), inset 0 -4px 8px rgba(0,0,0,.8); }
+  .tv-bezel { flex:1; min-width:0; padding:16px; border-radius:18px; background:linear-gradient(145deg,#4a4a4d,#222225 40%,#151517);
+               box-shadow:inset 3px 3px 6px rgba(255,255,255,.2), inset -3px -3px 8px rgba(0,0,0,.9), 0 0 15px rgba(0,0,0,.8); }
+  .tv-inner { padding:12px; border-radius:28px; background:linear-gradient(135deg,#1f1f22,#38383d 50%,#111113); box-shadow:inset 0 0 18px rgba(0,0,0,.95); }
+  .tv-screen { position:relative; border-radius:35px / 25px; overflow:hidden; background:#0d1117; border:2px solid #292524;
+                box-shadow:inset 0 0 40px rgba(0,0,0,.9); }
+  .tv-scan, .tv-glare { position:absolute; inset:0; pointer-events:none; z-index:4; }
+  .tv-scan { background:linear-gradient(rgba(18,16,16,0) 50%,rgba(0,0,0,.35) 50%), linear-gradient(90deg,rgba(255,0,0,.03),rgba(0,255,0,.01),rgba(0,0,255,.03));
+              background-size:100% 4px, 6px 100%; }
+  .tv-scan.off { display:none; }
+  .tv-glare { background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.03) 30%,transparent 60%); }
+  .tv-badge { position:absolute; top:10px; right:14px; z-index:5; font-family:var(--f-mono); font-size:15px; color:#4ade80;
+               background:rgba(0,0,0,.7); padding:3px 10px; border:1px solid rgba(34,197,94,.4); border-radius:3px; opacity:0; transition:opacity .3s; pointer-events:none; }
+  .tm-filas { position:relative; background:rgba(12,10,9,.9); }
+  .tm-filas.ch2 { filter:sepia(.35) contrast(120%) hue-rotate(-15deg); }
+  .tm-filas.ch3 { filter:grayscale(100%) contrast(140%) brightness(90%); }
+  .tm-filas.ch4 { filter:grayscale(100%) sepia(1) hue-rotate(70deg) saturate(3) brightness(.95); }
+  .tm-filas.ch5 { filter:contrast(130%) brightness(110%) saturate(160%); }
+  .tm-filas.apagada { animation:tvoff .5s forwards cubic-bezier(.23,1,.32,1); }
+  .tm-filas.encendida { animation:tvon .4s forwards ease-out; }
+  @keyframes tvoff { 0% { transform:scale(1,1); filter:brightness(1); } 40% { transform:scale(1,.005); filter:brightness(5); } 100% { transform:scale(0,0); opacity:0; } }
+  @keyframes tvon { 0% { transform:scale(0,.005); filter:brightness(10); } 50% { transform:scale(1,.005); filter:brightness(4); } 100% { transform:scale(1,1); filter:brightness(1); } }
+  .tv-panel { flex:none; width:210px; display:flex; flex-direction:column; gap:14px; padding:14px; border-radius:12px;
+               background:rgba(28,25,23,.92); border:2px solid #292524; box-shadow:inset 0 2px 8px rgba(0,0,0,.6); }
+  .tv-plate { text-align:center; padding:7px; border-radius:4px; border:1px solid #57534e; background:linear-gradient(90deg,#292524,#44403c,#292524); }
+  .tv-plate b { display:block; font-family:var(--f-mono); font-size:11px; letter-spacing:.2em; color:#fbbf24; }
+  .tv-plate span { font-family:var(--f-mono); font-size:10px; color:#d6d3d1; letter-spacing:.08em; }
+  .tv-gold { display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px; border-radius:8px; border:1px solid rgba(217,119,6,.8);
+              background:linear-gradient(135deg,#c59b27,#f3e08a 30%,#a67c1e 70%,#e5c158); box-shadow:0 2px 6px rgba(0,0,0,.5); }
+  .tv-gold-t, .tv-gold-n { font-family:var(--f-mono); font-size:10px; font-weight:700; letter-spacing:.12em; color:#451a03; }
+  .tv-ring { position:relative; width:112px; height:112px; border-radius:50%; border:4px solid #1c1917; background:#292524;
+              display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 8px rgba(0,0,0,.8); }
+  .tv-ring i { position:absolute; font-style:normal; font-family:var(--f-mono); font-size:11px; font-weight:700; color:#fcd34d; }
+  .tv-knob { position:relative; width:70px; height:70px; border-radius:50%; border:2px solid #57534e; cursor:pointer;
+              background:radial-gradient(circle,#3a3a3a,#151515 70%,#000); box-shadow:2px 4px 8px rgba(0,0,0,.7), inset 0 1px 2px rgba(255,255,255,.4);
+              transition:transform .25s cubic-bezier(.175,.885,.32,1.275); }
+  .tv-knob::before { content:""; position:absolute; top:4px; left:50%; width:6px; height:24px; margin-left:-3px; border-radius:3px; background:#fbbf24; }
+  .tv-knob span { position:absolute; inset:21px; border-radius:50%; background:#1c1917; border:1px solid #44403c; }
+  .tv-grille { flex:1; min-height:70px; border-radius:6px; border:1px solid #292524;
+                background:repeating-linear-gradient(180deg,#1e1e1e,#1e1e1e 4px,#3a3a3a 5px,#101010 8px); box-shadow:inset 0 0 8px rgba(0,0,0,.9); }
+  .tv-ctrl { display:flex; align-items:center; justify-content:space-around; padding:9px; border-radius:8px; background:rgba(12,10,9,.8); border:1px solid #292524; }
+  .tv-ctrl button { width:38px; height:38px; border-radius:50%; border:2px solid #57534e; background:linear-gradient(#44403c,#1c1917);
+                     color:#fbbf24; font-size:18px; line-height:1; cursor:pointer; }
+  .tv-ctrl .tv-pwr { color:#ef4444; }
+  .tv-led { width:9px; height:9px; border-radius:50%; background:#dc2626; box-shadow:0 0 8px #ef4444; }
+  .tv-led.off { background:#44403c; box-shadow:none; }
+  @media (max-width:760px) {
+    .tv-cab { flex-direction:column; padding:10px; gap:10px; } .tv-bezel { padding:8px; } .tv-inner { padding:6px; }
+    .tv-screen { border-radius:20px / 14px; }
+    .tv-panel { width:auto; flex-direction:row; align-items:center; flex-wrap:wrap; justify-content:center; }
+    .tv-grille, .tv-plate { display:none; } .tv-ring { width:84px; height:84px; } .tv-knob { width:52px; height:52px; } .tv-knob span { inset:15px; }
+  }
   .tm-fila { display:flex; border-top:1px solid var(--line); background:var(--surface); }
   .tm-fila:first-child { border-top:0; }
   .tm-l { flex:none; width:64px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:24px; color:#fff; }
@@ -377,6 +441,21 @@
       x.fillText('finalgirlstats.com', W - 14, H - 12);
       var a = document.createElement('a'); a.download = 'final-girl-tier-list.png'; a.href = cv.toDataURL('image/png'); a.click();
     });
+  };
+
+  // --- la tele: canales (filtros), barrido y encendido. Solo adorno.
+  var CANALES = ['STANDARD', 'VHS', 'B&W', 'PHOSPHOR', 'RGB BOOST'], canal = 0, encendida = true, tBadge = 0;
+  function aviso(txt) { var b = document.getElementById('tv-badge'); b.textContent = txt; b.style.opacity = 1; clearTimeout(tBadge); tBadge = setTimeout(function () { b.style.opacity = 0; }, 1800); }
+  document.getElementById('tv-knob').onclick = function () {
+    if (!encendida) return;
+    canal = (canal + 1) % CANALES.length; this.style.transform = 'rotate(' + (canal * 72) + 'deg)';
+    filasEl.classList.remove('ch2', 'ch3', 'ch4', 'ch5'); if (canal) filasEl.classList.add('ch' + (canal + 1));
+    var t = 'CH 0' + (canal + 1) + ' · ' + CANALES[canal]; document.getElementById('tv-chname').textContent = t; aviso(t);
+  };
+  document.getElementById('tv-lines').onclick = function () { document.getElementById('tv-scan').classList.toggle('off'); };
+  document.getElementById('tv-power').onclick = function () {
+    encendida = !encendida; document.getElementById('tv-led').classList.toggle('off', !encendida);
+    filasEl.classList.remove('apagada', 'encendida'); void filasEl.offsetWidth; filasEl.classList.add(encendida ? 'encendida' : 'apagada');
   };
 
   if (!deHash()) estado = vacio();
