@@ -27,7 +27,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Estadísticas de Final Girl: 14.288 partidas reales","description":"Victorias de cada killer en cada mapa de Final Girl, sobre 14.288 partidas de la comunidad. Qué caja es más dura y dónde pierde cada asesino.","url":"https://finalgirlstats.com/","inLanguage":"es","keywords":["Final Girl","board game","solo","win rate","estadísticas"],"temporalCoverage":"../13 oct 2026","variableMeasured":"Porcentaje de victoria","measurementTechnique":"Partidas registradas por jugadores","distribution":{"@type":"DataDownload","encodingFormat":"text/html","contentUrl":"https://finalgirlstats.com/"},"about":{"@type":"Game","name":"Final Girl","gamePlatform":"Juego de mesa","numberOfPlayers":{"@type":"QuantitativeValue","value":1}},"size":"14288 partidas"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Nosifer&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="alternate" hreflang="es" href="https://finalgirlstats.com/">
 <link rel="alternate" hreflang="en" href="https://finalgirlstats.com/en/">
@@ -39,7 +39,7 @@
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Nosifer&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
 <style>
   /* Identidad de una sola pieza: siempre oscuro, a propósito.
@@ -549,6 +549,10 @@
   html h1 { font-family:"Anton",var(--f-disp); font-weight:400; letter-spacing:.03em; word-spacing:.08em; line-height:.95;
        -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 12.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E");
        mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 12.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E"); }
+  /* La linea roja del titular con goteo de sangre (Nosifer). Es muy ancha,
+     asi que va mas pequeña que la linea blanca. */
+  html h1 .roja { font-family:"Nosifer","Anton",cursive; font-weight:400; letter-spacing:.02em;
+                  font-size:.6em; line-height:1.35; margin-top:.08em; }
 
   /* De animacion a scroll real: ahora que cada poster abre su ficha, una
      cinta que se mueve sola y no se puede parar es un incordio. Se mueve
