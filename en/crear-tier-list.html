@@ -240,10 +240,17 @@
   .tv-led { width:9px; height:9px; border-radius:50%; background:#dc2626; box-shadow:0 0 8px #ef4444; }
   .tv-led.off { background:#44403c; box-shadow:none; }
   @media (max-width:760px) {
-    .tv-cab { flex-direction:column; padding:10px; gap:10px; } .tv-bezel { padding:8px; } .tv-inner { padding:6px; }
-    .tv-screen { border-radius:20px / 14px; }
-    .tv-panel { width:auto; flex-direction:row; align-items:center; flex-wrap:wrap; justify-content:center; }
-    .tv-grille, .tv-plate { display:none; } .tv-ring { width:84px; height:84px; } .tv-knob { width:52px; height:52px; } .tv-knob span { inset:15px; }
+    /* Móvil: marcos finos para no robar ancho, y el panel como una tira baja. */
+    .tv-cab { flex-direction:column; padding:7px; gap:7px; border-width:2px; border-radius:12px; }
+    .tv-bezel { padding:5px; border-radius:12px; } .tv-inner { padding:4px; border-radius:16px; }
+    .tv-screen { border-radius:16px / 11px; }
+    .tv-panel { width:auto; flex-direction:row; align-items:center; gap:10px; padding:6px 10px; border-radius:8px; }
+    .tv-grille, .tv-plate, .tv-gold-t { display:none; }
+    .tv-gold { flex:1; flex-direction:row; justify-content:flex-start; gap:10px; padding:5px 10px; border-radius:6px; }
+    .tv-ring { width:46px; height:46px; border-width:2px; } .tv-ring i { display:none; }
+    .tv-knob { width:36px; height:36px; } .tv-knob::before { top:2px; height:12px; width:4px; margin-left:-2px; } .tv-knob span { inset:11px; }
+    .tv-gold-n { font-size:10px; }
+    .tv-ctrl { padding:4px 6px; gap:6px; } .tv-ctrl button { width:32px; height:32px; font-size:15px; }
   }
   .tm-fila { display:flex; border-top:1px solid var(--line); background:var(--surface); }
   .tm-fila:first-child { border-top:0; }
