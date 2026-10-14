@@ -86,6 +86,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
           aria-label="Más secciones">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
   <a href="crear-tier-list.html">Crea tu tier list</a>
+  <a href="registrar.html">Registrar partida</a>
   <a href="index.html#tops">Extremos</a>
   <a href="index.html#cajas">Películas</a>
   <a href="index.html#temporadas">Temporadas</a>
@@ -686,11 +687,12 @@ url_reg = f"{DOMINIO}/registrar.html"
         ogtitle="Registrar una partida de Final Girl",
         ogdesc="Tres pasos con desplegables, 30 segundos.",
         jsonld=jsonld_de({"title": "Registrar una partida", "desc": "Borrador."}, url_reg),
-        robots="noindex,nofollow",   # siempre, aunque el resto se indexe
+        robots="index,follow" if INDEXAR else "noindex,nofollow",
     ).replace("</head>", '<link rel="stylesheet" href="estilos.css"></head>')
     + NAV.format(act_index="", act_salidas="", act_fichas="")
     + plantilla + PIE, encoding="utf-8")
-print("registrar.html  (suelto: sin enlaces, sin sitemap, noindex fijo)")
+print("registrar.html")
+PAGINAS += [{"salida": "registrar.html", "prioridad": "0.6"}]
 
 # --- otros idiomas --------------------------------------------------------
 # EN, FR, DE, IT de las fichas y una portada por idioma. Las españolas

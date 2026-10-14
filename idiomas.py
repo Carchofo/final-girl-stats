@@ -572,10 +572,10 @@ def parchear_es(ruta, salida, dominio, existe):
 # volver a pasarla. traduccion_vieja() avisa al montar.
 
 NAV_TXT = {
-    "en": ["Stats", "Openings", "All pages", "More sections", "Stats", "Tops", "Movies", "Series", "Killers", "Maps", "Final Girls", "Players", "Sections", "Extremes", "Tier list maker"],
-    "fr": ["Stats", "Ouvertures", "Fiches", "Plus de sections", "Stats", "Tops", "Films", "Saisons", "Killers", "Cartes", "Final Girls", "Joueurs", "Sections", "Extrêmes", "Créer une tier list"],
-    "de": ["Statistik", "Eröffnungen", "Übersicht", "Weitere Bereiche", "Stats", "Tops", "Filme", "Staffeln", "Killer", "Karten", "Final Girls", "Spieler", "Bereiche", "Extreme", "Tier List erstellen"],
-    "it": ["Statistiche", "Aperture", "Schede", "Altre sezioni", "Stats", "Top", "Film", "Stagioni", "Killer", "Mappe", "Final Girls", "Giocatori", "Sezioni", "Estremi", "Crea tier list"],
+    "en": ["Stats", "Openings", "All pages", "More sections", "Stats", "Tops", "Movies", "Series", "Killers", "Maps", "Final Girls", "Players", "Sections", "Extremes", "Tier list maker", "Log a game"],
+    "fr": ["Stats", "Ouvertures", "Fiches", "Plus de sections", "Stats", "Tops", "Films", "Saisons", "Killers", "Cartes", "Final Girls", "Joueurs", "Sections", "Extrêmes", "Créer une tier list", "Enregistrer une partie"],
+    "de": ["Statistik", "Eröffnungen", "Übersicht", "Weitere Bereiche", "Stats", "Tops", "Filme", "Staffeln", "Killer", "Karten", "Final Girls", "Spieler", "Bereiche", "Extreme", "Tier List erstellen", "Partie eintragen"],
+    "it": ["Statistiche", "Aperture", "Schede", "Altre sezioni", "Stats", "Top", "Film", "Stagioni", "Killer", "Mappe", "Final Girls", "Giocatori", "Sezioni", "Estremi", "Crea tier list", "Registra una partita"],
 }
 
 TITULOS = {
@@ -600,10 +600,13 @@ TITULOS = {
 
 def nav_de(lang, M):
     t = NAV_TXT[lang]
-    es = ["Estadísticas", "Salidas", "Fichas", "Más secciones", "Stats", "Tops", "Películas", "Temporadas", "Killers", "Mapas", "Final Girls", "Jugadores", "Secciones", "Extremos", "Crea tu tier list"]
+    es = ["Estadísticas", "Salidas", "Fichas", "Más secciones", "Stats", "Tops", "Películas", "Temporadas", "Killers", "Mapas", "Final Girls", "Jugadores", "Secciones", "Extremos", "Crea tu tier list", "Registrar partida"]
     nav = M.NAV
     for a, b in zip(es, t):
         nav = nav.replace(f">{a}<", f">{b}<").replace(f'aria-label="{a}"', f'aria-label="{b}"')
+    import registrar
+    if lang not in registrar.TX:
+        nav = nav.replace('href="registrar.html"', 'href="../en/registrar.html"')
     serie = {"en": "Series", "fr": "Saison", "de": "Staffel", "it": "Stagione"}[lang]
     nav = re.sub(r">Temporada (\d+)<", lambda m: f">{serie} {m.group(1)}<", nav)
     return nav
