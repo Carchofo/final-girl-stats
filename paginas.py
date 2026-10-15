@@ -210,7 +210,7 @@ def pagina_killer(nombre, k):
     aqui = next((m for m in mapas if m[0] == propio), None)
 
     h = [f'<p class="eyebrow">Killer · {len(mapas)} mapas con datos</p>',
-         f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">en {pc(k["wr"])} de victorias</span></h1>']
+         f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{pc(k["wr"])} de victorias</span></h1>']
 
     intro = (f'Sobre <b>{k["g"]} partidas</b> registradas, la Final Girl gana el '
              f'{pc(k["wr"])} de las veces contra {nombre}. '
