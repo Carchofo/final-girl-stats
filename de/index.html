@@ -1354,6 +1354,21 @@ var D = {"meta": {"total": 14288, "wr": 0.6536, "perDay": 8.29, "last": "13 oct 
   }
 
   // ---------- matriz ----------
+  // Tooltip propio de la matriz: el del navegador tarda y a veces no sale.
+  (function () {
+    var tip = document.createElement('div'), mx = document.getElementById('mx');
+    tip.style.cssText = 'position:fixed;z-index:50;pointer-events:none;background:#111;color:#eee;border:1px solid #444;' +
+      'padding:5px 9px;border-radius:3px;font-size:12px;white-space:nowrap;display:none';
+    document.body.appendChild(tip);
+    mx.addEventListener('mousemove', function (e) {
+      var c = e.target.closest('[data-tip]');
+      if (!c) { tip.style.display = 'none'; return; }
+      tip.textContent = c.getAttribute('data-tip'); tip.style.display = 'block';
+      var x = Math.min(e.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+      tip.style.left = x + 'px'; tip.style.top = (e.clientY + 18) + 'px';
+    });
+    mx.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  })();
   function pintarMatriz() {
     var soloMias = document.getElementById('f-mias').checked;
     var orden = document.getElementById('f-orden').value;
@@ -1379,7 +1394,7 @@ var D = {"meta": {"total": 14288, "wr": 0.6536, "perDay": 8.29, "last": "13 oct 
         var v = c.wr, caja = ESCAJA[k + '|' + loc];
         h += '<td><button type="button" class="cell' + (caja ? ' box' : '') + '"' +
              ' style="background:' + colorDe(v) + ';color:' + tintaDe(v) + '"' +
-             ' data-k="' + k + '" data-l="' + loc + '" title="' + k + ' auf ' + loc + ': ' + pc(v) + ' · ' + c.g + ' Partien">' +
+             ' data-k="' + k + '" data-l="' + loc + '" data-tip="' + k + ' auf ' + loc + ': ' + pc(v) + ' · ' + c.g + ' Partien">' +
              pc0(v) + '</button></td>';
       });
       h += '</tr>';
