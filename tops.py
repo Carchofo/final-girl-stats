@@ -275,8 +275,12 @@ def seccion(lang):
           C.o[id].map(function (o) {{ return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
       }}).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div></div>';
   }}).join('');
-  form.querySelectorAll('.ct-cambiar').forEach(function (b) {{
-    b.onclick = function () {{ var c = b.closest('.ct-cat'); c.querySelector('.ct-sel').hidden = false; b.closest('p').remove(); }};
+  // Cambiar: vuelven los desplegables (con lo último votado) y se va el resumen.
+  form.addEventListener('click', function (e) {{
+    var b = e.target.closest('.ct-cambiar'); if (!b) return;
+    var c = b.closest('.ct-cat');
+    c.querySelectorAll('.ct-mio, .ct-share').forEach(function (x) {{ x.remove(); }});
+    c.querySelector('.ct-sel').hidden = false;
   }});
   form.querySelectorAll('.ct-enviar').forEach(function (b) {{
     b.onclick = function () {{
@@ -292,7 +296,13 @@ def seccion(lang):
       // no-cors: Google no deja leer la respuesta, pero el voto llega.
       fetch(C.form, {{ method: 'POST', mode: 'no-cors', body: d }}).finally(function () {{
         try {{ localStorage.setItem('fg-top-' + id, JSON.stringify(elegidos)); }} catch (e) {{}}
-        card.innerHTML = '<h3>' + esc(C.t.q[id]) + '</h3><p class="ct-ok">' + esc(C.t.gracias) + '</p>';
+        var sel = card.querySelector('.ct-sel'); sel.hidden = true;
+        b.disabled = false; b.textContent = C.t.votar;
+        card.querySelectorAll('.ct-ok').forEach(function (x) {{ x.remove(); }});
+        var ok = document.createElement('p'); ok.className = 'ct-ok ct-mio';
+        ok.innerHTML = esc(C.t.gracias) + '<br>' + esc(C.t.tuvoto) + ': ' + elegidos.map(function (x, k) {{ return RK[k] + ' ' + esc(x); }}).join(' · ') +
+          ' <button type="button" class="ct-cambiar">' + esc(C.t.cambiar) + '</button>';
+        card.insertBefore(ok, sel);
         // Compartir el top recién votado: menú del sistema en el móvil, portapapeles si no.
         var txt = C.t.comp_txt.replace('{{q}}', C.t.q[id]).replace('{{l}}', elegidos.map(function (x, k) {{ return (k + 1) + '. ' + x; }}).join(' ')) + ' ' + C.url;
         var sb = document.createElement('button'); sb.type = 'button'; sb.className = 'ct-share'; sb.textContent = C.t.comp;
@@ -301,7 +311,7 @@ def seccion(lang):
           (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {{ sb.textContent = C.t.copiado; }},
             function () {{ window.prompt(C.t.comp, txt); }});
         }};
-        card.appendChild(sb);
+        sb.classList.add('ct-mio'); card.insertBefore(sb, sel);
         setTimeout(cargar, 2500);
       }});
     }};
