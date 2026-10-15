@@ -403,7 +403,9 @@ def pagina(lang):
     return o;
   }}
   document.getElementById('tm-bajar').onclick = function () {{
-    var S = 96, G = 6, L = 120, POR = 9, W = L + G + POR * (S + G) + G, cab = 64, pie = 34;
+    // Ancho según la fila más llena (entre 5 y 9 fotos): sin hueco vacío a la derecha.
+    var mas = Math.max.apply(null, estado.filas.map(function (f) {{ return f.length; }}).concat([0]));
+    var S = 96, G = 6, L = 120, POR = Math.min(9, Math.max(5, mas)), W = L + G + POR * (S + G) + G, cab = 64, pie = 12;
     var alturas = estado.filas.map(function (f) {{ return Math.max(1, Math.ceil(f.length / POR)) * (S + G) + G; }});
     var H = cab + alturas.reduce(function (a, b) {{ return a + b; }}, 0) + pie;
     var cv = document.createElement('canvas'); cv.width = W * 2; cv.height = H * 2;
@@ -448,7 +450,6 @@ def pagina(lang):
         y += h;
       }});
       x.fillStyle = '#e03b48'; x.font = '700 14px system-ui, sans-serif'; x.textAlign = 'right';
-      x.fillText('finalgirlstats.com', W - 14, H - 12);
       var a = document.createElement('a'); a.download = 'final-girl-tier-list.png'; a.href = enTele(cv).toDataURL('image/png'); a.click();
     }});
   }};
