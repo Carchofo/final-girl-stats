@@ -802,6 +802,7 @@
       <option value="dif">Dalla più dura alla più facile</option>
       <option value="abc">Alfabetico</option>
     </select>
+    <select id="f-temp"><option value="">Tutte le stagioni</option></select>
     <input type="search" id="f-busca" placeholder="Filtra killer…" style="flex:1;min-width:140px">
     <label for="f-jug">Matrice di</label>
     <select id="f-jug"><option value="">Tutta la community</option></select>
@@ -1358,13 +1359,21 @@ var D = {"meta": {"total": 14288, "wr": 0.6536, "perDay": 8.29, "last": "13 oct 
     var soloMias = document.getElementById('f-mias').checked;
     var orden = document.getElementById('f-orden').value;
     var busca = document.getElementById('f-busca').value.trim().toLowerCase();
+    // Temporada: solo sus killers y sus mapas (los de sus cajas).
+    var tSel = document.getElementById('f-temp').value, tK = null, tL = null;
+    if (tSel !== '') {
+      var cj = D.temporadas[+tSel].cajas; tK = {}; tL = {};
+      D.films.forEach(function (f) { if (cj.indexOf(f.film) !== -1) { tK[f.killer] = 1; tL[f.loc] = 1; } });
+      cj.forEach(function (n) { if (D.killers[n] && !D.killers[n].box) tK[n] = 1; });
+    }
 
     var ks = D.matrixKillers.filter(function (k) {
       if (soloMias && !misKillers[k]) return false;
+      if (tK && !tK[k]) return false;
       if (busca && k.toLowerCase().indexOf(busca) === -1) return false;
       return true;
     });
-    var locs = Object.keys(D.matrix).filter(function (l) { return !soloMias || misLocs[l]; });
+    var locs = Object.keys(D.matrix).filter(function (l) { return (!soloMias || misLocs[l]) && (!tL || tL[l]); });
     var med = {};
     D.locs.forEach(function (r) { med[r[0]] = r[1]; });
     if (orden === 'dif') locs.sort(function (a, b) { return (med[a] || 1) - (med[b] || 1); });
@@ -2161,7 +2170,8 @@ var D = {"meta": {"total": 14288, "wr": 0.6536, "perDay": 8.29, "last": "13 oct 
     pintarLista();
   })();
 
-  ['f-mias', 'f-orden', 'f-busca'].forEach(function (id) {
+  document.getElementById('f-temp').innerHTML += D.temporadas.map(function (T, i) { return '<option value="' + i + '">' + T.nombre + '</option>'; }).join('');
+  ['f-mias', 'f-orden', 'f-temp', 'f-busca'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', pintarMatriz);
   });
 
