@@ -36,7 +36,7 @@ PUNTOS = [3, 2, 1]
 T = {
  "es": {"amz_b": "Comprar en Amazon", "amz_n": "enlace de afiliado", "comp": "Comparte tu top", "copiado": "¡Copiado! Pégalo donde quieras", "comp_txt": "Mi top 3 de Final Girl · {q}: {l}. Vota el tuyo →", "vtop": "Votar en los tops →", "vchip": "Votar", "todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
         "sub": "Lo que dice la gente, no los datos. Vota lo tuyo: todas las preguntas son opcionales y puedes dejar las que no sepas.",
-        "cambio": "Ya votaste. Si cambias de opinión, vuelve a votar: cuenta el último.", "votar": "Votar", "gracias": "¡Gracias! Tu voto ya cuenta.", "ya": "Ya has votado desde este navegador. Así va la cosa:",
+        "tuvoto": "Tu voto", "cambiar": "Cambiar", "cambio": "Ya votaste. Si cambias de opinión, vuelve a votar: cuenta el último.", "votar": "Votar", "gracias": "¡Gracias! Tu voto ya cuenta.", "ya": "Ya has votado desde este navegador. Así va la cosa:",
         "nada": "—", "votos": "votos", "voto": "voto", "sin": "Aún no hay votos. Sé el primero.",
         "error": "No se han podido cargar los resultados ahora mismo.", "enviando": "Enviando…",
         "q": {"easiest_box": "Caja más fácil de ganar", "hardest_box": "Caja más difícil de ganar", "most_immersive_box": "Caja más inmersiva",
@@ -45,7 +45,7 @@ T = {
               "best_box": "Mejor película (caja)", "most_complex_killer": "Killer más complejo de reglas"}},
  "en": {"amz_b": "Buy on Amazon", "amz_n": "affiliate link", "comp": "Share your top", "copiado": "Copied! Paste it anywhere", "comp_txt": "My Final Girl top 3 · {q}: {l}. Vote yours →", "vtop": "Vote in the tops →", "vchip": "Vote", "todo": "See all {n}", "menos": "See less", "sub0": "What players think, not what the data says.", "ir": "Vote your tops", "h2v": "Vote", "tab": "Tops", "pts": "pts", "rk": "1st|2nd|3rd", "sub2": "Pick up to 3 per category: 1st is worth 3 points, 2nd 2 and 3rd 1.", "h2": "Community tops",
         "sub": "What players think, not what the data says. Cast your vote: every question is optional, skip the ones you don't know.",
-        "cambio": "You already voted. Changed your mind? Vote again: only the last one counts.", "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
+        "tuvoto": "Your vote", "cambiar": "Change", "cambio": "You already voted. Changed your mind? Vote again: only the last one counts.", "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "No votes yet. Be the first.",
         "error": "Results couldn't be loaded right now.", "enviando": "Sending…",
         "q": {"easiest_box": "Easiest box to win", "hardest_box": "Hardest box to win", "most_immersive_box": "Most immersive box",
@@ -54,7 +54,7 @@ T = {
               "best_box": "Best movie (box)", "most_complex_killer": "Most complex killer (rules)"}},
  "fr": {"amz_b": "Acheter sur Amazon", "amz_n": "lien affilié", "comp": "Partagez votre top", "copiado": "Copié ! Collez-le où vous voulez", "comp_txt": "Mon top 3 Final Girl · {q} : {l}. Votez le vôtre →", "vtop": "Voter dans les tops →", "vchip": "Voter", "todo": "Voir les {n}", "menos": "Voir moins", "sub0": "L'avis des joueurs, pas celui des chiffres.", "ir": "Votez vos tops", "h2v": "Votez", "tab": "Tops", "pts": "pts", "rk": "1er|2e|3e", "sub2": "Choisissez jusqu'à 3 par catégorie : le 1er vaut 3 points, le 2e 2 et le 3e 1.", "h2": "Tops de la communauté",
         "sub": "L'avis des joueurs, pas celui des chiffres. Votez : toutes les questions sont facultatives.",
-        "cambio": "Vous avez déjà voté. Changé d'avis ? Revotez : seul le dernier compte.", "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
+        "tuvoto": "Votre vote", "cambiar": "Modifier", "cambio": "Vous avez déjà voté. Changé d'avis ? Revotez : seul le dernier compte.", "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "Pas encore de votes. Soyez le premier.",
         "error": "Impossible de charger les résultats pour le moment.", "enviando": "Envoi…",
         "q": {"easiest_box": "Boîte la plus facile à gagner", "hardest_box": "Boîte la plus difficile à gagner", "most_immersive_box": "Boîte la plus immersive",
@@ -63,7 +63,7 @@ T = {
               "best_box": "Meilleur film (boîte)", "most_complex_killer": "Killer aux règles les plus complexes"}},
  "de": {"amz_b": "Bei Amazon kaufen", "amz_n": "Affiliate-Link", "comp": "Teile deine Top 3", "copiado": "Kopiert! Füg es überall ein", "comp_txt": "Meine Final-Girl-Top-3 · {q}: {l}. Stimm selbst ab →", "vtop": "In den Tops abstimmen →", "vchip": "Abstimmen", "todo": "Alle {n} zeigen", "menos": "Weniger", "sub0": "Was die Spieler denken, nicht was die Daten sagen.", "ir": "Stimm ab", "h2v": "Abstimmen", "tab": "Tops", "pts": "Pkt.", "rk": "1.|2.|3.", "sub2": "Wähle bis zu 3 pro Kategorie: Platz 1 bringt 3 Punkte, Platz 2 zwei und Platz 3 einen.", "h2": "Community-Tops",
         "sub": "Was die Spieler denken, nicht was die Daten sagen. Stimm ab: Jede Frage ist optional.",
-        "cambio": "Du hast schon abgestimmt. Meinung geändert? Stimm nochmal ab: nur die letzte zählt.", "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
+        "tuvoto": "Deine Stimme", "cambiar": "Ändern", "cambio": "Du hast schon abgestimmt. Meinung geändert? Stimm nochmal ab: nur die letzte zählt.", "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
         "nada": "—", "votos": "Stimmen", "voto": "Stimme", "sin": "Noch keine Stimmen. Sei die erste Stimme.",
         "error": "Die Ergebnisse konnten gerade nicht geladen werden.", "enviando": "Wird gesendet…",
         "q": {"easiest_box": "Am leichtesten zu gewinnende Box", "hardest_box": "Am schwersten zu gewinnende Box", "most_immersive_box": "Atmosphärischste Box",
@@ -72,7 +72,7 @@ T = {
               "best_box": "Bester Film (Box)", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
  "it": {"amz_b": "Compra su Amazon", "amz_n": "link di affiliazione", "comp": "Condividi il tuo top", "copiado": "Copiato! Incollalo dove vuoi", "comp_txt": "Il mio top 3 di Final Girl · {q}: {l}. Vota il tuo →", "vtop": "Vota nei top →", "vchip": "Vota", "todo": "Vedi tutti i {n}", "menos": "Vedi meno", "sub0": "Cosa pensano i giocatori, non cosa dicono i dati.", "ir": "Vota i tuoi top", "h2v": "Vota", "tab": "Top", "pts": "pt", "rk": "1º|2º|3º", "sub2": "Scegli fino a 3 per categoria: il 1º vale 3 punti, il 2º 2 e il 3º 1.", "h2": "Top della community",
         "sub": "Cosa pensano i giocatori, non cosa dicono i dati. Vota: ogni domanda è facoltativa.",
-        "cambio": "Hai già votato. Cambiato idea? Vota di nuovo: conta solo l'ultimo.", "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
+        "tuvoto": "Il tuo voto", "cambiar": "Cambia", "cambio": "Hai già votato. Cambiato idea? Vota di nuovo: conta solo l'ultimo.", "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
         "nada": "—", "votos": "voti", "voto": "voto", "sin": "Ancora nessun voto. Sii il primo.",
         "error": "Non è stato possibile caricare i risultati ora.", "enviando": "Invio…",
         "q": {"easiest_box": "Scatola più facile da vincere", "hardest_box": "Scatola più difficile da vincere", "most_immersive_box": "Scatola più immersiva",
@@ -179,6 +179,7 @@ def seccion(lang):
   .ct-a {{ display:inline-block; margin-top:8px; font-size:13px; font-weight:600; color:var(--blood); text-decoration:none; }}
   .ct-luz {{ animation:ctluz 1.6s ease-out; }}
   @keyframes ctluz {{ 0%,40% {{ border-color:var(--blood); box-shadow:0 0 0 3px color-mix(in srgb,var(--blood) 35%,transparent); }} 100% {{ box-shadow:none; }} }}
+  .ct-cambiar {{ margin-left:6px; background:none; border:1px solid currentColor; color:inherit; font:inherit; font-size:12px; padding:2px 10px; border-radius:3px; cursor:pointer; }}
   .ct-form {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px 14px; margin:14px 0 6px; }}
   .ct-cat {{ min-width:0; border:1px solid var(--line); border-radius:3px; padding:10px 12px 12px; display:flex; flex-direction:column; gap:6px; }}
   .ct-cat h3 {{ margin:0 0 2px; font-size:14px; }}
@@ -263,14 +264,20 @@ def seccion(lang):
   // El formulario se pinta una vez y no se toca al recargar resultados:
   // lo que el visitante tenga a medias no se pierde.
   form.innerHTML = C.orden.map(function (id) {{
+    var pv0 = previos(id);
     return '<div class="ct-cat" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' +
-      (votada(id) ? '<p class="ct-ok">' + esc(C.t.cambio) + '</p>' : '') +
+      (pv0.length ? '<p class="ct-ok ct-mio">' + esc(C.t.tuvoto) + ': ' + pv0.map(function (x, k) {{ return RK[k] + ' ' + esc(x); }}).join(' · ') +
+        ' <button type="button" class="ct-cambiar">' + esc(C.t.cambiar) + '</button></p><div class="ct-sel" hidden>'
+        : (votada(id) ? '<p class="ct-ok">' + esc(C.t.cambio) + '</p>' : '') + '<div class="ct-sel">') +
       [1, 2, 3].map(function (r) {{
         var pv = previos(id)[r - 1];
         return '<label><span>' + RK[r - 1] + '</span><select data-r="' + r + '"><option value="">' + C.t.nada + '</option>' +
           C.o[id].map(function (o) {{ return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
-      }}).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div>';
+      }}).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div></div>';
   }}).join('');
+  form.querySelectorAll('.ct-cambiar').forEach(function (b) {{
+    b.onclick = function () {{ var c = b.closest('.ct-cat'); c.querySelector('.ct-sel').hidden = false; b.closest('p').remove(); }};
+  }});
   form.querySelectorAll('.ct-enviar').forEach(function (b) {{
     b.onclick = function () {{
       var card = b.closest('.ct-cat'), id = card.getAttribute('data-id');
