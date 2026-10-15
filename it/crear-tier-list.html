@@ -263,8 +263,9 @@
   }
   .tm-fila { display:flex; border-top:1px solid var(--line); background:var(--surface); }
   .tm-fila:first-child { border-top:0; }
-  .tm-l { flex:none; width:64px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:24px; color:#fff; }
-  .tm-l input { width:100%; background:none; border:0; color:#fff; font:inherit; text-align:center; }
+  .tm-l { flex:none; width:84px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:24px; color:#fff; }
+  .tm-l textarea { width:100%; background:none; border:0; color:#fff; font:inherit; text-align:center; resize:none; overflow:hidden;
+    line-height:1.1; padding:0 4px; field-sizing:content; overflow-wrap:anywhere; }
   .tm-fila { position:relative; }
   .tm-del { flex:none; width:30px; border:0; background:var(--sunk); color:var(--muted); font-size:18px; cursor:pointer; }
   .tm-del:hover { color:#fff; background:var(--blood); }
@@ -289,7 +290,7 @@
                     border:1px solid var(--blood); background:none; color:var(--blood); }
   .tm-acc .tm-prim { background:var(--blood); color:#fff; }
   .tm-acc .tm-sec { border-color:var(--line); color:var(--muted); }
-  @media (max-width:560px) { .tm-l { width:44px; font-size:18px; } .tm-it { width:60px; height:60px; } .tm-zona { min-height:68px; } }
+  @media (max-width:560px) { .tm-l { width:60px; } .tm-it { width:60px; height:60px; } .tm-zona { min-height:68px; } }
 </style>
 <script>
 (function () {
@@ -333,8 +334,10 @@
       '<span>' + esc(it[0]) + '</span></div>';
   }
   function pintar() {
+    // Letra según lo largo de la etiqueta: "S" grande, "No jugado" pequeña.
+    function tam(t) { var n = String(t).length; return n <= 2 ? 24 : n <= 4 ? 17 : n <= 9 ? 13 : 11; }
     filasEl.innerHTML = etiquetas.map(function (et, k) {
-      return '<div class="tm-fila"><div class="tm-l" style="background:' + color(k) + '"><input value="' + esc(et) + '" data-k="' + k + '" maxlength="6"></div>' +
+      return '<div class="tm-fila"><div class="tm-l" style="background:' + color(k) + '"><textarea rows="1" data-k="' + k + '" maxlength="20" style="font-size:' + tam(et) + 'px">' + esc(et) + '</textarea></div>' +
         '<div class="tm-zona" data-fila="' + k + '">' + estado.filas[k].map(ficha).join('') + '</div>' +
         (etiquetas.length > 1 ? '<button type="button" class="tm-del" data-k="' + k + '" aria-label="' + esc(C.t.quitar) + '" title="' + esc(C.t.quitar) + '">×</button>' : '') + '</div>';
     }).join('') + '<button type="button" class="tm-add">+ ' + esc(C.t.anadir) + '</button>';
@@ -351,7 +354,10 @@
     pool.innerHTML = estado.pool.map(ficha).join('');
     document.querySelectorAll('.tm-modos button').forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-m') === modo); });
     document.querySelectorAll('.tv-key').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-m') === modo); });
-    filasEl.querySelectorAll('.tm-l input').forEach(function (inp) { inp.oninput = function () { etiquetas[+inp.getAttribute('data-k')] = inp.value; aHash(); }; });
+    filasEl.querySelectorAll('.tm-l textarea').forEach(function (inp) {
+      inp.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); inp.blur(); } };
+      inp.oninput = function () { inp.value = inp.value.replace(/\n/g, ' '); inp.style.fontSize = tam(inp.value) + 'px'; etiquetas[+inp.getAttribute('data-k')] = inp.value; aHash(); };
+    });
     aHash();
   }
   function mover(i, destino, antesDe) {
@@ -397,7 +403,7 @@
     var dest = a.el.closest('.tm-zona'); var i = sel; sel = null; mover(i, +dest.getAttribute('data-fila'), a.i);
   });
   document.addEventListener('click', function (e) {
-    if (sel == null || e.target.closest('.tm-it, .tm-l input')) return;
+    if (sel == null || e.target.closest('.tm-it, .tm-l textarea')) return;
     var z = e.target.closest('.tm-zona, .tm-fila'); if (!z) return;
     if (z.classList.contains('tm-fila')) z = z.querySelector('.tm-zona');
     var i = sel; sel = null; mover(i, +z.getAttribute('data-fila'), null);
@@ -471,7 +477,7 @@
     return o;
   }
   document.getElementById('tm-bajar').onclick = function () {
-    var S = 96, G = 6, L = 90, POR = 9, W = L + G + POR * (S + G) + G, cab = 64, pie = 34;
+    var S = 96, G = 6, L = 120, POR = 9, W = L + G + POR * (S + G) + G, cab = 64, pie = 34;
     var alturas = estado.filas.map(function (f) { return Math.max(1, Math.ceil(f.length / POR)) * (S + G) + G; });
     var H = cab + alturas.reduce(function (a, b) { return a + b; }, 0) + pie;
     var cv = document.createElement('canvas'); cv.width = W * 2; cv.height = H * 2;
@@ -485,8 +491,14 @@
       estado.filas.forEach(function (f, k) {
         var h = alturas[k];
         x.fillStyle = color(k); x.fillRect(0, y, L, h - 2);
-        x.fillStyle = '#fff'; x.font = '800 30px system-ui, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
-        x.fillText(etiquetas[k], L / 2, y + h / 2); x.textAlign = 'left'; x.textBaseline = 'alphabetic';
+        // Etiqueta en varias líneas si no cabe, con la letra según su largo.
+        var et = String(etiquetas[k]), n = et.length, fs = n <= 2 ? 30 : n <= 4 ? 24 : n <= 9 ? 18 : 15;
+        x.fillStyle = '#fff'; x.font = '800 ' + fs + 'px system-ui, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+        var lin = [], cur = '';
+        et.split(' ').forEach(function (w) { var t = cur ? cur + ' ' + w : w; if (cur && x.measureText(t).width > L - 12) { lin.push(cur); cur = w; } else cur = t; });
+        lin.push(cur);
+        lin.forEach(function (l, j) { x.fillText(l, L / 2, y + h / 2 + (j - (lin.length - 1) / 2) * fs * 1.15, L - 8); });
+        x.textAlign = 'left'; x.textBaseline = 'alphabetic';
         x.fillStyle = '#1a1416'; x.fillRect(L, y, W - L, h - 2);
         f.forEach(function (i, n) {
           var cx = L + G + (n % POR) * (S + G), cy = y + G + Math.floor(n / POR) * (S + G), im = mapa[i];
