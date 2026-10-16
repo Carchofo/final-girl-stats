@@ -134,7 +134,8 @@ def seccion(lang):
     caj = {t["id"]: t["cajas"] for t in D["temporadas"]}
     tn = TEMP_N[lang]
     ts = [{"e": e, "o": sorted(caj.get(k, [])), "n": (tn[1] if k == "SP" else f"{tn[0]} {k[1:]}")} for k, e in TEMPS]
-    cfg = {"ts": ts, "form": FORM, "hoja": HOJA, "e": ENTRADAS, "eid": ID_ENTRADA, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
+    todas = {"es": "Todas", "en": "All", "fr": "Toutes", "de": "Alle", "it": "Tutte"}[lang]
+    cfg = {"ts": ts, "todas": todas, "tsk": [k for k, _ in TEMPS], "form": FORM, "hoja": HOJA, "e": ENTRADAS, "eid": ID_ENTRADA, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
            "o": _opciones(), "img": img, "t": t,
            "amz": {k: v for k, v in __import__("paginas").AFILIADOS["amazon"]["tags"].items() if v.get("tag")},
            "url": "finalgirlstats.com/" + ("" if lang == "es" else lang + "/") + "tops.html"}
@@ -195,6 +196,10 @@ def seccion(lang):
   .ct-cat label {{ display:flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:11px; color:var(--muted); }}
   .ct-cat label span {{ width:30px; flex:none; }}
   .ct-cat label span.ct-ts {{ width:84px; }}
+  .ct-chips {{ display:flex; flex-wrap:wrap; gap:4px; margin:-4px 0 10px; }}
+  .ct-chips button {{ background:none; border:1px solid var(--line); color:var(--muted); font-family:var(--f-mono); font-size:11px;
+                      padding:2px 8px; border-radius:2px; cursor:pointer; }}
+  .ct-chips button.on {{ border-color:var(--blood); color:#fff; background:var(--blood); }}
   .ct-tn {{ margin:10px 0 4px; font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--blood); }}
   .ct-tn:first-of-type {{ margin-top:0; }}
   .ct-cat select {{ flex:1; min-width:0; width:100%; font:inherit; font-size:13.5px; padding:6px; background:var(--sunk);
@@ -247,13 +252,15 @@ def seccion(lang):
   function ranking(id) {{
     if (id === 'best_season') return rankingTemps();
     var i = C.cols.indexOf(id), pts = {{}}, votos = {{}}, visto = {{}}, U = C.cols.length * 3;
+    // Mejor película filtrada por temporada: solo cuentan las cajas de esa temporada.
+    var solo = id === 'best_box' && FT >= 0 ? C.ts[FT].o : null;
     // De la última fila a la primera: de cada código, solo su último voto.
     FILAS.slice().reverse().forEach(function (f) {{
       if (!f[i * 3] && !f[i * 3 + 1] && !f[i * 3 + 2]) return;
       var u = f[U]; if (u) {{ if (visto[u]) return; visto[u] = 1; }}
       [0, 1, 2].forEach(function (r) {{
         var v = f[i * 3 + r];
-        if (v) {{ pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }}
+        if (v && (!solo || solo.indexOf(v) >= 0)) {{ pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }}
       }});
     }});
     var top = Object.keys(pts).sort(function (a, b) {{ return pts[b] - pts[a] || votos[b] - votos[a]; }});
@@ -270,10 +277,15 @@ def seccion(lang):
     }}).join('');
   }}
 
+  var FT = -1;
+  function chips() {{
+    return '<div class="ct-chips">' + ['<button type="button" data-ft="-1"' + (FT < 0 ? ' class="on"' : '') + '>' + esc(C.todas) + '</button>']
+      .concat(C.tsk.map(function (k, j) {{ return '<button type="button" data-ft="' + j + '"' + (FT === j ? ' class="on"' : '') + '>' + k + '</button>'; }})).join('') + '</div>';
+  }}
   function pintar() {{
     res.innerHTML = C.orden.map(function (id) {{
       var h = ranking(id), extra = (h.match(/ct-mas/g) || []).length;
-      return '<div class="ct-card' + (abiertos[id] ? ' ct-todo' : '') + '" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' + h +
+      return '<div class="ct-card' + (abiertos[id] ? ' ct-todo' : '') + '" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' + (id === 'best_box' ? chips() : '') + h +
         '<a class="ct-a" href="#ct-votar" data-id="' + id + '">' + esc(C.t.votar) + ' <span class="ct-cuchillo" aria-hidden="true">🔪</span></a>' +
         (extra ? '<button type="button" class="ct-ver">' + esc(abiertos[id] ? C.t.menos : C.t.todo.replace('{{n}}', extra + 5)) + '</button>' : '') + '</div>';
     }}).join('');
@@ -281,6 +293,9 @@ def seccion(lang):
   // Desde cada top, a su formulario: baja, lo resalta y abre el 1º.
   // Ver el ranking entero: se recuerda al repintar.
   var abiertos = {{}};
+  res.addEventListener('click', function (e) {{
+    var ch = e.target.closest('.ct-chips button'); if (ch) {{ FT = +ch.getAttribute('data-ft'); pintar(); }}
+  }});
   res.addEventListener('click', function (e) {{
     var v = e.target.closest('.ct-ver'); if (!v) return;
     var c = v.closest('.ct-card'), id = c.getAttribute('data-id');
