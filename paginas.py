@@ -199,6 +199,17 @@ def tabla(cab, filas):
     return f'<div class="tabla-wrap"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
 
+def arte_ficha(ruta, pre=""):
+    """Ilustración arriba a la derecha de la ficha (killer: su arte; caja: la portada)."""
+    if not (AQUI / ruta).exists():
+        return ""
+    # Portadas: el logo arriba, la cara abajo. Arte de killer: centrado arriba.
+    pos = "center 25%" if "/art/" in ruta else "center 70%"
+    return ('<style>header.top{display:flow-root}</style><img class="ficha-arte" src="' + pre + ruta + '" alt="" '
+            'style="float:right;width:min(34%,230px);aspect-ratio:1;object-fit:cover;object-position:' + pos + ';'
+            'margin:0 0 8px 18px;border:1px solid #3a2a2c;box-shadow:0 8px 24px rgba(0,0,0,.5);transform:rotate(1.5deg)">')
+
+
 # --------------------------------------------------------------------------
 # Páginas de killer
 # --------------------------------------------------------------------------
@@ -209,7 +220,8 @@ def pagina_killer(nombre, k):
     propio = f['loc'] if f else None
     aqui = next((m for m in mapas if m[0] == propio), None)
 
-    h = [f'<p class="eyebrow">Killer · {len(mapas)} mapas con datos</p>',
+    h = [arte_ficha(f"img/art/{slug(nombre)}.jpg"),
+         f'<p class="eyebrow">Killer · {len(mapas)} mapas con datos</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{pc(k["wr"])} de victorias</span></h1>']
 
     intro = (f'Sobre <b>{k["g"]} partidas</b> registradas, la Final Girl gana el '
@@ -304,7 +316,8 @@ def pagina_killer(nombre, k):
 def pagina_caja(f):
     c = CONSEJOS.get(f['film'], {})
     k = KILLERS.get(f['killer'], {})
-    h = [f'<p class="eyebrow">Caja · {f.get("fnum","")} · {f["plays"]} partidas</p>',
+    h = [arte_ficha(f"img/{slug(f['film'])}.jpg"),
+         f'<p class="eyebrow">Caja · {f.get("fnum","")} · {f["plays"]} partidas</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
 
     dif = (f['wr'] - MEDIA) * 100

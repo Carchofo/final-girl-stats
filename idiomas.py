@@ -288,7 +288,8 @@ def pagina_killer(nombre, k, lang, tx):
     propio = f["loc"] if f else None
     aqui = next((m for m in mapas if m[0] == propio), None)
     wr = pc(k["wr"], lang)
-    h = [f'<p class="eyebrow">{t["killer_eb"].format(n=len(mapas))}</p>',
+    h = [P.arte_ficha(f"img/art/{P.slug(nombre)}.jpg", "../"),
+         f'<p class="eyebrow">{t["killer_eb"].format(n=len(mapas))}</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
     dif = (k["wr"] - P.MEDIA) * 100
     intro = t["intro"].format(g=num(k["g"], lang), k=nombre, wr=wr, media=pc(P.MEDIA, lang))
@@ -354,7 +355,8 @@ def pagina_caja(f, lang, tx):
     c = tx["cons"].get(f["film"], {})
     k = P.KILLERS.get(f["killer"], {})
     wr = pc(f["wr"], lang)
-    h = [f'<p class="eyebrow">{t["box_eb"].format(f=f.get("fnum", ""), g=f["plays"])}</p>',
+    h = [P.arte_ficha(f"img/{P.slug(f['film'])}.jpg", "../"),
+         f'<p class="eyebrow">{t["box_eb"].format(f=f.get("fnum", ""), g=f["plays"])}</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
     dif = (f["wr"] - P.MEDIA) * 100
     media = pc(P.MEDIA, lang)
