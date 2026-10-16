@@ -505,6 +505,8 @@ for p in PAGINAS:
     if p["salida"] == "index.html":
         import tops
         cuerpo = tops.poner(cuerpo, "es")
+        import reto
+        cuerpo = reto.poner(cuerpo, "es")
         cuerpo = idiomas.sin_snippet(idiomas.ocultar_pestanas(cuerpo))
     if p.get("unificar_estilo"):
         # DESPUES del cuerpo: a igual especificidad gana la ultima regla, y

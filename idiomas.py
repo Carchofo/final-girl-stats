@@ -699,6 +699,8 @@ def grande(lang, salida, M, existe):
     if salida == "index.html":
         import tops
         cuerpo = tops.poner(cuerpo, lang)
+        import reto
+        cuerpo = reto.poner(cuerpo, lang)
         cuerpo = sin_snippet(ocultar_pestanas(cuerpo))
     if salida == "index.html":
         # Igual que en la española: "Laboratorio" no lo busca nadie.
