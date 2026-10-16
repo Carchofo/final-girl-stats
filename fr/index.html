@@ -1017,7 +1017,7 @@
       (temp ? C.ts.map(function (T, j) {
         return '<label><span class="ct-ts">' + esc(T.n) + '</span><select data-s="' + j + '"><option value="">' + C.t.nada + '</option>' +
           T.o.map(function (o) { return '<option' + (o === pv0[j] ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
-      }) : [1, 2, 3].map(function (r) {
+      }) : [1, 2, 3].slice(0, opts(id).length).map(function (r) {
         var pv = previos(id)[r - 1];
         return '<label><span>' + RK[r - 1] + '</span><select data-r="' + r + '"><option value="">' + C.t.nada + '</option>' +
           opts(id).map(function (o) { return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
