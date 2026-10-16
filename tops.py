@@ -345,6 +345,17 @@ def seccion(lang):
           opts(id).map(function (o) {{ return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
       }})).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div></div>';
   }}).join('');
+  // Sin repetir: lo elegido en un puesto se desactiva en los otros dos.
+  function sinRepetir(c) {{
+    var sels = [].slice.call(c.querySelectorAll('select[data-r]'));
+    sels.forEach(function (s) {{
+      [].forEach.call(s.options, function (o) {{
+        o.disabled = !!o.value && sels.some(function (x) {{ return x !== s && x.value === o.value; }});
+      }});
+    }});
+  }}
+  form.querySelectorAll('.ct-cat').forEach(sinRepetir);
+  form.addEventListener('change', function (e) {{ var c = e.target.closest('.ct-cat'); if (c) sinRepetir(c); }});
   // Cambiar: vuelven los desplegables (con lo último votado) y se va el resumen.
   form.addEventListener('click', function (e) {{
     var b = e.target.closest('.ct-cambiar'); if (!b) return;
