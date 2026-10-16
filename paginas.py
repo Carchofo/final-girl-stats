@@ -200,14 +200,22 @@ def tabla(cab, filas):
 
 
 def arte_ficha(ruta, pre=""):
-    """Ilustración arriba a la derecha de la ficha (killer: su arte; caja: la portada)."""
+    """Ilustración arriba a la derecha de la ficha (killer: su arte; caja: la portada),
+    montada como una diapositiva de 35 mm."""
     if not (AQUI / ruta).exists():
         return ""
     # Portadas: el logo arriba, la cara abajo. Arte de killer: centrado arriba.
     pos = "center 25%" if "/art/" in ruta else "center 70%"
-    return ('<style>header.top{display:flow-root}</style><img class="ficha-arte" src="' + pre + ruta + '" alt="" '
-            'style="float:right;width:min(34%,230px);aspect-ratio:1;object-fit:cover;object-position:' + pos + ';'
-            'margin:0 0 8px 18px;border:1px solid #3a2a2c;box-shadow:0 8px 24px rgba(0,0,0,.5);transform:rotate(1.5deg)">')
+    return ('<style>header.top{display:flow-root}'
+            '.diapo{float:right;position:relative;width:min(34%,230px);margin:0 0 8px 18px;padding:16px 16px 24px;box-sizing:border-box;'
+            'background:linear-gradient(145deg,#efe9dc,#d6cfbf);border-radius:6px;transform:rotate(2deg);'
+            'box-shadow:0 14px 30px rgba(0,0,0,.65),0 2px 0 rgba(255,255,255,.35) inset,0 -2px 0 rgba(0,0,0,.15) inset}'
+            '.diapo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:7px}'
+            '.diapo::after{content:"";position:absolute;inset:16px 16px 24px;border-radius:7px;pointer-events:none;'
+            'box-shadow:0 0 0 1px rgba(0,0,0,.35),inset 0 0 28px rgba(0,0,0,.75)}'
+            '.diapo::before{content:"FINALGIRLSTATS";position:absolute;left:0;right:0;bottom:8px;text-align:center;'
+            'font:700 8px/1 var(--f-mono),monospace;letter-spacing:.25em;color:#8a8170}</style>'
+            '<span class="diapo"><img class="ficha-arte" src="' + pre + ruta + '" alt="" style="object-position:' + pos + '"></span>')
 
 
 # --------------------------------------------------------------------------
