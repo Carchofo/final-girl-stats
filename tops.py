@@ -29,7 +29,7 @@ ENTRADAS = {"easiest_box_1": "1941202498", "easiest_box_2": "1055419443", "easie
 COLUMNAS = ["easiest_box", "hardest_box", "most_immersive_box", "worst_box", "best_killer",
             "best_location", "best_series", "best_box", "most_complex_killer"]
 # Orden en pantalla (COLUMNAS es el orden de las columnas de la hoja, no tocar).
-ORDEN = ["best_series", "best_box", "best_season", "best_killer", "easiest_box", "hardest_box", "most_immersive_box",
+ORDEN = ["best_series", "best_box", "best_killer", "easiest_box", "hardest_box", "most_immersive_box",
          "worst_box", "best_location"]
 PUNTOS = [3, 2, 1]
 # Mejor caja de cada temporada: un voto por temporada, columnas tras "id".
