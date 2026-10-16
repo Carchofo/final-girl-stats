@@ -212,7 +212,7 @@ def seccion(lang):
   function esc(s) {{ return String(s).replace(/[&<>"]/g, function (c) {{ return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]; }}); }}
   // Lo último que votó este navegador en cada categoría ('1' en votos antiguos).
   function votada(id) {{ try {{ return localStorage.getItem('fg-top-' + id); }} catch (e) {{ return null; }} }}
-  function previos(id) {{ try {{ return JSON.parse(votada(id)) || []; }} catch (e) {{ return []; }} }}
+  function previos(id) {{ try {{ var v = JSON.parse(votada(id)); return Array.isArray(v) ? v : []; }} catch (e) {{ return []; }} }}
   var UID = (function () {{
     try {{ var u = localStorage.getItem('fg-uid'); if (!u) {{ u = Math.random().toString(36).slice(2, 12); localStorage.setItem('fg-uid', u); }} return u; }}
     catch (e) {{ return ''; }}
