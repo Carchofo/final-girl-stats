@@ -941,6 +941,16 @@
         if (v && (!solo || solo.indexOf(v) >= 0)) { pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }
       });
     });
+    // Más los tops por temporada (columna best_sN: "1º|2º|3º"), que suman a la vez a su temporada y al total.
+    if (id === 'best_box') C.ts.forEach(function (T, j) {
+      if (FT >= 0 && FT !== j) return;
+      var col = U + 1 + j, vs = {};
+      FILAS.slice().reverse().forEach(function (f) {
+        if (!f[col]) return;
+        var u = f[U]; if (u) { if (vs[u]) return; vs[u] = 1; }
+        f[col].split('|').slice(0, 3).forEach(function (v, r) { if (v) { pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; } });
+      });
+    });
     var top = Object.keys(pts).sort(function (a, b) { return pts[b] - pts[a] || votos[b] - votos[a]; });
     if (!top.length) return '<p class="sub ct-vacio">' + esc(C.t.sin) + '</p>';
     var max = pts[top[0]];
@@ -982,7 +992,12 @@
   res.addEventListener('click', function (e) {
     var a = e.target.closest('.ct-a'); if (!a) return;
     e.preventDefault();
-    var c = form.querySelector('.ct-cat[data-id="' + a.getAttribute('data-id') + '"]');
+    var did = a.getAttribute('data-id');
+    if (did === 'best_box') {
+      form.querySelectorAll('.ct-tsv').forEach(function (x) { x.hidden = true; });
+      if (FT >= 0) { did = 'best_box_s' + FT; form.querySelector('.ct-cat[data-id="' + did + '"]').hidden = false; }
+    }
+    var c = form.querySelector('.ct-cat[data-id="' + did + '"]');
     c.scrollIntoView({ behavior: 'smooth', block: 'center' });
     c.classList.remove('ct-luz'); void c.offsetWidth; c.classList.add('ct-luz');
     var s = c.querySelector('select'); if (s) setTimeout(function () { s.focus({ preventScroll: true }); }, 400);
@@ -990,9 +1005,12 @@
 
   // El formulario se pinta una vez y no se toca al recargar resultados:
   // lo que el visitante tenga a medias no se pierde.
-  form.innerHTML = C.orden.map(function (id) {
-    var pv0 = previos(id), temp = id === 'best_season';
-    return '<div class="ct-cat" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' +
+  // Tops por temporada: una tarjeta oculta por temporada, se abre desde "Votar" con el filtro puesto.
+  function opts(id) { var m = /^best_box_s([0-9])$/.exec(id); return m ? C.ts[+m[1]].o : C.o[id]; }
+  function titulo(id) { var m = /^best_box_s([0-9])$/.exec(id); return m ? C.t.q.best_box + ' · ' + C.tsk[+m[1]] : C.t.q[id]; }
+  form.innerHTML = C.orden.concat(C.ts.map(function (T, j) { return 'best_box_s' + j; })).map(function (id) {
+    var pv0 = previos(id), temp = id === 'best_season', st = /^best_box_s/.test(id);
+    return '<div class="ct-cat' + (st ? ' ct-tsv" hidden' : '"') + ' data-id="' + id + '"><h3>' + esc(titulo(id)) + '</h3>' +
       (pv0.filter(Boolean).length ? '<p class="ct-ok ct-mio">' + esc(C.t.tuvoto) + ': ' + resumen(id, pv0) +
         ' <button type="button" class="ct-cambiar">' + esc(C.t.cambiar) + '</button></p><div class="ct-sel" hidden>'
         : (votada(id) ? '<p class="ct-ok">' + esc(C.t.cambio) + '</p>' : '') + '<div class="ct-sel">') +
@@ -1002,7 +1020,7 @@
       }) : [1, 2, 3].map(function (r) {
         var pv = previos(id)[r - 1];
         return '<label><span>' + RK[r - 1] + '</span><select data-r="' + r + '"><option value="">' + C.t.nada + '</option>' +
-          C.o[id].map(function (o) { return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
+          opts(id).map(function (o) { return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select></label>';
       })).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div></div>';
   }).join('');
   // Cambiar: vuelven los desplegables (con lo último votado) y se va el resumen.
@@ -1019,8 +1037,11 @@
       card.querySelectorAll('select').forEach(function (sel) {
         var v = sel.value, r = sel.getAttribute('data-r');
         if (id === 'best_season') { elegidos.push(v); if (v) { d.append('entry.' + C.ts[+sel.getAttribute('data-s')].e, v); alguno = true; } return; }
+        if (/^best_box_s/.test(id)) { if (v && !usados[v]) { usados[v] = 1; elegidos.push(v); alguno = true; } return; }
         if (v && !usados[v]) { usados[v] = 1; elegidos.push(v); d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }
       });
+      var mt = /^best_box_s([0-9])$/.exec(id);
+      if (mt && alguno) d.append('entry.' + C.ts[+mt[1]].e, elegidos.join('|'));
       if (!alguno) return;
       if (UID) d.append('entry.' + C.eid, UID);
       b.disabled = true; b.textContent = C.t.enviando;
@@ -1035,7 +1056,7 @@
           ' <button type="button" class="ct-cambiar">' + esc(C.t.cambiar) + '</button>';
         card.insertBefore(ok, sel);
         // Compartir el top recién votado: menú del sistema en el móvil, portapapeles si no.
-        var txt = C.t.comp_txt.replace('{q}', C.t.q[id]).replace('{l}', id === 'best_season' ? resumen(id, elegidos).replace(/&amp;/g, '&') : elegidos.map(function (x, k) { return (k + 1) + '. ' + x; }).join(' ')) + ' ' + C.url;
+        var txt = C.t.comp_txt.replace('{q}', titulo(id)).replace('{l}', id === 'best_season' ? resumen(id, elegidos).replace(/&amp;/g, '&') : elegidos.map(function (x, k) { return (k + 1) + '. ' + x; }).join(' ')) + ' ' + C.url;
         var sb = document.createElement('button'); sb.type = 'button'; sb.className = 'ct-share'; sb.textContent = C.t.comp;
         sb.onclick = function () {
           if (navigator.share) { navigator.share({ text: txt }).catch(function () {}); return; }
