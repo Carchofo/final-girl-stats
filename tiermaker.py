@@ -473,6 +473,9 @@ def pagina(lang):
     encendida = !encendida; document.getElementById('tv-led').classList.toggle('off', !encendida);
     filasEl.classList.remove('apagada', 'encendida'); void filasEl.offsetWidth; filasEl.classList.add(encendida ? 'encendida' : 'apagada');
   }};
+  // Al acabar de encenderse se quita la animación: con "forwards" dejaba su
+  // filter fijo y tapaba el filtro del canal.
+  filasEl.addEventListener('animationend', function (e) {{ if (e.animationName === 'tvon') filasEl.classList.remove('encendida'); }});
 
   if (!deHash()) estado = vacio();
   pintar();
