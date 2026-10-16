@@ -29,9 +29,13 @@ ENTRADAS = {"easiest_box_1": "1941202498", "easiest_box_2": "1055419443", "easie
 COLUMNAS = ["easiest_box", "hardest_box", "most_immersive_box", "worst_box", "best_killer",
             "best_location", "best_series", "best_box", "most_complex_killer"]
 # Orden en pantalla (COLUMNAS es el orden de las columnas de la hoja, no tocar).
-ORDEN = ["best_series", "best_box", "best_killer", "easiest_box", "hardest_box", "most_immersive_box",
+ORDEN = ["best_series", "best_box", "best_season", "best_killer", "easiest_box", "hardest_box", "most_immersive_box",
          "worst_box", "best_location"]
 PUNTOS = [3, 2, 1]
+# Mejor caja de cada temporada: un voto por temporada, columnas tras "id".
+TEMPS = [("S1", "833750033"), ("S2", "469442451"), ("S3", "625711603"), ("S4", "784807580"), ("SP", "763745063")]
+TEMP_N = {"es": ("Temporada", "Especiales"), "en": ("Season", "Specials"), "fr": ("Saison", "Spéciaux"),
+          "de": ("Staffel", "Specials"), "it": ("Stagione", "Speciali")}
 
 T = {
  "es": {"amz_b": "Comprar en Amazon", "amz_n": "enlace de afiliado", "comp": "Comparte tu top", "copiado": "¡Copiado! Pégalo donde quieras", "comp_txt": "Mi top 3 de Final Girl · {q}: {l}. Vota el tuyo →", "vtop": "Votar en los tops →", "vchip": "Votar", "todo": "Ver los {n}", "menos": "Ver menos", "sub0": "Lo que dice la gente, no los datos.", "ir": "Vota tus tops", "h2v": "Vota", "tab": "Tops", "pts": "pts", "rk": "1º|2º|3º", "sub2": "Elige hasta 3 por categoría: el 1º vale 3 puntos, el 2º 2 y el 3º 1.", "h2": "Tops de la comunidad",
@@ -39,7 +43,7 @@ T = {
         "tuvoto": "Tu voto", "cambiar": "Cambiar", "cambio": "Ya votaste. Si cambias de opinión, vuelve a votar: cuenta el último.", "votar": "Votar", "gracias": "¡Gracias! Tu voto ya cuenta.", "ya": "Ya has votado desde este navegador. Así va la cosa:",
         "nada": "—", "votos": "votos", "voto": "voto", "sin": "Aún no hay votos. Sé el primero.",
         "error": "No se han podido cargar los resultados ahora mismo.", "enviando": "Enviando…",
-        "q": {"easiest_box": "Caja más fácil de ganar", "hardest_box": "Caja más difícil de ganar", "most_immersive_box": "Caja más inmersiva",
+        "q": {"best_season": "Mejor caja de cada temporada", "easiest_box": "Caja más fácil de ganar", "hardest_box": "Caja más difícil de ganar", "most_immersive_box": "Caja más inmersiva",
               "worst_box": "Peor caja", "best_killer": "Mejor killer", "best_location": "Mejor localización",
               "best_setup": "Mejor Setup", "best_series": "Mejor temporada", "best_final_girl": "Mejor Final Girl",
               "best_box": "Mejor película (caja)", "most_complex_killer": "Killer más complejo de reglas"}},
@@ -48,7 +52,7 @@ T = {
         "tuvoto": "Your vote", "cambiar": "Change", "cambio": "You already voted. Changed your mind? Vote again: only the last one counts.", "votar": "Vote", "gracias": "Thanks! Your vote counts.", "ya": "You've already voted from this browser. Here's how it stands:",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "No votes yet. Be the first.",
         "error": "Results couldn't be loaded right now.", "enviando": "Sending…",
-        "q": {"easiest_box": "Easiest box to win", "hardest_box": "Hardest box to win", "most_immersive_box": "Most immersive box",
+        "q": {"best_season": "Best box of each season", "easiest_box": "Easiest box to win", "hardest_box": "Hardest box to win", "most_immersive_box": "Most immersive box",
               "worst_box": "Worst box", "best_killer": "Best killer", "best_location": "Best location",
               "best_setup": "Best Setup", "best_series": "Best series", "best_final_girl": "Best Final Girl",
               "best_box": "Best movie (box)", "most_complex_killer": "Most complex killer (rules)"}},
@@ -57,7 +61,7 @@ T = {
         "tuvoto": "Votre vote", "cambiar": "Modifier", "cambio": "Vous avez déjà voté. Changé d'avis ? Revotez : seul le dernier compte.", "votar": "Voter", "gracias": "Merci ! Votre vote compte.", "ya": "Vous avez déjà voté depuis ce navigateur. Voici les résultats :",
         "nada": "—", "votos": "votes", "voto": "vote", "sin": "Pas encore de votes. Soyez le premier.",
         "error": "Impossible de charger les résultats pour le moment.", "enviando": "Envoi…",
-        "q": {"easiest_box": "Boîte la plus facile à gagner", "hardest_box": "Boîte la plus difficile à gagner", "most_immersive_box": "Boîte la plus immersive",
+        "q": {"best_season": "Meilleure boîte de chaque saison", "easiest_box": "Boîte la plus facile à gagner", "hardest_box": "Boîte la plus difficile à gagner", "most_immersive_box": "Boîte la plus immersive",
               "worst_box": "Pire boîte", "best_killer": "Meilleur killer", "best_location": "Meilleur lieu",
               "best_setup": "Meilleur Setup", "best_series": "Meilleure saison", "best_final_girl": "Meilleure Final Girl",
               "best_box": "Meilleur film (boîte)", "most_complex_killer": "Killer aux règles les plus complexes"}},
@@ -66,7 +70,7 @@ T = {
         "tuvoto": "Deine Stimme", "cambiar": "Ändern", "cambio": "Du hast schon abgestimmt. Meinung geändert? Stimm nochmal ab: nur die letzte zählt.", "votar": "Abstimmen", "gracias": "Danke! Deine Stimme zählt.", "ya": "Du hast in diesem Browser schon abgestimmt. So sieht es aus:",
         "nada": "—", "votos": "Stimmen", "voto": "Stimme", "sin": "Noch keine Stimmen. Sei die erste Stimme.",
         "error": "Die Ergebnisse konnten gerade nicht geladen werden.", "enviando": "Wird gesendet…",
-        "q": {"easiest_box": "Am leichtesten zu gewinnende Box", "hardest_box": "Am schwersten zu gewinnende Box", "most_immersive_box": "Atmosphärischste Box",
+        "q": {"best_season": "Beste Box jeder Staffel", "easiest_box": "Am leichtesten zu gewinnende Box", "hardest_box": "Am schwersten zu gewinnende Box", "most_immersive_box": "Atmosphärischste Box",
               "worst_box": "Schlechteste Box", "best_killer": "Bester Killer", "best_location": "Bester Schauplatz",
               "best_setup": "Bestes Setup", "best_series": "Beste Staffel", "best_final_girl": "Bestes Final Girl",
               "best_box": "Bester Film (Box)", "most_complex_killer": "Killer mit den komplexesten Regeln"}},
@@ -75,7 +79,7 @@ T = {
         "tuvoto": "Il tuo voto", "cambiar": "Cambia", "cambio": "Hai già votato. Cambiato idea? Vota di nuovo: conta solo l'ultimo.", "votar": "Vota", "gracias": "Grazie! Il tuo voto conta.", "ya": "Hai già votato da questo browser. Ecco come va:",
         "nada": "—", "votos": "voti", "voto": "voto", "sin": "Ancora nessun voto. Sii il primo.",
         "error": "Non è stato possibile caricare i risultati ora.", "enviando": "Invio…",
-        "q": {"easiest_box": "Scatola più facile da vincere", "hardest_box": "Scatola più difficile da vincere", "most_immersive_box": "Scatola più immersiva",
+        "q": {"best_season": "Miglior scatola di ogni stagione", "easiest_box": "Scatola più facile da vincere", "hardest_box": "Scatola più difficile da vincere", "most_immersive_box": "Scatola più immersiva",
               "worst_box": "Scatola peggiore", "best_killer": "Miglior killer", "best_location": "Miglior ambientazione",
               "best_setup": "Miglior Setup", "best_series": "Miglior stagione", "best_final_girl": "Miglior Final Girl",
               "best_box": "Miglior film (scatola)", "most_complex_killer": "Killer con le regole più complesse"}},
@@ -125,7 +129,12 @@ def seccion(lang):
     t = T[lang]
     pre = "" if lang == "es" else "../"
     img = {k: pre + v for k, v in _imagenes().items()}
-    cfg = {"form": FORM, "hoja": HOJA, "e": ENTRADAS, "eid": ID_ENTRADA, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
+    import paginas
+    D = paginas.datos()
+    caj = {t["id"]: t["cajas"] for t in D["temporadas"]}
+    tn = TEMP_N[lang]
+    ts = [{"e": e, "o": sorted(caj.get(k, [])), "n": (tn[1] if k == "SP" else f"{tn[0]} {k[1:]}")} for k, e in TEMPS]
+    cfg = {"ts": ts, "form": FORM, "hoja": HOJA, "e": ENTRADAS, "eid": ID_ENTRADA, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
            "o": _opciones(), "img": img, "t": t,
            "amz": {k: v for k, v in __import__("paginas").AFILIADOS["amazon"]["tags"].items() if v.get("tag")},
            "url": "finalgirlstats.com/" + ("" if lang == "es" else lang + "/") + "tops.html"}
@@ -185,6 +194,9 @@ def seccion(lang):
   .ct-cat h3 {{ margin:0 0 2px; font-size:14px; }}
   .ct-cat label {{ display:flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:11px; color:var(--muted); }}
   .ct-cat label span {{ width:30px; flex:none; }}
+  .ct-cat label span.ct-ts {{ width:84px; }}
+  .ct-tn {{ margin:10px 0 4px; font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--blood); }}
+  .ct-tn:first-of-type {{ margin-top:0; }}
   .ct-cat select {{ flex:1; min-width:0; width:100%; font:inherit; font-size:13.5px; padding:6px; background:var(--sunk);
                     color:var(--ink); border:1px solid var(--line); border-radius:3px; }}
   .ct-enviar {{ margin-top:6px; align-self:flex-start; background:var(--blood); color:#fff; border:0; border-radius:3px;
@@ -211,7 +223,29 @@ def seccion(lang):
     e.preventDefault(); document.getElementById('ct-votar').scrollIntoView({{ behavior: 'smooth' }});
   }};
 
+  // Mejor caja de cada temporada: un mini top por temporada (1 voto = 1 punto).
+  function rankingTemps() {{
+    var U = C.cols.length * 3;
+    return C.ts.map(function (T, j) {{
+      var col = U + 1 + j, votos = {{}}, visto = {{}};
+      FILAS.slice().reverse().forEach(function (f) {{
+        var v = f[col]; if (!v) return;
+        var u = f[U]; if (u) {{ if (visto[u]) return; visto[u] = 1; }}
+        votos[v] = (votos[v] || 0) + 1;
+      }});
+      var top = Object.keys(votos).sort(function (a, b) {{ return votos[b] - votos[a]; }}).slice(0, 3);
+      return '<p class="ct-tn">' + esc(T.n) + '</p>' + (top.length ? top.map(function (n, k) {{
+        return '<div class="ct-row"><i class="b" style="width:' + (votos[n] / votos[top[0]] * 100) + '%"></i>' +
+          (C.img[n] ? '<img src="' + C.img[n] + '" alt="" loading="lazy">' : '') +
+          '<span class="nm">' + (k + 1) + '. ' + esc(n) + '</span><span class="n">' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos) + '</span></div>';
+      }}).join('') : '<p class="sub ct-vacio">' + esc(C.t.sin) + '</p>');
+    }}).join('');
+  }}
+  function resumen(id, arr) {{
+    return arr.map(function (x, k) {{ return x ? (id === 'best_season' ? C.ts[k].n + ': ' : RK[k] + ' ') + esc(x) : ''; }}).filter(Boolean).join(' · ');
+  }}
   function ranking(id) {{
+    if (id === 'best_season') return rankingTemps();
     var i = C.cols.indexOf(id), pts = {{}}, votos = {{}}, visto = {{}}, U = C.cols.length * 3;
     // De la última fila a la primera: de cada código, solo su último voto.
     FILAS.slice().reverse().forEach(function (f) {{
@@ -264,16 +298,19 @@ def seccion(lang):
   // El formulario se pinta una vez y no se toca al recargar resultados:
   // lo que el visitante tenga a medias no se pierde.
   form.innerHTML = C.orden.map(function (id) {{
-    var pv0 = previos(id);
+    var pv0 = previos(id), temp = id === 'best_season';
     return '<div class="ct-cat" data-id="' + id + '"><h3>' + esc(C.t.q[id]) + '</h3>' +
-      (pv0.length ? '<p class="ct-ok ct-mio">' + esc(C.t.tuvoto) + ': ' + pv0.map(function (x, k) {{ return RK[k] + ' ' + esc(x); }}).join(' · ') +
+      (pv0.filter(Boolean).length ? '<p class="ct-ok ct-mio">' + esc(C.t.tuvoto) + ': ' + resumen(id, pv0) +
         ' <button type="button" class="ct-cambiar">' + esc(C.t.cambiar) + '</button></p><div class="ct-sel" hidden>'
         : (votada(id) ? '<p class="ct-ok">' + esc(C.t.cambio) + '</p>' : '') + '<div class="ct-sel">') +
-      [1, 2, 3].map(function (r) {{
+      (temp ? C.ts.map(function (T, j) {{
+        return '<label><span class="ct-ts">' + esc(T.n) + '</span><select data-s="' + j + '"><option value="">' + C.t.nada + '</option>' +
+          T.o.map(function (o) {{ return '<option' + (o === pv0[j] ? ' selected' : '') + '>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
+      }}) : [1, 2, 3].map(function (r) {{
         var pv = previos(id)[r - 1];
         return '<label><span>' + RK[r - 1] + '</span><select data-r="' + r + '"><option value="">' + C.t.nada + '</option>' +
           C.o[id].map(function (o) {{ return '<option' + (o === pv ? ' selected' : '') + '>' + esc(o) + '</option>'; }}).join('') + '</select></label>';
-      }}).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div></div>';
+      }})).join('') + '<button type="button" class="ct-enviar">' + esc(C.t.votar) + '</button></div></div>';
   }}).join('');
   // Cambiar: vuelven los desplegables (con lo último votado) y se va el resumen.
   form.addEventListener('click', function (e) {{
@@ -288,6 +325,7 @@ def seccion(lang):
       var d = new URLSearchParams(), usados = {{}}, alguno = false, elegidos = [];
       card.querySelectorAll('select').forEach(function (sel) {{
         var v = sel.value, r = sel.getAttribute('data-r');
+        if (id === 'best_season') {{ elegidos.push(v); if (v) {{ d.append('entry.' + C.ts[+sel.getAttribute('data-s')].e, v); alguno = true; }} return; }}
         if (v && !usados[v]) {{ usados[v] = 1; elegidos.push(v); d.append('entry.' + C.e[id + '_' + r], v); alguno = true; }}
       }});
       if (!alguno) return;
@@ -300,11 +338,11 @@ def seccion(lang):
         b.disabled = false; b.textContent = C.t.votar;
         card.querySelectorAll('.ct-ok').forEach(function (x) {{ x.remove(); }});
         var ok = document.createElement('p'); ok.className = 'ct-ok ct-mio';
-        ok.innerHTML = esc(C.t.gracias) + '<br>' + esc(C.t.tuvoto) + ': ' + elegidos.map(function (x, k) {{ return RK[k] + ' ' + esc(x); }}).join(' · ') +
+        ok.innerHTML = esc(C.t.gracias) + '<br>' + esc(C.t.tuvoto) + ': ' + resumen(id, elegidos) +
           ' <button type="button" class="ct-cambiar">' + esc(C.t.cambiar) + '</button>';
         card.insertBefore(ok, sel);
         // Compartir el top recién votado: menú del sistema en el móvil, portapapeles si no.
-        var txt = C.t.comp_txt.replace('{{q}}', C.t.q[id]).replace('{{l}}', elegidos.map(function (x, k) {{ return (k + 1) + '. ' + x; }}).join(' ')) + ' ' + C.url;
+        var txt = C.t.comp_txt.replace('{{q}}', C.t.q[id]).replace('{{l}}', id === 'best_season' ? resumen(id, elegidos).replace(/&amp;/g, '&') : elegidos.map(function (x, k) {{ return (k + 1) + '. ' + x; }}).join(' ')) + ' ' + C.url;
         var sb = document.createElement('button'); sb.type = 'button'; sb.className = 'ct-share'; sb.textContent = C.t.comp;
         sb.onclick = function () {{
           if (navigator.share) {{ navigator.share({{ text: txt }}).catch(function () {{}}); return; }}
