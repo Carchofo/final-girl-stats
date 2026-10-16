@@ -206,6 +206,8 @@ def pagina(lang):
             touch-action:none; user-select:none; -webkit-user-select:none; }}
   .tm-it img {{ width:100%; height:100%; object-fit:cover; object-position:center 62%; pointer-events:none; display:block; }}
   .tm-it img[src*="art/"] {{ object-position:center 25%; }}
+  .tm-it img[src*="big-bad-wolf"] {{ transform:scale(1.8); transform-origin:39% 92%; }}
+  .tm-it img[src*="krampus"] {{ object-position:50% 70%; }}
   .tm-it img[src*="loc/"] {{ object-fit:contain; background:#0d0a0b; padding:6px 4px 20px; box-sizing:border-box; }}
   .tm-it span {{ position:absolute; left:0; right:0; bottom:0; padding:12px 3px 3px; font-size:9.5px; line-height:1.15; font-weight:600;
                  color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.9)); pointer-events:none; }}

@@ -95,6 +95,9 @@ ESTILO = """<style>
            color:#fff; text-decoration:none; display:block; }
   .tl-it img { width:100%; height:100%; object-fit:cover; object-position:center 62%; display:block; }
   .tl-it img[src*="art/"] { object-position:center 25%; }
+  /* Arte que no tiene la cara arriba: encuadre a mano. */
+  .tl-it img[src*="big-bad-wolf"] { transform:scale(1.8); transform-origin:39% 92%; }
+  .tl-it img[src*="krampus"] { object-position:50% 70%; }
   .tl-it img[src*="loc/"] { object-fit:contain; background:#0d0a0b; padding:8px 6px 26px; box-sizing:border-box; }
   .tl-it span { position:absolute; left:0; right:0; bottom:0; padding:16px 5px 4px; font-size:11.5px; line-height:1.2;
                 font-weight:600; background:linear-gradient(transparent,rgba(0,0,0,.9)); }
