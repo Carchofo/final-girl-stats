@@ -682,6 +682,17 @@ for _cual, _sal in (("k", guia.SAL_K), ("m", guia.SAL_M)):
         + PIE, encoding="utf-8")
     print(_sal)
     PAGINAS += [{"salida": _sal, "prioridad": "0.7"}]
+# La guía única antigua (guia-a-rotten-harvest.html) estuvo publicada unas horas:
+# su dirección reparte a las dos nuevas, sin indexar.
+for _pre, _txt in (("", ("Guía de Grimlash (killer)", "Guía de Shady Acres (mapa)", "La guía ahora va por separado:")),
+                   ("en/", ("Grimlash guide (killer)", "Shady Acres guide (location)", "The guide is now split in two:"))):
+    (AQUI / (_pre + "guia-a-rotten-harvest.html")).write_text(
+        '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<meta name="robots" content="noindex,follow"><title>A Rotten Harvest</title>'
+        f'<link rel="canonical" href="{DOMINIO}/{_pre}{guia.SAL_M}">'
+        '<style>body{background:#111;color:#ddd;font:18px system-ui;padding:40px 16px;text-align:center}a{color:#e03b48;font-weight:700;display:block;margin:12px}</style>'
+        f'</head><body><p>{_txt[2]}</p><a href="{guia.SAL_K}">{_txt[0]} →</a><a href="{guia.SAL_M}">{_txt[1]} →</a></body></html>',
+        encoding="utf-8")
 PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
 # --- borrador de registro de partidas --------------------------------------
