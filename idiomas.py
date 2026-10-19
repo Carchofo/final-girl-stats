@@ -291,6 +291,10 @@ def pagina_killer(nombre, k, lang, tx):
     h = [P.arte_ficha(f"img/art/{P.slug(nombre)}.jpg", "../"),
          f'<p class="eyebrow">{t["killer_eb"].format(n=len(mapas))}</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
+    import guia
+    if nombre == guia.KILLER:
+        b = "" if lang in guia.T else "../en/"
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{b}{guia.SAL_K}" style="color:var(--blood)">{nombre} guide: how he plays and common mistakes →</a></p>')
     dif = (k["wr"] - P.MEDIA) * 100
     intro = t["intro"].format(g=num(k["g"], lang), k=nombre, wr=wr, media=pc(P.MEDIA, lang))
     intro += t["intro_up"] if dif > 4 else t["intro_down"] if dif < -4 else t["intro_eq"]
@@ -360,8 +364,9 @@ def pagina_caja(f, lang, tx):
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
     import guia
     if f["film"] == guia.CAJA:
-        href = guia.SALIDA if lang in guia.T else "../en/" + guia.SALIDA
-        h.append(f'<p><a class="gu-link" href="{href}" style="font-weight:700;color:var(--blood)">📖 Play guide: rules, items and events →</a></p>')
+        b = "" if lang in guia.T else "../en/"
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{b}{guia.SAL_K}" style="color:var(--blood)">Grimlash guide</a> · '
+                 f'<a href="{b}{guia.SAL_M}" style="color:var(--blood)">Shady Acres guide</a></p>')
     dif = (f["wr"] - P.MEDIA) * 100
     media = pc(P.MEDIA, lang)
     ds = f"{abs(dif):.1f}" if lang == "en" else f"{abs(dif):.1f}".replace(".", ",")
@@ -489,7 +494,8 @@ def generar(M):
         pags.append(("crear-tier-list.html", *tiermaker.pagina(lang), None))
         import guia
         if lang in guia.T:
-            pags.append((guia.SALIDA, *guia.pagina(lang), None))
+            pags.append((guia.SAL_K, *guia.pagina(lang, "k"), None))
+            pags.append((guia.SAL_M, *guia.pagina(lang, "m"), None))
         import registrar
         if lang in registrar.TX:
             pags.append(("registrar.html", *registrar.pagina(lang, M), None))

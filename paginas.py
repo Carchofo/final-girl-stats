@@ -206,6 +206,8 @@ def arte_ficha(ruta, pre=""):
         return ""
     # Portadas: el logo arriba, la cara abajo. Arte de killer: centrado arriba.
     pos = "center 25%" if "/art/" in ruta else "center 70%"
+    if "/loc/" in ruta:  # logos de mapa: enteros, sobre fondo oscuro
+        pos = "center;object-fit:contain;background:#0d0a0b;padding:10px;box-sizing:border-box"
     return ('<style>header.top{display:flow-root}'
             '.diapo{float:right;position:relative;width:min(34%,230px);margin:0 0 8px 18px;padding:16px 16px 24px;box-sizing:border-box;'
             'background:linear-gradient(145deg,#efe9dc,#d6cfbf);border-radius:6px;transform:rotate(2deg);'
@@ -231,6 +233,9 @@ def pagina_killer(nombre, k):
     h = [arte_ficha(f"img/art/{slug(nombre)}.jpg"),
          f'<p class="eyebrow">Killer · {len(mapas)} mapas con datos</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{pc(k["wr"])} de victorias</span></h1>']
+    import guia
+    if nombre == guia.KILLER:
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{guia.SAL_K}" style="color:var(--blood)">Guía de {nombre}: cómo juega y errores frecuentes →</a></p>')
 
     intro = (f'Sobre <b>{k["g"]} partidas</b> registradas, la Final Girl gana el '
              f'{pc(k["wr"])} de las veces contra {nombre}. '
@@ -329,7 +334,8 @@ def pagina_caja(f):
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
     import guia
     if f["film"] == guia.CAJA:
-        h.append(f'<p><a class="gu-link" href="{guia.SALIDA}" style="font-weight:700;color:var(--blood)">📖 Guía de juego: reglas, objetos y eventos →</a></p>')
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{guia.SAL_K}" style="color:var(--blood)">Guía de Grimlash</a> · '
+                 f'<a href="{guia.SAL_M}" style="color:var(--blood)">Guía de Shady Acres</a></p>')
 
     dif = (f['wr'] - MEDIA) * 100
     h.append(f'<p class="dek">{f["killer"]} en {f["loc"]}. '

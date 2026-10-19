@@ -12,7 +12,11 @@ import pathlib
 AQUI = pathlib.Path(__file__).parent
 
 CAJA = "A Rotten Harvest"
-SALIDA = "guia-a-rotten-harvest.html"
+KILLER = "Grimlash"
+MAPA = "Shady Acres"
+SAL_K = "guia-grimlash.html"
+SAL_M = "guia-shady-acres.html"
+SALIDAS = (SAL_K, SAL_M)
 DIR = "img/guias/a-rotten-harvest/"
 
 INICIOS = ["reap-what-you-sow", "final-crop", "dusk-sacrifice", "harvest-season", "demands-of-the-earth"]
@@ -179,13 +183,41 @@ T = {
 }
 
 
+# Cabeceras de cada guía (killer y mapa van por separado: se pueden mezclar).
+CAB = {
+    "es": {
+        "k": {"title": "Guía de Grimlash (Final Girl): cómo juega y errores frecuentes",
+              "desc": "Cómo juega Grimlash en Final Girl: su fase de Killer, Harvest Madness y los errores más comunes. Vale con cualquier mapa.",
+              "eb": "Guía de killer · Temporada 4", "h1": 'Grimlash<span class="roja">guía del killer</span>',
+              "dek": "Lo que hace Grimlash y los errores que más se cometen con él. Sirve con cualquier mapa: si lo juegas en Shady Acres, abre también la guía del mapa."},
+        "m": {"title": "Guía de Shady Acres (Final Girl): Children, Ancient Curses, objetos y eventos",
+              "desc": "Cómo se juega Shady Acres: Children, abducciones, Ancient Curses, Field Spaces, los 5 inicios, todos los objetos y eventos, y errores frecuentes. Vale con cualquier killer.",
+              "eb": "Guía de mapa · Temporada 4", "h1": 'Shady Acres<span class="roja">guía del mapa</span>',
+              "dek": "Las reglas especiales del mapa en corto, sus objetos y eventos, y los errores que más se cometen. Sirve con cualquier killer: si juegas contra Grimlash, abre también la suya."},
+        "otra_k": "Guía de su mapa: Shady Acres", "otra_m": "Guía de su killer: Grimlash",
+    },
+    "en": {
+        "k": {"title": "Grimlash guide (Final Girl): how he plays and common mistakes",
+              "desc": "How Grimlash plays in Final Girl: his Killer phase, Harvest Madness and the most common mistakes. Works with any location.",
+              "eb": "Killer guide · Season 4", "h1": 'Grimlash<span class="roja">killer guide</span>',
+              "dek": "What Grimlash does and the mistakes people make most with him. Works with any location: if you play him at Shady Acres, open the location guide too."},
+        "m": {"title": "Shady Acres guide (Final Girl): Children, Ancient Curses, items and events",
+              "desc": "How to play Shady Acres: Children, abductions, Ancient Curses, Field Spaces, the 5 setups, every item and event, and common mistakes. Works with any killer.",
+              "eb": "Location guide · Season 4", "h1": 'Shady Acres<span class="roja">location guide</span>',
+              "dek": "The location's special rules in short, its items and events, and the most common mistakes. Works with any killer: if you face Grimlash, open his guide too."},
+        "otra_k": "Its location guide: Shady Acres", "otra_m": "Its killer guide: Grimlash",
+    },
+}
+
+
 def _lista(xs):
     return "<ul>" + "".join(f"<li>{x}</li>" for x in xs) + "</ul>"
 
 
-def pagina(lang):
-    """(title, desc, cuerpo). El cuerpo va justo después de <header class="top">."""
-    t = T[lang]
+def pagina(lang, cual):
+    """(title, desc, cuerpo) de la guía del killer (cual="k") o del mapa ("m").
+    El cuerpo va justo después de <header class="top">."""
+    t, c = T[lang], CAB[lang][cual]
     pre = "" if lang == "es" else "../"
     import paginas
     css = """<style>
@@ -199,13 +231,19 @@ def pagina(lang):
 .gu-err{border-left:3px solid var(--blood);padding:4px 0 4px 14px;margin:10px 0}
 .gu-ley{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 </style>"""
-    h = [paginas.arte_ficha("img/art/grimlash.jpg", pre),
-         f'<p class="eyebrow">{t["eb"]}</p>', f'<h1>{t["h1"]}</h1>',
-         f'<p class="dek">{t["dek"]}</p>',
-         f'<p><a href="{paginas.slug(CAJA)}.html">{t["ficha"]} →</a></p>',
-         f'<p class="gu-ley">{t["leyenda"]}</p></header>', css,
-         f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"])}</div>',
-         f'<h2>{t["s_killer"]}</h2>{_lista(t["killer"])}',
+    arte = "img/art/grimlash.jpg" if cual == "k" else "img/loc/shady-acres.png"
+    otra = (SAL_M, CAB[lang]["otra_k"]) if cual == "k" else (SAL_K, CAB[lang]["otra_m"])
+    h = [paginas.arte_ficha(arte, pre),
+         f'<p class="eyebrow">{c["eb"]}</p>', f'<h1>{c["h1"]}</h1>',
+         f'<p class="dek">{c["dek"]}</p>',
+         f'<p><a href="{otra[0]}" style="font-weight:700;color:var(--blood)">📖 {otra[1]} →</a> · '
+         f'<a href="{paginas.slug(KILLER if cual == "k" else CAJA)}.html">{t["ficha"]} →</a></p>',
+         f'<p class="gu-ley">{t["leyenda"]}</p></header>', css]
+    if cual == "k":
+        h += [f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"][:1])}</div>',
+              f'<h2>{t["s_killer"]}</h2>{_lista(t["killer"])}']
+    else:
+        h += [f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"][1:])}</div>',
          f'<h2>{t["s_prep"]}</h2>{_lista(t["prep"])}',
          f'<h2>{t["s_reglas"]}</h2>',
          f'<h3>{t["h_children"]}</h3>{_lista(t["children"])}',
@@ -218,10 +256,10 @@ def pagina(lang):
          f'<h2>{t["s_obj"]}</h2><div class="gu-obj">' +
          "".join(f'<div class="gu-it"><img src="{pre}{DIR}{s}.jpg" alt="{n}" loading="lazy"><div><b class="n">{n}</b><p>{d}</p></div></div>'
                  for s, n, d in t["obj"]) + f'</div><p class="sub">{t["obj_falta"]}</p>',
-         f'<h2>{t["s_ev"]}</h2><dl class="gu-ev">' + "".join(f'<dt>{n}</dt><dd>{d}</dd>' for n, d in t["ev"]) + '</dl>',
-         f'<p class="sub">{t["nota"]}</p>',
+         f'<h2>{t["s_ev"]}</h2><dl class="gu-ev">' + "".join(f'<dt>{n}</dt><dd>{d}</dd>' for n, d in t["ev"]) + '</dl>']
+    h += [f'<p class="sub">{t["nota"]}</p>',
          # Tocar una carta la abre en grande.
          '<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
          'var i=e.target.closest(".gu-grid img,.gu-it img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
          'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>']
-    return t["title"], t["desc"], "\n".join(h)
+    return c["title"], c["desc"], "\n".join(h)
