@@ -190,11 +190,11 @@ def pagina(lang):
     import paginas
     css = """<style>
 .gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:12px 0 6px}
-.gu-grid figure{margin:0}.gu-grid img{width:100%;display:block;border:1px solid #3a2a2c;box-shadow:0 6px 16px rgba(0,0,0,.5)}
+.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
 .gu-grid figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
 .gu-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:12px 0}
 .gu-it{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px}
-.gu-it img{width:92px;flex:none;border:1px solid #3a2a2c}.gu-it b.n{display:block;font-size:15px;margin-bottom:4px}
+.gu-it img{width:104px;flex:none;margin:2px 4px 4px 2px}.gu-it b.n{display:block;font-size:15px;margin-bottom:4px}
 .gu-it p{margin:0;font-size:14px}.gu-ev{margin:10px 0}.gu-ev dt{font-weight:700;margin-top:10px}.gu-ev dd{margin:2px 0 0}
 .gu-err{border-left:3px solid var(--blood);padding:4px 0 4px 14px;margin:10px 0}
 .gu-ley{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
@@ -219,5 +219,9 @@ def pagina(lang):
          "".join(f'<div class="gu-it"><img src="{pre}{DIR}{s}.jpg" alt="{n}" loading="lazy"><div><b class="n">{n}</b><p>{d}</p></div></div>'
                  for s, n, d in t["obj"]) + f'</div><p class="sub">{t["obj_falta"]}</p>',
          f'<h2>{t["s_ev"]}</h2><dl class="gu-ev">' + "".join(f'<dt>{n}</dt><dd>{d}</dd>' for n, d in t["ev"]) + '</dl>',
-         f'<p class="sub">{t["nota"]}</p>']
+         f'<p class="sub">{t["nota"]}</p>',
+         # Tocar una carta la abre en grande.
+         '<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
+         'var i=e.target.closest(".gu-grid img,.gu-it img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
+         'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>']
     return t["title"], t["desc"], "\n".join(h)
