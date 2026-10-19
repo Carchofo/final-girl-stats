@@ -2050,6 +2050,8 @@ var D = {"meta": {"total": 14475, "wr": 0.6528, "perDay": 8.37, "last": "19 oct 
 
     cont.querySelectorAll('.ficha').forEach(function (b) {
       b.addEventListener('click', function () {
+        // En la web, cada caja lleva a su ficha (en claude.ai no existen).
+        if (location.hostname.indexOf('claude.ai') === -1) { location.href = slugFG(b.dataset.f) + '.html'; return; }
         var rejilla = b.parentNode;
         var ya = b.getAttribute('aria-expanded') === 'true';
         cont.querySelectorAll('.fichadet').forEach(function (d) { d.remove(); });
