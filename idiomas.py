@@ -358,6 +358,10 @@ def pagina_caja(f, lang, tx):
     h = [P.arte_ficha(f"img/{P.slug(f['film'])}.jpg", "../"),
          f'<p class="eyebrow">{t["box_eb"].format(f=f.get("fnum", ""), g=f["plays"])}</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
+    import guia
+    if f["film"] == guia.CAJA:
+        href = guia.SALIDA if lang in guia.T else "../en/" + guia.SALIDA
+        h.append(f'<p><a class="gu-link" href="{href}" style="font-weight:700;color:var(--blood)">📖 Play guide: rules, items and events →</a></p>')
     dif = (f["wr"] - P.MEDIA) * 100
     media = pc(P.MEDIA, lang)
     ds = f"{abs(dif):.1f}" if lang == "en" else f"{abs(dif):.1f}".replace(".", ",")
@@ -483,6 +487,9 @@ def generar(M):
         pags.append(("tops.html", *tierlist.pagina(lang), None))
         import tiermaker
         pags.append(("crear-tier-list.html", *tiermaker.pagina(lang), None))
+        import guia
+        if lang in guia.T:
+            pags.append((guia.SALIDA, *guia.pagina(lang), None))
         import registrar
         if lang in registrar.TX:
             pags.append(("registrar.html", *registrar.pagina(lang, M), None))

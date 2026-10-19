@@ -663,6 +663,24 @@ url_tm = f"{DOMINIO}/crear-tier-list.html"
     + PIE, encoding="utf-8")
 print("crear-tier-list.html")
 PAGINAS += [{"salida": "crear-tier-list.html", "prioridad": "0.8"}]
+
+# --- guías por caja (texto nuestro + cartas con filtro) ------------------------
+import guia
+gu_title, gu_desc, gu_cuerpo = guia.pagina("es")
+url_gu = f"{DOMINIO}/{guia.SALIDA}"
+(AQUI / guia.SALIDA).write_text(
+    CABECERA.format(
+        title=gu_title, desc=gu_desc, url=url_gu, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle=gu_title, ogdesc=gu_desc,
+        jsonld=jsonld_de({"title": gu_title, "desc": gu_desc}, url_gu),
+        robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>')
+    + NAV.format(act_index="", act_salidas="", act_fichas=' aria-current="page"')
+    + '<div class="wrap"><header class="top">' + gu_cuerpo
+    + '<footer><p>Vuelve a <a href="fichas.html">todas las fichas</a> o a <a href="index.html">las estadísticas</a>.</p></footer></div>'
+    + PIE, encoding="utf-8")
+print(guia.SALIDA)
+PAGINAS += [{"salida": guia.SALIDA, "prioridad": "0.7"}]
 PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
 # --- borrador de registro de partidas --------------------------------------

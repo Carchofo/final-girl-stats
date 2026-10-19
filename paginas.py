@@ -327,6 +327,9 @@ def pagina_caja(f):
     h = [arte_ficha(f"img/{slug(f['film'])}.jpg"),
          f'<p class="eyebrow">Caja · {f.get("fnum","")} · {f["plays"]} partidas</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
+    import guia
+    if f["film"] == guia.CAJA:
+        h.append(f'<p><a class="gu-link" href="{guia.SALIDA}" style="font-weight:700;color:var(--blood)">📖 Guía de juego: reglas, objetos y eventos →</a></p>')
 
     dif = (f['wr'] - MEDIA) * 100
     h.append(f'<p class="dek">{f["killer"]} en {f["loc"]}. '
