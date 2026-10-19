@@ -36,10 +36,26 @@ T = {
         "s_err": "Errores frecuentes",
         "err": [
             "<b>Grimlash se mueve 1</b> en su Killer Action. Cuando una carta de Terror trae el icono de la <b>bota</b> (mover), se mueve lo que marque su movimiento en el nivel actual de 🩸, no 1.",
+            "Una curación ❤️ <b>no</b> cura y baja Harvest Madness a la vez: por cada corazón, una cosa u otra.",
+            "Al <b>bajar</b> de nivel de Harvest Madness <b>pierdes</b> la carta de ese nivel.",
             "Los <b>Children no son Minions</b>, pero sí Enemies: no resuelven las acciones de Killer o Minion de las cartas de Terror, salvo que la carta diga que las hacen ellos.",
             "<b>Si mezclas Shady Acres con otro killer</b>, los Children siguen sin ser Minions: las cartas de ese killer que hablan de Minions no les afectan.",
             "Si atacas a los Children y hay varios en el espacio, <b>los atacas a todos</b> y repartes el daño; el que sobra se pierde.",
             "Una abducción en un espacio <b>sin víctimas</b> no se pierde: cuenta como un ataque.",
+        ],
+        "s_hm": "Harvest Madness 🎃",
+        "h_reglas_hm": "Cómo funciona",
+        "hm_prep": [
+            "Separa las cartas de Harvest Madness por nivel y baraja cada grupo: <b>3 mazos</b>.",
+            "Pon el marcador en la casilla de salida del track de Harvest Madness (la del borde naranja), arriba del tablero del Killer.",
+        ],
+        "hm": [
+            "Cada vez que sale el icono 🎃, el marcador avanza <b>1 casilla a la derecha</b>.",
+            "Al llegar a un <b>nivel nuevo</b>, roba <b>2 cartas</b> del mazo de ese nivel, <b>quédate 1</b> y descarta la otra. Su efecto dura mientras sigas en ese nivel o más arriba.",
+            "<b>Si pasas del nivel 3</b> (la casilla de la calavera), <b>pierdes la partida</b> al instante.",
+            "Al resolver una curación ❤️, por cada corazón eliges: <b>recuperar vida</b> como siempre <b>o bajar 1</b> la Harvest Madness. Las dos cosas a la vez, no.",
+            "Si bajas a un nivel inferior, <b>descarta la carta del nivel que dejas</b>. Si luego vuelves a ese nivel, robas otra vez 2 y te quedas 1. Si al robar no quedan bastantes, baraja los descartes de ese nivel.",
+            "Los efectos de <b>una vez por turno</b> se usan girando la carta boca abajo; en el <b>Upkeep</b> vuelve boca arriba.",
         ],
         "s_killer": "Grimlash",
         "killer": [
@@ -115,10 +131,26 @@ T = {
         "s_err": "Common mistakes",
         "err": [
             "<b>Grimlash moves 1</b> in his Killer Action. When a Terror card shows the <b>boot</b> (move) icon, he moves whatever his movement is at the current 🩸 level, not 1.",
+            "A ❤️ heal does <b>not</b> heal and lower Harvest Madness at once: each heart does one or the other.",
+            "When Harvest Madness <b>drops</b> a level, you <b>lose</b> that level's card.",
             "The <b>Children are not Minions</b>, but they are Enemies: they don't resolve Killer or Minion actions on Terror cards unless the card says the Children do it.",
             "<b>If you mix Shady Acres with another killer</b>, the Children still aren't Minions: that killer's cards that mention Minions don't affect them.",
             "If you attack the Children and there are several in the space, <b>you attack all of them</b> and split the damage; leftover damage is lost.",
             "An abduction in a space <b>with no Victims</b> isn't wasted: it counts as an attack.",
+        ],
+        "s_hm": "Harvest Madness 🎃",
+        "h_reglas_hm": "How it works",
+        "hm_prep": [
+            "Split the Harvest Madness cards by level and shuffle each: <b>3 decks</b>.",
+            "Put the marker on the starting space of the Harvest Madness track (outlined in orange), near the top of the Killer board.",
+        ],
+        "hm": [
+            "Each time you see the 🎃 icon, move the marker <b>1 space right</b>.",
+            "When it reaches a <b>new level</b>, draw <b>2 cards</b> from that level's deck, <b>keep 1</b> and discard the other. Its effect lasts while you stay at that level or above.",
+            "<b>If you go beyond level 3</b> (the skull space), <b>you lose the game</b> immediately.",
+            "When resolving a ❤️ heal, for each heart you choose: <b>recover health</b> as normal <b>or lower</b> Harvest Madness by 1. Never both.",
+            "If you drop to a lower level, <b>discard the card for the level you left</b>. If you later return to it, draw 2 again and keep 1. If the deck runs short, reshuffle that level's discards.",
+            "<b>Once-per-turn</b> effects are used by flipping the card facedown; it flips back faceup in the <b>Upkeep</b>.",
         ],
         "s_killer": "Grimlash",
         "killer": [
@@ -224,7 +256,7 @@ def pagina(lang, cual):
     import paginas
     css = """<style>
 .gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:12px 0 6px}
-.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
+.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
 .gu-grid figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
 .gu-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:12px 0}
 .gu-it{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px}
@@ -243,10 +275,11 @@ def pagina(lang, cual):
          f'<a href="{paginas.slug(KILLER if cual == "k" else CAJA)}.html">{t["ficha"]} →</a></p>',
          f'<p class="gu-ley">{t["leyenda"]}</p></header>', css]
     if cual == "k":
-        h += [f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"][:1])}</div>',
+        h += [f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"][:3])}</div>',
+              f'<h2>{t["s_hm"]}</h2><h3>{t["s_prep"]}</h3>{_lista(t["hm_prep"])}<h3>{t["h_reglas_hm"]}</h3>{_lista(t["hm"])}',
               f'<h2>{t["s_killer"]}</h2>{_lista(t["killer"])}']
     else:
-        h += [f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"][1:])}</div>',
+        h += [f'<h2>{t["s_err"]}</h2><div class="gu-err">{_lista(t["err"][3:])}</div>',
          f'<h2>{t["s_prep"]}</h2>{_lista(t["prep"])}',
          f'<h2>{t["s_reglas"]}</h2>',
          f'<h3>{t["h_children"]}</h3>{_lista(t["children"])}',
