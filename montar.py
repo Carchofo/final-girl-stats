@@ -85,6 +85,7 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
   <button type="button" class="mas" aria-expanded="false" aria-controls="nav-mas"
           aria-label="Más secciones">+</button>
   <div class="nav-mas" id="nav-mas" hidden>
+  <a href="halloween.html">🎃 Especial Halloween</a>
   <a href="crear-tier-list.html">Crea tu tier list</a>
   <a href="registrar.html">Registrar partida</a>
   <a href="index.html#tops">Extremos</a>
@@ -663,6 +664,24 @@ url_tm = f"{DOMINIO}/crear-tier-list.html"
     + PIE, encoding="utf-8")
 print("crear-tier-list.html")
 PAGINAS += [{"salida": "crear-tier-list.html", "prioridad": "0.8"}]
+
+# --- especial Halloween ---------------------------------------------------------
+import halloween
+hw_title, hw_desc, hw_cuerpo = halloween.pagina("es")
+url_hw = f"{DOMINIO}/{halloween.SALIDA}"
+(AQUI / halloween.SALIDA).write_text(
+    CABECERA.format(
+        title=hw_title, desc=hw_desc, url=url_hw, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
+        ogtitle=hw_title, ogdesc=hw_desc,
+        jsonld=jsonld_de({"title": hw_title, "desc": hw_desc}, url_hw),
+        robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
+    ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>')
+    + NAV.format(act_index="", act_salidas="", act_fichas="")
+    + '<div class="wrap"><header class="top">' + hw_cuerpo
+    + '<footer><p>Vuelve a <a href="index.html">todas las estadísticas</a>.</p></footer></div>'
+    + PIE, encoding="utf-8")
+print(halloween.SALIDA)
+PAGINAS += [{"salida": halloween.SALIDA, "prioridad": "0.8"}]
 
 # --- guías: van dentro de la ficha de la caja (guia.secciones). Las direcciones
 # sueltas que estuvieron publicadas unas horas llevan a su sección.

@@ -491,6 +491,9 @@ def generar(M):
         pags.append(("tops.html", *tierlist.pagina(lang), None))
         import tiermaker
         pags.append(("crear-tier-list.html", *tiermaker.pagina(lang), None))
+        import halloween
+        if lang in halloween.T:
+            pags.append((halloween.SALIDA, *halloween.pagina(lang), None))
         import guia
 
         import registrar
@@ -619,6 +622,9 @@ def nav_de(lang, M):
     import registrar
     if lang not in registrar.TX:
         nav = nav.replace('href="registrar.html"', 'href="../en/registrar.html"')
+    nav = nav.replace(">🎃 Especial Halloween<", ">🎃 Halloween special<" if lang == "en" else ">🎃 Halloween<")
+    if lang != "en":
+        nav = nav.replace('href="halloween.html"', 'href="../en/halloween.html"')
     serie = {"en": "Series", "fr": "Saison", "de": "Staffel", "it": "Stagione"}[lang]
     nav = re.sub(r">Temporada (\d+)<", lambda m: f">{serie} {m.group(1)}<", nav)
     return nav
