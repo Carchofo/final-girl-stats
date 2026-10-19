@@ -75,6 +75,7 @@ GUIAS = [
                 ("sickle", "Sickle", "Arma · alcance 0 · 1 daño · 1 mano. Sin límite de usos."),
             ],
             "falta": "Faltan por fotografiar: Bag of Feed, Combine Keys, Corn Cob Pipe y Cornhusk Effigy.",
+            "falta_ev": "Faltan 2 de sus 10 eventos: It Lurks Between the Rows y The Ravens Are Circling.",
             "ev": [
                 ("Umbral Evocation", "Pon el token <b>Harvest Shadow</b> en el espacio del Killer. Cada vez que tú o una víctima entráis ahí: 🩸."),
                 ("Acres of Hatred", "Por cada 🌾 con al menos una víctima: 🩸 (máx. 2). Se descarta."),
@@ -147,6 +148,7 @@ GUIAS = [
                 ("sickle", "Sickle", "Weapon · range 0 · 1 damage · 1 hand. No use limit."),
             ],
             "falta": "Still to photograph: Bag of Feed, Combine Keys, Corn Cob Pipe and Cornhusk Effigy.",
+            "falta_ev": "Missing 2 of its 10 events: It Lurks Between the Rows and The Ravens Are Circling.",
             "ev": [
                 ("Umbral Evocation", "Put the <b>Harvest Shadow</b> token in the Killer's space. Each time you or a Victim enters it: 🩸."),
                 ("Acres of Hatred", "For each 🌾 with at least one Victim: 🩸 (max 2). Discard."),
