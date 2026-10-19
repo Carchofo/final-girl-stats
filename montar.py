@@ -198,7 +198,7 @@ def _mega():
             col("Mapas", [(n, "index.html#mapas") for n in ls]) + "</div>")
 
 _MEGA_CSS = """<style>
-  .nav-drop {{ position:static; }}
+  .nav-drop {{ position:static; display:flex; align-items:center; }}
   .nav-drop .mega {{ display:none; position:absolute; left:0; right:0; top:100%; z-index:60; padding:18px 20px;
                      grid-template-columns:2fr 2.6fr .7fr 2fr; gap:6px 24px; background:var(--surface,#151012);
                      border:1px solid var(--line); border-top:2px solid var(--blood); border-radius:0 0 4px 4px;
