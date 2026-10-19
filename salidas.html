@@ -407,14 +407,17 @@
     display: grid;
     gap: 11px;
   }
+  /* Bloque normal con la cruz a la izquierda: con grid, cada <strong> o
+     <span> del texto se iba a su propia celda y el texto se partía. */
   ul.check li {
-    display: grid;
-    grid-template-columns: 22px 1fr;
-    gap: 10px;
+    position: relative;
+    padding-left: 32px;
     font-size: 15px;
-    align-items: start;
   }
   ul.check li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
     content: "✕";
     font-family: var(--f-mono);
     font-size: 13px;
