@@ -142,10 +142,13 @@
 
 
   /* Enlaces de tienda en las fichas de caja. */
-  a.tienda { display:inline-block; border:1px solid var(--line-hi); border-radius:3px;
-             padding:8px 14px; margin:0 8px 8px 0; color:var(--ink); text-decoration:none;
-             font-size:14px; background:var(--sunk); }
-  a.tienda:hover { border-color:var(--blood); color:var(--blood); }
+  a.tienda { display:inline-block; border:0; border-radius:3px;
+             padding:11px 22px; margin:4px 8px 8px 0; color:#fff; text-decoration:none;
+             font-size:16px; font-weight:700; letter-spacing:.02em; background:var(--blood);
+             box-shadow:0 6px 18px color-mix(in srgb,var(--blood) 35%,transparent); transition:transform .15s; }
+  a.tienda::before { content:"🛒 "; }
+  a.tienda::after { content:" →"; }
+  a.tienda:hover { color:#fff; transform:translateY(-2px); filter:brightness(1.1); }
 
   * { box-sizing:border-box; }
   body { margin:0; background:var(--paper); color:var(--ink);
