@@ -235,7 +235,7 @@ def pagina_killer(nombre, k):
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{pc(k["wr"])} de victorias</span></h1>']
     import guia
     if nombre == guia.KILLER:
-        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{guia.SAL_K}" style="color:var(--blood)">Guía de {nombre}: cómo juega y errores frecuentes →</a></p>')
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{slug(guia.CAJA)}.html#{guia.ANCLA["k"]}" style="color:var(--blood)">Guía de {nombre}: cómo juega y errores frecuentes →</a></p>')
 
     intro = (f'Sobre <b>{k["g"]} partidas</b> registradas, la Final Girl gana el '
              f'{pc(k["wr"])} de las veces contra {nombre}. '
@@ -334,8 +334,7 @@ def pagina_caja(f):
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
     import guia
     if f["film"] == guia.CAJA:
-        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{guia.SAL_K}" style="color:var(--blood)">Guía de Grimlash</a> · '
-                 f'<a href="{guia.SAL_M}" style="color:var(--blood)">Guía de Shady Acres</a></p>')
+        h.append(guia.enlaces("es"))
 
     dif = (f['wr'] - MEDIA) * 100
     h.append(f'<p class="dek">{f["killer"]} en {f["loc"]}. '
@@ -403,6 +402,9 @@ def pagina_caja(f):
     h.append('<h2>Cómo empezar la partida</h2>')
     h.append('<p>Las cuatro aperturas, con cuál usar según lo que veas en el montaje, '
              'están en la <a href="salidas.html">estrategias de salida</a>.</p>')
+
+    if f["film"] == guia.CAJA:
+        h.append(guia.secciones("es"))
 
     titulo = f'{f["film"]} (Final Girl): estadísticas y consejos, {pc(f["wr"],0)} de victorias'
     desc = (f'{f["killer"]} en {f["loc"]}. Se gana el {pc(f["wr"])} sobre {f["plays"]} partidas. '

@@ -232,6 +232,7 @@ def pagina(lang, cual):
 .gu-it p{margin:0;font-size:14px}.gu-ev{margin:10px 0}.gu-ev dt{font-weight:700;margin-top:10px}.gu-ev dd{margin:2px 0 0}
 .gu-err{border-left:3px solid var(--blood);padding:4px 0 4px 14px;margin:10px 0}
 .gu-ley{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.gu-sec ul{display:block;padding-left:20px}.gu-sec li{display:list-item!important;grid-template-columns:none!important;margin:4px 0;padding:2px 0!important;border-top:0!important}.gu-sec li b,.gu-sec li i{display:inline!important}
 </style>"""
     arte = "img/art/grimlash.jpg" if cual == "k" else "img/loc/shady-acres.png"
     otra = (SAL_M, CAB[lang]["otra_k"]) if cual == "k" else (SAL_K, CAB[lang]["otra_m"])
@@ -265,3 +266,40 @@ def pagina(lang, cual):
          'var i=e.target.closest(".gu-grid img,.gu-it img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
          'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>']
     return c["title"], c["desc"], "\n".join(h)
+
+
+TIT = {"es": {"k": "Guía de Grimlash (killer)", "m": "Guía de Shady Acres (mapa)", "arriba": "↑ arriba",
+              "mix_k": "Vale con cualquier mapa.", "mix_m": "Vale con cualquier killer."},
+       "en": {"k": "Grimlash guide (killer)", "m": "Shady Acres guide (location)", "arriba": "↑ top",
+              "mix_k": "Works with any location.", "mix_m": "Works with any killer."}}
+ANCLA = {"k": "guia-killer", "m": "guia-mapa"}
+
+
+def enlaces(lang):
+    """Los dos enlaces de arriba de la ficha de la caja, que bajan a cada guía."""
+    tt = TIT[lang if lang in TIT else "en"]
+    return (f'<p class="gu-link" style="font-weight:700">📖 <a href="#{ANCLA["k"]}" style="color:var(--blood)">{tt["k"]}</a> · '
+            f'<a href="#{ANCLA["m"]}" style="color:var(--blood)">{tt["m"]}</a></p>')
+
+
+def secciones(lang):
+    """Las dos guías como secciones de la ficha de la caja (FR/DE/IT van en inglés)."""
+    lg = lang if lang in T else "en"
+    out = []
+    for cual in ("k", "m"):
+        _, _, c = pagina(lg, cual)
+        c = c.split("</header>", 1)[1]                 # sin la cabecera de página suelta
+        if cual == "m":                                 # el css y el zoom, una vez
+            c = c.split("</style>", 1)[1]
+            c = c.rsplit("<script>", 1)[0]
+        if cual == "k":                                 # su mecánica ya sale en la ficha: solo los errores
+            corte = f'<h2>{T[lg]["s_killer"]}</h2>'
+            resto = c.split(corte, 1)
+            c = resto[0] + "<script>" + resto[1].rsplit("<script>", 1)[1] if len(resto) == 2 else c
+        c = c.replace("<h3>", "<h4>").replace("</h3>", "</h4>").replace("<h2>", "<h3>").replace("</h2>", "</h3>")
+        tt = TIT[lg]
+        out.append(f'<section id="{ANCLA[cual]}" class="gu-sec" style="scroll-margin-top:20px;margin-top:40px;'
+                   f'border-top:2px solid var(--blood);padding-top:6px"><h2>📖 {tt[cual]}</h2>'
+                   f'<p class="sub">{tt["mix_" + cual]} <a href="#">{tt["arriba"]}</a></p>'
+                   + (f'<p class="gu-ley">{T[lg]["leyenda"]}</p>' if cual == "k" else '') + f'{c}</section>')
+    return "\n".join(out)

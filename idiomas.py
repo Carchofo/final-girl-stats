@@ -293,8 +293,7 @@ def pagina_killer(nombre, k, lang, tx):
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
     import guia
     if nombre == guia.KILLER:
-        b = "" if lang in guia.T else "../en/"
-        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{b}{guia.SAL_K}" style="color:var(--blood)">{nombre} guide: how he plays and common mistakes →</a></p>')
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{P.slug(guia.CAJA)}.html#{guia.ANCLA["k"]}" style="color:var(--blood)">{nombre} guide: how he plays and common mistakes →</a></p>')
     dif = (k["wr"] - P.MEDIA) * 100
     intro = t["intro"].format(g=num(k["g"], lang), k=nombre, wr=wr, media=pc(P.MEDIA, lang))
     intro += t["intro_up"] if dif > 4 else t["intro_down"] if dif < -4 else t["intro_eq"]
@@ -364,9 +363,7 @@ def pagina_caja(f, lang, tx):
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
     import guia
     if f["film"] == guia.CAJA:
-        b = "" if lang in guia.T else "../en/"
-        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{b}{guia.SAL_K}" style="color:var(--blood)">Grimlash guide</a> · '
-                 f'<a href="{b}{guia.SAL_M}" style="color:var(--blood)">Shady Acres guide</a></p>')
+        h.append(guia.enlaces(lang))
     dif = (f["wr"] - P.MEDIA) * 100
     media = pc(P.MEDIA, lang)
     ds = f"{abs(dif):.1f}" if lang == "en" else f"{abs(dif):.1f}".replace(".", ",")
@@ -411,6 +408,8 @@ def pagina_caja(f, lang, tx):
     h.append(f'<h2>{t["salir"]}</h2><p>{t["salir_c"]}</p>')
     title = t["c_title"].format(c=f["film"], wr=pc(f["wr"], lang, 0))
     desc = t["c_desc"].format(k=f["killer"], l=f["loc"], wr=wr, g=f["plays"])
+    if f["film"] == guia.CAJA:
+        h.append(guia.secciones(lang))
     return title, desc[:158], "\n".join(h)
 
 
@@ -493,9 +492,7 @@ def generar(M):
         import tiermaker
         pags.append(("crear-tier-list.html", *tiermaker.pagina(lang), None))
         import guia
-        if lang in guia.T:
-            pags.append((guia.SAL_K, *guia.pagina(lang, "k"), None))
-            pags.append((guia.SAL_M, *guia.pagina(lang, "m"), None))
+
         import registrar
         if lang in registrar.TX:
             pags.append(("registrar.html", *registrar.pagina(lang, M), None))

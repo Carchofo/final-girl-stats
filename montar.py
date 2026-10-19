@@ -664,35 +664,17 @@ url_tm = f"{DOMINIO}/crear-tier-list.html"
 print("crear-tier-list.html")
 PAGINAS += [{"salida": "crear-tier-list.html", "prioridad": "0.8"}]
 
-# --- guías de killer y de mapa (texto nuestro + cartas con filtro) ------------
+# --- guías: van dentro de la ficha de la caja (guia.secciones). Las direcciones
+# sueltas que estuvieron publicadas unas horas llevan a su sección.
 import guia
-for _cual, _sal in (("k", guia.SAL_K), ("m", guia.SAL_M)):
-    gu_title, gu_desc, gu_cuerpo = guia.pagina("es", _cual)
-    url_gu = f"{DOMINIO}/{_sal}"
-    (AQUI / _sal).write_text(
-        CABECERA.format(
-            title=gu_title, desc=gu_desc, url=url_gu, imgurl=f"{DOMINIO}/img/vhs-final-girl.jpg",
-            ogtitle=gu_title, ogdesc=gu_desc,
-            jsonld=jsonld_de({"title": gu_title, "desc": gu_desc}, url_gu),
-            robots="index,follow,max-image-preview:large" if INDEXAR else "noindex,nofollow",
-        ).replace("</head>", '<link rel="stylesheet" href="estilos.css?v=' + CSS_V + '"></head>')
-        + NAV.format(act_index="", act_salidas="", act_fichas=' aria-current="page"')
-        + '<div class="wrap"><header class="top">' + gu_cuerpo
-        + '<footer><p>Vuelve a <a href="fichas.html">todas las fichas</a> o a <a href="index.html">las estadísticas</a>.</p></footer></div>'
-        + PIE, encoding="utf-8")
-    print(_sal)
-    PAGINAS += [{"salida": _sal, "prioridad": "0.7"}]
-# La guía única antigua (guia-a-rotten-harvest.html) estuvo publicada unas horas:
-# su dirección reparte a las dos nuevas, sin indexar.
-for _pre, _txt in (("", ("Guía de Grimlash (killer)", "Guía de Shady Acres (mapa)", "La guía ahora va por separado:")),
-                   ("en/", ("Grimlash guide (killer)", "Shady Acres guide (location)", "The guide is now split in two:"))):
-    (AQUI / (_pre + "guia-a-rotten-harvest.html")).write_text(
-        '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        '<meta name="robots" content="noindex,follow"><title>A Rotten Harvest</title>'
-        f'<link rel="canonical" href="{DOMINIO}/{_pre}{guia.SAL_M}">'
-        '<style>body{background:#111;color:#ddd;font:18px system-ui;padding:40px 16px;text-align:center}a{color:#e03b48;font-weight:700;display:block;margin:12px}</style>'
-        f'</head><body><p>{_txt[2]}</p><a href="{guia.SAL_K}">{_txt[0]} →</a><a href="{guia.SAL_M}">{_txt[1]} →</a></body></html>',
-        encoding="utf-8")
+for _pre in ("", "en/"):
+    for _vieja, _ancla in (("guia-a-rotten-harvest.html", ""), (guia.SAL_K, "#" + guia.ANCLA["k"]), (guia.SAL_M, "#" + guia.ANCLA["m"])):
+        _dest = paginas.slug(guia.CAJA) + ".html" + _ancla
+        (AQUI / (_pre + _vieja)).write_text(
+            '<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,follow">'
+            f'<link rel="canonical" href="{DOMINIO}/{_pre}{paginas.slug(guia.CAJA)}.html">'
+            f'<meta http-equiv="refresh" content="0;url={_dest}"><title>A Rotten Harvest</title></head>'
+            f'<body><a href="{_dest}">A Rotten Harvest →</a></body></html>', encoding="utf-8")
 PAGINAS += [{"salida": g["salida"], "prioridad": g["prioridad"]} for g in generadas]
 
 # --- borrador de registro de partidas --------------------------------------
