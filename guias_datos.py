@@ -408,4 +408,163 @@ GUIAS = [
             "falta_ev": "Missing 6 of its 10 events: Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans and Tragic Collapse.",
         },
     },
+    # ------------------------------------------------------------------ S3 F1
+    {
+        "caja": "The Green Terror", "killer": "Volk'ar", "mapa": "Pesadilla Verde", "dir": "the-green-terror",
+        "arte_k": "img/art/volk-ar.jpg", "arte_m": "",
+        "inicios": [("high-ground", "High Ground"), ("jungle-madness", "Jungle Madness"), ("cave-dwellers", "Cave Dwellers"),
+                    ("river-rats", "River Rats"), ("rebel-yell", "Rebel Yell")],
+        "es": {
+            "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = recuperas vida · 💔 = pierdes vida · 🎭 = sube el Horror · ⊘🎭 = baja el Horror · 🎲 = dado",
+            "err_k_t": "Ojo con esto", "err_k": [],
+            "bloques_k": [
+                ("Cómo juega", [
+                    "Nos falta fotografiar la página de Volk'ar del reglamento. Hasta tenerla, aquí no ponemos reglas suyas."]),
+            ],
+            "err_m_t": "Ojo con esto", "err_m": [],
+            "bloques_m": [
+                ("Lo que sabemos por las cartas", [
+                    "Hay <b>Soldiers</b> a los que se dan órdenes, una carta <b>Soldier</b> con cubos que avanzan a la derecha, tiradas de <b>fuego amigo</b> y una mejora <b>\"No Friendly Fire\"</b> que se desbloquea y se puede volver a bloquear.",
+                    "Espacios con nombre: <b>River</b> (Lower, Central y Upper River), <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b> y <b>Clearing</b>. Rebel Camp y Supply Depot tienen su propio mazo de objetos.",
+                    "Nos falta fotografiar la página de Pesadilla Verde del reglamento para explicar cómo funciona todo esto."]),
+            ],
+            "obj": [
+                ("bowie-knife", "Bowie Knife", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas una Bowie Knife en cada mano, puedes usar las dos al atacar."),
+                ("mini-gun", "Mini-Gun", "Arma · alcance 0-1 · 2 manos · 2 usos. Al moverte, mueves 1 espacio menos (mínimo 1). No se puede llevar en la mochila. Al atacar, haces 1 ✴ más por cada ★ de tu Horror Roll final."),
+                ("first-aid-kit", "First Aid Kit", "1 mano. Cada vez que usas una carta de Acción para recuperar vida, recuperas ❤️ una más."),
+                ("walkie-talkies", "Walkie-Talkies", "1 mano. Los <b>Soldiers</b> pueden moverse 1 espacio más cuando se mueven."),
+                ("mres", "MRE's", "2 usos. Avanza todos los cubos de la carta <b>Soldier</b> 1 casilla a la derecha."),
+                ("mysterious-pills", "Mysterious Pills", "Descártala en la fase de Acción y elige: ⊘🎭 o ❤️❤️."),
+                ("cigar", "Cigar", "3 usos. Tira 1 🎲 más al resolver una carta de Acción <b>Train</b>."),
+                ("river-mud", "River Mud", "Al resolver el icono de objetivo Final Girl o Víctima/Final Girl, tira un dado: con 5-6 no puedes ser el objetivo. Al entrar en un espacio <b>River</b>, pon un marcador de Tracking en la carta. Cuando llenes las 3 casillas, descártala."),
+                ("backpack-radio", "Backpack Radio", "Descártala y gasta 3 ⌛ para: mover a <b>todos</b> los Soldiers hasta 2 espacios, <b>o</b> pedir un ataque aéreo: elige un espacio y tira un dado. 1-2: 💔 a todos en ese espacio y en cada adyacente. 3-6: 💔💔💔💔 a todos en ese espacio."),
+                ("grenade", "Grenade", "1 mano. En la mano: descártala en la fase de Acción y gasta 2 ⌛ para hacer 2 ✴ a un Enemy de un espacio adyacente. En la mochila: descártala mientras usas el <b>Compound Bow</b> para sumar 2 ✴ al ataque."),
+            ],
+            "falta": "Faltan objetos por fotografiar: al menos el Compound Bow (lo nombra la Grenade). Hay 2 Grenade.",
+            "ev": [
+                ("Supply Drop", "Coge 3 objetos al azar que no se usaron y ponlos boca arriba junto al mazo de objetos del <b>Supply Depot</b>. Al buscar ahí con éxito, puedes elegir uno de ellos en vez de robar. Se descarta cuando ya no quede ninguno de los 3."),
+                ("\"Piranhas!\"", "Tira un dado y pon el token de Piranhas: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Todos los de ese espacio: 💔. Quien entre después en ese espacio: 💔."),
+                ("\"Get to the Choppa!\"", "Si el token del <b>Huey</b> no está en el tablero, ponlo en el <b>Clearing</b>. Por cada víctima que salves con el Huey, elige: ❤️❤️, 3 ⌛, ⊘🎭 o coger una carta de Acción (máx. 2 ⌛). Se descarta cuando se retira el token del Huey."),
+                ("Heavy Rains", "Salvo que vengas de otro espacio River, entrar en un espacio <b>River</b> cuesta 2 ⌛."),
+                ("Twitchy Soldiers", "Si tienes desbloqueada la mejora \"No Friendly Fire\", bloquéala ya. Al tirar por fuego amigo, los Soldiers mueren con 1-3. Se descarta si se desbloquea \"No Friendly Fire\"."),
+                ("Rebel Raiding Party", "Tira un dado: 1-3 Ancient Ruins, 4-6 Supply Depot. Coge todos los objetos de ese espacio, barájalos boca abajo y ponlos debajo del mazo de objetos del <b>Rebel Camp</b>. Descarta."),
+                ("Cursed Temple", "Pon el token Cursed en el <b>Cursed Temple</b>. Cuando entres en el Cursed Temple: 💔💔💔 y descarta el token (y la carta)."),
+                ("Sgt. Weathers", "Ponlo en el espacio con más víctimas. Cuenta como Soldier. Cuando le das una orden, él y las víctimas que estén con él pueden moverse 1 espacio más y suman +1 al alcance de ataque. Si muere: 🎭🎭."),
+                ("Rebel Leader", "Ponlo en el <b>Rebel Camp</b>. En el Upkeep se mueve 1 espacio hacia la víctima más cercana que <b>no</b> esté en el Rebel Camp, y luego lleva 1 víctima de su espacio al Rebel Camp. Los Soldiers del Rebel Camp no pueden recibir órdenes de hacer Acciones. No te sigue."),
+                ("Archeologist", "Tira un dado y ponlo: 1-2 Ancient Ruins, 3-4 Rebel Camp, 5-6 Supply Depot. Al buscar en su espacio tiras 1 🎲 menos, salvo que pagues 3 ⌛. Se vuelve a resolver en cada Upkeep."),
+            ],
+        },
+        "en": {
+            "ley": "⌛ = Time · ✴ = damage · ❤️ = recover health · 💔 = lose health · 🎭 = raise Horror · ⊘🎭 = lower Horror · 🎲 = die",
+            "err_k_t": "Watch out", "err_k": [],
+            "bloques_k": [
+                ("How it plays", [
+                    "We still need to photograph Volk'ar's rulebook page. Until then we don't write any of his rules here."]),
+            ],
+            "err_m_t": "Watch out", "err_m": [],
+            "bloques_m": [
+                ("What the cards tell us", [
+                    "There are <b>Soldiers</b> you give orders to, a <b>Soldier</b> card with cubes that advance to the right, <b>friendly fire</b> rolls and a <b>\"No Friendly Fire\"</b> Upgrade that gets Unlocked and can be Locked again.",
+                    "Named spaces: <b>River</b> (Lower, Central and Upper River), <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b> and <b>Clearing</b>. Rebel Camp and Supply Depot have their own Item decks.",
+                    "We still need to photograph the Pesadilla Verde rulebook page to explain how all of this works."]),
+            ],
+            "obj": [
+                ("bowie-knife", "Bowie Knife", "Weapon · range 0 · 1 ✴ · 1 hand. If you have a Bowie Knife in each hand, you may use both when attacking."),
+                ("mini-gun", "Mini-Gun", "Weapon · range 0-1 · 2 hands · 2 uses. When moving, move 1 less space (minimum 1). Can't go in your backpack. When attacking, deal 1 extra ✴ for each ★ in your final Horror Roll."),
+                ("first-aid-kit", "First Aid Kit", "1 hand. Every time you use an Action card to recover health, recover ❤️ one more."),
+                ("walkie-talkies", "Walkie-Talkies", "1 hand. <b>Soldiers</b> may move 1 additional space when moving."),
+                ("mres", "MRE's", "2 uses. Advance all cubes on the <b>Soldier</b> card 1 space to the right."),
+                ("mysterious-pills", "Mysterious Pills", "Discard during the Action phase and choose: ⊘🎭 or ❤️❤️."),
+                ("cigar", "Cigar", "3 uses. Roll 1 extra 🎲 when resolving a <b>Train</b> Action card."),
+                ("river-mud", "River Mud", "When resolving the Target Final Girl or Target Victim/Final Girl icon, roll a die: on 5-6 you can't be the target. When entering a <b>River</b> space, place a Tracking marker on the card. When all 3 spaces are filled, discard it."),
+                ("backpack-radio", "Backpack Radio", "Discard and spend 3 ⌛ to either: move <b>all</b> Soldiers up to 2 spaces, <b>or</b> call in an airstrike: choose a space and roll a die. 1-2: 💔 to everyone in that space and each adjacent one. 3-6: 💔💔💔💔 to everyone in that space."),
+                ("grenade", "Grenade", "1 hand. In hand: discard during the Action phase and spend 2 ⌛ to deal 2 ✴ to an Enemy in an adjacent space. In your backpack: discard while using the <b>Compound Bow</b> to add 2 ✴ to the attack."),
+            ],
+            "falta": "Items still to photograph: at least the Compound Bow (the Grenade names it). There are 2 Grenades.",
+            "ev": [
+                ("Supply Drop", "Take 3 random unused Items and place them faceup next to the <b>Supply Depot</b> Item deck. When you search there successfully, you may take one of them instead of drawing. Discard when none of the 3 are left."),
+                ("\"Piranhas!\"", "Roll a die and place the Piranhas token: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Everyone in that space: 💔. Anyone entering it later: 💔."),
+                ("\"Get to the Choppa!\"", "If the <b>Huey</b> token isn't on the board, place it in the <b>Clearing</b>. For each Victim saved with the Huey, choose: ❤️❤️, 3 ⌛, ⊘🎭 or take an Action card (max 2 ⌛). Discard when the Huey token is removed."),
+                ("Heavy Rains", "Unless you're moving from a River space, entering a <b>River</b> space costs 2 ⌛."),
+                ("Twitchy Soldiers", "If you've Unlocked the \"No Friendly Fire\" Upgrade, Lock it now. When rolling for friendly fire, Soldiers are killed on 1-3. Discard if \"No Friendly Fire\" is Unlocked."),
+                ("Rebel Raiding Party", "Roll a die: 1-3 Ancient Ruins, 4-6 Supply Depot. Take all Items at that space, shuffle them facedown and put them at the bottom of the <b>Rebel Camp</b> Item deck. Discard."),
+                ("Cursed Temple", "Place the Cursed token at the <b>Cursed Temple</b>. When you enter the Cursed Temple: 💔💔💔, then discard the token (and the card)."),
+                ("Sgt. Weathers", "Place him in the space with the most Victims. He counts as a Soldier. When ordered, he and any Victims with him may move 1 extra space and add +1 to their attack range. Killed: 🎭🎭."),
+                ("Rebel Leader", "Place him at the <b>Rebel Camp</b>. In Upkeep he moves 1 space toward the nearest Victim who is <b>not</b> at the Rebel Camp, then moves 1 Victim from his space to the Rebel Camp. Soldiers at the Rebel Camp can't be ordered to take Actions. He won't follow you."),
+                ("Archeologist", "Roll a die and place him: 1-2 Ancient Ruins, 3-4 Rebel Camp, 5-6 Supply Depot. Roll 1 fewer 🎲 when searching in his space unless you pay 3 ⌛. Resolve again each Upkeep."),
+            ],
+        },
+    },
+    # ------------------------------------------------------------------ S3 F2
+    {
+        "caja": "A Demon in the Shadows", "killer": "Berith", "mapa": "L'Armes Abbey", "dir": "a-demon-in-the-shadows",
+        "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
+        "inicios": [],
+        "es": {
+            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · 🎲★ = el dado con estrella de las cartas (falta el reglamento para confirmar qué hace)",
+            "err_k_t": "Ojo con esto", "err_k": [],
+            "bloques_k": [
+                ("Cómo juega", [
+                    "Nos falta fotografiar la página de Berith del reglamento. Hasta tenerla, aquí no ponemos reglas suyas."]),
+            ],
+            "err_m_t": "Ojo con esto", "err_m": [],
+            "bloques_m": [
+                ("Lo que sabemos por las cartas", [
+                    "Hay cartas de Acción propias, <b>Benediction</b> y <b>Expel Demon</b>, y cartas de <b>Reacción</b>. Varias reliquias de santos dan 🎲★ al resolverlas.",
+                    "En la abadía hay un <b>Donkey</b> (la Padlock Key lo saca del claustro).",
+                    "Nos falta fotografiar la página de L'Armes Abbey del reglamento, sus eventos y sus inicios."]),
+            ],
+            "obj": [
+                ("rosary", "Rosary", "2 usos. Gasta 2 ⌛ en la fase del Killer para ignorar un 🎭."),
+                ("aspergillum", "Aspergillum", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas <b>Holy Water</b> en la otra mano, puedes gastar uno de sus usos para hacer 1 ✴ más."),
+                ("thurible", "Thurible", "Arma · alcance 0-1 · 1 ✴ · 1 mano. Si lo usas a alcance 1, descártalo."),
+                ("crucifix", "Crucifix", "1 mano. Descártalo para ignorar una subida de nivel de Horror <b>o</b> para parar el movimiento de un Enemy cuando está en un espacio adyacente."),
+                ("st-peters-sword", "St. Peter's Sword", "Arma · alcance 0 · 2 ✴ · 2 manos. 🎲★ al resolver cartas de Acción que hacen ataques. La espada no se puede usar para modificar cartas de Reacción."),
+                ("st-longinus-spear", "St. Longinus' Spear", "Arma · alcance 0 · 1 ✴ · 1 mano. 🎲★ al resolver cartas de Acción que hacen ataques. Si dañas a un Enemy con la lanza, puedes moverlo 1 espacio."),
+                ("st-lucys-eyes", "St. Lucy's Eyes", "🎲★ al resolver cartas de Acción que te dejan coger objetos. Roba y quédate 1 objeto más."),
+                ("st-pauls-chains", "St. Paul's Chains", "Arma · alcance 0 · 1 ✴ · 2 manos. 🎲★ al resolver cartas de Acción que hacen ataques. Al dañar a un Enemy puedes descartarla para poner el token de Cadena en su espacio: la próxima vez que ese Enemy resuelva un 🔪, lo ignora y se descarta el token."),
+                ("holy-bible", "Holy Bible", "1 mano. 🎲★ al resolver las cartas de Acción <b>Benediction</b> o <b>Expel Demon</b>."),
+                ("st-constantines-shield", "St. Constantine's Shield", "1 mano · 3 usos. Ignora hasta 2 ✴."),
+                ("st-martins-cloak", "St. Martin's Cloak", "🎲★ al resolver cartas de Acción que dan movimiento."),
+                ("st-joans-armor", "St. Joan's Armor", "🎲★ al resolver cartas de Reacción."),
+                ("knife", "Knife", "Arma · alcance 0 · 1 ✴ · 1 mano."),
+                ("padlock-key", "Padlock Key", "El <b>Donkey</b> puede moverse contigo. Al moverte con él, tira un dado: 1-3 mueves 1 espacio menos (mínimo 1), 4-6 mueves 1 más. Una vez por fase de Acción, en un espacio con el Donkey y un Enemy, tira un dado: con 5-6 el Enemy recibe 2 ✴."),
+            ],
+            "falta": "Faltan objetos por fotografiar: al menos Holy Water (la nombra el Aspergillum). También faltan todos sus eventos y sus inicios.",
+            "ev": [],
+        },
+        "en": {
+            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · 🎲★ = the cards' die-with-star icon (we need the rulebook to confirm what it does)",
+            "err_k_t": "Watch out", "err_k": [],
+            "bloques_k": [
+                ("How it plays", [
+                    "We still need to photograph Berith's rulebook page. Until then we don't write any of his rules here."]),
+            ],
+            "err_m_t": "Watch out", "err_m": [],
+            "bloques_m": [
+                ("What the cards tell us", [
+                    "There are its own Action cards, <b>Benediction</b> and <b>Expel Demon</b>, and <b>Reaction</b> cards. Several saints' relics give 🎲★ when resolving them.",
+                    "The abbey has a <b>Donkey</b> (the Padlock Key gets it out of the cloister).",
+                    "We still need to photograph the L'Armes Abbey rulebook page, its events and its setups."]),
+            ],
+            "obj": [
+                ("rosary", "Rosary", "2 uses. Spend 2 ⌛ during the Killer phase to ignore a 🎭."),
+                ("aspergillum", "Aspergillum", "Weapon · range 0 · 1 ✴ · 1 hand. If you have <b>Holy Water</b> in your other hand, you may spend one of its uses to deal 1 extra ✴."),
+                ("thurible", "Thurible", "Weapon · range 0-1 · 1 ✴ · 1 hand. If used at range 1, discard it."),
+                ("crucifix", "Crucifix", "1 hand. Discard to ignore a Horror level increase <b>or</b> to end an Enemy's movement when they're in an adjacent space."),
+                ("st-peters-sword", "St. Peter's Sword", "Weapon · range 0 · 2 ✴ · 2 hands. 🎲★ when resolving Action cards that perform attacks. The Sword can't be used to modify Reaction cards."),
+                ("st-longinus-spear", "St. Longinus' Spear", "Weapon · range 0 · 1 ✴ · 1 hand. 🎲★ when resolving Action cards that perform attacks. If you damage an Enemy with the Spear, you may move them 1 space."),
+                ("st-lucys-eyes", "St. Lucy's Eyes", "🎲★ when resolving Action cards that let you take Items. Draw and keep 1 extra Item."),
+                ("st-pauls-chains", "St. Paul's Chains", "Weapon · range 0 · 1 ✴ · 2 hands. 🎲★ when resolving Action cards that perform attacks. When you damage an Enemy you may discard it to place the Chain token in their space: the next time that Enemy resolves a 🔪, ignore it and discard the token."),
+                ("holy-bible", "Holy Bible", "1 hand. 🎲★ when resolving the <b>Benediction</b> or <b>Expel Demon</b> Action cards."),
+                ("st-constantines-shield", "St. Constantine's Shield", "1 hand · 3 uses. Ignore up to 2 ✴."),
+                ("st-martins-cloak", "St. Martin's Cloak", "🎲★ when resolving Action cards that provide movement."),
+                ("st-joans-armor", "St. Joan's Armor", "🎲★ when resolving Reaction cards."),
+                ("knife", "Knife", "Weapon · range 0 · 1 ✴ · 1 hand."),
+                ("padlock-key", "Padlock Key", "The <b>Donkey</b> may move with you. When moving with it, roll a die: 1-3 move 1 less space (min 1), 4-6 move 1 extra. Once per Action phase, in a space with the Donkey and an Enemy, roll a die: on 5-6 the Enemy takes 2 ✴."),
+            ],
+            "falta": "Items still to photograph: at least Holy Water (the Aspergillum names it). All its events and setups are missing too.",
+            "ev": [],
+        },
+    },
 ]

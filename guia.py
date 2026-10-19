@@ -41,7 +41,7 @@ CSS = """<style>
 .gu-it p{margin:0;font-size:14px}.gu-ev{margin:10px 0}.gu-ev dt{font-weight:700;margin-top:10px}.gu-ev dd{margin:2px 0 0}
 .gu-err{border-left:3px solid var(--blood);padding:4px 0 4px 14px;margin:10px 0}
 .gu-ley{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
-.gu-sec ul{display:block;padding-left:20px}.gu-sec li{display:list-item!important;grid-template-columns:none!important;margin:4px 0;padding:2px 0!important;border-top:0!important}.gu-sec li b,.gu-sec li i{display:inline!important}
+.gu-sec ul{display:block;padding-left:20px}.gu-sec li{display:list-item!important;grid-template-columns:none!important;margin:4px 0;padding:2px 0!important;border-top:0!important}.gu-sec li b,.gu-sec li i{display:inline!important}.gu-sec li::before{content:none!important}
 </style>"""
 
 ZOOM = ('<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
@@ -82,8 +82,11 @@ def secciones(lang, g):
     def bloques(bs):
         return "".join(f"<h3>{t}</h3>{_lista(xs)}" for t, xs in bs)
 
-    k = (f'<h3>{d["err_k_t"]}</h3><div class="gu-err">{_lista(d["err_k"])}</div>' + bloques(d["bloques_k"]))
-    m = (f'<h3>{d["err_m_t"]}</h3><div class="gu-err">{_lista(d["err_m"])}</div>' + bloques(d["bloques_m"]))
+    def err(t, xs):
+        return f'<h3>{t}</h3><div class="gu-err">{_lista(xs)}</div>' if xs else ""
+
+    k = err(d["err_k_t"], d["err_k"]) + bloques(d["bloques_k"])
+    m = err(d["err_m_t"], d["err_m"]) + bloques(d["bloques_m"])
     if g["inicios"]:
         m += (f'<h3>{tt["inicios"]}</h3><p class="sub">{tt["inicios_sub"]}</p><div class="gu-grid">' +
               "".join(f'<figure><img src="{ruta}{s}.jpg" alt="{n}" loading="lazy"><figcaption>{n}</figcaption></figure>'
