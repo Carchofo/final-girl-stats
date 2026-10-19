@@ -292,8 +292,9 @@ def pagina_killer(nombre, k, lang, tx):
          f'<p class="eyebrow">{t["killer_eb"].format(n=len(mapas))}</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
     import guia
-    if nombre == guia.KILLER:
-        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{P.slug(guia.CAJA)}.html#{guia.ANCLA["k"]}" style="color:var(--blood)">{nombre} guide: how he plays and common mistakes →</a></p>')
+    g = guia.por_killer(nombre)
+    if g:
+        h.append(f'<p class="gu-link" style="font-weight:700">📖 <a href="{P.slug(g["caja"])}.html#{guia.ANCLA["k"]}" style="color:var(--blood)">{nombre} guide: how he plays and common mistakes →</a></p>')
     dif = (k["wr"] - P.MEDIA) * 100
     intro = t["intro"].format(g=num(k["g"], lang), k=nombre, wr=wr, media=pc(P.MEDIA, lang))
     intro += t["intro_up"] if dif > 4 else t["intro_down"] if dif < -4 else t["intro_eq"]
@@ -362,8 +363,8 @@ def pagina_caja(f, lang, tx):
          f'<p class="eyebrow">{t["box_eb"].format(f=f.get("fnum", ""), g=f["plays"])}</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
     import guia
-    if f["film"] == guia.CAJA:
-        h.append(guia.enlaces(lang))
+    if guia.por_caja(f["film"]):
+        h.append(guia.enlaces(lang, guia.por_caja(f["film"])))
     dif = (f["wr"] - P.MEDIA) * 100
     media = pc(P.MEDIA, lang)
     ds = f"{abs(dif):.1f}" if lang == "en" else f"{abs(dif):.1f}".replace(".", ",")
@@ -408,8 +409,8 @@ def pagina_caja(f, lang, tx):
     h.append(f'<h2>{t["salir"]}</h2><p>{t["salir_c"]}</p>')
     title = t["c_title"].format(c=f["film"], wr=pc(f["wr"], lang, 0))
     desc = t["c_desc"].format(k=f["killer"], l=f["loc"], wr=wr, g=f["plays"])
-    if f["film"] == guia.CAJA:
-        h.append(guia.secciones(lang))
+    if guia.por_caja(f["film"]):
+        h.append(guia.secciones(lang, guia.por_caja(f["film"])))
     return title, desc[:158], "\n".join(h)
 
 
