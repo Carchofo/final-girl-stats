@@ -37,6 +37,7 @@ T = {
         "err": [
             "<b>Grimlash se mueve 1</b> en su Killer Action. Cuando una carta de Terror trae el icono de la <b>bota</b> (mover), se mueve lo que marque su movimiento en el nivel actual de 🩸, no 1.",
             "Los <b>Children no son Minions</b>, pero sí Enemies: no resuelven las acciones de Killer o Minion de las cartas de Terror, salvo que la carta diga que las hacen ellos.",
+            "<b>Si mezclas Shady Acres con otro killer</b>, los Children siguen sin ser Minions: las cartas de ese killer que hablan de Minions no les afectan.",
             "Si atacas a los Children y hay varios en el espacio, <b>los atacas a todos</b> y repartes el daño; el que sobra se pierde.",
             "Una abducción en un espacio <b>sin víctimas</b> no se pierde: cuenta como un ataque.",
         ],
@@ -115,6 +116,7 @@ T = {
         "err": [
             "<b>Grimlash moves 1</b> in his Killer Action. When a Terror card shows the <b>boot</b> (move) icon, he moves whatever his movement is at the current 🩸 level, not 1.",
             "The <b>Children are not Minions</b>, but they are Enemies: they don't resolve Killer or Minion actions on Terror cards unless the card says the Children do it.",
+            "<b>If you mix Shady Acres with another killer</b>, the Children still aren't Minions: that killer's cards that mention Minions don't affect them.",
             "If you attack the Children and there are several in the space, <b>you attack all of them</b> and split the damage; leftover damage is lost.",
             "An abduction in a space <b>with no Victims</b> isn't wasted: it counts as an attack.",
         ],
