@@ -501,18 +501,49 @@ GUIAS = [
         "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
         "inicios": [],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · 🎲★ = el dado propio de esta caja, con más caras de éxito que el dado normal",
-            "err_k_t": "Ojo con esto", "err_k": [],
+            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · 🙏 = icono de bendición · 🎲★ = cambia 1 dado normal por el dado Bendito (más caras de éxito) · 🎲☠ = cambia 1 dado normal por el dado Maldito",
+            "err_k_t": "Ojo con esto", "err_k": ["Matar a Ursula <b>no es ganar</b>: después hay que revelar las bendiciones y que al menos una tenga vida. Sin bendiciones en la hoja no hay nada que la traiga de vuelta."],
             "bloques_k": [
-                ("Cómo juega", [
-                    "Nos falta fotografiar la página de Berith del reglamento. Hasta tenerla, aquí no ponemos reglas suyas."]),
+                ("Preparación especial", [
+                    "Pon la hoja <b>Divine Blessings</b> junto a la zona de juego y elige su cara: <b>Heavenly</b> (normal) o <b>Hellish</b> (difícil).",
+                    "Pon las cartas de Acción <b>Expel Demon</b> en el Action Tableau."]),
+                ("La posesión de Ursula", [
+                    "Berith es un demonio que ha poseído a <b>Ursula</b>, una monja. La figura del Killer, su vida, su Killer Attack y sus valores de movimiento son los de Ursula poseída.",
+                    "Cuando \"matas\" a Ursula, Berith sale de su cuerpo."]),
+                ("Bendiciones (Divine Blessings)", [
+                    "Cuando veas el icono 🙏, pon una ficha negra de <b>Final Health</b> boca abajo en el primer hueco vacío de arriba de la hoja Divine Blessings y resuelve su efecto. Lo normal es conseguirlo con la carta <b>Expel Demon</b>.",
+                    "Esas bendiciones son las que pueden devolver la vida a Ursula cuando Berith salga de su cuerpo.",
+                    "Las fichas de Final Health de la hoja no se quitan ni se miran salvo que algo lo diga.",
+                    "Las fichas de Final Health son limitadas. Si alguna sale del juego por otros efectos, o se asigna al Killer o a la Final Girl, habrá menos para la hoja."]),
+                ("Cómo se gana", [
+                    "Primero mata a Ursula poseída con las reglas normales, revelando su ficha negra de Final Health y recuperando su vida si hace falta. Al derrotarla, Berith deja su cuerpo.",
+                    "Luego revela una a una las fichas de Final Health de la hoja Divine Blessings. Si alguna tiene vida, Ursula vuelve y <b>ganas</b>. Si todas están en blanco, su alma se condena y <b>pierdes</b>.",
+                    "No hace falta llenar los 7 huecos antes de derrotarla, pero cuantas más bendiciones, más fácil que vuelva."]),
             ],
-            "err_m_t": "Ojo con esto", "err_m": [],
+            "err_m_t": "Ojo con esto", "err_m": [
+                "Si están las <b>14</b> fichas de Malice en el tablero y tienes que poner otra, <b>pierdes al momento</b>.",
+                "Nunca tiras a la vez el dado Bendito y el Maldito: si hay iconos de los dos, se usa el que tenga más; si hay los mismos de cada, se anulan."],
             "bloques_m": [
+                ("Preparación especial", [
+                    "Pon una ficha de <b>Malice</b> en el espacio inicial del Killer y en 3 espacios adyacentes a él. Si solo hay 2 adyacentes, pon la otra en el siguiente espacio más cercano que elijas. Empiezas con 4 fichas de Malice.",
+                    "Pon la ficha del <b>Donkey</b> en el espacio <b>Cloister</b>.",
+                    "Pon las cartas de Acción <b>Benediction</b> en el Action Tableau."]),
+                ("Dados Bendito y Maldito", [
+                    "La caja trae dos dados especiales: el <b>Bendito</b> (🎲★, más caras de éxito) y el <b>Maldito</b> (🎲☠). A veces sustituyen a los dados normales en las tiradas de Horror.",
+                    "Cuando veas uno de sus iconos, cambia <b>1</b> dado normal por el dado de ese icono en la tirada de Horror.",
+                    "Si en la misma tirada hay iconos de los dos pero más de uno que del otro, cambias 1 dado por el que tenga más. Si hay los mismos de cada, se anulan y no se usa ninguno.",
+                    "Si el resultado final de tu tirada de Horror muestra el icono malo del dado Maldito, pierdes vida (💔).",
+                    "Los efectos de la carta de Acción <b>Improvise</b> también valen para el 5 del dado Maldito."]),
+                ("Malice", [
+                    "Cuando veas el icono de Malice en una carta, pon una ficha de Malice en el espacio del Killer activo. Si ya tiene una, ponla en el espacio más cercano al Killer que no tenga.",
+                    "Con varios Killers activos, solo cuenta el más cercano a ti.",
+                    "Si no hay Killer en el tablero, revela una carta de inicio al azar y usa su espacio K como si fuera el del Killer.",
+                    "Las fichas de Malice llevan el símbolo del dado Maldito: si haces una tirada de Horror en un espacio con Malice, cambia 1 dado normal por el Maldito.",
+                    "Las fichas de Malice que quites (con la carta <b>Benediction</b> u otros efectos) vuelven a la reserva."]),
                 ("Lo que sabemos por las cartas", [
-                    "Hay cartas de Acción propias, <b>Benediction</b> y <b>Expel Demon</b>, y cartas de <b>Reacción</b>. Varias reliquias de santos dan 🎲★ al resolverlas.",
-                    "En la abadía hay un <b>Donkey</b> (la Padlock Key lo saca del claustro).",
-                    "Nos falta fotografiar la página de L'Armes Abbey del reglamento, sus eventos y sus inicios."]),
+                    "Las reliquias de santos dan 🎲★ al resolver ciertas cartas, o sea, cambias un dado normal por el Bendito.",
+                    "La <b>Padlock Key</b> deja que el <b>Donkey</b> se mueva contigo.",
+                    "Nos falta fotografiar sus eventos y sus inicios."]),
             ],
             "obj": [
                 ("rosary", "Rosary", "2 usos. Gasta 2 ⌛ en la fase del Killer para ignorar un 🎭."),
@@ -534,18 +565,49 @@ GUIAS = [
             "ev": [],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · 🎲★ = this box's own die, with more success faces than the regular die",
-            "err_k_t": "Watch out", "err_k": [],
+            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · 🙏 = blessing icon · 🎲★ = swap 1 normal die for the Blessed die (more success faces) · 🎲☠ = swap 1 normal die for the Cursed die",
+            "err_k_t": "Watch out", "err_k": ["Killing Ursula <b>is not a win</b>: you then reveal the blessings and need at least one to show health. With no blessings on the sheet, nothing can bring her back."],
             "bloques_k": [
-                ("How it plays", [
-                    "We still need to photograph Berith's rulebook page. Until then we don't write any of his rules here."]),
+                ("Special setup", [
+                    "Place the <b>Divine Blessings</b> sheet next to the play area and pick a side: <b>Heavenly</b> (normal) or <b>Hellish</b> (hard).",
+                    "Place the <b>Expel Demon</b> Action cards in the Action Tableau."]),
+                ("Ursula's possession", [
+                    "Berith is a demon possessing <b>Ursula</b>, a nun. The Killer meeple, health, Killer Attack and Movement Values are all possessed Ursula's.",
+                    "Once you \"kill\" Ursula, Berith leaves her body."]),
+                ("Divine Blessings", [
+                    "When you see the 🙏 icon, place a black <b>Final Health</b> token face down on the topmost empty space of the Divine Blessings sheet and resolve its effect. You'll mostly get this from the <b>Expel Demon</b> Action card.",
+                    "These blessings are what can bring Ursula back to life once Berith leaves her body.",
+                    "Final Health tokens on the sheet can't be removed or revealed unless something says so.",
+                    "Final Health tokens are limited. If some leave the game through other effects, or are assigned to the Killer or the Final Girl, fewer will be left for the sheet."]),
+                ("Winning the game", [
+                    "First kill possessed Ursula with the normal rules, revealing her black Final Health token and restoring her health if needed. Once she's defeated, Berith leaves her body.",
+                    "Then reveal each Final Health token on the Divine Blessings sheet. If any shows health, Ursula comes back and <b>you win</b>. If all are blank, her soul is damned and <b>you lose</b>.",
+                    "You don't need all 7 spaces filled before defeating her, but the more blessings, the likelier she comes back."]),
             ],
-            "err_m_t": "Watch out", "err_m": [],
+            "err_m_t": "Watch out", "err_m": [
+                "If all <b>14</b> Malice tokens are on the board and you need to place another, <b>you lose immediately</b>.",
+                "You never roll the Blessed and Cursed dice together: if both icons show up, use the one with more; if they're equal, they cancel out."],
             "bloques_m": [
+                ("Special setup", [
+                    "Place a <b>Malice</b> token in the Killer's starting space and in 3 spaces adjacent to the Killer. If there are only 2 adjacent spaces, place one in the next closest space of your choice. You start with 4 Malice tokens.",
+                    "Place the <b>Donkey</b> token in the <b>Cloister</b> space.",
+                    "Place the <b>Benediction</b> Action cards in the Action Tableau."]),
+                ("Blessed and Cursed dice", [
+                    "The box has two special dice: the <b>Blessed</b> die (🎲★, more success faces) and the <b>Cursed</b> die (🎲☠). They sometimes replace normal dice in Horror Rolls.",
+                    "When you see one of their icons, replace <b>1</b> normal die with that die when making the Horror Roll.",
+                    "If both icons are present but there are more of one kind, replace 1 die with that kind. If there's an equal number of each, they cancel out and neither die is used.",
+                    "If your final Horror Roll result shows the Cursed die's bad icon, you lose health (💔).",
+                    "The effects of the <b>Improvise</b> Action card also apply to the 5 on the Cursed die."]),
+                ("Malice", [
+                    "When you see the Malice icon on a card, place a Malice token in the Active Killer's space. If it already has one, place it in the closest space to the Killer without a token.",
+                    "With multiple Active Killers, only the one closest to you counts.",
+                    "If there's no Killer on the board, reveal a random Setup card and treat its K space as the Killer's space.",
+                    "Malice tokens carry the Cursed die symbol: when you make a Horror Roll in a space with Malice, replace 1 normal die with the Cursed die.",
+                    "Malice tokens removed (by the <b>Benediction</b> Action card or other effects) go back to the general pool."]),
                 ("What the cards tell us", [
-                    "There are its own Action cards, <b>Benediction</b> and <b>Expel Demon</b>, and <b>Reaction</b> cards. Several saints' relics give 🎲★ when resolving them.",
-                    "The abbey has a <b>Donkey</b> (the Padlock Key gets it out of the cloister).",
-                    "We still need to photograph the L'Armes Abbey rulebook page, its events and its setups."]),
+                    "The saints' relics give 🎲★ when resolving certain cards, meaning you swap a normal die for the Blessed die.",
+                    "The <b>Padlock Key</b> lets the <b>Donkey</b> move with you.",
+                    "We still need to photograph its events and setups."]),
             ],
             "obj": [
                 ("rosary", "Rosary", "2 uses. Spend 2 ⌛ during the Killer phase to ignore a 🎭."),
