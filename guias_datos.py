@@ -469,7 +469,9 @@ GUIAS = [
             "bloques_m": [
                 ("Lo que sabemos por las cartas", [
                     "Hay <b>Soldiers</b> a los que se dan órdenes, una carta <b>Soldier</b> con cubos que avanzan a la derecha, tiradas de <b>fuego amigo</b> y una mejora <b>\"No Friendly Fire\"</b> que se desbloquea y se puede volver a bloquear.",
-                    "Espacios con nombre: <b>River</b> (Lower, Central y Upper River), <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b> y <b>Clearing</b>. Rebel Camp y Supply Depot tienen su propio mazo de objetos.",
+                    "Espacios con nombre (según el tablero): <b>Lower</b>, <b>Central</b> y <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> y <b>Cave</b>.",
+                    "Los espacios 🔧 son <b>Ancient Ruins</b>, <b>Rebel Camp</b> y <b>Supply Depot</b>, y cada uno tiene su propio mazo de objetos en el lateral del tablero.",
+                    "El río tiene flechas que marcan hacia dónde corre. El <b>Wet Suit</b> deja moverse río arriba, así que sin él no se puede.",
                     "Nos falta fotografiar la página de Pesadilla Verde del reglamento para explicar cómo funciona todo esto."]),
             ],
             "obj": [
@@ -560,7 +562,9 @@ GUIAS = [
             "bloques_m": [
                 ("What the cards tell us", [
                     "There are <b>Soldiers</b> you give orders to, a <b>Soldier</b> card with cubes that advance to the right, <b>friendly fire</b> rolls and a <b>\"No Friendly Fire\"</b> Upgrade that gets Unlocked and can be Locked again.",
-                    "Named spaces: <b>River</b> (Lower, Central and Upper River), <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b> and <b>Clearing</b>. Rebel Camp and Supply Depot have their own Item decks.",
+                    "Named spaces (per the board): <b>Lower</b>, <b>Central</b> and <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> and <b>Cave</b>.",
+                    "The 🔧 spaces are <b>Ancient Ruins</b>, <b>Rebel Camp</b> and <b>Supply Depot</b>, and each has its own Item deck on the side of the board.",
+                    "The river has arrows showing which way it flows. The <b>Wet Suit</b> lets you move upriver, so without it you can't.",
                     "We still need to photograph the Pesadilla Verde rulebook page to explain how all of this works."]),
             ],
             "obj": [
