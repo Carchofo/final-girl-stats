@@ -1025,7 +1025,7 @@ GUIAS = [
         "figs_k": {5: [("fig-dark-powers", "Dark Powers")],
                    6: [("fig-terror-1", "Terror"), ("fig-terror-2", "Terror")]},
         "icos_k": {2: "ico-bendicion"},
-        "figs_m": {1: [("fig-dados", "Blessed · Cursed"), ("fig-corazon-maldito", "💔")]},
+        "figs_m": {1: [("fig-corazon-maldito", "💔")]},
         "icos_m": {2: "ico-malice"},
         "inicios": [("supper-time", "Supper Time"), ("daily-chores", "Daily Chores"), ("tourism-bus", "Tourism Bus"), ("reflection-meditation", "Reflection & Meditation"), ("sunday-mass", "Sunday Mass")],
         "es": {
