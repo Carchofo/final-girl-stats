@@ -1122,7 +1122,9 @@
      "Quand tu vois l'icône 🙏, place un jeton <b>Final Health</b> noir face cachée sur l'emplacement vide le plus haut de la feuille Divine Blessings et résous son effet. Tu l'obtiendras surtout grâce à la carte Action <b>Expel Demon</b>.",
      "Ces bénédictions sont ce qui peut ramener Ursula à la vie une fois que Berith a quitté son corps.",
      "Les jetons Final Health sur la feuille ne peuvent être ni retirés ni révélés, sauf si un effet le dit.",
-     "Les jetons Final Health sont limités. Si certains quittent la partie à cause d'autres effets, ou sont attribués au Killer ou à la Final Girl, il en restera moins pour la feuille."
+     "Les jetons Final Health sont limités. Si certains quittent la partie à cause d'autres effets, ou sont attribués au Killer ou à la Final Girl, il en restera moins pour la feuille.",
+     "La feuille a deux faces. <b>Heavenly</b> (normale), de haut en bas : Wisdom, prends une carte Action (max 3 ⌛) · Understanding, révèle la carte Terreur du dessus et remets-la dessus ou dessous · Counsel, prends l'objet du dessus de n'importe quelle pioche · Fortitude, ⊘🎭 · Knowledge, regarde 1 jeton Final Health de la feuille · Piety, récupère ❤️❤️ · Fear of the Lord, remplace le jeton noir Final Health du plateau du Killer par un blanc.",
+     "<b>Hellish</b> (difficile) : Wisdom, défausse une carte Action de ta main · Understanding, défausse la prochaine carte Terreur · Counsel, défausse un objet · Fortitude, 🎭 · Knowledge, regarde 1 jeton Final Health de la réserve · Piety, perds 💔💔 · Fear of the Lord, remplace <b>ton</b> jeton noir Final Health par un blanc."
     ]
    ],
    [
@@ -1336,7 +1338,7 @@
   "fase_t": "Phase du Killer",
   "fase": [
    "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
-   "<b>Ursula</b> (possédée par Berith) : cible toi ou la victime la plus proche ▸ se déplace ▸ attaque, autant de fois que l'indique la Finale en jeu.",
+   "<b>Ursula</b> (possédée par Berith), avec la Finale de base : cible toi ou la victime la plus proche ▸ attaque. <b>Elle ne se déplace pas</b> : la ligne n'a pas de botte. Avec les autres Finales, elle se déplace et attaque autant de fois que l'indique la carte.",
    "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]

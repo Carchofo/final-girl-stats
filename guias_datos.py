@@ -1020,9 +1020,9 @@ GUIAS = [
     },
     # ------------------------------------------------------------------ S3 F2
     {
-        "caja": "A Demon in the Shadows", "killer": "Berith", "mapa": "L'Armes Abbey", "dir": "a-demon-in-the-shadows",
+        "caja": "A Demon in the Shadows", "fase_fig": "fig-finale-basico", "killer": "Berith", "mapa": "L'Armes Abbey", "dir": "a-demon-in-the-shadows",
         "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
-        "figs_k": {5: [("fig-dark-powers", "Dark Powers")],
+        "figs_k": {2: [("fig-blessings-heavenly", "Heavenly"), ("fig-blessings-hellish", "Hellish")], 5: [("fig-dark-powers", "Dark Powers")],
                    6: [("fig-terror-1", "Terror"), ("fig-terror-2", "Terror")]},
         "icos_k": {2: "ico-bendicion"},
         "figs_m": {1: [("fig-corazon-maldito", "💔")]},
@@ -1042,7 +1042,9 @@ GUIAS = [
                     "Cuando veas el icono 🙏, pon una ficha negra de <b>Final Health</b> boca abajo en el primer hueco vacío de arriba de la hoja Divine Blessings y resuelve su efecto. Lo normal es conseguirlo con la carta <b>Expel Demon</b>.",
                     "Esas bendiciones son las que pueden devolver la vida a Ursula cuando Berith salga de su cuerpo.",
                     "Las fichas de Final Health de la hoja no se quitan ni se miran salvo que algo lo diga.",
-                    "Las fichas de Final Health son limitadas. Si alguna sale del juego por otros efectos, o se asigna al Killer o a la Final Girl, habrá menos para la hoja."]),
+                    "Las fichas de Final Health son limitadas. Si alguna sale del juego por otros efectos, o se asigna al Killer o a la Final Girl, habrá menos para la hoja.",
+                    "La hoja tiene dos caras. <b>Heavenly</b> (normal), de arriba abajo: Wisdom, coge una carta de Acción (máx. 3 ⌛) · Understanding, mira la carta de Terror de arriba y déjala arriba o abajo · Counsel, coge el objeto de arriba de cualquier mazo · Fortitude, ⊘🎭 · Knowledge, mira 1 ficha de Final Health de la hoja · Piety, recuperas ❤️❤️ · Fear of the Lord, cambia la ficha negra de Final Health del tablero del Killer por una blanca.",
+                    "<b>Hellish</b> (difícil): Wisdom, descarta una carta de Acción de tu mano · Understanding, descarta la siguiente carta de Terror · Counsel, descarta un objeto · Fortitude, 🎭 · Knowledge, mira 1 ficha de Final Health de la reserva general · Piety, pierdes 💔💔 · Fear of the Lord, cambia <b>tu</b> ficha negra de Final Health por una blanca."]),
                 ("Cómo se gana", [
                     "Primero mata a Ursula poseída con las reglas normales, revelando su ficha negra de Final Health y recuperando su vida si hace falta. Al derrotarla, Berith deja su cuerpo.",
                     "Luego revela una a una las fichas de Final Health de la hoja Divine Blessings. Si alguna tiene vida, Ursula vuelve y <b>ganas</b>. Si todas están en blanco, su alma se condena y <b>pierdes</b>.",
@@ -1138,7 +1140,9 @@ GUIAS = [
                     "When you see the 🙏 icon, place a black <b>Final Health</b> token face down on the topmost empty space of the Divine Blessings sheet and resolve its effect. You'll mostly get this from the <b>Expel Demon</b> Action card.",
                     "These blessings are what can bring Ursula back to life once Berith leaves her body.",
                     "Final Health tokens on the sheet can't be removed or revealed unless something says so.",
-                    "Final Health tokens are limited. If some leave the game through other effects, or are assigned to the Killer or the Final Girl, fewer will be left for the sheet."]),
+                    "Final Health tokens are limited. If some leave the game through other effects, or are assigned to the Killer or the Final Girl, fewer will be left for the sheet.",
+                    "The sheet has two sides. <b>Heavenly</b> (normal), top to bottom: Wisdom, take an Action card (max 3 ⌛) · Understanding, reveal the top Terror card and put it back on top or bottom · Counsel, take any top Item card · Fortitude, ⊘🎭 · Knowledge, peek at 1 Final Health token on this sheet · Piety, recover ❤️❤️ · Fear of the Lord, replace the black Final Health token on the Killer board with a white one.",
+                    "<b>Hellish</b> (hard): Wisdom, discard an Action card from your hand · Understanding, discard the next Terror card · Counsel, discard an Item card · Fortitude, 🎭 · Knowledge, peek at 1 Final Health token in the general pool · Piety, lose 💔💔 · Fear of the Lord, replace <b>your</b> black Final Health token with a white one."]),
                 ("Winning the game", [
                     "First kill possessed Ursula with the normal rules, revealing her black Final Health token and restoring her health if needed. Once she's defeated, Berith leaves her body.",
                     "Then reveal each Final Health token on the Divine Blessings sheet. If any shows health, Ursula comes back and <b>you win</b>. If all are blank, her soul is damned and <b>you lose</b>.",
@@ -1707,7 +1711,7 @@ _FASE = {
    "fase_t": "Fase del Killer",
    "fase": [
     "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
-    "<b>Ursula</b> (poseída por Berith): va a por ti o a la víctima más cercana ▸ se mueve ▸ ataca, las veces que marque la Finale en juego.",
+    "<b>Ursula</b> (poseída por Berith), con la Finale básica: va a por ti o a la víctima más cercana ▸ ataca. <b>No se mueve</b>: la fila no tiene bota. Con las otras Finales sí se mueve y ataca las veces que marque la carta.",
     "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
@@ -1716,7 +1720,7 @@ _FASE = {
    "fase_t": "Killer phase",
    "fase": [
     "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
-    "<b>Ursula</b> (possessed by Berith): targets you or the closest Victim ▸ moves ▸ attacks, as many times as the Finale in play shows.",
+    "<b>Ursula</b> (possessed by Berith), on the base Finale: targets you or the closest Victim ▸ attacks. <b>She doesn't move</b>: the row has no boot. With the other Finales she moves and attacks as many times as the card says.",
     "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]

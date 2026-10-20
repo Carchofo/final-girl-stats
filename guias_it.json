@@ -1122,7 +1122,9 @@
      "Quando vedi l'icona 🙏, metti un segnalino <b>Final Health</b> nero a faccia in giù nel primo spazio libero più in alto del foglio Divine Blessings e risolvi il suo effetto. Lo otterrai soprattutto dalla carta Azione <b>Expel Demon</b>.",
      "Sono queste benedizioni che possono riportare in vita Ursula quando Berith lascia il suo corpo.",
      "I segnalini Final Health sul foglio non si possono rimuovere né rivelare, a meno che qualcosa non lo dica.",
-     "I segnalini Final Health sono limitati. Se alcuni escono dal gioco per altri effetti, o vengono assegnati al Killer o alla Final Girl, ne resteranno meno per il foglio."
+     "I segnalini Final Health sono limitati. Se alcuni escono dal gioco per altri effetti, o vengono assegnati al Killer o alla Final Girl, ne resteranno meno per il foglio.",
+     "Il foglio ha due lati. <b>Heavenly</b> (normale), dall'alto in basso: Wisdom, prendi una carta Azione (max 3 ⌛) · Understanding, rivela la carta Terrore in cima e rimettila in cima o in fondo · Counsel, prendi l'oggetto in cima a qualsiasi mazzo · Fortitude, ⊘🎭 · Knowledge, guarda 1 segnalino Final Health sul foglio · Piety, recuperi ❤️❤️ · Fear of the Lord, sostituisci il segnalino nero Final Health sul tabellone del Killer con uno bianco.",
+     "<b>Hellish</b> (difficile): Wisdom, scarta una carta Azione dalla mano · Understanding, scarta la prossima carta Terrore · Counsel, scarta un oggetto · Fortitude, 🎭 · Knowledge, guarda 1 segnalino Final Health della riserva · Piety, perdi 💔💔 · Fear of the Lord, sostituisci <b>il tuo</b> segnalino nero Final Health con uno bianco."
     ]
    ],
    [
@@ -1336,7 +1338,7 @@
   "fase_t": "Fase del Killer",
   "fase": [
    "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
-   "<b>Ursula</b> (posseduta da Berith): punta te o la vittima più vicina ▸ si muove ▸ attacca, tante volte quante indica la Finale in gioco.",
+   "<b>Ursula</b> (posseduta da Berith), con la Finale base: punta te o la vittima più vicina ▸ attacca. <b>Non si muove</b>: la riga non ha lo stivale. Con le altre Finali si muove e attacca quante volte dice la carta.",
    "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]

@@ -1122,7 +1122,9 @@
      "Siehst du das 🙏-Symbol, lege einen schwarzen <b>Final Health</b>-Marker verdeckt auf das oberste leere Feld des Divine-Blessings-Bogens und handle seinen Effekt ab. Meist bekommst du das über die <b>Expel Demon</b>-Aktionskarte.",
      "Diese Segen können Ursula wieder zum Leben erwecken, sobald Berith ihren Körper verlässt.",
      "Final-Health-Marker auf dem Bogen dürfen nicht entfernt oder aufgedeckt werden, außer etwas sagt es.",
-     "Final-Health-Marker sind begrenzt. Verlassen einige durch andere Effekte das Spiel oder werden dem Killer oder dem Final Girl zugeteilt, bleiben weniger für den Bogen."
+     "Final-Health-Marker sind begrenzt. Verlassen einige durch andere Effekte das Spiel oder werden dem Killer oder dem Final Girl zugeteilt, bleiben weniger für den Bogen.",
+     "Das Blatt hat zwei Seiten. <b>Heavenly</b> (normal), von oben nach unten: Wisdom, nimm eine Aktionskarte (max. 3 ⌛) · Understanding, deck die oberste Terrorkarte auf und leg sie oben oder unten zurück · Counsel, nimm die oberste Gegenstandskarte eines beliebigen Stapels · Fortitude, ⊘🎭 · Knowledge, schau 1 Final-Health-Marker auf diesem Blatt an · Piety, heile ❤️❤️ · Fear of the Lord, ersetze den schwarzen Final-Health-Marker auf dem Killer-Tableau durch einen weißen.",
+     "<b>Hellish</b> (schwer): Wisdom, wirf eine Aktionskarte aus deiner Hand ab · Understanding, wirf die nächste Terrorkarte ab · Counsel, wirf einen Gegenstand ab · Fortitude, 🎭 · Knowledge, schau 1 Final-Health-Marker im allgemeinen Vorrat an · Piety, verliere 💔💔 · Fear of the Lord, ersetze <b>deinen</b> schwarzen Final-Health-Marker durch einen weißen."
     ]
    ],
    [
@@ -1336,7 +1338,7 @@
   "fase_t": "Killer-Phase",
   "fase": [
    "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
-   "<b>Ursula</b> (von Berith besessen): zielt auf dich oder das nächste Opfer ▸ bewegt sich ▸ greift an, so oft die Finale im Spiel zeigt.",
+   "<b>Ursula</b> (von Berith besessen), mit der Basis-Finale: zielt auf dich oder das nächste Opfer ▸ greift an. <b>Sie bewegt sich nicht</b>: die Zeile hat keinen Stiefel. Mit den anderen Finales bewegt sie sich und greift so oft an, wie die Karte sagt.",
    "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
