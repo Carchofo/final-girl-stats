@@ -1884,7 +1884,7 @@
   "fase_t": "Fase del Killer",
   "fase": [
    "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
-   "Riga della Finale in gioco: <b>solo il Killer Attivo</b> (quello con il segnalino) si muove (stivale) e attacca (coltello); gli altri due non si muovono. Se la carta dice «tutti i Killer», l'effetto lo fa ognuno, dall'alto in basso della plancia Killer, e il segnalino resta dov'è.",
+   "<b>Finale base: «Tutti gli Assassini»</b> ▸ ognuno dei tre punta te o la vittima più vicina ▸ attacca. <b>Nessuno si muove</b>: la riga non ha lo stivale. Si risolve dall'alto in basso del tabellone del Killer; il segnalino dell'Assassino Attivo non cambia. Con le altre Finali guarda la loro riga: ciò che non dice «tutti gli Assassini» lo fa <b>solo l'Assassino Attivo</b> (muoversi con lo stivale, essere piazzato).",
    "Se la riga ha 🔺 o 🔻, il segnalino passa al Killer successivo e il resto lo fa il nuovo Killer Attivo.",
    "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."

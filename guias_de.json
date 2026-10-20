@@ -1884,7 +1884,7 @@
   "fase_t": "Killer-Phase",
   "fase": [
    "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
-   "Zeile der Finale im Spiel: <b>nur der aktive Killer</b> (der mit dem Marker) bewegt sich (Stiefel) und greift an (Messer); die anderen zwei bewegen sich nicht. Sagt die Karte „alle Killer“, führt jeder den Effekt aus, von oben nach unten auf dem Killer-Tableau, und der Marker bleibt.",
+   "<b>Basis-Finale: «Alle Killer»</b> ▸ jeder der drei zielt auf dich oder das nächste Opfer ▸ greift an. <b>Keiner bewegt sich</b>: die Zeile hat keinen Stiefel. Von oben nach unten auf dem Killer-Tableau abhandeln; der Marker des Aktiven Killers bleibt. Bei den anderen Finales auf ihre Zeile schauen: alles ohne «alle Killer» macht <b>nur der Aktive Killer</b> (Bewegung mit dem Stiefel, Platzieren).",
    "Hat die Zeile 🔺 oder 🔻, wandert der Marker zum nächsten Killer, und der neue aktive Killer macht den Rest.",
    "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."

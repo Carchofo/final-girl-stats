@@ -1884,7 +1884,7 @@
   "fase_t": "Phase du Killer",
   "fase": [
    "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
-   "Ligne de la Finale en jeu : <b>seul le Killer Actif</b> (celui qui a le jeton) se déplace (botte) et attaque (couteau) ; les deux autres ne bougent pas. Si la carte dit « tous les Killers », chacun applique l'effet, de haut en bas du plateau Killer, et le jeton ne bouge pas.",
+   "<b>Finale de base : «Tous les Tueurs»</b> ▸ chacun des trois cible toi ou la victime la plus proche ▸ attaque. <b>Aucun ne se déplace</b> : la ligne n'a pas de botte. On résout de haut en bas du plateau du Killer ; le jeton de Tueur Actif ne change pas. Avec les autres Finales, regarde leur ligne : ce qui n'indique pas «tous les Tueurs» est fait <b>seulement par le Tueur Actif</b> (se déplacer avec la botte, être placé).",
    "Si la ligne a 🔺 ou 🔻, le jeton passe au Killer suivant et c'est le nouveau Killer Actif qui fait la suite.",
    "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."

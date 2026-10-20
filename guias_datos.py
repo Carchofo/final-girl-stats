@@ -1323,7 +1323,7 @@ GUIAS = [
 
     # ------------------------------------------------------------------ S2 F3
     {
-        "caja": "A Knock at the Door", "killer": "The Intruders", "mapa": "Wingard Cottage", "dir": "a-knock-at-the-door",
+        "caja": "A Knock at the Door", "fase_fig": "fig-finale-basico", "killer": "The Intruders", "mapa": "Wingard Cottage", "dir": "a-knock-at-the-door",
         "arte_k": "img/art/the-intruders.jpg", "arte_m": "img/loc/wingard-cottage.png",
         "figs_k": {2: [("ejemplo-asesino-activo", {
                        "es": "Ejemplo del reglamento: Ginny dispara a Trish con la Sawed-Off Shotgun y le hace 3 ✴; Trish pasa a ser la Activa y le queda 1 de vida. En la fase del Killer, Trish ataca y Ginny la remata con un Counterattack: se tumba la figura de Trish (sin mirar aún su ficha de Vida Final) y la ficha de Asesino Activo pasa al Asesino vivo más arriba, Baghead. Sale \"They're everywhere!\": la 1.ª acción la hace Baghead; la 2.ª empieza con 🔺 y, como Trish está tumbada, la ficha da la vuelta hasta Zeke; la 3.ª, otra vez 🔺, vuelve a Baghead. Al acabar la fase se revela la ficha de Vida Final de Trish: estaba en blanco, así que Trish sale del tablero. Si hubiera tenido vida, se habría levantado.",
@@ -1749,7 +1749,7 @@ _FASE = {
    "fase_t": "Fase del Killer",
    "fase": [
     "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
-    "Fila de la Finale en juego: <b>solo el Asesino Activo</b> (el de la ficha) se mueve (bota) y ataca (cuchillo); los otros dos no se mueven. Si la carta dice «todos los Asesinos», el efecto lo hace cada uno, de arriba abajo del tablero del Killer, y la ficha no se mueve.",
+    "<b>Finale básica: «Todos los Asesinos»</b> ▸ cada uno de los tres va a por ti o a la víctima más cercana ▸ ataca. <b>No se mueve ninguno</b>: la fila no tiene bota. Se resuelve de arriba abajo del tablero del Killer y la ficha de Asesino Activo no cambia. Con las otras Finales, mira su fila: lo que no diga «todos los Asesinos» lo hace <b>solo el Asesino Activo</b> (moverse con la bota, colocarse).",
     "Si la fila trae 🔺 o 🔻, la ficha pasa al siguiente Asesino y lo que siga lo hace el nuevo Activo.",
     "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
@@ -1759,7 +1759,7 @@ _FASE = {
    "fase_t": "Killer phase",
    "fase": [
     "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
-    "Row of the Finale in play: <b>only the Active Killer</b> (the one with the token) moves (boot) and attacks (knife); the other two don't move. If the card says «all Killers», each one does the effect, top to bottom of the Killer board, and the token stays put.",
+    "<b>Base Finale: «All Killers»</b> ▸ each of the three targets you or the closest Victim ▸ attacks. <b>None of them moves</b>: the row has no boot. Resolve top to bottom of the Killer board; the Active Killer token doesn't change. With the other Finales, check their row: anything not marked «all Killers» is done <b>only by the Active Killer</b> (moving with the boot, being placed).",
     "If the row has 🔺 or 🔻, the token moves to the next Killer and the new Active Killer does what follows.",
     "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
