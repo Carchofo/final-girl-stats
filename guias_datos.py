@@ -420,8 +420,8 @@ GUIAS = [
             "bloques_k": [
                 ("Cómo juega", [
                     "Nos falta fotografiar la página de Volk'ar del reglamento. Hasta tenerla, aquí no ponemos reglas suyas."]),
-                ("Sus 8 cartas de Movimiento (tal cual)", [
-                    "Sin la página del reglamento no sabemos qué significan del todo los números de los círculos ni los iconos de la franja roja. Las copiamos tal cual:",
+                ("Sus cartas de Movimiento (tal cual)", [
+                    "El mazo trae más cartas, pero repetidas: estas son las 8 distintas. Sin la página del reglamento no sabemos qué significan del todo los números de los círculos ni los iconos de la franja roja. Las copiamos tal cual:",
                     "Mueve 1 espacio en un ① · 🎯 Final Girl o víctima ▸ 🔪 · franja: 🎭🎭",
                     "Mueve 1 espacio en un ① · franja: 2 ⌛",
                     "Mueve 1 espacio en un ② · 🎯 Final Girl o víctima ▸ 🔪 · franja: 3 ⌛",
@@ -470,8 +470,8 @@ GUIAS = [
             "bloques_k": [
                 ("How it plays", [
                     "We still need to photograph Volk'ar's rulebook page. Until then we don't write any of his rules here."]),
-                ("His 8 Movement cards (as printed)", [
-                    "Without the rulebook page we don't fully know what the circled numbers or the icons on the red band mean. Copied as printed:",
+                ("His Movement cards (as printed)", [
+                    "The deck has more cards, but they are repeats: these are the 8 different ones. Without the rulebook page we don't fully know what the circled numbers or the icons on the red band mean. Copied as printed:",
                     "Move 1 space on a ① · 🎯 Final Girl or Victim ▸ 🔪 · band: 🎭🎭",
                     "Move 1 space on a ① · band: 2 ⌛",
                     "Move 1 space on a ② · 🎯 Final Girl or Victim ▸ 🔪 · band: 3 ⌛",
