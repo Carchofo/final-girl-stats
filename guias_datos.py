@@ -12,6 +12,17 @@ GUIAS = [
     {
         "caja": "A Rotten Harvest", "killer": "Grimlash", "mapa": "Shady Acres", "dir": "a-rotten-harvest",
         "arte_k": "img/art/grimlash.jpg", "arte_m": "img/loc/shady-acres.png",
+        "figs_k": {0: [("fig-madness-track", "Harvest Madness")],
+                   1: [("fig-madness-carta", "Harvest Madness"), ("fig-madness-calavera", "Level 3 ▸ 💀")],
+                   2: [("fig-finale-basico", "Finale")],
+                   3: [("fig-dark-powers", "Dark Powers")],
+                   4: [("fig-terror", "Terror")]},
+        "icos_k": {0: "ico-madness", 1: "ico-madness"},
+        "figs_m": {0: [("fig-children-setup", "Children Action")],
+                   1: [("fig-children-card", "Children")],
+                   2: [("fig-ancient-curse-1", "Ancient Curse")],
+                   3: [("fig-ancient-curse-3", "Ancient Curse ▸ Dark Fields")]},
+        "icos_m": {2: "ico-abduccion", 4: "ico-field"},
         "inicios": [("reap-what-you-sow", "Reap What You Sow"), ("final-crop", "Final Crop"), ("dusk-sacrifice", "Dusk Sacrifice"),
                     ("harvest-season", "Harvest Season"), ("demands-of-the-earth", "Demands of the Earth")],
         "es": {
