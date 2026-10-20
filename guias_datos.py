@@ -198,6 +198,29 @@ GUIAS = [
                     "Si no quedan meeples suficientes, el Raptor más cercano a la Pack se une a ella y usas su meeple; repite hasta completar la carta.",
                     "Si no quedan cartas de Spawn, baraja el descarte y roba.",
                     "El último efecto del track de 🩸 también saca un Raptor, como una carta de Spawn de 1."]),
+                ("La tabla de aparición (carta de Raptors)", [
+                    "Tira un dado para saber dónde aparecen: <b>1</b> tu espacio · <b>2</b> el espacio verde (salida) más cercano a la Pack · <b>3</b> el 🔧 más cercano a la Pack · <b>4</b> el espacio verde más lejano de la Pack · <b>5</b> el 🔧 más lejano de la Pack · <b>6</b> el espacio más lejano a ti.",
+                    "Cada Raptor suelto: 1 ❤️, ataque de 1 ✴ y movimiento igual al de la Pack. No se mueven si empiezan contigo o con una víctima, y se paran al entrar en un espacio contigo o con una víctima."]),
+                ("Cómo leer sus cartas", [
+                    "La silueta roja de varios Raptors = el icono de la Pack: los Raptors sueltos van hacia ella para unirse. Las figuras amarillas = a por ti o a por la víctima más cercana. La bota = se mueve. El cuchillo = ataca (uno por cada cuchillo). La señal de stop con figuras = se para al llegar a ti o a una víctima. El huevo roto = aparición de Raptors.",
+                    "\"Pack only\" solo lo hace la Pack; \"Raptors only\", solo los sueltos."]),
+                ("Finales", [
+                    "Todos tienen dos filas: arriba los Raptors sueltos van hacia la Pack y se paran si llegan a ti o a una víctima; abajo la Pack va a por ti o a la víctima más cercana, se mueve y ataca.",
+                    "<b>Claws Like Knives</b>: la Pack ataca 1 vez. El primer daño de cada ataque es del icono de corazón tachado.",
+                    "<b>Born Hungry</b>: la Pack ataca 2 veces. Al revelarlo, roba una carta de Spawn pero saca los Raptors en <b>tu</b> espacio.",
+                    "<b>Raptor Rush</b>: la Pack ataca 3 veces. Al revelarlo, todos los Raptors del tablero se unen a la Pack.",
+                    "<b>Deadly Quick</b> (Epic Finale): la Pack ataca 2 veces. Al revelarlo, pon la Pack en tu espacio y pierdes 4 ⌛."]),
+                ("Poderes oscuros", [
+                    "<b>Pack Conditioning</b>: cada vez que un Raptor está adyacente a la Pack, se une a ella.",
+                    "<b>They're Everywhere!</b>: al robar cartas de Spawn, roba 2 y saca la de más valor. Luego descarta las dos.",
+                    "<b>Blood Thirsty</b>: cada vez que la Pack mata a una víctima, gana ❤️.",
+                    "<b>Scaly Hide</b> (Epic Dark Power): la Pack y los Raptors ignoran todo el daño de las cartas de Reacción."]),
+                ("Cartas de Terror que piden explicación", [
+                    "<b>Protect the Brood</b> (hay 2): aparecen Raptors (huevo) y pones la Pack en el espacio donde salieron. Si la carta de Spawn era un <b>0</b>, tira un dado y coloca la Pack con la tabla de la carta de Raptors. Luego la Pack va a por ti o una víctima, se mueve y ataca.",
+                    "<b>Share the Feast</b>: la Pack va, se mueve y ataca; los Raptors sueltos se mueven hacia la Pack (parándose si llegan a ti o a una víctima). Si alguno se unió a la Pack, la Pack vuelve a atacar.",
+                    "<b>No Escape</b>: si no hay Raptors en el tablero, descártala y roba otra de Terror. Si los hay, el Raptor más cercano a cada espacio verde (salida) se pone en ese espacio, y los que están en salidas atacan. Si nadie fue atacado, 🎭🎭.",
+                    "<b>Predatory Instincts</b> (Minor Dark Power): la Pack hace 1 ✴ más por cada cuchillo.",
+                    "<b>Survival Instincts</b> (Minor Dark Power): en cada Mantenimiento la Pack gana ❤️."]),
             ],
             "err_m_t": "Ojo con esto",
             "err_m": [
@@ -297,6 +320,29 @@ GUIAS = [
                     "If there aren't enough meeples, the Raptor closest to the Pack joins it and you use its meeple; repeat until the card is resolved.",
                     "If the Spawn deck runs out, shuffle the discards and draw.",
                     "The final effect on the 🩸 track also spawns a Raptor, like a Spawn card of 1."]),
+                ("The spawn table (Raptors card)", [
+                    "Roll a die to see where they spawn: <b>1</b> your space · <b>2</b> the green (exit) space closest to the Pack · <b>3</b> the 🔧 space closest to the Pack · <b>4</b> the green space furthest from the Pack · <b>5</b> the 🔧 space furthest from the Pack · <b>6</b> the space furthest from you.",
+                    "Each loose Raptor: 1 ❤️, a 1 ✴ attack and movement equal to the Pack's. They don't move if they start with you or a Victim, and stop when entering a space with you or a Victim."]),
+                ("Reading their cards", [
+                    "The red silhouette of several Raptors = the Pack icon: loose Raptors head towards it to join. The yellow figures = target you or the closest Victim. The boot = move. The knife = attack (once per knife). The stop sign with figures = stops on reaching you or a Victim. The cracked egg = Raptors spawn.",
+                    "\"Pack only\" is just the Pack; \"Raptors only\", just the loose ones."]),
+                ("Finales", [
+                    "All have two rows: on top, loose Raptors move towards the Pack and stop if they reach you or a Victim; below, the Pack targets you or the closest Victim, moves and attacks.",
+                    "<b>Claws Like Knives</b>: the Pack attacks once. The first damage from each attack is the crossed-out heart icon.",
+                    "<b>Born Hungry</b>: the Pack attacks twice. When revealed, draw a Spawn card but spawn the Raptors in <b>your</b> space.",
+                    "<b>Raptor Rush</b>: the Pack attacks 3 times. When revealed, all Raptors on the board join the Pack.",
+                    "<b>Deadly Quick</b> (Epic Finale): the Pack attacks twice. When revealed, place the Pack in your space and lose 4 ⌛."]),
+                ("Dark Powers", [
+                    "<b>Pack Conditioning</b>: any time a Raptor is adjacent to the Pack, add it to the Pack.",
+                    "<b>They're Everywhere!</b>: when drawing Spawn cards, draw 2 and spawn the higher value. Then discard both.",
+                    "<b>Blood Thirsty</b>: each time the Pack kills a Victim, it gains ❤️.",
+                    "<b>Scaly Hide</b> (Epic Dark Power): the Pack and Raptors ignore all damage from Reaction cards."]),
+                ("Terror cards that need explaining", [
+                    "<b>Protect the Brood</b> (2 copies): Raptors spawn (egg) and you place the Pack where they spawned. If the Spawn card was a <b>0</b>, roll a die and place the Pack using the table on the Raptors card. Then the Pack targets you or a Victim, moves and attacks.",
+                    "<b>Share the Feast</b>: the Pack targets, moves and attacks; loose Raptors move towards the Pack (stopping at you or a Victim). If any joined the Pack, the Pack attacks again.",
+                    "<b>No Escape</b>: if there are no Raptors on the board, discard it and draw the next Terror card. Otherwise, the nearest Raptor to each green (exit) space is placed there, and those on exits attack. If no one was attacked, 🎭🎭.",
+                    "<b>Predatory Instincts</b> (Minor Dark Power): the Pack deals 1 extra ✴ per knife.",
+                    "<b>Survival Instincts</b> (Minor Dark Power): each Upkeep the Pack gains ❤️."]),
             ],
             "err_m_t": "Watch out",
             "err_m": [
