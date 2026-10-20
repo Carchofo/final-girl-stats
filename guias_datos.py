@@ -465,14 +465,43 @@ GUIAS = [
                     "Mueve 1 espacio en un ①, ② o ③ (seis cartas, con o sin ataque) · emboscadas: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ o manchas de sangre",
                     "No se mueve y recupera ❤️ (dos cartas) · emboscada 🎭🎭 o descartar una carta de Acción al azar"]),
             ],
-            "err_m_t": "Ojo con esto", "err_m": [],
+            "err_m_t": "Ojo con esto", "err_m": [
+                "Los <b>Soldiers</b> te siguen <b>al espacio del Killer</b>, al revés que las víctimas normales.",
+                "Al principio, salvar a un Soldier cuesta <b>2 ⌛</b> y un Soldier solo no hace daño.",
+                "Nadie puede ir río arriba, contra las flechas."],
             "bloques_m": [
-                ("Lo que sabemos por las cartas", [
-                    "Hay <b>Soldiers</b> a los que se dan órdenes, una carta <b>Soldier</b> con cubos que avanzan a la derecha, tiradas de <b>fuego amigo</b> y una mejora <b>\"No Friendly Fire\"</b> que se desbloquea y se puede volver a bloquear.",
-                    "Espacios con nombre (según el tablero): <b>Lower</b>, <b>Central</b> y <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> y <b>Cave</b>.",
-                    "Los espacios 🔧 son <b>Ancient Ruins</b>, <b>Rebel Camp</b> y <b>Supply Depot</b>, y cada uno tiene su propio mazo de objetos en el lateral del tablero.",
-                    "El río tiene flechas que marcan hacia dónde corre. El <b>Wet Suit</b> deja moverse río arriba, así que sin él no se puede.",
-                    "Nos falta fotografiar la página de Pesadilla Verde del reglamento para explicar cómo funciona todo esto."]),
+                ("Preparación especial", [
+                    "Pon el token del <b>Huey</b> en el <b>Clearing</b>.",
+                    "Pon las cartas de Acción <b>Train</b> en el Action Tableau.",
+                    "Deja junto a la zona de juego la carta <b>Soldiers</b> y los cubos de Acción. Pon encima las <b>8</b> fichas de Mejora: las 2 de inicio (con la estrella verde) por su cara <b>desbloqueada</b> y las otras 6 por su cara <b>bloqueada</b> (el candado)."]),
+                ("Los Soldiers", [
+                    "Toda víctima normal es un <b>Soldier</b>. Funcionan como víctimas normales casi siempre, pero te siguen al espacio del Killer y se les pueden dar órdenes.",
+                    "El <b>Archeologist</b> y el <b>Rebel Leader</b> no son Soldiers y no reciben órdenes."]),
+                ("Mejoras (Upgrades)", [
+                    "Hay mejoras de <b>Acción</b> (fichas con casillas) y de <b>Habilidad</b> (sin casillas). Al empezar solo tienen dos de Acción: moverse y atacar. La carta de Acción <b>Train</b> desbloquea más.",
+                    "Desbloquear: elige una ficha y gírala del candado a su cara desbloqueada. Si algo te dice que bloquees una, gírala al revés.",
+                    "<b>Atacar</b> (empiezas con una desbloqueada y otra bloqueada): un Soldier o grupo ataca a Enemies dentro de su alcance.",
+                    "<b>Moverse</b> (igual, una y una): un grupo de Soldiers se mueve 1 espacio.",
+                    "<b>Salvar Soldiers</b>: no quieren que los rescaten, quieren pelear. Salvar uno cuesta 2 ⌛; desbloqueada, no cuesta Tiempo.",
+                    "<b>Fuego amigo</b>: cada vez que atacan, tira un dado por cada Soldier del ataque. Con 1-2 muere uno de ellos. Desbloqueada, se acaba el fuego amigo.",
+                    "<b>Alcance</b>: al principio solo atacan su espacio. Desbloqueada, también uno adyacente.",
+                    "<b>Daño</b>: al principio hacen ✴ igual a Soldiers ÷ 2, redondeando <b>abajo</b> (uno solo no hace nada, tres hacen 1). Desbloqueada, se redondea <b>arriba</b> (uno hace 1, tres hacen 2)."]),
+                ("Dar órdenes", [
+                    "En la fase de Acción: elige el espacio con los Soldiers, elige una ficha de mejora de Acción y pon un cubo en su casilla de la izquierda, y resuelve la Acción con todos los Soldiers de ese espacio.",
+                    "No puedes usar una Acción si ya hay un cubo en su fila.",
+                    "En el Mantenimiento, mueve todos los cubos una casilla a la derecha. Al salir de la última, el cubo vuelve a estar disponible."]),
+                ("El Huey", [
+                    "El espacio del Huey cuenta como espacio de salida (el icono verde). Estando con el Huey, puedes salvar a todas las víctimas que quieras de ese espacio.",
+                    "Luego se quita el Huey y el Clearing deja de ser de salida. Solo vuelve si un efecto del juego lo pone otra vez."]),
+                ("El río", [
+                    "Hay 4 espacios de río: <b>Waterfall</b>, <b>Upper River</b>, <b>Central River</b> y <b>Lower River</b>.",
+                    "Río abajo (siguiendo las flechas) puedes llegar a cualquier espacio de río gastando 1 de movimiento: de la Waterfall al Lower River con un solo éxito de Walk. Pasas por los de en medio y resuelves sus efectos.",
+                    "Los Soldiers también se mueven así; los Enemies no: solo bajan a un espacio de río adyacente.",
+                    "Nadie (tú, víctimas ni Enemies) puede ir río arriba. Aun así, el espacio de río arriba cuenta como adyacente.",
+                    "El <b>Wet Suit</b> te deja ir río arriba, pero las víctimas no te pueden seguir."]),
+                ("Espacios", [
+                    "Con nombre: <b>Lower</b>, <b>Central</b> y <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> y <b>Cave</b>.",
+                    "Los espacios 🔧 son Ancient Ruins, Rebel Camp y Supply Depot, cada uno con su propio mazo de objetos en el lateral del tablero."]),
             ],
             "obj": [
                 ("bowie-knife", "Bowie Knife (Pig Sticker)", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas una Bowie Knife en cada mano, puedes usar las dos al atacar."),
@@ -558,14 +587,43 @@ GUIAS = [
                     "Move 1 space on a ①, ② or ③ (six cards, with or without attack) · ambushes: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ or blood splatters",
                     "Do not move and recover ❤️ (two cards) · ambush 🎭🎭 or discard a random Action card"]),
             ],
-            "err_m_t": "Watch out", "err_m": [],
+            "err_m_t": "Watch out", "err_m": [
+                "<b>Soldiers</b> follow you <b>into the Killer's space</b>, unlike normal Victims.",
+                "At the start, saving a Soldier costs <b>2 ⌛</b> and a lone Soldier deals no damage.",
+                "No one can move upriver, against the arrows."],
             "bloques_m": [
-                ("What the cards tell us", [
-                    "There are <b>Soldiers</b> you give orders to, a <b>Soldier</b> card with cubes that advance to the right, <b>friendly fire</b> rolls and a <b>\"No Friendly Fire\"</b> Upgrade that gets Unlocked and can be Locked again.",
-                    "Named spaces (per the board): <b>Lower</b>, <b>Central</b> and <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> and <b>Cave</b>.",
-                    "The 🔧 spaces are <b>Ancient Ruins</b>, <b>Rebel Camp</b> and <b>Supply Depot</b>, and each has its own Item deck on the side of the board.",
-                    "The river has arrows showing which way it flows. The <b>Wet Suit</b> lets you move upriver, so without it you can't.",
-                    "We still need to photograph the Pesadilla Verde rulebook page to explain how all of this works."]),
+                ("Special setup", [
+                    "Place the <b>Huey</b> token in the <b>Clearing</b>.",
+                    "Place the <b>Train</b> Action cards into the Action Tableau.",
+                    "Place the <b>Soldiers</b> card and the Action cubes next to the play area. Put the <b>8</b> Upgrade tokens on it: the 2 starting ones (green star) <b>Unlocked</b> side up and the other 6 <b>Locked</b> side up (padlock)."]),
+                ("The Soldiers", [
+                    "Every normal Victim is a <b>Soldier</b>. They act like normal Victims for almost everything, but they follow you into the Killer's space and can be given orders.",
+                    "The <b>Archeologist</b> and the <b>Rebel Leader</b> are not Soldiers and can't be ordered."]),
+                ("Upgrades", [
+                    "There are <b>Action</b> Upgrades (tokens with squares) and <b>Ability</b> Upgrades (no squares). At the start Soldiers only have two Action ones: moving and attacking. The <b>Train</b> Action card unlocks more.",
+                    "To Unlock: pick a token and flip it from the padlock to its Unlocked side. If an effect says to Lock one, flip it back.",
+                    "<b>Attack</b> (you start with one Unlocked and one Locked): a Soldier or group attacks Enemies within their range.",
+                    "<b>Move</b> (same, one and one): a group of Soldiers moves 1 space.",
+                    "<b>Saving Soldiers</b>: they don't want to be rescued, they want to fight. Saving one costs 2 ⌛; Unlocked, it costs no Time.",
+                    "<b>Friendly Fire</b>: whenever they attack, roll a die for each Soldier involved. On a 1-2 one of them dies. Unlocked, no more friendly fire.",
+                    "<b>Attack Range</b>: at the start they only attack their own space. Unlocked, also an adjacent one.",
+                    "<b>Damage</b>: at the start they deal ✴ equal to Soldiers ÷ 2, rounded <b>down</b> (one deals nothing, three deal 1). Unlocked, rounded <b>up</b> (one deals 1, three deal 2)."]),
+                ("Ordering Soldiers", [
+                    "During the Action phase: pick the space with the Soldiers, pick an Action Upgrade token and put a cube on its leftmost square, then resolve the Action for all Soldiers in that space.",
+                    "You can't use an Action if there's already a cube in its row.",
+                    "During Upkeep, move all cubes one square to the right. Once a cube leaves the last square it's available again."]),
+                ("The Huey", [
+                    "The Huey's space counts as an exit space (the green icon). In the same space as the Huey you can save any number of Victims there.",
+                    "Then the Huey is removed and the Clearing stops being an exit. It only comes back if a game effect returns it."]),
+                ("The River", [
+                    "There are 4 River spaces: <b>Waterfall</b>, <b>Upper River</b>, <b>Central River</b> and <b>Lower River</b>.",
+                    "Downriver (following the arrows) you can reach any River space for 1 movement: Waterfall to Lower River with a single Walk success. You pass through the spaces in between and resolve their effects.",
+                    "Soldiers move this way too; Enemies don't: they only move downriver to an adjacent River space.",
+                    "No one (you, Victims or Enemies) can move upriver. The upriver space still counts as adjacent.",
+                    "The <b>Wet Suit</b> lets you move upriver, but Victims can't follow you."]),
+                ("Spaces", [
+                    "Named: <b>Lower</b>, <b>Central</b> and <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> and <b>Cave</b>.",
+                    "The 🔧 spaces are Ancient Ruins, Rebel Camp and Supply Depot, each with its own Item deck on the side of the board."]),
             ],
             "obj": [
                 ("bowie-knife", "Bowie Knife (Pig Sticker)", "Weapon · range 0 · 1 ✴ · 1 hand. If you have a Bowie Knife in each hand, you may use both when attacking."),
