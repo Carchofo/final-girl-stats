@@ -1,6 +1,6 @@
 {
  "A Rotten Harvest": {
-  "ley": "🩸 = Bloodlust · 🌾 = case Field · 🎭 = augmenter l'Horreur",
+  "ley": "🩸 = Bloodlust · 🌾 = case Field · 🎭 = augmenter l'Horreur · ⊘🎭 = baisse l'Horreur",
   "err_k_t": "Erreurs fréquentes",
   "err_k": [
    "<b>Grimlash se déplace de 1</b> lors de son Action du Killer. Quand une carte Terreur montre l'icône de la <b>botte</b> (déplacement), il se déplace de la valeur de mouvement correspondant au niveau de 🩸 actuel, pas de 1.",
@@ -139,6 +139,26 @@
     "3 utilisations. Une fois par tour, avec 🎭, tu peux te placer dans <b>n'importe quelle 🌾</b>."
    ],
    [
+    "bag-of-feed",
+    "Bag of Feed",
+    "Grimpe sur une vache ! Défausse-le pour te déplacer de <b>4 cases</b> max."
+   ],
+   [
+    "combine-keys",
+    "Combine Keys",
+    "Place la <b>Combine</b> dans ta case. Si tu te déplaces avec elle en résolvant une carte Action <b>Walk</b>, tu peux avancer d'1 case de plus. En entrant dans un 🌾 avec la Combine, pose un jeton <b>Harvested</b> : ce n'est plus un 🌾."
+   ],
+   [
+    "corn-cob-pipe",
+    "Corn Cob Pipe",
+    "Défausse-la pour ⊘🎭⊘🎭⊘🎭 (baisse l'Horreur de 3)."
+   ],
+   [
+    "cornhusk-effigy",
+    "Cornhusk Effigy",
+    "Défausse-la pour retirer du jeu une <b>Ancient Curse</b> active."
+   ],
+   [
     "scythe",
     "Scythe",
     "Arme · portée 0-1 · 1 dégât · 2 mains. Quand tu attaques des Ennemis dans une 🌾, tu peux <b>répartir les dégâts</b> entre eux. Ensuite cette case devient <b>Harvested</b> et n'est plus une 🌾."
@@ -164,8 +184,8 @@
     "Arme · portée 0 · 1 dégât · 1 main. Utilisations illimitées."
    ]
   ],
-  "falta": "Encore à photographier : Bag of Feed, Combine Keys, Corn Cob Pipe et Cornhusk Effigy.",
-  "falta_ev": "Il manque 2 de ses 10 Événements : It Lurks Between the Rows et The Ravens Are Circling.",
+  "falta": "",
+  "falta_ev": "",
   "ev": [
    [
     "Umbral Evocation",
@@ -198,6 +218,14 @@
    [
     "Sally McCoy",
     "Sally commence dans la <b>McCoy Farmhouse</b>. Quand elle est sauvée, cherche les <b>Combine Keys</b> dans la pioche d'Objets."
+   ],
+   [
+    "It Lurks Between the Rows",
+    "Toutes les Victimes dans un 🌾 paniquent. Celles qui fuient dans la case du Killer meurent. Défausse."
+   ],
+   [
+    "The Ravens Are Circling",
+    "Chaque Child avance de 2 cases vers le Killer. Pose sur cette carte autant de marqueurs de vie que de Children dans sa case. Quand le Killer subit des dégâts, retire d'abord ceux de la carte. Défausse-la quand il n'en reste plus."
    ]
   ]
  },

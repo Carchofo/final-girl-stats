@@ -1,6 +1,6 @@
 {
  "A Rotten Harvest": {
-  "ley": "🩸 = Bloodlust · 🌾 = Ackerfeld · 🎭 = Horror erhöhen",
+  "ley": "🩸 = Bloodlust · 🌾 = Ackerfeld · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken",
   "err_k_t": "Häufige Fehler",
   "err_k": [
    "<b>Grimlash bewegt sich 1</b> Feld in seiner Killeraktion. Zeigt eine Terrorkarte das <b>Stiefel</b>-Symbol (Bewegung), bewegt er sich so weit wie seine Bewegung auf der aktuellen 🩸-Stufe, nicht 1.",
@@ -139,6 +139,26 @@
     "3 Nutzungen. Einmal pro Runde darfst du dich mit 🎭 auf <b>ein beliebiges 🌾</b> stellen."
    ],
    [
+    "bag-of-feed",
+    "Bag of Feed",
+    "Rauf auf eine Kuh! Abwerfen, um dich bis zu <b>4 Felder</b> zu bewegen."
+   ],
+   [
+    "combine-keys",
+    "Combine Keys",
+    "Stell den <b>Combine</b> auf dein Feld. Bewegst du dich mit ihm über eine <b>Walk</b>-Aktionskarte, darfst du 1 Feld weiter. Fährst du mit ihm in ein 🌾, leg dort ein <b>Harvested</b>-Plättchen: es ist kein 🌾 mehr."
+   ],
+   [
+    "corn-cob-pipe",
+    "Corn Cob Pipe",
+    "Abwerfen für ⊘🎭⊘🎭⊘🎭 (Horror um 3 senken)."
+   ],
+   [
+    "cornhusk-effigy",
+    "Cornhusk Effigy",
+    "Abwerfen, um einen aktiven <b>Ancient Curse</b> aus dem Spiel zu entfernen."
+   ],
+   [
     "scythe",
     "Scythe",
     "Waffe · Reichweite 0-1 · 1 Schaden · 2 Hände. Greifst du Feinde auf einem 🌾 an, darfst du <b>den Schaden aufteilen</b>. Danach ist das Feld <b>abgeerntet</b> und kein 🌾 mehr."
@@ -164,8 +184,8 @@
     "Waffe · Reichweite 0 · 1 Schaden · 1 Hand. Keine Nutzungsbegrenzung."
    ]
   ],
-  "falta": "Noch zu fotografieren: Bag of Feed, Combine Keys, Corn Cob Pipe und Cornhusk Effigy.",
-  "falta_ev": "Es fehlen 2 seiner 10 Ereignisse: It Lurks Between the Rows und The Ravens Are Circling.",
+  "falta": "",
+  "falta_ev": "",
   "ev": [
    [
     "Umbral Evocation",
@@ -198,6 +218,14 @@
    [
     "Sally McCoy",
     "Sally beginnt im <b>McCoy Farmhouse</b>. Wird sie gerettet, durchsuche den Gegenstandsstapel nach den <b>Combine Keys</b>."
+   ],
+   [
+    "It Lurks Between the Rows",
+    "Alle Opfer in einem 🌾 geraten in Panik. Wer dabei ins Feld des Killers flieht, stirbt. Abwerfen."
+   ],
+   [
+    "The Ravens Are Circling",
+    "Jedes Child bewegt sich 2 Felder auf den Killer zu. Leg so viele Lebensmarker auf diese Karte, wie Children in seinem Feld sind. Nimmt der Killer Schaden, entfernst du zuerst die Marker dieser Karte. Abwerfen, wenn keine mehr da sind."
    ]
   ]
  },

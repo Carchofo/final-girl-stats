@@ -1,6 +1,6 @@
 {
  "A Rotten Harvest": {
-  "ley": "🩸 = Bloodlust · 🌾 = Field Space · 🎭 = aumenta l'Orrore",
+  "ley": "🩸 = Bloodlust · 🌾 = Field Space · 🎭 = aumenta l'Orrore · ⊘🎭 = abbassa l'Orrore",
   "err_k_t": "Errori comuni",
   "err_k": [
    "<b>Grimlash si muove di 1</b> nella sua Azione del Killer. Quando una carta Terrore mostra l'icona dello <b>stivale</b> (movimento), si muove secondo il suo movimento al livello di 🩸 attuale, non di 1.",
@@ -139,6 +139,26 @@
     "3 usi. Una volta per turno, con 🎭, puoi piazzarti in <b>qualsiasi 🌾</b>."
    ],
    [
+    "bag-of-feed",
+    "Bag of Feed",
+    "Salta su una mucca! Scartalo per muoverti fino a <b>4 spazi</b>."
+   ],
+   [
+    "combine-keys",
+    "Combine Keys",
+    "Metti la <b>Combine</b> nel tuo spazio. Se ti muovi con lei risolvendo una carta Azione <b>Walk</b>, puoi muoverti di 1 spazio in più. Entrando in un 🌾 con la Combine, metti un segnalino <b>Harvested</b>: non è più un 🌾."
+   ],
+   [
+    "corn-cob-pipe",
+    "Corn Cob Pipe",
+    "Scartala per ⊘🎭⊘🎭⊘🎭 (abbassa l'Orrore di 3)."
+   ],
+   [
+    "cornhusk-effigy",
+    "Cornhusk Effigy",
+    "Scartala per togliere dal gioco una <b>Ancient Curse</b> attiva."
+   ],
+   [
     "scythe",
     "Scythe",
     "Arma · gittata 0-1 · 1 danno · 2 mani. Quando attacchi Nemici in un 🌾, puoi <b>dividere i danni</b> tra loro. Poi quello spazio diventa <b>Harvested</b> e non è più un 🌾."
@@ -164,8 +184,8 @@
     "Arma · gittata 0 · 1 danno · 1 mano. Nessun limite d'uso."
    ]
   ],
-  "falta": "Ancora da fotografare: Bag of Feed, Combine Keys, Corn Cob Pipe e Cornhusk Effigy.",
-  "falta_ev": "Mancano 2 dei suoi 10 eventi: It Lurks Between the Rows e The Ravens Are Circling.",
+  "falta": "",
+  "falta_ev": "",
   "ev": [
    [
     "Umbral Evocation",
@@ -198,6 +218,14 @@
    [
     "Sally McCoy",
     "Sally inizia nella <b>McCoy Farmhouse</b>. Quando viene salvata, cerca nel mazzo Oggetti le <b>Combine Keys</b>."
+   ],
+   [
+    "It Lurks Between the Rows",
+    "Tutte le Vittime in un 🌾 vanno nel panico. Quelle che fuggono nello spazio del Killer muoiono. Scarta."
+   ],
+   [
+    "The Ravens Are Circling",
+    "Ogni Child si muove di 2 spazi verso il Killer. Metti su questa carta tanti segnalini vita quanti Children nel suo spazio. Quando il Killer subisce danni, togli prima quelli della carta. Scartala quando non ne restano."
    ]
   ]
  },
