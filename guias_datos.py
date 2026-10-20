@@ -499,9 +499,9 @@ GUIAS = [
     {
         "caja": "A Demon in the Shadows", "killer": "Berith", "mapa": "L'Armes Abbey", "dir": "a-demon-in-the-shadows",
         "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
-        "inicios": [],
+        "inicios": [("supper-time", "Supper Time"), ("daily-chores", "Daily Chores"), ("tourism-bus", "Tourism Bus"), ("reflection-meditation", "Reflection & Meditation"), ("sunday-mass", "Sunday Mass")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · 🙏 = icono de bendición · 🎲★ = cambia 1 dado normal por el dado Bendito (más caras de éxito) · 🎲☠ = cambia 1 dado normal por el dado Maldito",
+            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · ⊘🎭 = baja el Horror · ❤️ = recupera vida · 🙏 = icono de bendición · 🎲★ = cambia 1 dado normal por el dado Bendito (más caras de éxito) · 🎲☠ = cambia 1 dado normal por el dado Maldito",
             "err_k_t": "Ojo con esto", "err_k": ["Matar a Ursula <b>no es ganar</b>: después hay que revelar las bendiciones y que al menos una tenga vida. Sin bendiciones en la hoja no hay nada que la traiga de vuelta."],
             "bloques_k": [
                 ("Preparación especial", [
@@ -543,10 +543,12 @@ GUIAS = [
                 ("Lo que sabemos por las cartas", [
                     "Las reliquias de santos dan 🎲★ al resolver ciertas cartas, o sea, cambias un dado normal por el Bendito.",
                     "La <b>Padlock Key</b> deja que el <b>Donkey</b> se mueva contigo.",
-                    "Nos falta fotografiar sus eventos y sus inicios."]),
+                    "Las reliquias y los eventos usan mucho el dado Bendito y las fichas de Malice: ver abajo."]),
             ],
             "obj": [
-                ("rosary", "Rosary", "2 usos. Gasta 2 ⌛ en la fase del Killer para ignorar un 🎭."),
+                ("holy-water", "Holy Water", "1 mano · 3 usos. 🎲★ en una tirada de Horror <b>o</b> quita una ficha de Malice de tu espacio. Si llevas el <b>Aspergillum</b> en la otra mano, quita también una Malice de un espacio adyacente. Hay 2 en la caja."),
+                ("holy-chalice", "Holy Chalice", "Descártalo en la fase de Acción para recuperar 3 ❤️ <b>o</b> descártalo cuando se revele tu ficha negra de Final Health: si está en blanco, vuelves con 1 ❤️."),
+                ("rosary", "Rosary", "Hay 2 en la caja. 2 usos. Gasta 2 ⌛ en la fase del Killer para ignorar un 🎭."),
                 ("aspergillum", "Aspergillum", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas <b>Holy Water</b> en la otra mano, puedes gastar uno de sus usos para hacer 1 ✴ más."),
                 ("thurible", "Thurible", "Arma · alcance 0-1 · 1 ✴ · 1 mano. Si lo usas a alcance 1, descártalo."),
                 ("crucifix", "Crucifix", "1 mano. Descártalo para ignorar una subida de nivel de Horror <b>o</b> para parar el movimiento de un Enemy cuando está en un espacio adyacente."),
@@ -561,11 +563,22 @@ GUIAS = [
                 ("knife", "Knife", "Arma · alcance 0 · 1 ✴ · 1 mano."),
                 ("padlock-key", "Padlock Key", "El <b>Donkey</b> puede moverse contigo. Al moverte con él, tira un dado: 1-3 mueves 1 espacio menos (mínimo 1), 4-6 mueves 1 más. Una vez por fase de Acción, en un espacio con el Donkey y un Enemy, tira un dado: con 5-6 el Enemy recibe 2 ✴."),
             ],
-            "falta": "Faltan objetos por fotografiar: al menos Holy Water (la nombra el Aspergillum). También faltan todos sus eventos y sus inicios.",
-            "ev": [],
+            "falta": "",
+            "ev": [
+                ("Sins of the Past", "Tira 3 dados. Si sacas lo que marca la carta en los 3 (tres iconos rojos), eres el hijo del Diablo y <b>pierdes al momento</b>. Con cualquier otro resultado, pon la ficha de <b>Repentance</b> en el <b>Sanctuary</b>: mientras esté en el tablero, ignoras todos los efectos 🎲★. Para quitarla, ve al Sanctuary y gasta 3 ⌛."),
+                ("Leap of Faith", "Mira las cartas de objeto que no se usan y coge 1."),
+                ("Pilgrimage", "Pon 2 víctimas en el <b>Hospitium</b>, 2 en el <b>Refectory</b> y 2 en el <b>Sanctuary</b>."),
+                ("Black Mass", "En la fase de Mantenimiento (Upkeep), pon una ficha de Malice si no se ha añadido ninguna este turno."),
+                ("Maddening Nursery Rhyme", "En el espacio con más víctimas muere una y las demás de ese espacio entran en pánico."),
+                ("Breaking the Curse", "Coge una carta de Acción <b>Benediction</b> del Action Tableau. Si tienes las dos en la mano, ⊘🎭."),
+                ("Father Damian", "Pon a Father Damian en la <b>Sacristy</b>. Te sigue al espacio del Killer y solo pueden atacarle si no hay otras víctimas en su espacio. Mientras esté contigo, 🎲★ en todas las tiradas de Horror y, una vez por fase de Acción, puedes quitar una ficha de Malice de tu espacio. Si muere en tu espacio, 🎭🎭🎭."),
+                ("Demonic Crocodile", "Pon la ficha del <b>Cocodrilo</b> en el <b>Museum</b>. Los Enemies no pueden apuntarle ni matarlo, pero tú sí puedes atacarlo y matarlo. Tiene Movimiento, Ataque y vida de 1. Al final de la fase del Killer: va a por la Final Girl, se mueve y ataca. Luego entran en pánico todas las víctimas de su espacio."),
+                ("The Quebecer", "Ponlo en el <b>Dormitory</b>. Las víctimas normales de su espacio no te siguen si él no viene también. Con él, te puede seguir una víctima más. Si está en tu espacio en el Mantenimiento, ⌛ por cada víctima de tu espacio."),
+                ("The Abbess", "Ponla en el <b>Abbess' Office</b>. En el Mantenimiento, se mueve un espacio hacia la víctima normal más cercana que no esté en el <b>Dormitory</b>. Las víctimas normales del espacio donde empieza y acaba se mueven 2 espacios hacia el Dormitory."),
+            ],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · 🙏 = blessing icon · 🎲★ = swap 1 normal die for the Blessed die (more success faces) · 🎲☠ = swap 1 normal die for the Cursed die",
+            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · ⊘🎭 = lower Horror · ❤️ = recover health · 🙏 = blessing icon · 🎲★ = swap 1 normal die for the Blessed die (more success faces) · 🎲☠ = swap 1 normal die for the Cursed die",
             "err_k_t": "Watch out", "err_k": ["Killing Ursula <b>is not a win</b>: you then reveal the blessings and need at least one to show health. With no blessings on the sheet, nothing can bring her back."],
             "bloques_k": [
                 ("Special setup", [
@@ -607,10 +620,12 @@ GUIAS = [
                 ("What the cards tell us", [
                     "The saints' relics give 🎲★ when resolving certain cards, meaning you swap a normal die for the Blessed die.",
                     "The <b>Padlock Key</b> lets the <b>Donkey</b> move with you.",
-                    "We still need to photograph its events and setups."]),
+                    "Relics and events lean hard on the Blessed die and Malice tokens: see below."]),
             ],
             "obj": [
-                ("rosary", "Rosary", "2 uses. Spend 2 ⌛ during the Killer phase to ignore a 🎭."),
+                ("holy-water", "Holy Water", "1 hand · 3 uses. 🎲★ for a Horror Roll <b>or</b> remove a Malice token in your space. If you have the <b>Aspergillum</b> in your other hand, also remove a Malice token in an adjacent space. There are 2 in the box."),
+                ("holy-chalice", "Holy Chalice", "Discard during the Action phase for 3 ❤️ <b>or</b> discard when your black Final Health token is revealed: if it's blank, you come back with 1 ❤️ instead."),
+                ("rosary", "Rosary", "There are 2 in the box. 2 uses. Spend 2 ⌛ during the Killer phase to ignore a 🎭."),
                 ("aspergillum", "Aspergillum", "Weapon · range 0 · 1 ✴ · 1 hand. If you have <b>Holy Water</b> in your other hand, you may spend one of its uses to deal 1 extra ✴."),
                 ("thurible", "Thurible", "Weapon · range 0-1 · 1 ✴ · 1 hand. If used at range 1, discard it."),
                 ("crucifix", "Crucifix", "1 hand. Discard to ignore a Horror level increase <b>or</b> to end an Enemy's movement when they're in an adjacent space."),
@@ -625,8 +640,19 @@ GUIAS = [
                 ("knife", "Knife", "Weapon · range 0 · 1 ✴ · 1 hand."),
                 ("padlock-key", "Padlock Key", "The <b>Donkey</b> may move with you. When moving with it, roll a die: 1-3 move 1 less space (min 1), 4-6 move 1 extra. Once per Action phase, in a space with the Donkey and an Enemy, roll a die: on 5-6 the Enemy takes 2 ✴."),
             ],
-            "falta": "Items still to photograph: at least Holy Water (the Aspergillum names it). All its events and setups are missing too.",
-            "ev": [],
+            "falta": "",
+            "ev": [
+                ("Sins of the Past", "Roll 3 dice. If you get what the card shows on all 3 (three red icons), you are the Devil's child and <b>immediately lose</b>. On any other result, place the <b>Repentance</b> token in the <b>Sanctuary</b>: while it's on the board, ignore all 🎲★ effects. Remove it by going to the Sanctuary and spending 3 ⌛."),
+                ("Leap of Faith", "Look through the unused Item cards and take 1."),
+                ("Pilgrimage", "Place 2 Victims in the <b>Hospitium</b>, 2 in the <b>Refectory</b> and 2 in the <b>Sanctuary</b>."),
+                ("Black Mass", "During the Upkeep phase, place a Malice token if no Malice tokens were added this turn."),
+                ("Maddening Nursery Rhyme", "In the space with the most Victims, a Victim is killed and every other Victim there panics."),
+                ("Breaking the Curse", "Take a <b>Benediction</b> Action card from the Action Tableau. If both are in your hand, ⊘🎭."),
+                ("Father Damian", "Place Father Damian in the <b>Sacristy</b>. He follows you into the Killer's space and can only be attacked if there are no other Victims in his space. While he's in your space, 🎲★ for all Horror Rolls and, once per Action phase, you may remove a Malice token in your space. If he's killed in your space, 🎭🎭🎭."),
+                ("Demonic Crocodile", "Place the <b>Crocodile</b> token in the <b>Museum</b>. Enemies can't target or kill it, but you may attack and kill it. Movement, Attack and health of 1. At the end of the Killer phase it targets the Final Girl, moves and attacks. Then all Victims in its space panic."),
+                ("The Quebecer", "Place him in the <b>Dormitory</b>. Normal Victims in his space won't follow you unless he comes too. With him, an extra Victim may follow you. If he's in your space during Upkeep, ⌛ per Victim in your space."),
+                ("The Abbess", "Place her in the <b>Abbess' Office</b>. During Upkeep she moves one space towards the closest normal Victim not in the <b>Dormitory</b>. Normal Victims in her starting and ending space move 2 spaces towards the Dormitory."),
+            ],
         },
     },
 ]
