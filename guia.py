@@ -5,6 +5,8 @@ El contenido está en guias_datos.py. Aquí solo se pinta. Las fotos de las
 cartas llevan filtro de peli vieja (img/guias/<caja>/).
 """
 import pathlib
+import re
+import unicodedata
 
 from guias_datos import GUIAS
 
@@ -38,7 +40,7 @@ CSS = """<style>
 .gu-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:12px 0}
 .gu-it{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px}
 .gu-it img{width:104px;flex:none;margin:2px 4px 4px 2px}.gu-it b.n{display:block;font-size:15px;margin-bottom:4px}
-.gu-it p{margin:0;font-size:14px}.gu-ev{margin:10px 0}.gu-ev dt{font-weight:700;margin-top:10px}.gu-ev dd{margin:2px 0 0}
+.gu-it p{margin:0;font-size:14px}.gu-ev{margin:10px 0}.gu-ev dt{font-weight:700;margin-top:10px}.gu-sec [id]{scroll-margin-top:20px}.gu-hit{outline:2px solid var(--blood);outline-offset:4px}.gu-ev dd{margin:2px 0 0}
 .gu-err{border-left:3px solid var(--blood);padding:4px 0 4px 14px;margin:10px 0}
 .gu-ley{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 .gu-sec ul{display:block;padding-left:20px}.gu-sec li{display:list-item!important;grid-template-columns:none!important;margin:4px 0;padding:2px 0!important;border-top:0!important}.gu-sec li b,.gu-sec li i{display:inline!important}.gu-sec li::before{content:none!important}
@@ -47,6 +49,12 @@ CSS = """<style>
 ZOOM = ('<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
         'var i=e.target.closest(".gu-grid img,.gu-it img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
         'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>')
+
+
+def ancla(*partes):
+    """Id estable para enlazar desde el buscador a un trozo de la guía."""
+    t = unicodedata.normalize("NFKD", "-".join(partes)).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"<[^>]+>", "", t).lower()).strip("-")
 
 
 def por_caja(film):
@@ -79,27 +87,27 @@ def secciones(lang, g):
     pre = "" if lang == "es" else "../"
     ruta = f"{pre}img/guias/{g['dir']}/"
 
-    def bloques(bs):
-        return "".join(f"<h3>{t}</h3>{_lista(xs)}" for t, xs in bs)
+    def bloques(c, bs):
+        return "".join(f'<h3 id="{ancla(c, t)}">{t}</h3>{_lista(xs)}' for t, xs in bs)
 
-    def err(t, xs):
-        return f'<h3>{t}</h3><div class="gu-err">{_lista(xs)}</div>' if xs else ""
+    def err(c, t, xs):
+        return f'<h3 id="{ancla(c, "ojo")}">{t}</h3><div class="gu-err">{_lista(xs)}</div>' if xs else ""
 
-    k = err(d["err_k_t"], d["err_k"]) + bloques(d["bloques_k"])
-    m = err(d["err_m_t"], d["err_m"]) + bloques(d["bloques_m"])
+    k = err("k", d["err_k_t"], d["err_k"]) + bloques("k", d["bloques_k"])
+    m = err("m", d["err_m_t"], d["err_m"]) + bloques("m", d["bloques_m"])
     if g["inicios"]:
         m += (f'<h3>{tt["inicios"]}</h3><p class="sub">{tt["inicios_sub"]}</p><div class="gu-grid">' +
-              "".join(f'<figure><img src="{ruta}{s}.jpg" alt="{n}" loading="lazy"><figcaption>{n}</figcaption></figure>'
+              "".join(f'<figure id="{ancla("ini", s)}"><img src="{ruta}{s}.jpg" alt="{n}" loading="lazy"><figcaption>{n}</figcaption></figure>'
                       for s, n in g["inicios"]) + '</div>')
     if d["obj"]:
         m += (f'<h3>{tt["obj"]}</h3><div class="gu-obj">' +
-              "".join(f'<div class="gu-it">' + (f'<img src="{ruta}{s}.jpg" alt="{n}" loading="lazy">' if s else '') +
+              "".join(f'<div class="gu-it" id="{ancla("obj", n)}">' + (f'<img src="{ruta}{s}.jpg" alt="{n}" loading="lazy">' if s else '') +
                       f'<div><b class="n">{n}</b><p>{x}</p></div></div>' for s, n, x in d["obj"]) + '</div>')
     if d.get("falta"):
         m += f'<p class="sub">{d["falta"]}</p>'
     if d["ev"]:
         m += (f'<h3>{tt["ev"].format(n=g["mapa"])}</h3><dl class="gu-ev">' +
-              "".join(f'<dt>{n}</dt><dd>{x}</dd>' for n, x in d["ev"]) + '</dl>')
+              "".join(f'<dt id="{ancla("ev", n)}">{n}</dt><dd>{x}</dd>' for n, x in d["ev"]) + '</dl>')
     if d.get("falta_ev"):
         m += f'<p class="sub">{d["falta_ev"]}</p>'
     m += f'<p class="sub">{tt["nota"]}</p>'

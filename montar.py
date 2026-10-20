@@ -798,3 +798,7 @@ else:
     print("robots.txt  -- NO INDEXABLE (INDEXAR = False)")
     print("   La pagina se ve y se comparte, pero no entra en Google.")
     print("   Pon INDEXAR = True cuando tengas el permiso por escrito.")
+
+# --- buscador: índice por idioma y lupa en el menú (al final: lee las páginas ya escritas)
+import buscador
+buscador.montar()
