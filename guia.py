@@ -50,7 +50,7 @@ TXT = {
 
 CSS = """<style>
 .gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:12px 0 6px}
-.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
+.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-foto{margin:14px 0 6px}.gu-foto img{display:block;width:100%;border-radius:6px;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
 .gu-grid figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
 .gu-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:12px 0}
 .gu-it{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px}
@@ -62,7 +62,7 @@ CSS = """<style>
 </style>"""
 
 ZOOM = ('<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
-        'var i=e.target.closest(".gu-grid img,.gu-it img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
+        'var i=e.target.closest(".gu-grid img,.gu-it img,.gu-foto img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
         'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>')
 
 
@@ -130,11 +130,17 @@ def secciones(lang, g):
         m += f'<p class="sub">{d["falta_ev"]}</p>'
     m += f'<p class="sub">{tt["nota"]}</p>'
 
+    def foto(c, nombre):
+        f = "_finales" if c == "k" else "_tablero"
+        if not (AQUI / "img" / "guias" / g["dir"] / f"{f}.jpg").exists():
+            return ""
+        return f'<figure class="gu-foto"><img src="{ruta}{f}.jpg" alt="{nombre}" loading="lazy"></figure>'
+
     out = [CSS]
     for cual, cuerpo, nombre in (("k", k, g["killer"]), ("m", m, g["mapa"])):
         out.append(f'<section id="{ANCLA[cual]}" class="gu-sec" style="scroll-margin-top:20px;margin-top:40px;'
                    f'border-top:2px solid var(--blood);padding-top:6px"><h2>📖 {tt[cual].format(n=nombre)}</h2>'
                    f'<p class="sub">{tt["mix_" + cual]} <a href="#">{tt["arriba"]}</a></p>'
-                   + (f'<p class="gu-ley">{d["ley"]}</p>' if cual == "k" else '') + f'{cuerpo}</section>')
+                   + (f'<p class="gu-ley">{d["ley"]}</p>' if cual == "k" else '') + foto(cual, nombre) + f'{cuerpo}</section>')
     out.append(ZOOM)
     return "\n".join(out)
