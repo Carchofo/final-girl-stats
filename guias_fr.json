@@ -1519,5 +1519,323 @@
     "Place-la dans la <b>Consulta Médica</b>. Si elle est dans ton lieu, quand tu prends une Pastilla, tu choisis sa couleur. Si elle est tuée dans ton lieu, 🎭🎭🎭🎭. Si elle quitte la partie, défausse la carte."
    ]
   ]
+ },
+ "A Knock at the Door": {
+  "ley": "⌛ = Temps · ✴ = dégâts · ❤️ = récupérer des PV · 💔 = perdre des PV · 🎭 = l'Horreur monte · ⊘🎭 = l'Horreur baisse · 🎲 = dé · 🩸 = Bloodlust · 🔺 = le jeton Tueur Actif MONTE au Tueur suivant · 🔻 = il DESCEND au Tueur suivant",
+  "err_k_t": "Erreurs fréquentes",
+  "err_k": [
+   "Si vous <b>attaquez</b> un Tueur, il devient l'Actif <b>même sans lui infliger de dégâts</b>. Pareil si vous utilisez une carte pour le blesser.",
+   "En phase de Panique, les Victimes dans une case avec <b>n'importe quel</b> Tueur, pas seulement l'Actif, paniquent si une Victime est morte ce tour.",
+   "Avec un Minor Dark Power en jeu, les dégâts infligés à <b>n'importe quel</b> Tueur vont d'abord sur cette carte.",
+   "Chaque Tueur a son jeton de Final Health, mais le bonus de <b>+1 🎲</b> ne s'obtient <b>qu'une fois</b>.",
+   "Si un Tueur qui a encore son jeton noir de Final Health meurt alors qu'un autre reste sur le plateau, la phase <b>ne</b> s'arrête <b>pas</b> : on couche la figurine et on continue."
+  ],
+  "bloques_k": [
+   [
+    "Mise en place spéciale",
+    [
+     "Placez les <b>trois figurines</b> de Tueur (la rouge de la boîte de base, la noire et la grise) sur la case de départ du Killer de la carte Setup.",
+     "Chaque Tueur reçoit ses PV de départ, avec <b>un jeton de Final Health</b> chacun.",
+     "Posez le jeton <b>Tueur Actif</b> sur le plateau du Killer, dans le cercle de <b>Trish</b> (la rouge).",
+     "D'après le wiki, ils commencent à 3 d'Horreur et 6 PV chacun."
+    ]
+   ],
+   [
+    "Le Tueur Actif",
+    [
+     "Les Intruders sont <b>3 Tueurs</b> : Trish, Baghead et Zeke. Un <b>seul</b> est actif pour bouger (botte), attaquer (couteau) ou être placé.",
+     "L'Actif est celui dont le cercle porte le jeton Tueur Actif sur le plateau du Killer. Les deux autres ne bougent pas."
+    ]
+   ],
+   [
+    "Comment change le Tueur Actif",
+    [
+     "Il peut changer plusieurs fois dans un même tour. Il y a 3 façons :",
+     "<b>1.</b> Quand vous attaquez un Tueur (que vous le blessiez ou non) ou utilisez une carte pour le blesser, il devient immédiatement l'Actif.",
+     "<b>2.</b> Avec l'icône 🔺 (K avec la moitié rouge en haut) le jeton MONTE au Tueur suivant ; avec 🔻 (moitié rouge en bas), il DESCEND. S'il est sur le Tueur le plus haut et doit monter, il fait le tour jusqu'à celui du bas, et inversement.",
+     "<b>3.</b> Quand le Tueur Actif meurt, le jeton passe au Tueur vivant le plus haut.",
+     "Les Tueurs morts sont sautés pour trouver le suivant."
+    ]
+   ],
+   [
+    "Tous les Tueurs, panique et Minor Dark Powers",
+    [
+     "<b>« Tous les Tueurs »</b> : ignorez le jeton et résolvez l'effet pour chacun, du plus haut du plateau du Killer vers le bas. Le jeton Tueur Actif ne bouge pas.",
+     "<b>Panique</b> : les Victimes dans une case avec <b>n'importe quel</b> Tueur paniquent en phase de Panique si une Victime est morte ce tour.",
+     "<b>Minor Dark Powers</b> : ils s'appliquent à <b>tous</b> les Tueurs. Quand l'un d'eux subit des dégâts, ils vont d'abord sur la carte de Minor Dark Power."
+    ]
+   ],
+   [
+    "Mort d'un Intruder et Final Health",
+    [
+     "Si un Tueur avec son jeton noir de Final Health perd son dernier PV alors qu'un autre reste sur le plateau, <b>couchez la figurine</b>, changez le Tueur Actif et terminez la phase en cours.",
+     "À la fin de la phase, révélez son jeton de Final Health. <b>Vierge</b> : il est vraiment mort et quitte le plateau. <b>Avec des PV</b> : il récupère ses PV comme d'habitude, on remplace le jeton noir par un blanc et on relève la figurine.",
+     "Même avec 3 jetons de Final Health, le bonus de <b>+1 🎲</b> ne s'obtient qu'une fois."
+    ]
+   ],
+   [
+    "Finales (d'après le wiki)",
+    [
+     "<b>Hunt Sweet Hunt</b> : l'Actif cible vous ou une Victime, se déplace deux fois, attaque et 🔺. Chaque attaque fait 1 ✴ de plus.",
+     "<b>You're Gonna Die</b> : l'Actif cible, se déplace et attaque ; 🔻 ; puis le nouvel Actif cible, se déplace et attaque.",
+     "<b>Release the Beast</b> : <b>tous</b> les Tueurs ciblent, se déplacent et attaquent. Dès lors, tous comptent comme Actifs jusqu'à la fin de la partie ; résolvez leurs actions de haut en bas.",
+     "<b>We Know Where You Live</b> (Epic Finale) : l'Actif cible, se déplace, attaque deux fois et 🔺. À sa révélation, tous les Tueurs ciblent, se déplacent et attaquent."
+    ]
+   ],
+   [
+    "Pouvoirs obscurs",
+    [
+     "<b>No Remorse</b> : lancez un dé au début de chaque Entretien. Si le résultat dépasse le nombre de Tueurs, 🩸.",
+     "<b>Strength in Numbers</b> : chaque attaque fait 1 ✴ de plus par autre Tueur dans la même case ou une case adjacente.",
+     "<b>Maskaphobia</b> : une fois par tour, quand un Tueur entre dans votre case, 🎭. Vous ne pouvez pas acheter <b>Focus</b> si un Tueur est dans votre case.",
+     "<b>Won't Stay Down</b> (Epic Dark Power) : quand un Tueur meurt, il récupère aussitôt 2 PV normaux et un jeton de Final Health au hasard. Puis retirez cette carte du jeu."
+    ]
+   ],
+   [
+    "Cartes de Terreur à expliquer (d'après le wiki)",
+    [
+     "<b>\"They will hunt you\"</b> (x2) : placez l'Actif dans votre case et il vous attaque. Puis 🔻 et le nouveau vous cible et se déplace ; encore 🔻 et pareil.",
+     "<b>\"Where are they coming from?\"</b> : l'Actif cible, se déplace deux fois, attaque et 🔺. S'il n'y a pas de Victimes, défaussez et piochez-en une autre. Sinon, placez l'Actif avec la Victime la plus éloignée et il l'attaque.",
+     "<b>\"Go away!!!\"</b> : chaque Tueur dans votre case ou une case avec une Victime subit 1 ✴. Chacun blessé ainsi cible vous ou une Victime et attaque. Puis piochez un Événement.",
+     "<b>\"They're everywhere!\"</b> : trois actions à la suite, avec 🔺 avant la 2e et la 3e. C'est celle de l'exemple du livret.",
+     "<b>Amphetamines</b> (Minor Dark Power, 2 PV bonus) : au début de la phase du Killer, le Tueur avec le moins de PV en récupère 2.",
+     "<b>Coordinated Attack</b> (Minor Dark Power, 2 PV bonus) : à la fin de chaque phase du Killer, 🔺 et le nouvel Actif cible vous ou une Victime, se déplace et attaque."
+    ]
+   ]
+  ],
+  "err_m_t": "Erreurs fréquentes",
+  "err_m": [
+   "On ne prend un Supply Item que si l'on <b>est</b> dans sa case et qu'on paie ⌛ : en passant, ça ne compte pas.",
+   "Les Supply Items et Crafted Items défaussés <b>reviennent face visible</b> dans la zone de jeu, prêts à être repris ou refabriqués.",
+   "Si vous fabriquez avec un objet à usages limités, l'objet fabriqué <b>garde ses usages restants</b> (Shotgun → Sawed-Off Shotgun, Trashcan Lid → Porcupine).",
+   "<b>Maison</b> et <b>Intérieur</b>, ce n'est pas pareil : le Garage est Maison ; le Shed et le Boathouse sont Intérieur mais pas Maison."
+  ],
+  "bloques_m": [
+   [
+    "Mise en place spéciale",
+    [
+     "Placez les <b>quatre</b> cartes de Supply Item face visible dans la zone de jeu.",
+     "Mélangez les cartes de <b>Crafted Item</b> et révélez les <b>quatre premières</b> face visible dans la zone de jeu."
+    ]
+   ],
+   [
+    "Maison, Intérieur et Extérieur",
+    [
+     "<b>Maison</b> : Kitchen, les 2 Bedrooms, Bathroom, Family Room, Foyer, Laundry Room et Garage.",
+     "<b>Intérieur</b> : toutes les cases de la maison plus le Shed et le Boathouse.",
+     "<b>Extérieur</b> : toutes les cases qui ne sont pas Intérieur."
+    ]
+   ],
+   [
+    "Supply Items",
+    [
+     "Il y en a 4 : <b>Discarded Tools</b> au Garage, <b>Nails</b> au Shed, <b>Rope</b> au Boathouse et <b>Wood</b> dans les cases avec l'icône du bois.",
+     "Si vous êtes dans une case avec son icône, vous pouvez prendre la carte en payant ⌛. Pas en simple passage.",
+     "Elle va dans un emplacement du Sac à dos. Ils ne servent qu'à fabriquer.",
+     "Défaussée, elle revient face visible dans la zone de jeu et peut être reprise."
+    ]
+   ],
+   [
+    "Crafted Items",
+    [
+     "Fabriquer : prenez un Crafted Item disponible en défaussant les objets et Supply Items indiqués sur sa carte et en payant le ⌛ indiqué.",
+     "L'objet fabriqué va dans votre main ou dans un emplacement du Sac à dos. Défaussé, il revient face visible et peut être refabriqué.",
+     "Si vous défaussez un objet à usages limités pour fabriquer, le nouveau <b>garde ces usages</b> : une Shotgun avec 1 usage donne une Sawed-Off Shotgun avec 1 usage. Pareil pour la Trashcan Lid et le Porcupine.",
+     "Au début, seuls 4 sont disponibles. <b>Blueprint</b> et l'événement <b>Brainstorming</b> en ajoutent."
+    ]
+   ],
+   [
+    "Cartes de Terreur du lieu (d'après le wiki)",
+    [
+     "<b>\"Now get the hell out of my house!\"</b> : si vous n'êtes pas dans la maison, défaussez et piochez-en une autre. Sinon, piochez un Événement et placez le Killer dans votre case. Si vous avez <b>Weak Attack</b> en main, vous pouvez la jouer ; sinon il vous attaque.",
+     "<b>\"Is Tammy home?\"</b> : placez le Killer sur le Porch. 🎭.",
+     "<b>\"They can't get in here. Right?\"</b> : 2 nouvelles Victimes dans la Bedroom. 🎭.",
+     "<b>\"What happened while we were gone?\"</b> : 3 nouvelles Victimes au Boathouse. Piochez un Événement.",
+     "<b>\"We were passing by and thought we heard a scream.\"</b> : 2 nouvelles Victimes sur le Porch, 🎭 et piochez un Événement.",
+     "Avec les Intruders, « le Killer » de ces cartes est le Tueur Actif."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "blueprint",
+    "Blueprint",
+    "x2. Défaussez-le pour choisir un Crafted Item parmi ceux non utilisés : il devient disponible à la fabrication."
+   ],
+   [
+    "blender",
+    "Blender",
+    "Arme · portée 0 · 3 ✴ · 2 mains. Utilisable seulement dans la <b>maison</b>. Défaussé après usage."
+   ],
+   [
+    "knife",
+    "Knife",
+    "x2. Arme · portée 0 · 1 ✴ · 1 main."
+   ],
+   [
+    "shotgun",
+    "Shotgun",
+    "Arme · portée 1 · 2 mains · 2 usages. Ne modifie pas une carte Action : s'utilise sans. Dépensez ⌛ pour un jet d'Horreur ; sur un succès, 3 ✴ à 1 Ennemi à portée."
+   ],
+   [
+    "wooden-bat",
+    "Wooden Bat",
+    "x2. Arme · portée 0 · 1 ✴ · 2 mains."
+   ],
+   [
+    "fireplace-poker",
+    "Fireplace Poker",
+    "Arme · portée 0 · 1 ✴ · 1 main."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "1 main. Chaque fois que vous utilisez une carte Action pour récupérer des PV, ❤️ en plus."
+   ],
+   [
+    "trashcan-lid",
+    "Trashcan Lid",
+    "1 main · 3 usages. Ignorez 1 ✴."
+   ],
+   [
+    "map",
+    "Map",
+    "Défaussez-la en phase d'Action. Puis, pour chaque pioche d'Objets : si la carte du dessus est face cachée, révélez-la ; si elle est face visible, vous pouvez la retirer du jeu et révéler la suivante."
+   ],
+   [
+    "mysterious-pills",
+    "Mysterious Pills",
+    "Défaussez-les en phase d'Action et choisissez : ⊘🎭 ou ❤️❤️."
+   ],
+   [
+    "chisel",
+    "1/8\" Chisel",
+    "Arme · portée 0 · 1 ✴ · 1 main. Lancez 1 dé après chaque usage : sur 1-4, défaussez-le."
+   ],
+   [
+    "energy-drink",
+    "Energy Drink",
+    "Défaussez-la en phase d'Action et choisissez : 3 ⌛ ou déplacez-vous d'1 case."
+   ],
+   [
+    "lucky-rabbits-foot",
+    "Lucky Rabbit's Foot",
+    "Défaussez-la en phase d'Action pour un jet d'Horreur. Pour chaque succès, choisissez : 2 ⌛, ❤️, ⊘🎭 ou déplacez-vous d'1 case."
+   ],
+   [
+    "discarded-tools",
+    "Discarded Tools",
+    "Supply Item. Sert à fabriquer. ⌛ pour les prendre (Garage)."
+   ],
+   [
+    "nails",
+    "Nails",
+    "Supply Item. Sert à fabriquer. ⌛ pour les prendre (Shed)."
+   ],
+   [
+    "wood",
+    "Wood",
+    "Supply Item. Sert à fabriquer. ⌛ pour le prendre (cases avec l'icône du bois)."
+   ],
+   [
+    "rope",
+    "Rope",
+    "Supply Item. Sert à fabriquer. ⌛ pour la prendre (Boathouse)."
+   ],
+   [
+    "nail-bat",
+    "Nail Bat",
+    "Fabriqué : Wooden Bat + Nails + 2 ⌛. Arme · portée 0 · 2 ✴ · 2 mains."
+   ],
+   [
+    "spear",
+    "Spear",
+    "Fabriqué : Knife + Wood + 2 ⌛. Arme · portée 0 · 1 ✴ · 2 mains. Quand vous blessez un Ennemi, vous pouvez le déplacer vers une case adjacente."
+   ],
+   [
+    "disemboweler",
+    "Disemboweler",
+    "Fabriqué : Wooden Bat + Knife + Rope + 2 ⌛. Arme · portée 0 · 2 ✴ · 2 mains. Après avoir blessé l'Ennemi ciblé, ⊘🎭 par autre Ennemi dans la même case ou les cases adjacentes."
+   ],
+   [
+    "sawed-off-shotgun",
+    "Sawed-Off Shotgun",
+    "Fabriqué : Shotgun + Discarded Tools + 2 ⌛. Arme · portée 0 · 1 main · 2 usages. Ne modifie pas une carte Action. Dépensez ⌛ pour infliger 3 ✴ à la cible principale et 2 ✴ aux autres Ennemis de la case."
+   ],
+   [
+    "nailgun",
+    "Nailgun",
+    "Fabriqué : Nails + Discarded Tools + 2 ⌛. Arme · portée 0-1 · 1 ✴ · 1 main · 3 usages. À portée 1, ne modifie pas une carte Action : dépensez ⌛ pour infliger 1 ✴. À portée 0, modifie la carte Action et ajoute 1 ✴ à l'attaque."
+   ],
+   [
+    "spiked-slingshot",
+    "Spiked Slingshot",
+    "Fabriqué : Nails + Rope + 2 ⌛. Arme · portée 1 · 1 ✴ · 2 mains · 3 usages. Ne modifie que <b>Weak Attack</b> et <b>Furious Strike</b>. Pas défaussée après 3 usages : en phase d'Action, vous pouvez défausser des Nails pour les recharger."
+   ],
+   [
+    "porcupine",
+    "Porcupine",
+    "Fabriqué : Trashcan Lid + Nails + 2 ⌛. 1 main · 3 usages. Ignorez 1 ✴ et infligez 1 ✴ à l'Ennemi qui attaque."
+   ],
+   [
+    "snare",
+    "Snare",
+    "Fabriqué : Rope + Wood + 1 ⌛. 3 usages. En phase d'Action, pour ⌛, posez un jeton Snare dans votre case (un par case). Si un Ennemi y entre, il ne peut plus bouger jusqu'à la fin du tour. Puis défaussez le jeton."
+   ],
+   [
+    "nail-trap",
+    "Nail Trap",
+    "Fabriqué : Wood + Nails + Discarded Tools + 2 ⌛. 3 usages. En phase d'Action, pour ⌛, posez un jeton dans votre case (un par case). Si un Ennemi y entre, défaussez le jeton et l'Ennemi subit ✴."
+   ],
+   [
+    "the-obliterator",
+    "The Obliterator",
+    "Fabriqué : Wood + Rope + Discarded Tools + Nails + 4 ⌛. Arme · portée 0 · 3 ✴ · 2 mains. Ne modifie pas les cartes Réaction et tout votre déplacement baisse de 1 (minimum 1). En l'utilisant, 💔 par « 1 » dans le résultat final de votre jet d'Horreur."
+   ]
+  ],
+  "falta": "Il manque encore des photos des Finales, des cartes de Terreur (tueur et lieu), des Minor Dark Powers et du plateau du Killer : ces textes viennent du wiki.",
+  "falta_ev": "",
+  "ev": [
+   [
+    "Getting Resourceful",
+    "Fabriquer coûte ⌛ de moins."
+   ],
+   [
+    "Brainstorming",
+    "Choisissez 2 Crafted Items parmi ceux non utilisés : ils deviennent disponibles. Défaussez."
+   ],
+   [
+    "Battle Ready",
+    "Prenez les cartes Objet mises de côté à la mise en place et révélez-les une à une jusqu'à une arme (gardez-la) ou jusqu'à épuisement. Défaussez."
+   ],
+   [
+    "Booby Traps",
+    "Toutes les Victimes dans la maison paniquent. Toute Victime qui sort de la maison meurt. Défaussez."
+   ],
+   [
+    "Loser Boyfriend",
+    "La Victime la plus éloignée de vous est votre <b>Boyfriend</b>, qui aidait le Tueur en secret. Les Ennemis ne peuvent ni le cibler ni le tuer, mais vous si. Si vous le tuez : ⊘🎭⊘🎭⊘🎭 et le Bloodlust ne monte pas. S'il quitte le jeu, défaussez la carte."
+   ],
+   [
+    "Another Way Out",
+    "Placez le <b>Boat</b> sur le Lake et le <b>Neighbor</b> dans la Family Room. Le Neighbor a les clés : sur le Lakefront, lui et jusqu'à 3 Victimes de cette case peuvent sortir et être sauvés. Si le Neighbor quitte le jeu, défaussez la carte et le Boat."
+   ],
+   [
+    "Home Security",
+    "Gardez-la jusqu'à l'utiliser. Activez-la en phase d'Action s'il n'y a pas d'Ennemis dans la maison. Active, les Ennemis ne peuvent pas entrer : quand l'un essaie, posez un jeton sur la carte et il ne bouge pas. L'alarme se coupe à 3 jetons ou quand vous ou une Victime entrez ou sortez de la maison ; défaussez-la alors."
+   ],
+   [
+    "Kick-Scooter",
+    "Posez le Scooter sur la case extérieure la plus proche. Il se déplace avec vous, mais reste sur la dernière case extérieure si vous entrez à l'intérieur. Une fois par phase d'Action, vous pouvez l'utiliser pour vous déplacer de 2 cases ; les Victimes ne vous suivent pas pendant ce déplacement."
+   ],
+   [
+    "Marked for Death",
+    "Placez l'<b>Outsider</b> dans la Bathroom. Quand le Tueur doit choisir une cible, il choisit l'Outsider. En chemin, il tue une Victime dans chaque case traversée, départ et arrivée comprises. Si l'Outsider quitte le jeu, défaussez la carte."
+   ],
+   [
+    "Escape Attempt",
+    "La Victime la plus proche du Driveway court vers la sortie. Lancez 1 dé : sur 5-6 elle avance d'une case vers le Driveway (même s'il y a un Tueur) ; sur 1-4 elle meurt. Répétez jusqu'à ce qu'elle arrive (sauvée) ou meure. Défaussez."
+   ]
+  ]
  }
 }

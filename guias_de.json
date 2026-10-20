@@ -1519,5 +1519,323 @@
     "Stelle sie in die <b>Consulta Médica</b>. Ist sie an deinem Ort, wählst du beim Einnehmen einer Pastilla deren Farbe. Wird sie an deinem Ort getötet, 🎭🎭🎭🎭. Verlässt sie das Spiel, wirf die Karte ab."
    ]
   ]
+ },
+ "A Knock at the Door": {
+  "ley": "⌛ = Zeit · ✴ = Schaden · ❤️ = Leben zurückerhalten · 💔 = Leben verlieren · 🎭 = Horror steigt · ⊘🎭 = Horror sinkt · 🎲 = Würfel · 🩸 = Bloodlust · 🔺 = der Marker für den aktiven Killer geht HOCH zum nächsten Killer · 🔻 = er geht RUNTER zum nächsten Killer",
+  "err_k_t": "Häufige Fehler",
+  "err_k": [
+   "Wenn du einen Killer <b>angreifst</b>, wird er aktiv, <b>auch ohne Schaden</b>. Ebenso, wenn du ihn mit einer Karte verletzt.",
+   "In der Panikphase fliehen Opfer in einem Feld mit <b>irgendeinem</b> Killer, nicht nur dem aktiven, wenn in dieser Runde ein Opfer gestorben ist.",
+   "Liegt eine Minor Dark Power aus, geht Schaden an <b>jedem</b> Killer zuerst auf diese Karte.",
+   "Jeder Killer hat seinen eigenen Final-Health-Marker, aber den Bonus von <b>+1 🎲</b> bekommst du nur <b>einmal</b>.",
+   "Stirbt ein Killer, der noch seinen schwarzen Final-Health-Marker hat, während ein anderer noch auf dem Brett steht, endet die Phase <b>nicht</b> sofort: Figur umlegen und weiterspielen."
+  ],
+  "bloques_k": [
+   [
+    "Besonderer Aufbau",
+    [
+     "Stelle die <b>drei Killer-Figuren</b> (die rote aus dem Grundspiel, die schwarze und die graue) auf das Killer-Startfeld der Setup-Karte.",
+     "Jeder Killer bekommt sein Startleben, mit je <b>einem Final-Health-Marker</b>.",
+     "Lege den Marker <b>Aktiver Killer</b> auf das Killer-Tableau, in den Kreis von <b>Trish</b> (der roten).",
+     "Laut Wiki starten sie mit 3 Horror und je 6 Leben."
+    ]
+   ],
+   [
+    "Der aktive Killer",
+    [
+     "Die Intruders sind <b>3 Killer</b>: Trish, Baghead und Zeke. Nur <b>einer</b> ist aktiv, wenn bewegt (Stiefel), angegriffen (Messer) oder der Killer platziert wird.",
+     "Aktiv ist der, in dessen Kreis auf dem Killer-Tableau der Marker liegt. Die anderen beiden bleiben stehen."
+    ]
+   ],
+   [
+    "Wie der aktive Killer wechselt",
+    [
+     "Er kann mehrmals pro Runde wechseln. Es gibt 3 Wege:",
+     "<b>1.</b> Greifst du einen Killer an (mit oder ohne Schaden) oder verletzt ihn mit einer Karte, wird er sofort der aktive Killer.",
+     "<b>2.</b> Beim Symbol 🔺 (K mit roter Hälfte oben) geht der Marker HOCH zum nächsten Killer; bei 🔻 (rote Hälfte unten) RUNTER. Liegt er beim obersten und soll hoch, springt er zum untersten, und umgekehrt.",
+     "<b>3.</b> Stirbt der aktive Killer, geht der Marker zum obersten lebenden Killer.",
+     "Tote Killer werden bei der Suche nach dem nächsten übersprungen."
+    ]
+   ],
+   [
+    "Alle Killer, Panik und Minor Dark Powers",
+    [
+     "<b>„Alle Killer“</b>: Marker ignorieren und den Effekt für jeden abhandeln, vom obersten auf dem Killer-Tableau nach unten. Der Marker bewegt sich nicht.",
+     "<b>Panik</b>: Opfer in einem Feld mit <b>irgendeinem</b> Killer fliehen in der Panikphase, wenn in dieser Runde ein Opfer gestorben ist.",
+     "<b>Minor Dark Powers</b>: gelten für <b>alle</b> Killer. Wird einer verletzt, geht der Schaden zuerst auf die Minor-Dark-Power-Karte."
+    ]
+   ],
+   [
+    "Tod eines Intruders und Final Health",
+    [
+     "Verliert ein Killer mit schwarzem Final-Health-Marker sein letztes Leben, während ein anderer noch auf dem Brett ist, <b>lege die Figur um</b>, wechsle den aktiven Killer und beende die laufende Phase.",
+     "Am Ende der Phase deckst du seinen Final-Health-Marker auf. <b>Leer</b>: er ist wirklich tot und verlässt das Brett. <b>Mit Leben</b>: er erhält sein Leben wie üblich, der schwarze Marker wird durch einen weißen ersetzt und die Figur steht wieder auf.",
+     "Auch bei 3 Final-Health-Markern gibt es den Bonus von <b>+1 🎲</b> nur einmal."
+    ]
+   ],
+   [
+    "Finales (laut Wiki)",
+    [
+     "<b>Hunt Sweet Hunt</b>: der aktive Killer zielt auf dich oder ein Opfer, bewegt sich zweimal, greift an und 🔺. Jeder Angriff macht 1 ✴ mehr.",
+     "<b>You're Gonna Die</b>: der aktive Killer zielt, bewegt sich und greift an; 🔻; dann zielt, bewegt sich und greift der neue aktive an.",
+     "<b>Release the Beast</b>: <b>alle</b> Killer zielen, bewegen sich und greifen an. Ab dann gelten alle bis Spielende als aktiv; ihre Aktionen von oben nach unten abhandeln.",
+     "<b>We Know Where You Live</b> (Epic Finale): der aktive Killer zielt, bewegt sich, greift zweimal an und 🔺. Beim Aufdecken zielen, bewegen sich und greifen alle Killer an."
+    ]
+   ],
+   [
+    "Dunkle Mächte",
+    [
+     "<b>No Remorse</b>: zu Beginn jeder Unterhaltsphase würfeln. Ist das Ergebnis höher als die Zahl der Killer, 🩸.",
+     "<b>Strength in Numbers</b>: jeder Angriff macht 1 ✴ mehr für jeden anderen Killer im selben oder einem angrenzenden Feld.",
+     "<b>Maskaphobia</b>: einmal pro Runde, wenn ein Killer in dein Feld zieht, 🎭. Du kannst kein <b>Focus</b> kaufen, solange ein Killer in deinem Feld ist.",
+     "<b>Won't Stay Down</b> (Epic Dark Power): stirbt ein Killer, erhält er sofort 2 normale Leben und einen zufälligen Final-Health-Marker zurück. Dann diese Karte aus dem Spiel nehmen."
+    ]
+   ],
+   [
+    "Terror-Karten mit Erklärungsbedarf (laut Wiki)",
+    [
+     "<b>\"They will hunt you\"</b> (x2): stelle den aktiven Killer in dein Feld, er greift dich an. Dann 🔻, der neue zielt auf dich und bewegt sich; nochmal 🔻 und dasselbe.",
+     "<b>\"Where are they coming from?\"</b>: der aktive Killer zielt, bewegt sich zweimal, greift an und 🔺. Gibt es keine Opfer, abwerfen und neue ziehen. Sonst stellst du den aktiven Killer zum entferntesten Opfer und er greift es an.",
+     "<b>\"Go away!!!\"</b>: jeder Killer in deinem Feld oder einem Feld mit Opfer erleidet 1 ✴. Jeder so verletzte zielt auf dich oder ein Opfer und greift an. Dann ein Ereignis ziehen.",
+     "<b>\"They're everywhere!\"</b>: drei Aktionen hintereinander, mit 🔺 vor der 2. und der 3. Das ist die aus dem Beispiel im Regelheft.",
+     "<b>Amphetamines</b> (Minor Dark Power, 2 Bonusleben): zu Beginn der Killer-Phase erhält der Killer mit dem wenigsten Leben 2 zurück.",
+     "<b>Coordinated Attack</b> (Minor Dark Power, 2 Bonusleben): am Ende jeder Killer-Phase 🔺, dann zielt der neue aktive Killer auf dich oder ein Opfer, bewegt sich und greift an."
+    ]
+   ]
+  ],
+  "err_m_t": "Häufige Fehler",
+  "err_m": [
+   "Ein Supply Item nimmst du nur, wenn du <b>in</b> seinem Feld bist und ⌛ zahlst: im Vorbeigehen zählt nicht.",
+   "Abgeworfene Supply Items und Crafted Items <b>kommen offen zurück</b> in den Spielbereich und können wieder genommen bzw. hergestellt werden.",
+   "Stellst du etwas mit einem Gegenstand mit begrenzten Nutzungen her, <b>behält</b> der neue die restlichen Nutzungen (Shotgun → Sawed-Off Shotgun, Trashcan Lid → Porcupine).",
+   "<b>Haus</b> und <b>Innen</b> sind nicht dasselbe: die Garage gehört zum Haus; Shed und Boathouse sind Innen, aber nicht Haus."
+  ],
+  "bloques_m": [
+   [
+    "Besonderer Aufbau",
+    [
+     "Lege die <b>vier</b> Supply-Item-Karten offen in den Spielbereich.",
+     "Mische die <b>Crafted-Item</b>-Karten und decke die <b>obersten vier</b> offen im Spielbereich auf."
+    ]
+   ],
+   [
+    "Haus, Innen und Außen",
+    [
+     "<b>Haus</b>: Kitchen, beide Bedrooms, Bathroom, Family Room, Foyer, Laundry Room und Garage.",
+     "<b>Innen</b>: alle Felder im Haus plus Shed und Boathouse.",
+     "<b>Außen</b>: alle Felder, die nicht Innen sind."
+    ]
+   ],
+   [
+    "Supply Items",
+    [
+     "Es gibt 4: <b>Discarded Tools</b> in der Garage, <b>Nails</b> im Shed, <b>Rope</b> im Boathouse und <b>Wood</b> in den Feldern mit dem Holzsymbol.",
+     "Bist du in einem Feld mit seinem Symbol, kannst du die Karte für ⌛ nehmen. Nicht im Vorbeigehen.",
+     "Sie kommt in einen Rucksack-Platz. Sie dienen nur zum Herstellen.",
+     "Abgeworfen kommt sie offen in den Spielbereich zurück und kann wieder genommen werden."
+    ]
+   ],
+   [
+    "Crafted Items",
+    [
+     "Herstellen: nimm ein verfügbares Crafted Item, indem du die auf der Karte genannten Gegenstände und Supply Items abwirfst und die angegebene ⌛ zahlst.",
+     "Der hergestellte Gegenstand kommt in deine Hand oder in einen Rucksack-Platz. Abgeworfen kommt er offen zurück und kann erneut hergestellt werden.",
+     "Wirfst du zum Herstellen einen Gegenstand mit begrenzten Nutzungen ab, <b>behält</b> der neue diese Nutzungen: eine Shotgun mit 1 Nutzung ergibt eine Sawed-Off Shotgun mit 1 Nutzung. Ebenso Trashcan Lid und Porcupine.",
+     "Zu Beginn sind nur 4 verfügbar. <b>Blueprint</b> und das Ereignis <b>Brainstorming</b> bringen mehr."
+    ]
+   ],
+   [
+    "Terror-Karten des Ortes (laut Wiki)",
+    [
+     "<b>\"Now get the hell out of my house!\"</b>: bist du nicht im Haus, abwerfen und neue ziehen. Sonst ein Ereignis ziehen und den Killer in dein Feld stellen. Hast du <b>Weak Attack</b> auf der Hand, darfst du sie spielen; sonst greift er dich an.",
+     "<b>\"Is Tammy home?\"</b>: stelle den Killer auf die Porch. 🎭.",
+     "<b>\"They can't get in here. Right?\"</b>: 2 neue Opfer im Bedroom. 🎭.",
+     "<b>\"What happened while we were gone?\"</b>: 3 neue Opfer im Boathouse. Ein Ereignis ziehen.",
+     "<b>\"We were passing by and thought we heard a scream.\"</b>: 2 neue Opfer auf der Porch, 🎭 und ein Ereignis ziehen.",
+     "Bei den Intruders ist „der Killer“ auf diesen Karten der aktive Killer."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "blueprint",
+    "Blueprint",
+    "x2. Abwerfen, um ein ungenutztes Crafted Item zu wählen: es ist jetzt herstellbar."
+   ],
+   [
+    "blender",
+    "Blender",
+    "Waffe · Reichweite 0 · 3 ✴ · 2 Hände. Nur im <b>Haus</b> nutzbar. Nach Gebrauch abwerfen."
+   ],
+   [
+    "knife",
+    "Knife",
+    "x2. Waffe · Reichweite 0 · 1 ✴ · 1 Hand."
+   ],
+   [
+    "shotgun",
+    "Shotgun",
+    "Waffe · Reichweite 1 · 2 Hände · 2 Nutzungen. Kann keine Aktionskarte verändern: ohne sie benutzen. Gib ⌛ für einen Horrorwurf aus; bei Erfolg 3 ✴ an 1 Feind in Reichweite."
+   ],
+   [
+    "wooden-bat",
+    "Wooden Bat",
+    "x2. Waffe · Reichweite 0 · 1 ✴ · 2 Hände."
+   ],
+   [
+    "fireplace-poker",
+    "Fireplace Poker",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "1 Hand. Jedes Mal, wenn du eine Aktionskarte nutzt, um Leben zurückzuerhalten, ❤️ zusätzlich."
+   ],
+   [
+    "trashcan-lid",
+    "Trashcan Lid",
+    "1 Hand · 3 Nutzungen. Ignoriere 1 ✴."
+   ],
+   [
+    "map",
+    "Map",
+    "In der Aktionsphase abwerfen. Dann für jeden Gegenstandsstapel: liegt die oberste Karte verdeckt, aufdecken; liegt sie offen, darfst du sie aus dem Spiel nehmen und die nächste aufdecken."
+   ],
+   [
+    "mysterious-pills",
+    "Mysterious Pills",
+    "In der Aktionsphase abwerfen und wählen: ⊘🎭 oder ❤️❤️."
+   ],
+   [
+    "chisel",
+    "1/8\" Chisel",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand. Nach jeder Nutzung 1 Würfel: bei 1-4 abwerfen."
+   ],
+   [
+    "energy-drink",
+    "Energy Drink",
+    "In der Aktionsphase abwerfen und wählen: 3 ⌛ oder 1 Feld bewegen."
+   ],
+   [
+    "lucky-rabbits-foot",
+    "Lucky Rabbit's Foot",
+    "In der Aktionsphase für einen Horrorwurf abwerfen. Pro Erfolg wählen: 2 ⌛, ❤️, ⊘🎭 oder 1 Feld bewegen."
+   ],
+   [
+    "discarded-tools",
+    "Discarded Tools",
+    "Supply Item. Zum Herstellen. ⌛ zum Aufnehmen (Garage)."
+   ],
+   [
+    "nails",
+    "Nails",
+    "Supply Item. Zum Herstellen. ⌛ zum Aufnehmen (Shed)."
+   ],
+   [
+    "wood",
+    "Wood",
+    "Supply Item. Zum Herstellen. ⌛ zum Aufnehmen (Felder mit Holzsymbol)."
+   ],
+   [
+    "rope",
+    "Rope",
+    "Supply Item. Zum Herstellen. ⌛ zum Aufnehmen (Boathouse)."
+   ],
+   [
+    "nail-bat",
+    "Nail Bat",
+    "Hergestellt: Wooden Bat + Nails + 2 ⌛. Waffe · Reichweite 0 · 2 ✴ · 2 Hände."
+   ],
+   [
+    "spear",
+    "Spear",
+    "Hergestellt: Knife + Wood + 2 ⌛. Waffe · Reichweite 0 · 1 ✴ · 2 Hände. Verletzt du einen Feind, darfst du ihn in ein angrenzendes Feld bewegen."
+   ],
+   [
+    "disemboweler",
+    "Disemboweler",
+    "Hergestellt: Wooden Bat + Knife + Rope + 2 ⌛. Waffe · Reichweite 0 · 2 ✴ · 2 Hände. Nach dem Schaden am Ziel ⊘🎭 für jeden anderen Feind im selben oder angrenzenden Feldern."
+   ],
+   [
+    "sawed-off-shotgun",
+    "Sawed-Off Shotgun",
+    "Hergestellt: Shotgun + Discarded Tools + 2 ⌛. Waffe · Reichweite 0 · 1 Hand · 2 Nutzungen. Kann keine Aktionskarte verändern. Gib ⌛ aus für 3 ✴ am Hauptziel und 2 ✴ an den anderen Feinden im Feld."
+   ],
+   [
+    "nailgun",
+    "Nailgun",
+    "Hergestellt: Nails + Discarded Tools + 2 ⌛. Waffe · Reichweite 0-1 · 1 ✴ · 1 Hand · 3 Nutzungen. Auf Reichweite 1 verändert sie keine Aktionskarte: gib ⌛ für 1 ✴ aus. Auf Reichweite 0 verändert sie die Aktionskarte und gibt dem Angriff 1 ✴ dazu."
+   ],
+   [
+    "spiked-slingshot",
+    "Spiked Slingshot",
+    "Hergestellt: Nails + Rope + 2 ⌛. Waffe · Reichweite 1 · 1 ✴ · 2 Hände · 3 Nutzungen. Verändert nur <b>Weak Attack</b> und <b>Furious Strike</b>. Wird nach 3 Nutzungen nicht abgeworfen: in der Aktionsphase kannst du Nails abwerfen, um sie aufzufüllen."
+   ],
+   [
+    "porcupine",
+    "Porcupine",
+    "Hergestellt: Trashcan Lid + Nails + 2 ⌛. 1 Hand · 3 Nutzungen. Ignoriere 1 ✴ und mache 1 ✴ am angreifenden Feind."
+   ],
+   [
+    "snare",
+    "Snare",
+    "Hergestellt: Rope + Wood + 1 ⌛. 3 Nutzungen. In der Aktionsphase für ⌛ einen Snare-Marker in dein Feld legen (einer pro Feld). Betritt ein Feind das Feld, kann er sich bis Rundenende nicht weiterbewegen. Dann Marker abwerfen."
+   ],
+   [
+    "nail-trap",
+    "Nail Trap",
+    "Hergestellt: Wood + Nails + Discarded Tools + 2 ⌛. 3 Nutzungen. In der Aktionsphase für ⌛ einen Marker in dein Feld legen (einer pro Feld). Betritt ein Feind das Feld, Marker abwerfen und der Feind erleidet ✴."
+   ],
+   [
+    "the-obliterator",
+    "The Obliterator",
+    "Hergestellt: Wood + Rope + Discarded Tools + Nails + 4 ⌛. Waffe · Reichweite 0 · 3 ✴ · 2 Hände. Kann keine Reaktionskarten verändern und deine ganze Bewegung sinkt um 1 (mindestens 1). Beim Einsatz 💔 für jede „1“ im Endergebnis deines Horrorwurfs."
+   ]
+  ],
+  "falta": "Es fehlen noch Fotos der Finale-Karten, der Terror-Karten (Killer und Ort), der Minor Dark Powers und des Killer-Tableaus: diese Texte stammen aus dem Wiki.",
+  "falta_ev": "",
+  "ev": [
+   [
+    "Getting Resourceful",
+    "Herstellen kostet ⌛ weniger."
+   ],
+   [
+    "Brainstorming",
+    "Wähle 2 ungenutzte Crafted Items: sie sind jetzt herstellbar. Abwerfen."
+   ],
+   [
+    "Battle Ready",
+    "Nimm die beim Aufbau beiseitegelegten Gegenstandskarten und decke sie einzeln auf, bis eine Waffe kommt (behalten) oder keine mehr übrig ist. Abwerfen."
+   ],
+   [
+    "Booby Traps",
+    "Alle Opfer im Haus geraten in Panik. Jedes Opfer, das das Haus verlässt, stirbt. Abwerfen."
+   ],
+   [
+    "Loser Boyfriend",
+    "Das von dir am weitesten entfernte Opfer ist dein <b>Boyfriend</b>, der heimlich dem Killer hilft. Feinde können ihn weder anvisieren noch töten, du schon. Tötest du ihn: ⊘🎭⊘🎭⊘🎭 und die Bloodlust steigt nicht. Verlässt er das Spiel, Karte abwerfen."
+   ],
+   [
+    "Another Way Out",
+    "Lege das <b>Boat</b> auf den Lake und den <b>Neighbor</b> in den Family Room. Der Neighbor hat die Schlüssel: ist er am Lakefront, können er und bis zu 3 Opfer dort fliehen und gerettet werden. Verlässt der Neighbor das Spiel, Karte und Boat abwerfen."
+   ],
+   [
+    "Home Security",
+    "Behalte sie, bis du sie nutzt. Aktivierbar in einer Aktionsphase ohne Feinde im Haus. Aktiv können Feinde das Haus nicht betreten: versucht es einer, lege einen Marker auf die Karte und er bewegt sich nicht. Der Alarm ist aus bei 3 Markern oder wenn du oder ein Opfer das Haus betretet oder verlasst; dann abwerfen."
+   ],
+   [
+    "Kick-Scooter",
+    "Lege den Scooter auf das nächste Außenfeld. Er bewegt sich mit dir, bleibt aber auf dem letzten Außenfeld, wenn du nach innen gehst. Einmal pro Aktionsphase kannst du damit bis zu 2 Felder ziehen; Opfer folgen dir dabei nicht."
+   ],
+   [
+    "Marked for Death",
+    "Stelle den <b>Outsider</b> ins Bathroom. Muss der Killer ein Ziel wählen, wählt er den Outsider. Auf dem Weg tötet er ein Opfer in jedem Feld, durch das er zieht, Start- und Zielfeld eingeschlossen. Verlässt der Outsider das Spiel, Karte abwerfen."
+   ],
+   [
+    "Escape Attempt",
+    "Das Opfer, das dem Driveway am nächsten ist, rennt zum Ausgang. Wirf 1 Würfel: bei 5-6 zieht es ein Feld näher zum Driveway (auch wenn dort ein Killer ist); bei 1-4 stirbt es. Wiederholen, bis es ankommt (gerettet) oder stirbt. Abwerfen."
+   ]
+  ]
  }
 }
