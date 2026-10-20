@@ -1007,6 +1007,11 @@ GUIAS = [
     {
         "caja": "A Demon in the Shadows", "killer": "Berith", "mapa": "L'Armes Abbey", "dir": "a-demon-in-the-shadows",
         "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
+        "figs_k": {5: [("fig-dark-powers", "Dark Powers")],
+                   6: [("fig-terror-1", "Terror"), ("fig-terror-2", "Terror")]},
+        "icos_k": {2: "ico-bendicion"},
+        "figs_m": {1: [("fig-dados", "Blessed · Cursed"), ("fig-corazon-maldito", "💔")]},
+        "icos_m": {2: "ico-malice"},
         "inicios": [("supper-time", "Supper Time"), ("daily-chores", "Daily Chores"), ("tourism-bus", "Tourism Bus"), ("reflection-meditation", "Reflection & Meditation"), ("sunday-mass", "Sunday Mass")],
         "es": {
             "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · ⊘🎭 = baja el Horror · ❤️ = recupera vida · 🙏 = icono de bendición · 🎲★ = cambia 1 dado normal por el dado Bendito (más caras de éxito) · 🎲☠ = cambia 1 dado normal por el dado Maldito · 🩸 = Bloodlust (sed de sangre del killer)",
