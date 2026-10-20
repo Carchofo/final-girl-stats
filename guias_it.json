@@ -514,7 +514,7 @@
   "fase": [
    "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "<b>Raptors sciolti</b> (Minions), uno alla volta: vanno verso la Pack ▸ si muovono ▸ <b>si fermano</b> entrando in uno spazio con te o con una vittima (il segnale di stop); se iniziano lì, non si muovono. Se raggiungono la Pack, si uniscono. Un Raptor comparso in questa fase non agisce fino alla successiva.",
-   "<b>La Pack</b> (il Killer): punta te o la vittima più vicina ▸ si muove ▸ attacca, una volta per ogni coltello della Finale in gioco.",
+   "<b>La Pack</b> (il Killer): punta te o la vittima più vicina ▸ <b>nella Finale base si muove solo di 1 spazio</b> e attacca 1 volta. Con le altre Finali si muove del suo valore di Movimento e attacca una volta per ogni coltello della carta (1 in Claws Like Knives, 2 nelle altre).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },

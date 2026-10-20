@@ -216,7 +216,7 @@ GUIAS = [
     },
     # ------------------------------------------------------------------ S4 F5
     {
-        "caja": "The Raptor Games", "killer": "Raptors", "mapa": "Isla Lagarto", "dir": "the-raptor-games",
+        "caja": "The Raptor Games", "fase_fig": "fig-finale-basico", "killer": "Raptors", "mapa": "Isla Lagarto", "dir": "the-raptor-games",
         "arte_k": "img/art/raptors.jpg", "arte_m": "img/loc/isla-lagarto.png",
         "figs_k": {4: [("fig-spawn-cards", "Spawn")],
                    5: [("fig-raptors-card", "Raptors")],
@@ -1644,7 +1644,7 @@ _FASE = {
    "fase": [
     "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "<b>Raptors sueltos</b> (Minions), uno a uno: van hacia la Pack ▸ se mueven ▸ <b>se paran</b> al entrar en un espacio contigo o con una víctima (la señal de stop); si empiezan ahí, no se mueven. Si llegan a la Pack, se unen. Un Raptor que aparece en esta fase no actúa hasta la siguiente.",
-    "<b>La Pack</b> (el Killer): va a por ti o a la víctima más cercana ▸ se mueve ▸ ataca, tantas veces como cuchillos tenga la Finale en juego.",
+    "<b>La Pack</b> (el Killer): va a por ti o a la víctima más cercana ▸ <b>en la Finale básica se mueve solo 1 espacio</b> y ataca 1 vez. Con las otras Finales se mueve su valor de Movimiento y ataca tantas veces como cuchillos tenga la carta (1 en Claws Like Knives, 2 en las demás).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
@@ -1653,7 +1653,7 @@ _FASE = {
    "fase": [
     "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>Individual Raptors</b> (Minions), one by one: head for the Pack ▸ move ▸ <b>stop</b> on entering a space with you or a Victim (the stop sign); if they start there, they don't move. If they reach the Pack, they join it. A Raptor spawned during this phase doesn't act until the next one.",
-    "<b>The Pack</b> (the Killer): targets you or the closest Victim ▸ moves ▸ attacks, once per knife on the Finale in play.",
+    "<b>The Pack</b> (the Killer): targets you or the closest Victim ▸ <b>on the base Finale it moves only 1 space</b> and attacks once. With the other Finales it moves its Movement Value and attacks once per knife on the card (1 on Claws Like Knives, 2 on the rest).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }

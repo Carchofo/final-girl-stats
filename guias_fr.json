@@ -514,7 +514,7 @@
   "fase": [
    "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "<b>Raptors isolés</b> (Minions), un par un : vont vers la Pack ▸ se déplacent ▸ <b>s'arrêtent</b> en entrant dans une case avec toi ou une victime (le panneau stop) ; s'ils y commencent, ils ne bougent pas. S'ils atteignent la Pack, ils la rejoignent. Un Raptor apparu pendant cette phase n'agit qu'à la suivante.",
-   "<b>La Pack</b> (le Killer) : cible toi ou la victime la plus proche ▸ se déplace ▸ attaque, une fois par couteau de la Finale en jeu.",
+   "<b>La Pack</b> (le Killer) : cible toi ou la victime la plus proche ▸ <b>sur la Finale de base, elle ne se déplace que d'1 case</b> et attaque 1 fois. Avec les autres Finales, elle se déplace de sa valeur de Mouvement et attaque une fois par couteau de la carte (1 sur Claws Like Knives, 2 sur les autres).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
