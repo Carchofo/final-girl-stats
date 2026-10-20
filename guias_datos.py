@@ -668,6 +668,11 @@ GUIAS = [
     {
         "caja": "The Green Terror", "killer": "Volk'ar", "mapa": "Pesadilla Verde", "dir": "the-green-terror",
         "arte_k": "img/art/volk-ar.jpg", "arte_m": "",
+        "figs_k": {1: [("fig-finale-basico", "Finale: arriba oculta / top: Concealed")],
+                   6: [("fig-track", "Track")],
+                   7: [("fig-mov-1", "Movement"), ("fig-mov-2", "Movement")],
+                   10: [("fig-attack-resolution", "Attack Resolution")],
+                   11: [("fig-terror-stealth", "Stealth Blitz"), ("fig-terror-shadows", "Out of the Shadows"), ("fig-terror-savage", "Savage Upgrade")]},
         "figs_m": {1: [("fig-soldiers-card", "Soldiers")],
                    2: [("fig-action-upgrade", "Action Upgrade"), ("fig-ability-upgrade", "Ability Upgrade")],
                    3: [("fig-ordenes-ejemplo", "")],
