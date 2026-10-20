@@ -418,28 +418,66 @@ GUIAS = [
         "arte_k": "img/art/billy.jpg", "arte_m": "img/loc/buddyland.png",
         "inicios": [("playin-hooky", "Playin' Hooky"), ("hide-and-seek", "Hide and Seek")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🩸 = Bloodlust · 🎭 = sube el Horror · ⊘🎭 = la máscara tachada de la carta",
+            "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = vida · 🩸 = Bloodlust · 🎭 = sube el Horror · ⊘🎭 = la máscara tachada de la carta",
             "err_k_t": "Ojo con esto",
             "err_k": [
-                "Billy tiene <b>minions</b> (los Buddies) que van apareciendo y <b>actúan antes que él</b>.",
-                "Hasta que sale el Finale, Billy empieza su fase recuperando <b>1 de vida si hay alguna fuente de energía encendida</b>. Apagarlas es lo que le impide curarse.",
+                "<b>No puedes atacar a Billy si hay un Buddy en su espacio.</b> Los Buddies le protegen a toda costa.",
+                "Mientras haya alguna <b>fuente de energía activa</b>, el icono de la pila con corazón cura 1 ❤️ a Billy. Apagarlas es la clave.",
+                "Un Buddy que aparece en la fase del Killer no actúa hasta la siguiente fase del Killer.",
             ],
             "bloques_k": [
-                ("Cómo juega (según la wiki)", [
-                    "Buddies: Target Victim/Final Girl → Strike once.",
-                    "Billy, antes del Finale y después de los Buddies: +1 de vida si hay una fuente de energía activa → Target Victim/Final Girl → Strike once.",
-                    "Su track de Horror mezcla efectos A y B: aparecer un Buddy (o uno en tu espacio), descartar la siguiente carta de Terror o subir el Horror.",
-                    "Nos falta fotografiar la página de Billy del reglamento para completarlo."]),
+                ("Preparación especial", [
+                    "<b>Antes</b> de revelar la carta de inicio, pon <b>4</b> fichas de <b>Power Source</b> por su cara activa (pila verde con +) en 4 espacios distintos, sin que ninguna quede adyacente a otra. Aparta la 5.ª: puede entrar en juego luego.",
+                    "Baraja boca abajo, por separado, las fichas del track de Bloodlust <b>A</b> y <b>B</b>. Pon 6 boca abajo en el tablero del Killer, cada una en su hueco por color e icono. Las 2 que sobran (una de cada) no se usan ni se miran.",
+                    "Baraja las 5 cartas de <b>Buddy</b> boca abajo: es el mazo de Buddies. Aparta las 2 de <b>Special Buddy</b>: pueden salir más tarde y siguen las mismas reglas.",
+                    "Haz aparecer un Buddy (ver abajo)."]),
+                ("Track de Bloodlust", [
+                    "Cuando el Bloodlust llega a un nivel con ficha, dale la vuelta y aplica su efecto."]),
+                ("Fuentes de energía (Power Source)", [
+                    "Desactivar: gira la ficha a su cara inactiva (pila roja tachada). Puedes hacerlo gastando ⌛ estando en su espacio, aunque solo estés pasando por él.",
+                    "Si una inactiva se Activa, vuelve a su cara verde.",
+                    "Con el icono de la <b>pila con corazón</b>, Billy recupera 1 ❤️ si hay al menos una fuente activa. Si no hay ninguna, se ignora."]),
+                ("Los Buddies", [
+                    "Son <b>Minions</b> y siguen sus reglas normales (pág. 32 del reglamento básico). Cada carta es un animatrónico con su vida, ataque y movimiento.",
+                    "<b>Aparecer un Buddy</b>: revela la carta de arriba del mazo, ponle encima los marcadores de vida que indique y pon su ficha en un espacio adyacente a Billy, mejor uno sin Buddy. Si Billy ya no está en juego, no aparece.",
+                    "<b>Activación</b>: cada Buddy tiene un número de iniciativa (círculo de arriba a la derecha). Las acciones de Minion y las cartas de Terror se resuelven de menor a mayor iniciativa.",
+                    "<b>Matar un Buddy</b>: quita su ficha, coge la <b>Kill Reward</b> de su carta y saca la carta del juego. Si muere fuera de la fase de Acción, coges la recompensa al empezar la siguiente fase de Acción.",
+                    "Ejemplo: <b>Toby</b> tiene 3 ❤️, iniciativa 1, ataque 1, movimiento 1 y Kill Reward 2 ⌛."]),
+                ("Finales", [
+                    "Todos tienen dos filas: arriba Billy va a por ti o a la víctima más cercana, se mueve y ataca; abajo, el icono de la pila con corazón y luego otra vez a por alguien.",
+                    "<b>Finale básico</b> (el del oso rosa): ataca sin moverse; abajo, pila con corazón, va y ataca.",
+                    "<b>Encore</b>: abajo se mueve 2 veces y ataca 2 veces.",
+                    "<b>Sizzling Power</b>: si hay al menos una fuente activa, repite una vez su Killer Action.",
+                    "<b>It's Showtime!</b>: no puedes jugar cartas de Reacción si hay más de un Enemy en tu espacio.",
+                    "<b>Power Surge</b> (Epic Finale): al revelarlo, aparece <b>Boris</b>. Para ganar tienes que matar a Billy <b>y</b> a Boris."]),
+                ("Poderes oscuros", [
+                    "<b>Introducing... Billy Jr.!</b>: aparece Billy Jr. en el espacio de Billy.",
+                    "<b>Deathlust</b>: +1 al movimiento y al ataque de Billy.",
+                    "<b>Endless Power</b>: al revelar la ficha Final Health de Billy, revela una más por cada fuente activa y aplica la que más vida le cure.",
+                    "<b>Merciless Minions</b> (Epic Dark Power): en la acción de Minion del Finale, añade un movimiento antes del ataque.",
+                    "<b>Backup Generator</b> (Minor): en el Mantenimiento, activa una fuente inactiva que elijas (si puedes). Si activaste alguna, quita un ❤️ de esta carta.",
+                    "<b>Renewable Energy</b> (Minor): no puedes desactivar ninguna fuente."]),
+                ("Cartas de Terror de Billy", [
+                    "<b>Animatronical</b>: aparece un Buddy y robas la siguiente carta de Terror.",
+                    "<b>\"He's Turning Them Back On!\"</b>: si no hay fuentes inactivas, descártala y roba otra. Si las hay, pon a Billy en el espacio más cercano con una inactiva, actívala y 🎭.",
+                    "<b>\"Eyes in the Dark\"</b>: el Killer va a por ti (la Final Girl) y se mueve 2 veces; luego 🎭 tantas veces como Enemies haya en tu espacio y los adyacentes, como mucho tantas como fuentes activas.",
+                    "<b>\"It's a Short Circuit!\"</b>: si no hay víctimas en ningún espacio con fuente activa, descártala y roba otra. Si no, en cada espacio con fuente activa y alguna víctima, muere una víctima, las demás entran en pánico y se desactiva esa fuente.",
+                    "<b>\"They're Here for Blood!\"</b>: si no hay Buddies o no hay víctimas, descártala y roba otra. Si no, solo los Buddies: van a por la víctima más cercana, se mueven y atacan. Si murió al menos una víctima, +🩸."]),
             ],
             "err_m_t": "Ojo con esto",
             "err_m": [
-                "Las <b>fuentes de energía</b> se colocan por el tablero <b>antes</b> de sacar la carta de inicio.",
+                "Buddyland <b>no tiene preparación especial</b>: las fuentes de energía son cosa de Billy.",
             ],
             "bloques_m": [
-                ("El mapa (según la wiki)", [
-                    "Los espacios de <b>Arcade</b> del centro del tablero salen en varias cartas.",
-                    "Las <b>fuentes de energía</b> (Power Source) se reparten por el tablero antes de sacar la carta de inicio. Te conviene ir apagándolas: con alguna encendida, Billy se cura.",
-                    "Nos falta fotografiar la página del reglamento de Buddyland para completarlo."]),
+                ("El mapa", [
+                    "Los <b>4 espacios del centro</b> con el icono de la máquina recreativa son espacios <b>Arcade</b>. Varias cartas se refieren a ellos.",
+                    "Espacios con nombre: <b>Party Room</b>, <b>Kitchen</b>, <b>Dining Area</b>, <b>Entrance</b>, <b>Prize Counter</b>, <b>Arcade</b>, <b>Janitor's Closet</b>, <b>Bathroom</b>, <b>Jungle Gym</b> y <b>Ball Pit</b>. Dining Area, Prize Counter y Ball Pit tienen mazo de objetos en el lateral."]),
+                ("Cartas de Terror de Buddyland", [
+                    "<b>Hungry for Blood</b>: si no hay víctimas en Kitchen, Party Room ni Dining Area, descártala y roba otra. Si no, pon al Killer en la de las tres con más víctimas; va a por la víctima o a por ti y ataca 2 veces.",
+                    "<b>Panic at the Disco</b>: si no hay víctimas en espacios Arcade, descártala y roba otra. Si no, entran en pánico todas las víctimas de cada Arcade; si alguna huye a un espacio con un Enemy, muere. Si no murió ninguna, +🩸.",
+                    "<b>\"How'd They Sneak In?\"</b>: tira 3 dados y pon una víctima por dado: 1-2 Jungle Gym, 3-4 Dining Area, 5-6 Party Room. Luego, un evento.",
+                    "<b>\"They Want Her!\"</b>: entran en pánico las víctimas de tu espacio, todos los Enemies se mueven un espacio hacia ti, 🎭 por cada Enemy en tu espacio, y luego un evento.",
+                    "<b>\"It's Play Time!\"</b>: tira un dado. 1-3: pon al Killer con el objetivo más cercano. 4-6: va a por la víctima o a por ti y ataca. Repítelo 5 veces más; puedes quitar una repetición por cada carta de Acción que descartes de tu mano, decidiéndolo todo de golpe antes."]),
             ],
             "obj": [
                 ("janitors-mop", "Janitor's Mop", "Arma · alcance 0 · 1 ✴ · 2 manos. Una vez por fase de Acción, si estás solo en un espacio, puedes gastar 2 ⌛ por ⊘🎭."),
@@ -457,28 +495,66 @@ GUIAS = [
             "falta_ev": "Faltan 6 de sus 10 eventos: Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans y Tragic Collapse.",
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🩸 = Bloodlust · 🎭 = raise Horror · ⊘🎭 = the card's crossed-out mask",
+            "ley": "⌛ = Time · ✴ = damage · ❤️ = health · 🩸 = Bloodlust · 🎭 = raise Horror · ⊘🎭 = the card's crossed-out mask",
             "err_k_t": "Watch out",
             "err_k": [
-                "Billy has <b>minions</b> (the Buddies) that spawn during the game and <b>act before him</b>.",
-                "Until the Finale, Billy starts his phase recovering <b>1 health if any power source is active</b>. Turning them off is what stops him healing.",
+                "<b>Billy can't be attacked while there's a Buddy in his space.</b> Buddies protect him at all costs.",
+                "While any <b>Power Source is Active</b>, the battery-with-heart icon heals Billy 1 ❤️. Turning them off is the key.",
+                "A Buddy that spawns during the Killer phase doesn't activate until the next Killer phase.",
             ],
             "bloques_k": [
-                ("How he plays (from the wiki)", [
-                    "Buddies: Target Victim/Final Girl → Strike once.",
-                    "Billy, before the Finale and after the Buddies: +1 health if a power source is active → Target Victim/Final Girl → Strike once.",
-                    "His Horror track mixes A and B effects: spawn a Buddy (or one in your space), discard the next Terror card or raise Horror.",
-                    "We still need to photograph Billy's rulebook page to complete this."]),
+                ("Special setup", [
+                    "<b>Before</b> revealing the Setup card, place <b>4</b> <b>Power Source</b> tokens Active side up (green battery with +) in 4 separate spaces, none adjacent to another. Set the 5th aside: it may come into play later.",
+                    "Shuffle the Bloodlust Track tokens <b>A</b> and <b>B</b> facedown, by type. Place 6 facedown on the Killer board, each in its matching space by color and icon. The 2 left over (one of each) aren't used or revealed.",
+                    "Shuffle the 5 <b>Buddy</b> cards facedown: that's the Buddy deck. Set aside the 2 <b>Special Buddy</b> cards: they may come in later and follow the same rules.",
+                    "Spawn a Buddy (see below)."]),
+                ("Bloodlust Track", [
+                    "When Bloodlust reaches a level with a token, reveal it and apply its effect."]),
+                ("Power Sources", [
+                    "Deactivating: flip the token to its Inactive side (red crossed-out battery). You may do it by spending ⌛ while in its space, even if just moving through.",
+                    "If an Inactive one is Activated, flip it back to green.",
+                    "With the <b>battery-with-heart</b> icon, Billy recovers 1 ❤️ if at least one Power Source is Active. If none are, ignore it."]),
+                ("The Buddies", [
+                    "They are <b>Minions</b> and follow the normal Minion rules (pg. 32 of the Core Rulebook). Each card is an animatronic with its own health, attack and movement.",
+                    "<b>Spawning a Buddy</b>: reveal the top card of the deck, put its Health markers on it and place its token in a space adjacent to Billy, one without a Buddy if possible. If Billy is no longer in play, nothing spawns.",
+                    "<b>Activating</b>: each Buddy has an Initiative number (circle, top right). Minion Actions and Terror cards resolve from lowest to highest Initiative.",
+                    "<b>Killing a Buddy</b>: remove its token, take the <b>Kill Reward</b> on its card and remove the card from the game. If it dies outside the Action phase, take the reward at the start of the next Action phase.",
+                    "Example: <b>Toby</b> has 3 ❤️, Initiative 1, attack 1, movement 1 and Kill Reward 2 ⌛."]),
+                ("Finales", [
+                    "All have two rows: on top Billy targets you or the closest Victim, moves and attacks; below, the battery-with-heart icon and then he targets again.",
+                    "<b>Base Finale</b> (the pink bear): attacks without moving; below, battery with heart, targets and attacks.",
+                    "<b>Encore</b>: below, moves twice and attacks twice.",
+                    "<b>Sizzling Power</b>: if at least one Power Source is Active, repeat his Killer Action once.",
+                    "<b>It's Showtime!</b>: you can't play Reaction cards if more than one Enemy is in your space.",
+                    "<b>Power Surge</b> (Epic Finale): when revealed, spawn <b>Boris</b>. You must kill both Billy <b>and</b> Boris to win."]),
+                ("Dark Powers", [
+                    "<b>Introducing... Billy Jr.!</b>: spawn Billy Jr. in Billy's space.",
+                    "<b>Deathlust</b>: +1 to Billy's Movement and Attack.",
+                    "<b>Endless Power</b>: when revealing Billy's Final Health token, reveal one more per Active Power Source and apply the one that heals the most.",
+                    "<b>Merciless Minions</b> (Epic Dark Power): for the Minion Action on the Finale, add a move before the attack.",
+                    "<b>Backup Generator</b> (Minor): during Upkeep, Activate an Inactive Power Source of your choice (if able). If one was Activated, remove a ❤️ from this card.",
+                    "<b>Renewable Energy</b> (Minor): you can't Deactivate any Power Source."]),
+                ("Billy's Terror cards", [
+                    "<b>Animatronical</b>: spawn a Buddy and draw the next Terror card.",
+                    "<b>\"He's Turning Them Back On!\"</b>: if there are no Inactive Power Sources, discard and draw another. Otherwise place Billy in the closest space with an Inactive one, Activate it and 🎭.",
+                    "<b>\"Eyes in the Dark\"</b>: the Killer targets you (the Final Girl) and moves twice; then 🎭 once per Enemy in your space and adjacent spaces, up to the number of Active Power Sources.",
+                    "<b>\"It's a Short Circuit!\"</b>: if no space with an Active Power Source has Victims, discard and draw another. Otherwise, in each such space with a Victim, one Victim is killed, the rest panic and that Power Source is Deactivated.",
+                    "<b>\"They're Here for Blood!\"</b>: if there are no Buddies or no Victims, discard and draw another. Otherwise, Buddies only: target the closest Victim, move and attack. If at least one Victim was killed, +🩸."]),
             ],
             "err_m_t": "Watch out",
             "err_m": [
-                "The <b>power sources</b> go around the board <b>before</b> you draw the Setup card.",
+                "Buddyland has <b>no special setup</b>: the Power Sources belong to Billy.",
             ],
             "bloques_m": [
-                ("The location (from the wiki)", [
-                    "The <b>Arcade</b> spaces in the middle of the board feature on several cards.",
-                    "<b>Power Source</b> tokens are placed around the board before the Setup card. Turn them off as you go: while any is on, Billy heals.",
-                    "We still need to photograph the Buddyland rulebook page to complete this."]),
+                ("The location", [
+                    "The <b>4 middle spaces</b> with the arcade-machine icon are <b>Arcade</b> spaces. Several cards refer to them.",
+                    "Named spaces: <b>Party Room</b>, <b>Kitchen</b>, <b>Dining Area</b>, <b>Entrance</b>, <b>Prize Counter</b>, <b>Arcade</b>, <b>Janitor's Closet</b>, <b>Bathroom</b>, <b>Jungle Gym</b> and <b>Ball Pit</b>. Dining Area, Prize Counter and Ball Pit have Item decks on the side."]),
+                ("Buddyland Terror cards", [
+                    "<b>Hungry for Blood</b>: if there are no Victims in the Kitchen, Party Room or Dining Area, discard and draw another. Otherwise place the Killer in whichever has the most Victims; it targets a Victim or you and attacks twice.",
+                    "<b>Panic at the Disco</b>: if there are no Victims in Arcade spaces, discard and draw another. Otherwise panic all Victims in each Arcade space; one that panics into a space with an Enemy is killed. If no Victim was killed, +🩸.",
+                    "<b>\"How'd They Sneak In?\"</b>: roll 3 dice and place a Victim per die: 1-2 Jungle Gym, 3-4 Dining Area, 5-6 Party Room. Then an Event.",
+                    "<b>\"They Want Her!\"</b>: panic all Victims in your space, move all Enemies one space towards you, 🎭 per Enemy in your space, then an Event.",
+                    "<b>\"It's Play Time!\"</b>: roll a die. 1-3: place the Killer with the closest target. 4-6: it targets a Victim or you and attacks. Repeat 5 more times; you may cut one repeat per Action card discarded from your hand, all decided at once beforehand."]),
             ],
             "obj": [
                 ("janitors-mop", "Janitor's Mop", "Weapon · range 0 · 1 ✴ · 2 hands. Once per Action phase, while alone in a space, you may spend 2 ⌛ for ⊘🎭."),
