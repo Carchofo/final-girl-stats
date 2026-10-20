@@ -520,6 +520,18 @@
     ]
    ],
    [
+    "Die Buddies im Einzelnen",
+    [
+     "<b>Toby</b> · 3 ❤️ · Initiative 1 · Angriff 1 · Bewegung 1. Tötet er ein Opfer, +🩸. Kill Reward: 2 ⌛.",
+     "<b>Ramey</b> · 2 ❤️ · Initiative 2 · Angriff 1 · Bewegung 2. Kill Reward: 1 Feld bewegen.",
+     "<b>Allie</b> · 2 ❤️ · Initiative 3 · Angriff 2 · Bewegung 1. Kill Reward: ⊘🎭.",
+     "<b>Cam</b> · 2 ❤️ · Initiative 4 · Angriff 1 · Bewegung 1. Opfer geraten nicht in Panik, wenn Cam der einzige Feind auf ihrem Feld ist. Kill Reward: nimm eine Guard-Karte.",
+     "<b>Roxy</b> · 1 ❤️ · Initiative 5 · Angriff 1 · Bewegung 3. Kill Reward: nimm den obersten Gegenstand eines beliebigen Stapels.",
+     "<b>Billy Jr.</b> (Special Buddy) · 2 ❤️ · Initiative 6 · Angriff 1 · Bewegung 0. Immer auf demselben Feld wie Billy. Kill Reward: ✴ an Billy.",
+     "<b>Boris</b> (Special Buddy) · 4 ❤️ · Initiative 7 · Angriff 3 · Bewegung 2. Kill Reward: nimm EINE BELIEBIGE Aktionskarte."
+    ]
+   ],
+   [
     "Finales",
     [
      "Alle haben zwei Zeilen: Oben nimmt Billy dich oder das nächste Opfer ins Ziel, bewegt sich und greift an; unten das Batterie-mit-Herz-Symbol, dann wählt er erneut ein Ziel.",
@@ -595,9 +607,69 @@
     "arcade-token",
     "Arcade Token",
     "Abwerfen, während du in einem <b>Arcade</b>-Feld bist, um 3 ⌛ für 3 ⊘🎭 auszugeben."
+   ],
+   [
+    "fire-axe",
+    "Fire Axe",
+    "Waffe · Reichweite 0 · 1 ✴ · 2 Hände. Gegen einen Handlanger stattdessen ✴✴."
+   ],
+   [
+    "pinball-machine-token",
+    "Pinball Machine Token",
+    "Wirf sie auf einem <b>Arcade</b>-Feld ab: +1 🎲 beim Abhandeln von Aktionskarten für den Rest der Aktionsphase."
+   ],
+   [
+    "flash-camera",
+    "Flash Camera",
+    "1 Hand · 2 Nutzungen. Wenn ein Feind auf dein Feld ziehen würde, hält er stattdessen auf einem benachbarten an."
+   ],
+   [
+    "food-tray",
+    "Food Tray",
+    "1 Hand · 4 Nutzungen. Ignoriere 1 ✴."
+   ],
+   [
+    "claw-machine-token",
+    "Claw Machine Token",
+    "Wirf sie auf einem <b>Arcade</b>-Feld ab, sieh die unbenutzten Gegenstände durch und nimm einen."
+   ],
+   [
+    "bag-of-marbles",
+    "Bag of Marbles",
+    "3 Marbles-Marker. Gib ⌛ aus, um einen auf ein benachbartes Feld ohne Marker zu legen. Wer ein Feld mit Marbles betritt, wirft ihn ab und verliert 💔."
+   ],
+   [
+    "energy-drink",
+    "Energy Drink",
+    "Wirf sie in der Aktionsphase ab und wähle: 5 ⌛ oder bis zu 2 Felder bewegen."
+   ],
+   [
+    "birthday-cake",
+    "Birthday Cake",
+    "2 Nutzungen. Ignoriere damit ein 🎭 in der Killerphase."
+   ],
+   [
+    "chain",
+    "Chain",
+    "Waffe · Reichweite 0-1 · 1 ✴ · 1 Hand. Wenn du einem Feind Schaden zufügst, kannst du sie abwerfen und den Ketten-Marker auf sein Feld legen: Solange er liegt, kann sich der Feind weder bewegen noch angreifen. Am Ende der Killerphase entfernen."
+   ],
+   [
+    "extension-cord",
+    "Extension Cord",
+    "Waffe · Reichweite 0-1* · 1 ✴ · 2 Hände. Bist du auf oder neben einem <b>Arcade</b>-Feld, kannst du jedes Arcade-Feld unabhängig von der Reichweite angreifen."
+   ],
+   [
+    "leftover-pizza",
+    "Leftover Pizza",
+    "2 Nutzungen. Wähle in der Aktionsphase: ⊘🎭 oder ❤️❤️."
+   ],
+   [
+    "skee-ball-token",
+    "Skee-Ball Token",
+    "Waffe · Reichweite 1 · 1 ✴ · 1 Hand · 4 Nutzungen. Lege die 4 Marker (die Skee-Balls) erst auf die Karte, wenn du auf einem <b>Arcade</b>-Feld bist. +1 🎲 beim Angriff mit einem Skee-Ball."
    ]
   ],
-  "falta": "Noch zu fotografieren: 12 seiner 16 Gegenstände und 3 seiner 5 Aufbaukarten (Buddy Day, Birthday Bash und Pizza Party).",
+  "falta": "",
   "ev": [
    [
     "Birthday Girl",
@@ -614,9 +686,32 @@
    [
     "Pizza Delivery",
     "Das dem <b>Entrance</b> nächste Opfer ist der Pizza Guy. Solange er in deinem Feld ist, darfst du beim Abhandeln einer <b>Search</b>-Aktionskarte 2 zusätzliche Würfel werfen. Wird er getötet, geraten alle Opfer in seinem und den angrenzenden Feldern in Panik."
+   ],
+   [
+    "Tragic Collapse",
+    "Würfle und lege den Broken-Marker: 1-2 <b>Jungle Gym</b>, 3-4 <b>Kitchen</b>, 5-6 <b>Bathroom</b>. Alle, die dort sind oder später eintreten, erhalten ✴."
+   ],
+   [
+    "Playtime Shenanigans",
+    "Lege 2 neue Opfer in den <b>Ball Pit</b> und 2 in den <b>Jungle Gym</b>. Abwerfen."
+   ],
+   [
+    "Hidden Prizes",
+    "Wirf alle offenen Gegenstände von den Gegenstandsstapeln ab. Abwerfen."
+   ],
+   [
+    "Party Time",
+    "Bewege alle Opfer ein Feld näher zum <b>Party Room</b>. Abwerfen."
+   ],
+   [
+    "Buddy Up",
+    "Beim Retten musst du 2 oder mehr Opfer auf einmal retten. Du kannst das für eine ganze Aktionsphase ignorieren, indem du eine Aktionskarte <b>Improvise</b> oder <b>Distraction</b> abwirfst."
+   ],
+   [
+    "Broken Machine",
+    "Sind Opfer auf <b>Arcade</b>-Feldern, ziehen Feinde beim Zielen auf Opfer oder Final Girl zum nächsten Opfer auf einem Arcade-Feld. Abwerfen, wenn ein Opfer auf einem Arcade-Feld getötet wird."
    ]
-  ],
-  "falta_ev": "Es fehlen 6 seiner 10 Ereignisse: Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans und Tragic Collapse."
+  ]
  },
  "The Green Terror": {
   "ley": "⌛ = Zeit · ✴ = Schaden · ❤️ = Gesundheit zurückgewinnen · 💔 = Gesundheit verlieren · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken · 🎲 = Würfel · 🔧 = Feld mit dem orangen Schraubenschlüssel-Symbol",

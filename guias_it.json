@@ -520,6 +520,18 @@
     ]
    ],
    [
+    "I Buddy, uno per uno",
+    [
+     "<b>Toby</b> · 3 ❤️ · iniziativa 1 · attacco 1 · movimento 1. Se uccide una Vittima, +🩸. Kill Reward: 2 ⌛.",
+     "<b>Ramey</b> · 2 ❤️ · iniziativa 2 · attacco 1 · movimento 2. Kill Reward: muoviti di 1 spazio.",
+     "<b>Allie</b> · 2 ❤️ · iniziativa 3 · attacco 2 · movimento 1. Kill Reward: ⊘🎭.",
+     "<b>Cam</b> · 2 ❤️ · iniziativa 4 · attacco 1 · movimento 1. Le Vittime non vanno nel panico se Cam è l'unico Nemico nel loro spazio. Kill Reward: prendi una carta Guard.",
+     "<b>Roxy</b> · 1 ❤️ · iniziativa 5 · attacco 1 · movimento 3. Kill Reward: prendi l'Oggetto in cima a un mazzo qualsiasi.",
+     "<b>Billy Jr.</b> (Special Buddy) · 2 ❤️ · iniziativa 6 · attacco 1 · movimento 0. Sempre nello stesso spazio di Billy. Kill Reward: ✴ a Billy.",
+     "<b>Boris</b> (Special Buddy) · 4 ❤️ · iniziativa 7 · attacco 3 · movimento 2. Kill Reward: prendi QUALSIASI carta Azione."
+    ]
+   ],
+   [
     "Finali",
     [
      "Hanno tutti due righe: sopra, Billy prende come bersaglio te o la Vittima più vicina, si muove e attacca; sotto, l'icona della batteria con il cuore e poi sceglie di nuovo il bersaglio.",
@@ -595,9 +607,69 @@
     "arcade-token",
     "Arcade Token",
     "Scarta mentre sei in uno spazio <b>Arcade</b> per spendere 3 ⌛ e ottenere 3 ⊘🎭."
+   ],
+   [
+    "fire-axe",
+    "Fire Axe",
+    "Arma · gittata 0 · 1 ✴ · 2 mani. Contro uno Scagnozzo infliggi invece ✴✴."
+   ],
+   [
+    "pinball-machine-token",
+    "Pinball Machine Token",
+    "Scartala in uno spazio <b>Arcade</b>: +1 🎲 nel risolvere carte Azione per il resto della fase Azione."
+   ],
+   [
+    "flash-camera",
+    "Flash Camera",
+    "1 mano · 2 usi. Quando un Nemico entrerebbe nel tuo spazio, fallo fermare in uno adiacente."
+   ],
+   [
+    "food-tray",
+    "Food Tray",
+    "1 mano · 4 usi. Ignora 1 ✴."
+   ],
+   [
+    "claw-machine-token",
+    "Claw Machine Token",
+    "Scartala in uno spazio <b>Arcade</b> per guardare gli Oggetti non usati e prenderne uno a scelta."
+   ],
+   [
+    "bag-of-marbles",
+    "Bag of Marbles",
+    "3 segnalini Marbles. Spendi ⌛ per metterne uno in uno spazio adiacente che non ne ha. Chi entra in uno spazio con Marbles lo scarta e perde 💔."
+   ],
+   [
+    "energy-drink",
+    "Energy Drink",
+    "Scartala nella fase Azione e scegli: 5 ⌛ o muoverti fino a 2 spazi."
+   ],
+   [
+    "birthday-cake",
+    "Birthday Cake",
+    "2 usi. Usala per ignorare un 🎭 nella fase del Killer."
+   ],
+   [
+    "chain",
+    "Chain",
+    "Arma · gittata 0-1 · 1 ✴ · 1 mano. Quando danneggi un Nemico puoi scartarla per mettere il segnalino Catena nel suo spazio: finché c'è, quel Nemico non può muoversi né attaccare. Rimuovilo alla fine della fase del Killer."
+   ],
+   [
+    "extension-cord",
+    "Extension Cord",
+    "Arma · gittata 0-1* · 1 ✴ · 2 mani. Se sei in uno spazio <b>Arcade</b> o adiacente, puoi attaccare qualsiasi spazio Arcade a prescindere dalla gittata."
+   ],
+   [
+    "leftover-pizza",
+    "Leftover Pizza",
+    "2 usi. Nella fase Azione scegli: ⊘🎭 o ❤️❤️."
+   ],
+   [
+    "skee-ball-token",
+    "Skee-Ball Token",
+    "Arma · gittata 1 · 1 ✴ · 1 mano · 4 usi. Non mettere i 4 segnalini (le Skee-Ball) sulla carta finché non sei in uno spazio <b>Arcade</b>. +1 🎲 quando attacchi con una Skee-Ball."
    ]
   ],
-  "falta": "Ancora da fotografare: 12 dei suoi 16 Oggetti e 3 delle sue 5 preparazioni (Buddy Day, Birthday Bash e Pizza Party).",
+  "falta": "",
   "ev": [
    [
     "Birthday Girl",
@@ -614,9 +686,32 @@
    [
     "Pizza Delivery",
     "La Vittima più vicina all'<b>Entrance</b> è il Pizza Guy. Finché è nel tuo spazio, puoi tirare 2 dadi in più quando risolvi una carta Azione <b>Search</b>. Se viene ucciso, tutte le Vittime nel suo spazio e negli spazi adiacenti vanno nel panico."
+   ],
+   [
+    "Tragic Collapse",
+    "Tira un dado e metti il segnalino Broken: 1-2 <b>Jungle Gym</b>, 3-4 <b>Kitchen</b>, 5-6 <b>Bathroom</b>. Chi è lì o ci entra dopo subisce ✴."
+   ],
+   [
+    "Playtime Shenanigans",
+    "Metti 2 nuove Vittime nel <b>Ball Pit</b> e 2 nel <b>Jungle Gym</b>. Scarta."
+   ],
+   [
+    "Hidden Prizes",
+    "Scarta tutti gli Oggetti scoperti dai mazzi Oggetto. Scarta."
+   ],
+   [
+    "Party Time",
+    "Sposta tutte le Vittime di uno spazio verso la <b>Party Room</b>. Scarta."
+   ],
+   [
+    "Buddy Up",
+    "Quando salvi Vittime devi salvarne 2 o più alla volta. Puoi ignorarlo per un'intera fase Azione scartando una carta Azione <b>Improvise</b> o <b>Distraction</b>."
+   ],
+   [
+    "Broken Machine",
+    "Se ci sono Vittime in spazi <b>Arcade</b>, i Nemici vanno verso la Vittima più vicina in uno spazio Arcade quando puntano una Vittima o la Final Girl. Si scarta quando muore una Vittima in uno spazio Arcade."
    ]
-  ],
-  "falta_ev": "Mancano 6 dei suoi 10 eventi: Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans e Tragic Collapse."
+  ]
  },
  "The Green Terror": {
   "ley": "⌛ = Tempo · ✴ = danno · ❤️ = recuperi salute · 💔 = perdi salute · 🎭 = aumenta l'Orrore · ⊘🎭 = riduci l'Orrore · 🎲 = dado · 🔧 = spazio con l'icona della chiave inglese arancione",

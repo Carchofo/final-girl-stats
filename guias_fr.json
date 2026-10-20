@@ -520,6 +520,18 @@
     ]
    ],
    [
+    "Les Buddies, un par un",
+    [
+     "<b>Toby</b> · 3 ❤️ · initiative 1 · attaque 1 · mouvement 1. S'il tue une Victime, +🩸. Kill Reward : 2 ⌛.",
+     "<b>Ramey</b> · 2 ❤️ · initiative 2 · attaque 1 · mouvement 2. Kill Reward : te déplacer d'1 case.",
+     "<b>Allie</b> · 2 ❤️ · initiative 3 · attaque 2 · mouvement 1. Kill Reward : ⊘🎭.",
+     "<b>Cam</b> · 2 ❤️ · initiative 4 · attaque 1 · mouvement 1. Les Victimes ne paniquent pas si Cam est le seul Ennemi de leur case. Kill Reward : prends une carte Guard.",
+     "<b>Roxy</b> · 1 ❤️ · initiative 5 · attaque 1 · mouvement 3. Kill Reward : prends l'Objet du dessus de n'importe quelle pioche.",
+     "<b>Billy Jr.</b> (Special Buddy) · 2 ❤️ · initiative 6 · attaque 1 · mouvement 0. Toujours sur la même case que Billy. Kill Reward : ✴ à Billy.",
+     "<b>Boris</b> (Special Buddy) · 4 ❤️ · initiative 7 · attaque 3 · mouvement 2. Kill Reward : prends N'IMPORTE QUELLE carte Action."
+    ]
+   ],
+   [
     "Finales",
     [
      "Toutes ont deux lignes : en haut, Billy cible toi ou la Victime la plus proche, se déplace et attaque ; en bas, l'icône batterie-cœur puis il cible de nouveau.",
@@ -595,9 +607,69 @@
     "arcade-token",
     "Arcade Token",
     "Défausse-le dans une case <b>Arcade</b> pour dépenser 3 ⌛ pour 3 ⊘🎭."
+   ],
+   [
+    "fire-axe",
+    "Fire Axe",
+    "Arme · portée 0 · 1 ✴ · 2 mains. Contre un Sbire, inflige ✴✴ à la place."
+   ],
+   [
+    "pinball-machine-token",
+    "Pinball Machine Token",
+    "Défausse-la sur une case <b>Arcade</b> : +1 🎲 pour résoudre les cartes Action jusqu'à la fin de la phase d'Action."
+   ],
+   [
+    "flash-camera",
+    "Flash Camera",
+    "1 main · 2 utilisations. Quand un Ennemi devrait entrer dans ta case, fais-le s'arrêter sur une case adjacente."
+   ],
+   [
+    "food-tray",
+    "Food Tray",
+    "1 main · 4 utilisations. Ignore 1 ✴."
+   ],
+   [
+    "claw-machine-token",
+    "Claw Machine Token",
+    "Défausse-la sur une case <b>Arcade</b> pour regarder les Objets inutilisés et en prendre un au choix."
+   ],
+   [
+    "bag-of-marbles",
+    "Bag of Marbles",
+    "3 jetons Marbles. Dépense ⌛ pour en poser un sur une case adjacente qui n'en a pas. Qui entre sur une case avec Marbles le défausse et perd 💔."
+   ],
+   [
+    "energy-drink",
+    "Energy Drink",
+    "Défausse-la pendant la phase d'Action et choisis : 5 ⌛ ou te déplacer jusqu'à 2 cases."
+   ],
+   [
+    "birthday-cake",
+    "Birthday Cake",
+    "2 utilisations. Utilise-la pour ignorer un 🎭 pendant la phase du Killer."
+   ],
+   [
+    "chain",
+    "Chain",
+    "Arme · portée 0-1 · 1 ✴ · 1 main. Quand tu blesses un Ennemi, tu peux la défausser pour poser le jeton Chaîne sur sa case : tant qu'il y est, cet Ennemi ne peut ni bouger ni attaquer. Retire-le à la fin de la phase du Killer."
+   ],
+   [
+    "extension-cord",
+    "Extension Cord",
+    "Arme · portée 0-1* · 1 ✴ · 2 mains. Si tu es sur une case <b>Arcade</b> ou à côté, tu peux attaquer n'importe quelle case Arcade, quelle que soit la portée."
+   ],
+   [
+    "leftover-pizza",
+    "Leftover Pizza",
+    "2 utilisations. Pendant la phase d'Action, choisis : ⊘🎭 ou ❤️❤️."
+   ],
+   [
+    "skee-ball-token",
+    "Skee-Ball Token",
+    "Arme · portée 1 · 1 ✴ · 1 main · 4 utilisations. Ne pose pas les 4 marqueurs (les Skee-Balls) sur la carte avant d'être sur une case <b>Arcade</b>. +1 🎲 quand tu attaques avec une Skee-Ball."
    ]
   ],
-  "falta": "Encore à photographier : 12 de ses 16 Objets et 3 de ses 5 mises en place (Buddy Day, Birthday Bash et Pizza Party).",
+  "falta": "",
   "ev": [
    [
     "Birthday Girl",
@@ -614,9 +686,32 @@
    [
     "Pizza Delivery",
     "La Victime la plus proche de l'<b>Entrance</b> est le Pizza Guy. Tant qu'il est dans ta case, tu peux lancer 2 dés supplémentaires quand tu résous une carte Action <b>Search</b>. S'il est tué, toutes les Victimes de sa case et des cases adjacentes paniquent."
+   ],
+   [
+    "Tragic Collapse",
+    "Lance un dé et pose le jeton Broken : 1-2 <b>Jungle Gym</b>, 3-4 <b>Kitchen</b>, 5-6 <b>Bathroom</b>. Tous ceux qui y sont ou y entrent ensuite subissent ✴."
+   ],
+   [
+    "Playtime Shenanigans",
+    "Place 2 nouvelles Victimes dans le <b>Ball Pit</b> et 2 dans le <b>Jungle Gym</b>. Défausse."
+   ],
+   [
+    "Hidden Prizes",
+    "Défausse tous les Objets face visible des pioches d'Objets. Défausse."
+   ],
+   [
+    "Party Time",
+    "Déplace toutes les Victimes d'une case vers la <b>Party Room</b>. Défausse."
+   ],
+   [
+    "Buddy Up",
+    "Pour sauver des Victimes, tu dois en sauver 2 ou plus à la fois. Tu peux l'ignorer pendant toute une phase d'Action en défaussant une carte Action <b>Improvise</b> ou <b>Distraction</b>."
+   ],
+   [
+    "Broken Machine",
+    "S'il y a des Victimes sur des cases <b>Arcade</b>, les Ennemis vont vers la Victime la plus proche sur une case Arcade quand ils visent une Victime ou la Final Girl. Défausse quand une Victime meurt sur une case Arcade."
    ]
-  ],
-  "falta_ev": "Il manque 6 de ses 10 Événements : Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans et Tragic Collapse."
+  ]
  },
  "The Green Terror": {
   "ley": "⌛ = Temps · ✴ = dégâts · ❤️ = récupérer de la santé · 💔 = perdre de la santé · 🎭 = augmenter l'Horreur · ⊘🎭 = baisser l'Horreur · 🎲 = dé · 🔧 = case avec l'icône de clé orange",
