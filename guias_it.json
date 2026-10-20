@@ -1,6 +1,6 @@
 {
  "A Rotten Harvest": {
-  "ley": "🩸 = Bloodlust · 🌾 = Field Space · 🎭 = aumenta l'Orrore · ⊘🎭 = abbassa l'Orrore",
+  "ley": "✴ = danno · 🩸 = Bloodlust · 🌾 = Field Space · 🎭 = aumenta l'Orrore · ⊘🎭 = abbassa l'Orrore",
   "err_k_t": "Errori comuni",
   "err_k": [
    "<b>Grimlash si muove di 1</b> nella sua Azione del Killer. Quando una carta Terrore mostra l'icona dello <b>stivale</b> (movimento), si muove secondo il suo movimento al livello di 🩸 attuale, non di 1.",

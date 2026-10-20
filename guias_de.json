@@ -1,6 +1,6 @@
 {
  "A Rotten Harvest": {
-  "ley": "🩸 = Bloodlust · 🌾 = Ackerfeld · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken",
+  "ley": "✴ = Schaden · 🩸 = Bloodlust · 🌾 = Ackerfeld · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken",
   "err_k_t": "Häufige Fehler",
   "err_k": [
    "<b>Grimlash bewegt sich 1</b> Feld in seiner Killeraktion. Zeigt eine Terrorkarte das <b>Stiefel</b>-Symbol (Bewegung), bewegt er sich so weit wie seine Bewegung auf der aktuellen 🩸-Stufe, nicht 1.",

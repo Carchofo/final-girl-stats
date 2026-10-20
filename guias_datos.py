@@ -15,7 +15,7 @@ GUIAS = [
         "inicios": [("reap-what-you-sow", "Reap What You Sow"), ("final-crop", "Final Crop"), ("dusk-sacrifice", "Dusk Sacrifice"),
                     ("harvest-season", "Harvest Season"), ("demands-of-the-earth", "Demands of the Earth")],
         "es": {
-            "ley": "🩸 = Bloodlust · 🌾 = Field Space · 🎭 = sube el Horror · ⊘🎭 = baja el Horror",
+            "ley": "✴ = daño · 🩸 = Bloodlust · 🌾 = Field Space · 🎭 = sube el Horror · ⊘🎭 = baja el Horror",
             "err_k_t": "Errores frecuentes",
             "err_k": [
                 "<b>Grimlash se mueve 1</b> en su Killer Action. Cuando una carta de Terror trae el icono de la <b>bota</b> (mover), se mueve lo que marque su movimiento en el nivel actual de 🩸, no 1.",
@@ -109,7 +109,7 @@ GUIAS = [
             ],
         },
         "en": {
-            "ley": "🩸 = Bloodlust · 🌾 = Field Space · 🎭 = raise Horror · ⊘🎭 = lower Horror",
+            "ley": "✴ = damage · 🩸 = Bloodlust · 🌾 = Field Space · 🎭 = raise Horror · ⊘🎭 = lower Horror",
             "err_k_t": "Common mistakes",
             "err_k": [
                 "<b>Grimlash moves 1</b> in his Killer Action. When a Terror card shows the <b>boot</b> (move) icon, he moves whatever his movement is at the current 🩸 level, not 1.",

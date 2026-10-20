@@ -1,6 +1,6 @@
 {
  "A Rotten Harvest": {
-  "ley": "🩸 = Bloodlust · 🌾 = case Field · 🎭 = augmenter l'Horreur · ⊘🎭 = baisse l'Horreur",
+  "ley": "✴ = dégâts · 🩸 = Bloodlust · 🌾 = case Field · 🎭 = augmenter l'Horreur · ⊘🎭 = baisse l'Horreur",
   "err_k_t": "Erreurs fréquentes",
   "err_k": [
    "<b>Grimlash se déplace de 1</b> lors de son Action du Killer. Quand une carte Terreur montre l'icône de la <b>botte</b> (déplacement), il se déplace de la valeur de mouvement correspondant au niveau de 🩸 actuel, pas de 1.",
