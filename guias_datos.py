@@ -1209,6 +1209,9 @@ GUIAS = [
     {
         "caja": "Madness in the Dark", "killer": "Ratchet Lady", "mapa": "Wolfe Asylum", "dir": "madness-in-the-dark",
         "arte_k": "img/art/ratchet-lady.jpg", "arte_m": "img/loc/wolfe-asylum.png",
+        "figs_k": {3: [("fig-finale-basico", "Finale")],
+                   4: [("fig-dark-powers", "Poderes oscuros")]},
+        "figs_m": {1: [("fig-pastillas", "Efectos de Pastillas")]},
         "inicios": [("noche-de-bingo", "Noche de Bingo"), ("habitaciones-acolchadas", "Habitaciones Acolchadas"),
                     ("una-vida-solitaria", "Una Vida Solitaria"), ("duelo-en-el-manicomio", "Duelo en el Manicomio"),
                     ("el-dr-esta-disponible", "El Dr. está Disponible")],
