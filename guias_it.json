@@ -25,6 +25,33 @@
      "Se scendi a un livello inferiore, <b>scarta la carta del livello che hai lasciato</b>. Se in seguito ci torni, pesca di nuovo 2 carte e tienine 1. Se il mazzo non basta, rimescola gli scarti di quel livello.",
      "Gli effetti <b>una volta per turno</b> si usano girando la carta a faccia in giù; torna a faccia in su nel <b>Mantenimento</b>."
     ]
+   ],
+   [
+    "Finales",
+    [
+     "<b>Finale base</b>: punta te o la Vittima più vicina, si muove di 1 spazio e attacca. Se è stata uccisa una Vittima, 🎃 (sale Harvest Madness).",
+     "<b>Hunger of the Old Gods</b>: punta, si muove di 2 e attacca 2 volte. Alla fine della fase del Killer, tutte le Vittime si muovono di 1 spazio verso Grimlash.",
+     "<b>Withered Harbinger</b>: punta, si muove e attacca 2 volte. Per ogni spazio che Grimlash percorre nella fase del Killer, perdi ⌛.",
+     "<b>Ancient Abomination</b>: punta, si muove di 2 e attacca. Ogni volta che risolve un attacco, aggiungi il livello di Harvest Madness al suo valore di Attacco.",
+     "<b>God of Blood and Grain</b> (Finale Epico): punta te, si muove e attacca 2 volte. Quando viene rivelato, muoiono tutte le Vittime."
+    ]
+   ],
+   [
+    "Poteri Oscuri",
+    [
+     "<b>Root-Bound Curse</b>: ogni volta che risolvi ❤️ per curarti o abbassare Harvest Madness, Grimlash recupera metà di quei ❤️, arrotondando per eccesso.",
+     "<b>Rite of the Corrupted</b>: durante il Mantenimento, 🎃 se Harvest Madness non è salito in questo turno.",
+     "<b>Rite of the Old One</b>: ogni volta che Harvest Madness sale a un nuovo livello, scarta la prossima carta Terrore.",
+     "<b>Fields of Madness</b> (Potere Oscuro Epico): i tuoi Tiri Orrore cambiano col livello di Harvest Madness. Livello 0 o 1: un dado in meno (minimo 1). Livello 2: nessun effetto. Livello 3: un dado in più.",
+     "<b>Burning Sickle</b> (Potere Oscuro minore): ogni volta che Grimlash ti infligge danni, infligge anche ✴ a ogni Vittima nel tuo spazio."
+    ]
+   ],
+   [
+    "Carte Terrore",
+    [
+     "<b>\"Something's Wrong with the Kids\"</b>: i Children considerano tutti gli spazi 🌾 adiacenti tra loro. Poi, solo i Children: puntano te o la Vittima più vicina, si muovono e risolvono l'icona delle mani (rapimento). Poi 🎭.",
+     "<b>\"Nobody Knows Where They Take Them...\"</b>: se non ci sono Vittime né Children sul tabellone, scartala e pesca la prossima. Altrimenti, vanno nel panico tutte le Vittime nello stesso spazio di un Child. (Il resto della carta non è nella nostra foto.)"
+    ]
    ]
   ],
   "err_m_t": "Errori comuni",
@@ -1080,6 +1107,221 @@
    [
     "The Abbess",
     "Mettila nell'<b>Abbess' Office</b>. Durante il Mantenimento si muove di uno spazio verso la Vittima normale più vicina che non sia nel <b>Dormitory</b>. Le Vittime normali nel suo spazio di partenza e di arrivo si muovono di 2 spazi verso il Dormitory."
+   ]
+  ]
+ },
+ "Madness in the Dark": {
+  "ley": "Nomi delle carte dall'edizione spagnola · ⌛ = Tempo · ✴ = danno · ❤️ = recuperare salute · 💔 = perdere salute · 🎭 = l'Orrore sale · 🩸 = Bloodlust · 💊 = segnalino Pastilla (pillola)",
+  "err_k_t": "Attenzione",
+  "err_k": [
+   "Ratchet Lady inizia con solo <b>6</b> di salute ma <b>non ha limite massimo</b>: si cura in molti modi.",
+   "Lasciare un luogo con dei <b>Lunáticos</b> (pazzi) costa 💔 per ogni Lunático oltre il primo.",
+   "Trasformare una Vittima in Lunático <b>non</b> fa salire il 🩸, e nemmeno uccidere un Lunático."
+  ],
+  "bloques_k": [
+   [
+    "Preparazione speciale",
+    [
+     "Fai una pila con le miniature di <b>Lunático</b> accanto a quelle delle Vittime.",
+     "Metti 2 Lunáticos nel luogo di partenza di Ratchet Lady."
+    ]
+   ],
+   [
+    "I Lunáticos",
+    [
+     "Sono Scagnozzi: ex Vittime impazzite. Seguono le regole degli Scagnozzi (pag. 32 del regolamento base).",
+     "Hanno 1 di salute, e Attacco e Movimento 1. Non ti seguono e non possono essere salvati.",
+     "Quando una Vittima diventa un Lunático, sostituisci la sua miniatura con una rossa di Lunático. Il 🩸 non sale: non è morto nessuno.",
+     "Quando un Lunático muore, la sua miniatura torna nella riserva. Neanche così sale il 🩸, anche se prima era una Vittima.",
+     "Se vuoi lasciare un luogo con dei Lunáticos, perdi 💔 per ogni Lunático oltre il primo: con uno non succede nulla, con tre perdi 2.",
+     "Massimo <b>6</b> Lunáticos contemporaneamente sul tabellone. Se devi metterne un altro e non ne restano, ignoralo.",
+     "Le Vittime Speciali <b>non</b> diventano Lunáticos; solo quelle normali."
+    ]
+   ],
+   [
+    "Calmar",
+    [
+     "Contro Ratchet Lady hai le carte Azione <b>Calmar</b> (calmare), che ritrasformano i Lunáticos in Vittime.",
+     "Quando risolvi con successo una Calmar, sostituisci il numero di Lunáticos indicato con miniature di Vittima e rimetti i Lunáticos nella riserva. Ora possono seguirti, puoi salvarle e i Nemici possono ucciderle."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "<b>Llueven Lunáticos</b>: sopra, viene verso di te, si muove e attacca 2 volte. Sotto, compaiono 2 Lunáticos nel suo luogo, va verso la Vittima o verso di te e attacca. Se non ci sono Lunáticos quando viene rivelata, ne compaiono 2 nel luogo di Ratchet Lady.",
+     "<b>Alimentando la Locura</b>: sopra, va, si muove e attacca. Sotto, Ratchet Lady recupera ❤️, poi va, si muove e attacca. All'inizio di ogni fase del Killer, se non ci sono Lunáticos, ne compare uno nel suo luogo.",
+     "<b>Sujetadla</b>: sopra, viene verso di te e si muove. Sotto, viene verso di te, si muove e attacca 2 volte. Quando viene rivelata, tutte le Vittime rimaste diventano Lunáticos e tutte le carte Azione Calmar vengono rimosse dalla partita."
+    ]
+   ],
+   [
+    "Poteri oscuri",
+    [
+     "<b>Inyección Oscura</b>: nella fase del Killer, la prima volta che Ratchet Lady recupera almeno 1 ❤️, ne recupera un altro.",
+     "<b>Brote Maníaco</b>: quando un Lunático entra sul tabellone, attiva subito la sua Azione da Scagnozzo.",
+     "<b>Miedo a la Sangre</b>: nella fase del Killer, la prima volta che l'Orrore o il 🩸 salgono di almeno 1, Ratchet Lady recupera ❤️.",
+     "<b>Escudo de Locura</b> (Potere Oscuro Epico): Ratchet Lady non può perdere salute finché ci sono Lunáticos sul tabellone."
+    ]
+   ]
+  ],
+  "err_m_t": "Attenzione",
+  "err_m": [
+   "Raccogli una 💊 solo se <b>termini</b> il movimento nel suo luogo, non se ci passi soltanto.",
+   "Prendere 2 o 3 Pastillas insieme ti obbliga a pescare carte <b>Efectos Secundarios</b> (effetti collaterali)."
+  ],
+  "bloques_m": [
+   [
+    "Preparazione speciale",
+    [
+     "Fai una pila con i segnalini <b>Aturdido</b> (stordito) accanto all'area di gioco.",
+     "Mescola i segnalini Pastilla a faccia in giù (lato neutro in alto) e fai una pila.",
+     "La partita inizia con <b>4</b> segnalini Pastilla sul tabellone: la carta Preparazione indica dove. Pescali dalla pila e mettili a faccia in giù.",
+     "Metti la carta <b>Efectos de las Pastillas</b> accanto alla tua plancia giocatore. Pesca 1 segnalino Pastilla e mettilo a faccia in su sotto di essa. Nella riserva dovrebbero restarne 5.",
+     "Mescola i mazzi <b>Dopaje</b> ed <b>Efectos Secundarios</b> e mettili accanto all'area di gioco."
+    ]
+   ],
+   [
+    "Pastillas, Efectos Secundarios e Dopaje",
+    [
+     "Ci sono 4 tipi di Pastillas: 3 gialle, 3 blu, 3 rosa e 1 jolly (vale come qualsiasi colore).",
+     "Se termini il movimento in un luogo con un segnalino Pastilla (non di passaggio), puoi spendere ⌛ per prenderlo. Mettilo a faccia in su sotto la tua carta Efectos de las Pastillas.",
+     "In qualsiasi momento della fase Azione puoi prendere quelle che hai raccolto, scartandone i segnalini. Se la pila finisce, mescola quelli scartati e fanne una nuova a faccia in giù.",
+     "Guarda la carta Efectos de las Pastillas per vedere cosa fa ciascuna. Se ne prendi 2 o 3 insieme, dopo averne applicato gli effetti peschi 1 o più carte Efectos Secundarios, una alla volta.",
+     "Puoi prenderne quante vuoi e nell'ordine che vuoi: per esempio una sola, e poi due insieme (pescando Efectos Secundarios per quelle due).",
+     "Se ne prendi una di ogni colore, puoi pescare una carta <b>Dopaje</b>: danno abilità molto potenti."
+    ]
+   ],
+   [
+    "Aturdido",
+    [
+     "Alcuni oggetti riportano la parola <b>Aturdido</b>. Solo i Nemici possono diventare Aturdido: metti un segnalino Aturdido sotto di loro.",
+     "Nella fase del Killer successiva, ignora tutti i loro movimenti (ma risolvi comunque i loro attacchi).",
+     "Nel Mantenimento si scartano tutti i segnalini Aturdido."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "bata-de-paciente",
+    "Bata de Paciente",
+    "Puoi ignorare qualsiasi penalità di movimento delle regole speciali. Se subisci ✴ da un attacco, puoi usarla per far morire al tuo posto una Vittima del tuo luogo."
+   ],
+   [
+    "anestesia",
+    "Anestesia",
+    "2 usi. Stordisce un Nemico nel tuo luogo. Puoi scartarla per passare tutti i suoi usi rimanenti alla <b>Pistola Tranquilizante</b> (se ce l'hai)."
+   ],
+   [
+    "bote-de-gas-de-la-risa",
+    "Bote de Gas de la Risa",
+    "Scartalo per Stordire tutti i Nemici nel tuo luogo e in quelli adiacenti. Le Vittime in quei luoghi fuggono subito."
+   ],
+   [
+    "pastillas-misteriosas",
+    "Pastillas Misteriosas",
+    "Scartala subito e prendi 2 segnalini Pastilla."
+   ],
+   [
+    "bisturi",
+    "Bisturí",
+    "Arma · gittata 0 · ✴* · 1 mano. Infliggi 1 ✴ in più per ogni stella vuota che ottieni nel tuo Tiro Orrore. Se ottieni l'icona barrata, 💔."
+   ],
+   [
+    "inyeccion-de-adrenalina",
+    "Inyección de Adrenalina",
+    "1 mano. Quando devi rivelare il tuo segnalino Final Health nero, prima puoi scartarla per rivelarne 3 dalla riserva e usarne uno."
+   ],
+   [
+    "sierra-para-huesos",
+    "Sierra para Huesos",
+    "Arma · gittata 0 · 2 ✴ · 1 mano. Quando infliggi danno con essa, 🎭."
+   ],
+   [
+    "maletin-medico",
+    "Maletín Médico",
+    "2 usi. Spendi ⌛ per recuperare ❤️, o 3 ⌛ per recuperare ❤️❤️."
+   ],
+   [
+    "martillo-con-mango-de-gancho",
+    "Martillo con Mango de Gancho",
+    "Arma · gittata 0 · 2 ✴ · 1 mano. Quando infliggi danno con esso, tira un dado: con 1-4, 💔."
+   ],
+   [
+    "tapa-de-cubo-de-basura",
+    "Tapa de Cubo de Basura",
+    "1 mano · 3 usi. Ignora 1 ✴."
+   ],
+   [
+    "botiquin",
+    "Botiquín",
+    "1 mano. Ogni volta che usi una carta Azione per recuperare salute, recuperi ❤️ in più."
+   ],
+   [
+    "manual-medico",
+    "Manual Médico",
+    "Quando prendi segnalini Pastilla o peschi carte Dopaje, pescane uno in più, scegli quale tenere e scarta l'altro."
+   ],
+   [
+    "desfibrilador",
+    "Desfibrilador",
+    "Arma · gittata 0 · 1 ✴ · 2 mani. Dopo il danno, se il Nemico è ancora vivo, è Stordito."
+   ],
+   [
+    "bebida-energetica",
+    "Bebida Energética",
+    "Scartala nella fase Azione e scegli: 3 ⌛, muoviti di 1 luogo, o ignora una carta Efectos Secundarios."
+   ],
+   [
+    "cuchillo",
+    "Cuchillo",
+    "Arma · gittata 0 · 1 ✴ · 1 mano."
+   ],
+   [
+    "pistola-tranquilizante",
+    "Pistola Tranquilizante",
+    "Arma · gittata 1 · 1 ✴ · 1 mano · 2 usi. Non può modificare una carta Azione: si usa senza. Per 2 ⌛ spari un dardo a un Nemico in un luogo adiacente; se è ancora vivo, è Stordito."
+   ]
+  ],
+  "falta": "Nomi dall'edizione spagnola. Ci sono altre carte Pastillas Misteriosas.",
+  "ev": [
+   [
+    "Dr. Death",
+    "Mettilo nella <b>Sala de Operaciones</b>. Nel Mantenimento uccide una Vittima nel suo luogo; se non ce ne sono, si muove di un luogo verso la Vittima più vicina. Se muore: 2 ⌛ e il 🩸 non sale. Se esce dal gioco, scarta la carta."
+   ],
+   [
+    "Arañazos y Mordiscos",
+    "Ogni volta che salvi una Vittima, fai un Tiro Orrore. Se ottieni l'icona indicata sulla carta, 💔."
+   ],
+   [
+    "Medicamentos Potentes",
+    "Ogni volta che prendi una o più Pastillas, pesca una carta Efectos Secundarios in più."
+   ],
+   [
+    "Reservas Médicas",
+    "La prima volta in una fase che tu o un Nemico recuperate almeno 1 ❤️, ne recuperate un altro."
+   ],
+   [
+    "\"Han llegado los nuevos pacientes\"",
+    "Metti 4 nuove Vittime nella <b>Sala Comunitaria</b>. Scarta."
+   ],
+   [
+    "Adicción Peligrosa",
+    "Scegli fino a 2 Vittime che non siano nel tuo luogo né insieme. Metti un segnalino Pastilla a faccia in giù con entrambe, con una o con nessuna. Per ogni segnalino che metti, +🩸. Scarta."
+   ],
+   [
+    "Camilla de Hospital",
+    "Metti il segnalino Camilla nel tuo luogo. Puoi muoverlo con te e trasportarci sopra fino a 2 Vittime. Puoi scartarlo per travolgere un Nemico nel tuo luogo o in uno adiacente: 1 ✴ in più per ogni Vittima sopra, che muoiono. Se esce dal gioco, scarta la carta."
+   ],
+   [
+    "Hannibal el Caníbal",
+    "Mettilo nel <b>Confinamiento Solitario</b> con 2 nuove Vittime. Nel Mantenimento uccide una Vittima nel suo luogo; se non ce ne sono, fugge. Se lo salvi, 🎭. Se viene ucciso, 💔. Se esce dal gioco, scarta la carta."
+   ],
+   [
+    "Bienvenidos al Manicomio",
+    "Metti un segnalino Teschio nella <b>Sala Comunitaria</b>. Quando tu o un Nemico entrate in quel luogo, chi entra subisce ✴."
+   ],
+   [
+    "Dra. Sunshine",
+    "Mettila nella <b>Consulta Médica</b>. Se è nel tuo luogo, quando prendi una Pastilla ne scegli il colore. Se viene uccisa nel tuo luogo, 🎭🎭🎭🎭. Se esce dal gioco, scarta la carta."
    ]
   ]
  }

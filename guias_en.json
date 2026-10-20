@@ -1,0 +1,217 @@
+{
+ "Madness in the Dark": {
+  "ley": "Card names from the Spanish edition · ⌛ = Time · ✴ = damage · ❤️ = heal · 💔 = lose health · 🎭 = Horror goes up · 🩸 = Bloodlust · 💊 = Pastilla (pill) token",
+  "err_k_t": "Watch out",
+  "err_k": [
+   "Ratchet Lady starts with only <b>6</b> health but has <b>no cap</b>: she heals in many ways.",
+   "Leaving a space with <b>Lunáticos</b> (Lunatics) costs 💔 for each Lunático beyond the first.",
+   "Turning a Victim into a Lunático does <b>not</b> raise 🩸, and neither does killing a Lunático."
+  ],
+  "bloques_k": [
+   [
+    "Special setup",
+    [
+     "Make a pile of <b>Lunático</b> figures next to the Victim figures.",
+     "Place 2 Lunáticos in Ratchet Lady's starting space."
+    ]
+   ],
+   [
+    "The Lunáticos",
+    [
+     "They are Minions: former Victims who have gone mad. They follow the Minion rules (p. 32 of the core rulebook).",
+     "They have 1 health, and Attack and Movement of 1. They don't follow you and can't be rescued.",
+     "When a Victim becomes a Lunático, swap its figure for a red Lunático figure. 🩸 doesn't go up: nobody died.",
+     "When a Lunático dies, its figure goes back to the supply. 🩸 doesn't go up either, even though it used to be a Victim.",
+     "If you want to leave a space with Lunáticos, you lose 💔 for each Lunático beyond the first: with one nothing happens, with three you lose 2.",
+     "Maximum <b>6</b> Lunáticos on the board at once. If you must place another and none are left, ignore it.",
+     "Special Victims do <b>not</b> become Lunáticos; only normal ones do."
+    ]
+   ],
+   [
+    "Calmar",
+    [
+     "Against Ratchet Lady you get the <b>Calmar</b> (Calm) Action cards, which turn Lunáticos back into Victims.",
+     "When you successfully resolve a Calmar, swap the number of Lunáticos it shows for Victim figures and return the Lunáticos to the supply. They can now follow you, you can rescue them, and Enemies can kill them."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "<b>Llueven Lunáticos</b>: top, she goes after you, moves and attacks 2 times. Bottom, 2 Lunáticos appear in her space, she goes after the Victim or you and attacks. If there are no Lunáticos when it's revealed, 2 appear in Ratchet Lady's space.",
+     "<b>Alimentando la Locura</b>: top, she goes, moves and attacks. Bottom, Ratchet Lady heals ❤️, then goes, moves and attacks. At the start of each Killer phase, if there are no Lunáticos, one appears in her space.",
+     "<b>Sujetadla</b>: top, she goes after you and moves. Bottom, she goes after you, moves and attacks 2 times. When it's revealed, all remaining Victims become Lunáticos and all Calmar Action cards are removed from the game."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Inyección Oscura</b>: in the Killer phase, the first time Ratchet Lady heals at least 1 ❤️, she heals another.",
+     "<b>Brote Maníaco</b>: when a Lunático enters the board, immediately trigger its Minion Action.",
+     "<b>Miedo a la Sangre</b>: in the Killer phase, the first time Horror or 🩸 goes up by at least 1, Ratchet Lady heals ❤️.",
+     "<b>Escudo de Locura</b> (Epic Dark Power): Ratchet Lady can't lose health while there are Lunáticos on the board."
+    ]
+   ]
+  ],
+  "err_m_t": "Watch out",
+  "err_m": [
+   "You only pick up a 💊 if you <b>end</b> your movement in its space, not if you're passing through.",
+   "Taking 2 or 3 Pastillas at once forces you to draw <b>Efectos Secundarios</b> (side effects) cards."
+  ],
+  "bloques_m": [
+   [
+    "Special setup",
+    [
+     "Make a pile of <b>Aturdido</b> (Stunned) tokens next to the play area.",
+     "Shuffle the Pastilla tokens face down (blank side up) and make a pile.",
+     "The game starts with <b>4</b> Pastilla tokens on the board: the Setup card says where. Draw them from the pile and place them face down.",
+     "Place the <b>Efectos de las Pastillas</b> card next to your player board. Draw 1 Pastilla token and place it face up below it. There should be 5 left in the supply.",
+     "Shuffle the <b>Dopaje</b> and <b>Efectos Secundarios</b> decks and put them next to the play area."
+    ]
+   ],
+   [
+    "Pastillas, Efectos Secundarios and Dopaje",
+    [
+     "There are 4 kinds of Pastillas: 3 yellow, 3 blue, 3 pink and 1 wild (counts as any color).",
+     "If you end your movement in a space with a Pastilla token (not passing through), you can spend ⌛ to take it. Place it face up below your Efectos de las Pastillas card.",
+     "At any point in the Action phase you can take the ones you've collected, discarding their tokens. If the pile runs out, shuffle the discarded ones and make a new face-down pile.",
+     "Check the Efectos de las Pastillas card to see what each one does. If you take 2 or 3 at once, after applying their effects you draw 1 or more Efectos Secundarios cards, one at a time.",
+     "You can take as many as you like, in any order: for example a single one, then two together (drawing Efectos Secundarios for those two).",
+     "If you take one of each color, you can draw a <b>Dopaje</b> card: they give very powerful abilities."
+    ]
+   ],
+   [
+    "Aturdido",
+    [
+     "Some items have the word <b>Aturdido</b>. Only Enemies can be Aturdido: place an Aturdido token under them.",
+     "In the next Killer phase, ignore all their movement (but still resolve their attacks).",
+     "In Upkeep, discard all Aturdido tokens."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "bata-de-paciente",
+    "Bata de Paciente",
+    "You can ignore any movement penalty from special rules. If you take ✴ from an attack, you can use it to have a Victim in your space die instead of you."
+   ],
+   [
+    "anestesia",
+    "Anestesia",
+    "2 uses. Stuns an Enemy in your space. You can discard it to move all its remaining uses to the <b>Pistola Tranquilizante</b> (if you have it)."
+   ],
+   [
+    "bote-de-gas-de-la-risa",
+    "Bote de Gas de la Risa",
+    "Discard it to Stun all Enemies in your space and adjacent spaces. Victims in those spaces flee immediately."
+   ],
+   [
+    "pastillas-misteriosas",
+    "Pastillas Misteriosas",
+    "Discard it immediately and take 2 Pastilla tokens."
+   ],
+   [
+    "bisturi",
+    "Bisturí",
+    "Weapon · range 0 · ✴* · 1 hand. You deal 1 more ✴ for each empty star you roll on your Horror Roll. If you roll the crossed-out icon, 💔."
+   ],
+   [
+    "inyeccion-de-adrenalina",
+    "Inyección de Adrenalina",
+    "1 hand. When you have to reveal your black Final Health token, you can first discard this to reveal 3 from the supply and use one of those."
+   ],
+   [
+    "sierra-para-huesos",
+    "Sierra para Huesos",
+    "Weapon · range 0 · 2 ✴ · 1 hand. When you deal damage with it, 🎭."
+   ],
+   [
+    "maletin-medico",
+    "Maletín Médico",
+    "2 uses. Spend ⌛ to heal ❤️, or 3 ⌛ to heal ❤️❤️."
+   ],
+   [
+    "martillo-con-mango-de-gancho",
+    "Martillo con Mango de Gancho",
+    "Weapon · range 0 · 2 ✴ · 1 hand. When you deal damage with it, roll a die: on 1-4, 💔."
+   ],
+   [
+    "tapa-de-cubo-de-basura",
+    "Tapa de Cubo de Basura",
+    "1 hand · 3 uses. Ignore 1 ✴."
+   ],
+   [
+    "botiquin",
+    "Botiquín",
+    "1 hand. Each time you use an Action card to heal, you heal ❤️ one more."
+   ],
+   [
+    "manual-medico",
+    "Manual Médico",
+    "When you take Pastilla tokens or draw Dopaje cards, draw one extra, choose which to keep and discard the other."
+   ],
+   [
+    "desfibrilador",
+    "Desfibrilador",
+    "Weapon · range 0 · 1 ✴ · 2 hands. After the damage, if the Enemy is still alive, it is Stunned."
+   ],
+   [
+    "bebida-energetica",
+    "Bebida Energética",
+    "Discard it in the Action phase and choose: 3 ⌛, move 1 space, or ignore an Efectos Secundarios card."
+   ],
+   [
+    "cuchillo",
+    "Cuchillo",
+    "Weapon · range 0 · 1 ✴ · 1 hand."
+   ],
+   [
+    "pistola-tranquilizante",
+    "Pistola Tranquilizante",
+    "Weapon · range 1 · 1 ✴ · 1 hand · 2 uses. It can't modify an Action card: you use it without one. For 2 ⌛ you shoot a dart at an Enemy in an adjacent space; if it's still alive, it is Stunned."
+   ]
+  ],
+  "falta": "Names from the Spanish edition. There are more Pastillas Misteriosas cards.",
+  "ev": [
+   [
+    "Dr. Death",
+    "Place him in the <b>Sala de Operaciones</b>. In Upkeep he kills a Victim in his space; if there are none, he moves one space toward the nearest Victim. If he dies: 2 ⌛ and 🩸 doesn't go up. If he leaves the game, discard the card."
+   ],
+   [
+    "Arañazos y Mordiscos",
+    "Each time you rescue a Victim, make a Horror Roll. If you roll the icon shown on the card, 💔."
+   ],
+   [
+    "Medicamentos Potentes",
+    "Each time you take one or more Pastillas, draw one extra Efectos Secundarios card."
+   ],
+   [
+    "Reservas Médicas",
+    "The first time in a phase that you or an Enemy heal at least 1 ❤️, heal another."
+   ],
+   [
+    "\"Han llegado los nuevos pacientes\"",
+    "Place 4 new Victims in the <b>Sala Comunitaria</b>. Discard."
+   ],
+   [
+    "Adicción Peligrosa",
+    "Choose up to 2 Victims that aren't in your space or together. Place a Pastilla token face down with both, one or neither. For each token you place, +🩸. Discard."
+   ],
+   [
+    "Camilla de Hospital",
+    "Place the Camilla token in your space. You can move it with you and carry up to 2 Victims on it. You can discard it to ram an Enemy in your space or an adjacent one: 1 more ✴ for each Victim on it, who die. If it leaves the game, discard the card."
+   ],
+   [
+    "Hannibal el Caníbal",
+    "Place him in <b>Confinamiento Solitario</b> with 2 new Victims. In Upkeep he kills a Victim in his space; if there are none, he flees. If you rescue him, 🎭. If he is killed, 💔. If he leaves the game, discard the card."
+   ],
+   [
+    "Bienvenidos al Manicomio",
+    "Place a Skull token in the <b>Sala Comunitaria</b>. Whenever you or an Enemy enters that space, whoever entered takes ✴."
+   ],
+   [
+    "Dra. Sunshine",
+    "Place her in the <b>Consulta Médica</b>. If she's in your space, when you take a Pastilla you choose its color. If she is killed in your space, 🎭🎭🎭🎭. If she leaves the game, discard the card."
+   ]
+  ]
+ }
+}

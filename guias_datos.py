@@ -33,6 +33,21 @@ GUIAS = [
                     "Al resolver una curación ❤️, por cada corazón eliges: <b>recuperar vida</b> como siempre <b>o bajar 1</b> la Harvest Madness. Las dos cosas a la vez, no.",
                     "Si bajas a un nivel inferior, <b>descarta la carta del nivel que dejas</b>. Si luego vuelves a ese nivel, robas otra vez 2 y te quedas 1. Si al robar no quedan bastantes, baraja los descartes de ese nivel.",
                     "Los efectos de <b>una vez por turno</b> se usan girando la carta boca abajo; en el <b>Upkeep</b> vuelve boca arriba."]),
+                ("Finales", [
+                    "<b>Finale básico</b>: va a por ti o a la víctima más cercana, se mueve 1 espacio y ataca. Si ha muerto una víctima, 🎃 (sube Harvest Madness).",
+                    "<b>Hunger of the Old Gods</b>: va, se mueve 2 y ataca 2 veces. Al final de la fase del Killer, todas las víctimas se mueven 1 espacio hacia Grimlash.",
+                    "<b>Withered Harbinger</b>: va, se mueve y ataca 2 veces. Por cada espacio que se mueva Grimlash en la fase del Killer, pierdes ⌛.",
+                    "<b>Ancient Abomination</b>: va, se mueve 2 y ataca. Cada vez que resuelve un ataque, suma el nivel de Harvest Madness a su valor de Ataque.",
+                    "<b>God of Blood and Grain</b> (Epic Finale): va a por ti, se mueve y ataca 2 veces. Al revelarlo, mueren todas las víctimas."]),
+                ("Poderes oscuros", [
+                    "<b>Root-Bound Curse</b>: cada vez que resuelves ❤️ para curarte o bajar Harvest Madness, Grimlash recupera la mitad de esos ❤️, redondeando arriba.",
+                    "<b>Rite of the Corrupted</b>: en el Mantenimiento, 🎃 si Harvest Madness no ha subido este turno.",
+                    "<b>Rite of the Old One</b>: cada vez que Harvest Madness sube a un nivel nuevo, descarta la siguiente carta de Terror.",
+                    "<b>Fields of Madness</b> (Epic Dark Power): tus tiradas de Horror cambian según el nivel de Harvest Madness. Nivel 0 o 1: un dado menos (mínimo 1). Nivel 2: nada. Nivel 3: un dado más.",
+                    "<b>Burning Sickle</b> (Minor Dark Power): cada vez que Grimlash te hace daño, también hace ✴ a cada víctima de tu espacio."]),
+                ("Cartas de Terror", [
+                    "<b>\"Something's Wrong with the Kids\"</b>: los Children tratan todos los espacios 🌾 como adyacentes entre sí. Luego, solo los Children: van a por ti o a la víctima más cercana, se mueven y resuelven el icono de las manos (abducción). Después, 🎭.",
+                    "<b>\"Nobody Knows Where They Take Them...\"</b>: si no hay víctimas ni Children en el tablero, descártala y roba otra. Si no, entran en pánico todas las víctimas que estén en el mismo espacio que un Child. (El resto de la carta no sale en la foto.)"]),
             ],
             "err_m_t": "Errores frecuentes",
             "err_m": [
@@ -106,6 +121,21 @@ GUIAS = [
                     "When resolving a ❤️ heal, for each heart you choose: <b>recover health</b> as normal <b>or lower</b> Harvest Madness by 1. Never both.",
                     "If you drop to a lower level, <b>discard the card for the level you left</b>. If you later return to it, draw 2 again and keep 1. If the deck runs short, reshuffle that level's discards.",
                     "<b>Once-per-turn</b> effects are used by flipping the card facedown; it flips back faceup in the <b>Upkeep</b>."]),
+                ("Finales", [
+                    "<b>Base Finale</b>: targets you or the closest Victim, moves 1 space and attacks. If a Victim was killed, 🎃 (Harvest Madness goes up).",
+                    "<b>Hunger of the Old Gods</b>: targets, moves 2 and attacks twice. At the end of the Killer phase, all Victims move 1 space towards Grimlash.",
+                    "<b>Withered Harbinger</b>: targets, moves and attacks twice. For every space Grimlash moves during the Killer phase, lose ⌛.",
+                    "<b>Ancient Abomination</b>: targets, moves 2 and attacks. Whenever he resolves an attack, add the Harvest Madness level to his Attack Value.",
+                    "<b>God of Blood and Grain</b> (Epic Finale): targets you, moves and attacks twice. When revealed, kill all Victims."]),
+                ("Dark Powers", [
+                    "<b>Root-Bound Curse</b>: whenever you resolve ❤️ to heal or reduce Harvest Madness, Grimlash recovers half that much ❤️, rounded up.",
+                    "<b>Rite of the Corrupted</b>: during Upkeep, 🎃 if Harvest Madness did not increase this turn.",
+                    "<b>Rite of the Old One</b>: whenever Harvest Madness increases to a new level, discard the next Terror card.",
+                    "<b>Fields of Madness</b> (Epic Dark Power): your Horror Rolls change with the Harvest Madness level. Level 0 or 1: one die fewer (minimum 1). Level 2: no effect. Level 3: one extra die.",
+                    "<b>Burning Sickle</b> (Minor Dark Power): whenever Grimlash deals you damage, also deal ✴ to every Victim in your space."]),
+                ("Terror cards", [
+                    "<b>\"Something's Wrong with the Kids\"</b>: the Children treat all 🌾 spaces as adjacent to each other. Then, Children only: target you or the closest Victim, move and resolve the hands icon (abduction). Then 🎭.",
+                    "<b>\"Nobody Knows Where They Take Them...\"</b>: if there are no Victims or Children on the board, discard and draw the next Terror card. Otherwise, panic all Victims in the same space as a Child. (The rest of the card isn't in our photo.)"]),
             ],
             "err_m_t": "Common mistakes",
             "err_m": [
@@ -367,7 +397,7 @@ GUIAS = [
                     "It is <b>not</b> a Killer or a Minion: it can't be attacked, damaged or killed. Its action resolves after the Finale's Minion and Killer Actions.",
                     "Victims won't follow you into its space (unless an effect lets them follow you into the Killer's). In the Panic phase, everyone in its space panics, whether or not anyone died that turn.",
                     "<b>Movement 2</b>, with the ANY icon: it stops as soon as it reaches a space with <b>anyone</b> (you, Victims, Enemies...), and won't move if someone is already in its space.",
-                    "<b>It doesn't deal damage: it kills</b> one target in its space. Priority: Victim, Minion, you, Killer. If it attacks you or the Killer, you die instantly, without revealing Final Health.",
+                    "<b>It doesn't deal damage: it kills</b> one target in its space. Priority: Victim, Minion, you, Killer. If it attacks you or the Killer, the target dies instantly, without revealing Final Health.",
                     "Against an Enemy made of several units (the Raptor Pack, a zombie horde...) it kills <b>one</b> unit, i.e. 1 damage."]),
                 ("The volcano", [
                     "The <b>first time</b> you resolve the volcano icon, it erupts: everyone at the <b>Volcano</b> takes 💔, anyone left in the space panics, and you place the Volcano Lava token there: it's no longer accessible.",
@@ -1082,16 +1112,16 @@ GUIAS = [
 
 ]
 
-# FR/DE/IT: traducciones de la parte "en" en guias_<idioma>.json (mismos
+# EN (solo cajas escritas en castellano) y FR/DE/IT: traducciones en guias_<idioma>.json (mismos
 # trozos, mismo orden). Los nombres de cartas siguen en inglés.
 import json as _json
 import pathlib as _pathlib
-for _l in ("fr", "de", "it"):
+for _l in ("en", "fr", "de", "it"):
     _f = _pathlib.Path(__file__).parent / f"guias_{_l}.json"
     if _f.exists():
         _t = _json.loads(_f.read_text(encoding="utf-8"))
         for _g in GUIAS:
-            if _g["caja"] in _t:
+            if _g["caja"] in _t and not (_l == "en" and "en" in _g):
                 _d = _t[_g["caja"]]
                 for _k in ("bloques_k", "bloques_m"):
                     _d[_k] = [tuple(x) for x in _d[_k]]

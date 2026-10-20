@@ -1,0 +1,1328 @@
+{
+ "A Rotten Harvest": {
+  "ley": "🩸 = Bloodlust · 🌾 = Ackerfeld · 🎭 = Horror erhöhen",
+  "err_k_t": "Häufige Fehler",
+  "err_k": [
+   "<b>Grimlash bewegt sich 1</b> Feld in seiner Killeraktion. Zeigt eine Terrorkarte das <b>Stiefel</b>-Symbol (Bewegung), bewegt er sich so weit wie seine Bewegung auf der aktuellen 🩸-Stufe, nicht 1.",
+   "Eine ❤️-Heilung heilt <b>nicht</b> und senkt gleichzeitig Harvest Madness: Jedes Herz bewirkt das eine oder das andere.",
+   "Wenn Harvest Madness eine Stufe <b>sinkt</b>, <b>verlierst</b> du die Karte dieser Stufe."
+  ],
+  "bloques_k": [
+   [
+    "Harvest Madness 🎃 · Aufbau",
+    [
+     "Sortiere die Harvest-Madness-Karten nach Stufe und mische jede: <b>3 Stapel</b>.",
+     "Lege den Marker auf das Startfeld der Harvest-Madness-Leiste (orange umrandet), nahe dem oberen Rand des Killertableaus."
+    ]
+   ],
+   [
+    "Harvest Madness 🎃 · so funktioniert's",
+    [
+     "Jedes Mal, wenn du das 🎃-Symbol siehst, rückt der Marker <b>1 Feld nach rechts</b>.",
+     "Erreicht er eine <b>neue Stufe</b>, ziehe <b>2 Karten</b> vom Stapel dieser Stufe, <b>behalte 1</b> und wirf die andere ab. Ihr Effekt gilt, solange du auf dieser Stufe oder darüber bleibst.",
+     "<b>Gehst du über Stufe 3 hinaus</b> (das Totenkopffeld), <b>verlierst du das Spiel</b> sofort.",
+     "Beim Abhandeln einer ❤️-Heilung wählst du für jedes Herz: <b>Gesundheit zurückgewinnen</b> wie üblich <b>oder Harvest Madness</b> um 1 senken. Nie beides.",
+     "Sinkst du auf eine niedrigere Stufe, <b>wirf die Karte der verlassenen Stufe ab</b>. Kehrst du später zurück, ziehe wieder 2 und behalte 1. Reicht der Stapel nicht, mische die Ablage dieser Stufe neu.",
+     "<b>Einmal pro Runde</b>-Effekte nutzt du, indem du die Karte verdeckt umdrehst; im <b>Unterhalt</b> wird sie wieder aufgedeckt."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "<b>Basis-Finale</b>: zielt auf dich oder das nächste Opfer, bewegt sich 1 Feld und greift an. Wurde ein Opfer getötet, 🎃 (Harvest Madness steigt).",
+     "<b>Hunger of the Old Gods</b>: zielt, bewegt sich 2 und greift 2-mal an. Am Ende der Killerphase bewegen sich alle Opfer 1 Feld auf Grimlash zu.",
+     "<b>Withered Harbinger</b>: zielt, bewegt sich und greift 2-mal an. Für jedes Feld, das Grimlash sich in der Killerphase bewegt, verlierst du ⌛.",
+     "<b>Ancient Abomination</b>: zielt, bewegt sich 2 und greift an. Jedes Mal, wenn er einen Angriff abhandelt, addiere die Harvest-Madness-Stufe zu seinem Angriffswert.",
+     "<b>God of Blood and Grain</b> (episches Finale): zielt auf dich, bewegt sich und greift 2-mal an. Beim Aufdecken sterben alle Opfer."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Root-Bound Curse</b>: Jedes Mal, wenn du ❤️ zum Heilen oder Senken von Harvest Madness abhandelst, erhält Grimlash die Hälfte davon an ❤️ zurück, aufgerundet.",
+     "<b>Rite of the Corrupted</b>: Im Unterhalt 🎃, wenn Harvest Madness in dieser Runde nicht gestiegen ist.",
+     "<b>Rite of the Old One</b>: Jedes Mal, wenn Harvest Madness eine neue Stufe erreicht, wirf die nächste Terrorkarte ab.",
+     "<b>Fields of Madness</b> (epische Dark Power): Deine Horrorwürfe ändern sich mit der Harvest-Madness-Stufe. Stufe 0 oder 1: ein Würfel weniger (mindestens 1). Stufe 2: kein Effekt. Stufe 3: ein Würfel mehr.",
+     "<b>Burning Sickle</b> (kleine Dark Power): Jedes Mal, wenn Grimlash dir Schaden zufügt, erhält auch jedes Opfer auf deinem Feld ✴."
+    ]
+   ],
+   [
+    "Terrorkarten",
+    [
+     "<b>\"Something's Wrong with the Kids\"</b>: Die Children behandeln alle 🌾-Felder als benachbart. Dann nur die Children: zielen auf dich oder das nächste Opfer, bewegen sich und handeln das Hände-Symbol ab (Entführung). Danach 🎭.",
+     "<b>\"Nobody Knows Where They Take Them...\"</b>: Sind weder Opfer noch Children auf dem Plan, wirf sie ab und zieh die nächste. Sonst geraten alle Opfer auf demselben Feld wie ein Child in Panik. (Der Rest der Karte ist nicht auf unserem Foto.)"
+    ]
+   ]
+  ],
+  "err_m_t": "Häufige Fehler",
+  "err_m": [
+   "Die <b>Children sind keine Handlanger</b>, aber Feinde: Sie führen keine Killer- oder Handlanger-Aktionen auf Terrorkarten aus, außer die Karte sagt, dass die Children es tun.",
+   "<b>Wenn du Shady Acres mit einem anderen Killer kombinierst</b>, sind die Children trotzdem keine Handlanger: Karten dieses Killers, die Handlanger erwähnen, betreffen sie nicht.",
+   "Greifst du die Children an und sind mehrere im Feld, <b>greifst du alle an</b> und teilst den Schaden auf; übriger Schaden verfällt.",
+   "Eine Entführung in einem Feld <b>ohne Opfer</b> ist nicht verschwendet: Sie zählt als Angriff."
+  ],
+  "bloques_m": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Mische die <b>Ancient Curse</b>-Karten zu einem verdeckten Stapel.",
+     "Lege die <b>Children</b>-Karte neben den Spielplan, ein Child auf den <b>Altar of the Old Gods</b> und die übrigen auf die Karte.",
+     "Lege den Aktionsmarker der Children <b>über</b> die Handlanger- bzw. Killeraktionen auf der Finale-Karte: Sie handeln vor allen anderen Feinden."
+    ]
+   ],
+   [
+    "Die Children",
+    [
+     "Ihre Karte zeigt Gesundheit, Angriff und Bewegung. Sie sind Feinde, keine Handlanger.",
+     "Sie handeln zu <b>Beginn der Killerphase</b>, vor Handlangern und Killer, eins nach dem anderen: das dem Altar nächste zuerst.",
+     "In jedem <b>Unterhalt</b> erscheint ein Child auf dem Altar, außer alle drei sind schon draußen oder es gibt keine Opfer mehr.",
+     "Sie können angegriffen und getötet werden: Ein totes Child kommt zurück auf die Karte und kann wieder erscheinen.",
+     "Opfer folgen dir in ein Feld mit Children, außer der Killer ist auch dort.",
+     "In der Panikphase geraten Opfer in einem Feld mit einem Child in Panik, wenn in dieser Runde mindestens ein Opfer getötet wurde."
+    ]
+   ],
+   [
+    "Entführungen",
+    [
+     "Handelt ein Child das Entführungssymbol in einem Feld mit einem Opfer ab, wirf einen Würfel.",
+     "<b>1-2:</b> Das Opfer wird auf dem Altar geopfert (getötet). Das Child kehrt zum Altar zurück, 🩸 steigt wie üblich und das Opfer kommt auf die Rückseite der obersten Ancient-Curse-Karte.",
+     "<b>3-6:</b> Nichts passiert."
+    ]
+   ],
+   [
+    "Ancient Curses",
+    [
+     "Liegen <b>3 geopferte Opfer</b> darauf, entferne sie und decke den Fluch auf; er kommt ins Spiel. Mehrere können gleichzeitig aktiv sein."
+    ]
+   ],
+   [
+    "Ackerfelder 🌾",
+    [
+     "Felder mit dem Weizensymbol sind Ackerfelder. Viele Karten dieser Box nutzen sie, im Guten wie im Schlechten."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "moonshine-jug",
+    "Moonshine Jug",
+    "Abwerfen, um <b>4 Gesundheit</b> zurückzugewinnen."
+   ],
+   [
+    "cowboy-boots",
+    "Cowboy Boots",
+    "2 Nutzungen. Bewege dich bis zu <b>2 Felder</b>."
+   ],
+   [
+    "pilgrims-hat",
+    "Pilgrim's Hat",
+    "Beginnst du deine Bewegung auf einem 🌾, darfst du dich <b>1 zusätzliches Feld</b> bewegen."
+   ],
+   [
+    "farmers-almanac",
+    "Farmer's Almanac",
+    "2 Nutzungen. Nachdem du eine <b>Terror</b>karte gezogen, aber bevor du sie abgehandelt hast, darfst du sie unter den Stapel legen und die nächste ziehen."
+   ],
+   [
+    "mechanics-toolbox",
+    "Mechanic's Toolbox",
+    "Abwerfen, um <b>1 abgeworfenen Gegenstand</b> mit allen Nutzungen zurückzunehmen."
+   ],
+   [
+    "childrens-toys",
+    "Children's Toys",
+    "2 Nutzungen. Tausche ein <b>Child</b> in deinem Feld gegen ein normales Opfer."
+   ],
+   [
+    "locus-of-insanity",
+    "Locus of Insanity",
+    "3 Nutzungen. Einmal pro Runde darfst du dich mit 🎭 auf <b>ein beliebiges 🌾</b> stellen."
+   ],
+   [
+    "scythe",
+    "Scythe",
+    "Waffe · Reichweite 0-1 · 1 Schaden · 2 Hände. Greifst du Feinde auf einem 🌾 an, darfst du <b>den Schaden aufteilen</b>. Danach ist das Feld <b>abgeerntet</b> und kein 🌾 mehr."
+   ],
+   [
+    "pilgrims-musket",
+    "Pilgrim's Musket",
+    "Waffe · Reichweite 1 · 2 Schaden · 2 Hände · 2 Nutzungen. <b>Nicht</b> gegen Feinde auf einem 🌾 einsetzbar."
+   ],
+   [
+    "rusty-pitchfork",
+    "Rusty Pitchfork",
+    "Waffe · Reichweite 0 · 2 Schaden · 2 Hände. Hat dein finaler Horrorwurf <b>keine Erfolge</b>, wirf sie ab."
+   ],
+   [
+    "decrepit-plow",
+    "Decrepit Plow",
+    "Waffe · Reichweite 0 · 2 Schaden · 1 Hand · 2 Nutzungen."
+   ],
+   [
+    "sickle",
+    "Sickle",
+    "Waffe · Reichweite 0 · 1 Schaden · 1 Hand. Keine Nutzungsbegrenzung."
+   ]
+  ],
+  "falta": "Noch zu fotografieren: Bag of Feed, Combine Keys, Corn Cob Pipe und Cornhusk Effigy.",
+  "falta_ev": "Es fehlen 2 seiner 10 Ereignisse: It Lurks Between the Rows und The Ravens Are Circling.",
+  "ev": [
+   [
+    "Umbral Evocation",
+    "Lege den <b>Harvest Shadow</b>-Marker in das Feld des Killers. Jedes Mal, wenn du oder ein Opfer es betritt: 🩸."
+   ],
+   [
+    "Acres of Hatred",
+    "Für jedes 🌾 mit mindestens einem Opfer: 🩸 (max. 2). Abwerfen."
+   ],
+   [
+    "“The Fields Are Moving…”",
+    "Lege einen Field-Marker auf <b>Hayfield</b> und <b>Cow Pasture</b>: Sie werden zu 🌾."
+   ],
+   [
+    "Festering Rot",
+    "Immer wenn ein Opfer auf einem 🌾 getötet wird: 🎭."
+   ],
+   [
+    "It Hungers For Us",
+    "Alle Opfer geraten in Panik. Für jedes Opfer im Feld des Killers oder angrenzend: 🎭 (max. 3). Abwerfen."
+   ],
+   [
+    "Harvest Cultist",
+    "Das dir nächste Opfer wird zum Cultist. In jedem Unterhalt bewegt es sich 1 Feld auf dich zu; ist es bei dir, bewegt ihr euch beide 1 Feld auf den Killer zu. Es zu retten bringt eine Belohnung."
+   ],
+   [
+    "Ralph the Mechanic",
+    "Ralph beginnt in <b>Ralph's Garage</b>. Solange er bei dir ist, erhalten Gegenstände mit begrenzten Nutzungen, die du nimmst, eine zusätzliche Nutzung."
+   ],
+   [
+    "Sally McCoy",
+    "Sally beginnt im <b>McCoy Farmhouse</b>. Wird sie gerettet, durchsuche den Gegenstandsstapel nach den <b>Combine Keys</b>."
+   ]
+  ]
+ },
+ "The Raptor Games": {
+  "ley": "⌛ = Zeit · ✴ = Schaden · 🩸 = Bloodlust · 💔 = Gesundheit verlieren · ❤️ = Gesundheit zurückgewinnen · 🔧 = Feld mit dem orangen Schraubenschlüssel-Symbol",
+  "err_k_t": "Achtung",
+  "err_k": [
+   "Das <b>Pack</b> gilt in jeder Hinsicht als Killer; <b>einzelne Raptoren</b> sind Handlanger. Eine Karte mit \"Raptor(s)\" schließt das Pack nicht ein; eine mit \"Pack\" schließt einzelne Raptoren nicht ein.",
+   "Du gewinnst, wenn <b>das Pack</b> ausgeschaltet ist, auch wenn noch einzelne Raptoren auf dem Spielplan sind.",
+   "Ein Raptor, der während der Killerphase erscheint, <b>wird erst</b> in der nächsten Killerphase aktiv.",
+   "Einzelne Raptoren <b>halten an</b>, wenn sie ein Feld mit dir oder einem Opfer betreten (oder darin ihre Bewegung beginnen). Ort-Terrorkarten zeigen dieses Symbol nicht, die Regel gilt trotzdem."
+  ],
+  "bloques_k": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Mische die <b>Spawn</b>-Karten und lege sie verdeckt neben die <b>Raptors</b>-Karte; stelle die Raptor-Meeples auf diese Karte.",
+     "Das <b>Pack</b> beginnt auf dem Killerfeld (K) der Aufbaukarte, statt des Killer-Meeples aus dem Grundspiel."
+    ]
+   ],
+   [
+    "Das Pack",
+    [
+     "Eine große Gruppe Raptoren, die in jeder Hinsicht als Killer gilt.",
+     "Seine Gesundheit ist die Anzahl der Raptoren darin: Sie beginnt bei <b>5</b> (1 Final Health und 4 Gesundheit) und hat <b>keine Obergrenze</b>.",
+     "Der Angriffswert auf dem Killertableau ist der Schaden, den das Pack pro Angriff verursacht, egal wie groß es ist."
+    ]
+   ],
+   [
+    "Einzelne Raptoren",
+    [
+     "Die Raptor-Meeples. Sie sind in jeder Hinsicht <b>Handlanger</b>.",
+     "Sie haben <b>1 Gesundheit</b> und nutzen den Bewegungswert auf dem Killertableau.",
+     "Sie greifen selten an, aber wenn, verursacht <b>jeder</b> 1 ✴."
+    ]
+   ],
+   [
+    "Dem Pack anschließen",
+    [
+     "Beim Pack-Symbol ziehen Raptoren auf dem <b>kürzesten Weg</b> zum Pack. Sind mehrere gleich lang, nehmen sie den, der sie vor dem Anhalten am nächsten ans Pack bringt.",
+     "Ein Raptor im Feld des Packs <b>schließt sich ihm sofort an</b>: Entferne den Meeple und gib dem Pack für jeden 1 Gesundheit.",
+     "Vom Spielplan entfernte Meeples kommen zurück auf die Raptors-Karte für künftige Spawns."
+    ]
+   ],
+   [
+    "Raptoren erscheinen lassen",
+    [
+     "Beim Spawn-Symbol ziehe eine <b>Spawn</b>-Karte und lass so viele Raptoren erscheinen. Das Feld bestimmt ein Würfelwurf auf der Tabelle der Raptors-Karte; sind mehrere zulässig, wählst du.",
+     "Sie erscheinen nie in Feldern, die nicht mehr zugänglich sind.",
+     "Reichen die Meeples nicht, schließt sich der dem Pack nächste Raptor ihm an und du nutzt seinen Meeple; wiederhole das, bis die Karte abgehandelt ist.",
+     "Ist der Spawn-Stapel leer, mische die Ablage und ziehe.",
+     "Der letzte Effekt auf der 🩸-Leiste lässt ebenfalls einen Raptor erscheinen, wie eine Spawn-Karte mit 1."
+    ]
+   ],
+   [
+    "Die Spawn-Tabelle (Raptors-Karte)",
+    [
+     "Wirf einen Würfel, um zu sehen, wo sie erscheinen: <b>1</b> dein Feld · <b>2</b> das grüne (Ausgangs-)Feld, das dem Pack am nächsten ist · <b>3</b> das 🔧-Feld, das dem Pack am nächsten ist · <b>4</b> das grüne Feld, das am weitesten vom Pack entfernt ist · <b>5</b> das 🔧-Feld, das am weitesten vom Pack entfernt ist · <b>6</b> das Feld, das am weitesten von dir entfernt ist.",
+     "Jeder freie Raptor: 1 ❤️, ein Angriff mit 1 ✴ und Bewegung wie das Pack. Sie bewegen sich nicht, wenn sie bei dir oder einem Opfer beginnen, und halten an, wenn sie ein Feld mit dir oder einem Opfer betreten."
+    ]
+   ],
+   [
+    "Ihre Karten lesen",
+    [
+     "Die rote Silhouette mehrerer Raptoren = das Pack-Symbol: Freie Raptoren ziehen zu ihm, um sich anzuschließen. Die gelben Figuren = Ziel bist du oder das nächste Opfer. Der Stiefel = Bewegung. Das Messer = Angriff (einmal pro Messer). Das Stoppschild mit Figuren = hält an, wenn es dich oder ein Opfer erreicht. Das zerbrochene Ei = Raptoren erscheinen.",
+     "\"Pack only\" betrifft nur das Pack; \"Raptors only\" nur die freien Raptoren."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "Alle haben zwei Zeilen: Oben ziehen freie Raptoren zum Pack und halten an, wenn sie dich oder ein Opfer erreichen; unten nimmt das Pack dich oder das nächste Opfer ins Ziel, bewegt sich und greift an.",
+     "<b>Claws Like Knives</b>: Das Pack greift einmal an. Der erste Schaden jedes Angriffs ist das durchgestrichene Herz-Symbol.",
+     "<b>Born Hungry</b>: Das Pack greift zweimal an. Beim Aufdecken ziehe eine Spawn-Karte, aber lass die Raptoren in <b>deinem</b> Feld erscheinen.",
+     "<b>Raptor Rush</b>: Das Pack greift 3-mal an. Beim Aufdecken schließen sich alle Raptoren auf dem Spielplan dem Pack an.",
+     "<b>Deadly Quick</b> (episches Finale): Das Pack greift zweimal an. Beim Aufdecken stelle das Pack in dein Feld und verliere 4 ⌛."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Pack Conditioning</b>: Immer wenn ein Raptor an das Pack angrenzt, füge ihn dem Pack hinzu.",
+     "<b>They're Everywhere!</b>: Ziehst du Spawn-Karten, ziehe 2 und nimm den höheren Wert. Dann wirf beide ab.",
+     "<b>Blood Thirsty</b>: Jedes Mal, wenn das Pack ein Opfer tötet, erhält es ❤️.",
+     "<b>Scaly Hide</b> (epische Dark Power): Das Pack und die Raptoren ignorieren jeden Schaden durch Reaktionskarten."
+    ]
+   ],
+   [
+    "Terrorkarten, die Erklärung brauchen",
+    [
+     "<b>Protect the Brood</b> (2 Exemplare): Raptoren erscheinen (Ei) und du stellst das Pack dorthin, wo sie erschienen sind. War die Spawn-Karte eine <b>0</b>, wirf einen Würfel und platziere das Pack nach der Tabelle der Raptors-Karte. Dann nimmt das Pack dich oder ein Opfer ins Ziel, bewegt sich und greift an.",
+     "<b>Share the Feast</b>: Das Pack wählt sein Ziel, bewegt sich und greift an; freie Raptoren ziehen zum Pack (und halten bei dir oder einem Opfer an). Hat sich einer dem Pack angeschlossen, greift das Pack erneut an.",
+     "<b>No Escape</b>: Sind keine Raptoren auf dem Spielplan, wirf sie ab und ziehe die nächste Terrorkarte. Sonst wird der jeweils nächste Raptor auf jedes grüne (Ausgangs-)Feld gestellt, und die auf Ausgängen greifen an. Wurde niemand angegriffen: 🎭🎭.",
+     "<b>Predatory Instincts</b> (kleine Dark Power): Das Pack verursacht 1 zusätzlichen ✴ pro Messer.",
+     "<b>Survival Instincts</b> (kleine Dark Power): In jedem Unterhalt erhält das Pack ❤️."
+    ]
+   ]
+  ],
+  "err_m_t": "Achtung",
+  "err_m": [
+   "<b>Lava</b>-Felder sind für niemanden mehr zugänglich, auch nicht für Raptoren und den T-Rex.",
+   "Wird <b>Game Makers</b> beim Aufbau gezogen, wirf es ab und ziehe ein anderes."
+  ],
+  "bloques_m": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Lege <b>Electric Fence</b>-Marker in die grünen Abschnitte, die die Aufbaukarte zeigt. In die roten kommt nichts.",
+     "Mische die <b>3 Lava-Karten</b> verdeckt und lege die Lava-Marker daneben.",
+     "Lege die <b>T-Rex</b>-Karte neben die Spielfläche und seinen Meeple auf das Startfeld der Karte."
+    ]
+   ],
+   [
+    "Elektrozäune",
+    [
+     "Es gibt 3 Zäune: A, B und C. Solange dort ein Marker liegt, ist der Weg blockiert und die Felder auf beiden Seiten grenzen <b>nicht</b> aneinander.",
+     "<b>Panik</b>: Wer in Richtung eines blockierten Zauns in Panik gerät, bleibt, wo er ist.",
+     "<b>Am weitesten / am nächsten</b>: Zähle nur unblockierte Wege. Liegen alle 3 Marker und das einzige Feld oder Ziel ist auf der anderen Seite, zähle, als gäbe es keine Zäune.",
+     "<b>Ziel von Feinden</b>: Ohne unblockierten Weg zum Ziel bewegt sich der Feind für diese Aktion nicht, seine Angriffssymbole werden aber trotzdem in seinem Feld abgehandelt.",
+     "<b>Jemanden platzieren</b>: Zäune betreffen keine Effekte, die jemanden platzieren.",
+     "Wirf in jedem <b>Unterhalt</b> den Zaunwürfel: Hat dieser Zaun einen Marker, entferne ihn; wenn nicht, lege einen."
+    ]
+   ],
+   [
+    "Der T-Rex",
+    [
+     "Er beginnt eingesperrt im <b>Dino Pen</b>. Bei seinem Symbol (dem Fußabdruck) rückt sein Meeple auf der T-Rex-Karte ein Feld nach rechts.",
+     "Bei <b>\"Break out!\"</b> stelle seinen Meeple in den Dino Pen auf dem Spielplan und seinen Aktionsmarker unter die Killeraktion auf der Finale-Karte. Ab dann ignorierst du sein Symbol.",
+     "Er ist <b>kein</b> Killer und kein Handlanger: Er kann nicht angegriffen, beschädigt oder getötet werden. Seine Aktion wird nach den Handlanger- und Killeraktionen des Finales abgehandelt.",
+     "Opfer folgen dir nicht in sein Feld (außer ein Effekt lässt sie dir in das Feld des Killers folgen). In der Panikphase geraten alle in seinem Feld in Panik, egal ob in dieser Runde jemand gestorben ist.",
+     "<b>Bewegung 2</b>, mit dem ANY-Symbol: Er hält an, sobald er ein Feld mit <b>irgendwem</b> erreicht (dir, Opfern, Feinden...), und bewegt sich nicht, wenn schon jemand in seinem Feld ist.",
+     "<b>Er verursacht keinen Schaden: Er tötet</b> ein Ziel in seinem Feld. Priorität: Opfer, Handlanger, du, Killer. Greift er dich oder den Killer an, stirbt das Ziel sofort, ohne den Final-Health-Marker aufzudecken.",
+     "Gegen einen Feind aus mehreren Einheiten (das Raptor-Pack, eine Zombiehorde...) tötet er <b>eine</b> Einheit, also 1 Schaden."
+    ]
+   ],
+   [
+    "Der Vulkan",
+    [
+     "Wenn du das Vulkan-Symbol <b>zum ersten Mal</b> abhandelst, bricht er aus: Alle am <b>Volcano</b> erleiden 💔, wer noch im Feld ist, gerät in Panik, und du legst den Volcano-Lava-Marker dorthin: Das Feld ist nicht mehr zugänglich.",
+     "<b>Danach</b> breitet sich die Lava auf ein angrenzendes Feld aus: Ziehe eine <b>Lava</b>-Karte, um zu sehen, auf welches, und folge ihr.",
+     "Sobald alle <b>4 Lava-Marker</b> auf dem Spielplan liegen, ignoriere das Vulkan-Symbol.",
+     "Die 3 Lava-Karten: <b>North Beach</b>, <b>Generator</b> und <b>Smuggler's Cove</b>. Alle dort erleiden 💔, wer übrig ist, gerät in Panik, bis er das Feld verlässt, und du legst den jeweiligen Lava-Marker."
+    ]
+   ],
+   [
+    "Besondere Felder",
+    [
+     "Die <b>3 Eckfelder</b> mit dem Strand-Symbol sind <b>Beach</b>-Felder.",
+     "Die <b>2 Randfelder</b> mit dem Klippen-Symbol sind <b>Cliff</b>-Felder.",
+     "Mehrere Ortskarten beziehen sich auf sie."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "shotgun",
+    "Shotgun",
+    "Waffe · Reichweite 0-1 · 3 ✴ · 2 Hände · 2 Nutzungen. Teile den Schaden auf: die Hälfte (aufgerundet) an einen Feind in deinem Feld und die Hälfte (abgerundet) an einen in einem angrenzenden Feld. Schaden auf ein Feld ohne Feind verfällt."
+   ],
+   [
+    "throwing-axe",
+    "Throwing Axe",
+    "Waffe · Reichweite 0-1 · 1 ✴ · 1 Hand. Wird sie auf Reichweite 1 eingesetzt, wirf sie ab."
+   ],
+   [
+    "safari-knife",
+    "Safari Knife",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand."
+   ],
+   [
+    "flaming-torch",
+    "Flaming Torch",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand · 3 Nutzungen. Nutze sie zum Angreifen oder um 1 ✴ eines feindlichen Angriffs zu ignorieren."
+   ],
+   [
+    "tranquilizer-gun",
+    "Tranquilizer Gun",
+    "1 Hand · 2 Nutzungen. Jederzeit: Verursache 1 ✴ bei einem Feind in einem angrenzenden Feld; bewegte er sich gerade, endet seine Bewegung."
+   ],
+   [
+    "wildlife-net",
+    "Wildlife Net",
+    "2 Hände. Wirf es ab, wenn ein Feind dich angreift, um diesen Angriff und alle weiteren Angriffe dieses Feindes für den Rest der Runde zu ignorieren."
+   ],
+   [
+    "whistle",
+    "Whistle",
+    "Einmal pro Aktionsphase, gib 1 ⌛ aus: Alle angrenzenden Opfer ziehen in dein Feld, dann nehmen alle Feinde dich ins Ziel und bewegen sich. Solange du sie hast, folgt dir ein zusätzliches Opfer."
+   ],
+   [
+    "bait",
+    "Bait",
+    "Abwerfen, um die <b>Goat</b> in dein Feld oder ein angrenzendes zu stellen. Feinde und der T-Rex nehmen immer die Goat ins Ziel, bis sie getötet wird. Sie hat 1 ❤️ und bewegt sich nicht."
+   ],
+   [
+    "safari-rover-keys",
+    "Safari Rover Keys",
+    "4 Nutzungen. Lege den <b>Rover</b>-Marker in dein Feld; er bewegt sich mit dir. Mit dem Rover können dir bis zu 3 Opfer folgen, und du kannst eine Nutzung ausgeben, um dich 1 Feld zu bewegen. Sind die Nutzungen aufgebraucht, ist der Tank leer: Wirf die Karte und den Rover ab."
+   ],
+   [
+    "bush-plane",
+    "Bush Plane",
+    "Rettest du mindestens ein Opfer am <b>Airstrip</b>, darfst du sie abwerfen, um sofort ein weiteres Opfer aus einem beliebigen Feld zu retten."
+   ],
+   [
+    "enhanced-goggles",
+    "Enhanced Goggles",
+    "Du darfst alle 💔-Symbole auf den Aktionskarten <b>Walk</b> und <b>Sprint</b> ignorieren."
+   ],
+   [
+    "generator-codes",
+    "Generator Codes",
+    "Abwerfen, um beliebige <b>Electric Fence</b>-Marker hinzuzufügen oder zu entfernen."
+   ],
+   [
+    "safari-rifle",
+    "Safari Rifle",
+    "Waffe · Reichweite 1-2 · 2 Hände · 2 Nutzungen. Kann keine Aktionskarte modifizieren und muss ohne eine eingesetzt werden. Einmal pro Runde: Gib ⌛ für einen Horrorwurf aus. Bei einem Erfolg: 2 ✴ an 1 Feind in Reichweite."
+   ],
+   [
+    "cattle-prod",
+    "Cattle Prod",
+    "1 Hand · 3 Nutzungen. Bewege einen Feind in deinem Feld in ein angrenzendes Feld."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "Liegt es offen auf einem Gegenstandsstapel, darfst du es kostenlos nehmen, solange du in seinem 🔧-Feld bist. Abwerfen, um ❤️❤️❤️ zurückzugewinnen."
+   ],
+   [
+    "private-stash",
+    "Private Stash",
+    "Wenn du es nimmst, wirf es ab und wähle: was seine Symbole zeigen oder die oberste Karte eines beliebigen Gegenstandsstapels."
+   ]
+  ],
+  "falta": "",
+  "ev": [
+   [
+    "Supply Drop",
+    "Lege die 3 Supply-Marker auf die Beach- und Cliff-Felder, die am weitesten von dir entfernt sind (je einen). Auf einem Feld mit Marker kannst du 2 ⌛ ausgeben, um ihn zu entfernen und einen zufälligen, beim Aufbau beiseitegelegten Gegenstand zu nehmen. Abwerfen, wenn keine Marker mehr übrig sind."
+   ],
+   [
+    "Fierce Competitors",
+    "Für jedes Opfer, das du rettest: ⌛."
+   ],
+   [
+    "Terrified Child",
+    "Das am weitesten von dir entfernte Opfer ist das Terrified Child. Solange andere Opfer übrig sind, folgt es dir nicht und kann weder gerettet noch ins Ziel genommen noch getötet werden. Gerettet: Schalte deine ultimative Fähigkeit frei oder senke den Horror auf 0. Getötet: 🩸 steigt auf das Maximum."
+   ],
+   [
+    "Game Makers",
+    "Beim Aufbau gezogen: abwerfen und ein anderes ziehen. Sonst handle seine drei Symbole ab (Vulkan, ein neues Ereignis und die orange Klaue) und wirf es ab."
+   ],
+   [
+    "The Alpha",
+    "Das dir nächste Opfer ist der Alpha. Getötet: 🩸. Würde jemand bei oder neben dem Alpha angegriffen (keine Feinde), zieht der Alpha in dessen Feld und du würfelst: <b>1-2</b> der Alpha stirbt · <b>3-4</b> der Angriff geht weiter · <b>5-6</b> er wird abgebrochen."
+   ],
+   [
+    "The Power Is Down",
+    "Entferne alle Electric-Fence-Marker und handle die orange Klaue einmal ab. Wirf im nächsten Unterhalt nicht den Zaunwürfel. Am Ende dieses Unterhalts abwerfen."
+   ],
+   [
+    "Power Surge",
+    "Lege alle Electric-Fence-Marker. Wirf im nächsten Unterhalt nicht den Zaunwürfel. Am Ende dieses Unterhalts abwerfen."
+   ],
+   [
+    "Tropical Storm",
+    "Wirf in der nächsten Aktionsphase bei jedem Horrorwurf einen Würfel weniger (mindestens 1). Machst du keinen Horrorwurf: 3 ⌛. Am Ende dieser Phase abwerfen."
+   ],
+   [
+    "Herbal Remedies",
+    "Nimm ein getötetes Opfer deiner Wahl und stelle es in dein Feld. Abwerfen."
+   ],
+   [
+    "The Hunter",
+    "Stelle den Hunter in das am weitesten von dir entfernte Feld. In jedem Unterhalt gerät der Hunter in Panik und verursacht ✴ bei allen in seinem Feld."
+   ]
+  ]
+ },
+ "Bad Times at Buddyland": {
+  "ley": "⌛ = Zeit · ✴ = Schaden · ❤️ = Gesundheit · 🩸 = Bloodlust · 🎭 = Horror erhöhen · ⊘🎭 = die durchgestrichene Maske der Karte",
+  "err_k_t": "Achtung",
+  "err_k": [
+   "<b>Billy kann nicht angegriffen werden, solange ein Buddy in seinem Feld ist.</b> Die Buddies beschützen ihn um jeden Preis.",
+   "Solange eine <b>Power Source aktiv</b> ist, heilt das Batterie-mit-Herz-Symbol Billy um 1 ❤️. Sie abzuschalten ist der Schlüssel.",
+   "Ein Buddy, der während der Killerphase erscheint, wird erst in der nächsten Killerphase aktiv."
+  ],
+  "bloques_k": [
+   [
+    "Spezieller Aufbau",
+    [
+     "<b>Bevor</b> du die Aufbaukarte aufdeckst, lege <b>4</b> <b>Power Source</b>-Marker mit der aktiven Seite nach oben (grüne Batterie mit +) in 4 verschiedene Felder, keines angrenzend an ein anderes. Lege den 5. beiseite: Er kann später ins Spiel kommen.",
+     "Mische die Bloodlust-Leisten-Marker <b>A</b> und <b>B</b> verdeckt, nach Typ getrennt. Lege 6 verdeckt auf das Killertableau, jeden auf sein passendes Feld nach Farbe und Symbol. Die 2 übrigen (je einer) werden weder benutzt noch aufgedeckt.",
+     "Mische die 5 <b>Buddy</b>-Karten verdeckt: Das ist der Buddy-Stapel. Lege die 2 <b>Special Buddy</b>-Karten beiseite: Sie können später dazukommen und folgen denselben Regeln.",
+     "Lass einen Buddy erscheinen (siehe unten)."
+    ]
+   ],
+   [
+    "Bloodlust-Leiste",
+    [
+     "Erreicht Bloodlust eine Stufe mit Marker, decke ihn auf und wende seinen Effekt an."
+    ]
+   ],
+   [
+    "Power Sources",
+    [
+     "Deaktivieren: Drehe den Marker auf seine inaktive Seite (rote durchgestrichene Batterie). Das geht, indem du ⌛ ausgibst, während du in seinem Feld bist, auch nur auf der Durchreise.",
+     "Wird eine inaktive aktiviert, drehe sie zurück auf Grün.",
+     "Beim <b>Batterie-mit-Herz</b>-Symbol erhält Billy 1 ❤️ zurück, wenn mindestens eine Power Source aktiv ist. Ist keine aktiv, ignoriere es."
+    ]
+   ],
+   [
+    "Die Buddies",
+    [
+     "Sie sind <b>Handlanger</b> und folgen den normalen Handlanger-Regeln (S. 32 des Grundregelhefts). Jede Karte ist ein Animatronic mit eigener Gesundheit, eigenem Angriff und eigener Bewegung.",
+     "<b>Einen Buddy erscheinen lassen</b>: Decke die oberste Karte des Stapels auf, lege ihre Gesundheitsmarker darauf und stelle ihren Marker in ein an Billy angrenzendes Feld, möglichst eines ohne Buddy. Ist Billy nicht mehr im Spiel, erscheint nichts.",
+     "<b>Aktivierung</b>: Jeder Buddy hat eine Initiativezahl (Kreis, oben rechts). Handlanger-Aktionen und Terrorkarten werden von der niedrigsten zur höchsten Initiative abgehandelt.",
+     "<b>Einen Buddy töten</b>: Entferne seinen Marker, nimm die <b>Kill Reward</b> auf seiner Karte und entferne die Karte aus dem Spiel. Stirbt er außerhalb der Aktionsphase, nimm die Belohnung zu Beginn der nächsten Aktionsphase.",
+     "Beispiel: <b>Toby</b> hat 3 ❤️, Initiative 1, Angriff 1, Bewegung 1 und Kill Reward 2 ⌛."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "Alle haben zwei Zeilen: Oben nimmt Billy dich oder das nächste Opfer ins Ziel, bewegt sich und greift an; unten das Batterie-mit-Herz-Symbol, dann wählt er erneut ein Ziel.",
+     "<b>Base Finale</b> (der rosa Bär): greift an, ohne sich zu bewegen; unten Batterie mit Herz, Ziel wählen und angreifen.",
+     "<b>Encore</b>: unten bewegt er sich zweimal und greift zweimal an.",
+     "<b>Sizzling Power</b>: Ist mindestens eine Power Source aktiv, wiederhole seine Killeraktion einmal.",
+     "<b>It's Showtime!</b>: Du kannst keine Reaktionskarten spielen, wenn mehr als ein Feind in deinem Feld ist.",
+     "<b>Power Surge</b> (episches Finale): Beim Aufdecken erscheint <b>Boris</b>. Du musst Billy <b>und</b> Boris töten, um zu gewinnen."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Introducing... Billy Jr.!</b>: Billy Jr. erscheint in Billys Feld.",
+     "<b>Deathlust</b>: +1 auf Billys Bewegung und Angriff.",
+     "<b>Endless Power</b>: Wenn du Billys Final-Health-Marker aufdeckst, decke pro aktiver Power Source einen weiteren auf und wende den an, der am meisten heilt.",
+     "<b>Merciless Minions</b> (epische Dark Power): Füge der Handlanger-Aktion auf dem Finale vor dem Angriff eine Bewegung hinzu.",
+     "<b>Backup Generator</b> (klein): Aktiviere im Unterhalt eine inaktive Power Source deiner Wahl (falls möglich). Wurde eine aktiviert, entferne ein ❤️ von dieser Karte.",
+     "<b>Renewable Energy</b> (klein): Du kannst keine Power Source deaktivieren."
+    ]
+   ],
+   [
+    "Billys Terrorkarten",
+    [
+     "<b>Animatronical</b>: Lass einen Buddy erscheinen und ziehe die nächste Terrorkarte.",
+     "<b>\"He's Turning Them Back On!\"</b>: Gibt es keine inaktiven Power Sources, abwerfen und eine andere ziehen. Sonst stelle Billy in das nächste Feld mit einer inaktiven, aktiviere sie und 🎭.",
+     "<b>\"Eyes in the Dark\"</b>: Der Killer nimmt dich (das Final Girl) ins Ziel und bewegt sich zweimal; dann 🎭 einmal pro Feind in deinem Feld und den angrenzenden Feldern, höchstens so oft, wie Power Sources aktiv sind.",
+     "<b>\"It's a Short Circuit!\"</b>: Hat kein Feld mit aktiver Power Source Opfer, abwerfen und eine andere ziehen. Sonst wird in jedem solchen Feld mit Opfer ein Opfer getötet, die übrigen geraten in Panik und diese Power Source wird deaktiviert.",
+     "<b>\"They're Here for Blood!\"</b>: Gibt es keine Buddies oder keine Opfer, abwerfen und eine andere ziehen. Sonst nur Buddies: Ziel ist das nächste Opfer, bewegen und angreifen. Wurde mindestens ein Opfer getötet, +🩸."
+    ]
+   ]
+  ],
+  "err_m_t": "Achtung",
+  "err_m": [
+   "Buddyland hat <b>keinen speziellen Aufbau</b>: Die Power Sources gehören zu Billy."
+  ],
+  "bloques_m": [
+   [
+    "Der Ort",
+    [
+     "Die <b>4 mittleren Felder</b> mit dem Spielautomaten-Symbol sind <b>Arcade</b>-Felder. Mehrere Karten beziehen sich auf sie.",
+     "Benannte Felder: <b>Party Room</b>, <b>Kitchen</b>, <b>Dining Area</b>, <b>Entrance</b>, <b>Prize Counter</b>, <b>Arcade</b>, <b>Janitor's Closet</b>, <b>Bathroom</b>, <b>Jungle Gym</b> und <b>Ball Pit</b>. Dining Area, Prize Counter und Ball Pit haben seitlich Gegenstandsstapel."
+    ]
+   ],
+   [
+    "Buddyland-Terrorkarten",
+    [
+     "<b>Hungry for Blood</b>: Sind keine Opfer in Kitchen, Party Room oder Dining Area, abwerfen und eine andere ziehen. Sonst stelle den Killer in dasjenige dieser Felder mit den meisten Opfern; er nimmt ein Opfer oder dich ins Ziel und greift zweimal an.",
+     "<b>Panic at the Disco</b>: Sind keine Opfer in Arcade-Feldern, abwerfen und eine andere ziehen. Sonst geraten alle Opfer in jedem Arcade-Feld in Panik; eines, das in ein Feld mit einem Feind flieht, wird getötet. Wurde kein Opfer getötet, +🩸.",
+     "<b>\"How'd They Sneak In?\"</b>: Wirf 3 Würfel und stelle pro Würfel ein Opfer auf: 1-2 Jungle Gym, 3-4 Dining Area, 5-6 Party Room. Dann ein Ereignis.",
+     "<b>\"They Want Her!\"</b>: Alle Opfer in deinem Feld geraten in Panik, alle Feinde bewegen sich ein Feld auf dich zu, 🎭 pro Feind in deinem Feld, dann ein Ereignis.",
+     "<b>\"It's Play Time!\"</b>: Wirf einen Würfel. 1-3: Stelle den Killer zum nächsten Ziel. 4-6: Er nimmt ein Opfer oder dich ins Ziel und greift an. Wiederhole 5 weitere Male; pro aus deiner Hand abgeworfener Aktionskarte kannst du eine Wiederholung streichen, alles vorher auf einmal entschieden."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "janitors-mop",
+    "Janitor's Mop",
+    "Waffe · Reichweite 0 · 1 ✴ · 2 Hände. Einmal pro Aktionsphase darfst du, wenn du allein in einem Feld bist, 2 ⌛ für ⊘🎭 ausgeben."
+   ],
+   [
+    "security-bot",
+    "Security Bot",
+    "Lege den <b>Bot</b>-Marker in dein Feld. Erhältst du Bewegung, darfst du stattdessen den Bot bewegen. Bis zu 2 Opfer können dem Bot folgen, und Opfer an einem Ausgang mit dem Bot können gerettet werden."
+   ],
+   [
+    "security-badge",
+    "Security Badge",
+    "Wenn du sie nimmst, nimm auch die Aktionskarte <b>Planning</b>. Opfer in deinem Feld geraten nie in Panik."
+   ],
+   [
+    "arcade-token",
+    "Arcade Token",
+    "Abwerfen, während du in einem <b>Arcade</b>-Feld bist, um 3 ⌛ für 3 ⊘🎭 auszugeben."
+   ]
+  ],
+  "falta": "Noch zu fotografieren: 12 seiner 16 Gegenstände und 3 seiner 5 Aufbaukarten (Buddy Day, Birthday Bash und Pizza Party).",
+  "ev": [
+   [
+    "Birthday Girl",
+    "Das Birthday Girl beginnt im <b>Party Room</b>. Ist sie in der Panikphase allein, gerät sie in Panik. Gerettet: 4 ⌛. Getötet: 🩸."
+   ],
+   [
+    "Nick the Janitor",
+    "Nick beginnt im <b>Janitor's Closet</b> und kann dir sogar in das Feld des Killers folgen. Betritt er ein Feld mit einem Feind, verursacht er 2 ✴ bei ihm; dann verlässt er den Spielplan und kehrt im nächsten Unterhalt in den Closet zurück. Getötet: 2 🩸."
+   ],
+   [
+    "Sing-A-Long",
+    "In jedem Unterhalt: 🎭. Abwerfen, wenn der Horror den roten Bereich erreicht."
+   ],
+   [
+    "Pizza Delivery",
+    "Das dem <b>Entrance</b> nächste Opfer ist der Pizza Guy. Solange er in deinem Feld ist, darfst du beim Abhandeln einer <b>Search</b>-Aktionskarte 2 zusätzliche Würfel werfen. Wird er getötet, geraten alle Opfer in seinem und den angrenzenden Feldern in Panik."
+   ]
+  ],
+  "falta_ev": "Es fehlen 6 seiner 10 Ereignisse: Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans und Tragic Collapse."
+ },
+ "The Green Terror": {
+  "ley": "⌛ = Zeit · ✴ = Schaden · ❤️ = Gesundheit zurückgewinnen · 💔 = Gesundheit verlieren · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken · 🎲 = Würfel · 🔧 = Feld mit dem orangen Schraubenschlüssel-Symbol",
+  "err_k_t": "Achtung",
+  "err_k": [
+   "Greifst du sie an, während sie verborgen ist, und sie ist nicht im angegriffenen Feld, <b>überfällt sie dich aus dem Hinterhalt</b> (auch wenn jemand anderes angegriffen hat): Du erleidest die <b>Hinterhaltstrafe</b> der letzten Karte ihres Pfads.",
+   "Du darfst die abgeworfenen Bewegungskarten nie durchsehen."
+  ],
+  "bloques_k": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Lege die <b>Track</b>-Aktionskarten in die Aktionsauslage.",
+     "Lege die <b>Attack Resolution</b>-Karte, die <b>Damage</b>-Marker und den <b>Attack</b>-Marker (das Fadenkreuz) neben die Spielfläche.",
+     "Mische die <b>Movement</b>-Karten und lege den Stapel verdeckt neben den Spielplan. Lege 1 Karte verdeckt daneben und lass Platz für bis zu 5 weitere.",
+     "Nach dem Aufdecken der Aufbaukarte stellst du Volk'ar <b>nicht</b> auf den Spielplan: Ihr Meeple kommt auf die Rückseite der <b>Finale</b>-Karte, auf das markierte Feld. Lege einen <b>Origin</b>-Marker dorthin, wo der Killer beginnen würde, und den anderen auf diese verdeckte Bewegungskarte."
+    ]
+   ],
+   [
+    "Verborgen oder sichtbar",
+    [
+     "Volk'ar hat <b>keinen Bewegungswert</b>: Sie bewegt sich entlang ihres <b>Pfads</b>, der Reihe der Bewegungskarten.",
+     "<b>Verborgen</b>: Sie ist nicht zu sehen, aber IMMER in einem Feld, nämlich dem, auf das ihr Pfad zeigt. Ihr Meeple liegt auf der Finale-Karte. Ist sie zu Beginn der Killerphase verborgen, handle die <b>obere</b> Killeraktion des Finales ab.",
+     "<b>Sichtbar</b>: Ihr Meeple steht auf dem Spielplan und sie ist normal zu sehen. Ist sie zu Beginn der Killerphase sichtbar, handle die <b>untere</b> Killeraktion ab.",
+     "Die <b>Origin-Karte</b> ist die erste Karte im Pfad (mit einem Origin-Marker darauf) und zeigt, wo ihre verborgene Bewegung beginnt."
+    ]
+   ],
+   [
+    "Den Pfad aufbauen",
+    [
+     "Beim <b>Auge</b>-Symbol ziehe eine Bewegungskarte und lege sie <b>offen</b> auf den nächsten Platz des Pfads. Beim <b>durchgestrichenen Auge</b> lege sie <b>verdeckt</b>.",
+     "Ist sie sichtbar, wenn ein durchgestrichenes Auge abgehandelt wird, wird sie sofort verborgen: Lege einen Origin-Marker auf die neue Karte und den anderen in ihr aktuelles Feld, und ihr Meeple kommt zurück auf die Finale-Karte.",
+     "Ist der Stapel leer, mische die Ablage zu einem neuen Stapel."
+    ]
+   ],
+   [
+    "Wenn sie auftaucht",
+    [
+     "Sie handelt ihren Pfad ab und zeigt sich, wenn: du das <b>Reveal</b>-Symbol auf einer Karte abhandelst, eine <b>6.</b> Karte zum Pfad kommt oder du ihr Schaden zufügst, während sie verborgen ist (siehe unten).",
+     "Kommt die 6. Karte, während du die Killeraktion des Finales oder eine Terror- (oder andere) Karte abhandelst, beende zuerst diese Karte. Es können mehr als 6 Karten abzuhandeln sein.",
+     "Beim Aufdecken: 1) Stelle ihren Meeple in das Feld des Origin-Markers (auch wenn es nicht mehr zugänglich ist) und lege beide Origin-Marker neben den Stapel. 2) Handle ab der Origin-Karte jede Karte im Pfad einzeln ab und drehe sie bei Bedarf um: Sie bewegt sich und greift dort an, wo sie ist, wenn die Karte es sagt. Bewegungseinschränkungen für Killer gelten auch für sie, und manchmal bewegt sie sich nicht. 3) Musst du oder muss sie den Final-Health-Marker aufdecken, warte, bis alle Karten abgehandelt sind. 4) Wirf die Pfadkarten ab."
+    ]
+   ],
+   [
+    "Sie angreifen, während sie verborgen ist",
+    [
+     "Du darfst jedes Feld in Reichweite als Ziel wählen, als wäre sie dort. Lege den <b>Attack</b>-Marker dorthin, handle den Angriff ab und halte den Schaden mit Damage-Markern auf der Attack-Resolution-Karte fest.",
+     "Verursachst du keinen Schaden, bleibt sie verborgen und der Pfad wird nicht abgehandelt. Verursachst du Schaden, wird ihr Pfad abgehandelt.",
+     "Endet sie im Feld mit deinem Attack-Marker, erleidet sie den Schaden! Endet sie woanders, war der Angriff wirkungslos und sie überfällt dich aus dem Hinterhalt: Handle die <b>Hinterhaltstrafe</b> ab, das rote Band unten auf der letzten Karte ihres Pfads.",
+     "Wirf danach die Damage-Marker ab und entferne den Attack-Marker.",
+     "Hast du dein eigenes Feld angegriffen, endet sie dort und hat die letzte Karte eine Killerangriff-Zeile, finden beide Angriffe gleichzeitig statt."
+    ]
+   ],
+   [
+    "Solange sie verborgen ist",
+    [
+     "Verlangt ein Effekt, etwas relativ zum Killer zu platzieren oder Felder zu zählen, nutze das Feld des Origin-Markers.",
+     "Verlangt ein Effekt, den Killer zu platzieren, ignoriere ihn.",
+     "Hat eine Karte eine Killeraktion-Zeile, behandle sie als durchgestrichenes Auge.",
+     "Opfer geraten in der Panikphase nicht in Panik."
+    ]
+   ],
+   [
+    "Sie aufspüren",
+    [
+     "Die <b>Track</b>-Aktionskarte (2 ⌛) dreht Pfadkarten um: Mit 3★ decke die Origin-Karte <b>oder</b> 2 andere Karten auf; mit 2★ 2 Karten (nicht die Origin-Karte); mit 1★ 1 Karte (nicht die Origin-Karte). Die rote Zeile: Volk'ar ▸ durchgestrichenes Auge.",
+     "Liegt jede Karte im Pfad offen, weißt du <b>genau</b>, wo sie ist. Liegt eine verdeckt, musst du raten."
+    ]
+   ],
+   [
+    "Ihre Bewegungskarten",
+    [
+     "Der Stapel hat 22, mit Wiederholungen. Jede sagt, wie sie sich bewegt; manche haben eine Angriffszeile (🎯 Final Girl oder Opfer ▸ 🔪), und das rote Band unten ist die <b>Hinterhaltstrafe</b>. Keine zählt das Feld, in dem sie schon ist. Die verschiedenen, die wir gesehen haben:",
+     "2 Felder Richtung nächstes 🔧-Feld (Gleichstand: alphabetisch) · Angriff · Hinterhalt 🎭🎭",
+     "1 Feld Richtung nächstes 🔧-Feld (Gleichstand: umgekehrt alphabetisch) · Hinterhalt 2 ⌛",
+     "3 Felder Richtung nächstes 🔧-Feld (Gleichstand: umgekehrt alphabetisch) · Angriff · Hinterhalt 2 Blutspritzer",
+     "2 Felder Richtung nächstes benanntes Feld (Gleichstand: umgekehrt alphabetisch) · Hinterhalt 1 Blutspritzer",
+     "1 Feld Richtung nächstes benanntes Feld (Gleichstand: alphabetisch) · Angriff · Hinterhalt 🎭",
+     "3 Felder Richtung nächstes Feld mit grünem Symbol (Gleichstand: niedrigste Paniknummer) · Hinterhalt 1 Blutspritzer",
+     "2 Felder Richtung nächstes Feld mit grünem Symbol (Gleichstand: höchste Paniknummer) · Angriff 🔪🔪 · Hinterhalt 🎭",
+     "1 Feld Richtung nächstes Feld mit grünem Symbol (Gleichstand: niedrigste Paniknummer) · Angriff · Hinterhalt 3 ⌛",
+     "1 Feld auf ein ①, ② oder ③ bewegen (sechs Karten, mit oder ohne Angriff) · Hinterhalte: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ oder Blutspritzer",
+     "Nicht bewegen und ❤️ zurückgewinnen (zwei Karten) · Hinterhalt 🎭🎭 oder eine zufällige Aktionskarte abwerfen"
+    ]
+   ]
+  ],
+  "err_m_t": "Achtung",
+  "err_m": [
+   "<b>Soldaten</b> folgen dir <b>in das Feld des Killers</b>, anders als normale Opfer.",
+   "Zu Beginn kostet das Retten eines Soldaten <b>2 ⌛</b>, und ein einzelner Soldat verursacht keinen Schaden.",
+   "Niemand kann sich flussaufwärts bewegen, gegen die Pfeile."
+  ],
+  "bloques_m": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Lege den <b>Huey</b>-Marker auf die <b>Clearing</b>.",
+     "Lege die <b>Train</b>-Aktionskarten in die Aktionsauslage.",
+     "Lege die <b>Soldiers</b>-Karte und die Aktionsklötzchen neben die Spielfläche. Lege die <b>8</b> Upgrade-Marker darauf: die 2 Start-Marker (grüner Stern) mit der <b>freigeschalteten</b> Seite nach oben und die anderen 6 mit der <b>gesperrten</b> Seite nach oben (Vorhängeschloss)."
+    ]
+   ],
+   [
+    "Die Soldaten",
+    [
+     "Jedes normale Opfer ist ein <b>Soldat</b>. Sie verhalten sich fast in allem wie normale Opfer, folgen dir aber in das Feld des Killers und können Befehle erhalten.",
+     "Der <b>Archeologist</b> und der <b>Rebel Leader</b> sind keine Soldaten und können keine Befehle erhalten."
+    ]
+   ],
+   [
+    "Upgrades",
+    [
+     "Es gibt <b>Aktions</b>-Upgrades (Marker mit Kästchen) und <b>Fähigkeits</b>-Upgrades (ohne Kästchen). Zu Beginn haben Soldaten nur zwei Aktions-Upgrades: Bewegen und Angreifen. Die <b>Train</b>-Aktionskarte schaltet weitere frei.",
+     "Freischalten: Wähle einen Marker und drehe ihn vom Vorhängeschloss auf seine freigeschaltete Seite. Sagt ein Effekt, einen zu sperren, drehe ihn zurück.",
+     "<b>Attack</b> (du beginnst mit einem freigeschalteten und einem gesperrten): Ein Soldat oder eine Gruppe greift Feinde in Reichweite an.",
+     "<b>Move</b> (ebenso, je einer): Eine Gruppe Soldaten bewegt sich 1 Feld.",
+     "<b>Saving Soldiers</b>: Sie wollen nicht gerettet werden, sie wollen kämpfen. Einen zu retten kostet 2 ⌛; freigeschaltet kostet es keine Zeit.",
+     "<b>Friendly Fire</b>: Bei jedem Angriff wirf einen Würfel pro beteiligtem Soldaten. Bei 1-2 stirbt einer von ihnen. Freigeschaltet: kein Eigenbeschuss mehr.",
+     "<b>Attack Range</b>: Zu Beginn greifen sie nur ihr eigenes Feld an. Freigeschaltet auch ein angrenzendes.",
+     "<b>Damage</b>: Zu Beginn verursachen sie ✴ gleich Soldaten ÷ 2, <b>abgerundet</b> (einer verursacht nichts, drei verursachen 1). Freigeschaltet <b>aufgerundet</b> (einer verursacht 1, drei verursachen 2)."
+    ]
+   ],
+   [
+    "Soldaten Befehle geben",
+    [
+     "Während der Aktionsphase: Wähle das Feld mit den Soldaten, wähle einen Aktions-Upgrade-Marker und lege ein Klötzchen auf sein Kästchen ganz links, dann handle die Aktion für alle Soldaten in diesem Feld ab.",
+     "Du kannst eine Aktion nicht nutzen, wenn in ihrer Reihe schon ein Klötzchen liegt.",
+     "Schiebe im Unterhalt alle Klötzchen ein Kästchen nach rechts. Verlässt ein Klötzchen das letzte Kästchen, ist die Aktion wieder verfügbar."
+    ]
+   ],
+   [
+    "Der Huey",
+    [
+     "Das Feld des Huey gilt als Ausgangsfeld (das grüne Symbol). Im selben Feld wie der Huey kannst du dort beliebig viele Opfer retten.",
+     "Danach wird der Huey entfernt und die Clearing ist kein Ausgang mehr. Er kommt nur zurück, wenn ein Spieleffekt ihn zurückbringt."
+    ]
+   ],
+   [
+    "Der Fluss",
+    [
+     "Es gibt 4 Flussfelder: <b>Waterfall</b>, <b>Upper River</b>, <b>Central River</b> und <b>Lower River</b>.",
+     "Flussabwärts (den Pfeilen folgend) erreichst du jedes Flussfeld mit 1 Bewegung: Waterfall bis Lower River mit einem einzigen Walk-Erfolg. Du durchquerst die Felder dazwischen und handelst ihre Effekte ab.",
+     "Soldaten bewegen sich ebenso; Feinde nicht: Sie bewegen sich flussabwärts nur in ein angrenzendes Flussfeld.",
+     "Niemand (du, Opfer oder Feinde) kann sich flussaufwärts bewegen. Das Feld flussaufwärts gilt trotzdem als angrenzend.",
+     "Mit dem <b>Wet Suit</b> kannst du dich flussaufwärts bewegen, aber Opfer können dir nicht folgen."
+    ]
+   ],
+   [
+    "Felder",
+    [
+     "Benannt: <b>Lower</b>, <b>Central</b> und <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> und <b>Cave</b>.",
+     "Die 🔧-Felder sind Ancient Ruins, Rebel Camp und Supply Depot, jedes mit eigenem Gegenstandsstapel am Rand des Spielplans."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "bowie-knife",
+    "Bowie Knife (Pig Sticker)",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand. Hast du in jeder Hand ein Bowie Knife, darfst du beim Angriff beide einsetzen."
+   ],
+   [
+    "bowie-knife-2",
+    "Bowie Knife (Goat Slicer)",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand. Hast du in jeder Hand ein Bowie Knife: +1 ✴."
+   ],
+   [
+    "m16",
+    "M16",
+    "Waffe · Reichweite 1-2 · 2 Hände. Verursacht 2 ✴ auf Reichweite 1 und 1 ✴ auf Reichweite 2."
+   ],
+   [
+    "axe",
+    "Axe",
+    "Waffe · Reichweite 0 · 2 ✴ · 2 Hände."
+   ],
+   [
+    "compound-bow",
+    "Compound Bow",
+    "Waffe · Reichweite 1-2 · 1 ✴ · 2 Hände · 3 Pfeile. Kann keine Aktionskarte modifizieren und muss ohne eine eingesetzt werden. Einen Pfeil abzuschießen kostet 2 ⌛."
+   ],
+   [
+    "cursed-idol",
+    "Cursed Idol",
+    "Solange es irgendwo offen liegt, darfst du keine <b>Search</b>-Aktionskarten mehr abhandeln. Betrittst du das 🔧-Feld mit dem Idol oder wird es beim Durchsuchen aufgedeckt, musst du es nehmen. Es darf nur am <b>Cursed Temple</b> abgeworfen werden."
+   ],
+   [
+    "booby-trap",
+    "Booby Trap",
+    "Gib 3 ⌛ aus, um den Booby-Trap-Marker in dein Feld zu legen. Betritt ein Feind dieses Feld, wirf den Marker und diese Karte ab, und der Feind erleidet 3 ✴."
+   ],
+   [
+    "wet-suit",
+    "Wet Suit",
+    "Du darfst dich flussaufwärts bewegen, aber Opfer können dir nicht folgen. Die Terrorkarte <b>Flash Flood</b>, das Ereignis <b>Heavy Rains</b> und das Ereignis <b>\"Piranhas!\"</b> betreffen dich nicht mehr."
+   ],
+   [
+    "mini-gun",
+    "Mini-Gun",
+    "Waffe · Reichweite 0-1 · 2 Hände · 2 Nutzungen. Bei Bewegung 1 Feld weniger (mindestens 1). Darf nicht in deinen Rucksack. Beim Angriff 1 zusätzlicher ✴ pro ★ in deinem finalen Horrorwurf."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "1 Hand. Jedes Mal, wenn du eine Aktionskarte nutzt, um Gesundheit zurückzugewinnen, erhältst du ein ❤️ mehr zurück."
+   ],
+   [
+    "walkie-talkies",
+    "Walkie-Talkies",
+    "1 Hand. <b>Soldaten</b> dürfen sich bei Bewegung 1 zusätzliches Feld bewegen."
+   ],
+   [
+    "mres",
+    "MRE's",
+    "2 Nutzungen. Schiebe alle Klötzchen auf der <b>Soldier</b>-Karte 1 Feld nach rechts."
+   ],
+   [
+    "mysterious-pills",
+    "Mysterious Pills",
+    "Während der Aktionsphase abwerfen und wählen: ⊘🎭 oder ❤️❤️."
+   ],
+   [
+    "cigar",
+    "Cigar",
+    "3 Nutzungen. Wirf 1 zusätzlichen 🎲, wenn du eine <b>Train</b>-Aktionskarte abhandelst."
+   ],
+   [
+    "river-mud",
+    "River Mud",
+    "Beim Abhandeln des Symbols Ziel Final Girl oder Ziel Opfer/Final Girl wirf einen Würfel: Bei 5-6 kannst du nicht das Ziel sein. Betrittst du ein <b>River</b>-Feld, lege einen Tracking-Marker auf die Karte. Sind alle 3 Plätze belegt, wirf sie ab."
+   ],
+   [
+    "backpack-radio",
+    "Backpack Radio",
+    "Abwerfen und 3 ⌛ ausgeben, um entweder <b>alle</b> Soldaten bis zu 2 Felder zu bewegen <b>oder</b> einen Luftschlag anzufordern: Wähle ein Feld und wirf einen Würfel. 1-2: 💔 an alle in diesem und jedem angrenzenden Feld. 3-6: 💔💔💔💔 an alle in diesem Feld."
+   ],
+   [
+    "grenade",
+    "Grenade",
+    "1 Hand. In der Hand: Während der Aktionsphase abwerfen und 2 ⌛ ausgeben, um 2 ✴ bei einem Feind in einem angrenzenden Feld zu verursachen. Im Rucksack: Beim Einsatz des <b>Compound Bow</b> abwerfen, um dem Angriff 2 ✴ hinzuzufügen."
+   ]
+  ],
+  "falta": "Es gibt 2 Grenades und 2 verschiedene Bowie Knives. Volk'ars Finale-, Dark-Power- und Terrorkarten sind noch zu fotografieren.",
+  "ev": [
+   [
+    "Supply Drop",
+    "Nimm 3 zufällige unbenutzte Gegenstände und lege sie offen neben den Gegenstandsstapel des <b>Supply Depot</b>. Durchsuchst du dort erfolgreich, darfst du statt zu ziehen einen davon nehmen. Abwerfen, wenn keiner der 3 mehr übrig ist."
+   ],
+   [
+    "\"Piranhas!\"",
+    "Wirf einen Würfel und lege den Piranhas-Marker: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Alle in diesem Feld: 💔. Wer es später betritt: 💔."
+   ],
+   [
+    "\"Get to the Choppa!\"",
+    "Ist der <b>Huey</b>-Marker nicht auf dem Spielplan, lege ihn auf die <b>Clearing</b>. Für jedes mit dem Huey gerettete Opfer wähle: ❤️❤️, 3 ⌛, ⊘🎭 oder nimm eine Aktionskarte (max. 2 ⌛). Abwerfen, wenn der Huey-Marker entfernt wird."
+   ],
+   [
+    "Heavy Rains",
+    "Außer du bewegst dich aus einem Flussfeld, kostet das Betreten eines <b>River</b>-Felds 2 ⌛."
+   ],
+   [
+    "Twitchy Soldiers",
+    "Hast du das Upgrade \"No Friendly Fire\" freigeschaltet, sperre es jetzt. Beim Wurf für Eigenbeschuss sterben Soldaten bei 1-3. Abwerfen, wenn \"No Friendly Fire\" freigeschaltet ist."
+   ],
+   [
+    "Rebel Raiding Party",
+    "Wirf einen Würfel: 1-3 Ancient Ruins, 4-6 Supply Depot. Nimm alle Gegenstände an diesem Feld, mische sie verdeckt und lege sie unter den Gegenstandsstapel des <b>Rebel Camp</b>. Abwerfen."
+   ],
+   [
+    "Cursed Temple",
+    "Lege den Cursed-Marker an den <b>Cursed Temple</b>. Betrittst du den Cursed Temple: 💔💔💔, dann wirf den Marker (und die Karte) ab."
+   ],
+   [
+    "Sgt. Weathers",
+    "Stelle ihn in das Feld mit den meisten Opfern. Er zählt als Soldat. Erhält er einen Befehl, dürfen er und alle Opfer bei ihm sich 1 zusätzliches Feld bewegen und erhalten +1 auf ihre Angriffsreichweite. Getötet: 🎭🎭."
+   ],
+   [
+    "Rebel Leader",
+    "Stelle ihn ins <b>Rebel Camp</b>. Im Unterhalt bewegt er sich 1 Feld auf das nächste Opfer zu, das <b>nicht</b> im Rebel Camp ist, und bewegt dann 1 Opfer aus seinem Feld ins Rebel Camp. Soldaten im Rebel Camp können keine Befehle für Aktionen erhalten. Er folgt dir nicht."
+   ],
+   [
+    "Archeologist",
+    "Wirf einen Würfel und stelle ihn auf: 1-2 Ancient Ruins, 3-4 Rebel Camp, 5-6 Supply Depot. Wirf beim Durchsuchen in seinem Feld 1 🎲 weniger, außer du zahlst 3 ⌛. In jedem Unterhalt erneut abhandeln."
+   ]
+  ]
+ },
+ "A Demon in the Shadows": {
+  "ley": "⌛ = Zeit · ✴ = Schaden · 🎭 = Horror erhöhen · 🔪 = Messer-Symbol (Angriff) · ⊘🎭 = Horror senken · ❤️ = Gesundheit zurückgewinnen · 🙏 = Segen-Symbol · 🎲★ = 1 normalen Würfel gegen den Blessed-Würfel tauschen (mehr Erfolgsseiten) · 🎲☠ = 1 normalen Würfel gegen den Cursed-Würfel tauschen",
+  "err_k_t": "Achtung",
+  "err_k": [
+   "Ursula zu töten <b>ist kein Sieg</b>: Danach deckst du die Segen auf, und mindestens einer muss Gesundheit zeigen. Ohne Segen auf dem Bogen kann nichts sie zurückbringen."
+  ],
+  "bloques_k": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Lege den <b>Divine Blessings</b>-Bogen neben die Spielfläche und wähle eine Seite: <b>Heavenly</b> (normal) oder <b>Hellish</b> (schwer).",
+     "Lege die <b>Expel Demon</b>-Aktionskarten in die Aktionsauslage."
+    ]
+   ],
+   [
+    "Ursulas Besessenheit",
+    [
+     "Berith ist ein Dämon, der <b>Ursula</b>, eine Nonne, besessen hat. Killer-Meeple, Gesundheit, Killerangriffs- und Bewegungswert gehören alle der besessenen Ursula.",
+     "Sobald du Ursula \"tötest\", verlässt Berith ihren Körper."
+    ]
+   ],
+   [
+    "Divine Blessings",
+    [
+     "Siehst du das 🙏-Symbol, lege einen schwarzen <b>Final Health</b>-Marker verdeckt auf das oberste leere Feld des Divine-Blessings-Bogens und handle seinen Effekt ab. Meist bekommst du das über die <b>Expel Demon</b>-Aktionskarte.",
+     "Diese Segen können Ursula wieder zum Leben erwecken, sobald Berith ihren Körper verlässt.",
+     "Final-Health-Marker auf dem Bogen dürfen nicht entfernt oder aufgedeckt werden, außer etwas sagt es.",
+     "Final-Health-Marker sind begrenzt. Verlassen einige durch andere Effekte das Spiel oder werden dem Killer oder dem Final Girl zugeteilt, bleiben weniger für den Bogen."
+    ]
+   ],
+   [
+    "Das Spiel gewinnen",
+    [
+     "Töte zuerst die besessene Ursula nach den normalen Regeln, decke ihren schwarzen Final-Health-Marker auf und stelle ihre Gesundheit wieder her, falls nötig. Ist sie besiegt, verlässt Berith ihren Körper.",
+     "Decke dann jeden Final-Health-Marker auf dem Divine-Blessings-Bogen auf. Zeigt einer Gesundheit, kommt Ursula zurück und <b>du gewinnst</b>. Sind alle leer, ist ihre Seele verdammt und <b>du verlierst</b>.",
+     "Du musst nicht alle 7 Felder gefüllt haben, bevor du sie besiegst, aber je mehr Segen, desto wahrscheinlicher kommt sie zurück."
+    ]
+   ]
+  ],
+  "err_m_t": "Achtung",
+  "err_m": [
+   "Liegen alle <b>14</b> Malice-Marker auf dem Spielplan und du musst einen weiteren legen, <b>verlierst du sofort</b>.",
+   "Du wirfst Blessed- und Cursed-Würfel nie zusammen: Erscheinen beide Symbole, nutze das häufigere; sind sie gleich oft da, heben sie sich auf."
+  ],
+  "bloques_m": [
+   [
+    "Spezieller Aufbau",
+    [
+     "Lege einen <b>Malice</b>-Marker in das Startfeld des Killers und in 3 an den Killer angrenzende Felder. Gibt es nur 2 angrenzende Felder, lege einen in das nächstgelegene Feld deiner Wahl. Du beginnst mit 4 Malice-Markern.",
+     "Lege den <b>Donkey</b>-Marker in das Feld <b>Cloister</b>.",
+     "Lege die <b>Benediction</b>-Aktionskarten in die Aktionsauslage."
+    ]
+   ],
+   [
+    "Blessed- und Cursed-Würfel",
+    [
+     "Die Box enthält zwei Spezialwürfel: den <b>Blessed</b>-Würfel (🎲★, mehr Erfolgsseiten) und den <b>Cursed</b>-Würfel (🎲☠). Sie ersetzen manchmal normale Würfel bei Horrorwürfen.",
+     "Siehst du eines ihrer Symbole, ersetze beim Horrorwurf <b>1</b> normalen Würfel durch diesen Würfel.",
+     "Sind beide Symbole da, aber von einer Art mehr, ersetze 1 Würfel durch diese Art. Gibt es gleich viele, heben sie sich auf und keiner der beiden Würfel wird benutzt.",
+     "Zeigt der Cursed-Würfel im finalen Ergebnis deines Horrorwurfs eine <b>1</b>, verlierst du 1 Gesundheit (💔). Seiten laut Regelheft: Der <b>Blessed</b>-Würfel hat einen Stern auf 2 und 5, zwei Sterne auf 6 und eine leere 1; der <b>Cursed</b>-Würfel hat nur einen Stern auf 6, eine leere 2 und das gebrochene Herz auf 1.",
+     "Die Effekte der <b>Improvise</b>-Aktionskarte gelten auch für die 5 auf dem Cursed-Würfel."
+    ]
+   ],
+   [
+    "Malice",
+    [
+     "Siehst du das Malice-Symbol auf einer Karte, lege einen Malice-Marker in das Feld des aktiven Killers. Liegt dort schon einer, lege ihn in das dem Killer nächste Feld ohne Marker.",
+     "Bei mehreren aktiven Killern zählt nur der, der dir am nächsten ist.",
+     "Ist kein Killer auf dem Spielplan, decke eine zufällige Aufbaukarte auf und behandle ihr K-Feld als Feld des Killers.",
+     "Malice-Marker tragen das Cursed-Würfel-Symbol: Machst du einen Horrorwurf in einem Feld mit Malice, ersetze 1 normalen Würfel durch den Cursed-Würfel.",
+     "Entfernte Malice-Marker (durch die <b>Benediction</b>-Aktionskarte oder andere Effekte) kommen zurück in den allgemeinen Vorrat."
+    ]
+   ],
+   [
+    "Was die Karten verraten",
+    [
+     "Die Reliquien der Heiligen geben 🎲★ beim Abhandeln bestimmter Karten, d. h. du tauschst einen normalen Würfel gegen den Blessed-Würfel.",
+     "Mit dem <b>Padlock Key</b> kann der <b>Donkey</b> mit dir ziehen.",
+     "Reliquien und Ereignisse setzen stark auf den Blessed-Würfel und Malice-Marker: siehe unten."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "holy-water",
+    "Holy Water",
+    "1 Hand · 3 Nutzungen. 🎲★ für einen Horrorwurf <b>oder</b> entferne einen Malice-Marker in deinem Feld. Hast du das <b>Aspergillum</b> in der anderen Hand, entferne auch einen Malice-Marker in einem angrenzenden Feld. Es gibt 2 in der Box."
+   ],
+   [
+    "holy-chalice",
+    "Holy Chalice",
+    "Während der Aktionsphase abwerfen für 3 ❤️ <b>oder</b> abwerfen, wenn dein schwarzer Final-Health-Marker aufgedeckt wird: Ist er leer, kommst du stattdessen mit 1 ❤️ zurück."
+   ],
+   [
+    "rosary",
+    "Rosary",
+    "Es gibt 2 in der Box. 2 Nutzungen. Gib in der Killerphase 2 ⌛ aus, um ein 🎭 zu ignorieren."
+   ],
+   [
+    "aspergillum",
+    "Aspergillum",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand. Hast du <b>Holy Water</b> in der anderen Hand, darfst du eine seiner Nutzungen ausgeben, um 1 zusätzlichen ✴ zu verursachen."
+   ],
+   [
+    "thurible",
+    "Thurible",
+    "Waffe · Reichweite 0-1 · 1 ✴ · 1 Hand. Wird es auf Reichweite 1 eingesetzt, wirf es ab."
+   ],
+   [
+    "crucifix",
+    "Crucifix",
+    "1 Hand. Abwerfen, um einen Anstieg des Horrors zu ignorieren <b>oder</b> die Bewegung eines Feindes zu beenden, wenn er in einem angrenzenden Feld ist."
+   ],
+   [
+    "st-peters-sword",
+    "St. Peter's Sword",
+    "Waffe · Reichweite 0 · 2 ✴ · 2 Hände. 🎲★ beim Abhandeln von Aktionskarten, die Angriffe ausführen. Das Schwert kann keine Reaktionskarten modifizieren."
+   ],
+   [
+    "st-longinus-spear",
+    "St. Longinus' Spear",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand. 🎲★ beim Abhandeln von Aktionskarten, die Angriffe ausführen. Fügst du einem Feind mit dem Speer Schaden zu, darfst du ihn 1 Feld bewegen."
+   ],
+   [
+    "st-lucys-eyes",
+    "St. Lucy's Eyes",
+    "🎲★ beim Abhandeln von Aktionskarten, mit denen du Gegenstände nimmst. Ziehe und behalte 1 zusätzlichen Gegenstand."
+   ],
+   [
+    "st-pauls-chains",
+    "St. Paul's Chains",
+    "Waffe · Reichweite 0 · 1 ✴ · 2 Hände. 🎲★ beim Abhandeln von Aktionskarten, die Angriffe ausführen. Fügst du einem Feind Schaden zu, darfst du sie abwerfen, um den Chain-Marker in sein Feld zu legen: Wenn dieser Feind das nächste Mal ein 🔪 abhandelt, ignoriere es und wirf den Marker ab."
+   ],
+   [
+    "holy-bible",
+    "Holy Bible",
+    "1 Hand. 🎲★ beim Abhandeln der Aktionskarten <b>Benediction</b> oder <b>Expel Demon</b>."
+   ],
+   [
+    "st-constantines-shield",
+    "St. Constantine's Shield",
+    "1 Hand · 3 Nutzungen. Ignoriere bis zu 2 ✴."
+   ],
+   [
+    "st-martins-cloak",
+    "St. Martin's Cloak",
+    "🎲★ beim Abhandeln von Aktionskarten, die Bewegung gewähren."
+   ],
+   [
+    "st-joans-armor",
+    "St. Joan's Armor",
+    "🎲★ beim Abhandeln von Reaktionskarten."
+   ],
+   [
+    "knife",
+    "Knife",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand."
+   ],
+   [
+    "padlock-key",
+    "Padlock Key",
+    "Der <b>Donkey</b> darf mit dir ziehen. Bewegst du dich mit ihm, wirf einen Würfel: 1-3 1 Feld weniger (min. 1), 4-6 1 Feld mehr. Einmal pro Aktionsphase, in einem Feld mit dem Donkey und einem Feind, wirf einen Würfel: Bei 5-6 erleidet der Feind 2 ✴."
+   ]
+  ],
+  "falta": "",
+  "ev": [
+   [
+    "Sins of the Past",
+    "Wirf 3 Würfel. Zeigen alle 3, was die Karte abbildet (drei rote Symbole), bist du das Kind des Teufels und <b>verlierst sofort</b>. Bei jedem anderen Ergebnis lege den <b>Repentance</b>-Marker in das <b>Sanctuary</b>: Solange er auf dem Spielplan liegt, ignoriere alle 🎲★-Effekte. Entferne ihn, indem du ins Sanctuary gehst und 3 ⌛ ausgibst."
+   ],
+   [
+    "Leap of Faith",
+    "Sieh die unbenutzten Gegenstandskarten durch und nimm 1."
+   ],
+   [
+    "Pilgrimage",
+    "Stelle 2 Opfer ins <b>Hospitium</b>, 2 ins <b>Refectory</b> und 2 ins <b>Sanctuary</b>."
+   ],
+   [
+    "Black Mass",
+    "Lege in der Unterhaltsphase einen Malice-Marker, wenn in dieser Runde keine Malice-Marker hinzugekommen sind."
+   ],
+   [
+    "Maddening Nursery Rhyme",
+    "Im Feld mit den meisten Opfern wird ein Opfer getötet, und alle anderen Opfer dort geraten in Panik."
+   ],
+   [
+    "Breaking the Curse",
+    "Nimm eine <b>Benediction</b>-Aktionskarte aus der Aktionsauslage. Sind beide in deiner Hand: ⊘🎭."
+   ],
+   [
+    "Father Damian",
+    "Stelle Father Damian in die <b>Sacristy</b>. Er folgt dir in das Feld des Killers und kann nur angegriffen werden, wenn keine anderen Opfer in seinem Feld sind. Solange er in deinem Feld ist: 🎲★ bei allen Horrorwürfen, und einmal pro Aktionsphase darfst du einen Malice-Marker in deinem Feld entfernen. Wird er in deinem Feld getötet: 🎭🎭🎭."
+   ],
+   [
+    "Demonic Crocodile",
+    "Lege den <b>Crocodile</b>-Marker ins <b>Museum</b>. Feinde können es weder ins Ziel nehmen noch töten, aber du darfst es angreifen und töten. Bewegung, Angriff und Gesundheit von 1. Am Ende der Killerphase nimmt es das Final Girl ins Ziel, bewegt sich und greift an. Dann geraten alle Opfer in seinem Feld in Panik."
+   ],
+   [
+    "The Quebecer",
+    "Stelle ihn ins <b>Dormitory</b>. Normale Opfer in seinem Feld folgen dir nicht, außer er kommt mit. Mit ihm darf dir ein zusätzliches Opfer folgen. Ist er im Unterhalt in deinem Feld: ⌛ pro Opfer in deinem Feld."
+   ],
+   [
+    "The Abbess",
+    "Stelle sie ins <b>Abbess' Office</b>. Im Unterhalt bewegt sie sich ein Feld auf das nächste normale Opfer zu, das nicht im <b>Dormitory</b> ist. Normale Opfer in ihrem Start- und Zielfeld bewegen sich 2 Felder Richtung Dormitory."
+   ]
+  ]
+ },
+ "Madness in the Dark": {
+  "ley": "Kartennamen aus der spanischen Ausgabe · ⌛ = Zeit · ✴ = Schaden · ❤️ = Leben heilen · 💔 = Leben verlieren · 🎭 = Horror steigt · 🩸 = Bloodlust · 💊 = Pastilla-Marker (Pille)",
+  "err_k_t": "Achtung",
+  "err_k": [
+   "Ratchet Lady startet mit nur <b>6</b> Leben, hat aber <b>keine Obergrenze</b>: Sie heilt sich auf viele Arten.",
+   "Einen Ort mit <b>Lunáticos</b> (Irre) zu verlassen kostet 💔 pro Lunático ab dem zweiten.",
+   "Ein Opfer in einen Lunático zu verwandeln erhöht 🩸 <b>nicht</b>, und einen Lunático zu töten auch nicht."
+  ],
+  "bloques_k": [
+   [
+    "Besonderer Aufbau",
+    [
+     "Lege die <b>Lunático</b>-Figuren als Stapel neben die Opferfiguren.",
+     "Stelle 2 Lunáticos auf den Startort von Ratchet Lady."
+    ]
+   ],
+   [
+    "Die Lunáticos",
+    [
+     "Sie sind Handlanger: ehemalige Opfer, die wahnsinnig geworden sind. Es gelten die Handlanger-Regeln (S. 32 der Grundregeln).",
+     "Sie haben 1 Leben sowie Angriff und Bewegung 1. Sie folgen dir nicht und können nicht gerettet werden.",
+     "Wird ein Opfer zum Lunático, tausche seine Figur gegen eine rote Lunático-Figur. 🩸 steigt nicht: Niemand ist gestorben.",
+     "Stirbt ein Lunático, kommt seine Figur zurück in den Vorrat. 🩸 steigt auch nicht, obwohl er vorher ein Opfer war.",
+     "Willst du einen Ort mit Lunáticos verlassen, verlierst du 💔 pro Lunático über den ersten hinaus: Bei einem passiert nichts, bei drei verlierst du 2.",
+     "Höchstens <b>6</b> Lunáticos gleichzeitig auf dem Spielplan. Musst du einen weiteren platzieren und es sind keine mehr da, ignoriere es.",
+     "Besondere Opfer werden <b>nicht</b> zu Lunáticos, nur normale."
+    ]
+   ],
+   [
+    "Calmar",
+    [
+     "Gegen Ratchet Lady hast du die Aktionskarten <b>Calmar</b> (Beruhigen), die Lunáticos wieder in Opfer verwandeln.",
+     "Wenn du eine Calmar erfolgreich abhandelst, tausche die angegebene Anzahl Lunáticos gegen Opferfiguren und lege die Lunáticos zurück in den Vorrat. Jetzt können sie dir folgen, du kannst sie retten und Feinde können sie töten."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "<b>Llueven Lunáticos</b>: Oben geht sie auf dich los, bewegt sich und greift 2-mal an. Unten erscheinen 2 Lunáticos an ihrem Ort, sie geht auf das Opfer oder dich los und greift an. Gibt es beim Aufdecken keine Lunáticos, erscheinen 2 am Ort von Ratchet Lady.",
+     "<b>Alimentando la Locura</b>: Oben geht sie los, bewegt sich und greift an. Unten heilt Ratchet Lady ❤️, dann geht sie los, bewegt sich und greift an. Zu Beginn jeder Killerphase erscheint an ihrem Ort ein Lunático, falls keiner da ist.",
+     "<b>Sujetadla</b>: Oben geht sie auf dich los und bewegt sich. Unten geht sie auf dich los, bewegt sich und greift 2-mal an. Beim Aufdecken werden alle übrigen Opfer zu Lunáticos und alle Calmar-Aktionskarten werden aus dem Spiel entfernt."
+    ]
+   ],
+   [
+    "Dunkle Kräfte",
+    [
+     "<b>Inyección Oscura</b>: Wenn Ratchet Lady in der Killerphase zum ersten Mal mindestens 1 ❤️ heilt, heilt sie ein weiteres.",
+     "<b>Brote Maníaco</b>: Wenn ein Lunático auf den Spielplan kommt, löse sofort seine Handlanger-Aktion aus.",
+     "<b>Miedo a la Sangre</b>: Wenn in der Killerphase zum ersten Mal Horror oder 🩸 um mindestens 1 steigt, heilt Ratchet Lady ❤️.",
+     "<b>Escudo de Locura</b> (Epische Dunkle Kraft): Ratchet Lady kann kein Leben verlieren, solange Lunáticos auf dem Spielplan sind."
+    ]
+   ]
+  ],
+  "err_m_t": "Achtung",
+  "err_m": [
+   "Du nimmst ein 💊 nur, wenn du deine Bewegung an seinem Ort <b>beendest</b>, nicht im Vorbeigehen.",
+   "Nimmst du 2 oder 3 Pastillas auf einmal, musst du <b>Efectos Secundarios</b>-Karten (Nebenwirkungen) ziehen."
+  ],
+  "bloques_m": [
+   [
+    "Besonderer Aufbau",
+    [
+     "Lege die <b>Aturdido</b>-Marker (Betäubt) als Stapel neben den Spielbereich.",
+     "Mische die Pastilla-Marker verdeckt (neutrale Seite oben) und bilde einen Stapel.",
+     "Das Spiel beginnt mit <b>4</b> Pastilla-Markern auf dem Spielplan: Die Aufbaukarte sagt, wo. Ziehe sie vom Stapel und lege sie verdeckt aus.",
+     "Lege die Karte <b>Efectos de las Pastillas</b> neben dein Spielertableau. Ziehe 1 Pastilla-Marker und lege ihn offen darunter. Im Vorrat sollten 5 übrig sein.",
+     "Mische die Stapel <b>Dopaje</b> und <b>Efectos Secundarios</b> und lege sie neben den Spielbereich."
+    ]
+   ],
+   [
+    "Pastillas, Efectos Secundarios und Dopaje",
+    [
+     "Es gibt 4 Arten von Pastillas: 3 gelbe, 3 blaue, 3 rosa und 1 Joker (zählt als beliebige Farbe).",
+     "Beendest du deine Bewegung an einem Ort mit Pastilla-Marker (nicht im Vorbeigehen), kannst du ⌛ ausgeben, um ihn zu nehmen. Lege ihn offen unter deine Karte Efectos de las Pastillas.",
+     "Jederzeit in der Aktionsphase kannst du gesammelte Pastillas einnehmen und ihre Marker abwerfen. Ist der Stapel leer, mische die abgeworfenen und bilde einen neuen verdeckten Stapel.",
+     "Auf der Karte Efectos de las Pastillas steht, was jede bewirkt. Nimmst du 2 oder 3 auf einmal, ziehst du nach dem Anwenden ihrer Effekte 1 oder mehr Efectos Secundarios-Karten, eine nach der anderen.",
+     "Du kannst beliebig viele in beliebiger Reihenfolge nehmen: zum Beispiel erst eine einzelne, dann zwei zusammen (und für diese zwei Efectos Secundarios ziehen).",
+     "Nimmst du eine von jeder Farbe, darfst du eine <b>Dopaje</b>-Karte ziehen: Sie geben sehr starke Fähigkeiten."
+    ]
+   ],
+   [
+    "Aturdido",
+    [
+     "Manche Gegenstände tragen das Wort <b>Aturdido</b>. Nur Feinde können Aturdido werden: Lege einen Aturdido-Marker unter sie.",
+     "In der nächsten Killerphase ignorierst du alle ihre Bewegungen (handelst ihre Angriffe aber weiterhin ab).",
+     "Im Unterhalt werden alle Aturdido-Marker abgeworfen."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "bata-de-paciente",
+    "Bata de Paciente",
+    "Du kannst jede Bewegungsstrafe aus Sonderregeln ignorieren. Erleidest du ✴ durch einen Angriff, kannst du sie nutzen, damit stattdessen ein Opfer an deinem Ort stirbt."
+   ],
+   [
+    "anestesia",
+    "Anestesia",
+    "2 Nutzungen. Betäubt einen Feind an deinem Ort. Du kannst sie abwerfen, um alle verbleibenden Nutzungen auf die <b>Pistola Tranquilizante</b> zu übertragen (falls du sie hast)."
+   ],
+   [
+    "bote-de-gas-de-la-risa",
+    "Bote de Gas de la Risa",
+    "Wirf ihn ab, um alle Feinde an deinem Ort und an angrenzenden Orten zu Betäuben. Opfer an diesen Orten fliehen sofort."
+   ],
+   [
+    "pastillas-misteriosas",
+    "Pastillas Misteriosas",
+    "Wirf sie sofort ab und nimm 2 Pastilla-Marker."
+   ],
+   [
+    "bisturi",
+    "Bisturí",
+    "Waffe · Reichweite 0 · ✴* · 1 Hand. Du machst 1 ✴ mehr für jeden leeren Stern in deinem Horrorwurf. Würfelst du das durchgestrichene Symbol, 💔."
+   ],
+   [
+    "inyeccion-de-adrenalina",
+    "Inyección de Adrenalina",
+    "1 Hand. Wenn du deinen schwarzen Final-Health-Marker aufdecken musst, kannst du sie vorher abwerfen, um 3 aus dem Vorrat aufzudecken und einen davon zu nutzen."
+   ],
+   [
+    "sierra-para-huesos",
+    "Sierra para Huesos",
+    "Waffe · Reichweite 0 · 2 ✴ · 1 Hand. Wenn du damit Schaden machst, 🎭."
+   ],
+   [
+    "maletin-medico",
+    "Maletín Médico",
+    "2 Nutzungen. Gib ⌛ aus, um ❤️ zu heilen, oder 3 ⌛, um ❤️❤️ zu heilen."
+   ],
+   [
+    "martillo-con-mango-de-gancho",
+    "Martillo con Mango de Gancho",
+    "Waffe · Reichweite 0 · 2 ✴ · 1 Hand. Wenn du damit Schaden machst, wirf einen Würfel: bei 1-4, 💔."
+   ],
+   [
+    "tapa-de-cubo-de-basura",
+    "Tapa de Cubo de Basura",
+    "1 Hand · 3 Nutzungen. Ignoriere 1 ✴."
+   ],
+   [
+    "botiquin",
+    "Botiquín",
+    "1 Hand. Jedes Mal, wenn du eine Aktionskarte zum Heilen nutzt, heilst du ❤️ eins mehr."
+   ],
+   [
+    "manual-medico",
+    "Manual Médico",
+    "Wenn du Pastilla-Marker nimmst oder Dopaje-Karten ziehst, ziehe einen mehr, wähle, welchen du behältst, und wirf den anderen ab."
+   ],
+   [
+    "desfibrilador",
+    "Desfibrilador",
+    "Waffe · Reichweite 0 · 1 ✴ · 2 Hände. Lebt der Feind nach dem Schaden noch, ist er Betäubt."
+   ],
+   [
+    "bebida-energetica",
+    "Bebida Energética",
+    "Wirf sie in der Aktionsphase ab und wähle: 3 ⌛, bewege dich 1 Ort, oder ignoriere eine Efectos Secundarios-Karte."
+   ],
+   [
+    "cuchillo",
+    "Cuchillo",
+    "Waffe · Reichweite 0 · 1 ✴ · 1 Hand."
+   ],
+   [
+    "pistola-tranquilizante",
+    "Pistola Tranquilizante",
+    "Waffe · Reichweite 1 · 1 ✴ · 1 Hand · 2 Nutzungen. Kann keine Aktionskarte modifizieren: Du nutzt sie ohne. Für 2 ⌛ schießt du einen Pfeil auf einen Feind an einem angrenzenden Ort; lebt er noch, ist er Betäubt."
+   ]
+  ],
+  "falta": "Namen aus der spanischen Ausgabe. Es gibt weitere Pastillas Misteriosas-Karten.",
+  "ev": [
+   [
+    "Dr. Death",
+    "Stelle ihn in die <b>Sala de Operaciones</b>. Im Unterhalt tötet er ein Opfer an seinem Ort; gibt es keins, bewegt er sich einen Ort auf das nächste Opfer zu. Stirbt er: 2 ⌛ und 🩸 steigt nicht. Verlässt er das Spiel, wirf die Karte ab."
+   ],
+   [
+    "Arañazos y Mordiscos",
+    "Jedes Mal, wenn du ein Opfer rettest, mache einen Horrorwurf. Würfelst du das Symbol auf der Karte, 💔."
+   ],
+   [
+    "Medicamentos Potentes",
+    "Jedes Mal, wenn du eine oder mehr Pastillas nimmst, ziehe eine Efectos Secundarios-Karte mehr."
+   ],
+   [
+    "Reservas Médicas",
+    "Wenn du oder ein Feind in einer Phase zum ersten Mal mindestens 1 ❤️ heilt, heilt ihr ein weiteres."
+   ],
+   [
+    "\"Han llegado los nuevos pacientes\"",
+    "Stelle 4 neue Opfer in die <b>Sala Comunitaria</b>. Abwerfen."
+   ],
+   [
+    "Adicción Peligrosa",
+    "Wähle bis zu 2 Opfer, die weder an deinem Ort noch zusammen sind. Lege einen Pastilla-Marker verdeckt zu beiden, zu einem oder zu keinem. Für jeden gelegten Marker +🩸. Abwerfen."
+   ],
+   [
+    "Camilla de Hospital",
+    "Lege den Camilla-Marker an deinen Ort. Du kannst ihn mit dir bewegen und bis zu 2 Opfer darauf transportieren. Du kannst ihn abwerfen, um einen Feind an deinem oder einem angrenzenden Ort zu rammen: 1 ✴ mehr pro Opfer darauf, die dabei sterben. Verlässt er das Spiel, wirf die Karte ab."
+   ],
+   [
+    "Hannibal el Caníbal",
+    "Stelle ihn mit 2 neuen Opfern in das <b>Confinamiento Solitario</b>. Im Unterhalt tötet er ein Opfer an seinem Ort; gibt es keins, flieht er. Rettest du ihn, 🎭. Wird er getötet, 💔. Verlässt er das Spiel, wirf die Karte ab."
+   ],
+   [
+    "Bienvenidos al Manicomio",
+    "Lege einen Totenkopf-Marker in die <b>Sala Comunitaria</b>. Wenn du oder ein Feind diesen Ort betritt, erleidet der Betretende ✴."
+   ],
+   [
+    "Dra. Sunshine",
+    "Stelle sie in die <b>Consulta Médica</b>. Ist sie an deinem Ort, wählst du beim Einnehmen einer Pastilla deren Farbe. Wird sie an deinem Ort getötet, 🎭🎭🎭🎭. Verlässt sie das Spiel, wirf die Karte ab."
+   ]
+  ]
+ }
+}
