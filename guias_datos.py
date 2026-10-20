@@ -668,6 +668,11 @@ GUIAS = [
     {
         "caja": "The Green Terror", "killer": "Volk'ar", "mapa": "Pesadilla Verde", "dir": "the-green-terror",
         "arte_k": "img/art/volk-ar.jpg", "arte_m": "",
+        "figs_m": {1: [("fig-soldiers-card", "Soldiers")],
+                   2: [("fig-action-upgrade", "Action Upgrade"), ("fig-ability-upgrade", "Ability Upgrade")],
+                   3: [("fig-ordenes-ejemplo", "")],
+                   5: [("fig-rio-ejemplo", "Waterfall → Upper River")]},
+        "icos_m": {4: "fig-huey", 5: "fig-rio-icono"},
         "inicios": [("high-ground", "High Ground"), ("jungle-madness", "Jungle Madness"), ("cave-dwellers", "Cave Dwellers"),
                     ("river-rats", "River Rats"), ("rebel-yell", "Rebel Yell")],
         "es": {

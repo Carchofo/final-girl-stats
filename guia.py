@@ -50,7 +50,7 @@ TXT = {
 
 CSS = """<style>
 .gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:12px 0 6px}
-.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-sec img.ico{display:inline-block;width:20px;height:20px;vertical-align:-4px;margin:0 1px;border-radius:50%}.gu-foto{margin:14px 0 6px}.gu-foto img{display:block;width:100%;border-radius:6px;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
+.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-sec img.ico{display:inline-block;width:20px;height:20px;vertical-align:-4px;margin:0 1px;border-radius:50%}.gu-figs{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 14px 20px;align-items:flex-start}.gu-figs figure{margin:0;max-width:min(100%,460px)}.gu-figs img{display:block;max-width:100%;max-height:260px;border-radius:5px;cursor:zoom-in;box-shadow:0 6px 16px rgba(0,0,0,.55)}.gu-figs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.gu-sec h3 img.gu-tico{width:28px;height:28px;border-radius:50%;object-fit:cover;vertical-align:-7px;margin-left:6px}.gu-foto{margin:14px 0 6px}.gu-foto img{display:block;width:100%;border-radius:6px;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
 .gu-grid figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
 .gu-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:12px 0}
 .gu-it{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px}
@@ -62,7 +62,7 @@ CSS = """<style>
 </style>"""
 
 ZOOM = ('<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
-        'var i=e.target.closest(".gu-grid img,.gu-it img,.gu-foto img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
+        'var i=e.target.closest(".gu-grid img,.gu-it img,.gu-foto img,.gu-figs img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
         'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>')
 
 
@@ -147,7 +147,18 @@ def secciones(lang, g):
     ruta = f"{pre}img/guias/{g['dir']}/"
 
     def bloques(c, bs):
-        return "".join(f'<h3 id="{ancla(c, t)}">{t}</h3>{_lista(xs)}' for t, xs in bs)
+        figs, icos = g.get("figs_" + c, {}), g.get("icos_" + c, {})
+
+        def tit(i, t):
+            return t + (f' <img class="gu-tico" src="{ruta}{icos[i]}.jpg" alt="">' if i in icos else "")
+
+        def fig(i):
+            if i not in figs:
+                return ""
+            return ('<div class="gu-figs">' + "".join(
+                f'<figure><img src="{ruta}{f}.jpg" alt="{cap}" loading="lazy">' + (f'<figcaption>{cap}</figcaption>' if cap else '') + '</figure>'
+                for f, cap in figs[i]) + '</div>')
+        return "".join(f'<h3 id="{ancla(c, t)}">{tit(i, t)}</h3>{_lista(xs)}{fig(i)}' for i, (t, xs) in enumerate(bs))
 
     def err(c, t, xs):
         return f'<h3 id="{ancla(c, "ojo")}">{t}</h3><div class="gu-err">{_lista(xs)}</div>' if xs else ""
