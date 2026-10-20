@@ -327,7 +327,7 @@
   "err_m_t": "Attenzione",
   "err_m": [
    "Gli spazi di <b>Lava</b> non sono più accessibili a nessuno, Raptor e T-Rex compresi.",
-   "Se <b>Game Makers</b> viene pescato durante la preparazione, scartalo e pescane un altro."
+   "Se durante la preparazione esce la carta Evento <a href=\"#ev-game-makers\"><b>Game Makers</b></a> (un Evento del luogo), scartala e pescane un'altra."
   ],
   "bloques_m": [
    [

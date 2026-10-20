@@ -327,7 +327,7 @@
   "err_m_t": "Attention",
   "err_m": [
    "Les cases <b>Lava</b> ne sont plus accessibles à personne, Raptors et T-Rex compris.",
-   "Si <b>Game Makers</b> est pioché pendant la mise en place, défausse-le et pioches-en un autre."
+   "Si la carte Événement <a href=\"#ev-game-makers\"><b>Game Makers</b></a> (un Événement du lieu) sort pendant la mise en place, défausse-la et pioches-en une autre."
   ],
   "bloques_m": [
    [
