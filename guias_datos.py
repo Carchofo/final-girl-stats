@@ -166,9 +166,9 @@ GUIAS = [
         "caja": "The Raptor Games", "killer": "Raptors", "mapa": "Isla Lagarto", "dir": "the-raptor-games",
         "arte_k": "img/art/raptors.jpg", "arte_m": "img/loc/isla-lagarto.png",
         "inicios": [("facility-construction", "Facility Construction"), ("beach-landing", "Beach Landing"),
-                    ("look-at-the-volcano", "Look at the Volcano!")],
+                    ("look-at-the-volcano", "Look at the Volcano!"), ("let-the-games-begin", "Let the Games Begin!"), ("lab-breach", "Lab Breach")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🩸 = Bloodlust · 💔 = perder vida",
+            "ley": "⌛ = Tiempo · ✴ = daño · 🩸 = Bloodlust · 💔 = perder vida · ❤️ = recuperar vida · 🔧 = espacio con el icono naranja de la llave",
             "err_k_t": "Ojo con esto",
             "err_k": [
                 "La <b>Pack</b> cuenta como el Killer a todos los efectos; los <b>Raptors sueltos</b> son Minions. Si una carta dice «Raptor(s)», no incluye a la Pack; si dice «Pack», no incluye a los sueltos.",
@@ -205,16 +205,34 @@ GUIAS = [
                 "Si <b>Game Makers</b> sale al preparar la partida, descártala y roba otra.",
             ],
             "bloques_m": [
+                ("Preparación especial", [
+                    "Pon los marcadores de <b>valla eléctrica</b> en las secciones verdes que marca la carta de inicio. En las rojas no se pone nada.",
+                    "Baraja las <b>3 cartas de Lava</b> boca abajo y deja las fichas de lava al lado.",
+                    "Pon la carta del <b>T-Rex</b> junto a la zona de juego y su figura en la casilla de inicio de la carta."]),
+                ("Vallas eléctricas", [
+                    "Hay 3 vallas: A, B y C. Con marcador puesto, el camino está cortado y los espacios de cada lado <b>no</b> cuentan como adyacentes.",
+                    "<b>Pánico</b>: si alguien huye hacia una valla cerrada, se queda donde está.",
+                    "<b>Más lejos / más cerca</b>: cuenta solo caminos sin valla. Si están las 3 puestas y el único espacio u objetivo queda al otro lado, cuenta como si no hubiera vallas.",
+                    "<b>Objetivo de un Enemy</b>: si no hay camino libre hasta su objetivo, no se mueve en esa acción, pero sus iconos de ataque se resuelven en su espacio.",
+                    "<b>Colocar a alguien</b>: las vallas no afectan a los efectos que colocan.",
+                    "En cada <b>Mantenimiento</b> tira el dado de la valla: si esa valla tiene marcador, quítalo; si no, ponlo."]),
+                ("El T-Rex", [
+                    "Empieza encerrado en el <b>Dino Pen</b>. Con su icono (la huella), avanza su figura una casilla a la derecha en la carta del T-Rex.",
+                    "Al llegar a <b>\"Break out!\"</b>, pon su figura en el Dino Pen del tablero y su ficha de acción debajo de la Killer Action de la carta Finale. A partir de ahí ignora su icono.",
+                    "<b>No</b> es Killer ni Minion: no se le puede atacar, dañar ni matar. Su acción se resuelve después de las de Minion y Killer de la Finale.",
+                    "Las víctimas no te siguen a su espacio (salvo un efecto que las deje seguirte al del Killer). En la fase de Pánico, todos los de su espacio entran en pánico, haya muerto alguien o no.",
+                    "<b>Movimiento 2</b>, con el icono ANY: se para en cuanto llega a un espacio con <b>cualquiera</b> (tú, víctimas, Enemies...), y no se mueve si ya hay alguien en su espacio.",
+                    "<b>No hace daño: mata</b> a uno de su espacio. Prioridad: víctima, Minion, tú, Killer. Si os ataca a ti o al Killer, morís al momento, sin revelar la ficha Final Health.",
+                    "A un Enemy hecho de varias unidades (la Pack de Raptors, una horda zombi...) le mata <b>una</b> unidad, o sea, 1 de daño."]),
                 ("El volcán", [
                     "La <b>primera vez</b> que resuelves el icono del volcán, entra en erupción: todos los que estén en el <b>Volcano</b> reciben 💔, los que queden en el espacio entran en pánico, y pones ahí la ficha de lava del volcán: deja de ser accesible.",
                     "Las <b>siguientes veces</b>, la lava se extiende a un espacio adyacente: roba una carta de <b>Lava</b> para saber cuál y sigue sus instrucciones.",
-                    "Con las <b>4 fichas de lava</b> en el tablero, ignora el icono del volcán."]),
+                    "Con las <b>4 fichas de lava</b> en el tablero, ignora el icono del volcán.",
+                    "Las 3 cartas de Lava: <b>North Beach</b>, <b>Generator</b> y <b>Smuggler's Cove</b>. Todos los de ese espacio reciben 💔, los que queden entran en pánico hasta que salgan, y pones su ficha de lava."]),
                 ("Espacios especiales", [
                     "Los <b>3 espacios de las esquinas</b> con el icono de playa son <b>Beach</b>.",
                     "Los <b>2 espacios de los bordes</b> con el icono de acantilado son <b>Cliff</b>.",
                     "Varias cartas del mapa se refieren a ellos."]),
-                ("T-Rex y valla eléctrica", [
-                    "El mapa trae un <b>T-Rex</b> (con su carta y su token de acción) y una <b>valla eléctrica</b> con su dado y 3 marcadores. Nos falta fotografiar la página del reglamento que los explica: la añadiremos cuando la tengamos."]),
             ],
             "obj": [
                 ("shotgun", "Shotgun", "Arma · alcance 0-1 · 3 ✴ · 2 manos · 2 usos. Reparte el daño: la mitad (redondeando arriba) a un Enemy de tu espacio y la otra mitad (abajo) a uno adyacente. Si en un espacio no hay Enemy, ese daño se pierde."),
@@ -229,9 +247,12 @@ GUIAS = [
                 ("bush-plane", "Bush Plane", "Cuando salvas al menos una víctima en el <b>Airstrip</b>, puedes descartarla para salvar al momento a otra víctima de cualquier espacio."),
                 ("enhanced-goggles", "Enhanced Goggles", "Puedes ignorar todos los iconos 💔 de las cartas de acción <b>Walk</b> y <b>Sprint</b>."),
                 ("generator-codes", "Generator Codes", "Descártala para poner o quitar cualquiera de los marcadores de la <b>valla eléctrica</b>."),
+                ("safari-rifle", "Safari Rifle", "Arma · alcance 1-2 · 2 manos · 2 usos. No puede modificar una carta de Acción: se usa sin ella. Una vez por turno, gasta ⌛ para hacer una tirada de Horror. Con éxito: 2 ✴ a un Enemy a tu alcance."),
+                ("cattle-prod", "Cattle Prod", "1 mano · 3 usos. Mueve a un Enemy de tu espacio a uno adyacente."),
+                ("first-aid-kit", "First Aid Kit", "Si está boca arriba en un mazo de objetos, puedes cogerla gratis estando en su espacio 🔧. Descártala para recuperar ❤️❤️❤️."),
                 ("private-stash", "Private Stash", "Al cogerla, descártala y elige: lo que marcan sus iconos, o coger la carta de arriba de cualquier mazo de objetos."),
             ],
-            "falta": "Faltan por fotografiar: Safari Rifle, Cattle Prod y First Aid Kit.",
+            "falta": "",
             "ev": [
                 ("Supply Drop", "Pon los 3 tokens de suministro en los espacios Beach y Cliff más lejanos a ti (uno por espacio). En un espacio con token puedes gastar 2 ⌛ para quitarlo y coger un objeto al azar de los apartados al preparar. Se descarta cuando no quedan tokens."),
                 ("Fierce Competitors", "Por cada víctima que salves: ⌛."),
@@ -246,7 +267,7 @@ GUIAS = [
             ],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🩸 = Bloodlust · 💔 = lose health",
+            "ley": "⌛ = Time · ✴ = damage · 🩸 = Bloodlust · 💔 = lose health · ❤️ = recover health · 🔧 = space with the orange wrench icon",
             "err_k_t": "Watch out",
             "err_k": [
                 "The <b>Pack</b> counts as the Killer for all purposes; <b>individual Raptors</b> are Minions. A card that says \"Raptor(s)\" doesn't include the Pack; one that says \"Pack\" doesn't include individual Raptors.",
@@ -283,16 +304,34 @@ GUIAS = [
                 "If <b>Game Makers</b> is drawn during setup, discard it and draw another.",
             ],
             "bloques_m": [
+                ("Special setup", [
+                    "Place <b>Electric Fence</b> markers in the green sections shown on the Setup card. Nothing goes in the red ones.",
+                    "Shuffle the <b>3 Lava cards</b> facedown and put the Lava tokens next to them.",
+                    "Place the <b>T-Rex</b> card near the play area and its meeple on the card's start space."]),
+                ("Electric Fences", [
+                    "There are 3 fences: A, B and C. While a marker is there, the path is blocked and the spaces on each side are <b>not</b> adjacent.",
+                    "<b>Panic</b>: anyone panicking towards a blocked fence stays where they are.",
+                    "<b>Farthest / closest</b>: only count unblocked paths. If all 3 markers are out and the only space or target is on the other side, count as if there were no fences.",
+                    "<b>Enemy targeting</b>: with no unblocked path to its target, the Enemy doesn't move for that action, but its attack icons still resolve in its space.",
+                    "<b>Placing someone</b>: fences don't affect effects that place someone.",
+                    "Each <b>Upkeep</b>, roll the fence die: if that fence has a marker, remove it; if not, place one."]),
+                ("The T-Rex", [
+                    "It starts locked in the <b>Dino Pen</b>. With its icon (the footprint), move its meeple one space right on the T-Rex card.",
+                    "On <b>\"Break out!\"</b>, put its meeple in the Dino Pen on the board and its action token below the Killer Action on the Finale card. From then on, ignore its icon.",
+                    "It is <b>not</b> a Killer or a Minion: it can't be attacked, damaged or killed. Its action resolves after the Finale's Minion and Killer Actions.",
+                    "Victims won't follow you into its space (unless an effect lets them follow you into the Killer's). In the Panic phase, everyone in its space panics, whether or not anyone died that turn.",
+                    "<b>Movement 2</b>, with the ANY icon: it stops as soon as it reaches a space with <b>anyone</b> (you, Victims, Enemies...), and won't move if someone is already in its space.",
+                    "<b>It doesn't deal damage: it kills</b> one target in its space. Priority: Victim, Minion, you, Killer. If it attacks you or the Killer, you die instantly, without revealing Final Health.",
+                    "Against an Enemy made of several units (the Raptor Pack, a zombie horde...) it kills <b>one</b> unit, i.e. 1 damage."]),
                 ("The volcano", [
                     "The <b>first time</b> you resolve the volcano icon, it erupts: everyone at the <b>Volcano</b> takes 💔, anyone left in the space panics, and you place the Volcano Lava token there: it's no longer accessible.",
                     "<b>After that</b>, the lava spreads to an adjacent space: draw a <b>Lava</b> card to see which one and follow it.",
-                    "Once all <b>4 Lava tokens</b> are on the board, ignore the volcano icon."]),
+                    "Once all <b>4 Lava tokens</b> are on the board, ignore the volcano icon.",
+                    "The 3 Lava cards: <b>North Beach</b>, <b>Generator</b> and <b>Smuggler's Cove</b>. Everyone there takes 💔, anyone left panics until they leave the space, and you place its Lava token."]),
                 ("Special spaces", [
                     "The <b>3 corner spaces</b> with the beach icon are <b>Beach</b> spaces.",
                     "The <b>2 edge spaces</b> with the cliff icon are <b>Cliff</b> spaces.",
                     "Several location cards refer to them."]),
-                ("T-Rex and electric fence", [
-                    "The location comes with a <b>T-Rex</b> (card and action token) and an <b>electric fence</b> with its die and 3 markers. We still need to photograph the rulebook page that covers them: we'll add it when we have it."]),
             ],
             "obj": [
                 ("shotgun", "Shotgun", "Weapon · range 0-1 · 3 ✴ · 2 hands · 2 uses. Split the damage: half (rounded up) to an Enemy in your space and half (rounded down) to one in an adjacent space. Damage to a space with no Enemy is lost."),
@@ -307,9 +346,12 @@ GUIAS = [
                 ("bush-plane", "Bush Plane", "When you save at least one Victim at the <b>Airstrip</b>, you may discard it to immediately save one more Victim from any space."),
                 ("enhanced-goggles", "Enhanced Goggles", "You may ignore all 💔 icons on <b>Walk</b> and <b>Sprint</b> Action cards."),
                 ("generator-codes", "Generator Codes", "Discard to add or remove any of the <b>electric fence</b> markers."),
+                ("safari-rifle", "Safari Rifle", "Weapon · range 1-2 · 2 hands · 2 uses. Can't modify an Action card and must be used without one. Once per turn, spend ⌛ to make a Horror Roll. On a success: 2 ✴ to 1 Enemy within range."),
+                ("cattle-prod", "Cattle Prod", "1 hand · 3 uses. Move an Enemy in your space to an adjacent space."),
+                ("first-aid-kit", "First Aid Kit", "If it's faceup on an Item deck, you may take it for free while in its 🔧 space. Discard to recover ❤️❤️❤️."),
                 ("private-stash", "Private Stash", "When you take it, discard it and choose: what its icons show, or the top card of any Item deck."),
             ],
-            "falta": "Still to photograph: Safari Rifle, Cattle Prod and First Aid Kit.",
+            "falta": "",
             "ev": [
                 ("Supply Drop", "Put the 3 Supply tokens on the Beach and Cliff spaces furthest from you (one each). On a space with a token you can spend 2 ⌛ to remove it and take a random Item set aside during setup. Discard when no tokens are left."),
                 ("Fierce Competitors", "For each Victim you save: ⌛."),
