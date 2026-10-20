@@ -218,6 +218,14 @@ GUIAS = [
     {
         "caja": "The Raptor Games", "killer": "Raptors", "mapa": "Isla Lagarto", "dir": "the-raptor-games",
         "arte_k": "img/art/raptors.jpg", "arte_m": "img/loc/isla-lagarto.png",
+        "figs_k": {4: [("fig-spawn-cards", "Spawn")],
+                   5: [("fig-raptors-card", "Raptors")],
+                   8: [("fig-dark-powers", "Dark Powers")],
+                   9: [("fig-terror", "Terror")]},
+        "icos_k": {2: "ico-stop", 3: "ico-pack", 4: "ico-spawn"},
+        "figs_m": {0: [("fig-setup-ejemplo", "Setup ▸ Electric Fence")],
+                   2: [("fig-trex-kill", "T-Rex Kill Priority")]},
+        "icos_m": {2: "ico-trex"},
         "inicios": [("facility-construction", "Facility Construction"), ("beach-landing", "Beach Landing"),
                     ("look-at-the-volcano", "Look at the Volcano!"), ("let-the-games-begin", "Let the Games Begin!"), ("lab-breach", "Lab Breach")],
         "es": {
