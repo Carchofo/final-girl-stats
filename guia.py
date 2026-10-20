@@ -31,6 +31,21 @@ TXT = {
            "inicios": "Setups", "inicios_sub": "K = Killer start · yellow figure = Final Girl · numbers = Victims in each space.",
            "obj": "Items", "ev": "{n} events",
            "nota": "Our own wording, based on the rulebook, the cards and the wiki. Spot a mistake? Let us know."},
+    "fr": {"k": "Guide de {n} (killer)", "m": "Guide de {n} (lieu)", "arriba": "↑ haut",
+           "mix_k": "Se joue avec n'importe quel lieu.", "mix_m": "Se joue avec n'importe quel killer.",
+           "inicios": "Mises en place", "inicios_sub": "K = départ du Killer · figurine jaune = la Final Girl · chiffres = Victimes par case.",
+           "obj": "Objets", "ev": "Événements de {n}",
+           "nota": "Texte à nous, d'après le livret de règles, les cartes et le wiki. Noms des cartes en anglais. Une erreur ? Dites-le-nous."},
+    "de": {"k": "Guide zu {n} (Killer)", "m": "Guide zu {n} (Ort)", "arriba": "↑ nach oben",
+           "mix_k": "Passt zu jedem Ort.", "mix_m": "Passt zu jedem Killer.",
+           "inicios": "Aufbauten", "inicios_sub": "K = Start des Killers · gelbe Figur = die Final Girl · Zahlen = Opfer pro Feld.",
+           "obj": "Gegenstände", "ev": "Ereignisse von {n}",
+           "nota": "Eigener Text nach Regelheft, Karten und Wiki. Kartennamen auf Englisch. Fehler gefunden? Sag uns Bescheid."},
+    "it": {"k": "Guida di {n} (killer)", "m": "Guida di {n} (luogo)", "arriba": "↑ su",
+           "mix_k": "Va bene con qualsiasi luogo.", "mix_m": "Va bene con qualsiasi killer.",
+           "inicios": "Preparazioni", "inicios_sub": "K = partenza del Killer · figura gialla = la Final Girl · numeri = Vittime per spazio.",
+           "obj": "Oggetti", "ev": "Eventi di {n}",
+           "nota": "Testo nostro, dal regolamento, dalle carte e dalla wiki. Nomi delle carte in inglese. Un errore? Faccelo sapere."},
 }
 
 CSS = """<style>
@@ -69,20 +84,23 @@ def _lista(xs):
     return "<ul>" + "".join(f"<li>{x}</li>" for x in xs) + "</ul>"
 
 
-def _lg(lang):
-    return lang if lang in TXT else "en"
+def _lg(lang, g=None):
+    """Idioma de la guía; si aún no hay traducción, en inglés."""
+    if lang in TXT and (g is None or lang in g):
+        return lang
+    return "en" if g is None or "en" in g else "es"
 
 
 def enlaces(lang, g):
     """Los dos enlaces de arriba de la ficha de la caja, que bajan a cada guía."""
-    tt = TXT[_lg(lang)]
+    tt = TXT[_lg(lang, g)]
     return (f'<p class="gu-link" style="font-weight:700">📖 <a href="#{ANCLA["k"]}" style="color:var(--blood)">{tt["k"].format(n=g["killer"])}</a> · '
             f'<a href="#{ANCLA["m"]}" style="color:var(--blood)">{tt["m"].format(n=g["mapa"])}</a></p>')
 
 
 def secciones(lang, g):
-    """Las dos guías como secciones de la ficha de la caja (FR/DE/IT van en inglés)."""
-    lg = _lg(lang)
+    """Las dos guías como secciones de la ficha de la caja."""
+    lg = _lg(lang, g)
     tt, d = TXT[lg], g[lg]
     pre = "" if lang == "es" else "../"
     ruta = f"{pre}img/guias/{g['dir']}/"

@@ -1,0 +1,1086 @@
+{
+ "A Rotten Harvest": {
+  "ley": "🩸 = Bloodlust · 🌾 = Field Space · 🎭 = aumenta l'Orrore",
+  "err_k_t": "Errori comuni",
+  "err_k": [
+   "<b>Grimlash si muove di 1</b> nella sua Azione del Killer. Quando una carta Terrore mostra l'icona dello <b>stivale</b> (movimento), si muove secondo il suo movimento al livello di 🩸 attuale, non di 1.",
+   "Una cura ❤️ <b>non</b> cura e riduce Harvest Madness insieme: ogni cuore fa l'una o l'altra cosa.",
+   "Quando Harvest Madness <b>scende</b> di un livello, <b>perdi</b> la carta di quel livello."
+  ],
+  "bloques_k": [
+   [
+    "Harvest Madness 🎃 · preparazione",
+    [
+     "Dividi le carte Harvest Madness per livello e mescola ciascun gruppo: <b>3 mazzi</b>.",
+     "Metti l'indicatore sullo spazio iniziale del tracciato Harvest Madness (bordato d'arancione), vicino alla parte alta della plancia del Killer."
+    ]
+   ],
+   [
+    "Harvest Madness 🎃 · come funziona",
+    [
+     "Ogni volta che vedi l'icona 🎃, sposta l'indicatore di <b>1 spazio a destra</b>.",
+     "Quando raggiunge un <b>nuovo livello</b>, pesca <b>2 carte</b> dal mazzo di quel livello, <b>tienine 1</b> e scarta l'altra. Il suo effetto dura finché resti a quel livello o oltre.",
+     "<b>Se superi il livello 3</b> (lo spazio col teschio), <b>perdi la partita</b> immediatamente.",
+     "Quando risolvi una cura ❤️, per ogni cuore scegli: <b>recuperi salute</b> come al solito <b>oppure riduci</b> Harvest Madness di 1. Mai entrambe.",
+     "Se scendi a un livello inferiore, <b>scarta la carta del livello che hai lasciato</b>. Se in seguito ci torni, pesca di nuovo 2 carte e tienine 1. Se il mazzo non basta, rimescola gli scarti di quel livello.",
+     "Gli effetti <b>una volta per turno</b> si usano girando la carta a faccia in giù; torna a faccia in su nel <b>Mantenimento</b>."
+    ]
+   ]
+  ],
+  "err_m_t": "Errori comuni",
+  "err_m": [
+   "I <b>Children non sono Scagnozzi</b>, ma sono Nemici: non risolvono le azioni del Killer o degli Scagnozzi sulle carte Terrore, a meno che la carta non dica che lo fanno i Children.",
+   "<b>Se combini Shady Acres con un altro killer</b>, i Children restano non Scagnozzi: le carte di quel killer che citano gli Scagnozzi non li riguardano.",
+   "Se attacchi i Children e ce ne sono diversi nello spazio, <b>li attacchi tutti</b> e dividi i danni; i danni in eccesso vanno persi.",
+   "Un rapimento in uno spazio <b>senza Vittime</b> non va sprecato: conta come un attacco."
+  ],
+  "bloques_m": [
+   [
+    "Preparazione speciale",
+    [
+     "Mescola le carte <b>Ancient Curse</b> in un mazzo a faccia in giù.",
+     "Metti la carta <b>Children</b> vicino al tabellone, un Child sull'<b>Altar of the Old Gods</b> e gli altri sulla carta.",
+     "Metti il segnalino Azione dei Children <b>sopra</b> le azioni degli Scagnozzi o del Killer sulla carta Finale: agiscono prima di tutti gli altri Nemici."
+    ]
+   ],
+   [
+    "I Children",
+    [
+     "La loro carta indica salute, attacco e movimento. Sono Nemici, non Scagnozzi.",
+     "Agiscono all'<b>inizio della fase del Killer</b>, prima di Scagnozzi e Killer, uno alla volta: prima il più vicino all'Altare.",
+     "A ogni <b>Mantenimento</b> compare un Child sull'Altare, a meno che non siano già fuori tutti e tre o non restino Vittime.",
+     "Si possono attaccare e uccidere: un Child morto torna sulla carta e può ricomparire.",
+     "Le Vittime ti seguono in uno spazio con dei Children, a meno che non ci sia anche il Killer.",
+     "Nella fase Panico, le Vittime in uno spazio con un Child vanno nel panico se in quel turno è stata uccisa almeno una Vittima."
+    ]
+   ],
+   [
+    "Rapimenti",
+    [
+     "Quando un Child risolve l'icona del rapimento in uno spazio con una Vittima, tira un dado.",
+     "<b>1-2:</b> la Vittima viene sacrificata sull'Altare (uccisa). Il Child torna all'Altare, 🩸 sale come al solito e la Vittima va sul retro della prima carta Ancient Curse.",
+     "<b>3-6:</b> non succede nulla."
+    ]
+   ],
+   [
+    "Ancient Curse",
+    [
+     "Con <b>3 Vittime sacrificate</b> sopra, rimuovile e rivela la maledizione, che entra in gioco. Possono esserne attive diverse insieme."
+    ]
+   ],
+   [
+    "Field Space 🌾",
+    [
+     "Gli spazi con l'icona del grano sono Field Space. Molte carte di questa scatola li usano, nel bene e nel male."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "moonshine-jug",
+    "Moonshine Jug",
+    "Scarta per recuperare <b>4 salute</b>."
+   ],
+   [
+    "cowboy-boots",
+    "Cowboy Boots",
+    "2 usi. Muoviti fino a <b>2 spazi</b>."
+   ],
+   [
+    "pilgrims-hat",
+    "Pilgrim's Hat",
+    "Se inizi il movimento in un 🌾, puoi muoverti di <b>1 spazio in più</b>."
+   ],
+   [
+    "farmers-almanac",
+    "Farmer's Almanac",
+    "2 usi. Dopo aver pescato una carta <b>Terrore</b> ma prima di risolverla, puoi metterla in fondo e pescare la successiva."
+   ],
+   [
+    "mechanics-toolbox",
+    "Mechanic's Toolbox",
+    "Scarta per riprendere <b>1 Oggetto scartato</b>, con tutti i suoi usi."
+   ],
+   [
+    "childrens-toys",
+    "Children's Toys",
+    "2 usi. Scambia un <b>Child</b> nel tuo spazio con una Vittima normale."
+   ],
+   [
+    "locus-of-insanity",
+    "Locus of Insanity",
+    "3 usi. Una volta per turno, con 🎭, puoi piazzarti in <b>qualsiasi 🌾</b>."
+   ],
+   [
+    "scythe",
+    "Scythe",
+    "Arma · gittata 0-1 · 1 danno · 2 mani. Quando attacchi Nemici in un 🌾, puoi <b>dividere i danni</b> tra loro. Poi quello spazio diventa <b>Harvested</b> e non è più un 🌾."
+   ],
+   [
+    "pilgrims-musket",
+    "Pilgrim's Musket",
+    "Arma · gittata 1 · 2 danni · 2 mani · 2 usi. <b>Non</b> si può usare contro Nemici in un 🌾."
+   ],
+   [
+    "rusty-pitchfork",
+    "Rusty Pitchfork",
+    "Arma · gittata 0 · 2 danni · 2 mani. Se il tuo Tiro Orrore finale non ha <b>nessun successo</b>, scartala."
+   ],
+   [
+    "decrepit-plow",
+    "Decrepit Plow",
+    "Arma · gittata 0 · 2 danni · 1 mano · 2 usi."
+   ],
+   [
+    "sickle",
+    "Sickle",
+    "Arma · gittata 0 · 1 danno · 1 mano. Nessun limite d'uso."
+   ]
+  ],
+  "falta": "Ancora da fotografare: Bag of Feed, Combine Keys, Corn Cob Pipe e Cornhusk Effigy.",
+  "falta_ev": "Mancano 2 dei suoi 10 eventi: It Lurks Between the Rows e The Ravens Are Circling.",
+  "ev": [
+   [
+    "Umbral Evocation",
+    "Metti il segnalino <b>Harvest Shadow</b> nello spazio del Killer. Ogni volta che tu o una Vittima ci entrate: 🩸."
+   ],
+   [
+    "Acres of Hatred",
+    "Per ogni 🌾 con almeno una Vittima: 🩸 (max 2). Scarta."
+   ],
+   [
+    "“The Fields Are Moving…”",
+    "Metti un segnalino Field su <b>Hayfield</b> e <b>Cow Pasture</b>: diventano 🌾."
+   ],
+   [
+    "Festering Rot",
+    "Ogni volta che una Vittima viene uccisa in un 🌾: 🎭."
+   ],
+   [
+    "It Hungers For Us",
+    "Tutte le Vittime vanno nel panico. Per ogni Vittima nello spazio del Killer o adiacente: 🎭 (max 3). Scarta."
+   ],
+   [
+    "Harvest Cultist",
+    "La Vittima più vicina a te diventa il Cultist. A ogni Mantenimento si muove di 1 spazio verso di te; se è con te, vi muovete entrambi di 1 spazio verso il Killer. Salvarlo dà una ricompensa."
+   ],
+   [
+    "Ralph the Mechanic",
+    "Ralph inizia nel <b>Ralph's Garage</b>. Finché è con te, gli Oggetti a usi limitati che prendi ottengono un uso in più."
+   ],
+   [
+    "Sally McCoy",
+    "Sally inizia nella <b>McCoy Farmhouse</b>. Quando viene salvata, cerca nel mazzo Oggetti le <b>Combine Keys</b>."
+   ]
+  ]
+ },
+ "The Raptor Games": {
+  "ley": "⌛ = Tempo · ✴ = danno · 🩸 = Bloodlust · 💔 = perdi salute · ❤️ = recuperi salute · 🔧 = spazio con l'icona della chiave inglese arancione",
+  "err_k_t": "Attenzione",
+  "err_k": [
+   "Il <b>Pack</b> conta come il Killer a tutti gli effetti; i <b>singoli Raptor</b> sono Scagnozzi. Una carta che dice \"Raptor(s)\" non include il Pack; una che dice \"Pack\" non include i singoli Raptor.",
+   "Vinci quando <b>il Pack</b> viene eliminato, anche se sul tabellone restano singoli Raptor.",
+   "Un Raptor che compare durante la fase del Killer <b>non si attiva</b> fino alla fase del Killer successiva.",
+   "I singoli Raptor <b>si fermano</b> quando entrano (o iniziano a muoversi) in uno spazio con te o una Vittima. Le carte Terrore del luogo non mostrano quell'icona, ma la regola vale comunque."
+  ],
+  "bloques_k": [
+   [
+    "Preparazione speciale",
+    [
+     "Mescola le carte <b>Spawn</b> a faccia in giù accanto alla carta <b>Raptors</b> e metti i meeple dei Raptor su quella carta.",
+     "Il <b>Pack</b> inizia sullo spazio del Killer (K) della carta di preparazione, al posto del meeple del Killer della scatola base."
+    ]
+   ],
+   [
+    "Il Pack",
+    [
+     "Un grande gruppo di Raptor che conta come il Killer a tutti gli effetti.",
+     "La sua salute è il numero di Raptor che lo compongono: parte da <b>5</b> (1 Final Health e 4 salute) <b>senza limite massimo</b>.",
+     "Il Valore d'Attacco sulla plancia del Killer è quanto infligge il Pack per attacco, qualunque sia la sua dimensione."
+    ]
+   ],
+   [
+    "Singoli Raptor",
+    [
+     "I meeple dei Raptor. Sono <b>Scagnozzi</b> a tutti gli effetti.",
+     "Hanno <b>1 salute</b> e usano il Valore di Movimento della plancia del Killer.",
+     "Non attaccano spesso, ma quando lo fanno <b>ognuno</b> infligge 1 ✴."
+    ]
+   ],
+   [
+    "Unirsi al Pack",
+    [
+     "Con l'icona del Pack, i Raptor vanno verso il Pack per il <b>percorso più breve</b>. Se ce ne sono diversi equivalenti, prendono quello che li porta più vicino al Pack prima di fermarsi.",
+     "Un Raptor nello spazio del Pack <b>si unisce</b> subito: rimuovi il meeple e aggiungi 1 salute al Pack per ognuno.",
+     "I meeple rimossi dal tabellone tornano sulla carta Raptors per le comparse future."
+    ]
+   ],
+   [
+    "Comparsa dei Raptor",
+    [
+     "Con l'icona della comparsa, pesca una carta <b>Spawn</b> e fai comparire altrettanti Raptor. Lo spazio si decide con un tiro di dado sulla tabella della carta Raptors; se più spazi sono validi, scegli tu.",
+     "Non compaiono mai in spazi non più accessibili.",
+     "Se i meeple non bastano, il Raptor più vicino al Pack si unisce al Pack e usi il suo meeple; ripeti finché la carta non è risolta.",
+     "Se il mazzo Spawn si esaurisce, mescola gli scarti e pesca.",
+     "Anche l'effetto finale sul tracciato 🩸 fa comparire un Raptor, come una carta Spawn da 1."
+    ]
+   ],
+   [
+    "La tabella di comparsa (carta Raptors)",
+    [
+     "Tira un dado per vedere dove compaiono: <b>1</b> il tuo spazio · <b>2</b> lo spazio verde (uscita) più vicino al Pack · <b>3</b> lo spazio 🔧 più vicino al Pack · <b>4</b> lo spazio verde più lontano dal Pack · <b>5</b> lo spazio 🔧 più lontano dal Pack · <b>6</b> lo spazio più lontano da te.",
+     "Ogni Raptor sciolto: 1 ❤️, un attacco da 1 ✴ e movimento pari a quello del Pack. Non si muovono se iniziano con te o con una Vittima, e si fermano entrando in uno spazio con te o con una Vittima."
+    ]
+   ],
+   [
+    "Come leggere le loro carte",
+    [
+     "La sagoma rossa di più Raptor = l'icona del Pack: i Raptor sciolti vanno verso di essa per unirsi. Le figure gialle = bersaglio tu o la Vittima più vicina. Lo stivale = movimento. Il coltello = attacco (uno per coltello). Il segnale di stop con le figure = si ferma quando raggiunge te o una Vittima. L'uovo rotto = compaiono Raptor.",
+     "\"Pack only\" è solo il Pack; \"Raptors only\", solo quelli sciolti."
+    ]
+   ],
+   [
+    "Finali",
+    [
+     "Hanno tutti due righe: sopra, i Raptor sciolti si muovono verso il Pack e si fermano se raggiungono te o una Vittima; sotto, il Pack prende come bersaglio te o la Vittima più vicina, si muove e attacca.",
+     "<b>Claws Like Knives</b>: il Pack attacca una volta. Il primo danno di ogni attacco è l'icona del cuore barrato.",
+     "<b>Born Hungry</b>: il Pack attacca due volte. Quando viene rivelato, pesca una carta Spawn ma fai comparire i Raptor nel <b>tuo</b> spazio.",
+     "<b>Raptor Rush</b>: il Pack attacca 3 volte. Quando viene rivelato, tutti i Raptor sul tabellone si uniscono al Pack.",
+     "<b>Deadly Quick</b> (Finale Epico): il Pack attacca due volte. Quando viene rivelato, metti il Pack nel tuo spazio e perdi 4 ⌛."
+    ]
+   ],
+   [
+    "Poteri Oscuri",
+    [
+     "<b>Pack Conditioning</b>: ogni volta che un Raptor è adiacente al Pack, aggiungilo al Pack.",
+     "<b>They're Everywhere!</b>: quando peschi carte Spawn, pescane 2 e fai comparire il valore più alto. Poi scartale entrambe.",
+     "<b>Blood Thirsty</b>: ogni volta che il Pack uccide una Vittima, ottiene ❤️.",
+     "<b>Scaly Hide</b> (Potere Oscuro Epico): il Pack e i Raptor ignorano tutti i danni delle carte Reazione."
+    ]
+   ],
+   [
+    "Carte Terrore da spiegare",
+    [
+     "<b>Protect the Brood</b> (2 copie): compaiono Raptor (uovo) e metti il Pack dove sono comparsi. Se la carta Spawn era uno <b>0</b>, tira un dado e piazza il Pack con la tabella della carta Raptors. Poi il Pack prende come bersaglio te o una Vittima, si muove e attacca.",
+     "<b>Share the Feast</b>: il Pack sceglie il bersaglio, si muove e attacca; i Raptor sciolti si muovono verso il Pack (fermandosi su di te o su una Vittima). Se qualcuno si è unito al Pack, il Pack attacca di nuovo.",
+     "<b>No Escape</b>: se non ci sono Raptor sul tabellone, scartala e pesca la carta Terrore successiva. Altrimenti, il Raptor più vicino a ogni spazio verde (uscita) viene piazzato lì, e quelli sulle uscite attaccano. Se nessuno è stato attaccato, 🎭🎭.",
+     "<b>Predatory Instincts</b> (Potere Oscuro Minore): il Pack infligge 1 ✴ in più per coltello.",
+     "<b>Survival Instincts</b> (Potere Oscuro Minore): a ogni Mantenimento il Pack ottiene ❤️."
+    ]
+   ]
+  ],
+  "err_m_t": "Attenzione",
+  "err_m": [
+   "Gli spazi di <b>Lava</b> non sono più accessibili a nessuno, Raptor e T-Rex compresi.",
+   "Se <b>Game Makers</b> viene pescato durante la preparazione, scartalo e pescane un altro."
+  ],
+  "bloques_m": [
+   [
+    "Preparazione speciale",
+    [
+     "Metti gli indicatori <b>Electric Fence</b> nelle sezioni verdi indicate sulla carta di preparazione. In quelle rosse non va niente.",
+     "Mescola le <b>3 carte Lava</b> a faccia in giù e metti accanto i segnalini Lava.",
+     "Metti la carta <b>T-Rex</b> vicino all'area di gioco e il suo meeple sullo spazio iniziale della carta."
+    ]
+   ],
+   [
+    "Recinzioni elettriche",
+    [
+     "Ci sono 3 recinzioni: A, B e C. Finché c'è un indicatore, il passaggio è bloccato e gli spazi ai due lati <b>non</b> sono adiacenti.",
+     "<b>Panico</b>: chi va nel panico verso una recinzione bloccata resta dov'è.",
+     "<b>Più lontano / più vicino</b>: conta solo i percorsi non bloccati. Se tutti e 3 gli indicatori sono piazzati e l'unico spazio o bersaglio è dall'altra parte, conta come se non ci fossero recinzioni.",
+     "<b>Bersaglio dei Nemici</b>: senza un percorso libero verso il bersaglio, il Nemico non si muove per quell'azione, ma le sue icone d'attacco si risolvono comunque nel suo spazio.",
+     "<b>Piazzare qualcuno</b>: le recinzioni non influiscono sugli effetti che piazzano qualcuno.",
+     "A ogni <b>Mantenimento</b>, tira il dado delle recinzioni: se quella recinzione ha un indicatore, rimuovilo; altrimenti, piazzane uno."
+    ]
+   ],
+   [
+    "Il T-Rex",
+    [
+     "Inizia rinchiuso nel <b>Dino Pen</b>. Con la sua icona (l'impronta), sposta il suo meeple di uno spazio a destra sulla carta T-Rex.",
+     "Con <b>\"Break out!\"</b>, metti il suo meeple nel Dino Pen sul tabellone e il suo segnalino azione sotto l'Azione del Killer sulla carta Finale. Da quel momento, ignora la sua icona.",
+     "<b>Non</b> è né un Killer né uno Scagnozzo: non può essere attaccato, danneggiato o ucciso. La sua azione si risolve dopo le Azioni degli Scagnozzi e del Killer del Finale.",
+     "Le Vittime non ti seguono nel suo spazio (a meno che un effetto non permetta loro di seguirti in quello del Killer). Nella fase Panico, tutti quelli nel suo spazio vanno nel panico, che qualcuno sia morto o no in quel turno.",
+     "<b>Movimento 2</b>, con l'icona ANY: si ferma appena raggiunge uno spazio con <b>chiunque</b> (te, Vittime, Nemici...), e non si muove se nel suo spazio c'è già qualcuno.",
+     "<b>Non infligge danni: uccide</b> un bersaglio nel suo spazio. Priorità: Vittima, Scagnozzo, tu, Killer. Se attacca te o il Killer, muori all'istante, senza rivelare il Final Health.",
+     "Contro un Nemico composto da più unità (il Pack dei Raptor, un'orda di zombi...) uccide <b>una</b> unità, cioè 1 danno."
+    ]
+   ],
+   [
+    "Il vulcano",
+    [
+     "La <b>prima volta</b> che risolvi l'icona del vulcano, erutta: tutti quelli sul <b>Volcano</b> subiscono 💔, chi resta nello spazio va nel panico e metti lì il segnalino Lava del Volcano: non è più accessibile.",
+     "<b>Dopo</b>, la lava si espande in uno spazio adiacente: pesca una carta <b>Lava</b> per vedere quale e seguila.",
+     "Quando tutti i <b>4 segnalini Lava</b> sono sul tabellone, ignora l'icona del vulcano.",
+     "Le 3 carte Lava: <b>North Beach</b>, <b>Generator</b> e <b>Smuggler's Cove</b>. Tutti quelli lì subiscono 💔, chi resta va nel panico finché non lascia lo spazio, e metti il suo segnalino Lava."
+    ]
+   ],
+   [
+    "Spazi speciali",
+    [
+     "I <b>3 spazi d'angolo</b> con l'icona della spiaggia sono spazi <b>Beach</b>.",
+     "I <b>2 spazi sul bordo</b> con l'icona della scogliera sono spazi <b>Cliff</b>.",
+     "Diverse carte luogo vi fanno riferimento."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "shotgun",
+    "Shotgun",
+    "Arma · gittata 0-1 · 3 ✴ · 2 mani · 2 usi. Dividi i danni: metà (per eccesso) a un Nemico nel tuo spazio e metà (per difetto) a uno in uno spazio adiacente. I danni a uno spazio senza Nemici vanno persi."
+   ],
+   [
+    "throwing-axe",
+    "Throwing Axe",
+    "Arma · gittata 0-1 · 1 ✴ · 1 mano. Se la usi a gittata 1, scartala."
+   ],
+   [
+    "safari-knife",
+    "Safari Knife",
+    "Arma · gittata 0 · 1 ✴ · 1 mano."
+   ],
+   [
+    "flaming-torch",
+    "Flaming Torch",
+    "Arma · gittata 0 · 1 ✴ · 1 mano · 3 usi. Usala per attaccare o per ignorare 1 ✴ di un attacco nemico."
+   ],
+   [
+    "tranquilizer-gun",
+    "Tranquilizer Gun",
+    "1 mano · 2 usi. In qualsiasi momento, infliggi 1 ✴ a un Nemico in uno spazio adiacente; se si stava muovendo, il suo movimento termina."
+   ],
+   [
+    "wildlife-net",
+    "Wildlife Net",
+    "2 mani. Scartala quando vieni attaccato da un Nemico per ignorare quell'attacco e ogni attacco di quel Nemico per il resto del turno."
+   ],
+   [
+    "whistle",
+    "Whistle",
+    "Una volta per fase Azione, spendi 1 ⌛: tutte le Vittime adiacenti si spostano nel tuo spazio, poi tutti i Nemici ti prendono come bersaglio e si muovono. Finché ce l'hai, ti segue una Vittima in più."
+   ],
+   [
+    "bait",
+    "Bait",
+    "Scarta per piazzare il <b>Goat</b> nel tuo spazio o in uno adiacente. Nemici e T-Rex prendono sempre come bersaglio il Goat finché non viene ucciso. Ha 1 ❤️ e non si muove."
+   ],
+   [
+    "safari-rover-keys",
+    "Safari Rover Keys",
+    "4 usi. Metti il segnalino <b>Rover</b> nel tuo spazio; si muove con te. Con il Rover, fino a 3 Vittime possono seguirti e puoi spendere un uso per muoverti di 1 spazio. Finiti gli usi, è senza benzina: scarta la carta e il Rover."
+   ],
+   [
+    "bush-plane",
+    "Bush Plane",
+    "Quando salvi almeno una Vittima all'<b>Airstrip</b>, puoi scartarlo per salvare subito un'altra Vittima da qualsiasi spazio."
+   ],
+   [
+    "enhanced-goggles",
+    "Enhanced Goggles",
+    "Puoi ignorare tutte le icone 💔 sulle carte Azione <b>Walk</b> e <b>Sprint</b>."
+   ],
+   [
+    "generator-codes",
+    "Generator Codes",
+    "Scarta per aggiungere o rimuovere qualsiasi indicatore <b>electric fence</b>."
+   ],
+   [
+    "safari-rifle",
+    "Safari Rifle",
+    "Arma · gittata 1-2 · 2 mani · 2 usi. Non può modificare una carta Azione e va usata senza. Una volta per turno, spendi ⌛ per fare un Tiro Orrore. Con un successo: 2 ✴ a 1 Nemico entro gittata."
+   ],
+   [
+    "cattle-prod",
+    "Cattle Prod",
+    "1 mano · 3 usi. Sposta un Nemico nel tuo spazio in uno spazio adiacente."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "Se è a faccia in su su un mazzo Oggetti, puoi prenderlo gratis mentre sei nel suo spazio 🔧. Scarta per recuperare ❤️❤️❤️."
+   ],
+   [
+    "private-stash",
+    "Private Stash",
+    "Quando lo prendi, scartalo e scegli: ciò che mostrano le sue icone, o la prima carta di un qualsiasi mazzo Oggetti."
+   ]
+  ],
+  "falta": "",
+  "ev": [
+   [
+    "Supply Drop",
+    "Metti i 3 segnalini Supply sugli spazi Beach e Cliff più lontani da te (uno ciascuno). In uno spazio con un segnalino puoi spendere 2 ⌛ per rimuoverlo e prendere un Oggetto a caso tra quelli messi da parte nella preparazione. Scarta quando non restano segnalini."
+   ],
+   [
+    "Fierce Competitors",
+    "Per ogni Vittima che salvi: ⌛."
+   ],
+   [
+    "Terrified Child",
+    "La Vittima più lontana da te è il Terrified Child. Finché restano altre Vittime, non ti segue e non può essere salvato, preso come bersaglio o ucciso. Salvato: sblocca la tua Abilità Suprema o riduci l'Orrore a 0. Ucciso: 🩸 al massimo."
+   ],
+   [
+    "Game Makers",
+    "Se pescato durante la preparazione, scartalo e pescane un altro. Altrimenti risolvi le sue tre icone (vulcano, un nuovo Evento e l'artiglio arancione) e scartalo."
+   ],
+   [
+    "The Alpha",
+    "La Vittima più vicina a te è l'Alpha. Se ucciso: 🩸. Quando qualcuno con l'Alpha o accanto a lui sta per essere attaccato (non i Nemici), l'Alpha si sposta nel suo spazio e tiri: <b>1-2</b> l'Alpha muore · <b>3-4</b> l'attacco prosegue · <b>5-6</b> viene annullato."
+   ],
+   [
+    "The Power Is Down",
+    "Rimuovi tutti gli indicatori delle recinzioni elettriche e risolvi l'artiglio arancione una volta. Non tirare il dado delle recinzioni nel prossimo Mantenimento. Scarta alla fine di quel Mantenimento."
+   ],
+   [
+    "Power Surge",
+    "Piazza tutti gli indicatori delle recinzioni elettriche. Non tirare il loro dado nel prossimo Mantenimento. Scarta alla fine di quel Mantenimento."
+   ],
+   [
+    "Tropical Storm",
+    "Nella prossima fase Azione, tira un dado in meno (minimo 1) in ogni Tiro Orrore. Se non fai nessun Tiro Orrore: 3 ⌛. Scarta alla fine di quella fase."
+   ],
+   [
+    "Herbal Remedies",
+    "Prendi una Vittima uccisa a tua scelta e mettila nel tuo spazio. Scarta."
+   ],
+   [
+    "The Hunter",
+    "Metti l'Hunter nello spazio più lontano da te. A ogni Mantenimento, l'Hunter va nel panico e infligge ✴ a tutti nel suo spazio."
+   ]
+  ]
+ },
+ "Bad Times at Buddyland": {
+  "ley": "⌛ = Tempo · ✴ = danno · ❤️ = salute · 🩸 = Bloodlust · 🎭 = aumenta l'Orrore · ⊘🎭 = la maschera barrata della carta",
+  "err_k_t": "Attenzione",
+  "err_k": [
+   "<b>Billy non può essere attaccato finché c'è un Buddy nel suo spazio.</b> I Buddy lo proteggono a ogni costo.",
+   "Finché una <b>Power Source è Attiva</b>, l'icona della batteria con il cuore cura Billy di 1 ❤️. Spegnerle è la chiave.",
+   "Un Buddy che compare durante la fase del Killer non si attiva fino alla fase del Killer successiva."
+  ],
+  "bloques_k": [
+   [
+    "Preparazione speciale",
+    [
+     "<b>Prima</b> di rivelare la carta di preparazione, metti <b>4</b> segnalini <b>Power Source</b> con il lato Attivo in su (batteria verde con +) in 4 spazi diversi, nessuno adiacente a un altro. Metti da parte il 5°: potrebbe entrare in gioco più avanti.",
+     "Mescola i segnalini del tracciato Bloodlust <b>A</b> e <b>B</b> a faccia in giù, per tipo. Mettine 6 a faccia in giù sulla plancia del Killer, ciascuno nel suo spazio corrispondente per colore e icona. I 2 avanzati (uno per tipo) non si usano né si rivelano.",
+     "Mescola le 5 carte <b>Buddy</b> a faccia in giù: è il mazzo Buddy. Metti da parte le 2 carte <b>Special Buddy</b>: potrebbero entrare più avanti e seguono le stesse regole.",
+     "Fai comparire un Buddy (vedi sotto)."
+    ]
+   ],
+   [
+    "Tracciato Bloodlust",
+    [
+     "Quando Bloodlust raggiunge un livello con un segnalino, rivelalo e applica il suo effetto."
+    ]
+   ],
+   [
+    "Power Source",
+    [
+     "Disattivare: gira il segnalino sul lato Inattivo (batteria rossa barrata). Puoi farlo spendendo ⌛ mentre sei nel suo spazio, anche se ci stai solo passando.",
+     "Se una Inattiva viene Attivata, girala di nuovo sul verde.",
+     "Con l'icona della <b>batteria con il cuore</b>, Billy recupera 1 ❤️ se almeno una Power Source è Attiva. Se nessuna lo è, ignorala."
+    ]
+   ],
+   [
+    "I Buddy",
+    [
+     "Sono <b>Scagnozzi</b> e seguono le normali regole degli Scagnozzi (pag. 32 del regolamento base). Ogni carta è un animatronico con salute, attacco e movimento propri.",
+     "<b>Far comparire un Buddy</b>: rivela la prima carta del mazzo, mettici sopra i suoi indicatori di salute e piazza il suo segnalino in uno spazio adiacente a Billy, se possibile senza Buddy. Se Billy non è più in gioco, non compare nulla.",
+     "<b>Attivazione</b>: ogni Buddy ha un numero di Iniziativa (cerchio, in alto a destra). Le Azioni degli Scagnozzi e le carte Terrore si risolvono dall'Iniziativa più bassa alla più alta.",
+     "<b>Uccidere un Buddy</b>: rimuovi il suo segnalino, prendi la <b>Kill Reward</b> indicata sulla carta e rimuovi la carta dal gioco. Se muore fuori dalla fase Azione, prendi la ricompensa all'inizio della fase Azione successiva.",
+     "Esempio: <b>Toby</b> ha 3 ❤️, Iniziativa 1, attacco 1, movimento 1 e Kill Reward 2 ⌛."
+    ]
+   ],
+   [
+    "Finali",
+    [
+     "Hanno tutti due righe: sopra, Billy prende come bersaglio te o la Vittima più vicina, si muove e attacca; sotto, l'icona della batteria con il cuore e poi sceglie di nuovo il bersaglio.",
+     "<b>Base Finale</b> (l'orso rosa): attacca senza muoversi; sotto, batteria con il cuore, bersaglio e attacco.",
+     "<b>Encore</b>: sotto, si muove due volte e attacca due volte.",
+     "<b>Sizzling Power</b>: se almeno una Power Source è Attiva, ripeti una volta la sua Azione del Killer.",
+     "<b>It's Showtime!</b>: non puoi giocare carte Reazione se nel tuo spazio c'è più di un Nemico.",
+     "<b>Power Surge</b> (Finale Epico): quando viene rivelato, fai comparire <b>Boris</b>. Devi uccidere sia Billy <b>sia</b> Boris per vincere."
+    ]
+   ],
+   [
+    "Poteri Oscuri",
+    [
+     "<b>Introducing... Billy Jr.!</b>: fai comparire Billy Jr. nello spazio di Billy.",
+     "<b>Deathlust</b>: +1 al Movimento e all'Attacco di Billy.",
+     "<b>Endless Power</b>: quando riveli il segnalino Final Health di Billy, rivelane uno in più per ogni Power Source Attiva e applica quello che cura di più.",
+     "<b>Merciless Minions</b> (Potere Oscuro Epico): nell'Azione degli Scagnozzi del Finale, aggiungi un movimento prima dell'attacco.",
+     "<b>Backup Generator</b> (Minore): durante il Mantenimento, Attiva una Power Source Inattiva a tua scelta (se possibile). Se ne è stata Attivata una, rimuovi un ❤️ da questa carta.",
+     "<b>Renewable Energy</b> (Minore): non puoi Disattivare nessuna Power Source."
+    ]
+   ],
+   [
+    "Le carte Terrore di Billy",
+    [
+     "<b>Animatronical</b>: fai comparire un Buddy e pesca la carta Terrore successiva.",
+     "<b>\"He's Turning Them Back On!\"</b>: se non ci sono Power Source Inattive, scarta e pescane un'altra. Altrimenti metti Billy nello spazio più vicino con una Inattiva, Attivala e 🎭.",
+     "<b>\"Eyes in the Dark\"</b>: il Killer prende come bersaglio te (la Final Girl) e si muove due volte; poi 🎭 una volta per ogni Nemico nel tuo spazio e negli spazi adiacenti, fino al numero di Power Source Attive.",
+     "<b>\"It's a Short Circuit!\"</b>: se nessuno spazio con una Power Source Attiva ha Vittime, scarta e pescane un'altra. Altrimenti, in ognuno di quegli spazi con una Vittima, una Vittima viene uccisa, le altre vanno nel panico e quella Power Source viene Disattivata.",
+     "<b>\"They're Here for Blood!\"</b>: se non ci sono Buddy o non ci sono Vittime, scarta e pescane un'altra. Altrimenti, solo i Buddy: bersaglio la Vittima più vicina, movimento e attacco. Se è stata uccisa almeno una Vittima, +🩸."
+    ]
+   ]
+  ],
+  "err_m_t": "Attenzione",
+  "err_m": [
+   "Buddyland <b>non ha preparazione speciale</b>: le Power Source appartengono a Billy."
+  ],
+  "bloques_m": [
+   [
+    "Il luogo",
+    [
+     "I <b>4 spazi centrali</b> con l'icona del cabinato sono spazi <b>Arcade</b>. Diverse carte vi fanno riferimento.",
+     "Spazi con nome: <b>Party Room</b>, <b>Kitchen</b>, <b>Dining Area</b>, <b>Entrance</b>, <b>Prize Counter</b>, <b>Arcade</b>, <b>Janitor's Closet</b>, <b>Bathroom</b>, <b>Jungle Gym</b> e <b>Ball Pit</b>. Dining Area, Prize Counter e Ball Pit hanno mazzi Oggetti a lato."
+    ]
+   ],
+   [
+    "Le carte Terrore di Buddyland",
+    [
+     "<b>Hungry for Blood</b>: se non ci sono Vittime in Kitchen, Party Room o Dining Area, scarta e pescane un'altra. Altrimenti metti il Killer in quello con più Vittime; prende come bersaglio una Vittima o te e attacca due volte.",
+     "<b>Panic at the Disco</b>: se non ci sono Vittime negli spazi Arcade, scarta e pescane un'altra. Altrimenti tutte le Vittime in ogni spazio Arcade vanno nel panico; quella che fugge in uno spazio con un Nemico viene uccisa. Se non è stata uccisa nessuna Vittima, +🩸.",
+     "<b>\"How'd They Sneak In?\"</b>: tira 3 dadi e metti una Vittima per dado: 1-2 Jungle Gym, 3-4 Dining Area, 5-6 Party Room. Poi un Evento.",
+     "<b>\"They Want Her!\"</b>: tutte le Vittime nel tuo spazio vanno nel panico, sposta tutti i Nemici di uno spazio verso di te, 🎭 per ogni Nemico nel tuo spazio, poi un Evento.",
+     "<b>\"It's Play Time!\"</b>: tira un dado. 1-3: metti il Killer con il bersaglio più vicino. 4-6: prende come bersaglio una Vittima o te e attacca. Ripeti altre 5 volte; puoi annullare una ripetizione per ogni carta Azione scartata dalla mano, decidendo tutto prima."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "janitors-mop",
+    "Janitor's Mop",
+    "Arma · gittata 0 · 1 ✴ · 2 mani. Una volta per fase Azione, se sei solo in uno spazio, puoi spendere 2 ⌛ per ⊘🎭."
+   ],
+   [
+    "security-bot",
+    "Security Bot",
+    "Metti il segnalino <b>Bot</b> nel tuo spazio. Quando ottieni movimento, puoi usarlo per muovere il Bot invece. Fino a 2 Vittime possono seguire il Bot, e le Vittime su un'uscita con il Bot possono essere salvate."
+   ],
+   [
+    "security-badge",
+    "Security Badge",
+    "Quando lo prendi, prendi anche la carta Azione <b>Planning</b>. Le Vittime nel tuo spazio non vanno mai nel panico."
+   ],
+   [
+    "arcade-token",
+    "Arcade Token",
+    "Scarta mentre sei in uno spazio <b>Arcade</b> per spendere 3 ⌛ e ottenere 3 ⊘🎭."
+   ]
+  ],
+  "falta": "Ancora da fotografare: 12 dei suoi 16 Oggetti e 3 delle sue 5 preparazioni (Buddy Day, Birthday Bash e Pizza Party).",
+  "ev": [
+   [
+    "Birthday Girl",
+    "La Birthday Girl inizia nella <b>Party Room</b>. Se è sola durante la fase Panico, va nel panico. Salvata: 4 ⌛. Uccisa: 🩸."
+   ],
+   [
+    "Nick the Janitor",
+    "Nick inizia nel <b>Janitor's Closet</b> e può seguirti anche nello spazio del Killer. Quando entra in uno spazio con un Nemico, gli infligge 2 ✴; poi lascia il tabellone e torna nel Closet al prossimo Mantenimento. Ucciso: 2 🩸."
+   ],
+   [
+    "Sing-A-Long",
+    "A ogni Mantenimento: 🎭. Scarta quando il livello di Orrore raggiunge la zona rossa."
+   ],
+   [
+    "Pizza Delivery",
+    "La Vittima più vicina all'<b>Entrance</b> è il Pizza Guy. Finché è nel tuo spazio, puoi tirare 2 dadi in più quando risolvi una carta Azione <b>Search</b>. Se viene ucciso, tutte le Vittime nel suo spazio e negli spazi adiacenti vanno nel panico."
+   ]
+  ],
+  "falta_ev": "Mancano 6 dei suoi 10 eventi: Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans e Tragic Collapse."
+ },
+ "The Green Terror": {
+  "ley": "⌛ = Tempo · ✴ = danno · ❤️ = recuperi salute · 💔 = perdi salute · 🎭 = aumenta l'Orrore · ⊘🎭 = riduci l'Orrore · 🎲 = dado · 🔧 = spazio con l'icona della chiave inglese arancione",
+  "err_k_t": "Attenzione",
+  "err_k": [
+   "Se la attacchi mentre è Nascosta e lei non è nello spazio che hai attaccato, <b>ti tende un'imboscata</b> (anche se ha attaccato qualcun altro): subisci la <b>Penalità d'Imboscata</b> sull'ultima carta del suo Percorso.",
+   "Non puoi mai guardare le carte Movement scartate."
+  ],
+  "bloques_k": [
+   [
+    "Preparazione speciale",
+    [
+     "Metti le carte Azione <b>Track</b> nel Tableau delle Azioni.",
+     "Metti la carta <b>Attack Resolution</b>, i segnalini <b>Damage</b> e il segnalino <b>Attack</b> (il mirino) accanto all'area di gioco.",
+     "Mescola le carte <b>Movement</b> e metti il mazzo a faccia in giù accanto al tabellone. Distribuisci 1 carta a faccia in giù accanto, lasciando spazio per altre 5 al massimo.",
+     "Dopo aver rivelato la carta di preparazione, <b>non</b> mettere Volk'ar sul tabellone: il suo meeple va sul retro della carta <b>Finale</b>, nello spazio indicato. Metti un indicatore <b>Origin</b> dove inizierebbe il Killer e l'altro su quella carta Movement a faccia in giù."
+    ]
+   ],
+   [
+    "Nascosta o Visibile",
+    [
+     "Volk'ar <b>non ha Valore di Movimento</b>: si muove lungo il suo <b>Percorso</b>, la fila di carte Movement.",
+     "<b>Nascosta</b>: non si vede, ma è SEMPRE in qualche spazio, quello indicato dal suo Percorso. Il suo meeple è sulla carta Finale. Se è Nascosta all'inizio della fase del Killer, risolvi l'Azione del Killer <b>superiore</b> del Finale.",
+     "<b>Visibile</b>: il suo meeple è sul tabellone e si vede normalmente. Se è Visibile all'inizio della fase del Killer, risolvi l'Azione del Killer <b>inferiore</b>.",
+     "La <b>carta Origin</b> è la prima carta del Percorso (ha sopra un indicatore Origin) e indica da dove inizia il suo movimento nascosto."
+    ]
+   ],
+   [
+    "Costruire il Percorso",
+    [
+     "Con l'icona dell'<b>occhio</b>, pesca una carta Movement e mettila <b>a faccia in su</b> nel posto successivo del Percorso. Con l'<b>occhio barrato</b>, mettila <b>a faccia in giù</b>.",
+     "Se è Visibile quando si risolve un occhio barrato, diventa subito Nascosta: metti un indicatore Origin sulla nuova carta e l'altra nel suo spazio attuale, e il suo meeple torna sulla carta Finale.",
+     "Se il mazzo si esaurisce, mescola gli scarti in un nuovo mazzo."
+    ]
+   ],
+   [
+    "Quando esce allo scoperto",
+    [
+     "Risolve il suo Percorso e si rivela quando: risolvi l'icona <b>Reveal</b> su una carta, si aggiunge una <b>6ª</b> carta al Percorso, oppure la danneggi mentre è Nascosta (vedi sotto).",
+     "Se la 6ª carta arriva mentre risolvi l'Azione del Killer del Finale o una carta Terrore (o altra), finisci prima quella carta. Potrebbero esserci più di 6 carte da risolvere.",
+     "Quando si rivela: 1) metti il suo meeple nello spazio dell'indicatore Origin (anche se non è più accessibile) e metti entrambi gli Origin accanto al mazzo. 2) Partendo dalla carta Origin, risolvi ogni carta del Percorso una alla volta, girandola se serve: lei si muove, e attacca dove si trova se la carta lo dice. Le restrizioni di movimento del Killer valgono anche per lei, e a volte non si muoverà. 3) Se tu o lei dovete rivelare il segnalino Final Health, aspetta che tutte le carte siano risolte. 4) Scarta le carte del Percorso."
+    ]
+   ],
+   [
+    "Attaccarla mentre è Nascosta",
+    [
+     "Puoi scegliere come bersaglio qualsiasi spazio entro gittata come se lei fosse lì. Metti lì il segnalino <b>Attack</b>, risolvi l'attacco e tieni il conto dei danni con i segnalini Damage sulla carta Attack Resolution.",
+     "Se non infliggi danni, resta Nascosta e il Percorso non si risolve. Se infliggi danni, il suo Percorso si risolve.",
+     "Se finisce nello spazio con il tuo segnalino Attack, subisce i danni! Se finisce altrove, l'attacco non ha avuto effetto e lei ti tende un'imboscata: risolvi la <b>Penalità d'Imboscata</b>, la fascia rossa in fondo all'ultima carta del suo Percorso.",
+     "Dopo, scarta i segnalini Damage e rimuovi il segnalino Attack.",
+     "Se hai attaccato il tuo stesso spazio, lei finisce lì e l'ultima carta ha una riga di Attacco del Killer, i due attacchi avvengono contemporaneamente."
+    ]
+   ],
+   [
+    "Mentre è Nascosta",
+    [
+     "Se un effetto ti chiede di piazzare qualcosa o di contare spazi rispetto al Killer, usa lo spazio dell'indicatore Origin.",
+     "Se un effetto ti chiede di piazzare il Killer, ignoralo.",
+     "Se una carta ha una riga di Azione del Killer, trattala come un occhio barrato.",
+     "Le Vittime non vanno nel panico durante la fase Panico."
+    ]
+   ],
+   [
+    "Seguirne le tracce",
+    [
+     "La carta Azione <b>Track</b> (2 ⌛) gira le carte del Percorso: con 3★ riveli la carta Origin <b>oppure</b> 2 altre carte; con 2★, 2 carte (non l'Origin); con 1★, 1 carta (non l'Origin). La riga rossa: Volk'ar ▸ occhio barrato.",
+     "Se tutte le carte del Percorso sono a faccia in su sai <b>esattamente</b> dov'è. Se qualcuna è a faccia in giù, devi indovinare."
+    ]
+   ],
+   [
+    "Le sue carte Movement",
+    [
+     "Il mazzo ne ha 22, con ripetizioni. Ognuna dice come si muove; alcune hanno una riga d'attacco (🎯 Final Girl o Vittima ▸ 🔪) e la fascia rossa in fondo è la <b>Penalità d'Imboscata</b>. Nessuna conta lo spazio in cui si trova già. Quelle diverse che abbiamo visto:",
+     "2 spazi verso lo spazio 🔧 più vicino (pareggi: ordine alfabetico) · attacco · imboscata 🎭🎭",
+     "1 spazio verso lo spazio 🔧 più vicino (pareggi: ordine alfabetico inverso) · imboscata 2 ⌛",
+     "3 spazi verso lo spazio 🔧 più vicino (pareggi: ordine alfabetico inverso) · attacco · imboscata 2 schizzi di sangue",
+     "2 spazi verso lo spazio con nome più vicino (pareggi: ordine alfabetico inverso) · imboscata 1 schizzo di sangue",
+     "1 spazio verso lo spazio con nome più vicino (pareggi: ordine alfabetico) · attacco · imboscata 🎭",
+     "3 spazi verso lo spazio con icona verde più vicino (pareggi: numero di panico più basso) · imboscata 1 schizzo di sangue",
+     "2 spazi verso lo spazio con icona verde più vicino (pareggi: numero di panico più alto) · attacco 🔪🔪 · imboscata 🎭",
+     "1 spazio verso lo spazio con icona verde più vicino (pareggi: numero di panico più basso) · attacco · imboscata 3 ⌛",
+     "Muoviti di 1 spazio su un ①, ② o ③ (sei carte, con o senza attacco) · imboscate: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ o schizzi di sangue",
+     "Non si muove e recupera ❤️ (due carte) · imboscata 🎭🎭 o scarta una carta Azione a caso"
+    ]
+   ]
+  ],
+  "err_m_t": "Attenzione",
+  "err_m": [
+   "I <b>Soldati</b> ti seguono <b>nello spazio del Killer</b>, a differenza delle Vittime normali.",
+   "All'inizio, salvare un Soldato costa <b>2 ⌛</b> e un Soldato da solo non infligge danni.",
+   "Nessuno può muoversi controcorrente, contro le frecce."
+  ],
+  "bloques_m": [
+   [
+    "Preparazione speciale",
+    [
+     "Metti il segnalino <b>Huey</b> nella <b>Clearing</b>.",
+     "Metti le carte Azione <b>Train</b> nel Tableau delle Azioni.",
+     "Metti la carta <b>Soldiers</b> e i cubetti Azione accanto all'area di gioco. Mettici sopra gli <b>8</b> segnalini Potenziamento: i 2 iniziali (stella verde) con il lato <b>Sbloccato</b> in su e gli altri 6 con il lato <b>Bloccato</b> in su (lucchetto)."
+    ]
+   ],
+   [
+    "I Soldati",
+    [
+     "Ogni Vittima normale è un <b>Soldato</b>. Si comportano come Vittime normali per quasi tutto, ma ti seguono nello spazio del Killer e possono ricevere ordini.",
+     "L'<b>Archeologist</b> e il <b>Rebel Leader</b> non sono Soldati e non possono ricevere ordini."
+    ]
+   ],
+   [
+    "Potenziamenti",
+    [
+     "Ci sono Potenziamenti <b>Azione</b> (segnalini con quadratini) e Potenziamenti <b>Abilità</b> (senza quadratini). All'inizio i Soldati ne hanno solo due di Azione: muoversi e attaccare. La carta Azione <b>Train</b> ne sblocca altri.",
+     "Per Sbloccare: scegli un segnalino e giralo dal lucchetto al lato Sbloccato. Se un effetto dice di Bloccarne uno, giralo di nuovo.",
+     "<b>Attacco</b> (ne inizi con uno Sbloccato e uno Bloccato): un Soldato o un gruppo attacca i Nemici entro la propria gittata.",
+     "<b>Movimento</b> (uguale, uno e uno): un gruppo di Soldati si muove di 1 spazio.",
+     "<b>Salvare i Soldati</b>: non vogliono essere salvati, vogliono combattere. Salvarne uno costa 2 ⌛; Sbloccato, non costa Tempo.",
+     "<b>Fuoco amico</b>: ogni volta che attaccano, tira un dado per ogni Soldato coinvolto. Con 1-2 uno di loro muore. Sbloccato, niente più fuoco amico.",
+     "<b>Gittata d'attacco</b>: all'inizio attaccano solo il proprio spazio. Sbloccato, anche uno adiacente.",
+     "<b>Danni</b>: all'inizio infliggono ✴ pari a Soldati ÷ 2, arrotondato <b>per difetto</b> (uno non infligge nulla, tre infliggono 1). Sbloccato, arrotondato <b>per eccesso</b> (uno infligge 1, tre infliggono 2)."
+    ]
+   ],
+   [
+    "Dare ordini ai Soldati",
+    [
+     "Durante la fase Azione: scegli lo spazio con i Soldati, scegli un segnalino Potenziamento Azione e metti un cubetto sul suo quadratino più a sinistra, poi risolvi l'Azione per tutti i Soldati in quello spazio.",
+     "Non puoi usare un'Azione se nella sua riga c'è già un cubetto.",
+     "Durante il Mantenimento, sposta tutti i cubetti di un quadratino a destra. Quando un cubetto esce dall'ultimo quadratino, è di nuovo disponibile."
+    ]
+   ],
+   [
+    "L'Huey",
+    [
+     "Lo spazio dell'Huey conta come spazio d'uscita (l'icona verde). Nello stesso spazio dell'Huey puoi salvare lì un numero qualsiasi di Vittime.",
+     "Poi l'Huey viene rimosso e la Clearing smette di essere un'uscita. Torna solo se un effetto di gioco lo rimette."
+    ]
+   ],
+   [
+    "Il fiume",
+    [
+     "Ci sono 4 spazi River: <b>Waterfall</b>, <b>Upper River</b>, <b>Central River</b> e <b>Lower River</b>.",
+     "Seguendo la corrente (le frecce) puoi raggiungere qualsiasi spazio River con 1 movimento: da Waterfall a Lower River con un solo successo di Walk. Attraversi gli spazi intermedi e ne risolvi gli effetti.",
+     "Anche i Soldati si muovono così; i Nemici no: scendono solo in uno spazio River adiacente.",
+     "Nessuno (tu, Vittime o Nemici) può muoversi controcorrente. Lo spazio a monte conta comunque come adiacente.",
+     "La <b>Wet Suit</b> ti permette di muoverti controcorrente, ma le Vittime non possono seguirti."
+    ]
+   ],
+   [
+    "Spazi",
+    [
+     "Con nome: <b>Lower</b>, <b>Central</b> e <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> e <b>Cave</b>.",
+     "Gli spazi 🔧 sono Ancient Ruins, Rebel Camp e Supply Depot, ognuno con il proprio mazzo Oggetti a lato del tabellone."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "bowie-knife",
+    "Bowie Knife (Pig Sticker)",
+    "Arma · gittata 0 · 1 ✴ · 1 mano. Se hai un Bowie Knife in ogni mano, puoi usarli entrambi quando attacchi."
+   ],
+   [
+    "bowie-knife-2",
+    "Bowie Knife (Goat Slicer)",
+    "Arma · gittata 0 · 1 ✴ · 1 mano. Se hai un Bowie Knife in ogni mano, +1 ✴."
+   ],
+   [
+    "m16",
+    "M16",
+    "Arma · gittata 1-2 · 2 mani. Infligge 2 ✴ a gittata 1 e 1 ✴ a gittata 2."
+   ],
+   [
+    "axe",
+    "Axe",
+    "Arma · gittata 0 · 2 ✴ · 2 mani."
+   ],
+   [
+    "compound-bow",
+    "Compound Bow",
+    "Arma · gittata 1-2 · 1 ✴ · 2 mani · 3 frecce. Non può modificare una carta Azione e va usata senza. Scoccare una freccia costa 2 ⌛."
+   ],
+   [
+    "cursed-idol",
+    "Cursed Idol",
+    "Finché è a faccia in su da qualche parte, non puoi più risolvere carte Azione <b>Search</b>. Quando entri nello spazio 🔧 con l'Idolo, o se viene rivelato mentre cerchi, devi prenderlo. Si può scartare solo al <b>Cursed Temple</b>."
+   ],
+   [
+    "booby-trap",
+    "Booby Trap",
+    "Spendi 3 ⌛ per mettere il segnalino Booby Trap nel tuo spazio. Se un Nemico entra in quello spazio, scarta il segnalino e questa carta, e il Nemico subisce 3 ✴."
+   ],
+   [
+    "wet-suit",
+    "Wet Suit",
+    "Puoi muoverti controcorrente, ma le Vittime non possono seguirti. Non sei più influenzato dalla carta Terrore <b>Flash Flood</b>, dall'Evento <b>Heavy Rains</b> né dall'Evento <b>\"Piranhas!\"</b>."
+   ],
+   [
+    "mini-gun",
+    "Mini-Gun",
+    "Arma · gittata 0-1 · 2 mani · 2 usi. Quando ti muovi, muoviti di 1 spazio in meno (minimo 1). Non può andare nello zaino. Quando attacchi, infliggi 1 ✴ in più per ogni ★ nel tuo Tiro Orrore finale."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "1 mano. Ogni volta che usi una carta Azione per recuperare salute, recupera ❤️ uno in più."
+   ],
+   [
+    "walkie-talkies",
+    "Walkie-Talkies",
+    "1 mano. I <b>Soldati</b> possono muoversi di 1 spazio in più quando si muovono."
+   ],
+   [
+    "mres",
+    "MRE's",
+    "2 usi. Fai avanzare tutti i cubetti sulla carta <b>Soldier</b> di 1 spazio a destra."
+   ],
+   [
+    "mysterious-pills",
+    "Mysterious Pills",
+    "Scarta durante la fase Azione e scegli: ⊘🎭 o ❤️❤️."
+   ],
+   [
+    "cigar",
+    "Cigar",
+    "3 usi. Tira 1 🎲 in più quando risolvi una carta Azione <b>Train</b>."
+   ],
+   [
+    "river-mud",
+    "River Mud",
+    "Quando risolvi l'icona Bersaglio Final Girl o Bersaglio Vittima/Final Girl, tira un dado: con 5-6 non puoi essere il bersaglio. Quando entri in uno spazio <b>River</b>, metti un indicatore Tracking sulla carta. Quando tutti e 3 gli spazi sono occupati, scartala."
+   ],
+   [
+    "backpack-radio",
+    "Backpack Radio",
+    "Scarta e spendi 3 ⌛ per: muovere <b>tutti</b> i Soldati fino a 2 spazi, <b>oppure</b> chiamare un attacco aereo: scegli uno spazio e tira un dado. 1-2: 💔 a tutti in quello spazio e in ogni spazio adiacente. 3-6: 💔💔💔💔 a tutti in quello spazio."
+   ],
+   [
+    "grenade",
+    "Grenade",
+    "1 mano. In mano: scarta durante la fase Azione e spendi 2 ⌛ per infliggere 2 ✴ a un Nemico in uno spazio adiacente. Nello zaino: scarta mentre usi il <b>Compound Bow</b> per aggiungere 2 ✴ all'attacco."
+   ]
+  ],
+  "falta": "Ci sono 2 Grenade e 2 Bowie Knife diversi. Il Finale, il Potere Oscuro e le carte Terrore di Volk'ar sono ancora da fotografare.",
+  "ev": [
+   [
+    "Supply Drop",
+    "Prendi 3 Oggetti inutilizzati a caso e mettili a faccia in su accanto al mazzo Oggetti del <b>Supply Depot</b>. Quando cerchi lì con successo, puoi prenderne uno invece di pescare. Scarta quando non ne resta nessuno dei 3."
+   ],
+   [
+    "\"Piranhas!\"",
+    "Tira un dado e metti il segnalino Piranhas: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Tutti in quello spazio: 💔. Chiunque ci entri in seguito: 💔."
+   ],
+   [
+    "\"Get to the Choppa!\"",
+    "Se il segnalino <b>Huey</b> non è sul tabellone, mettilo nella <b>Clearing</b>. Per ogni Vittima salvata con l'Huey, scegli: ❤️❤️, 3 ⌛, ⊘🎭 o prendi una carta Azione (max 2 ⌛). Scarta quando il segnalino Huey viene rimosso."
+   ],
+   [
+    "Heavy Rains",
+    "A meno che non ti muova da uno spazio River, entrare in uno spazio <b>River</b> costa 2 ⌛."
+   ],
+   [
+    "Twitchy Soldiers",
+    "Se hai Sbloccato il Potenziamento \"No Friendly Fire\", Bloccalo ora. Nei tiri per il fuoco amico, i Soldati vengono uccisi con 1-3. Scarta se \"No Friendly Fire\" è Sbloccato."
+   ],
+   [
+    "Rebel Raiding Party",
+    "Tira un dado: 1-3 Ancient Ruins, 4-6 Supply Depot. Prendi tutti gli Oggetti in quello spazio, mescolali a faccia in giù e mettili in fondo al mazzo Oggetti del <b>Rebel Camp</b>. Scarta."
+   ],
+   [
+    "Cursed Temple",
+    "Metti il segnalino Cursed al <b>Cursed Temple</b>. Quando entri nel Cursed Temple: 💔💔💔, poi scarta il segnalino (e la carta)."
+   ],
+   [
+    "Sgt. Weathers",
+    "Mettilo nello spazio con più Vittime. Conta come un Soldato. Quando riceve un ordine, lui e le Vittime con lui possono muoversi di 1 spazio in più e aggiungere +1 alla gittata d'attacco. Ucciso: 🎭🎭."
+   ],
+   [
+    "Rebel Leader",
+    "Mettilo al <b>Rebel Camp</b>. Nel Mantenimento si muove di 1 spazio verso la Vittima più vicina che <b>non</b> è al Rebel Camp, poi sposta 1 Vittima dal suo spazio al Rebel Camp. I Soldati al Rebel Camp non possono ricevere ordini di eseguire Azioni. Non ti segue."
+   ],
+   [
+    "Archeologist",
+    "Tira un dado e mettilo: 1-2 Ancient Ruins, 3-4 Rebel Camp, 5-6 Supply Depot. Tira 1 🎲 in meno quando cerchi nel suo spazio, a meno che non paghi 3 ⌛. Risolvi di nuovo a ogni Mantenimento."
+   ]
+  ]
+ },
+ "A Demon in the Shadows": {
+  "ley": "⌛ = Tempo · ✴ = danno · 🎭 = aumenta l'Orrore · 🔪 = icona del coltello (attacco) · ⊘🎭 = riduci l'Orrore · ❤️ = recuperi salute · 🙏 = icona della benedizione · 🎲★ = sostituisci 1 dado normale con il dado Blessed (più facce di successo) · 🎲☠ = sostituisci 1 dado normale con il dado Cursed",
+  "err_k_t": "Attenzione",
+  "err_k": [
+   "Uccidere Ursula <b>non è una vittoria</b>: poi riveli le benedizioni e ne serve almeno una che mostri salute. Senza benedizioni sul foglio, niente può riportarla indietro."
+  ],
+  "bloques_k": [
+   [
+    "Preparazione speciale",
+    [
+     "Metti il foglio <b>Divine Blessings</b> accanto all'area di gioco e scegli un lato: <b>Heavenly</b> (normale) o <b>Hellish</b> (difficile).",
+     "Metti le carte Azione <b>Expel Demon</b> nel Tableau delle Azioni."
+    ]
+   ],
+   [
+    "La possessione di Ursula",
+    [
+     "Berith è un demone che possiede <b>Ursula</b>, una suora. Il meeple del Killer, la salute, l'Attacco del Killer e i Valori di Movimento sono tutti di Ursula posseduta.",
+     "Quando \"uccidi\" Ursula, Berith lascia il suo corpo."
+    ]
+   ],
+   [
+    "Divine Blessings",
+    [
+     "Quando vedi l'icona 🙏, metti un segnalino <b>Final Health</b> nero a faccia in giù nel primo spazio libero più in alto del foglio Divine Blessings e risolvi il suo effetto. Lo otterrai soprattutto dalla carta Azione <b>Expel Demon</b>.",
+     "Sono queste benedizioni che possono riportare in vita Ursula quando Berith lascia il suo corpo.",
+     "I segnalini Final Health sul foglio non si possono rimuovere né rivelare, a meno che qualcosa non lo dica.",
+     "I segnalini Final Health sono limitati. Se alcuni escono dal gioco per altri effetti, o vengono assegnati al Killer o alla Final Girl, ne resteranno meno per il foglio."
+    ]
+   ],
+   [
+    "Vincere la partita",
+    [
+     "Prima uccidi Ursula posseduta con le regole normali, rivelando il suo segnalino Final Health nero e ripristinandone la salute se serve. Una volta sconfitta, Berith lascia il suo corpo.",
+     "Poi rivela ogni segnalino Final Health sul foglio Divine Blessings. Se qualcuno mostra salute, Ursula torna e <b>vinci</b>. Se sono tutti vuoti, la sua anima è dannata e <b>perdi</b>.",
+     "Non serve riempire tutti e 7 gli spazi prima di sconfiggerla, ma più benedizioni ci sono, più è probabile che torni."
+    ]
+   ]
+  ],
+  "err_m_t": "Attenzione",
+  "err_m": [
+   "Se tutti i <b>14</b> segnalini Malice sono sul tabellone e devi piazzarne un altro, <b>perdi immediatamente</b>.",
+   "Non tiri mai insieme i dadi Blessed e Cursed: se compaiono entrambe le icone, usa quella più numerosa; se sono pari, si annullano."
+  ],
+  "bloques_m": [
+   [
+    "Preparazione speciale",
+    [
+     "Metti un segnalino <b>Malice</b> nello spazio iniziale del Killer e in 3 spazi adiacenti al Killer. Se ci sono solo 2 spazi adiacenti, mettine uno nello spazio più vicino successivo a tua scelta. Inizi con 4 segnalini Malice.",
+     "Metti il segnalino <b>Donkey</b> nello spazio <b>Cloister</b>.",
+     "Metti le carte Azione <b>Benediction</b> nel Tableau delle Azioni."
+    ]
+   ],
+   [
+    "Dadi Blessed e Cursed",
+    [
+     "La scatola ha due dadi speciali: il dado <b>Blessed</b> (🎲★, più facce di successo) e il dado <b>Cursed</b> (🎲☠). A volte sostituiscono i dadi normali nei Tiri Orrore.",
+     "Quando vedi una delle loro icone, sostituisci <b>1</b> dado normale con quel dado quando fai il Tiro Orrore.",
+     "Se ci sono entrambe le icone ma un tipo è più numeroso, sostituisci 1 dado con quel tipo. Se sono in numero uguale, si annullano e non si usa nessuno dei due.",
+     "Se il dado Cursed mostra un <b>1</b> nel risultato finale del Tiro Orrore, perdi 1 salute (💔). Facce secondo il regolamento: il dado <b>Blessed</b> ha una stella sul 2 e sul 5, due stelle sul 6 e l'1 vuoto; il dado <b>Cursed</b> ha solo una stella sul 6, il 2 vuoto e il cuore spezzato sull'1.",
+     "Gli effetti della carta Azione <b>Improvise</b> valgono anche per il 5 del dado Cursed."
+    ]
+   ],
+   [
+    "Malice",
+    [
+     "Quando vedi l'icona Malice su una carta, metti un segnalino Malice nello spazio del Killer Attivo. Se ne ha già uno, mettilo nello spazio più vicino al Killer senza segnalino.",
+     "Con più Killer Attivi, conta solo quello più vicino a te.",
+     "Se non c'è nessun Killer sul tabellone, rivela una carta di preparazione a caso e considera il suo spazio K come lo spazio del Killer.",
+     "I segnalini Malice riportano il simbolo del dado Cursed: quando fai un Tiro Orrore in uno spazio con Malice, sostituisci 1 dado normale con il dado Cursed.",
+     "I segnalini Malice rimossi (dalla carta Azione <b>Benediction</b> o da altri effetti) tornano nella riserva generale."
+    ]
+   ],
+   [
+    "Cosa ci dicono le carte",
+    [
+     "Le reliquie dei santi danno 🎲★ quando risolvi certe carte, cioè sostituisci un dado normale con il dado Blessed.",
+     "La <b>Padlock Key</b> permette al <b>Donkey</b> di muoversi con te.",
+     "Reliquie ed eventi puntano molto sul dado Blessed e sui segnalini Malice: vedi sotto."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "holy-water",
+    "Holy Water",
+    "1 mano · 3 usi. 🎲★ per un Tiro Orrore <b>oppure</b> rimuovi un segnalino Malice nel tuo spazio. Se hai l'<b>Aspergillum</b> nell'altra mano, rimuovi anche un segnalino Malice in uno spazio adiacente. Nella scatola ce ne sono 2."
+   ],
+   [
+    "holy-chalice",
+    "Holy Chalice",
+    "Scarta durante la fase Azione per 3 ❤️ <b>oppure</b> scarta quando viene rivelato il tuo segnalino Final Health nero: se è vuoto, torni invece con 1 ❤️."
+   ],
+   [
+    "rosary",
+    "Rosary",
+    "Nella scatola ce ne sono 2. 2 usi. Spendi 2 ⌛ durante la fase del Killer per ignorare un 🎭."
+   ],
+   [
+    "aspergillum",
+    "Aspergillum",
+    "Arma · gittata 0 · 1 ✴ · 1 mano. Se hai la <b>Holy Water</b> nell'altra mano, puoi spendere uno dei suoi usi per infliggere 1 ✴ in più."
+   ],
+   [
+    "thurible",
+    "Thurible",
+    "Arma · gittata 0-1 · 1 ✴ · 1 mano. Se la usi a gittata 1, scartala."
+   ],
+   [
+    "crucifix",
+    "Crucifix",
+    "1 mano. Scarta per ignorare un aumento del livello di Orrore <b>oppure</b> per terminare il movimento di un Nemico quando è in uno spazio adiacente."
+   ],
+   [
+    "st-peters-sword",
+    "St. Peter's Sword",
+    "Arma · gittata 0 · 2 ✴ · 2 mani. 🎲★ quando risolvi carte Azione che eseguono attacchi. La Spada non può modificare carte Reazione."
+   ],
+   [
+    "st-longinus-spear",
+    "St. Longinus' Spear",
+    "Arma · gittata 0 · 1 ✴ · 1 mano. 🎲★ quando risolvi carte Azione che eseguono attacchi. Se danneggi un Nemico con la Lancia, puoi spostarlo di 1 spazio."
+   ],
+   [
+    "st-lucys-eyes",
+    "St. Lucy's Eyes",
+    "🎲★ quando risolvi carte Azione che ti fanno prendere Oggetti. Pesca e tieni 1 Oggetto in più."
+   ],
+   [
+    "st-pauls-chains",
+    "St. Paul's Chains",
+    "Arma · gittata 0 · 1 ✴ · 2 mani. 🎲★ quando risolvi carte Azione che eseguono attacchi. Quando danneggi un Nemico puoi scartarla per mettere il segnalino Chain nel suo spazio: la prossima volta che quel Nemico risolve un 🔪, ignoralo e scarta il segnalino."
+   ],
+   [
+    "holy-bible",
+    "Holy Bible",
+    "1 mano. 🎲★ quando risolvi le carte Azione <b>Benediction</b> o <b>Expel Demon</b>."
+   ],
+   [
+    "st-constantines-shield",
+    "St. Constantine's Shield",
+    "1 mano · 3 usi. Ignora fino a 2 ✴."
+   ],
+   [
+    "st-martins-cloak",
+    "St. Martin's Cloak",
+    "🎲★ quando risolvi carte Azione che forniscono movimento."
+   ],
+   [
+    "st-joans-armor",
+    "St. Joan's Armor",
+    "🎲★ quando risolvi carte Reazione."
+   ],
+   [
+    "knife",
+    "Knife",
+    "Arma · gittata 0 · 1 ✴ · 1 mano."
+   ],
+   [
+    "padlock-key",
+    "Padlock Key",
+    "Il <b>Donkey</b> può muoversi con te. Quando ti muovi con lui, tira un dado: 1-3 muoviti di 1 spazio in meno (min 1), 4-6 di 1 in più. Una volta per fase Azione, in uno spazio con il Donkey e un Nemico, tira un dado: con 5-6 il Nemico subisce 2 ✴."
+   ]
+  ],
+  "falta": "",
+  "ev": [
+   [
+    "Sins of the Past",
+    "Tira 3 dadi. Se ottieni su tutti e 3 ciò che mostra la carta (tre icone rosse), sei il figlio del Diavolo e <b>perdi immediatamente</b>. Con qualsiasi altro risultato, metti il segnalino <b>Repentance</b> nel <b>Sanctuary</b>: finché è sul tabellone, ignora tutti gli effetti 🎲★. Rimuovilo andando nel Sanctuary e spendendo 3 ⌛."
+   ],
+   [
+    "Leap of Faith",
+    "Guarda tra le carte Oggetto inutilizzate e prendine 1."
+   ],
+   [
+    "Pilgrimage",
+    "Metti 2 Vittime nell'<b>Hospitium</b>, 2 nel <b>Refectory</b> e 2 nel <b>Sanctuary</b>."
+   ],
+   [
+    "Black Mass",
+    "Durante la fase di Mantenimento, metti un segnalino Malice se in questo turno non ne sono stati aggiunti."
+   ],
+   [
+    "Maddening Nursery Rhyme",
+    "Nello spazio con più Vittime, una Vittima viene uccisa e tutte le altre Vittime lì vanno nel panico."
+   ],
+   [
+    "Breaking the Curse",
+    "Prendi una carta Azione <b>Benediction</b> dal Tableau delle Azioni. Se le hai entrambe in mano, ⊘🎭."
+   ],
+   [
+    "Father Damian",
+    "Metti Father Damian nella <b>Sacristy</b>. Ti segue nello spazio del Killer e può essere attaccato solo se nel suo spazio non ci sono altre Vittime. Finché è nel tuo spazio, 🎲★ per tutti i Tiri Orrore e, una volta per fase Azione, puoi rimuovere un segnalino Malice nel tuo spazio. Se viene ucciso nel tuo spazio, 🎭🎭🎭."
+   ],
+   [
+    "Demonic Crocodile",
+    "Metti il segnalino <b>Crocodile</b> nel <b>Museum</b>. I Nemici non possono prenderlo come bersaglio né ucciderlo, ma tu puoi attaccarlo e ucciderlo. Movimento, Attacco e salute pari a 1. Alla fine della fase del Killer prende come bersaglio la Final Girl, si muove e attacca. Poi tutte le Vittime nel suo spazio vanno nel panico."
+   ],
+   [
+    "The Quebecer",
+    "Mettilo nel <b>Dormitory</b>. Le Vittime normali nel suo spazio non ti seguono a meno che non venga anche lui. Con lui, può seguirti una Vittima in più. Se è nel tuo spazio durante il Mantenimento, ⌛ per ogni Vittima nel tuo spazio."
+   ],
+   [
+    "The Abbess",
+    "Mettila nell'<b>Abbess' Office</b>. Durante il Mantenimento si muove di uno spazio verso la Vittima normale più vicina che non sia nel <b>Dormitory</b>. Le Vittime normali nel suo spazio di partenza e di arrivo si muovono di 2 spazi verso il Dormitory."
+   ]
+  ]
+ }
+}

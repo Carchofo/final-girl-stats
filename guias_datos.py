@@ -983,4 +983,118 @@ GUIAS = [
             ],
         },
     },
+    {
+        "caja": "Madness in the Dark", "killer": "Ratchet Lady", "mapa": "Wolfe Asylum", "dir": "madness-in-the-dark",
+        "arte_k": "img/art/ratchet-lady.jpg", "arte_m": "img/loc/wolfe-asylum.png",
+        "inicios": [("noche-de-bingo", "Noche de Bingo"), ("habitaciones-acolchadas", "Habitaciones Acolchadas"),
+                    ("una-vida-solitaria", "Una Vida Solitaria"), ("duelo-en-el-manicomio", "Duelo en el Manicomio"),
+                    ("el-dr-esta-disponible", "El Dr. está Disponible")],
+        "es": {
+            "ley": "Nombres de cartas de la edición en castellano · ⌛ = Tiempo · ✴ = daño · ❤️ = recuperar vida · 💔 = perder vida · 🎭 = sube el Horror · 🩸 = Sed de Sangre (Bloodlust) · 💊 = ficha de Pastilla",
+            "err_k_t": "Ojo con esto",
+            "err_k": [
+                "Ratchet Lady empieza con solo <b>6</b> de vida pero <b>no tiene tope</b>: se cura de muchas formas.",
+                "Salir de una zona con <b>Lunáticos</b> cuesta 💔 por cada Lunático a partir del segundo.",
+                "Convertir una Víctima en Lunático <b>no</b> sube la 🩸, ni tampoco matar a un Lunático.",
+            ],
+            "bloques_k": [
+                ("Preparación especial", [
+                    "Haz una pila con las figuras de <b>Lunático</b> junto a las de Víctima.",
+                    "Pon 2 Lunáticos en la zona de salida de Ratchet Lady."]),
+                ("Los Lunáticos", [
+                    "Son Esbirros (Minions): antiguas Víctimas que han enloquecido. Siguen las reglas de Esbirros (pág. 32 del reglamento base).",
+                    "Tienen 1 de vida, y Ataque y Movimiento de 1. No te siguen y no se pueden salvar.",
+                    "Cuando una Víctima se convierte en Lunático, cambia su figura por una roja de Lunático. No sube la 🩸: nadie ha muerto.",
+                    "Cuando muere un Lunático, su figura vuelve a la reserva. Tampoco sube la 🩸, aunque antes fuera Víctima.",
+                    "Si quieres salir de una zona con Lunáticos, pierdes 💔 por cada Lunático por encima del primero: con uno no pasa nada, con tres pierdes 2.",
+                    "Máximo <b>6</b> Lunáticos a la vez en el tablero. Si toca poner otro y no quedan, se ignora.",
+                    "Las Víctimas Especiales <b>no</b> se convierten en Lunáticos; solo las normales."]),
+                ("Calmar", [
+                    "Contra Ratchet Lady tienes las cartas de Acción <b>Calmar</b>, que devuelven Lunáticos a Víctimas.",
+                    "Al resolver con éxito una Calmar, cambia el número de Lunáticos que indique por figuras de Víctima y devuelve los Lunáticos a la reserva. Ya te pueden seguir, las puedes salvar y los Enemigos las pueden matar."]),
+                ("Finales", [
+                    "<b>Llueven Lunáticos</b>: arriba va a por ti, se mueve y ataca 2 veces. Abajo aparecen 2 Lunáticos en su zona, va a por la Víctima o a por ti y ataca. Si no hay Lunáticos al revelarla, aparecen 2 en la zona de Ratchet Lady.",
+                    "<b>Alimentando la Locura</b>: arriba va, se mueve y ataca. Abajo Ratchet Lady recupera ❤️ y luego va, se mueve y ataca. Al principio de cada fase del Killer, si no hay Lunáticos, aparece uno en su zona.",
+                    "<b>Sujetadla</b>: arriba va a por ti y se mueve. Abajo va a por ti, se mueve y ataca 2 veces. Al revelarla, todas las Víctimas que queden se convierten en Lunáticos y se retiran de la partida todas las cartas de Acción Calmar."]),
+                ("Poderes oscuros", [
+                    "<b>Inyección Oscura</b>: en la fase del Killer, la primera vez que Ratchet Lady recupera al menos 1 ❤️, recupera otro.",
+                    "<b>Brote Maníaco</b>: cuando un Lunático entra en el tablero, activa al momento su Acción de Esbirro.",
+                    "<b>Miedo a la Sangre</b>: en la fase del Killer, la primera vez que suben el Horror o la 🩸 al menos 1, Ratchet Lady recupera ❤️.",
+                    "<b>Escudo de Locura</b> (Poder Oscuro Épico): Ratchet Lady no puede perder vida mientras haya Lunáticos en el tablero."]),
+            ],
+            "err_m_t": "Ojo con esto",
+            "err_m": [
+                "Solo recoges una 💊 si <b>acabas</b> tu movimiento en su zona, no si estás de paso.",
+                "Tomarte 2 o 3 Pastillas a la vez obliga a robar cartas de <b>Efectos Secundarios</b>.",
+            ],
+            "bloques_m": [
+                ("Preparación especial", [
+                    "Haz una pila con las fichas de <b>Aturdido</b> junto a la zona de juego.",
+                    "Mezcla las fichas de Pastilla boca abajo (con la cara neutra arriba) y haz una pila.",
+                    "La partida empieza con <b>4</b> fichas de Pastilla en el tablero: la carta de Preparación dice dónde. Róbalas de la pila y ponlas boca abajo.",
+                    "Pon la carta de <b>Efectos de las Pastillas</b> junto a tu tablero de jugador. Roba 1 ficha de Pastilla y ponla boca arriba debajo. Deberían quedar 5 en la reserva.",
+                    "Baraja los mazos de <b>Dopaje</b> y de <b>Efectos Secundarios</b> y déjalos junto a la zona de juego."]),
+                ("Pastillas, Efectos Secundarios y Dopaje", [
+                    "Hay 4 tipos de Pastillas: 3 amarillas, 3 azules, 3 rosas y 1 comodín (vale por cualquier color).",
+                    "Si acabas tu movimiento en una zona con ficha de Pastilla (no de paso), puedes gastar ⌛ para cogerla. Ponla boca arriba debajo de tu carta de Efectos de las Pastillas.",
+                    "En cualquier momento de la fase de Acción puedes tomarte las que hayas cogido, descartando sus fichas. Si se acaba la pila, mezcla las descartadas y haz otra boca abajo.",
+                    "Mira la carta de Efectos de las Pastillas para ver qué hace cada una. Si te tomas 2 o 3 a la vez, después de aplicar sus efectos robas 1 o más cartas de Efectos Secundarios, de una en una.",
+                    "Puedes tomarte las que quieras y en el orden que quieras: por ejemplo una sola, y luego dos juntas (robando Efectos Secundarios por esas dos).",
+                    "Si te tomas una de cada color, puedes robar una carta de <b>Dopaje</b>: dan habilidades muy potentes."]),
+                ("Aturdido", [
+                    "Algunos objetos tienen la palabra <b>Aturdido</b>. Solo los Enemigos pueden quedar Aturdidos: pon una ficha de Aturdido debajo.",
+                    "En la siguiente fase del Killer, ignora todos sus movimientos (pero sigue resolviendo sus ataques).",
+                    "En el Mantenimiento se descartan todas las fichas de Aturdido."]),
+            ],
+            "obj": [
+                ("bata-de-paciente", "Bata de Paciente", "Puedes ignorar cualquier penalización de movimiento de reglas especiales. Si recibes ✴ de un ataque, puedes usarla para que muera una Víctima de tu zona en tu lugar."),
+                ("anestesia", "Anestesia", "2 usos. Aturde a un Enemigo de tu zona. Puedes descartarla para pasar todos sus usos que queden a la <b>Pistola Tranquilizante</b> (si la tienes)."),
+                ("bote-de-gas-de-la-risa", "Bote de Gas de la Risa", "Descártalo para Aturdir a todos los Enemigos de tu zona y de las adyacentes. Las Víctimas de esas zonas huyen al momento."),
+                ("pastillas-misteriosas", "Pastillas Misteriosas", "Descártala al momento y coge 2 fichas de Pastilla."),
+                ("bisturi", "Bisturí", "Arma · alcance 0 · ✴* · 1 mano. Haces 1 ✴ más por cada estrella vacía que saques en tu tirada de Terror. Si sacas el icono tachado, 💔."),
+                ("inyeccion-de-adrenalina", "Inyección de Adrenalina", "1 mano. Cuando tengas que revelar tu ficha negra de Final Health, antes puedes descartarla para revelar 3 de la reserva y usar una de esas."),
+                ("sierra-para-huesos", "Sierra para Huesos", "Arma · alcance 0 · 2 ✴ · 1 mano. Al hacer daño con ella, 🎭."),
+                ("maletin-medico", "Maletín Médico", "2 usos. Gasta ⌛ para recuperar ❤️, o 3 ⌛ para recuperar ❤️❤️."),
+                ("martillo-con-mango-de-gancho", "Martillo con Mango de Gancho", "Arma · alcance 0 · 2 ✴ · 1 mano. Al hacer daño con él, tira un dado: con 1-4, 💔."),
+                ("tapa-de-cubo-de-basura", "Tapa de Cubo de Basura", "1 mano · 3 usos. Ignora 1 ✴."),
+                ("botiquin", "Botiquín", "1 mano. Cada vez que uses una carta de Acción para recuperar vida, recuperas ❤️ una más."),
+                ("manual-medico", "Manual Médico", "Cuando cojas fichas de Pastilla o robes cartas de Dopaje, roba una más, elige cuál te quedas y descarta la otra."),
+                ("desfibrilador", "Desfibrilador", "Arma · alcance 0 · 1 ✴ · 2 manos. Tras el daño, si el Enemigo sigue vivo, queda Aturdido."),
+                ("bebida-energetica", "Bebida Energética", "Descártala en la fase de Acción y elige: 3 ⌛, muévete 1 zona, o ignora una carta de Efectos Secundarios."),
+                ("cuchillo", "Cuchillo", "Arma · alcance 0 · 1 ✴ · 1 mano."),
+                ("pistola-tranquilizante", "Pistola Tranquilizante", "Arma · alcance 1 · 1 ✴ · 1 mano · 2 usos. No puede modificar una carta de Acción: se usa sin ella. Por 2 ⌛ disparas un dardo a un Enemigo de una zona adyacente; si sigue vivo, queda Aturdido."),
+            ],
+            "falta": "Nombres de la edición en castellano. Hay más cartas de Pastillas Misteriosas.",
+            "ev": [
+                ("Dr. Death", "Ponlo en la <b>Sala de Operaciones</b>. En el Mantenimiento mata a una Víctima de su zona; si no hay, se mueve una zona hacia la Víctima más cercana. Si muere: 2 ⌛ y no sube la 🩸. Si sale del juego, descarta la carta."),
+                ("Arañazos y Mordiscos", "Cada vez que salves a una Víctima, haz una tirada de Terror. Si sacas el icono que marca la carta, 💔."),
+                ("Medicamentos Potentes", "Cada vez que te tomes una o más Pastillas, roba una carta más de Efectos Secundarios."),
+                ("Reservas Médicas", "La primera vez en una fase que tú o un Enemigo recuperéis al menos 1 ❤️, recuperáis otro."),
+                ("\"Han llegado los nuevos pacientes\"", "Pon 4 Víctimas nuevas en la <b>Sala Comunitaria</b>. Descarta."),
+                ("Adicción Peligrosa", "Elige hasta 2 Víctimas que no estén en tu zona ni juntas. Pon una ficha de Pastilla boca abajo con las dos, con una o con ninguna. Por cada ficha que pongas, +🩸. Descarta."),
+                ("Camilla de Hospital", "Pon la ficha de la Camilla en tu zona. Puedes moverla contigo y llevar hasta 2 Víctimas encima. Puedes descartarla para embestir a un Enemigo de tu zona o de una adyacente: 1 ✴ más por cada Víctima encima, que mueren. Si sale del juego, descarta la carta."),
+                ("Hannibal el Caníbal", "Ponlo en el <b>Confinamiento Solitario</b> con 2 Víctimas nuevas. En el Mantenimiento mata a una Víctima de su zona; si no hay, huye. Si lo salvas, 🎭. Si lo matan, 💔. Si sale del juego, descarta la carta."),
+                ("Bienvenidos al Manicomio", "Pon una ficha de Calavera en la <b>Sala Comunitaria</b>. Cuando tú o un Enemigo entréis en esa zona, recibís ✴."),
+                ("Dra. Sunshine", "Ponla en la <b>Consulta Médica</b>. Si está en tu zona, cuando te tomes una Pastilla eliges de qué color es. Si la matan en tu zona, 🎭🎭🎭🎭. Si sale del juego, descarta la carta."),
+            ],
+        },
+    },
+
 ]
+
+# FR/DE/IT: traducciones de la parte "en" en guias_<idioma>.json (mismos
+# trozos, mismo orden). Los nombres de cartas siguen en inglés.
+import json as _json
+import pathlib as _pathlib
+for _l in ("fr", "de", "it"):
+    _f = _pathlib.Path(__file__).parent / f"guias_{_l}.json"
+    if _f.exists():
+        _t = _json.loads(_f.read_text(encoding="utf-8"))
+        for _g in GUIAS:
+            if _g["caja"] in _t:
+                _d = _t[_g["caja"]]
+                for _k in ("bloques_k", "bloques_m"):
+                    _d[_k] = [tuple(x) for x in _d[_k]]
+                _d["obj"] = [tuple(x) for x in _d["obj"]]
+                _d["ev"] = [tuple(x) for x in _d["ev"]]
+                _g[_l] = _d

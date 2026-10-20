@@ -1,0 +1,1086 @@
+{
+ "A Rotten Harvest": {
+  "ley": "🩸 = Bloodlust · 🌾 = case Field · 🎭 = augmenter l'Horreur",
+  "err_k_t": "Erreurs fréquentes",
+  "err_k": [
+   "<b>Grimlash se déplace de 1</b> lors de son Action du Killer. Quand une carte Terreur montre l'icône de la <b>botte</b> (déplacement), il se déplace de la valeur de mouvement correspondant au niveau de 🩸 actuel, pas de 1.",
+   "Un soin ❤️ ne permet <b>pas</b> de soigner et de baisser la Harvest Madness en même temps : chaque cœur fait l'un ou l'autre.",
+   "Quand la Harvest Madness <b>descend</b> d'un niveau, tu <b>perds</b> la carte de ce niveau."
+  ],
+  "bloques_k": [
+   [
+    "Harvest Madness 🎃 · mise en place",
+    [
+     "Sépare les cartes Harvest Madness par niveau et mélange chaque paquet : <b>3 pioches</b>.",
+     "Place le marqueur sur la case de départ de la piste Harvest Madness (entourée en orange), près du haut du plateau du Killer."
+    ]
+   ],
+   [
+    "Harvest Madness 🎃 · fonctionnement",
+    [
+     "Chaque fois que tu vois l'icône 🎃, avance le marqueur d'<b>1 case vers la droite</b>.",
+     "Quand il atteint un <b>nouveau niveau</b>, pioche <b>2 cartes</b> de la pioche de ce niveau, <b>gardes-en 1</b> et défausse l'autre. Son effet dure tant que tu restes à ce niveau ou au-dessus.",
+     "<b>Si tu dépasses le niveau 3</b> (la case tête de mort), <b>tu perds la partie</b> immédiatement.",
+     "Quand tu résous un soin ❤️, pour chaque cœur tu choisis : <b>récupérer de la santé</b> normalement <b>ou baisser</b> la Harvest Madness de 1. Jamais les deux.",
+     "Si tu descends à un niveau inférieur, <b>défausse la carte du niveau que tu quittes</b>. Si tu y reviens plus tard, pioche de nouveau 2 cartes et gardes-en 1. Si la pioche est insuffisante, remélange la défausse de ce niveau.",
+     "Les effets <b>une fois par tour</b> s'utilisent en retournant la carte face cachée ; elle revient face visible lors de l'<b>Entretien</b>."
+    ]
+   ]
+  ],
+  "err_m_t": "Erreurs fréquentes",
+  "err_m": [
+   "Les <b>Children ne sont pas des Sbires</b>, mais ce sont des Ennemis : ils ne résolvent pas les actions du Killer ou des Sbires sur les cartes Terreur, sauf si la carte précise que les Children le font.",
+   "<b>Si tu combines Shady Acres avec un autre Killer</b>, les Children ne sont toujours pas des Sbires : les cartes de ce Killer qui mentionnent des Sbires ne les affectent pas.",
+   "Si tu attaques les Children et qu'il y en a plusieurs dans la case, <b>tu les attaques tous</b> et tu répartis les dégâts ; les dégâts en trop sont perdus.",
+   "Un enlèvement dans une case <b>sans Victime</b> n'est pas perdu : il compte comme une attaque."
+  ],
+  "bloques_m": [
+   [
+    "Mise en place spéciale",
+    [
+     "Mélange les cartes <b>Ancient Curse</b> en une pioche face cachée.",
+     "Place la carte <b>Children</b> près du plateau, un Child sur l'<b>Altar of the Old Gods</b> et les autres sur la carte.",
+     "Place le jeton Action des Children <b>au-dessus</b> des actions des Sbires ou du Killer sur la carte Finale : ils agissent avant tous les autres Ennemis."
+    ]
+   ],
+   [
+    "Les Children",
+    [
+     "Leur carte indique leur santé, leur attaque et leur mouvement. Ce sont des Ennemis, pas des Sbires.",
+     "Ils agissent au <b>début de la phase du Killer</b>, avant les Sbires et le Killer, un par un : le plus proche de l'Altar d'abord.",
+     "À chaque <b>Entretien</b>, un Child apparaît sur l'Altar, sauf si les trois sont déjà en jeu ou s'il ne reste plus de Victimes.",
+     "On peut les attaquer et les tuer : un Child mort retourne sur la carte et peut réapparaître.",
+     "Les Victimes te suivent dans une case avec des Children, sauf si le Killer y est aussi.",
+     "Pendant la phase de Panique, les Victimes dans une case avec un Child paniquent si au moins une Victime a été tuée ce tour-ci."
+    ]
+   ],
+   [
+    "Enlèvements",
+    [
+     "Quand un Child résout l'icône d'enlèvement dans une case avec une Victime, lance un dé.",
+     "<b>1-2 :</b> la Victime est sacrifiée sur l'Altar (tuée). Le Child retourne à l'Altar, 🩸 augmente normalement et la Victime est placée au dos de la carte Ancient Curse du dessus.",
+     "<b>3-6 :</b> il ne se passe rien."
+    ]
+   ],
+   [
+    "Ancient Curses",
+    [
+     "Avec <b>3 Victimes sacrifiées</b> dessus, retire-les et révèle la malédiction, qui entre en jeu. Plusieurs peuvent être actives en même temps."
+    ]
+   ],
+   [
+    "Cases Field 🌾",
+    [
+     "Les cases avec l'icône de blé sont des cases Field. Beaucoup de cartes de cette boîte les utilisent, en bien comme en mal."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "moonshine-jug",
+    "Moonshine Jug",
+    "Défausse-le pour récupérer <b>4 Santé</b>."
+   ],
+   [
+    "cowboy-boots",
+    "Cowboy Boots",
+    "2 utilisations. Déplace-toi de <b>2 cases</b> maximum."
+   ],
+   [
+    "pilgrims-hat",
+    "Pilgrim's Hat",
+    "Si tu commences ton déplacement dans une 🌾, tu peux te déplacer d'<b>1 case supplémentaire</b>."
+   ],
+   [
+    "farmers-almanac",
+    "Farmer's Almanac",
+    "2 utilisations. Après avoir pioché une carte <b>Terreur</b> mais avant de la résoudre, tu peux la mettre sous la pioche et piocher la suivante."
+   ],
+   [
+    "mechanics-toolbox",
+    "Mechanic's Toolbox",
+    "Défausse-le pour reprendre <b>1 Objet défaussé</b>, avec toutes ses utilisations."
+   ],
+   [
+    "childrens-toys",
+    "Children's Toys",
+    "2 utilisations. Échange un <b>Child</b> de ta case contre une Victime normale."
+   ],
+   [
+    "locus-of-insanity",
+    "Locus of Insanity",
+    "3 utilisations. Une fois par tour, avec 🎭, tu peux te placer dans <b>n'importe quelle 🌾</b>."
+   ],
+   [
+    "scythe",
+    "Scythe",
+    "Arme · portée 0-1 · 1 dégât · 2 mains. Quand tu attaques des Ennemis dans une 🌾, tu peux <b>répartir les dégâts</b> entre eux. Ensuite cette case devient <b>Harvested</b> et n'est plus une 🌾."
+   ],
+   [
+    "pilgrims-musket",
+    "Pilgrim's Musket",
+    "Arme · portée 1 · 2 dégâts · 2 mains · 2 utilisations. <b>Ne peut pas</b> être utilisée contre des Ennemis dans une 🌾."
+   ],
+   [
+    "rusty-pitchfork",
+    "Rusty Pitchfork",
+    "Arme · portée 0 · 2 dégâts · 2 mains. Si ton jet d'Horreur final n'a <b>aucun succès</b>, défausse-la."
+   ],
+   [
+    "decrepit-plow",
+    "Decrepit Plow",
+    "Arme · portée 0 · 2 dégâts · 1 main · 2 utilisations."
+   ],
+   [
+    "sickle",
+    "Sickle",
+    "Arme · portée 0 · 1 dégât · 1 main. Utilisations illimitées."
+   ]
+  ],
+  "falta": "Encore à photographier : Bag of Feed, Combine Keys, Corn Cob Pipe et Cornhusk Effigy.",
+  "falta_ev": "Il manque 2 de ses 10 Événements : It Lurks Between the Rows et The Ravens Are Circling.",
+  "ev": [
+   [
+    "Umbral Evocation",
+    "Place le jeton <b>Harvest Shadow</b> dans la case du Killer. Chaque fois que toi ou une Victime y entrez : 🩸."
+   ],
+   [
+    "Acres of Hatred",
+    "Pour chaque 🌾 avec au moins une Victime : 🩸 (max 2). Défausse."
+   ],
+   [
+    "“The Fields Are Moving…”",
+    "Place un jeton Field sur <b>Hayfield</b> et <b>Cow Pasture</b> : elles deviennent des 🌾."
+   ],
+   [
+    "Festering Rot",
+    "Chaque fois qu'une Victime est tuée dans une 🌾 : 🎭."
+   ],
+   [
+    "It Hungers For Us",
+    "Toutes les Victimes paniquent. Pour chaque Victime dans la case du Killer ou adjacente : 🎭 (max 3). Défausse."
+   ],
+   [
+    "Harvest Cultist",
+    "La Victime la plus proche de toi devient le Cultist. À chaque Entretien, il avance d'1 case vers toi ; s'il est avec toi, vous avancez tous les deux d'1 case vers le Killer. Le sauver rapporte une récompense."
+   ],
+   [
+    "Ralph the Mechanic",
+    "Ralph commence dans <b>Ralph's Garage</b>. Tant qu'il est avec toi, les Objets à utilisations limitées que tu prends gagnent une utilisation supplémentaire."
+   ],
+   [
+    "Sally McCoy",
+    "Sally commence dans la <b>McCoy Farmhouse</b>. Quand elle est sauvée, cherche les <b>Combine Keys</b> dans la pioche d'Objets."
+   ]
+  ]
+ },
+ "The Raptor Games": {
+  "ley": "⌛ = Temps · ✴ = dégâts · 🩸 = Bloodlust · 💔 = perdre de la santé · ❤️ = récupérer de la santé · 🔧 = case avec l'icône de clé orange",
+  "err_k_t": "Attention",
+  "err_k": [
+   "Le <b>Pack</b> compte comme le Killer à tous égards ; les <b>Raptors individuels</b> sont des Sbires. Une carte qui dit \"Raptor(s)\" n'inclut pas le Pack ; une qui dit \"Pack\" n'inclut pas les Raptors individuels.",
+   "Tu gagnes quand <b>le Pack</b> est éliminé, même s'il reste des Raptors individuels sur le plateau.",
+   "Un Raptor qui apparaît pendant la phase du Killer <b>ne s'active pas</b> avant la phase du Killer suivante.",
+   "Les Raptors individuels <b>s'arrêtent</b> quand ils entrent (ou commencent leur déplacement) dans une case avec toi ou une Victime. Les cartes Terreur de lieu ne montrent pas cette icône, mais la règle s'applique quand même."
+  ],
+  "bloques_k": [
+   [
+    "Mise en place spéciale",
+    [
+     "Mélange les cartes <b>Spawn</b> face cachée à côté de la carte <b>Raptors</b>, et place les meeples Raptor sur cette carte.",
+     "Le <b>Pack</b> commence sur la case du Killer (K) de la carte de mise en place, à la place du meeple Killer de la boîte de base."
+    ]
+   ],
+   [
+    "Le Pack",
+    [
+     "Un grand groupe de Raptors qui compte comme le Killer à tous égards.",
+     "Sa santé est égale au nombre de Raptors qui le composent : elle commence à <b>5</b> (1 Final Health et 4 Santé) <b>sans limite maximale</b>.",
+     "La valeur d'Attaque du plateau du Killer correspond à ce que le Pack inflige par attaque, quelle que soit sa taille."
+    ]
+   ],
+   [
+    "Raptors individuels",
+    [
+     "Les meeples Raptor. Ce sont des <b>Sbires</b> à tous égards.",
+     "Ils ont <b>1 santé</b> et utilisent la valeur de Mouvement du plateau du Killer.",
+     "Ils n'attaquent pas souvent, mais quand ils le font, <b>chacun</b> inflige 1 ✴."
+    ]
+   ],
+   [
+    "Rejoindre le Pack",
+    [
+     "Sur l'icône du Pack, les Raptors se dirigent vers le Pack par le <b>chemin le plus court</b>. En cas d'égalité, ils prennent celui qui les rapproche le plus du Pack avant de s'arrêter.",
+     "Un Raptor dans la case du Pack le <b>rejoint</b> immédiatement : retire le meeple et ajoute 1 santé au Pack pour chacun.",
+     "Les meeples retirés du plateau retournent sur la carte Raptors pour les prochaines apparitions."
+    ]
+   ],
+   [
+    "Apparition des Raptors",
+    [
+     "Sur l'icône d'apparition, pioche une carte <b>Spawn</b> et fais apparaître ce nombre de Raptors. La case est déterminée par un jet de dé sur le tableau de la carte Raptors ; si plusieurs sont valides, tu choisis.",
+     "Ils n'apparaissent jamais dans des cases qui ne sont plus accessibles.",
+     "S'il n'y a pas assez de meeples, le Raptor le plus proche du Pack le rejoint et tu utilises son meeple ; répète jusqu'à ce que la carte soit résolue.",
+     "Si la pioche Spawn est épuisée, mélange la défausse et pioche.",
+     "L'effet final de la piste 🩸 fait aussi apparaître un Raptor, comme une carte Spawn de 1."
+    ]
+   ],
+   [
+    "Le tableau d'apparition (carte Raptors)",
+    [
+     "Lance un dé pour savoir où ils apparaissent : <b>1</b> ta case · <b>2</b> la case verte (sortie) la plus proche du Pack · <b>3</b> la case 🔧 la plus proche du Pack · <b>4</b> la case verte la plus éloignée du Pack · <b>5</b> la case 🔧 la plus éloignée du Pack · <b>6</b> la case la plus éloignée de toi.",
+     "Chaque Raptor isolé : 1 ❤️, une attaque de 1 ✴ et un mouvement égal à celui du Pack. Ils ne bougent pas s'ils commencent avec toi ou une Victime, et s'arrêtent en entrant dans une case avec toi ou une Victime."
+    ]
+   ],
+   [
+    "Lire leurs cartes",
+    [
+     "La silhouette rouge de plusieurs Raptors = l'icône du Pack : les Raptors isolés se dirigent vers lui pour le rejoindre. Les figurines jaunes = ciblent toi ou la Victime la plus proche. La botte = déplacement. Le couteau = attaque (une par couteau). Le panneau stop avec des figurines = s'arrêtent en atteignant toi ou une Victime. L'œuf fêlé = des Raptors apparaissent.",
+     "\"Pack only\" ne concerne que le Pack ; \"Raptors only\", uniquement les Raptors isolés."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "Toutes ont deux lignes : en haut, les Raptors isolés se déplacent vers le Pack et s'arrêtent s'ils atteignent toi ou une Victime ; en bas, le Pack cible toi ou la Victime la plus proche, se déplace et attaque.",
+     "<b>Claws Like Knives</b> : le Pack attaque une fois. Le premier dégât de chaque attaque est l'icône du cœur barré.",
+     "<b>Born Hungry</b> : le Pack attaque deux fois. Quand elle est révélée, pioche une carte Spawn mais fais apparaître les Raptors dans <b>ta</b> case.",
+     "<b>Raptor Rush</b> : le Pack attaque 3 fois. Quand elle est révélée, tous les Raptors sur le plateau rejoignent le Pack.",
+     "<b>Deadly Quick</b> (Finale Epic) : le Pack attaque deux fois. Quand elle est révélée, place le Pack dans ta case et perds 4 ⌛."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Pack Conditioning</b> : chaque fois qu'un Raptor est adjacent au Pack, ajoute-le au Pack.",
+     "<b>They're Everywhere!</b> : quand tu pioches des cartes Spawn, pioches-en 2 et fais apparaître la valeur la plus haute. Puis défausse les deux.",
+     "<b>Blood Thirsty</b> : chaque fois que le Pack tue une Victime, il gagne ❤️.",
+     "<b>Scaly Hide</b> (Dark Power Epic) : le Pack et les Raptors ignorent tous les dégâts des cartes Réaction."
+    ]
+   ],
+   [
+    "Cartes Terreur à expliquer",
+    [
+     "<b>Protect the Brood</b> (2 exemplaires) : des Raptors apparaissent (œuf) et tu places le Pack là où ils sont apparus. Si la carte Spawn était un <b>0</b>, lance un dé et place le Pack selon le tableau de la carte Raptors. Ensuite le Pack cible toi ou une Victime, se déplace et attaque.",
+     "<b>Share the Feast</b> : le Pack cible, se déplace et attaque ; les Raptors isolés se déplacent vers le Pack (en s'arrêtant sur toi ou une Victime). Si au moins un a rejoint le Pack, le Pack attaque de nouveau.",
+     "<b>No Escape</b> : s'il n'y a aucun Raptor sur le plateau, défausse-la et pioche la carte Terreur suivante. Sinon, le Raptor le plus proche de chaque case verte (sortie) y est placé, et ceux sur les sorties attaquent. Si personne n'a été attaqué, 🎭🎭.",
+     "<b>Predatory Instincts</b> (Minor Dark Power) : le Pack inflige 1 ✴ supplémentaire par couteau.",
+     "<b>Survival Instincts</b> (Minor Dark Power) : à chaque Entretien, le Pack gagne ❤️."
+    ]
+   ]
+  ],
+  "err_m_t": "Attention",
+  "err_m": [
+   "Les cases <b>Lava</b> ne sont plus accessibles à personne, Raptors et T-Rex compris.",
+   "Si <b>Game Makers</b> est pioché pendant la mise en place, défausse-le et pioches-en un autre."
+  ],
+  "bloques_m": [
+   [
+    "Mise en place spéciale",
+    [
+     "Place les marqueurs <b>Electric Fence</b> dans les sections vertes indiquées sur la carte de mise en place. Rien ne va dans les rouges.",
+     "Mélange les <b>3 cartes Lava</b> face cachée et place les jetons Lava à côté.",
+     "Place la carte <b>T-Rex</b> près de la zone de jeu et son meeple sur la case de départ de la carte."
+    ]
+   ],
+   [
+    "Clôtures électriques",
+    [
+     "Il y a 3 clôtures : A, B et C. Tant qu'un marqueur est présent, le passage est bloqué et les cases de chaque côté ne sont <b>pas</b> adjacentes.",
+     "<b>Panique</b> : quiconque panique vers une clôture bloquée reste où il est.",
+     "<b>Plus loin / plus proche</b> : ne compte que les chemins non bloqués. Si les 3 marqueurs sont posés et que la seule case ou cible est de l'autre côté, compte comme s'il n'y avait pas de clôtures.",
+     "<b>Ciblage des Ennemis</b> : sans chemin non bloqué vers sa cible, l'Ennemi ne bouge pas pour cette action, mais ses icônes d'attaque se résolvent quand même dans sa case.",
+     "<b>Placer quelqu'un</b> : les clôtures n'affectent pas les effets qui placent quelqu'un.",
+     "À chaque <b>Entretien</b>, lance le dé des clôtures : si cette clôture a un marqueur, retire-le ; sinon, places-en un."
+    ]
+   ],
+   [
+    "Le T-Rex",
+    [
+     "Il commence enfermé dans le <b>Dino Pen</b>. Avec son icône (l'empreinte), avance son meeple d'une case vers la droite sur la carte T-Rex.",
+     "Sur <b>\"Break out!\"</b>, place son meeple dans le Dino Pen sur le plateau et son jeton d'action sous l'Action du Killer sur la carte Finale. À partir de là, ignore son icône.",
+     "Ce n'est <b>pas</b> un Killer ni un Sbire : il ne peut pas être attaqué, blessé ni tué. Son action se résout après les Actions des Sbires et du Killer de la Finale.",
+     "Les Victimes ne te suivent pas dans sa case (sauf si un effet leur permet de te suivre dans celle du Killer). Pendant la phase de Panique, tous ceux qui sont dans sa case paniquent, que quelqu'un soit mort ou non ce tour-ci.",
+     "<b>Mouvement 2</b>, avec l'icône ANY : il s'arrête dès qu'il atteint une case avec <b>quelqu'un</b> (toi, des Victimes, des Ennemis...), et ne bouge pas si quelqu'un est déjà dans sa case.",
+     "<b>Il n'inflige pas de dégâts : il tue</b> une cible dans sa case. Priorité : Victime, Sbire, toi, Killer. S'il t'attaque ou attaque le Killer, la cible meurt instantanément, sans révéler de Final Health.",
+     "Contre un Ennemi composé de plusieurs unités (le Pack de Raptors, une horde de zombies...), il tue <b>une</b> unité, soit 1 dégât."
+    ]
+   ],
+   [
+    "Le volcan",
+    [
+     "La <b>première fois</b> que tu résous l'icône du volcan, il entre en éruption : tous ceux qui sont sur le <b>Volcano</b> subissent 💔, ceux qui restent dans la case paniquent, et tu y places le jeton Volcano Lava : elle n'est plus accessible.",
+     "<b>Ensuite</b>, la lave s'étend à une case adjacente : pioche une carte <b>Lava</b> pour savoir laquelle et applique-la.",
+     "Une fois les <b>4 jetons Lava</b> sur le plateau, ignore l'icône du volcan.",
+     "Les 3 cartes Lava : <b>North Beach</b>, <b>Generator</b> et <b>Smuggler's Cove</b>. Tous ceux qui y sont subissent 💔, ceux qui restent paniquent jusqu'à ce qu'ils quittent la case, et tu places son jeton Lava."
+    ]
+   ],
+   [
+    "Cases spéciales",
+    [
+     "Les <b>3 cases d'angle</b> avec l'icône de plage sont des cases <b>Beach</b>.",
+     "Les <b>2 cases de bord</b> avec l'icône de falaise sont des cases <b>Cliff</b>.",
+     "Plusieurs cartes de lieu y font référence."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "shotgun",
+    "Shotgun",
+    "Arme · portée 0-1 · 3 ✴ · 2 mains · 2 utilisations. Répartis les dégâts : la moitié (arrondie au supérieur) à un Ennemi dans ta case et la moitié (arrondie à l'inférieur) à un Ennemi dans une case adjacente. Les dégâts vers une case sans Ennemi sont perdus."
+   ],
+   [
+    "throwing-axe",
+    "Throwing Axe",
+    "Arme · portée 0-1 · 1 ✴ · 1 main. Si elle est utilisée à portée 1, défausse-la."
+   ],
+   [
+    "safari-knife",
+    "Safari Knife",
+    "Arme · portée 0 · 1 ✴ · 1 main."
+   ],
+   [
+    "flaming-torch",
+    "Flaming Torch",
+    "Arme · portée 0 · 1 ✴ · 1 main · 3 utilisations. Utilise-la pour attaquer ou pour ignorer 1 ✴ d'une attaque d'Ennemi."
+   ],
+   [
+    "tranquilizer-gun",
+    "Tranquilizer Gun",
+    "1 main · 2 utilisations. À tout moment, inflige 1 ✴ à un Ennemi dans une case adjacente ; s'il était en train de se déplacer, son déplacement s'arrête."
+   ],
+   [
+    "wildlife-net",
+    "Wildlife Net",
+    "2 mains. Défausse-le quand un Ennemi t'attaque pour ignorer cette attaque et toutes les attaques de cet Ennemi pour le reste du tour."
+   ],
+   [
+    "whistle",
+    "Whistle",
+    "Une fois par phase d'Action, dépense 1 ⌛ : toutes les Victimes adjacentes viennent dans ta case, puis tous les Ennemis te ciblent et se déplacent. Tant que tu l'as, une Victime supplémentaire te suit."
+   ],
+   [
+    "bait",
+    "Bait",
+    "Défausse-le pour placer la <b>Goat</b> dans ta case ou une case adjacente. Les Ennemis et le T-Rex ciblent toujours la Goat jusqu'à ce qu'elle soit tuée. Elle a 1 ❤️ et ne bouge pas."
+   ],
+   [
+    "safari-rover-keys",
+    "Safari Rover Keys",
+    "4 utilisations. Place le jeton <b>Rover</b> dans ta case ; il se déplace avec toi. Avec le Rover, jusqu'à 3 Victimes peuvent te suivre et tu peux dépenser une utilisation pour te déplacer d'1 case. Quand les utilisations sont épuisées, il n'a plus d'essence : défausse la carte et le Rover."
+   ],
+   [
+    "bush-plane",
+    "Bush Plane",
+    "Quand tu sauves au moins une Victime à l'<b>Airstrip</b>, tu peux le défausser pour sauver immédiatement une Victime de plus depuis n'importe quelle case."
+   ],
+   [
+    "enhanced-goggles",
+    "Enhanced Goggles",
+    "Tu peux ignorer toutes les icônes 💔 des cartes Action <b>Walk</b> et <b>Sprint</b>."
+   ],
+   [
+    "generator-codes",
+    "Generator Codes",
+    "Défausse-les pour ajouter ou retirer n'importe lequel des marqueurs de <b>clôture électrique</b>."
+   ],
+   [
+    "safari-rifle",
+    "Safari Rifle",
+    "Arme · portée 1-2 · 2 mains · 2 utilisations. Ne peut pas modifier une carte Action et doit être utilisé sans. Une fois par tour, dépense ⌛ pour faire un jet d'Horreur. En cas de succès : 2 ✴ à 1 Ennemi à portée."
+   ],
+   [
+    "cattle-prod",
+    "Cattle Prod",
+    "1 main · 3 utilisations. Déplace un Ennemi de ta case vers une case adjacente."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "S'il est face visible sur une pioche d'Objets, tu peux le prendre gratuitement quand tu es dans sa case 🔧. Défausse-le pour récupérer ❤️❤️❤️."
+   ],
+   [
+    "private-stash",
+    "Private Stash",
+    "Quand tu le prends, défausse-le et choisis : ce que montrent ses icônes, ou la carte du dessus de n'importe quelle pioche d'Objets."
+   ]
+  ],
+  "falta": "",
+  "ev": [
+   [
+    "Supply Drop",
+    "Place les 3 jetons Supply sur les cases Beach et Cliff les plus éloignées de toi (un par case). Sur une case avec un jeton, tu peux dépenser 2 ⌛ pour le retirer et prendre au hasard un Objet mis de côté pendant la mise en place. Défausse quand il ne reste plus de jetons."
+   ],
+   [
+    "Fierce Competitors",
+    "Pour chaque Victime que tu sauves : ⌛."
+   ],
+   [
+    "Terrified Child",
+    "La Victime la plus éloignée de toi est le Terrified Child. Tant qu'il reste d'autres Victimes, il ne te suit pas et ne peut être ni sauvé, ni ciblé, ni tué. Sauvé : débloque ta capacité ultime ou ramène l'Horreur à 0. Tué : 🩸 passe au maximum."
+   ],
+   [
+    "Game Makers",
+    "S'il est pioché pendant la mise en place, défausse-le et pioches-en un autre. Sinon, résous ses trois icônes (volcan, un nouvel Événement et la griffe orange) et défausse-le."
+   ],
+   [
+    "The Alpha",
+    "La Victime la plus proche de toi est l'Alpha. S'il est tué : 🩸. Quand quelqu'un avec l'Alpha ou à côté de lui devrait être attaqué (pas les Ennemis), l'Alpha se déplace dans sa case et tu lances un dé : <b>1-2</b> l'Alpha meurt · <b>3-4</b> l'attaque a lieu · <b>5-6</b> elle est annulée."
+   ],
+   [
+    "The Power Is Down",
+    "Retire tous les marqueurs de clôture électrique et résous une fois la griffe orange. Ne lance pas le dé des clôtures lors du prochain Entretien. Défausse à la fin de cet Entretien."
+   ],
+   [
+    "Power Surge",
+    "Place tous les marqueurs de clôture électrique. Ne lance pas leur dé lors du prochain Entretien. Défausse à la fin de cet Entretien."
+   ],
+   [
+    "Tropical Storm",
+    "Pendant la prochaine phase d'Action, lance un dé de moins (minimum 1) à chaque jet d'Horreur. Si tu ne fais aucun jet d'Horreur : 3 ⌛. Défausse à la fin de cette phase."
+   ],
+   [
+    "Herbal Remedies",
+    "Prends une Victime tuée de ton choix et place-la dans ta case. Défausse."
+   ],
+   [
+    "The Hunter",
+    "Place le Hunter dans la case la plus éloignée de toi. À chaque Entretien, le Hunter panique et inflige ✴ à tous ceux qui sont dans sa case."
+   ]
+  ]
+ },
+ "Bad Times at Buddyland": {
+  "ley": "⌛ = Temps · ✴ = dégâts · ❤️ = santé · 🩸 = Bloodlust · 🎭 = augmenter l'Horreur · ⊘🎭 = le masque barré de la carte",
+  "err_k_t": "Attention",
+  "err_k": [
+   "<b>Billy ne peut pas être attaqué tant qu'il y a un Buddy dans sa case.</b> Les Buddies le protègent coûte que coûte.",
+   "Tant qu'une <b>Power Source est Active</b>, l'icône batterie-cœur soigne Billy de 1 ❤️. Les éteindre est la clé.",
+   "Un Buddy qui apparaît pendant la phase du Killer ne s'active pas avant la phase du Killer suivante."
+  ],
+  "bloques_k": [
+   [
+    "Mise en place spéciale",
+    [
+     "<b>Avant</b> de révéler la carte de mise en place, place <b>4</b> jetons <b>Power Source</b> face Active visible (batterie verte avec +) dans 4 cases différentes, aucune adjacente à une autre. Mets le 5e de côté : il peut entrer en jeu plus tard.",
+     "Mélange face cachée les jetons de piste Bloodlust <b>A</b> et <b>B</b>, par type. Places-en 6 face cachée sur le plateau du Killer, chacun sur la case correspondante par couleur et icône. Les 2 restants (un de chaque) ne sont ni utilisés ni révélés.",
+     "Mélange les 5 cartes <b>Buddy</b> face cachée : c'est la pioche Buddy. Mets de côté les 2 cartes <b>Special Buddy</b> : elles peuvent arriver plus tard et suivent les mêmes règles.",
+     "Fais apparaître un Buddy (voir ci-dessous)."
+    ]
+   ],
+   [
+    "Piste Bloodlust",
+    [
+     "Quand le Bloodlust atteint un niveau avec un jeton, révèle-le et applique son effet."
+    ]
+   ],
+   [
+    "Power Sources",
+    [
+     "Désactiver : retourne le jeton sur sa face Inactive (batterie rouge barrée). Tu peux le faire en dépensant ⌛ quand tu es dans sa case, même si tu ne fais qu'y passer.",
+     "Si une Power Source Inactive est Activée, remets-la sur sa face verte.",
+     "Avec l'icône <b>batterie-cœur</b>, Billy récupère 1 ❤️ si au moins une Power Source est Active. S'il n'y en a aucune, ignore-la."
+    ]
+   ],
+   [
+    "Les Buddies",
+    [
+     "Ce sont des <b>Sbires</b> et ils suivent les règles normales des Sbires (p. 32 du livret de règles de base). Chaque carte est un animatronique avec sa propre santé, attaque et mouvement.",
+     "<b>Faire apparaître un Buddy</b> : révèle la carte du dessus de la pioche, place ses marqueurs de santé dessus et place son jeton dans une case adjacente à Billy, sans Buddy si possible. Si Billy n'est plus en jeu, rien n'apparaît.",
+     "<b>Activation</b> : chaque Buddy a un numéro d'Initiative (cercle, en haut à droite). Les Actions des Sbires et les cartes Terreur se résolvent de l'Initiative la plus basse à la plus haute.",
+     "<b>Tuer un Buddy</b> : retire son jeton, prends la <b>Kill Reward</b> indiquée sur sa carte et retire la carte du jeu. S'il meurt en dehors de la phase d'Action, prends la récompense au début de la phase d'Action suivante.",
+     "Exemple : <b>Toby</b> a 3 ❤️, Initiative 1, attaque 1, mouvement 1 et Kill Reward 2 ⌛."
+    ]
+   ],
+   [
+    "Finales",
+    [
+     "Toutes ont deux lignes : en haut, Billy cible toi ou la Victime la plus proche, se déplace et attaque ; en bas, l'icône batterie-cœur puis il cible de nouveau.",
+     "<b>Finale de base</b> (l'ours rose) : attaque sans se déplacer ; en bas, batterie-cœur, cible et attaque.",
+     "<b>Encore</b> : en bas, se déplace deux fois et attaque deux fois.",
+     "<b>Sizzling Power</b> : si au moins une Power Source est Active, répète son Action du Killer une fois.",
+     "<b>It's Showtime!</b> : tu ne peux pas jouer de cartes Réaction s'il y a plus d'un Ennemi dans ta case.",
+     "<b>Power Surge</b> (Finale Epic) : quand elle est révélée, fais apparaître <b>Boris</b>. Tu dois tuer Billy <b>et</b> Boris pour gagner."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Introducing... Billy Jr.!</b> : fais apparaître Billy Jr. dans la case de Billy.",
+     "<b>Deathlust</b> : +1 au Mouvement et à l'Attaque de Billy.",
+     "<b>Endless Power</b> : quand tu révèles le jeton Final Health de Billy, révèles-en un de plus par Power Source Active et applique celui qui soigne le plus.",
+     "<b>Merciless Minions</b> (Dark Power Epic) : pour l'Action des Sbires de la Finale, ajoute un déplacement avant l'attaque.",
+     "<b>Backup Generator</b> (Minor) : pendant l'Entretien, Active une Power Source Inactive de ton choix (si possible). Si une a été Activée, retire un ❤️ de cette carte.",
+     "<b>Renewable Energy</b> (Minor) : tu ne peux Désactiver aucune Power Source."
+    ]
+   ],
+   [
+    "Cartes Terreur de Billy",
+    [
+     "<b>Animatronical</b> : fais apparaître un Buddy et pioche la carte Terreur suivante.",
+     "<b>\"He's Turning Them Back On!\"</b> : s'il n'y a aucune Power Source Inactive, défausse et pioches-en une autre. Sinon, place Billy dans la case la plus proche avec une Power Source Inactive, Active-la et 🎭.",
+     "<b>\"Eyes in the Dark\"</b> : le Killer te cible (la Final Girl) et se déplace deux fois ; puis 🎭 une fois par Ennemi dans ta case et les cases adjacentes, jusqu'au nombre de Power Sources Actives.",
+     "<b>\"It's a Short Circuit!\"</b> : si aucune case avec une Power Source Active n'a de Victimes, défausse et pioches-en une autre. Sinon, dans chacune de ces cases avec une Victime, une Victime est tuée, les autres paniquent et cette Power Source est Désactivée.",
+     "<b>\"They're Here for Blood!\"</b> : s'il n'y a pas de Buddies ou pas de Victimes, défausse et pioches-en une autre. Sinon, Buddies uniquement : ciblent la Victime la plus proche, se déplacent et attaquent. Si au moins une Victime a été tuée, +🩸."
+    ]
+   ]
+  ],
+  "err_m_t": "Attention",
+  "err_m": [
+   "Buddyland n'a <b>pas de mise en place spéciale</b> : les Power Sources appartiennent à Billy."
+  ],
+  "bloques_m": [
+   [
+    "Le lieu",
+    [
+     "Les <b>4 cases centrales</b> avec l'icône de borne d'arcade sont des cases <b>Arcade</b>. Plusieurs cartes y font référence.",
+     "Cases nommées : <b>Party Room</b>, <b>Kitchen</b>, <b>Dining Area</b>, <b>Entrance</b>, <b>Prize Counter</b>, <b>Arcade</b>, <b>Janitor's Closet</b>, <b>Bathroom</b>, <b>Jungle Gym</b> et <b>Ball Pit</b>. Dining Area, Prize Counter et Ball Pit ont des pioches d'Objets sur le côté."
+    ]
+   ],
+   [
+    "Cartes Terreur de Buddyland",
+    [
+     "<b>Hungry for Blood</b> : s'il n'y a pas de Victimes dans la Kitchen, la Party Room ou la Dining Area, défausse et pioches-en une autre. Sinon, place le Killer dans celle qui a le plus de Victimes ; il cible une Victime ou toi et attaque deux fois.",
+     "<b>Panic at the Disco</b> : s'il n'y a pas de Victimes dans les cases Arcade, défausse et pioches-en une autre. Sinon, toutes les Victimes de chaque case Arcade paniquent ; celle qui panique vers une case avec un Ennemi est tuée. Si aucune Victime n'a été tuée, +🩸.",
+     "<b>\"How'd They Sneak In?\"</b> : lance 3 dés et place une Victime par dé : 1-2 Jungle Gym, 3-4 Dining Area, 5-6 Party Room. Puis un Événement.",
+     "<b>\"They Want Her!\"</b> : toutes les Victimes de ta case paniquent, tous les Ennemis avancent d'une case vers toi, 🎭 par Ennemi dans ta case, puis un Événement.",
+     "<b>\"It's Play Time!\"</b> : lance un dé. 1-3 : place le Killer avec la cible la plus proche. 4-6 : il cible une Victime ou toi et attaque. Répète 5 fois de plus ; tu peux supprimer une répétition par carte Action défaussée de ta main, le tout décidé d'un coup à l'avance."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "janitors-mop",
+    "Janitor's Mop",
+    "Arme · portée 0 · 1 ✴ · 2 mains. Une fois par phase d'Action, si tu es seule dans une case, tu peux dépenser 2 ⌛ pour ⊘🎭."
+   ],
+   [
+    "security-bot",
+    "Security Bot",
+    "Place le jeton <b>Bot</b> dans ta case. Quand tu gagnes du mouvement, tu peux l'utiliser pour déplacer le Bot à la place. Jusqu'à 2 Victimes peuvent suivre le Bot, et les Victimes sur une sortie avec le Bot peuvent être sauvées."
+   ],
+   [
+    "security-badge",
+    "Security Badge",
+    "Quand tu le prends, prends aussi la carte Action <b>Planning</b>. Les Victimes de ta case ne paniquent jamais."
+   ],
+   [
+    "arcade-token",
+    "Arcade Token",
+    "Défausse-le dans une case <b>Arcade</b> pour dépenser 3 ⌛ pour 3 ⊘🎭."
+   ]
+  ],
+  "falta": "Encore à photographier : 12 de ses 16 Objets et 3 de ses 5 mises en place (Buddy Day, Birthday Bash et Pizza Party).",
+  "ev": [
+   [
+    "Birthday Girl",
+    "La Birthday Girl commence dans la <b>Party Room</b>. Si elle est seule pendant la phase de Panique, elle panique. Sauvée : 4 ⌛. Tuée : 🩸."
+   ],
+   [
+    "Nick the Janitor",
+    "Nick commence dans le <b>Janitor's Closet</b> et peut te suivre même dans la case du Killer. Quand il entre dans une case avec un Ennemi, il lui inflige 2 ✴ ; puis il quitte le plateau et revient dans le Closet au prochain Entretien. Tué : 2 🩸."
+   ],
+   [
+    "Sing-A-Long",
+    "À chaque Entretien : 🎭. Défausse quand le niveau d'Horreur atteint la zone rouge."
+   ],
+   [
+    "Pizza Delivery",
+    "La Victime la plus proche de l'<b>Entrance</b> est le Pizza Guy. Tant qu'il est dans ta case, tu peux lancer 2 dés supplémentaires quand tu résous une carte Action <b>Search</b>. S'il est tué, toutes les Victimes de sa case et des cases adjacentes paniquent."
+   ]
+  ],
+  "falta_ev": "Il manque 6 de ses 10 Événements : Broken Machine, Buddy Up, Hidden Prizes, Party Time, Playtime Shenanigans et Tragic Collapse."
+ },
+ "The Green Terror": {
+  "ley": "⌛ = Temps · ✴ = dégâts · ❤️ = récupérer de la santé · 💔 = perdre de la santé · 🎭 = augmenter l'Horreur · ⊘🎭 = baisser l'Horreur · 🎲 = dé · 🔧 = case avec l'icône de clé orange",
+  "err_k_t": "Attention",
+  "err_k": [
+   "Si tu l'attaques alors qu'elle est Dissimulée et qu'elle n'est pas dans la case attaquée, elle <b>te tend une embuscade</b> (même si c'est quelqu'un d'autre qui a attaqué) : tu subis l'<b>Ambush Penalty</b> de la dernière carte de son Path.",
+   "Tu n'as jamais le droit de regarder les cartes Mouvement défaussées."
+  ],
+  "bloques_k": [
+   [
+    "Mise en place spéciale",
+    [
+     "Place les cartes Action <b>Track</b> dans le Tableau d'Actions.",
+     "Place la carte <b>Attack Resolution</b>, les jetons <b>Damage</b> et le jeton <b>Attack</b> (le viseur) à côté de la zone de jeu.",
+     "Mélange les cartes <b>Movement</b> et place la pioche face cachée à côté du plateau. Distribue 1 carte face cachée à côté, en laissant de la place pour 5 de plus maximum.",
+     "Après avoir révélé la carte de mise en place, ne place <b>pas</b> Volk'ar sur le plateau : son meeple va au dos de la carte <b>Finale</b>, sur l'emplacement indiqué. Place un marqueur <b>Origin</b> là où le Killer commencerait et l'autre sur cette carte Mouvement face cachée."
+    ]
+   ],
+   [
+    "Dissimulée ou Visible",
+    [
+     "Volk'ar n'a <b>pas de valeur de Mouvement</b> : elle se déplace le long de son <b>Path</b>, la rangée de cartes Mouvement.",
+     "<b>Dissimulée</b> : on ne la voit pas, mais elle est TOUJOURS dans une case, celle indiquée par son Path. Son meeple est sur la carte Finale. Si elle est Dissimulée au début de la phase du Killer, résous l'Action du Killer <b>du haut</b> de la Finale.",
+     "<b>Visible</b> : son meeple est sur le plateau et on la voit normalement. Si elle est Visible au début de la phase du Killer, résous l'Action du Killer <b>du bas</b>.",
+     "La <b>carte Origin</b> est la première carte du Path (elle porte un marqueur Origin) et indique d'où part son déplacement caché."
+    ]
+   ],
+   [
+    "Construire le Path",
+    [
+     "Avec l'icône de l'<b>œil</b>, pioche une carte Mouvement et place-la <b>face visible</b> à l'emplacement suivant du Path. Avec l'<b>œil barré</b>, place-la <b>face cachée</b>.",
+     "Si elle est Visible quand un œil barré est résolu, elle devient immédiatement Dissimulée : place un Origin sur la nouvelle carte et l'autre dans sa case actuelle, et son meeple retourne sur la carte Finale.",
+     "Si la pioche est épuisée, mélange la défausse pour former une nouvelle pioche."
+    ]
+   ],
+   [
+    "Quand elle se montre",
+    [
+     "Elle résout son Path et se révèle quand : tu résous l'icône <b>Reveal</b> d'une carte, une <b>6e</b> carte est ajoutée au Path, ou tu lui infliges des dégâts alors qu'elle est Dissimulée (voir ci-dessous).",
+     "Si la 6e carte arrive pendant la résolution de l'Action du Killer de la Finale ou d'une carte Terreur (ou autre), termine d'abord cette carte. Il peut y avoir plus de 6 cartes à résoudre.",
+     "Quand elle est révélée : 1) place son meeple dans la case du marqueur Origin (même si elle n'est plus accessible) et mets les deux Origin à côté de la pioche. 2) En partant de la carte Origin, résous chaque carte du Path une par une, en la retournant si besoin : elle se déplace, et attaque là où elle est si la carte l'indique. Les restrictions de déplacement du Killer s'appliquent à elle, et parfois elle ne bouge pas. 3) Si toi ou elle devez révéler le jeton Final Health, attends que toutes les cartes soient résolues. 4) Défausse les cartes du Path."
+    ]
+   ],
+   [
+    "L'attaquer quand elle est Dissimulée",
+    [
+     "Tu peux cibler n'importe quelle case à portée comme si elle y était. Place-y le jeton <b>Attack</b>, résous l'attaque et note les dégâts avec des jetons Damage sur la carte Attack Resolution.",
+     "Si tu n'infliges aucun dégât, elle reste Dissimulée et le Path n'est pas résolu. Si tu infliges des dégâts, son Path est résolu.",
+     "Si elle termine dans la case avec ton jeton Attack, elle subit les dégâts ! Si elle termine ailleurs, l'attaque n'a eu aucun effet et elle te tend une embuscade : résous l'<b>Ambush Penalty</b>, la bande rouge en bas de la dernière carte de son Path.",
+     "Ensuite, défausse les jetons Damage et retire le jeton Attack.",
+     "Si tu as attaqué ta propre case, qu'elle y termine et que la dernière carte a une ligne d'Attaque du Killer, les deux attaques ont lieu simultanément."
+    ]
+   ],
+   [
+    "Tant qu'elle est Dissimulée",
+    [
+     "Si un effet te demande de placer quelque chose ou de compter des cases par rapport au Killer, utilise la case du marqueur Origin.",
+     "Si un effet te demande de placer le Killer, ignore-le.",
+     "Si une carte a une ligne d'Action du Killer, traite-la comme un œil barré.",
+     "Les Victimes ne paniquent pas pendant la phase de Panique."
+    ]
+   ],
+   [
+    "La pister",
+    [
+     "La carte Action <b>Track</b> (2 ⌛) retourne des cartes du Path : avec 3★, révèle la carte Origin <b>ou</b> 2 autres cartes ; avec 2★, 2 cartes (pas l'Origin) ; avec 1★, 1 carte (pas l'Origin). La ligne rouge : Volk'ar ▸ œil barré.",
+     "Si toutes les cartes du Path sont face visible, tu sais <b>exactement</b> où elle est. S'il y en a une face cachée, tu dois deviner."
+    ]
+   ],
+   [
+    "Ses cartes Mouvement",
+    [
+     "La pioche en compte 22, avec des doublons. Chacune indique comment elle se déplace ; certaines ont une ligne d'attaque (🎯 Final Girl ou Victime ▸ 🔪) et la bande rouge en bas est l'<b>Ambush Penalty</b>. Aucune ne compte la case où elle se trouve déjà. Celles que nous avons vues :",
+     "2 cases vers la case 🔧 la plus proche (égalité : ordre alphabétique) · attaque · embuscade 🎭🎭",
+     "1 case vers la case 🔧 la plus proche (égalité : ordre alphabétique inverse) · embuscade 2 ⌛",
+     "3 cases vers la case 🔧 la plus proche (égalité : ordre alphabétique inverse) · attaque · embuscade 2 éclaboussures de sang",
+     "2 cases vers la case nommée la plus proche (égalité : ordre alphabétique inverse) · embuscade 1 éclaboussure de sang",
+     "1 case vers la case nommée la plus proche (égalité : ordre alphabétique) · attaque · embuscade 🎭",
+     "3 cases vers la case à icône verte la plus proche (égalité : numéro de panique le plus bas) · embuscade 1 éclaboussure de sang",
+     "2 cases vers la case à icône verte la plus proche (égalité : numéro de panique le plus haut) · attaque 🔪🔪 · embuscade 🎭",
+     "1 case vers la case à icône verte la plus proche (égalité : numéro de panique le plus bas) · attaque · embuscade 3 ⌛",
+     "Se déplace d'1 case sur un ①, ② ou ③ (six cartes, avec ou sans attaque) · embuscades : 🎭, 🎭🎭, 2 ⌛, 3 ⌛ ou éclaboussures de sang",
+     "Ne se déplace pas et récupère ❤️ (deux cartes) · embuscade 🎭🎭 ou défausse une carte Action au hasard"
+    ]
+   ]
+  ],
+  "err_m_t": "Attention",
+  "err_m": [
+   "Les <b>Soldiers</b> te suivent <b>dans la case du Killer</b>, contrairement aux Victimes normales.",
+   "Au début, sauver un Soldier coûte <b>2 ⌛</b> et un Soldier seul n'inflige aucun dégât.",
+   "Personne ne peut remonter la rivière, à contre-courant des flèches."
+  ],
+  "bloques_m": [
+   [
+    "Mise en place spéciale",
+    [
+     "Place le jeton <b>Huey</b> dans la <b>Clearing</b>.",
+     "Place les cartes Action <b>Train</b> dans le Tableau d'Actions.",
+     "Place la carte <b>Soldiers</b> et les cubes d'Action à côté de la zone de jeu. Mets-y les <b>8</b> jetons Amélioration : les 2 de départ (étoile verte) face <b>Débloquée</b> visible et les 6 autres face <b>Verrouillée</b> visible (cadenas)."
+    ]
+   ],
+   [
+    "Les Soldiers",
+    [
+     "Chaque Victime normale est un <b>Soldier</b>. Ils se comportent comme des Victimes normales pour presque tout, mais ils te suivent dans la case du Killer et peuvent recevoir des ordres.",
+     "L'<b>Archeologist</b> et le <b>Rebel Leader</b> ne sont pas des Soldiers et ne peuvent pas recevoir d'ordres."
+    ]
+   ],
+   [
+    "Améliorations",
+    [
+     "Il y a des Améliorations d'<b>Action</b> (jetons avec des cases) et des Améliorations de <b>Capacité</b> (sans cases). Au début, les Soldiers n'ont que deux Améliorations d'Action : se déplacer et attaquer. La carte Action <b>Train</b> en débloque d'autres.",
+     "Pour Débloquer : choisis un jeton et retourne-le du cadenas vers sa face Débloquée. Si un effet dit d'en Verrouiller un, retourne-le à nouveau.",
+     "<b>Attaque</b> (tu commences avec une Débloquée et une Verrouillée) : un Soldier ou un groupe attaque les Ennemis à sa portée.",
+     "<b>Déplacement</b> (pareil, une et une) : un groupe de Soldiers se déplace d'1 case.",
+     "<b>Sauver les Soldiers</b> : ils ne veulent pas être secourus, ils veulent se battre. En sauver un coûte 2 ⌛ ; Débloquée, cela ne coûte pas de Temps.",
+     "<b>Tir ami</b> : chaque fois qu'ils attaquent, lance un dé par Soldier impliqué. Sur 1-2, l'un d'eux meurt. Débloquée, plus de tir ami.",
+     "<b>Portée d'attaque</b> : au début, ils n'attaquent que leur propre case. Débloquée, aussi une case adjacente.",
+     "<b>Dégâts</b> : au début, ils infligent ✴ égal au nombre de Soldiers ÷ 2, arrondi à l'<b>inférieur</b> (un seul n'inflige rien, trois infligent 1). Débloquée, arrondi au <b>supérieur</b> (un inflige 1, trois infligent 2)."
+    ]
+   ],
+   [
+    "Donner des ordres aux Soldiers",
+    [
+     "Pendant la phase d'Action : choisis la case avec les Soldiers, choisis un jeton Amélioration d'Action et place un cube sur sa case la plus à gauche, puis résous l'Action pour tous les Soldiers de cette case.",
+     "Tu ne peux pas utiliser une Action s'il y a déjà un cube sur sa ligne.",
+     "Pendant l'Entretien, décale tous les cubes d'une case vers la droite. Dès qu'un cube quitte la dernière case, l'Action est de nouveau disponible."
+    ]
+   ],
+   [
+    "Le Huey",
+    [
+     "La case du Huey compte comme une case de sortie (l'icône verte). Dans la même case que le Huey, tu peux y sauver n'importe quel nombre de Victimes.",
+     "Ensuite le Huey est retiré et la Clearing n'est plus une sortie. Il ne revient que si un effet de jeu le remet."
+    ]
+   ],
+   [
+    "La rivière",
+    [
+     "Il y a 4 cases River : <b>Waterfall</b>, <b>Upper River</b>, <b>Central River</b> et <b>Lower River</b>.",
+     "En descendant la rivière (dans le sens des flèches), tu peux atteindre n'importe quelle case River pour 1 mouvement : de Waterfall à Lower River avec un seul succès de Walk. Tu traverses les cases intermédiaires et résous leurs effets.",
+     "Les Soldiers se déplacent aussi ainsi ; pas les Ennemis : ils ne descendent que vers une case River adjacente.",
+     "Personne (toi, les Victimes ou les Ennemis) ne peut remonter la rivière. La case en amont compte quand même comme adjacente.",
+     "La <b>Wet Suit</b> te permet de remonter la rivière, mais les Victimes ne peuvent pas te suivre."
+    ]
+   ],
+   [
+    "Cases",
+    [
+     "Nommées : <b>Lower</b>, <b>Central</b> et <b>Upper River</b>, <b>Waterfall</b>, <b>Rebel Camp</b>, <b>Ancient Ruins</b>, <b>Supply Depot</b>, <b>Cursed Temple</b>, <b>Clearing</b> et <b>Cave</b>.",
+     "Les cases 🔧 sont Ancient Ruins, Rebel Camp et Supply Depot, chacune avec sa propre pioche d'Objets sur le côté du plateau."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "bowie-knife",
+    "Bowie Knife (Pig Sticker)",
+    "Arme · portée 0 · 1 ✴ · 1 main. Si tu as un Bowie Knife dans chaque main, tu peux utiliser les deux pour attaquer."
+   ],
+   [
+    "bowie-knife-2",
+    "Bowie Knife (Goat Slicer)",
+    "Arme · portée 0 · 1 ✴ · 1 main. Si tu as un Bowie Knife dans chaque main, +1 ✴."
+   ],
+   [
+    "m16",
+    "M16",
+    "Arme · portée 1-2 · 2 mains. Inflige 2 ✴ à portée 1 et 1 ✴ à portée 2."
+   ],
+   [
+    "axe",
+    "Axe",
+    "Arme · portée 0 · 2 ✴ · 2 mains."
+   ],
+   [
+    "compound-bow",
+    "Compound Bow",
+    "Arme · portée 1-2 · 1 ✴ · 2 mains · 3 flèches. Ne peut pas modifier une carte Action et doit être utilisé sans. Tirer une flèche coûte 2 ⌛."
+   ],
+   [
+    "cursed-idol",
+    "Cursed Idol",
+    "Tant qu'il est face visible quelque part, tu ne peux plus résoudre de cartes Action <b>Search</b>. En entrant dans la case 🔧 de l'Idol, ou s'il est révélé pendant une fouille, tu dois le prendre. Il ne peut être défaussé qu'au <b>Cursed Temple</b>."
+   ],
+   [
+    "booby-trap",
+    "Booby Trap",
+    "Dépense 3 ⌛ pour placer le jeton Booby Trap dans ta case. Si un Ennemi entre dans cette case, défausse le jeton et cette carte, et l'Ennemi subit 3 ✴."
+   ],
+   [
+    "wet-suit",
+    "Wet Suit",
+    "Tu peux remonter la rivière, mais les Victimes ne peuvent pas te suivre. Tu n'es plus affectée par la carte Terreur <b>Flash Flood</b>, l'Événement <b>Heavy Rains</b> ni l'Événement <b>\"Piranhas!\"</b>."
+   ],
+   [
+    "mini-gun",
+    "Mini-Gun",
+    "Arme · portée 0-1 · 2 mains · 2 utilisations. Quand tu te déplaces, déplace-toi d'1 case de moins (minimum 1). Ne peut pas aller dans ton sac à dos. Quand tu attaques, inflige 1 ✴ supplémentaire pour chaque ★ de ton jet d'Horreur final."
+   ],
+   [
+    "first-aid-kit",
+    "First Aid Kit",
+    "1 main. Chaque fois que tu utilises une carte Action pour récupérer de la santé, récupère ❤️ de plus."
+   ],
+   [
+    "walkie-talkies",
+    "Walkie-Talkies",
+    "1 main. Les <b>Soldiers</b> peuvent se déplacer d'1 case supplémentaire quand ils se déplacent."
+   ],
+   [
+    "mres",
+    "MRE's",
+    "2 utilisations. Avance tous les cubes de la carte <b>Soldier</b> d'1 case vers la droite."
+   ],
+   [
+    "mysterious-pills",
+    "Mysterious Pills",
+    "Défausse-les pendant la phase d'Action et choisis : ⊘🎭 ou ❤️❤️."
+   ],
+   [
+    "cigar",
+    "Cigar",
+    "3 utilisations. Lance 1 🎲 supplémentaire quand tu résous une carte Action <b>Train</b>."
+   ],
+   [
+    "river-mud",
+    "River Mud",
+    "Quand tu résous l'icône Target Final Girl ou Target Victim/Final Girl, lance un dé : sur 5-6, tu ne peux pas être la cible. Quand tu entres dans une case <b>River</b>, place un marqueur Tracking sur la carte. Quand les 3 emplacements sont remplis, défausse-la."
+   ],
+   [
+    "backpack-radio",
+    "Backpack Radio",
+    "Défausse-la et dépense 3 ⌛ pour au choix : déplacer <b>tous</b> les Soldiers de 2 cases maximum, <b>ou</b> appeler une frappe aérienne : choisis une case et lance un dé. 1-2 : 💔 à tous ceux de cette case et de chaque case adjacente. 3-6 : 💔💔💔💔 à tous ceux de cette case."
+   ],
+   [
+    "grenade",
+    "Grenade",
+    "1 main. En main : défausse-la pendant la phase d'Action et dépense 2 ⌛ pour infliger 2 ✴ à un Ennemi dans une case adjacente. Dans ton sac à dos : défausse-la en utilisant le <b>Compound Bow</b> pour ajouter 2 ✴ à l'attaque."
+   ]
+  ],
+  "falta": "Il y a 2 Grenades et 2 Bowie Knives différents. La Finale, le Dark Power et les cartes Terreur de Volk'ar sont encore à photographier.",
+  "ev": [
+   [
+    "Supply Drop",
+    "Prends 3 Objets inutilisés au hasard et place-les face visible à côté de la pioche d'Objets du <b>Supply Depot</b>. Quand tu y fouilles avec succès, tu peux prendre l'un d'eux au lieu de piocher. Défausse quand il n'en reste plus aucun des 3."
+   ],
+   [
+    "\"Piranhas!\"",
+    "Lance un dé et place le jeton Piranhas : 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Tous ceux qui sont dans cette case : 💔. Quiconque y entre ensuite : 💔."
+   ],
+   [
+    "\"Get to the Choppa!\"",
+    "Si le jeton <b>Huey</b> n'est pas sur le plateau, place-le dans la <b>Clearing</b>. Pour chaque Victime sauvée avec le Huey, choisis : ❤️❤️, 3 ⌛, ⊘🎭 ou prendre une carte Action (max 2 ⌛). Défausse quand le jeton Huey est retiré."
+   ],
+   [
+    "Heavy Rains",
+    "Sauf si tu te déplaces depuis une case River, entrer dans une case <b>River</b> coûte 2 ⌛."
+   ],
+   [
+    "Twitchy Soldiers",
+    "Si tu as Débloqué l'Amélioration \"No Friendly Fire\", Verrouille-la maintenant. Lors des jets de tir ami, les Soldiers sont tués sur 1-3. Défausse si \"No Friendly Fire\" est Débloquée."
+   ],
+   [
+    "Rebel Raiding Party",
+    "Lance un dé : 1-3 Ancient Ruins, 4-6 Supply Depot. Prends tous les Objets de cette case, mélange-les face cachée et place-les sous la pioche d'Objets du <b>Rebel Camp</b>. Défausse."
+   ],
+   [
+    "Cursed Temple",
+    "Place le jeton Cursed au <b>Cursed Temple</b>. Quand tu entres dans le Cursed Temple : 💔💔💔, puis défausse le jeton (et la carte)."
+   ],
+   [
+    "Sgt. Weathers",
+    "Place-le dans la case avec le plus de Victimes. Il compte comme un Soldier. Quand il reçoit un ordre, lui et les Victimes avec lui peuvent se déplacer d'1 case supplémentaire et ajoutent +1 à leur portée d'attaque. Tué : 🎭🎭."
+   ],
+   [
+    "Rebel Leader",
+    "Place-le au <b>Rebel Camp</b>. Pendant l'Entretien, il se déplace d'1 case vers la Victime la plus proche qui n'est <b>pas</b> au Rebel Camp, puis déplace 1 Victime de sa case vers le Rebel Camp. Les Soldiers au Rebel Camp ne peuvent pas recevoir l'ordre d'effectuer des Actions. Il ne te suit pas."
+   ],
+   [
+    "Archeologist",
+    "Lance un dé et place-le : 1-2 Ancient Ruins, 3-4 Rebel Camp, 5-6 Supply Depot. Lance 1 🎲 de moins quand tu fouilles dans sa case, sauf si tu paies 3 ⌛. Résous de nouveau à chaque Entretien."
+   ]
+  ]
+ },
+ "A Demon in the Shadows": {
+  "ley": "⌛ = Temps · ✴ = dégâts · 🎭 = augmenter l'Horreur · 🔪 = icône couteau (attaque) · ⊘🎭 = baisser l'Horreur · ❤️ = récupérer de la santé · 🙏 = icône de bénédiction · 🎲★ = remplacer 1 dé normal par le dé Blessed (plus de faces succès) · 🎲☠ = remplacer 1 dé normal par le dé Cursed",
+  "err_k_t": "Attention",
+  "err_k": [
+   "Tuer Ursula <b>n'est pas une victoire</b> : tu révèles ensuite les bénédictions et il en faut au moins une qui montre de la santé. Sans bénédiction sur la feuille, rien ne peut la ramener."
+  ],
+  "bloques_k": [
+   [
+    "Mise en place spéciale",
+    [
+     "Place la feuille <b>Divine Blessings</b> à côté de la zone de jeu et choisis une face : <b>Heavenly</b> (normal) ou <b>Hellish</b> (difficile).",
+     "Place les cartes Action <b>Expel Demon</b> dans le Tableau d'Actions."
+    ]
+   ],
+   [
+    "La possession d'Ursula",
+    [
+     "Berith est un démon qui possède <b>Ursula</b>, une religieuse. Le meeple du Killer, sa santé, ses valeurs d'Attaque et de Mouvement sont tous ceux d'Ursula possédée.",
+     "Une fois que tu as « tué » Ursula, Berith quitte son corps."
+    ]
+   ],
+   [
+    "Divine Blessings",
+    [
+     "Quand tu vois l'icône 🙏, place un jeton <b>Final Health</b> noir face cachée sur l'emplacement vide le plus haut de la feuille Divine Blessings et résous son effet. Tu l'obtiendras surtout grâce à la carte Action <b>Expel Demon</b>.",
+     "Ces bénédictions sont ce qui peut ramener Ursula à la vie une fois que Berith a quitté son corps.",
+     "Les jetons Final Health sur la feuille ne peuvent être ni retirés ni révélés, sauf si un effet le dit.",
+     "Les jetons Final Health sont limités. Si certains quittent la partie à cause d'autres effets, ou sont attribués au Killer ou à la Final Girl, il en restera moins pour la feuille."
+    ]
+   ],
+   [
+    "Gagner la partie",
+    [
+     "D'abord, tue Ursula possédée avec les règles normales, en révélant son jeton Final Health noir et en restaurant sa santé si besoin. Une fois vaincue, Berith quitte son corps.",
+     "Ensuite, révèle chaque jeton Final Health de la feuille Divine Blessings. Si l'un d'eux montre de la santé, Ursula revient et <b>tu gagnes</b>. S'ils sont tous vierges, son âme est damnée et <b>tu perds</b>.",
+     "Il n'est pas nécessaire de remplir les 7 emplacements avant de la vaincre, mais plus il y a de bénédictions, plus elle a de chances de revenir."
+    ]
+   ]
+  ],
+  "err_m_t": "Attention",
+  "err_m": [
+   "Si les <b>14</b> jetons Malice sont sur le plateau et que tu dois en placer un autre, <b>tu perds immédiatement</b>.",
+   "Tu ne lances jamais les dés Blessed et Cursed ensemble : si les deux icônes apparaissent, utilise celle qui est la plus nombreuse ; en cas d'égalité, elles s'annulent."
+  ],
+  "bloques_m": [
+   [
+    "Mise en place spéciale",
+    [
+     "Place un jeton <b>Malice</b> dans la case de départ du Killer et dans 3 cases adjacentes au Killer. S'il n'y a que 2 cases adjacentes, places-en un dans la case suivante la plus proche de ton choix. Tu commences avec 4 jetons Malice.",
+     "Place le jeton <b>Donkey</b> dans la case <b>Cloister</b>.",
+     "Place les cartes Action <b>Benediction</b> dans le Tableau d'Actions."
+    ]
+   ],
+   [
+    "Dés Blessed et Cursed",
+    [
+     "La boîte contient deux dés spéciaux : le dé <b>Blessed</b> (🎲★, plus de faces succès) et le dé <b>Cursed</b> (🎲☠). Ils remplacent parfois des dés normaux lors des jets d'Horreur.",
+     "Quand tu vois l'une de leurs icônes, remplace <b>1</b> dé normal par ce dé lors du jet d'Horreur.",
+     "Si les deux icônes sont présentes mais qu'il y en a plus d'un type, remplace 1 dé par ce type. S'il y en a autant de chaque, elles s'annulent et aucun des deux dés n'est utilisé.",
+     "Si le dé Cursed montre un <b>1</b> dans le résultat final de ton jet d'Horreur, tu perds 1 santé (💔). Faces selon le livret de règles : le dé <b>Blessed</b> a une étoile sur le 2 et le 5, deux étoiles sur le 6 et un 1 vierge ; le dé <b>Cursed</b> n'a qu'une étoile sur le 6, un 2 vierge et le cœur brisé sur le 1.",
+     "Les effets de la carte Action <b>Improvise</b> s'appliquent aussi au 5 du dé Cursed."
+    ]
+   ],
+   [
+    "Malice",
+    [
+     "Quand tu vois l'icône Malice sur une carte, place un jeton Malice dans la case du Killer actif. S'il y en a déjà un, place-le dans la case la plus proche du Killer sans jeton.",
+     "S'il y a plusieurs Killers actifs, seul celui le plus proche de toi compte.",
+     "S'il n'y a pas de Killer sur le plateau, révèle une carte de mise en place au hasard et considère sa case K comme la case du Killer.",
+     "Les jetons Malice portent le symbole du dé Cursed : quand tu fais un jet d'Horreur dans une case avec Malice, remplace 1 dé normal par le dé Cursed.",
+     "Les jetons Malice retirés (par la carte Action <b>Benediction</b> ou d'autres effets) retournent dans la réserve générale."
+    ]
+   ],
+   [
+    "Ce que disent les cartes",
+    [
+     "Les reliques des saints donnent 🎲★ quand tu résous certaines cartes : tu remplaces un dé normal par le dé Blessed.",
+     "La <b>Padlock Key</b> permet au <b>Donkey</b> de se déplacer avec toi.",
+     "Les reliques et les Événements s'appuient beaucoup sur le dé Blessed et les jetons Malice : voir ci-dessous."
+    ]
+   ]
+  ],
+  "obj": [
+   [
+    "holy-water",
+    "Holy Water",
+    "1 main · 3 utilisations. 🎲★ pour un jet d'Horreur <b>ou</b> retire un jeton Malice de ta case. Si tu as l'<b>Aspergillum</b> dans l'autre main, retire aussi un jeton Malice d'une case adjacente. Il y en a 2 dans la boîte."
+   ],
+   [
+    "holy-chalice",
+    "Holy Chalice",
+    "Défausse-le pendant la phase d'Action pour 3 ❤️ <b>ou</b> défausse-le quand ton jeton Final Health noir est révélé : s'il est vierge, tu reviens avec 1 ❤️ à la place."
+   ],
+   [
+    "rosary",
+    "Rosary",
+    "Il y en a 2 dans la boîte. 2 utilisations. Dépense 2 ⌛ pendant la phase du Killer pour ignorer un 🎭."
+   ],
+   [
+    "aspergillum",
+    "Aspergillum",
+    "Arme · portée 0 · 1 ✴ · 1 main. Si tu as la <b>Holy Water</b> dans l'autre main, tu peux dépenser une de ses utilisations pour infliger 1 ✴ supplémentaire."
+   ],
+   [
+    "thurible",
+    "Thurible",
+    "Arme · portée 0-1 · 1 ✴ · 1 main. S'il est utilisé à portée 1, défausse-le."
+   ],
+   [
+    "crucifix",
+    "Crucifix",
+    "1 main. Défausse-le pour ignorer une augmentation du niveau d'Horreur <b>ou</b> pour stopper le déplacement d'un Ennemi quand il est dans une case adjacente."
+   ],
+   [
+    "st-peters-sword",
+    "St. Peter's Sword",
+    "Arme · portée 0 · 2 ✴ · 2 mains. 🎲★ quand tu résous des cartes Action qui effectuent des attaques. L'épée ne peut pas servir à modifier des cartes Réaction."
+   ],
+   [
+    "st-longinus-spear",
+    "St. Longinus' Spear",
+    "Arme · portée 0 · 1 ✴ · 1 main. 🎲★ quand tu résous des cartes Action qui effectuent des attaques. Si tu infliges des dégâts à un Ennemi avec la lance, tu peux le déplacer d'1 case."
+   ],
+   [
+    "st-lucys-eyes",
+    "St. Lucy's Eyes",
+    "🎲★ quand tu résous des cartes Action qui permettent de prendre des Objets. Pioche et garde 1 Objet supplémentaire."
+   ],
+   [
+    "st-pauls-chains",
+    "St. Paul's Chains",
+    "Arme · portée 0 · 1 ✴ · 2 mains. 🎲★ quand tu résous des cartes Action qui effectuent des attaques. Quand tu infliges des dégâts à un Ennemi, tu peux les défausser pour placer le jeton Chain dans sa case : la prochaine fois que cet Ennemi résout un 🔪, ignore-le et défausse le jeton."
+   ],
+   [
+    "holy-bible",
+    "Holy Bible",
+    "1 main. 🎲★ quand tu résous les cartes Action <b>Benediction</b> ou <b>Expel Demon</b>."
+   ],
+   [
+    "st-constantines-shield",
+    "St. Constantine's Shield",
+    "1 main · 3 utilisations. Ignore jusqu'à 2 ✴."
+   ],
+   [
+    "st-martins-cloak",
+    "St. Martin's Cloak",
+    "🎲★ quand tu résous des cartes Action qui donnent du mouvement."
+   ],
+   [
+    "st-joans-armor",
+    "St. Joan's Armor",
+    "🎲★ quand tu résous des cartes Réaction."
+   ],
+   [
+    "knife",
+    "Knife",
+    "Arme · portée 0 · 1 ✴ · 1 main."
+   ],
+   [
+    "padlock-key",
+    "Padlock Key",
+    "Le <b>Donkey</b> peut se déplacer avec toi. Quand tu te déplaces avec lui, lance un dé : 1-3 déplace-toi d'1 case de moins (min 1), 4-6 d'1 case de plus. Une fois par phase d'Action, dans une case avec le Donkey et un Ennemi, lance un dé : sur 5-6, l'Ennemi subit 2 ✴."
+   ]
+  ],
+  "falta": "",
+  "ev": [
+   [
+    "Sins of the Past",
+    "Lance 3 dés. Si tu obtiens ce que montre la carte sur les 3 (trois icônes rouges), tu es l'enfant du Diable et <b>tu perds immédiatement</b>. Pour tout autre résultat, place le jeton <b>Repentance</b> dans le <b>Sanctuary</b> : tant qu'il est sur le plateau, ignore tous les effets 🎲★. Retire-le en allant au Sanctuary et en dépensant 3 ⌛."
+   ],
+   [
+    "Leap of Faith",
+    "Regarde les cartes Objet inutilisées et prends-en 1."
+   ],
+   [
+    "Pilgrimage",
+    "Place 2 Victimes dans l'<b>Hospitium</b>, 2 dans le <b>Refectory</b> et 2 dans le <b>Sanctuary</b>."
+   ],
+   [
+    "Black Mass",
+    "Pendant la phase d'Entretien, place un jeton Malice si aucun jeton Malice n'a été ajouté ce tour-ci."
+   ],
+   [
+    "Maddening Nursery Rhyme",
+    "Dans la case avec le plus de Victimes, une Victime est tuée et toutes les autres Victimes de cette case paniquent."
+   ],
+   [
+    "Breaking the Curse",
+    "Prends une carte Action <b>Benediction</b> dans le Tableau d'Actions. Si tu as les deux en main, ⊘🎭."
+   ],
+   [
+    "Father Damian",
+    "Place Father Damian dans la <b>Sacristy</b>. Il te suit dans la case du Killer et ne peut être attaqué que s'il n'y a pas d'autres Victimes dans sa case. Tant qu'il est dans ta case, 🎲★ pour tous les jets d'Horreur et, une fois par phase d'Action, tu peux retirer un jeton Malice de ta case. S'il est tué dans ta case, 🎭🎭🎭."
+   ],
+   [
+    "Demonic Crocodile",
+    "Place le jeton <b>Crocodile</b> dans le <b>Museum</b>. Les Ennemis ne peuvent ni le cibler ni le tuer, mais toi tu peux l'attaquer et le tuer. Mouvement, Attaque et santé de 1. À la fin de la phase du Killer, il cible la Final Girl, se déplace et attaque. Puis toutes les Victimes de sa case paniquent."
+   ],
+   [
+    "The Quebecer",
+    "Place-le dans le <b>Dormitory</b>. Les Victimes normales de sa case ne te suivent que s'il vient aussi. Avec lui, une Victime supplémentaire peut te suivre. S'il est dans ta case pendant l'Entretien, ⌛ par Victime dans ta case."
+   ],
+   [
+    "The Abbess",
+    "Place-la dans l'<b>Abbess' Office</b>. Pendant l'Entretien, elle se déplace d'une case vers la Victime normale la plus proche qui n'est pas dans le <b>Dormitory</b>. Les Victimes normales de sa case de départ et d'arrivée se déplacent de 2 cases vers le Dormitory."
+   ]
+  ]
+ }
+}

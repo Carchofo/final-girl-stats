@@ -56,11 +56,10 @@ def _corta(s, n=170):
 
 
 def _guias(lang):
-    lg = lang if lang in ("es", "en") else "en"
     t = T[lang]
     out = []
     for g in GUIAS:
-        d = g[lg]
+        d = g[guia._lg(lang, g)]
         url = paginas.slug(g["caja"]) + ".html"
         for c, nombre in (("k", g["killer"]), ("m", g["mapa"])):
             sec = f'{t[c]} · {nombre}'
