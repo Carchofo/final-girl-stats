@@ -175,7 +175,7 @@ def fase_html(lang, g, ancla_id=False, h="h3"):
            "".join(f"<li>{x}</li>" for x in d["fase"]) + "</ol>")
     if g.get("fase_fig"):
         out += (f'<div class="gu-figs"><figure><img src="{ruta}{g["fase_fig"]}.jpg" alt="" loading="lazy"></figure></div>')
-    return out
+    return out if ancla_id else con_iconos(out, g["caja"], lg)
 
 
 def secciones(lang, g):
