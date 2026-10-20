@@ -50,7 +50,7 @@ TXT = {
 
 CSS = """<style>
 .gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:12px 0 6px}
-.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-foto{margin:14px 0 6px}.gu-foto img{display:block;width:100%;border-radius:6px;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
+.gu-grid figure{margin:0}.gu-grid img,.gu-it img{display:block;background:#ece5d5;padding:5px;border-radius:7px;box-sizing:border-box;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);transform:rotate(-1.6deg);transition:transform .2s}.gu-grid img{width:100%;aspect-ratio:2/3}.gu-it img{aspect-ratio:5/7}.gu-grid figure:nth-child(even) img,.gu-it:nth-child(even) img{transform:rotate(1.8deg)}.gu-grid img:hover,.gu-it img:hover{transform:rotate(0) scale(1.04)}.gu-sec img.ico{display:inline-block;width:20px;height:20px;vertical-align:-4px;margin:0 1px;border-radius:50%}.gu-foto{margin:14px 0 6px}.gu-foto img{display:block;width:100%;border-radius:6px;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.6)}.gu-zoom{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out}.gu-zoom img{max-width:92vw;max-height:88vh;background:#ece5d5;padding:8px;border-radius:10px;box-shadow:0 20px 50px #000}
 .gu-grid figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;color:var(--muted)}
 .gu-obj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:12px 0}
 .gu-it{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:10px}
@@ -98,6 +98,47 @@ def enlaces(lang, g):
             f'<a href="#{ANCLA["m"]}" style="color:var(--blood)">{tt["m"].format(n=g["mapa"])}</a></p>')
 
 
+# Iconos de verdad (recortados de las cartas, img/ico/) junto a la palabra que
+# los nombra. Por caja, porque "ojo" solo es un icono en Volk'ar.
+ICO_PAL = {
+    "The Green Terror": {
+        "es": [(r"(?:dos |un |el )?ojos? tachados?", "ojo-tachado"), (r"4 ojos morados|\bReveal\b", "reveal"), (r"\bojo\b", "ojo")],
+        "en": [(r"(?:two |a |the )?crossed-out eyes?", "ojo-tachado"), (r"4 purple eyes|\bReveal\b", "reveal"), (r"\beye\b", "ojo")],
+        "fr": [(r"(?:deux |un )?(?:œil barré|yeux barrés)", "ojo-tachado"), (r"4 yeux violets|\bReveal\b", "reveal"), (r"\bœil\b", "ojo")],
+        "de": [(r"durchgestrichene[ns]? Augen?", "ojo-tachado"), (r"4 violetten Augen|\bReveal\b", "reveal"), (r"\bAuge\b", "ojo")],
+        "it": [(r"(?:due |un )?(?:occhio barrato|occhi barrati)", "ojo-tachado"), (r"4 occhi viola|\bReveal\b", "reveal"), (r"\bocchio\b", "ojo")],
+    },
+}
+ICO_LEY = {
+    "The Green Terror": {
+        "es": "{ojo} = carta boca arriba al Path · {ojo-tachado} = carta boca abajo · {reveal} = Reveal, se revela",
+        "en": "{ojo} = faceup card to the Path · {ojo-tachado} = facedown card · {reveal} = Reveal",
+        "fr": "{ojo} = carte face visible au Path · {ojo-tachado} = carte face cachée · {reveal} = Reveal, elle se révèle",
+        "de": "{ojo} = Karte offen in den Path · {ojo-tachado} = Karte verdeckt · {reveal} = Reveal, sie wird enthüllt",
+        "it": "{ojo} = carta scoperta nel Path · {ojo-tachado} = carta coperta · {reveal} = Reveal, si rivela",
+    },
+}
+
+
+def ico(n):
+    return f'<img class="ico" src="/img/ico/{n}.png" alt="" width="20" height="20">'
+
+
+def con_iconos(html, caja, lang):
+    """Pone el icono detrás de cada palabra que lo nombra, sin tocar etiquetas."""
+    pal = ICO_PAL.get(caja, {}).get(lang)
+    if not pal:
+        return html
+    patron = re.compile("|".join(f"(?P<i{i}>{p})" for i, (p, _) in enumerate(pal)))
+
+    def cambia(m):
+        n = pal[int(m.lastgroup[1:])][1]
+        return m.group(0) + " " + ico(n)
+    trozos = re.split(r"(<[^>]+>)", html)
+    out = [t if t.startswith("<") else patron.sub(cambia, t) for t in trozos]
+    return "".join(out).replace("👁", ico("ojo"))
+
+
 def secciones(lang, g):
     """Las dos guías como secciones de la ficha de la caja."""
     lg = _lg(lang, g)
@@ -136,11 +177,19 @@ def secciones(lang, g):
             return ""
         return f'<figure class="gu-foto"><img src="{ruta}{f}.jpg" alt="{nombre}" loading="lazy"></figure>'
 
+    ley = d["ley"]
+    if g["caja"] in ICO_LEY:
+        extra = ICO_LEY[g["caja"]][lg]
+        for n in ("ojo-tachado", "ojo", "reveal"):
+            extra = extra.replace("{" + n + "}", ico(n))
+        ley = extra + " · " + ley
+    k = con_iconos(k, g["caja"], lg)
+
     out = [CSS]
     for cual, cuerpo, nombre in (("k", k, g["killer"]), ("m", m, g["mapa"])):
         out.append(f'<section id="{ANCLA[cual]}" class="gu-sec" style="scroll-margin-top:20px;margin-top:40px;'
                    f'border-top:2px solid var(--blood);padding-top:6px"><h2>📖 {tt[cual].format(n=nombre)}</h2>'
                    f'<p class="sub">{tt["mix_" + cual]} <a href="#">{tt["arriba"]}</a></p>'
-                   + (f'<p class="gu-ley">{d["ley"]}</p>' if cual == "k" else '') + foto(cual, nombre) + f'{cuerpo}</section>')
+                   + (f'<p class="gu-ley">{ley}</p>' if cual == "k" else '') + foto(cual, nombre) + f'{cuerpo}</section>')
     out.append(ZOOM)
     return "\n".join(out)
