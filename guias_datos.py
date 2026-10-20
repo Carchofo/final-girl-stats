@@ -532,7 +532,7 @@ GUIAS = [
                     "La caja trae dos dados especiales: el <b>Bendito</b> (🎲★, más caras de éxito) y el <b>Maldito</b> (🎲☠). A veces sustituyen a los dados normales en las tiradas de Horror.",
                     "Cuando veas uno de sus iconos, cambia <b>1</b> dado normal por el dado de ese icono en la tirada de Horror.",
                     "Si en la misma tirada hay iconos de los dos pero más de uno que del otro, cambias 1 dado por el que tenga más. Si hay los mismos de cada, se anulan y no se usa ninguno.",
-                    "Si el resultado final de tu tirada de Horror muestra el icono malo del dado Maldito, pierdes vida (💔).",
+                    "Si en el resultado final de tu tirada de Horror el dado Maldito saca un <b>1</b>, pierdes 1 de vida (💔). El Maldito solo tiene éxito en el 6.",
                     "Los efectos de la carta de Acción <b>Improvise</b> también valen para el 5 del dado Maldito."]),
                 ("Malice", [
                     "Cuando veas el icono de Malice en una carta, pon una ficha de Malice en el espacio del Killer activo. Si ya tiene una, ponla en el espacio más cercano al Killer que no tenga.",
@@ -609,7 +609,7 @@ GUIAS = [
                     "The box has two special dice: the <b>Blessed</b> die (🎲★, more success faces) and the <b>Cursed</b> die (🎲☠). They sometimes replace normal dice in Horror Rolls.",
                     "When you see one of their icons, replace <b>1</b> normal die with that die when making the Horror Roll.",
                     "If both icons are present but there are more of one kind, replace 1 die with that kind. If there's an equal number of each, they cancel out and neither die is used.",
-                    "If your final Horror Roll result shows the Cursed die's bad icon, you lose health (💔).",
+                    "If the Cursed die shows a <b>1</b> in your final Horror Roll result, you lose 1 health (💔). The Cursed die only succeeds on a 6.",
                     "The effects of the <b>Improvise</b> Action card also apply to the 5 on the Cursed die."]),
                 ("Malice", [
                     "When you see the Malice icon on a card, place a Malice token in the Active Killer's space. If it already has one, place it in the closest space to the Killer without a token.",
