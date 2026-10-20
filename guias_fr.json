@@ -270,7 +270,7 @@
     "Finales",
     [
      "Toutes ont deux lignes : en haut, les Raptors isolés se déplacent vers le Pack et s'arrêtent s'ils atteignent toi ou une Victime ; en bas, le Pack cible toi ou la Victime la plus proche, se déplace et attaque.",
-     "<b>Claws Like Knives</b> : le Pack attaque une fois. Le premier dégât de chaque attaque est l'icône du cœur barré.",
+     "<b>Claws Like Knives</b> : le Pack attaque une fois. Le premier dégât de chaque attaque est 💔 : tu perds de la santé directement.",
      "<b>Born Hungry</b> : le Pack attaque deux fois. Quand elle est révélée, pioche une carte Spawn mais fais apparaître les Raptors dans <b>ta</b> case.",
      "<b>Raptor Rush</b> : le Pack attaque 3 fois. Quand elle est révélée, tous les Raptors sur le plateau rejoignent le Pack.",
      "<b>Deadly Quick</b> (Finale Epic) : le Pack attaque deux fois. Quand elle est révélée, place le Pack dans ta case et perds 4 ⌛."
@@ -714,7 +714,7 @@
   ]
  },
  "The Green Terror": {
-  "ley": "⌛ = Temps · ✴ = dégâts · ❤️ = récupérer de la santé · 💔 = perdre de la santé · 🎭 = augmenter l'Horreur · ⊘🎭 = baisser l'Horreur · 🎲 = dé · 🔧 = case avec l'icône de clé orange",
+  "ley": "⌛ = Temps · ✴ = dégâts · ❤️ = récupérer de la santé · 💔 = perdre de la santé · 🎭 = augmenter l'Horreur · ⊘🎭 = baisser l'Horreur · 🎲 = dé · 🔧 = case avec l'icône de clé orange · 🩸 = Bloodlust (soif de sang du Killer)",
   "err_k_t": "Attention",
   "err_k": [
    "Si tu l'attaques alors qu'elle est Dissimulée et qu'elle n'est pas dans la case attaquée, elle <b>te tend une embuscade</b> (même si c'est quelqu'un d'autre qui a attaqué) : tu subis l'<b>Ambush Penalty</b> de la dernière carte de son Path.",
@@ -1039,7 +1039,7 @@
   ]
  },
  "A Demon in the Shadows": {
-  "ley": "⌛ = Temps · ✴ = dégâts · 🎭 = augmenter l'Horreur · 🔪 = icône couteau (attaque) · ⊘🎭 = baisser l'Horreur · ❤️ = récupérer de la santé · 🙏 = icône de bénédiction · 🎲★ = remplacer 1 dé normal par le dé Blessed (plus de faces succès) · 🎲☠ = remplacer 1 dé normal par le dé Cursed",
+  "ley": "⌛ = Temps · ✴ = dégâts · 🎭 = augmenter l'Horreur · 🔪 = icône couteau (attaque) · ⊘🎭 = baisser l'Horreur · ❤️ = récupérer de la santé · 🙏 = icône de bénédiction · 🎲★ = remplacer 1 dé normal par le dé Blessed (plus de faces succès) · 🎲☠ = remplacer 1 dé normal par le dé Cursed · 🩸 = Bloodlust (soif de sang du Killer)",
   "err_k_t": "Attention",
   "err_k": [
    "Tuer Ursula <b>n'est pas une victoire</b> : tu révèles ensuite les bénédictions et il en faut au moins une qui montre de la santé. Sans bénédiction sur la feuille, rien ne peut la ramener."

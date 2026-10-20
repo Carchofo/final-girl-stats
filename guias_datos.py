@@ -659,7 +659,7 @@ GUIAS = [
         "inicios": [("high-ground", "High Ground"), ("jungle-madness", "Jungle Madness"), ("cave-dwellers", "Cave Dwellers"),
                     ("river-rats", "River Rats"), ("rebel-yell", "Rebel Yell")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = recuperas vida · 💔 = pierdes vida · 🎭 = sube el Horror · ⊘🎭 = baja el Horror · 🎲 = dado · 🔧 = espacio con el icono naranja de la llave",
+            "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = recuperas vida · 💔 = pierdes vida · 🎭 = sube el Horror · ⊘🎭 = baja el Horror · 🎲 = dado · 🔧 = espacio con el icono naranja de la llave · 🩸 = Bloodlust (sed de sangre del killer)",
             "err_k_t": "Ojo con esto", "err_k": [
                 "Si la atacas oculta y no está en el espacio que atacaste, te <b>embosca a ti</b> (aunque atacara otro): sufres la <b>Ambush Penalty</b> de la última carta de su Path.",
                 "Nunca puedes mirar los descartes de Movimiento."],
@@ -806,7 +806,7 @@ GUIAS = [
             ],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · ❤️ = recover health · 💔 = lose health · 🎭 = raise Horror · ⊘🎭 = lower Horror · 🎲 = die · 🔧 = space with the orange wrench icon",
+            "ley": "⌛ = Time · ✴ = damage · ❤️ = recover health · 💔 = lose health · 🎭 = raise Horror · ⊘🎭 = lower Horror · 🎲 = die · 🔧 = space with the orange wrench icon · 🩸 = Bloodlust",
             "err_k_t": "Watch out", "err_k": [
                 "If you attack her while Concealed and she isn't in the space you attacked, she <b>ambushes you</b> (even if someone else attacked): you suffer the <b>Ambush Penalty</b> on the last card of her Path.",
                 "You are never allowed to look through the discarded Movement cards."],
@@ -959,7 +959,7 @@ GUIAS = [
         "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
         "inicios": [("supper-time", "Supper Time"), ("daily-chores", "Daily Chores"), ("tourism-bus", "Tourism Bus"), ("reflection-meditation", "Reflection & Meditation"), ("sunday-mass", "Sunday Mass")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · ⊘🎭 = baja el Horror · ❤️ = recupera vida · 🙏 = icono de bendición · 🎲★ = cambia 1 dado normal por el dado Bendito (más caras de éxito) · 🎲☠ = cambia 1 dado normal por el dado Maldito",
+            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · ⊘🎭 = baja el Horror · ❤️ = recupera vida · 🙏 = icono de bendición · 🎲★ = cambia 1 dado normal por el dado Bendito (más caras de éxito) · 🎲☠ = cambia 1 dado normal por el dado Maldito · 🩸 = Bloodlust (sed de sangre del killer)",
             "err_k_t": "Ojo con esto", "err_k": ["Matar a Ursula <b>no es ganar</b>: después hay que revelar las bendiciones y que al menos una tenga vida. Sin bendiciones en la hoja no hay nada que la traiga de vuelta."],
             "bloques_k": [
                 ("Preparación especial", [
@@ -1055,7 +1055,7 @@ GUIAS = [
             ],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · ⊘🎭 = lower Horror · ❤️ = recover health · 🙏 = blessing icon · 🎲★ = swap 1 normal die for the Blessed die (more success faces) · 🎲☠ = swap 1 normal die for the Cursed die",
+            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · ⊘🎭 = lower Horror · ❤️ = recover health · 🙏 = blessing icon · 🎲★ = swap 1 normal die for the Blessed die (more success faces) · 🎲☠ = swap 1 normal die for the Cursed die · 🩸 = Bloodlust",
             "err_k_t": "Watch out", "err_k": ["Killing Ursula <b>is not a win</b>: you then reveal the blessings and need at least one to show health. With no blessings on the sheet, nothing can bring her back."],
             "bloques_k": [
                 ("Special setup", [

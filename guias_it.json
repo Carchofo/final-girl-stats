@@ -270,7 +270,7 @@
     "Finali",
     [
      "Hanno tutti due righe: sopra, i Raptor sciolti si muovono verso il Pack e si fermano se raggiungono te o una Vittima; sotto, il Pack prende come bersaglio te o la Vittima più vicina, si muove e attacca.",
-     "<b>Claws Like Knives</b>: il Pack attacca una volta. Il primo danno di ogni attacco è l'icona del cuore barrato.",
+     "<b>Claws Like Knives</b>: il Pack attacca una volta. Il primo danno di ogni attacco è 💔: perdi salute direttamente.",
      "<b>Born Hungry</b>: il Pack attacca due volte. Quando viene rivelato, pesca una carta Spawn ma fai comparire i Raptor nel <b>tuo</b> spazio.",
      "<b>Raptor Rush</b>: il Pack attacca 3 volte. Quando viene rivelato, tutti i Raptor sul tabellone si uniscono al Pack.",
      "<b>Deadly Quick</b> (Finale Epico): il Pack attacca due volte. Quando viene rivelato, metti il Pack nel tuo spazio e perdi 4 ⌛."
@@ -714,7 +714,7 @@
   ]
  },
  "The Green Terror": {
-  "ley": "⌛ = Tempo · ✴ = danno · ❤️ = recuperi salute · 💔 = perdi salute · 🎭 = aumenta l'Orrore · ⊘🎭 = riduci l'Orrore · 🎲 = dado · 🔧 = spazio con l'icona della chiave inglese arancione",
+  "ley": "⌛ = Tempo · ✴ = danno · ❤️ = recuperi salute · 💔 = perdi salute · 🎭 = aumenta l'Orrore · ⊘🎭 = riduci l'Orrore · 🎲 = dado · 🔧 = spazio con l'icona della chiave inglese arancione · 🩸 = Bloodlust (sete di sangue del Killer)",
   "err_k_t": "Attenzione",
   "err_k": [
    "Se la attacchi mentre è Nascosta e lei non è nello spazio che hai attaccato, <b>ti tende un'imboscata</b> (anche se ha attaccato qualcun altro): subisci la <b>Penalità d'Imboscata</b> sull'ultima carta del suo Percorso.",
@@ -1039,7 +1039,7 @@
   ]
  },
  "A Demon in the Shadows": {
-  "ley": "⌛ = Tempo · ✴ = danno · 🎭 = aumenta l'Orrore · 🔪 = icona del coltello (attacco) · ⊘🎭 = riduci l'Orrore · ❤️ = recuperi salute · 🙏 = icona della benedizione · 🎲★ = sostituisci 1 dado normale con il dado Blessed (più facce di successo) · 🎲☠ = sostituisci 1 dado normale con il dado Cursed",
+  "ley": "⌛ = Tempo · ✴ = danno · 🎭 = aumenta l'Orrore · 🔪 = icona del coltello (attacco) · ⊘🎭 = riduci l'Orrore · ❤️ = recuperi salute · 🙏 = icona della benedizione · 🎲★ = sostituisci 1 dado normale con il dado Blessed (più facce di successo) · 🎲☠ = sostituisci 1 dado normale con il dado Cursed · 🩸 = Bloodlust (sete di sangue del Killer)",
   "err_k_t": "Attenzione",
   "err_k": [
    "Uccidere Ursula <b>non è una vittoria</b>: poi riveli le benedizioni e ne serve almeno una che mostri salute. Senza benedizioni sul foglio, niente può riportarla indietro."

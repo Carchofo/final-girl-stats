@@ -270,7 +270,7 @@
     "Finales",
     [
      "Alle haben zwei Zeilen: Oben ziehen freie Raptoren zum Pack und halten an, wenn sie dich oder ein Opfer erreichen; unten nimmt das Pack dich oder das nächste Opfer ins Ziel, bewegt sich und greift an.",
-     "<b>Claws Like Knives</b>: Das Pack greift einmal an. Der erste Schaden jedes Angriffs ist das durchgestrichene Herz-Symbol.",
+     "<b>Claws Like Knives</b>: Das Pack greift einmal an. Der erste Schaden jedes Angriffs ist 💔: du verlierst direkt Gesundheit.",
      "<b>Born Hungry</b>: Das Pack greift zweimal an. Beim Aufdecken ziehe eine Spawn-Karte, aber lass die Raptoren in <b>deinem</b> Feld erscheinen.",
      "<b>Raptor Rush</b>: Das Pack greift 3-mal an. Beim Aufdecken schließen sich alle Raptoren auf dem Spielplan dem Pack an.",
      "<b>Deadly Quick</b> (episches Finale): Das Pack greift zweimal an. Beim Aufdecken stelle das Pack in dein Feld und verliere 4 ⌛."
@@ -714,7 +714,7 @@
   ]
  },
  "The Green Terror": {
-  "ley": "⌛ = Zeit · ✴ = Schaden · ❤️ = Gesundheit zurückgewinnen · 💔 = Gesundheit verlieren · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken · 🎲 = Würfel · 🔧 = Feld mit dem orangen Schraubenschlüssel-Symbol",
+  "ley": "⌛ = Zeit · ✴ = Schaden · ❤️ = Gesundheit zurückgewinnen · 💔 = Gesundheit verlieren · 🎭 = Horror erhöhen · ⊘🎭 = Horror senken · 🎲 = Würfel · 🔧 = Feld mit dem orangen Schraubenschlüssel-Symbol · 🩸 = Bloodlust (Blutdurst des Killers)",
   "err_k_t": "Achtung",
   "err_k": [
    "Greifst du sie an, während sie verborgen ist, und sie ist nicht im angegriffenen Feld, <b>überfällt sie dich aus dem Hinterhalt</b> (auch wenn jemand anderes angegriffen hat): Du erleidest die <b>Hinterhaltstrafe</b> der letzten Karte ihres Pfads.",
@@ -1039,7 +1039,7 @@
   ]
  },
  "A Demon in the Shadows": {
-  "ley": "⌛ = Zeit · ✴ = Schaden · 🎭 = Horror erhöhen · 🔪 = Messer-Symbol (Angriff) · ⊘🎭 = Horror senken · ❤️ = Gesundheit zurückgewinnen · 🙏 = Segen-Symbol · 🎲★ = 1 normalen Würfel gegen den Blessed-Würfel tauschen (mehr Erfolgsseiten) · 🎲☠ = 1 normalen Würfel gegen den Cursed-Würfel tauschen",
+  "ley": "⌛ = Zeit · ✴ = Schaden · 🎭 = Horror erhöhen · 🔪 = Messer-Symbol (Angriff) · ⊘🎭 = Horror senken · ❤️ = Gesundheit zurückgewinnen · 🙏 = Segen-Symbol · 🎲★ = 1 normalen Würfel gegen den Blessed-Würfel tauschen (mehr Erfolgsseiten) · 🎲☠ = 1 normalen Würfel gegen den Cursed-Würfel tauschen · 🩸 = Bloodlust (Blutdurst des Killers)",
   "err_k_t": "Achtung",
   "err_k": [
    "Ursula zu töten <b>ist kein Sieg</b>: Danach deckst du die Segen auf, und mindestens einer muss Gesundheit zeigen. Ohne Segen auf dem Bogen kann nichts sie zurückbringen."
