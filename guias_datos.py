@@ -420,6 +420,16 @@ GUIAS = [
             "bloques_k": [
                 ("Cómo juega", [
                     "Nos falta fotografiar la página de Volk'ar del reglamento. Hasta tenerla, aquí no ponemos reglas suyas."]),
+                ("Sus 8 cartas de Movimiento (tal cual)", [
+                    "Sin la página del reglamento no sabemos qué significan del todo los números de los círculos ni los iconos de la franja roja. Las copiamos tal cual:",
+                    "Mueve 1 espacio en un ① · 🎯 Final Girl o víctima ▸ 🔪 · franja: 🎭🎭",
+                    "Mueve 1 espacio en un ① · franja: 2 ⌛",
+                    "Mueve 1 espacio en un ② · 🎯 Final Girl o víctima ▸ 🔪 · franja: 3 ⌛",
+                    "Mueve 1 espacio en un ② · franja: 2 manchas de sangre",
+                    "Mueve 1 espacio en un ③ · 🎯 Final Girl o víctima ▸ 🔪 · franja: 1 mancha de sangre",
+                    "Mueve 1 espacio en un ③ · franja: 🎭",
+                    "No se mueve, Volk'ar recupera ❤️ · franja: 🎭🎭",
+                    "No se mueve, Volk'ar recupera ❤️ · franja: descarta una carta de Acción al azar"]),
             ],
             "err_m_t": "Ojo con esto", "err_m": [],
             "bloques_m": [
@@ -460,6 +470,16 @@ GUIAS = [
             "bloques_k": [
                 ("How it plays", [
                     "We still need to photograph Volk'ar's rulebook page. Until then we don't write any of his rules here."]),
+                ("His 8 Movement cards (as printed)", [
+                    "Without the rulebook page we don't fully know what the circled numbers or the icons on the red band mean. Copied as printed:",
+                    "Move 1 space on a ① · 🎯 Final Girl or Victim ▸ 🔪 · band: 🎭🎭",
+                    "Move 1 space on a ① · band: 2 ⌛",
+                    "Move 1 space on a ② · 🎯 Final Girl or Victim ▸ 🔪 · band: 3 ⌛",
+                    "Move 1 space on a ② · band: 2 blood splatters",
+                    "Move 1 space on a ③ · 🎯 Final Girl or Victim ▸ 🔪 · band: 1 blood splatter",
+                    "Move 1 space on a ③ · band: 🎭",
+                    "Do not move, Volk'ar recovers ❤️ · band: 🎭🎭",
+                    "Do not move, Volk'ar recovers ❤️ · band: discard a random Action card"]),
             ],
             "err_m_t": "Watch out", "err_m": [],
             "bloques_m": [
@@ -532,7 +552,7 @@ GUIAS = [
                     "La caja trae dos dados especiales: el <b>Bendito</b> (🎲★, más caras de éxito) y el <b>Maldito</b> (🎲☠). A veces sustituyen a los dados normales en las tiradas de Horror.",
                     "Cuando veas uno de sus iconos, cambia <b>1</b> dado normal por el dado de ese icono en la tirada de Horror.",
                     "Si en la misma tirada hay iconos de los dos pero más de uno que del otro, cambias 1 dado por el que tenga más. Si hay los mismos de cada, se anulan y no se usa ninguno.",
-                    "Si en el resultado final de tu tirada de Horror el dado Maldito saca un <b>1</b>, pierdes 1 de vida (💔). El Maldito solo tiene éxito en el 6.",
+                    "Si en el resultado final de tu tirada de Horror el dado Maldito saca un <b>1</b>, pierdes 1 de vida (💔). Caras según el reglamento: el <b>Bendito</b> tiene estrella en el 2 y el 5, dos estrellas en el 6 y el 1 en blanco; el <b>Maldito</b> solo tiene estrella en el 6, el 2 en blanco y el corazón roto en el 1.",
                     "Los efectos de la carta de Acción <b>Improvise</b> también valen para el 5 del dado Maldito."]),
                 ("Malice", [
                     "Cuando veas el icono de Malice en una carta, pon una ficha de Malice en el espacio del Killer activo. Si ya tiene una, ponla en el espacio más cercano al Killer que no tenga.",
@@ -609,7 +629,7 @@ GUIAS = [
                     "The box has two special dice: the <b>Blessed</b> die (🎲★, more success faces) and the <b>Cursed</b> die (🎲☠). They sometimes replace normal dice in Horror Rolls.",
                     "When you see one of their icons, replace <b>1</b> normal die with that die when making the Horror Roll.",
                     "If both icons are present but there are more of one kind, replace 1 die with that kind. If there's an equal number of each, they cancel out and neither die is used.",
-                    "If the Cursed die shows a <b>1</b> in your final Horror Roll result, you lose 1 health (💔). The Cursed die only succeeds on a 6.",
+                    "If the Cursed die shows a <b>1</b> in your final Horror Roll result, you lose 1 health (💔). Faces per the rulebook: the <b>Blessed</b> die has a star on 2 and 5, two stars on 6 and a blank 1; the <b>Cursed</b> die only has a star on 6, a blank 2 and the broken heart on 1.",
                     "The effects of the <b>Improvise</b> Action card also apply to the 5 on the Cursed die."]),
                 ("Malice", [
                     "When you see the Malice icon on a card, place a Malice token in the Active Killer's space. If it already has one, place it in the closest space to the Killer without a token.",
