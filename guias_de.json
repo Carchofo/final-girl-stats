@@ -227,6 +227,12 @@
     "The Ravens Are Circling",
     "Jedes Child bewegt sich 2 Felder auf den Killer zu. Leg so viele Lebensmarker auf diese Karte, wie Children in seinem Feld sind. Nimmt der Killer Schaden, entfernst du zuerst die Marker dieser Karte. Abwerfen, wenn keine mehr da sind."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "<b>Grimlash</b>: zielt auf dich oder das nächste Opfer ▸ bewegt sich <b>nur 1 Feld</b> ▸ greift an ▸ wurde ein Opfer getötet, steigt Harvest Madness.",
+   "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
  "The Raptor Games": {
@@ -503,6 +509,13 @@
     "The Hunter",
     "Stelle den Hunter in das am weitesten von dir entfernte Feld. In jedem Unterhalt gerät der Hunter in Panik und verursacht ✴ bei allen in seinem Feld."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
+   "<b>Einzelne Raptors</b> (Minions), einer nach dem anderen: Richtung Pack ▸ bewegen sich ▸ <b>halten an</b>, sobald sie ein Feld mit dir oder einem Opfer betreten (das Stoppschild); starten sie dort, bewegen sie sich nicht. Erreichen sie die Pack, schließen sie sich ihr an. Ein Raptor, der in dieser Phase erscheint, handelt erst in der nächsten.",
+   "<b>Die Pack</b> (der Killer): zielt auf dich oder das nächste Opfer ▸ bewegt sich ▸ greift an, einmal pro Messer der Finale im Spiel.",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
  "Bad Times at Buddyland": {
@@ -739,6 +752,14 @@
     "Broken Machine",
     "Sind Opfer auf <b>Arcade</b>-Feldern, ziehen Feinde beim Zielen auf Opfer oder Final Girl zum nächsten Opfer auf einem Arcade-Feld. Abwerfen, wenn ein Opfer auf einem Arcade-Feld getötet wird."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
+   "<b>Billy</b>, obere Zeile: zielt auf dich oder das nächste Opfer ▸ greift an (auf der Basis-Finale <b>bewegt er sich nicht</b>).",
+   "Untere Zeile: Symbol der Batterie mit Herz ▸ zielt auf dich oder das nächste Opfer ▸ greift an.",
+   "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
  "The Green Terror": {
@@ -1064,6 +1085,14 @@
     "Archeologist",
     "Wirf einen Würfel und stelle ihn auf: 1-2 Ancient Ruins, 3-4 Rebel Camp, 5-6 Supply Depot. Wirf beim Durchsuchen in seinem Feld 1 🎲 weniger, außer du zahlst 3 ⌛. In jedem Unterhalt erneut abhandeln."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
+   "Beginnt die Phase mit Volk'ar <b>verborgen</b>, obere Zeile: eine Movement-Karte offen an den Path (das Auge) ▸ wirf einen 🎲: bei 1-4 +🩸.",
+   "Ist Volk'ar <b>sichtbar</b>, untere Zeile: zielt auf dich oder das nächste Opfer ▸ greift an ▸ verbirgt sich (das durchgestrichene Auge).",
+   "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
  "A Demon in the Shadows": {
@@ -1303,6 +1332,13 @@
     "The Abbess",
     "Stelle sie ins <b>Abbess' Office</b>. Im Unterhalt bewegt sie sich ein Feld auf das nächste normale Opfer zu, das nicht im <b>Dormitory</b> ist. Normale Opfer in ihrem Start- und Zielfeld bewegen sich 2 Felder Richtung Dormitory."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
+   "<b>Ursula</b> (von Berith besessen): zielt auf dich oder das nächste Opfer ▸ bewegt sich ▸ greift an, so oft die Finale im Spiel zeigt.",
+   "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
  "Madness in the Dark": {
@@ -1518,6 +1554,14 @@
     "Dra. Sunshine",
     "Stelle sie in die <b>Consulta Médica</b>. Ist sie an deinem Ort, wählst du beim Einnehmen einer Pastilla deren Farbe. Wird sie an deinem Ort getötet, 🎭🎭🎭🎭. Verlässt sie das Spiel, wirf die Karte ab."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
+   "Zeile <b>M</b>: die <b>Lunatics</b> (Minions) zielen auf dich ▸ bewegen sich.",
+   "Zeile <b>K</b>: <b>Ratchet Lady</b> zielt auf dich oder das nächste Opfer ▸ greift an (<b>ohne Bewegung</b>).",
+   "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
  "A Knock at the Door": {
@@ -1836,6 +1880,14 @@
     "Escape Attempt",
     "Das Opfer, das dem Driveway am nächsten ist, rennt zum Ausgang. Wirf 1 Würfel: bei 5-6 zieht es ein Feld näher zum Driveway (auch wenn dort ein Killer ist); bei 1-4 stirbt es. Wiederholen, bis es ankommt (gerettet) oder stirbt. Abwerfen."
    ]
+  ],
+  "fase_t": "Killer-Phase",
+  "fase": [
+   "Wenn du in <b>Shady Acres</b> spielst: zuerst handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (vom Altar aus nächster zuerst). Obwohl sie zur Karte gehören, <b>entführen sie auch</b>.",
+   "Zeile der Finale im Spiel: <b>nur der aktive Killer</b> (der mit dem Marker) bewegt sich (Stiefel) und greift an (Messer); die anderen zwei bewegen sich nicht. Sagt die Karte „alle Killer“, führt jeder den Effekt aus, von oben nach unten auf dem Killer-Tableau, und der Marker bleibt.",
+   "Hat die Zeile 🔺 oder 🔻, wandert der Marker zum nächsten Killer, und der neue aktive Killer macht den Rest.",
+   "Wenn du auf <b>Isla Lagarto</b> spielst und der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält an, sobald er jemanden erreicht, und <b>tötet einen auf seinem Feld</b>).",
+   "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  }
 }

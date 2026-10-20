@@ -1617,3 +1617,161 @@ for _l in ("en", "fr", "de", "it"):
                 _d["obj"] = [tuple(x) for x in _d["obj"]]
                 _d["ev"] = [tuple(x) for x in _d["ev"]]
                 _g[_l] = _d
+
+# FASE DEL KILLER (es/en)
+_FASE = {
+ "A Rotten Harvest": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "<b>Grimlash</b>: va a por ti o a la víctima más cercana ▸ se mueve <b>solo 1 espacio</b> ▸ ataca ▸ si ha muerto una víctima, sube Harvest Madness.",
+    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "<b>Grimlash</b>: targets you or the closest Victim ▸ moves <b>only 1 space</b> ▸ attacks ▸ if a Victim was killed, Harvest Madness goes up.",
+    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ },
+ "The Raptor Games": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
+    "<b>Raptors sueltos</b> (Minions), uno a uno: van hacia la Pack ▸ se mueven ▸ <b>se paran</b> al entrar en un espacio contigo o con una víctima (la señal de stop); si empiezan ahí, no se mueven. Si llegan a la Pack, se unen. Un Raptor que aparece en esta fase no actúa hasta la siguiente.",
+    "<b>La Pack</b> (el Killer): va a por ti o a la víctima más cercana ▸ se mueve ▸ ataca, tantas veces como cuchillos tenga la Finale en juego.",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
+    "<b>Individual Raptors</b> (Minions), one by one: head for the Pack ▸ move ▸ <b>stop</b> on entering a space with you or a Victim (the stop sign); if they start there, they don't move. If they reach the Pack, they join it. A Raptor spawned during this phase doesn't act until the next one.",
+    "<b>The Pack</b> (the Killer): targets you or the closest Victim ▸ moves ▸ attacks, once per knife on the Finale in play.",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ },
+ "Bad Times at Buddyland": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
+    "<b>Billy</b>, fila de arriba: va a por ti o a la víctima más cercana ▸ ataca (en el Finale básico <b>no se mueve</b>).",
+    "Fila de abajo: icono de la pila con corazón ▸ va a por ti o a la víctima más cercana ▸ ataca.",
+    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
+    "<b>Billy</b>, top row: targets you or the closest Victim ▸ attacks (on the basic Finale <b>he doesn't move</b>).",
+    "Bottom row: battery-with-heart icon ▸ targets you or the closest Victim ▸ attacks.",
+    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ },
+ "The Green Terror": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
+    "Si empieza la fase <b>oculta</b>, fila de arriba: carta de Movimiento boca arriba al Path (el ojo) ▸ tira un 🎲: con 1-4, +🩸.",
+    "Si empieza la fase <b>visible</b>, fila de abajo: va a por ti o a la víctima más cercana ▸ ataca ▸ se oculta (el ojo tachado).",
+    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
+    "If the phase starts with her <b>concealed</b>, top row: a face-up Movement card to the Path (the eye) ▸ roll a 🎲: on 1-4, +🩸.",
+    "If it starts with her <b>visible</b>, bottom row: targets you or the closest Victim ▸ attacks ▸ conceals (the crossed-out eye).",
+    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ },
+ "A Demon in the Shadows": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
+    "<b>Ursula</b> (poseída por Berith): va a por ti o a la víctima más cercana ▸ se mueve ▸ ataca, las veces que marque la Finale en juego.",
+    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
+    "<b>Ursula</b> (possessed by Berith): targets you or the closest Victim ▸ moves ▸ attacks, as many times as the Finale in play shows.",
+    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ },
+ "Madness in the Dark": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
+    "Fila <b>M</b>: los <b>Lunáticos</b> (Esbirros) van a por ti ▸ se mueven.",
+    "Fila <b>K</b>: <b>Ratchet Lady</b> va a por ti o a la Víctima más cercana ▸ ataca (<b>no se mueve</b>).",
+    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
+    "<b>M</b> row: the <b>Lunatics</b> (Minions) target you ▸ move.",
+    "<b>K</b> row: <b>Ratchet Lady</b> targets you or the closest Victim ▸ attacks (<b>no move</b>).",
+    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ },
+ "A Knock at the Door": {
+  "es": {
+   "fase_t": "Fase del Killer",
+   "fase": [
+    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
+    "Fila de la Finale en juego: <b>solo el Asesino Activo</b> (el de la ficha) se mueve (bota) y ataca (cuchillo); los otros dos no se mueven. Si la carta dice «todos los Asesinos», el efecto lo hace cada uno, de arriba abajo del tablero del Killer, y la ficha no se mueve.",
+    "Si la fila trae 🔺 o 🔻, la ficha pasa al siguiente Asesino y lo que siga lo hace el nuevo Activo.",
+    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
+    "Roba y resuelve una carta de <b>Terror</b>."
+   ]
+  },
+  "en": {
+   "fase_t": "Killer phase",
+   "fase": [
+    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
+    "Row of the Finale in play: <b>only the Active Killer</b> (the one with the token) moves (boot) and attacks (knife); the other two don't move. If the card says «all Killers», each one does the effect, top to bottom of the Killer board, and the token stays put.",
+    "If the row has 🔺 or 🔻, the token moves to the next Killer and the new Active Killer does what follows.",
+    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
+    "Draw and resolve a <b>Terror</b> card."
+   ]
+  }
+ }
+}
+_FIG = ['A Rotten Harvest', 'Bad Times at Buddyland', 'Madness in the Dark', 'The Green Terror']
+for _g in GUIAS:
+    if _g["caja"] in _FASE:
+        for _l, _v in _FASE[_g["caja"]].items():
+            if _l in _g:
+                _g[_l].update(_v)
+        if _g["caja"] in _FIG:
+            _g["fase_fig"] = "fig-finale-basico"
