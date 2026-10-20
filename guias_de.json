@@ -327,7 +327,7 @@
   "err_m_t": "Achtung",
   "err_m": [
    "<b>Lava</b>-Felder sind für niemanden mehr zugänglich, auch nicht für Raptoren und den T-Rex.",
-   "Wird beim Aufbau die Ereigniskarte <a href=\"#ev-game-makers\"><b>Game Makers</b></a> (ein Ereignis dieses Ortes) gezogen, wirf sie ab und ziehe eine andere."
+   "Das Ereignis <a href=\"#ev-game-makers\"><b>Game Makers</b></a> darf keins deiner Start-Ereignisse sein: Ziehst du es beim Aufbau, wirf es ab und ziehe ein anderes."
   ],
   "bloques_m": [
    [

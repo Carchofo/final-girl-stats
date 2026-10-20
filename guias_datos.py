@@ -291,7 +291,7 @@ GUIAS = [
             "err_m_t": "Ojo con esto",
             "err_m": [
                 "Los espacios con <b>lava</b> dejan de ser accesibles para todos, también para los Raptors y el T-Rex.",
-                "Si al preparar la partida sale el evento <a href='#ev-game-makers'><b>Game Makers</b></a> (carta de Evento del mapa), descártalo y roba otro.",
+                "El evento <a href='#ev-game-makers'><b>Game Makers</b></a> no puede ser uno de los eventos con los que empiezas la partida: si sale al prepararla, descártalo y roba otro.",
             ],
             "bloques_m": [
                 ("Preparación especial", [
@@ -413,7 +413,7 @@ GUIAS = [
             "err_m_t": "Watch out",
             "err_m": [
                 "<b>Lava</b> spaces are no longer accessible to anyone, Raptors and T-Rex included.",
-                "If the <a href='#ev-game-makers'><b>Game Makers</b></a> Event card (one of this map's Events) is drawn during setup, discard it and draw another.",
+                "The <a href='#ev-game-makers'><b>Game Makers</b></a> Event can't be one of your starting Events: if you draw it during setup, discard it and draw another.",
             ],
             "bloques_m": [
                 ("Special setup", [
