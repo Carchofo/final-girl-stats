@@ -477,6 +477,15 @@ GUIAS = [
     {
         "caja": "Bad Times at Buddyland", "killer": "Billy", "mapa": "Buddyland", "dir": "bad-times-at-buddyland",
         "arte_k": "img/art/billy.jpg", "arte_m": "img/loc/buddyland.png",
+        "figs_k": {1: [("fig-bloodlust-tokens", "Bloodlust Track")],
+                   2: [("fig-power-source", "Power Source")],
+                   3: [("fig-buddy-ejemplo", "Buddy")],
+                   4: [("fig-buddies", "Allie · Ramey · Toby")],
+                   5: [("fig-finale-basico", "Finale")],
+                   6: [("fig-dark-powers", "Dark Powers")],
+                   7: [("fig-terror", "Terror")]},
+        "icos_k": {2: "ico-power"},
+        "figs_m": {1: [("fig-terror-mapa", "Terror")]},
         "inicios": [("playin-hooky", "Playin' Hooky"), ("hide-and-seek", "Hide and Seek"), ("pizza-party", "Pizza Party"), ("buddy-day", "Buddy Day"), ("birthday-bash", "Birthday Bash")],
         "es": {
             "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = vida · 🩸 = Bloodlust · 🎭 = sube el Horror · ⊘🎭 = la máscara tachada de la carta",
