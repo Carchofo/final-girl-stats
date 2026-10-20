@@ -501,7 +501,7 @@ GUIAS = [
         "arte_k": "img/art/berith.jpg", "arte_m": "img/loc/l-armes-abbey.png",
         "inicios": [],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · 🎲★ = el dado con estrella de las cartas (falta el reglamento para confirmar qué hace)",
+            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🔪 = icono del cuchillo (ataque) · 🎲★ = el dado propio de esta caja, con más caras de éxito que el dado normal",
             "err_k_t": "Ojo con esto", "err_k": [],
             "bloques_k": [
                 ("Cómo juega", [
@@ -534,7 +534,7 @@ GUIAS = [
             "ev": [],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · 🎲★ = the cards' die-with-star icon (we need the rulebook to confirm what it does)",
+            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🔪 = knife icon (attack) · 🎲★ = this box's own die, with more success faces than the regular die",
             "err_k_t": "Watch out", "err_k": [],
             "bloques_k": [
                 ("How it plays", [
