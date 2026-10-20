@@ -668,7 +668,7 @@ GUIAS = [
     {
         "caja": "The Green Terror", "killer": "Volk'ar", "mapa": "Pesadilla Verde", "dir": "the-green-terror",
         "arte_k": "img/art/volk-ar.jpg", "arte_m": "",
-        "figs_k": {1: [("fig-finale-basico", "Finale: arriba oculta / top: Concealed")],
+        "figs_k": {1: [("fig-finale-basico", "Finale")],
                    6: [("fig-track", "Track")],
                    7: [("fig-mov-1", "Movement"), ("fig-mov-2", "Movement")],
                    10: [("fig-attack-resolution", "Attack Resolution")],
