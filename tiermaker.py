@@ -18,35 +18,35 @@ T = {
  "es": {"sel": "Programa", "anadir": "Añadir fila", "quitar": "Quitar fila", "title": "Crea tu tier list de Final Girl: películas, killers y localizaciones",
         "desc": "Haz tu propia tier list de Final Girl arrastrando las cajas, los killers o los mapas. Descárgala como imagen o compártela con un enlace.",
         "eb": "Tier list maker · gratis, sin registro", "h1": "Crea tu<span class=\"roja\">tier list</span>",
-        "dek": "Arrastra cada foto a su fila (en el móvil: toca la foto y luego la fila). Cuando acabes, descárgala como imagen o comparte el enlace.",
+        "devolver": "Quitar de la fila", "dek": "Arrastra cada foto a su fila (en el móvil: toca la foto y luego la fila). Cuando acabes, descárgala como imagen o comparte el enlace. Para quitar una, pasa el ratón y pulsa la ✕ (o doble clic).",
         "modos": ["Películas", "Killers", "Localizaciones"], "sin": "Sin colocar", "bajar": "Descargar imagen",
         "comp": "Copiar enlace", "copiado": "¡Enlace copiado!", "reset": "Empezar de nuevo",
         "tit_def": "Mi tier list de Final Girl", "tit_lbl": "Título", "datos": "¿Y según los datos? Mira la tier list de dificultad →"},
  "en": {"sel": "Program", "anadir": "Add row", "quitar": "Remove row", "title": "Final Girl tier list maker: rank movies, killers and locations",
         "desc": "Make your own Final Girl tier list by dragging boxes, killers or maps. Download it as an image or share it with a link. Free, no sign-up.",
         "eb": "Tier list maker · free, no sign-up", "h1": "Final Girl<span class=\"roja\">tier list maker</span>",
-        "dek": "Drag each picture to its row (on mobile: tap the picture, then the row). When you're done, download it as an image or share the link.",
+        "devolver": "Remove from row", "dek": "Drag each picture to its row (on mobile: tap the picture, then the row). When you're done, download it as an image or share the link. To remove one, hover it and hit the ✕ (or double-click).",
         "modos": ["Movies", "Killers", "Locations"], "sin": "Unranked", "bajar": "Download image",
         "comp": "Copy link", "copiado": "Link copied!", "reset": "Start over",
         "tit_def": "My Final Girl tier list", "tit_lbl": "Title", "datos": "What does the data say? See the difficulty tier list →"},
  "fr": {"sel": "Programme", "anadir": "Ajouter une ligne", "quitar": "Supprimer la ligne", "title": "Créer sa tier list Final Girl : films, killers et lieux",
         "desc": "Faites votre propre tier list Final Girl en glissant les boîtes, les killers ou les lieux. Téléchargez l'image ou partagez le lien.",
         "eb": "Tier list maker · gratuit, sans inscription", "h1": "Créez votre<span class=\"roja\">tier list</span>",
-        "dek": "Glissez chaque image dans sa ligne (sur mobile : touchez l'image puis la ligne). Ensuite, téléchargez l'image ou partagez le lien.",
+        "devolver": "Retirer de la ligne", "dek": "Glissez chaque image dans sa ligne (sur mobile : touchez l'image puis la ligne). Ensuite, téléchargez l'image ou partagez le lien. Pour en retirer une, survolez-la et cliquez sur la ✕ (ou double-clic).",
         "modos": ["Films", "Killers", "Lieux"], "sin": "Non classés", "bajar": "Télécharger l'image",
         "comp": "Copier le lien", "copiado": "Lien copié !", "reset": "Recommencer",
         "tit_def": "Ma tier list Final Girl", "tit_lbl": "Titre", "datos": "Et selon les données ? Voir la tier list de difficulté →"},
  "de": {"sel": "Programm", "anadir": "Reihe hinzufügen", "quitar": "Reihe entfernen", "title": "Final Girl Tier-List-Maker: Filme, Killer und Schauplätze",
         "desc": "Erstelle deine eigene Final-Girl-Tier-List: Boxen, Killer oder Schauplätze per Drag-and-drop. Als Bild herunterladen oder per Link teilen.",
         "eb": "Tier-List-Maker · gratis, ohne Anmeldung", "h1": "Erstelle deine<span class=\"roja\">Tier List</span>",
-        "dek": "Zieh jedes Bild in seine Reihe (am Handy: Bild antippen, dann die Reihe). Danach als Bild herunterladen oder den Link teilen.",
+        "devolver": "Aus der Reihe nehmen", "dek": "Zieh jedes Bild in seine Reihe (am Handy: Bild antippen, dann die Reihe). Danach als Bild herunterladen oder den Link teilen. Zum Entfernen darüberfahren und auf ✕ klicken (oder Doppelklick).",
         "modos": ["Filme", "Killer", "Schauplätze"], "sin": "Nicht eingeordnet", "bajar": "Bild herunterladen",
         "comp": "Link kopieren", "copiado": "Link kopiert!", "reset": "Neu anfangen",
         "tit_def": "Meine Final-Girl-Tier-List", "tit_lbl": "Titel", "datos": "Was sagen die Daten? Zur Schwierigkeits-Tier-List →"},
  "it": {"sel": "Programma", "anadir": "Aggiungi riga", "quitar": "Rimuovi riga", "title": "Crea la tua tier list di Final Girl: film, killer e ambientazioni",
         "desc": "Crea la tua tier list di Final Girl trascinando scatole, killer o mappe. Scaricala come immagine o condividila con un link.",
         "eb": "Tier list maker · gratis, senza registrazione", "h1": "Crea la tua<span class=\"roja\">tier list</span>",
-        "dek": "Trascina ogni immagine nella sua riga (da mobile: tocca l'immagine e poi la riga). Alla fine scaricala come immagine o condividi il link.",
+        "devolver": "Togli dalla fila", "dek": "Trascina ogni immagine nella sua riga (da mobile: tocca l'immagine e poi la riga). Alla fine scaricala come immagine o condividi il link. Per toglierne una, passaci sopra e premi la ✕ (o doppio clic).",
         "modos": ["Film", "Killer", "Ambientazioni"], "sin": "Non classificati", "bajar": "Scarica immagine",
         "comp": "Copia link", "copiado": "Link copiato!", "reset": "Ricomincia",
         "tit_def": "La mia tier list di Final Girl", "tit_lbl": "Titolo", "datos": "E secondo i dati? Guarda la tier list di difficoltà →"},
@@ -202,6 +202,9 @@ def pagina(lang):
   .tm-zona.sobre {{ background:color-mix(in srgb,var(--blood) 12%,transparent); }}
   .tm-pool {{ border:1px dashed var(--line); border-radius:3px; background:var(--sunk); }}
   .tm-sinl {{ margin:14px 0 6px; }}
+  .tm-x {{ position:absolute; top:2px; right:2px; width:22px; height:22px; border-radius:50%; border:0; background:rgba(0,0,0,.75); color:#fff; font-size:15px; line-height:20px; cursor:pointer; opacity:0; transition:opacity .15s; z-index:2; padding:0; }}
+  #tm-filas .tm-it:hover .tm-x {{ opacity:1; }} #tm-pool .tm-x, .tm-it.drag .tm-x {{ display:none; }}
+  @media (hover:none) {{ #tm-filas .tm-x {{ opacity:.85; }} }}
   .tm-it {{ position:relative; width:76px; height:76px; border-radius:3px; overflow:hidden; background:#222; cursor:grab; flex:none;
             touch-action:none; user-select:none; -webkit-user-select:none; }}
   .tm-it img {{ width:100%; height:100%; object-fit:cover; object-position:center 62%; pointer-events:none; display:block; }}
@@ -259,7 +262,7 @@ def pagina(lang):
   function ficha(i) {{
     var it = C.g[modo][i];
     return '<div class="tm-it" data-i="' + i + '" title="' + esc(it[0]) + '">' + (it[1] ? '<img src="' + it[1] + '" alt="">' : '') +
-      '<span>' + esc(it[0]) + '</span></div>';
+      '<span>' + esc(it[0]) + '</span><button type="button" class="tm-x" aria-label="' + esc(C.t.devolver) + '" title="' + esc(C.t.devolver) + '">×</button></div>';
   }}
   function pintar() {{
     // Letra según lo largo de la etiqueta: "S" grande, "No jugado" pequeña.
@@ -299,6 +302,7 @@ def pagina(lang):
   // --- arrastrar (ratón y dedo con Pointer Events) o tocar y tocar
   var arr = null;
   document.addEventListener('pointerdown', function (e) {{
+    if (e.target.closest('.tm-x')) return;
     var it = e.target.closest('.tm-it'); if (!it || !it.closest('#tm-filas, #tm-pool')) return;
     arr = {{ i: +it.getAttribute('data-i'), el: it, x: e.clientX, y: e.clientY, mov: false, clon: null }};
   }});
@@ -306,7 +310,7 @@ def pagina(lang):
     if (!arr) return;
     if (!arr.mov && Math.abs(e.clientX - arr.x) + Math.abs(e.clientY - arr.y) < 8) return;
     if (!arr.mov) {{ arr.mov = true; arr.clon = arr.el.cloneNode(true); arr.clon.classList.add('drag'); document.body.appendChild(arr.clon); arr.el.style.opacity = '.3'; }}
-    var w = arr.clon.offsetWidth;
+    arr.yy = e.clientY; var w = arr.clon.offsetWidth;
     arr.clon.style.left = (e.clientX - w / 2) + 'px'; arr.clon.style.top = (e.clientY - w / 2) + 'px';
     document.querySelectorAll('.tm-zona.sobre').forEach(function (z) {{ z.classList.remove('sobre'); }});
     var z = document.elementFromPoint(e.clientX, e.clientY); z = z && z.closest('.tm-zona'); if (z) z.classList.add('sobre');
@@ -330,6 +334,20 @@ def pagina(lang):
     if (sel == null) {{ sel = a.i; a.el.classList.add('sel'); return; }}
     var dest = a.el.closest('.tm-zona'); var i = sel; sel = null; mover(i, +dest.getAttribute('data-fila'), a.i);
   }});
+  document.addEventListener('click', function (e) {{
+    var x = e.target.closest('.tm-x');
+    if (x) {{ e.stopPropagation(); sel = null; mover(+x.closest('.tm-it').getAttribute('data-i'), -1, null); return; }}
+  }}, true);
+  document.addEventListener('dblclick', function (e) {{
+    var it = e.target.closest('#tm-filas .tm-it'); if (!it) return;
+    sel = null; mover(+it.getAttribute('data-i'), -1, null);
+  }});
+  // Al arrastrar cerca del borde de la pantalla, la página se desplaza (el montón queda abajo).
+  setInterval(function () {{
+    if (!arr || !arr.mov || arr.yy == null) return;
+    var m = 70, v = arr.yy < m ? -14 : arr.yy > innerHeight - m ? 14 : 0;
+    if (v) window.scrollBy(0, v);
+  }}, 16);
   document.addEventListener('click', function (e) {{
     if (sel == null || e.target.closest('.tm-it, .tm-l textarea')) return;
     var z = e.target.closest('.tm-zona, .tm-fila'); if (!z) return;
