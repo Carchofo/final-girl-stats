@@ -822,6 +822,21 @@
      "Quando attacchi, metti il segnalino Attacco nello spazio bersaglio.",
      "Poi, prima di risolvere il suo Percorso, risolvi l'attacco e metti su questa carta tanti segnalini Danno quanti i danni inflitti."
     ]
+   ],
+   [
+    "Carte Terrore (e cosa vogliono dire le icone)",
+    [
+     "Ricorda: occhio = carta Movimento <b>scoperta</b> nel Percorso (sai dove va); occhio barrato = carta <b>coperta</b> (non lo sai); i 4 occhi viola = <b>Reveal</b>, esce e risolve tutto il Percorso.",
+     "<b>Sneak</b>: 🎭 e occhio barrato. Sale l'Orrore e si nasconde di un passo in più.",
+     "<b>Stealth Blitz</b>: occhio, occhio, occhio barrato. Aggiunge 3 carte al Percorso in un colpo: se ne aveva già diverse, può arrivare alla 6ª e farla uscire.",
+     "<b>Out of the Shadows</b>: se è già Visibile, scartala e pesca la prossima. Altrimenti Reveal: esce subito.",
+     "<b>Psy Ops</b>: se è Visibile, scartala e pescane un'altra. Altrimenti scarta tutte le carte Azione <b>Track</b> dalla mano, poi 🎭 e occhio. Ti lascia senza modo di rintracciarla.",
+     "<b>Bait 'n Switch</b>: se la carta Origin è scoperta, girala coperta. Mescola le altre carte Movimento del Percorso e rimettile coperte. Poi 🎭🎭. Perdi tutto ciò che avevi rintracciato.",
+     "<b>Savage Upgrade</b>: rivela una alla volta le carte Terrore messe da parte e metti in gioco il primo <b>Minor Dark Power</b> trovato. Poi occhio barrato. Se non è uscito nessun Minor Dark Power, +🩸🩸.",
+     "<b>Energy Shield</b> (Minor): quando viene rivelata, metti un ❤️ sopra. La prima volta per turno che si risolve l'occhio barrato, aggiungine 1. Non si possono aggiungere ❤️ in altro modo. Si scarta quando non ha più ❤️.",
+     "<b>Collector</b> (Minor): ogni volta che si risolve il suo Percorso, prendi prima l'Oggetto in cima dallo spazio 🔧 più vicino e mettilo sotto questa carta. Quando Collector viene scartata, quegli Oggetti formano un nuovo mazzo accanto al tabellone e il segnalino Collection va nello spazio di Volk'ar: ora lì si può cercare.",
+     "<b>Evasion</b> (Minor): ogni volta che risolvi l'occhio barrato, risolvilo una seconda volta."
+    ]
    ]
   ],
   "err_m_t": "Attenzione",
@@ -979,7 +994,7 @@
     "1 mano. In mano: scarta durante la fase Azione e spendi 2 ⌛ per infliggere 2 ✴ a un Nemico in uno spazio adiacente. Nello zaino: scarta mentre usi il <b>Compound Bow</b> per aggiungere 2 ✴ all'attacco."
    ]
   ],
-  "falta": "Ci sono 2 Grenade e 2 Bowie Knife diversi. Mancano ancora le foto delle sue carte Terrore.",
+  "falta": "Ci sono 2 Grenade e 2 Bowie Knife diversi.",
   "ev": [
    [
     "Supply Drop",

@@ -822,6 +822,21 @@
      "En attaquant, pose le jeton Attaque sur la case visée.",
      "Puis, avant de résoudre son Path, résous l'attaque et pose sur cette carte autant de jetons Dégât que de dégâts infligés."
     ]
+   ],
+   [
+    "Cartes Terreur (et leurs icônes)",
+    [
+     "Rappel : œil = carte Mouvement <b>face visible</b> au Path (tu sais où elle va) ; œil barré = carte <b>face cachée</b> (tu ne sais pas) ; les 4 yeux violets = <b>Reveal</b>, elle sort et résout tout son Path.",
+     "<b>Sneak</b> : 🎭 et œil barré. L'Horreur monte et elle se cache d'un pas de plus.",
+     "<b>Stealth Blitz</b> : œil, œil, œil barré. Ajoute 3 cartes au Path d'un coup : si elle en avait déjà plusieurs, ça peut atteindre la 6e et la faire sortir.",
+     "<b>Out of the Shadows</b> : si elle est déjà Visible, défausse-la et pioche la suivante. Sinon, Reveal : elle sort tout de suite.",
+     "<b>Psy Ops</b> : si elle est Visible, défausse-la et pioche-en une autre. Sinon, défausse toutes les cartes Action <b>Track</b> de ta main, puis 🎭 et œil. Tu n'as plus de quoi la pister.",
+     "<b>Bait 'n Switch</b> : si la carte Origin est face visible, retourne-la face cachée. Mélange les autres cartes Mouvement du Path et remets-les face cachée. Puis 🎭🎭. Tout ce que tu avais pisté est perdu.",
+     "<b>Savage Upgrade</b> : révèle une à une les cartes Terreur mises de côté et mets en jeu le premier <b>Minor Dark Power</b> trouvé. Puis œil barré. Si aucun Minor Dark Power n'est sorti, +🩸🩸.",
+     "<b>Energy Shield</b> (Minor) : une fois révélée, pose un ❤️ dessus. La première fois par tour que l'œil barré est résolu, ajoute 1 ❤️. On ne peut pas en ajouter autrement. Défausse-la quand elle n'a plus de ❤️.",
+     "<b>Collector</b> (Minor) : chaque fois que son Path est résolu, prends d'abord l'Objet du dessus de la case 🔧 la plus proche et mets-le sous cette carte. Quand Collector est défaussée, ces Objets forment une nouvelle pioche près du plateau et le jeton Collection va sur la case de Volk'ar : on peut désormais y fouiller.",
+     "<b>Evasion</b> (Minor) : chaque fois que tu résous l'œil barré, résous-le une deuxième fois."
+    ]
    ]
   ],
   "err_m_t": "Attention",
@@ -979,7 +994,7 @@
     "1 main. En main : défausse-la pendant la phase d'Action et dépense 2 ⌛ pour infliger 2 ✴ à un Ennemi dans une case adjacente. Dans ton sac à dos : défausse-la en utilisant le <b>Compound Bow</b> pour ajouter 2 ✴ à l'attaque."
    ]
   ],
-  "falta": "Il y a 2 Grenades et 2 Bowie Knives différents. Il manque encore la photo de ses cartes Terreur.",
+  "falta": "Il y a 2 Grenades et 2 Bowie Knives différents.",
   "ev": [
    [
     "Supply Drop",

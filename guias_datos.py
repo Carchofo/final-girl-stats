@@ -722,6 +722,17 @@ GUIAS = [
                 ("Carta Attack Resolution", [
                     "Al atacarla, pon la ficha de Ataque en el espacio al que atacas.",
                     "Luego, antes de resolver su Path, resuelve el ataque y pon en esta carta tantas fichas de Daño como daño hayas hecho."]),
+                ("Cartas de Terror (y qué significan sus iconos)", [
+                    "Recuerda: ojo = carta de Movimiento <b>boca arriba</b> al Path (sabes por dónde va); ojo tachado = carta <b>boca abajo</b> (no lo sabes); los 4 ojos morados = <b>Reveal</b>, sale y resuelve todo su Path.",
+                    "<b>Sneak</b>: 🎭 y ojo tachado. Sube el Horror y se esconde un paso más.",
+                    "<b>Stealth Blitz</b>: ojo, ojo, ojo tachado. Añade 3 cartas al Path de golpe: si ya tenía bastantes, puede llegar a la 6.ª y salir.",
+                    "<b>Out of the Shadows</b>: si ya está visible, descártala y roba otra. Si no, Reveal: sale de su escondite ya.",
+                    "<b>Psy Ops</b>: si está visible, descártala y roba otra. Si no, descarta todas las cartas de Acción <b>Track</b> de tu mano, luego 🎭 y ojo. Te deja sin forma de rastrearla.",
+                    "<b>Bait 'n Switch</b>: si la carta Origin está boca arriba, gírala boca abajo. Baraja las demás cartas de Movimiento del Path y vuelve a ponerlas boca abajo. Luego 🎭🎭. Todo lo que habías rastreado se pierde.",
+                    "<b>Savage Upgrade</b>: revela una a una las cartas de Terror apartadas y pon en juego el primer <b>Minor Dark Power</b> que encuentres. Luego ojo tachado. Si no salió ningún Minor Dark Power, +🩸🩸.",
+                    "<b>Energy Shield</b> (Minor): al revelarse, pon un ❤️ en la carta. La primera vez cada turno que se resuelve el ojo tachado, añade otro. No se le pueden añadir ❤️ de otra forma. Se descarta cuando no le quedan ❤️.",
+                    "<b>Collector</b> (Minor): cada vez que se resuelve su Path, primero coge el objeto de arriba del espacio 🔧 más cercano y ponlo debajo de esta carta. Al descartarse, todos esos objetos forman un mazo nuevo junto al tablero y la ficha de Collection va al espacio de Volk'ar: ya se puede buscar ahí.",
+                    "<b>Evasion</b> (Minor): cada vez que resuelves el ojo tachado, resuélvelo dos veces."]),
             ],
             "err_m_t": "Ojo con esto", "err_m": [
                 "Los <b>Soldiers</b> te siguen <b>al espacio del Killer</b>, al revés que las víctimas normales.",
@@ -780,7 +791,7 @@ GUIAS = [
                 ("backpack-radio", "Backpack Radio", "Descártala y gasta 3 ⌛ para: mover a <b>todos</b> los Soldiers hasta 2 espacios, <b>o</b> pedir un ataque aéreo: elige un espacio y tira un dado. 1-2: 💔 a todos en ese espacio y en cada adyacente. 3-6: 💔💔💔💔 a todos en ese espacio."),
                 ("grenade", "Grenade", "1 mano. En la mano: descártala en la fase de Acción y gasta 2 ⌛ para hacer 2 ✴ a un Enemy de un espacio adyacente. En la mochila: descártala mientras usas el <b>Compound Bow</b> para sumar 2 ✴ al ataque."),
             ],
-            "falta": "Hay 2 Grenade y 2 Bowie Knife distintas. Nos faltan sus cartas de Terror.",
+            "falta": "Hay 2 Grenade y 2 Bowie Knife distintas.",
             "ev": [
                 ("Supply Drop", "Coge 3 objetos al azar que no se usaron y ponlos boca arriba junto al mazo de objetos del <b>Supply Depot</b>. Al buscar ahí con éxito, puedes elegir uno de ellos en vez de robar. Se descarta cuando ya no quede ninguno de los 3."),
                 ("\"Piranhas!\"", "Tira un dado y pon el token de Piranhas: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Todos los de ese espacio: 💔. Quien entre después en ese espacio: 💔."),
@@ -858,6 +869,17 @@ GUIAS = [
                 ("Attack Resolution card", [
                     "When attacking, place the Attack token in the space being targeted.",
                     "Then, before resolving her Path, resolve the attack and place Damage tokens on this card equal to the damage done."]),
+                ("Terror cards (and what their icons mean)", [
+                    "Remember: eye = Movement card <b>faceup</b> to the Path (you know where she's going); crossed-out eye = card <b>facedown</b> (you don't); the 4 purple eyes = <b>Reveal</b>, she comes out and resolves her whole Path.",
+                    "<b>Sneak</b>: 🎭 and crossed-out eye. Horror goes up and she hides one more step.",
+                    "<b>Stealth Blitz</b>: eye, eye, crossed-out eye. Adds 3 cards to the Path at once: if she already had several, it can reach the 6th and bring her out.",
+                    "<b>Out of the Shadows</b>: if she's already Visible, discard and draw the next Terror card. Otherwise, Reveal: she comes out now.",
+                    "<b>Psy Ops</b>: if she's Visible, discard and draw another. Otherwise, discard all <b>Track</b> Action cards in your hand, then 🎭 and eye. It leaves you with no way to track her.",
+                    "<b>Bait 'n Switch</b>: if the Origin card is faceup, flip it facedown. Shuffle the other Movement cards in the Path and return them facedown. Then 🎭🎭. Everything you had tracked is lost.",
+                    "<b>Savage Upgrade</b>: reveal the set-aside Terror cards one at a time and put the first <b>Minor Dark Power</b> you find into play. Then crossed-out eye. If you didn't reveal a Minor Dark Power, +🩸🩸.",
+                    "<b>Energy Shield</b> (Minor): when revealed, place a ❤️ on it. The first time the crossed-out eye is resolved each turn, add 1 ❤️ to it. ❤️ can't be added any other way. Discard it when there are no ❤️ on it.",
+                    "<b>Collector</b> (Minor): each time her Path is resolved, first take the top Item card from the closest 🔧 space and place it underneath this card. When Collector is discarded, all collected Items form a new Item deck next to the board and the Collection token goes in Volk'ar's current space: that space may now be searched.",
+                    "<b>Evasion</b> (Minor): whenever you resolve the crossed-out eye, resolve it a second time."]),
             ],
             "err_m_t": "Watch out", "err_m": [
                 "<b>Soldiers</b> follow you <b>into the Killer's space</b>, unlike normal Victims.",
@@ -916,7 +938,7 @@ GUIAS = [
                 ("backpack-radio", "Backpack Radio", "Discard and spend 3 ⌛ to either: move <b>all</b> Soldiers up to 2 spaces, <b>or</b> call in an airstrike: choose a space and roll a die. 1-2: 💔 to everyone in that space and each adjacent one. 3-6: 💔💔💔💔 to everyone in that space."),
                 ("grenade", "Grenade", "1 hand. In hand: discard during the Action phase and spend 2 ⌛ to deal 2 ✴ to an Enemy in an adjacent space. In your backpack: discard while using the <b>Compound Bow</b> to add 2 ✴ to the attack."),
             ],
-            "falta": "There are 2 Grenades and 2 different Bowie Knives. Her Terror cards are still to photograph.",
+            "falta": "There are 2 Grenades and 2 different Bowie Knives.",
             "ev": [
                 ("Supply Drop", "Take 3 random unused Items and place them faceup next to the <b>Supply Depot</b> Item deck. When you search there successfully, you may take one of them instead of drawing. Discard when none of the 3 are left."),
                 ("\"Piranhas!\"", "Roll a die and place the Piranhas token: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Everyone in that space: 💔. Anyone entering it later: 💔."),

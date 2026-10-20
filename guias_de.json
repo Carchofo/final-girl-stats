@@ -822,6 +822,21 @@
      "Beim Angriff legst du den Angriffsmarker auf das angegriffene Feld.",
      "Dann, vor dem Abhandeln ihres Pfads, handle den Angriff ab und lege so viele Schadensmarker auf diese Karte, wie Schaden verursacht wurde."
     ]
+   ],
+   [
+    "Terrorkarten (und ihre Symbole)",
+    [
+     "Zur Erinnerung: Auge = Bewegungskarte <b>offen</b> in den Pfad (du weißt, wohin sie geht); durchgestrichenes Auge = Karte <b>verdeckt</b> (du weißt es nicht); die 4 violetten Augen = <b>Reveal</b>, sie kommt heraus und handelt ihren ganzen Pfad ab.",
+     "<b>Sneak</b>: 🎭 und durchgestrichenes Auge. Horror steigt, und sie versteckt sich einen Schritt weiter.",
+     "<b>Stealth Blitz</b>: Auge, Auge, durchgestrichenes Auge. Legt 3 Karten auf einmal in den Pfad: hatte sie schon einige, kann das die 6. erreichen und sie herausholen.",
+     "<b>Out of the Shadows</b>: Ist sie schon sichtbar, wirf ab und zieh die nächste. Sonst Reveal: sie kommt sofort heraus.",
+     "<b>Psy Ops</b>: Ist sie sichtbar, wirf ab und zieh eine andere. Sonst wirf alle <b>Track</b>-Aktionskarten aus deiner Hand ab, dann 🎭 und Auge. Du kannst sie nicht mehr aufspüren.",
+     "<b>Bait 'n Switch</b>: Liegt die Origin-Karte offen, dreh sie um. Misch die übrigen Bewegungskarten im Pfad und leg sie verdeckt zurück. Dann 🎭🎭. Alles Aufgespürte ist weg.",
+     "<b>Savage Upgrade</b>: Decke die beiseitegelegten Terrorkarten einzeln auf und bring die erste <b>Minor Dark Power</b> ins Spiel. Dann durchgestrichenes Auge. Kam keine Minor Dark Power, +🩸🩸.",
+     "<b>Energy Shield</b> (Minor): Beim Aufdecken lege ein ❤️ darauf. Das erste Mal pro Runde, wenn das durchgestrichene Auge abgehandelt wird, füge 1 ❤️ hinzu. Anders kann kein ❤️ hinzukommen. Abwerfen, wenn kein ❤️ mehr darauf liegt.",
+     "<b>Collector</b> (Minor): Jedes Mal, wenn ihr Pfad abgehandelt wird, nimm zuerst den obersten Gegenstand vom nächsten 🔧-Feld und leg ihn unter diese Karte. Wird Collector abgeworfen, bilden diese Gegenstände einen neuen Stapel neben dem Plan und der Collection-Marker kommt auf Volk'ars Feld: dort kann nun gesucht werden.",
+     "<b>Evasion</b> (Minor): Jedes Mal, wenn du das durchgestrichene Auge abhandelst, handle es ein zweites Mal ab."
+    ]
    ]
   ],
   "err_m_t": "Achtung",
@@ -979,7 +994,7 @@
     "1 Hand. In der Hand: Während der Aktionsphase abwerfen und 2 ⌛ ausgeben, um 2 ✴ bei einem Feind in einem angrenzenden Feld zu verursachen. Im Rucksack: Beim Einsatz des <b>Compound Bow</b> abwerfen, um dem Angriff 2 ✴ hinzuzufügen."
    ]
   ],
-  "falta": "Es gibt 2 Grenades und 2 verschiedene Bowie Knives. Ihre Terrorkarten fehlen noch als Foto.",
+  "falta": "Es gibt 2 Grenades und 2 verschiedene Bowie Knives.",
   "ev": [
    [
     "Supply Drop",
