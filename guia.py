@@ -161,6 +161,23 @@ def con_iconos(html, caja, lang):
     return html
 
 
+def fase_html(lang, g, ancla_id=False, h="h3"):
+    """La fase del Killer paso a paso: en su guía y en la ficha del killer."""
+    if not g:
+        return ""
+    lg = _lg(lang, g)
+    d = g[lg]
+    if not d.get("fase"):
+        return ""
+    ruta = f"{'' if lang == 'es' else '../'}img/guias/{g['dir']}/"
+    idt = f' id="{ancla("k", "fase")}"' if ancla_id else ""
+    out = (f'<{h}{idt}>{d["fase_t"]}</{h}><ol class="gu-fase" style="padding-left:22px">' +
+           "".join(f"<li>{x}</li>" for x in d["fase"]) + "</ol>")
+    if g.get("fase_fig"):
+        out += (f'<div class="gu-figs"><figure><img src="{ruta}{g["fase_fig"]}.jpg" alt="" loading="lazy"></figure></div>')
+    return out
+
+
 def secciones(lang, g):
     """Las dos guías como secciones de la ficha de la caja."""
     lg = _lg(lang, g)
@@ -190,12 +207,7 @@ def secciones(lang, g):
     def err(c, t, xs):
         return f'<h3 id="{ancla(c, "ojo")}">{t}</h3><div class="gu-err">{_lista(xs)}</div>' if xs else ""
 
-    fase = ""
-    if d.get("fase"):
-        fase = (f'<h3 id="{ancla("k", "fase")}">{d["fase_t"]}</h3><ol class="gu-fase">' +
-                "".join(f"<li>{x}</li>" for x in d["fase"]) + "</ol>")
-        if g.get("fase_fig"):
-            fase += (f'<div class="gu-figs"><figure><img src="{ruta}{g["fase_fig"]}.jpg" alt="" loading="lazy"></figure></div>')
+    fase = fase_html(lang, g, ancla_id=True)
     k = fase + err("k", d["err_k_t"], d["err_k"]) + bloques("k", d["bloques_k"])
     m = err("m", d["err_m_t"], d["err_m"]) + bloques("m", d["bloques_m"])
     if g["inicios"]:

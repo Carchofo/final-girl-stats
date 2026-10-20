@@ -311,6 +311,7 @@ def pagina_killer(nombre, k, lang, tx):
             h.append(f'<p class="sub">{t["wiki"].format(u=u)}</p>')
 
     h.append(mecanicas.killer(nombre, lang))
+    h.append(guia.fase_html(lang, g, h='h2'))
     if caja:
         h.append("<p>" + t["caja"].format(u=P.slug(caja) + ".html", c=caja)
                  + (t["pareja"].format(l=propio) if propio else ".") + "</p>")

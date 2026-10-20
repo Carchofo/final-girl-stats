@@ -262,6 +262,7 @@ def pagina_killer(nombre, k):
                      f'bajo licencia CC BY-SA.</p>')
 
     h.append(mecanicas.killer(nombre, 'es'))
+    h.append(guia.fase_html('es', g, h='h2'))
 
     if caja:
         h.append(f'<p>Viene en la caja <a href="{slug(caja)}.html"><b>{caja}</b></a>'
