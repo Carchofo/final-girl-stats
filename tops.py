@@ -125,6 +125,32 @@ def _imagenes():
     return img
 
 
+REL_T = {
+    "es": {"caja": "Ficha de la caja", "killer": "Ficha de {n}", "gk": "📖 Guía de {n}", "gm": "📖 Guía de {n}"},
+    "en": {"caja": "Box page", "killer": "{n} page", "gk": "📖 {n} guide", "gm": "📖 {n} guide"},
+    "fr": {"caja": "Fiche de la boîte", "killer": "Fiche de {n}", "gk": "📖 Guide de {n}", "gm": "📖 Guide de {n}"},
+    "de": {"caja": "Box-Seite", "killer": "Seite von {n}", "gk": "📖 {n}-Guide", "gm": "📖 {n}-Guide"},
+    "it": {"caja": "Scheda della scatola", "killer": "Scheda di {n}", "gk": "📖 Guida di {n}", "gm": "📖 Guida di {n}"},
+}
+
+
+def _relaciones():
+    """Película, killer y mapa enlazados entre sí: ficha de la caja, del killer y las guías."""
+    import paginas
+    from guias_datos import GUIAS
+    con_guia = {g["caja"] for g in GUIAS}
+    D = paginas.datos()
+    f, k, m = {}, {}, {}
+    for x in D["films"]:
+        if x["film"] in f:
+            continue
+        caja, gu = paginas.slug(x["film"]), x["film"] in con_guia
+        f[x["film"]] = {"k": x["killer"], "ks": paginas.slug(x["killer"]), "m": x["loc"], "c": caja, "g": gu}
+        k.setdefault(x["killer"], {"ks": paginas.slug(x["killer"]), "c": caja, "g": gu})
+        m.setdefault(x["loc"], {"c": caja, "g": gu})
+    return {"f": f, "k": k, "m": m}
+
+
 def seccion(lang):
     t = T[lang]
     pre = "" if lang == "es" else "../"
@@ -138,7 +164,8 @@ def seccion(lang):
     cfg = {"ts": ts, "todas": todas, "tsk": [k for k, _ in TEMPS], "form": FORM, "hoja": HOJA, "e": ENTRADAS, "eid": ID_ENTRADA, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
            "o": _opciones(), "img": img, "t": t,
            "amz": {k: v for k, v in __import__("paginas").AFILIADOS["amazon"]["tags"].items() if v.get("tag")},
-           "url": "finalgirlstats.com/" + ("" if lang == "es" else lang + "/") + "tops.html"}
+           "url": "finalgirlstats.com/" + ("" if lang == "es" else lang + "/") + "tops.html",
+           "rel": _relaciones(), "rt": REL_T[lang]}
     return f'''
 <section id="v-tops" hidden>
   <h2>{t["h2"]}</h2>
@@ -179,6 +206,7 @@ def seccion(lang):
   .ct-row .n {{ font-family:var(--f-mono); font-size:12px; color:var(--muted); white-space:nowrap; }}
   .ct-vacio {{ margin:0; }}
   .ct-mas {{ display:none !important; }}
+  .ct-rel {{ flex-basis:100%; margin:4px 0 6px; font-size:13px; }} .ct-rel a {{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--blood); text-underline-offset:3px; }}
   .ct-vlink {{ display:inline-block; margin:6px 0 4px; font-size:13px; font-weight:600; color:var(--blood); text-decoration:none; }}
   .ct-amz {{ display:inline-block; margin:6px 0 4px 14px; font-size:13px; font-weight:600; color:#f0a742; text-decoration:none; }}
   .ct-amzn {{ margin-left:6px; font-size:11px; color:var(--muted); }}
@@ -443,6 +471,21 @@ def seccion(lang):
         var a = document.createElement('a'); a.href = '#tops'; a.className = 'ct-vlink';
         a.setAttribute('data-cat', cat); a.setAttribute('data-val', v); a.textContent = C.t.vtop;
         h.parentNode.insertBefore(a, h.nextSibling);
+        var R = cat === 'best_box' ? C.rel.f[v] : cat === 'best_killer' ? C.rel.k[v] : cat === 'best_location' ? C.rel.m[v] : null;
+        if (R && !d.querySelector('.ct-rel')) {{
+          var en = [], rt = C.rt, n = function (t, x) {{ return t.replace('{{n}}', x); }};
+          var lk = function (href, txt) {{ return '<a href="' + href + '">' + txt + '</a>'; }};
+          if (cat !== 'best_killer' && R.k === undefined) en.push(lk(R.c + '.html', rt.caja));
+          if (cat === 'best_box') {{ en.push(lk(R.c + '.html', rt.caja)); en.push(lk(R.ks + '.html', n(rt.killer, R.k))); }}
+          if (cat === 'best_killer') {{ en.push(lk(R.ks + '.html', n(rt.killer, v))); en.push(lk(R.c + '.html', rt.caja)); }}
+          if (R.g) {{
+            var kn = cat === 'best_killer' ? v : R.k, mn = cat === 'best_location' ? v : R.m;
+            if (cat !== 'best_location') en.push(lk(R.c + '.html#guia-killer', n(rt.gk, kn)));
+            if (cat !== 'best_killer' && mn) en.push(lk(R.c + '.html#guia-mapa', n(rt.gm, mn)));
+          }}
+          var r = document.createElement('p'); r.className = 'ct-rel'; r.innerHTML = en.join(' · ');
+          var ref = d.querySelector('.ct-amzn') || a; ref.parentNode.insertBefore(r, ref.nextSibling);
+        }}
         // Al lado, el enlace de compra (película, o la caja del killer).
         var caja = cat === 'best_box' ? v : (cat === 'best_killer' ? CAJA_DE[v] : null);
         var u = caja && amazon(caja);

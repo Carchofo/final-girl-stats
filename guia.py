@@ -18,6 +18,14 @@ CAJA = "A Rotten Harvest"
 SAL_K = "guia-grimlash.html"
 SAL_M = "guia-shady-acres.html"
 
+FICHA_K = {"es": "Ficha de {n} →", "en": "{n} page →", "fr": "Fiche de {n} →", "de": "Seite von {n} →", "it": "Scheda di {n} →"}
+
+
+def _slug(t):
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", t.lower())).strip("-")
+
+
 ANCLA = {"k": "guia-killer", "m": "guia-mapa"}
 
 TXT = {
@@ -205,7 +213,10 @@ def secciones(lang, g):
     for cual, cuerpo, nombre in (("k", k, g["killer"]), ("m", m, g["mapa"])):
         out.append(f'<section id="{ANCLA[cual]}" class="gu-sec" style="scroll-margin-top:20px;margin-top:40px;'
                    f'border-top:2px solid var(--blood);padding-top:6px"><h2>📖 {tt[cual].format(n=nombre)}</h2>'
-                   f'<p class="sub">{tt["mix_" + cual]} <a href="#">{tt["arriba"]}</a></p>'
+                   f'<p class="sub">{tt["mix_" + cual]} <a href="#">{tt["arriba"]}</a>'
+                   + (f' · <a href="{_slug(g["killer"])}.html">{FICHA_K[lg].format(n=g["killer"])}</a>' if cual == "k" else '')
+                   + (f' · <a href="#{ANCLA["k" if cual == "m" else "m"]}">{tt["k" if cual == "m" else "m"].format(n=g["killer"] if cual == "m" else g["mapa"])}</a>')
+                   + '</p>'
                    + (f'<p class="gu-ley">{ley}</p>' if cual == "k" else '') + foto(cual, nombre) + f'{cuerpo}</section>')
     out.append(ZOOM)
     return "\n".join(out)
