@@ -415,21 +415,55 @@ GUIAS = [
         "inicios": [("high-ground", "High Ground"), ("jungle-madness", "Jungle Madness"), ("cave-dwellers", "Cave Dwellers"),
                     ("river-rats", "River Rats"), ("rebel-yell", "Rebel Yell")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = recuperas vida · 💔 = pierdes vida · 🎭 = sube el Horror · ⊘🎭 = baja el Horror · 🎲 = dado",
-            "err_k_t": "Ojo con esto", "err_k": [],
+            "ley": "⌛ = Tiempo · ✴ = daño · ❤️ = recuperas vida · 💔 = pierdes vida · 🎭 = sube el Horror · ⊘🎭 = baja el Horror · 🎲 = dado · 🔧 = espacio con el icono naranja de la llave",
+            "err_k_t": "Ojo con esto", "err_k": [
+                "Si la atacas oculta y no está en el espacio que atacaste, te <b>embosca a ti</b> (aunque atacara otro): sufres la <b>Ambush Penalty</b> de la última carta de su Path.",
+                "Nunca puedes mirar los descartes de Movimiento."],
             "bloques_k": [
-                ("Cómo juega", [
-                    "Nos falta fotografiar la página de Volk'ar del reglamento. Hasta tenerla, aquí no ponemos reglas suyas."]),
-                ("Sus cartas de Movimiento (tal cual)", [
-                    "El mazo trae más cartas, pero repetidas: estas son las 8 distintas. Sin la página del reglamento no sabemos qué significan del todo los números de los círculos ni los iconos de la franja roja. Las copiamos tal cual:",
-                    "Mueve 1 espacio en un ① · 🎯 Final Girl o víctima ▸ 🔪 · franja: 🎭🎭",
-                    "Mueve 1 espacio en un ① · franja: 2 ⌛",
-                    "Mueve 1 espacio en un ② · 🎯 Final Girl o víctima ▸ 🔪 · franja: 3 ⌛",
-                    "Mueve 1 espacio en un ② · franja: 2 manchas de sangre",
-                    "Mueve 1 espacio en un ③ · 🎯 Final Girl o víctima ▸ 🔪 · franja: 1 mancha de sangre",
-                    "Mueve 1 espacio en un ③ · franja: 🎭",
-                    "No se mueve, Volk'ar recupera ❤️ · franja: 🎭🎭",
-                    "No se mueve, Volk'ar recupera ❤️ · franja: descarta una carta de Acción al azar"]),
+                ("Preparación especial", [
+                    "Pon las cartas de Acción <b>Track</b> en el Action Tableau.",
+                    "Deja junto a la zona de juego la carta <b>Attack Resolution</b>, las fichas de <b>Daño</b> y la ficha de <b>Ataque</b> (la diana).",
+                    "Baraja las cartas de <b>Movimiento</b> y deja el mazo boca abajo junto al tablero. Reparte 1 carta boca abajo al lado, dejando sitio para 5 más.",
+                    "Al revelar la carta de inicio, <b>no</b> pongas a Volk'ar en el tablero: su figura va en el reverso de la carta <b>Finale</b>, en el hueco marcado. Pon un marcador <b>Origin</b> donde empezaría el Killer y el otro encima de esa carta de Movimiento boca abajo."]),
+                ("Oculta o visible", [
+                    "Volk'ar <b>no tiene valor de Movimiento</b>: se mueve según su <b>Path</b> (camino), la fila de cartas de Movimiento.",
+                    "<b>Oculta (Concealed)</b>: no se ve, pero siempre está en algún espacio, el que marca su Path. Su figura está en la carta Finale. Si empieza la fase del Killer oculta, resuelve la Killer Action de <b>arriba</b> de la Finale.",
+                    "<b>Visible</b>: su figura está en el tablero y se la ve normal. Si empieza la fase del Killer visible, resuelve la Killer Action de <b>abajo</b>.",
+                    "La <b>carta Origin</b> es la primera del Path (lleva un marcador Origin encima) y marca dónde empieza a moverse a escondidas."]),
+                ("Cómo se construye el Path", [
+                    "Con el icono del <b>ojo</b>, roba una carta de Movimiento y ponla <b>boca arriba</b> en el siguiente hueco del Path. Con el <b>ojo tachado</b>, ponla <b>boca abajo</b>.",
+                    "Si está visible cuando se resuelve un ojo tachado, se oculta al momento: pon un Origin en la carta nueva y el otro en su espacio actual, y su figura vuelve a la carta Finale.",
+                    "Si el mazo se acaba, baraja los descartes y haz uno nuevo."]),
+                ("Cuándo sale de su escondite", [
+                    "Resuelve su Path y se revela cuando: resuelves el icono <b>Reveal</b> de una carta, se añade la <b>6.ª</b> carta al Path, o le haces daño estando oculta (ver abajo).",
+                    "Si la 6.ª carta llega en mitad de la Killer Action de la Finale o de una carta de Terror (u otra), acaba primero esa carta. Puede haber más de 6 cartas que resolver.",
+                    "Al revelarse: 1) pon su figura en el espacio del marcador Origin (aunque ya no se pueda entrar) y deja los dos Origin junto al mazo. 2) Desde la carta Origin, resuelve una a una las cartas del Path, girándolas si hace falta: se mueve y ataca donde esté si la carta lo pone. Los espacios con restricciones para el Killer le afectan, y a veces no se mueve. 3) Si tú o ella tenéis que revelar la ficha Final Health, espera a acabar todas las cartas. 4) Descarta las cartas del Path."]),
+                ("Atacarla cuando está oculta", [
+                    "Puedes atacar cualquier espacio a tu alcance como si estuviera ahí. Pon la ficha de <b>Ataque</b> en ese espacio, resuelve el ataque y apunta el daño con fichas de Daño en la carta Attack Resolution.",
+                    "Si no haces daño, sigue oculta y no se resuelve el Path. Si haces daño, se resuelve su Path.",
+                    "Si acaba en el espacio de tu ficha de Ataque, ¡recibe el daño! Si acaba en otro, el ataque no sirve y te embosca: aplica la <b>Ambush Penalty</b>, la franja roja de abajo de la última carta de su Path.",
+                    "Al terminar, quita las fichas de Daño y la de Ataque.",
+                    "Si atacaste tu propio espacio, ella acaba ahí y la última carta tiene línea de Killer Attack, los dos ataques pasan a la vez."]),
+                ("Mientras está oculta", [
+                    "Si algo te pide colocar algo o contar espacios respecto al Killer, usa el espacio del marcador Origin.",
+                    "Si algo te pide colocar al Killer, ignóralo.",
+                    "Si una carta tiene línea de Killer Action, trátala como un ojo tachado.",
+                    "Las víctimas no entran en pánico en la fase de Pánico."]),
+                ("Rastrearla (Track)", [
+                    "La carta de Acción <b>Track</b> (2 ⌛) destapa cartas del Path: con 3★ revela la carta Origin <b>o</b> 2 cartas más; con 2★, 2 cartas (no la Origin); con 1★, 1 carta (no la Origin). La fila roja: Volk'ar ▸ ojo tachado.",
+                    "Si todas las cartas del Path están boca arriba sabes <b>exactamente</b> dónde está. Si queda alguna boca abajo, toca adivinar."]),
+                ("Sus cartas de Movimiento", [
+                    "El mazo trae 22, con repetidas. Cada una dice cómo se mueve; algunas tienen línea de ataque (🎯 Final Girl o víctima ▸ 🔪) y la franja roja de abajo es la <b>Ambush Penalty</b>. Ninguna cuenta el espacio donde ya está. Las distintas que hemos visto:",
+                    "2 espacios hacia el espacio 🔧 más cercano (empate: orden alfabético) · ataque · emboscada 🎭🎭",
+                    "1 espacio hacia el 🔧 más cercano (empate: alfabético al revés) · emboscada 2 ⌛",
+                    "3 espacios hacia el 🔧 más cercano (empate: alfabético al revés) · ataque · emboscada 2 manchas de sangre",
+                    "2 espacios hacia el espacio con nombre más cercano (empate: alfabético al revés) · emboscada 1 mancha de sangre",
+                    "1 espacio hacia el espacio con nombre más cercano (empate: alfabético) · ataque · emboscada 🎭",
+                    "3 espacios hacia el espacio con icono verde más cercano (empate: menor número de pánico) · emboscada 1 mancha de sangre",
+                    "2 espacios hacia el icono verde más cercano (empate: mayor número de pánico) · ataque 🔪🔪 · emboscada 🎭",
+                    "1 espacio hacia el icono verde más cercano (empate: menor número de pánico) · ataque · emboscada 3 ⌛",
+                    "Mueve 1 espacio en un ①, ② o ③ (seis cartas, con o sin ataque) · emboscadas: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ o manchas de sangre",
+                    "No se mueve y recupera ❤️ (dos cartas) · emboscada 🎭🎭 o descartar una carta de Acción al azar"]),
             ],
             "err_m_t": "Ojo con esto", "err_m": [],
             "bloques_m": [
@@ -439,7 +473,14 @@ GUIAS = [
                     "Nos falta fotografiar la página de Pesadilla Verde del reglamento para explicar cómo funciona todo esto."]),
             ],
             "obj": [
-                ("bowie-knife", "Bowie Knife", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas una Bowie Knife en cada mano, puedes usar las dos al atacar."),
+                ("bowie-knife", "Bowie Knife (Pig Sticker)", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas una Bowie Knife en cada mano, puedes usar las dos al atacar."),
+                ("bowie-knife-2", "Bowie Knife (Goat Slicer)", "Arma · alcance 0 · 1 ✴ · 1 mano. Si llevas una Bowie Knife en cada mano, +1 ✴."),
+                ("m16", "M16", "Arma · alcance 1-2 · 2 manos. A alcance 1 hace 2 ✴; a alcance 2, 1 ✴."),
+                ("axe", "Axe", "Arma · alcance 0 · 2 ✴ · 2 manos."),
+                ("compound-bow", "Compound Bow", "Arma · alcance 1-2 · 1 ✴ · 2 manos · 3 flechas. No puede modificar una carta de Acción: se usa sin ella. Disparar una flecha cuesta 2 ⌛."),
+                ("cursed-idol", "Cursed Idol", "Si está boca arriba en cualquier sitio, ya no puedes resolver cartas de Acción <b>Search</b>. Al entrar en el espacio 🔧 con el Idol, o si sale al buscar, tienes que cogerlo. Solo se puede descartar en el <b>Cursed Temple</b>."),
+                ("booby-trap", "Booby Trap", "Gasta 3 ⌛ para poner la ficha de Booby Trap en tu espacio. Si un Enemy entra en ese espacio, descarta la ficha y la carta, y el Enemy recibe 3 ✴."),
+                ("wet-suit", "Wet Suit", "Puedes moverte río arriba, pero las víctimas no te pueden seguir. Ya no te afectan la carta de Terror <b>Flash Flood</b> ni los eventos <b>Heavy Rains</b> y <b>\"Piranhas!\"</b>."),
                 ("mini-gun", "Mini-Gun", "Arma · alcance 0-1 · 2 manos · 2 usos. Al moverte, mueves 1 espacio menos (mínimo 1). No se puede llevar en la mochila. Al atacar, haces 1 ✴ más por cada ★ de tu Horror Roll final."),
                 ("first-aid-kit", "First Aid Kit", "1 mano. Cada vez que usas una carta de Acción para recuperar vida, recuperas ❤️ una más."),
                 ("walkie-talkies", "Walkie-Talkies", "1 mano. Los <b>Soldiers</b> pueden moverse 1 espacio más cuando se mueven."),
@@ -450,7 +491,7 @@ GUIAS = [
                 ("backpack-radio", "Backpack Radio", "Descártala y gasta 3 ⌛ para: mover a <b>todos</b> los Soldiers hasta 2 espacios, <b>o</b> pedir un ataque aéreo: elige un espacio y tira un dado. 1-2: 💔 a todos en ese espacio y en cada adyacente. 3-6: 💔💔💔💔 a todos en ese espacio."),
                 ("grenade", "Grenade", "1 mano. En la mano: descártala en la fase de Acción y gasta 2 ⌛ para hacer 2 ✴ a un Enemy de un espacio adyacente. En la mochila: descártala mientras usas el <b>Compound Bow</b> para sumar 2 ✴ al ataque."),
             ],
-            "falta": "Faltan objetos por fotografiar: al menos el Compound Bow (lo nombra la Grenade). Hay 2 Grenade.",
+            "falta": "Hay 2 Grenade y 2 Bowie Knife distintas. Nos faltan por fotografiar las cartas Finale, Dark Power y Terror de Volk'ar.",
             "ev": [
                 ("Supply Drop", "Coge 3 objetos al azar que no se usaron y ponlos boca arriba junto al mazo de objetos del <b>Supply Depot</b>. Al buscar ahí con éxito, puedes elegir uno de ellos en vez de robar. Se descarta cuando ya no quede ninguno de los 3."),
                 ("\"Piranhas!\"", "Tira un dado y pon el token de Piranhas: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Todos los de ese espacio: 💔. Quien entre después en ese espacio: 💔."),
@@ -465,21 +506,55 @@ GUIAS = [
             ],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · ❤️ = recover health · 💔 = lose health · 🎭 = raise Horror · ⊘🎭 = lower Horror · 🎲 = die",
-            "err_k_t": "Watch out", "err_k": [],
+            "ley": "⌛ = Time · ✴ = damage · ❤️ = recover health · 💔 = lose health · 🎭 = raise Horror · ⊘🎭 = lower Horror · 🎲 = die · 🔧 = space with the orange wrench icon",
+            "err_k_t": "Watch out", "err_k": [
+                "If you attack her while Concealed and she isn't in the space you attacked, she <b>ambushes you</b> (even if someone else attacked): you suffer the <b>Ambush Penalty</b> on the last card of her Path.",
+                "You are never allowed to look through the discarded Movement cards."],
             "bloques_k": [
-                ("How it plays", [
-                    "We still need to photograph Volk'ar's rulebook page. Until then we don't write any of his rules here."]),
-                ("His Movement cards (as printed)", [
-                    "The deck has more cards, but they are repeats: these are the 8 different ones. Without the rulebook page we don't fully know what the circled numbers or the icons on the red band mean. Copied as printed:",
-                    "Move 1 space on a ① · 🎯 Final Girl or Victim ▸ 🔪 · band: 🎭🎭",
-                    "Move 1 space on a ① · band: 2 ⌛",
-                    "Move 1 space on a ② · 🎯 Final Girl or Victim ▸ 🔪 · band: 3 ⌛",
-                    "Move 1 space on a ② · band: 2 blood splatters",
-                    "Move 1 space on a ③ · 🎯 Final Girl or Victim ▸ 🔪 · band: 1 blood splatter",
-                    "Move 1 space on a ③ · band: 🎭",
-                    "Do not move, Volk'ar recovers ❤️ · band: 🎭🎭",
-                    "Do not move, Volk'ar recovers ❤️ · band: discard a random Action card"]),
+                ("Special setup", [
+                    "Place the <b>Track</b> Action cards into the Action Tableau.",
+                    "Place the <b>Attack Resolution</b> card, the <b>Damage</b> tokens and the <b>Attack</b> token (the crosshair) next to the play area.",
+                    "Shuffle the <b>Movement</b> cards and place the deck facedown next to the board. Deal 1 card facedown next to it, leaving room for up to 5 more.",
+                    "After revealing the Setup card, do <b>not</b> place Volk'ar on the board: her meeple goes on the back of the <b>Finale</b> card, in the marked space. Place an <b>Origin</b> marker where the Killer would begin and the other on that facedown Movement card."]),
+                ("Concealed or Visible", [
+                    "Volk'ar has <b>no Movement Value</b>: she moves along her <b>Path</b>, the row of Movement cards.",
+                    "<b>Concealed</b>: she can't be seen, but she's ALWAYS in some space, the one her Path points to. Her meeple is on the Finale card. If she's Concealed at the start of the Killer phase, resolve the <b>upper</b> Killer Action on the Finale.",
+                    "<b>Visible</b>: her meeple is on the board and she's seen normally. If she's Visible at the start of the Killer phase, resolve the <b>lower</b> Killer Action.",
+                    "The <b>Origin card</b> is the first card in the Path (it has an Origin marker on it) and shows where she starts her hidden movement."]),
+                ("Building the Path", [
+                    "With the <b>eye</b> icon, draw a Movement card and place it <b>faceup</b> in the next spot of the Path. With the <b>crossed-out eye</b>, place it <b>facedown</b>.",
+                    "If she's Visible when a crossed-out eye is resolved, she becomes Concealed right away: put one Origin on the new card and the other in her current space, and her meeple goes back to the Finale card.",
+                    "If the deck runs out, shuffle the discards into a new deck."]),
+                ("When she comes out", [
+                    "She resolves her Path and reveals herself when: you resolve the <b>Reveal</b> icon on a card, a <b>6th</b> card is added to the Path, or you damage her while Concealed (see below).",
+                    "If the 6th card arrives while resolving the Finale's Killer Action or a Terror (or other) card, finish that card first. There may be more than 6 cards to resolve.",
+                    "When revealed: 1) place her meeple in the Origin marker's space (even if it's no longer accessible) and put both Origins next to the deck. 2) Starting from the Origin card, resolve each card in the Path one at a time, flipping it if needed: she moves, and attacks where she is if the card says so. Killer movement restrictions apply to her, and sometimes she won't move. 3) If you or she must reveal the Final Health token, wait until all cards are resolved. 4) Discard the Path cards."]),
+                ("Attacking her while Concealed", [
+                    "You may target any space in range as if she were there. Place the <b>Attack</b> token there, resolve the attack and track the damage with Damage tokens on the Attack Resolution card.",
+                    "If you deal no damage, she stays Concealed and the Path isn't resolved. If you deal damage, her Path is resolved.",
+                    "If she ends in the space with your Attack token, she takes the damage! If she ends elsewhere, the attack had no effect and she ambushes you: resolve the <b>Ambush Penalty</b>, the red band at the bottom of the last card in her Path.",
+                    "Afterwards, discard the Damage tokens and remove the Attack token.",
+                    "If you attacked your own space, she ends there and the last card has a Killer Attack line, both attacks happen simultaneously."]),
+                ("While she is Concealed", [
+                    "If an effect asks you to place something or count spaces relative to the Killer, use the Origin marker's space.",
+                    "If an effect asks you to place the Killer, ignore it.",
+                    "If a card has a Killer Action line, treat it as a crossed-out eye.",
+                    "Victims don't panic during the Panic phase."]),
+                ("Tracking her", [
+                    "The <b>Track</b> Action card (2 ⌛) flips Path cards: with 3★ reveal the Origin card <b>or</b> 2 other cards; with 2★, 2 cards (not the Origin); with 1★, 1 card (not the Origin). The red row: Volk'ar ▸ crossed-out eye.",
+                    "If every card in the Path is faceup you know <b>exactly</b> where she is. If any is facedown, you have to guess."]),
+                ("Her Movement cards", [
+                    "The deck has 22, with repeats. Each says how she moves; some have an attack line (🎯 Final Girl or Victim ▸ 🔪) and the red band at the bottom is the <b>Ambush Penalty</b>. None counts the space she's already in. The different ones we've seen:",
+                    "2 spaces towards the closest 🔧 space (ties: alphabetical) · attack · ambush 🎭🎭",
+                    "1 space towards the closest 🔧 space (ties: reverse alphabetical) · ambush 2 ⌛",
+                    "3 spaces towards the closest 🔧 space (ties: reverse alphabetical) · attack · ambush 2 blood splatters",
+                    "2 spaces towards the closest Named space (ties: reverse alphabetical) · ambush 1 blood splatter",
+                    "1 space towards the closest Named space (ties: alphabetical) · attack · ambush 🎭",
+                    "3 spaces towards the closest green-icon space (ties: lowest panic number) · ambush 1 blood splatter",
+                    "2 spaces towards the closest green-icon space (ties: highest panic number) · attack 🔪🔪 · ambush 🎭",
+                    "1 space towards the closest green-icon space (ties: lowest panic number) · attack · ambush 3 ⌛",
+                    "Move 1 space on a ①, ② or ③ (six cards, with or without attack) · ambushes: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ or blood splatters",
+                    "Do not move and recover ❤️ (two cards) · ambush 🎭🎭 or discard a random Action card"]),
             ],
             "err_m_t": "Watch out", "err_m": [],
             "bloques_m": [
@@ -489,7 +564,14 @@ GUIAS = [
                     "We still need to photograph the Pesadilla Verde rulebook page to explain how all of this works."]),
             ],
             "obj": [
-                ("bowie-knife", "Bowie Knife", "Weapon · range 0 · 1 ✴ · 1 hand. If you have a Bowie Knife in each hand, you may use both when attacking."),
+                ("bowie-knife", "Bowie Knife (Pig Sticker)", "Weapon · range 0 · 1 ✴ · 1 hand. If you have a Bowie Knife in each hand, you may use both when attacking."),
+                ("bowie-knife-2", "Bowie Knife (Goat Slicer)", "Weapon · range 0 · 1 ✴ · 1 hand. If you have a Bowie Knife in each hand, +1 ✴."),
+                ("m16", "M16", "Weapon · range 1-2 · 2 hands. Deals 2 ✴ at range 1 and 1 ✴ at range 2."),
+                ("axe", "Axe", "Weapon · range 0 · 2 ✴ · 2 hands."),
+                ("compound-bow", "Compound Bow", "Weapon · range 1-2 · 1 ✴ · 2 hands · 3 arrows. Can't modify an Action card and must be used without one. Firing an arrow costs 2 ⌛."),
+                ("cursed-idol", "Cursed Idol", "While it's faceup anywhere, you may no longer resolve <b>Search</b> Action cards. When entering the 🔧 space with the Idol, or if revealed while searching, you must take it. It may only be discarded at the <b>Cursed Temple</b>."),
+                ("booby-trap", "Booby Trap", "Spend 3 ⌛ to place the Booby Trap token in your space. If an Enemy enters that space, discard the token and this card, and the Enemy takes 3 ✴."),
+                ("wet-suit", "Wet Suit", "You may move upriver, but Victims can't follow you. You're no longer affected by the <b>Flash Flood</b> Terror card, the <b>Heavy Rains</b> Event or the <b>\"Piranhas!\"</b> Event."),
                 ("mini-gun", "Mini-Gun", "Weapon · range 0-1 · 2 hands · 2 uses. When moving, move 1 less space (minimum 1). Can't go in your backpack. When attacking, deal 1 extra ✴ for each ★ in your final Horror Roll."),
                 ("first-aid-kit", "First Aid Kit", "1 hand. Every time you use an Action card to recover health, recover ❤️ one more."),
                 ("walkie-talkies", "Walkie-Talkies", "1 hand. <b>Soldiers</b> may move 1 additional space when moving."),
@@ -500,7 +582,7 @@ GUIAS = [
                 ("backpack-radio", "Backpack Radio", "Discard and spend 3 ⌛ to either: move <b>all</b> Soldiers up to 2 spaces, <b>or</b> call in an airstrike: choose a space and roll a die. 1-2: 💔 to everyone in that space and each adjacent one. 3-6: 💔💔💔💔 to everyone in that space."),
                 ("grenade", "Grenade", "1 hand. In hand: discard during the Action phase and spend 2 ⌛ to deal 2 ✴ to an Enemy in an adjacent space. In your backpack: discard while using the <b>Compound Bow</b> to add 2 ✴ to the attack."),
             ],
-            "falta": "Items still to photograph: at least the Compound Bow (the Grenade names it). There are 2 Grenades.",
+            "falta": "There are 2 Grenades and 2 different Bowie Knives. Volk'ar's Finale, Dark Power and Terror cards are still to photograph.",
             "ev": [
                 ("Supply Drop", "Take 3 random unused Items and place them faceup next to the <b>Supply Depot</b> Item deck. When you search there successfully, you may take one of them instead of drawing. Discard when none of the 3 are left."),
                 ("\"Piranhas!\"", "Roll a die and place the Piranhas token: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Everyone in that space: 💔. Anyone entering it later: 💔."),
