@@ -1075,6 +1075,37 @@
      "Poi rivela ogni segnalino Final Health sul foglio Divine Blessings. Se qualcuno mostra salute, Ursula torna e <b>vinci</b>. Se sono tutti vuoti, la sua anima è dannata e <b>perdi</b>.",
      "Non serve riempire tutti e 7 gli spazi prima di sconfiggerla, ma più benedizioni ci sono, più è probabile che torni."
     ]
+   ],
+   [
+    "Finali",
+    [
+     "Tutti: Ursula punta te o la Vittima più vicina, si muove e attacca.",
+     "<b>It Wants You!</b>: punta <b>te</b>, si muove e attacca 2 volte.",
+     "<b>Spiritual Attack</b>: se Ursula ti attacca, dopo l'attacco perdi anche 💔.",
+     "<b>Hell on Earth</b>: quando viene rivelato, 🩸 sale al livello massimo.",
+     "<b>Legions of Hell</b> (Finale Epico): punta, si muove e attacca, poi di nuovo. Ogni volta che muore una Vittima, 🎭."
+    ]
+   ],
+   [
+    "Poteri Oscuri",
+    [
+     "<b>Lamb to the Slaughter</b>: nel Mantenimento, la Vittima più lontana da Ursula va nel suo spazio.",
+     "<b>Keeping Ursula Alive</b>: nel Mantenimento Ursula recupera ❤️. Se era già al massimo, 🎭.",
+     "<b>Rejecting God</b>: perdi 2 ⌛ ogni volta che si risolve una benedizione 🙏 (la colomba).",
+     "<b>Satanic Influence</b> (Potere Oscuro Epico): nel Mantenimento subisci ✴ pari al numero di Vittime normali nel tuo spazio.",
+     "<b>Demonic Curse</b> (Minor): il tuo limite di mano di carte Azione è 6. Scarta subito fino a 6.",
+     "<b>Blasphemy</b> (Minor): non puoi risolvere carte Azione <b>Expel Demon</b>. Attenzione: è il modo normale di ottenere benedizioni."
+    ]
+   ],
+   [
+    "Carte Terrore",
+    [
+     "<b>\"You Don't Belong Here.\"</b>: se non ci sono Vittime, scartala e pescane un'altra. Altrimenti punta la Vittima più vicina, si muove e attacca. Se non muore nessuna, +🩸.",
+     "<b>\"Leave Her! Take Me!\"</b>: metti Ursula nel tuo spazio. Se hai almeno 3 di salute, puoi scendere a 1 per ottenere una benedizione 🙏. Uno scambio: tanta salute per un passo verso la vittoria.",
+     "<b>\"God Exists, and So Does Satan.\"</b>: metti Ursula nel tuo spazio. Fino alla fine della prossima fase Azione puoi superare il limite di mano. Prendi una carta <b>Expel Demon</b> e scegli: una carta <b>Guard</b>, una <b>Furious Strike</b> o ⊘🎭. Poi ti attacca.",
+     "<b>\"Serpents Are a Symbol of Satan.\"</b>: appare un <b>Serpente</b> (1 ❤️). Puoi giocare carte Azione che infliggono danni per ucciderlo. Se è ancora vivo, subisci ✴ pari all'Attacco di Ursula meno 1 (minimo 1) e puoi difenderti. Se subisci danni, +🩸. Poi il Serpente scompare.",
+     "<b>\"I Know Your Name, Demon.\"</b>: metti Ursula nel tuo spazio e fai un Tiro Orrore. 2 stelle: 🙏. 1 stella: niente. Fallimento: ti attacca. Se non sei stata attaccata, +🩸."
+    ]
    ]
   ],
   "err_m_t": "Attenzione",

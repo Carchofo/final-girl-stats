@@ -1075,6 +1075,37 @@
      "Decke dann jeden Final-Health-Marker auf dem Divine-Blessings-Bogen auf. Zeigt einer Gesundheit, kommt Ursula zurück und <b>du gewinnst</b>. Sind alle leer, ist ihre Seele verdammt und <b>du verlierst</b>.",
      "Du musst nicht alle 7 Felder gefüllt haben, bevor du sie besiegst, aber je mehr Segen, desto wahrscheinlicher kommt sie zurück."
     ]
+   ],
+   [
+    "Finales",
+    [
+     "Alle: Ursula zielt auf dich oder das nächste Opfer, bewegt sich und greift an.",
+     "<b>It Wants You!</b>: zielt auf <b>dich</b>, bewegt sich und greift 2-mal an.",
+     "<b>Spiritual Attack</b>: Greift Ursula dich an, verlierst du nach dem Angriff zusätzlich 💔.",
+     "<b>Hell on Earth</b>: Beim Aufdecken steigt 🩸 auf die höchste Stufe.",
+     "<b>Legions of Hell</b> (episches Finale): zielt, bewegt sich und greift an, dann noch einmal. Jedes Mal, wenn ein Opfer stirbt, 🎭."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Lamb to the Slaughter</b>: Im Unterhalt kommt das von Ursula am weitesten entfernte Opfer auf ihr Feld.",
+     "<b>Keeping Ursula Alive</b>: Im Unterhalt heilt Ursula ❤️. War sie schon voll, stattdessen 🎭.",
+     "<b>Rejecting God</b>: Du verlierst 2 ⌛ jedes Mal, wenn ein Segen 🙏 (die Taube) abgehandelt wird.",
+     "<b>Satanic Influence</b> (epische Dark Power): Im Unterhalt erhältst du ✴ in Höhe der normalen Opfer auf deinem Feld.",
+     "<b>Demonic Curse</b> (Minor): Dein Handlimit für Aktionskarten ist 6. Sofort auf 6 abwerfen.",
+     "<b>Blasphemy</b> (Minor): Du kannst keine <b>Expel Demon</b>-Aktionskarten abhandeln. Achtung: Das ist der übliche Weg zu Segen."
+    ]
+   ],
+   [
+    "Terrorkarten",
+    [
+     "<b>\"You Don't Belong Here.\"</b>: Gibt es keine Opfer, wirf ab und zieh eine andere. Sonst zielt sie auf das nächste Opfer, bewegt sich und greift an. Stirbt keins, +🩸.",
+     "<b>\"Leave Her! Take Me!\"</b>: Stell Ursula auf dein Feld. Hast du mindestens 3 Gesundheit, kannst du auf 1 fallen und einen Segen 🙏 bekommen. Ein Tausch: viel Gesundheit gegen einen Schritt zum Sieg.",
+     "<b>\"God Exists, and So Does Satan.\"</b>: Stell Ursula auf dein Feld. Bis zum Ende der nächsten Aktionsphase darfst du dein Handlimit überschreiten. Nimm eine <b>Expel Demon</b>-Karte und wähle: eine <b>Guard</b>-, eine <b>Furious Strike</b>-Karte oder ⊘🎭. Dann greift sie dich an.",
+     "<b>\"Serpents Are a Symbol of Satan.\"</b>: Eine <b>Schlange</b> erscheint (1 ❤️). Du kannst Schaden verursachende Aktionskarten spielen, um sie zu töten. Lebt sie noch, erhältst du ✴ in Höhe von Ursulas Angriff minus 1 (mindestens 1) und darfst dich verteidigen. Erhältst du Schaden, +🩸. Dann verschwindet die Schlange.",
+     "<b>\"I Know Your Name, Demon.\"</b>: Stell Ursula auf dein Feld und mach einen Horrorwurf. 2 Sterne: 🙏. 1 Stern: nichts. Fehlschlag: sie greift dich an. Wurdest du nicht angegriffen, +🩸."
+    ]
    ]
   ],
   "err_m_t": "Achtung",

@@ -1075,6 +1075,37 @@
      "Ensuite, révèle chaque jeton Final Health de la feuille Divine Blessings. Si l'un d'eux montre de la santé, Ursula revient et <b>tu gagnes</b>. S'ils sont tous vierges, son âme est damnée et <b>tu perds</b>.",
      "Il n'est pas nécessaire de remplir les 7 emplacements avant de la vaincre, mais plus il y a de bénédictions, plus elle a de chances de revenir."
     ]
+   ],
+   [
+    "Finales",
+    [
+     "Toutes : Ursula vise toi ou la Victime la plus proche, se déplace et attaque.",
+     "<b>It Wants You!</b> : te vise <b>toi</b>, se déplace et attaque 2 fois.",
+     "<b>Spiritual Attack</b> : si Ursula t'attaque, tu perds aussi 💔 après l'attaque.",
+     "<b>Hell on Earth</b> : une fois révélée, 🩸 monte au niveau maximum.",
+     "<b>Legions of Hell</b> (Finale Epic) : vise, se déplace et attaque, puis recommence. Chaque fois qu'une Victime meurt, 🎭."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Lamb to the Slaughter</b> : pendant l'Entretien, la Victime la plus éloignée d'Ursula est placée sur sa case.",
+     "<b>Keeping Ursula Alive</b> : pendant l'Entretien, Ursula récupère ❤️. Si elle était déjà au maximum, 🎭.",
+     "<b>Rejecting God</b> : tu perds 2 ⌛ chaque fois qu'une bénédiction 🙏 (la colombe) est résolue.",
+     "<b>Satanic Influence</b> (Dark Power Epic) : pendant l'Entretien, subis ✴ égal au nombre de Victimes normales de ta case.",
+     "<b>Demonic Curse</b> (Minor) : ta limite de main de cartes Action est 6. Défausse tout de suite jusqu'à 6.",
+     "<b>Blasphemy</b> (Minor) : tu ne peux pas résoudre les cartes Action <b>Expel Demon</b>. Attention : c'est la façon habituelle d'obtenir des bénédictions."
+    ]
+   ],
+   [
+    "Cartes Terreur",
+    [
+     "<b>\"You Don't Belong Here.\"</b> : s'il n'y a pas de Victimes, défausse-la et pioche-en une autre. Sinon, vise la Victime la plus proche, se déplace et attaque. Si aucune ne meurt, +🩸.",
+     "<b>\"Leave Her! Take Me!\"</b> : place Ursula sur ta case. Si tu as au moins 3 de santé, tu peux tomber à 1 pour gagner une bénédiction 🙏. Un échange : beaucoup de santé contre un pas vers la victoire.",
+     "<b>\"God Exists, and So Does Satan.\"</b> : place Ursula sur ta case. Jusqu'à la fin de la prochaine phase d'Action tu peux dépasser ta limite de main. Prends une carte <b>Expel Demon</b> et choisis : une carte <b>Guard</b>, une <b>Furious Strike</b> ou ⊘🎭. Puis elle t'attaque.",
+     "<b>\"Serpents Are a Symbol of Satan.\"</b> : un <b>Serpent</b> apparaît (1 ❤️). Tu peux jouer des cartes Action qui infligent des dégâts pour le tuer. S'il est encore vivant, tu subis ✴ égal à l'Attaque d'Ursula moins 1 (minimum 1) et tu peux te défendre. Si tu subis des dégâts, +🩸. Puis le Serpent disparaît.",
+     "<b>\"I Know Your Name, Demon.\"</b> : place Ursula sur ta case et fais un jet d'Horreur. 2 étoiles : 🙏. 1 étoile : rien. Échec : elle t'attaque. Si tu n'as pas été attaquée, +🩸."
+    ]
    ]
   ],
   "err_m_t": "Attention",

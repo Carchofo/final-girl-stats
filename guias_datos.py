@@ -236,7 +236,7 @@ GUIAS = [
                     "\"Pack only\" solo lo hace la Pack; \"Raptors only\", solo los sueltos."]),
                 ("Finales", [
                     "Todos tienen dos filas: arriba los Raptors sueltos van hacia la Pack y se paran si llegan a ti o a una víctima; abajo la Pack va a por ti o a la víctima más cercana, se mueve y ataca.",
-                    "<b>Claws Like Knives</b>: la Pack ataca 1 vez. El primer daño de cada ataque es del icono de corazón tachado.",
+                    "<b>Claws Like Knives</b>: la Pack ataca 1 vez. El primer daño de cada ataque es 💔: pierdes vida directamente.",
                     "<b>Born Hungry</b>: la Pack ataca 2 veces. Al revelarlo, roba una carta de Spawn pero saca los Raptors en <b>tu</b> espacio.",
                     "<b>Raptor Rush</b>: la Pack ataca 3 veces. Al revelarlo, todos los Raptors del tablero se unen a la Pack.",
                     "<b>Deadly Quick</b> (Epic Finale): la Pack ataca 2 veces. Al revelarlo, pon la Pack en tu espacio y pierdes 4 ⌛."]),
@@ -358,7 +358,7 @@ GUIAS = [
                     "\"Pack only\" is just the Pack; \"Raptors only\", just the loose ones."]),
                 ("Finales", [
                     "All have two rows: on top, loose Raptors move towards the Pack and stop if they reach you or a Victim; below, the Pack targets you or the closest Victim, moves and attacks.",
-                    "<b>Claws Like Knives</b>: the Pack attacks once. The first damage from each attack is the crossed-out heart icon.",
+                    "<b>Claws Like Knives</b>: the Pack attacks once. The first damage from each attack is 💔: you lose health directly.",
                     "<b>Born Hungry</b>: the Pack attacks twice. When revealed, draw a Spawn card but spawn the Raptors in <b>your</b> space.",
                     "<b>Raptor Rush</b>: the Pack attacks 3 times. When revealed, all Raptors on the board join the Pack.",
                     "<b>Deadly Quick</b> (Epic Finale): the Pack attacks twice. When revealed, place the Pack in your space and lose 4 ⌛."]),
@@ -977,6 +977,25 @@ GUIAS = [
                     "Primero mata a Ursula poseída con las reglas normales, revelando su ficha negra de Final Health y recuperando su vida si hace falta. Al derrotarla, Berith deja su cuerpo.",
                     "Luego revela una a una las fichas de Final Health de la hoja Divine Blessings. Si alguna tiene vida, Ursula vuelve y <b>ganas</b>. Si todas están en blanco, su alma se condena y <b>pierdes</b>.",
                     "No hace falta llenar los 7 huecos antes de derrotarla, pero cuantas más bendiciones, más fácil que vuelva."]),
+                ("Finales", [
+                    "Todos: Ursula va a por ti o a la víctima más cercana, se mueve y ataca.",
+                    "<b>It Wants You!</b>: va a por <b>ti</b>, se mueve y ataca 2 veces.",
+                    "<b>Spiritual Attack</b>: si Ursula te ataca, después del ataque pierdes 💔 además.",
+                    "<b>Hell on Earth</b>: al revelarlo, la 🩸 sube al nivel más alto.",
+                    "<b>Legions of Hell</b> (Epic Finale): va, se mueve y ataca, y luego otra vez. Cada vez que muere una víctima, 🎭."]),
+                ("Poderes oscuros", [
+                    "<b>Lamb to the Slaughter</b>: en el Mantenimiento, la víctima más lejana de Ursula se pone en su espacio.",
+                    "<b>Keeping Ursula Alive</b>: en el Mantenimiento, Ursula recupera ❤️. Si ya estaba al máximo, 🎭.",
+                    "<b>Rejecting God</b>: pierdes 2 ⌛ cada vez que se resuelve una bendición 🙏 (la paloma).",
+                    "<b>Satanic Influence</b> (Epic Dark Power): en el Mantenimiento recibes ✴ igual al número de víctimas normales de tu espacio.",
+                    "<b>Demonic Curse</b> (Minor): tu límite de mano de cartas de Acción es 6. Descarta al momento hasta 6.",
+                    "<b>Blasphemy</b> (Minor): no puedes resolver cartas de Acción <b>Expel Demon</b>. Ojo: es la forma normal de conseguir bendiciones."]),
+                ("Cartas de Terror", [
+                    "<b>\"You Don't Belong Here.\"</b>: si no hay víctimas, descártala y roba otra. Si no, va a por la víctima más cercana, se mueve y ataca. Si no muere ninguna, +🩸.",
+                    "<b>\"Leave Her! Take Me!\"</b>: pon a Ursula en tu espacio. Si tienes al menos 3 de vida, puedes quedarte a 1 para ganar una bendición 🙏. Es un trato: mucha vida a cambio de acercarte a ganar.",
+                    "<b>\"God Exists, and So Does Satan.\"</b>: pon a Ursula en tu espacio. Hasta el final de la siguiente fase de Acción puedes pasarte del límite de mano. Coge una carta <b>Expel Demon</b> y elige: una carta <b>Guard</b>, una <b>Furious Strike</b> o ⊘🎭. Luego te ataca.",
+                    "<b>\"Serpents Are a Symbol of Satan.\"</b>: aparece una <b>Serpiente</b> (1 ❤️). Puedes jugar cartas de Acción que hagan daño para matarla. Si sigue viva, recibes ✴ igual al Ataque de Ursula menos 1 (mínimo 1), y puedes defenderte. Si recibes daño, +🩸. Luego la Serpiente desaparece.",
+                    "<b>\"I Know Your Name, Demon.\"</b>: pon a Ursula en tu espacio y haz una tirada de Horror. 2 estrellas: 🙏. 1 estrella: nada. Fallo: te ataca. Si no te atacó, +🩸."]),
             ],
             "err_m_t": "Ojo con esto", "err_m": [
                 "Si están las <b>14</b> fichas de Malice en el tablero y tienes que poner otra, <b>pierdes al momento</b>.",
@@ -1054,6 +1073,25 @@ GUIAS = [
                     "First kill possessed Ursula with the normal rules, revealing her black Final Health token and restoring her health if needed. Once she's defeated, Berith leaves her body.",
                     "Then reveal each Final Health token on the Divine Blessings sheet. If any shows health, Ursula comes back and <b>you win</b>. If all are blank, her soul is damned and <b>you lose</b>.",
                     "You don't need all 7 spaces filled before defeating her, but the more blessings, the likelier she comes back."]),
+                ("Finales", [
+                    "All of them: Ursula targets you or the closest Victim, moves and attacks.",
+                    "<b>It Wants You!</b>: targets <b>you</b>, moves and attacks twice.",
+                    "<b>Spiritual Attack</b>: if Ursula attacks you, also lose 💔 after resolving the attack.",
+                    "<b>Hell on Earth</b>: when revealed, 🩸 goes up to the highest level.",
+                    "<b>Legions of Hell</b> (Epic Finale): targets, moves and attacks, then again. Each time a Victim is killed, 🎭."]),
+                ("Dark Powers", [
+                    "<b>Lamb to the Slaughter</b>: during Upkeep, place the Victim furthest from Ursula in her space.",
+                    "<b>Keeping Ursula Alive</b>: during Upkeep, Ursula recovers ❤️. If she was already at full health, 🎭 instead.",
+                    "<b>Rejecting God</b>: lose 2 ⌛ each time a blessing 🙏 (the dove) is resolved.",
+                    "<b>Satanic Influence</b> (Epic Dark Power): during Upkeep, take ✴ equal to the number of normal Victims in your space.",
+                    "<b>Demonic Curse</b> (Minor): your Action card hand limit is 6. Discard down to 6 immediately.",
+                    "<b>Blasphemy</b> (Minor): you can't resolve <b>Expel Demon</b> Action cards. Careful: that's the usual way to get blessings."]),
+                ("Terror cards", [
+                    "<b>\"You Don't Belong Here.\"</b>: if there are no Victims, discard and draw another. Otherwise, targets the closest Victim, moves and attacks. If no Victim was killed, +🩸.",
+                    "<b>\"Leave Her! Take Me!\"</b>: place Ursula in your space. If you have at least 3 health, you may drop to 1 to gain a blessing 🙏. It's a trade: lots of health for a step closer to winning.",
+                    "<b>\"God Exists, and So Does Satan.\"</b>: place Ursula in your space. Until the end of the next Action phase you may exceed your hand limit. Take an <b>Expel Demon</b> card and choose: a <b>Guard</b> card, a <b>Furious Strike</b> card or ⊘🎭. Then she attacks you.",
+                    "<b>\"Serpents Are a Symbol of Satan.\"</b>: a <b>Serpent</b> appears (1 ❤️). You may play damaging Action cards to kill it. If it's still alive, you take ✴ equal to Ursula's Attack minus 1 (minimum 1) and may defend as normal. If you take damage, +🩸. Then the Serpent disappears.",
+                    "<b>\"I Know Your Name, Demon.\"</b>: place Ursula in your space and make a Horror Roll. 2 stars: 🙏. 1 star: nothing. Fail: she attacks you. If you weren't attacked, +🩸."]),
             ],
             "err_m_t": "Watch out", "err_m": [
                 "If all <b>14</b> Malice tokens are on the board and you need to place another, <b>you lose immediately</b>.",
