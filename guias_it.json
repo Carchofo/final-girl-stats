@@ -796,6 +796,32 @@
      "Muoviti di 1 spazio su un ①, ② o ③ (sei carte, con o senza attacco) · imboscate: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ o schizzi di sangue",
      "Non si muove e recupera ❤️ (due carte) · imboscata 🎭🎭 o scarta una carta Azione a caso"
     ]
+   ],
+   [
+    "Finali",
+    [
+     "In alto la riga per quando è <b>Nascosta</b>, in basso per quando è <b>Visibile</b>.",
+     "<b>Finale base</b>: Nascosta, 👁 (carta scoperta nel Percorso) e tira un dado: con 1-4, +🩸. Visibile, punta te o la Vittima più vicina, attacca e si nasconde (occhio barrato).",
+     "<b>Rampage</b>: punta te o una Vittima, si muove di 3 e attacca 2 volte. Quando viene rivelata, Volk'ar si rivela (icona Reveal).",
+     "<b>Self-Destruct</b>: rimuovi un segnalino Countdown, ti punta e attacca. Quando viene rivelata, Volk'ar si rivela e metti 3 segnalini <b>Countdown</b> sulla carta. Per vincere devi uccidere Volk'ar <b>ed</b> essere in uno spazio di uscita prima che si tolga l'ultimo.",
+     "<b>Regenerative Cloaking</b> (Finale Epico): Nascosta, 👁 e recupera ❤️❤️. Visibile, punta te o una Vittima, si muove di 3, attacca e aggiunge due carte coperte (due occhi barrati)."
+    ]
+   ],
+   [
+    "Poteri Oscuri",
+    [
+     "<b>Blades in the Dark</b>: quando si risolve il suo Percorso, muore 1 Vittima in ogni spazio adiacente a quello finale.",
+     "<b>Chameleon of Death</b>: se la attacchi mentre è Nascosta e non subisce danni, subisci ✴ pari al suo valore di Attacco.",
+     "<b>Stress of the Unknown</b>: la prima volta per turno che risolvi l'occhio barrato, perdi 2 ⌛.",
+     "<b>Merciless Ambush</b> (Potere Oscuro Epico): quando si risolve il suo Percorso, applica la Penalità d'Imboscata di <b>ogni</b> carta Movimento, non solo dell'ultima."
+    ]
+   ],
+   [
+    "Carta Attack Resolution",
+    [
+     "Quando attacchi, metti il segnalino Attacco nello spazio bersaglio.",
+     "Poi, prima di risolvere il suo Percorso, risolvi l'attacco e metti su questa carta tanti segnalini Danno quanti i danni inflitti."
+    ]
    ]
   ],
   "err_m_t": "Attenzione",
@@ -953,7 +979,7 @@
     "1 mano. In mano: scarta durante la fase Azione e spendi 2 ⌛ per infliggere 2 ✴ a un Nemico in uno spazio adiacente. Nello zaino: scarta mentre usi il <b>Compound Bow</b> per aggiungere 2 ✴ all'attacco."
    ]
   ],
-  "falta": "Ci sono 2 Grenade e 2 Bowie Knife diversi. Il Finale, il Potere Oscuro e le carte Terrore di Volk'ar sono ancora da fotografare.",
+  "falta": "Ci sono 2 Grenade e 2 Bowie Knife diversi. Mancano ancora le foto delle sue carte Terrore.",
   "ev": [
    [
     "Supply Drop",

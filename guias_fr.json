@@ -796,6 +796,32 @@
      "Se déplace d'1 case sur un ①, ② ou ③ (six cartes, avec ou sans attaque) · embuscades : 🎭, 🎭🎭, 2 ⌛, 3 ⌛ ou éclaboussures de sang",
      "Ne se déplace pas et récupère ❤️ (deux cartes) · embuscade 🎭🎭 ou défausse une carte Action au hasard"
     ]
+   ],
+   [
+    "Finales",
+    [
+     "En haut la ligne quand elle est <b>Dissimulée</b>, en bas quand elle est <b>Visible</b>.",
+     "<b>Finale de base</b> : Dissimulée, 👁 (carte face visible au Path) et lance un dé : sur 1-4, +🩸. Visible, vise toi ou la Victime la plus proche, attaque et se dissimule (œil barré).",
+     "<b>Rampage</b> : vise toi ou une Victime, se déplace de 3 et attaque 2 fois. Une fois révélée, Volk'ar est révélée (icône Reveal).",
+     "<b>Self-Destruct</b> : retire un jeton Countdown, te vise et attaque. Une fois révélée, Volk'ar est révélée et tu poses 3 jetons <b>Countdown</b> sur la carte. Pour gagner, tu dois tuer Volk'ar <b>et</b> être sur une case de sortie avant que le dernier soit retiré.",
+     "<b>Regenerative Cloaking</b> (Finale Epic) : Dissimulée, 👁 et récupère ❤️❤️. Visible, vise toi ou une Victime, se déplace de 3, attaque et ajoute deux cartes cachées (deux yeux barrés)."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Blades in the Dark</b> : quand son Path est résolu, tue 1 Victime sur chaque case adjacente à sa case finale.",
+     "<b>Chameleon of Death</b> : si tu l'attaques Dissimulée et qu'elle ne subit aucun dégât, tu subis ✴ égal à sa valeur d'Attaque.",
+     "<b>Stress of the Unknown</b> : la première fois par tour que tu résous l'œil barré, tu perds 2 ⌛.",
+     "<b>Merciless Ambush</b> (Dark Power Epic) : quand son Path est résolu, applique l'Ambush Penalty de <b>chaque</b> carte Mouvement, pas seulement la dernière."
+    ]
+   ],
+   [
+    "Carte Attack Resolution",
+    [
+     "En attaquant, pose le jeton Attaque sur la case visée.",
+     "Puis, avant de résoudre son Path, résous l'attaque et pose sur cette carte autant de jetons Dégât que de dégâts infligés."
+    ]
    ]
   ],
   "err_m_t": "Attention",
@@ -953,7 +979,7 @@
     "1 main. En main : défausse-la pendant la phase d'Action et dépense 2 ⌛ pour infliger 2 ✴ à un Ennemi dans une case adjacente. Dans ton sac à dos : défausse-la en utilisant le <b>Compound Bow</b> pour ajouter 2 ✴ à l'attaque."
    ]
   ],
-  "falta": "Il y a 2 Grenades et 2 Bowie Knives différents. La Finale, le Dark Power et les cartes Terreur de Volk'ar sont encore à photographier.",
+  "falta": "Il y a 2 Grenades et 2 Bowie Knives différents. Il manque encore la photo de ses cartes Terreur.",
   "ev": [
    [
     "Supply Drop",

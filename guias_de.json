@@ -796,6 +796,32 @@
      "1 Feld auf ein ①, ② oder ③ bewegen (sechs Karten, mit oder ohne Angriff) · Hinterhalte: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ oder Blutspritzer",
      "Nicht bewegen und ❤️ zurückgewinnen (zwei Karten) · Hinterhalt 🎭🎭 oder eine zufällige Aktionskarte abwerfen"
     ]
+   ],
+   [
+    "Finales",
+    [
+     "Oben die Zeile für <b>verborgen</b>, unten für <b>sichtbar</b>.",
+     "<b>Basis-Finale</b>: verborgen, 👁 (offene Karte in den Pfad) und würfle: bei 1-4 +🩸. Sichtbar, zielt auf dich oder das nächste Opfer, greift an und verbirgt sich (durchgestrichenes Auge).",
+     "<b>Rampage</b>: zielt auf dich oder ein Opfer, bewegt sich 3 und greift 2-mal an. Beim Aufdecken wird Volk'ar aufgedeckt (Reveal-Symbol).",
+     "<b>Self-Destruct</b>: entferne einen Countdown-Marker, zielt auf dich und greift an. Beim Aufdecken wird Volk'ar aufgedeckt und du legst 3 <b>Countdown</b>-Marker auf die Karte. Um zu gewinnen, musst du Volk'ar töten <b>und</b> auf einem Ausgangsfeld stehen, bevor der letzte entfernt wird.",
+     "<b>Regenerative Cloaking</b> (episches Finale): verborgen, 👁 und heilt ❤️❤️. Sichtbar, zielt auf dich oder ein Opfer, bewegt sich 3, greift an und fügt zwei verdeckte Karten hinzu (zwei durchgestrichene Augen)."
+    ]
+   ],
+   [
+    "Dark Powers",
+    [
+     "<b>Blades in the Dark</b>: Wenn ihr Pfad abgehandelt wird, stirbt 1 Opfer auf jedem Feld neben ihrem Endfeld.",
+     "<b>Chameleon of Death</b>: Wird sie verborgen angegriffen und erhält keinen Schaden, erhältst du ✴ in Höhe ihres Angriffswerts.",
+     "<b>Stress of the Unknown</b>: Das erste Mal pro Runde, wenn du das durchgestrichene Auge abhandelst, verlierst du 2 ⌛.",
+     "<b>Merciless Ambush</b> (epische Dark Power): Wenn ihr Pfad abgehandelt wird, handle die Hinterhaltstrafe <b>jeder</b> Bewegungskarte ab, nicht nur der letzten."
+    ]
+   ],
+   [
+    "Karte Attack Resolution",
+    [
+     "Beim Angriff legst du den Angriffsmarker auf das angegriffene Feld.",
+     "Dann, vor dem Abhandeln ihres Pfads, handle den Angriff ab und lege so viele Schadensmarker auf diese Karte, wie Schaden verursacht wurde."
+    ]
    ]
   ],
   "err_m_t": "Achtung",
@@ -953,7 +979,7 @@
     "1 Hand. In der Hand: Während der Aktionsphase abwerfen und 2 ⌛ ausgeben, um 2 ✴ bei einem Feind in einem angrenzenden Feld zu verursachen. Im Rucksack: Beim Einsatz des <b>Compound Bow</b> abwerfen, um dem Angriff 2 ✴ hinzuzufügen."
    ]
   ],
-  "falta": "Es gibt 2 Grenades und 2 verschiedene Bowie Knives. Volk'ars Finale-, Dark-Power- und Terrorkarten sind noch zu fotografieren.",
+  "falta": "Es gibt 2 Grenades und 2 verschiedene Bowie Knives. Ihre Terrorkarten fehlen noch als Foto.",
   "ev": [
    [
     "Supply Drop",

@@ -708,6 +708,20 @@ GUIAS = [
                     "1 espacio hacia el icono verde más cercano (empate: menor número de pánico) · ataque · emboscada 3 ⌛",
                     "Mueve 1 espacio en un ①, ② o ③ (seis cartas, con o sin ataque) · emboscadas: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ o manchas de sangre",
                     "No se mueve y recupera ❤️ (dos cartas) · emboscada 🎭🎭 o descartar una carta de Acción al azar"]),
+                ("Finales", [
+                    "Arriba la fila de cuando está <b>oculta</b>, abajo la de cuando está <b>visible</b>.",
+                    "<b>Finale básico</b>: oculta, 👁 (carta boca arriba al Path) y tira un dado: con 1-4, +🩸. Visible, va a por ti o a la víctima más cercana, ataca y se oculta (ojo tachado).",
+                    "<b>Rampage</b>: va a por ti o a una víctima, se mueve 3 y ataca 2 veces. Al revelarla, se revela Volk'ar (icono Reveal).",
+                    "<b>Self-Destruct</b>: quita una ficha de Countdown, va a por ti y ataca. Al revelarla, se revela Volk'ar y pones 3 fichas de <b>Countdown</b> en la carta. Para ganar tienes que matar a Volk'ar <b>y</b> estar en un espacio de salida antes de que se quite la última.",
+                    "<b>Regenerative Cloaking</b> (Epic Finale): oculta, 👁 y recupera ❤️❤️. Visible, va a por ti o a una víctima, se mueve 3, ataca y añade dos cartas ocultas (dos ojos tachados)."]),
+                ("Poderes oscuros", [
+                    "<b>Blades in the Dark</b>: al resolver su Path, muere 1 víctima en cada espacio adyacente a donde acaba.",
+                    "<b>Chameleon of Death</b>: si la atacas estando oculta y no recibe daño, recibes ✴ igual a su valor de Ataque.",
+                    "<b>Stress of the Unknown</b>: la primera vez cada turno que resuelves el ojo tachado, pierdes 2 ⌛.",
+                    "<b>Merciless Ambush</b> (Epic Dark Power): al resolver su Path, aplica la Ambush Penalty de <b>cada</b> carta de Movimiento, no solo la última."]),
+                ("Carta Attack Resolution", [
+                    "Al atacarla, pon la ficha de Ataque en el espacio al que atacas.",
+                    "Luego, antes de resolver su Path, resuelve el ataque y pon en esta carta tantas fichas de Daño como daño hayas hecho."]),
             ],
             "err_m_t": "Ojo con esto", "err_m": [
                 "Los <b>Soldiers</b> te siguen <b>al espacio del Killer</b>, al revés que las víctimas normales.",
@@ -766,7 +780,7 @@ GUIAS = [
                 ("backpack-radio", "Backpack Radio", "Descártala y gasta 3 ⌛ para: mover a <b>todos</b> los Soldiers hasta 2 espacios, <b>o</b> pedir un ataque aéreo: elige un espacio y tira un dado. 1-2: 💔 a todos en ese espacio y en cada adyacente. 3-6: 💔💔💔💔 a todos en ese espacio."),
                 ("grenade", "Grenade", "1 mano. En la mano: descártala en la fase de Acción y gasta 2 ⌛ para hacer 2 ✴ a un Enemy de un espacio adyacente. En la mochila: descártala mientras usas el <b>Compound Bow</b> para sumar 2 ✴ al ataque."),
             ],
-            "falta": "Hay 2 Grenade y 2 Bowie Knife distintas. Nos faltan por fotografiar las cartas Finale, Dark Power y Terror de Volk'ar.",
+            "falta": "Hay 2 Grenade y 2 Bowie Knife distintas. Nos faltan sus cartas de Terror.",
             "ev": [
                 ("Supply Drop", "Coge 3 objetos al azar que no se usaron y ponlos boca arriba junto al mazo de objetos del <b>Supply Depot</b>. Al buscar ahí con éxito, puedes elegir uno de ellos en vez de robar. Se descarta cuando ya no quede ninguno de los 3."),
                 ("\"Piranhas!\"", "Tira un dado y pon el token de Piranhas: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Todos los de ese espacio: 💔. Quien entre después en ese espacio: 💔."),
@@ -830,6 +844,20 @@ GUIAS = [
                     "1 space towards the closest green-icon space (ties: lowest panic number) · attack · ambush 3 ⌛",
                     "Move 1 space on a ①, ② or ③ (six cards, with or without attack) · ambushes: 🎭, 🎭🎭, 2 ⌛, 3 ⌛ or blood splatters",
                     "Do not move and recover ❤️ (two cards) · ambush 🎭🎭 or discard a random Action card"]),
+                ("Finales", [
+                    "Top row is for when she's <b>Concealed</b>, bottom row for when she's <b>Visible</b>.",
+                    "<b>Base Finale</b>: Concealed, 👁 (faceup card to the Path) and roll a die: on 1-4, +🩸. Visible, targets you or the closest Victim, attacks and conceals (crossed-out eye).",
+                    "<b>Rampage</b>: targets you or a Victim, moves 3 and attacks twice. When revealed, Volk'ar is revealed (Reveal icon).",
+                    "<b>Self-Destruct</b>: remove a Countdown token, targets you and attacks. When revealed, Volk'ar is revealed and you place 3 <b>Countdown</b> tokens on the card. To win you must kill Volk'ar <b>and</b> be on an exit space before the last one is removed.",
+                    "<b>Regenerative Cloaking</b> (Epic Finale): Concealed, 👁 and recovers ❤️❤️. Visible, targets you or a Victim, moves 3, attacks and adds two hidden cards (two crossed-out eyes)."]),
+                ("Dark Powers", [
+                    "<b>Blades in the Dark</b>: when her Path is resolved, kill 1 Victim in each space adjacent to her final space.",
+                    "<b>Chameleon of Death</b>: when she's attacked while Concealed and takes no damage, you take ✴ equal to her Attack Value.",
+                    "<b>Stress of the Unknown</b>: the first time each turn you resolve the crossed-out eye, lose 2 ⌛.",
+                    "<b>Merciless Ambush</b> (Epic Dark Power): when her Path is resolved, resolve the Ambush Penalty on <b>each</b> Movement card, not just the last."]),
+                ("Attack Resolution card", [
+                    "When attacking, place the Attack token in the space being targeted.",
+                    "Then, before resolving her Path, resolve the attack and place Damage tokens on this card equal to the damage done."]),
             ],
             "err_m_t": "Watch out", "err_m": [
                 "<b>Soldiers</b> follow you <b>into the Killer's space</b>, unlike normal Victims.",
@@ -888,7 +916,7 @@ GUIAS = [
                 ("backpack-radio", "Backpack Radio", "Discard and spend 3 ⌛ to either: move <b>all</b> Soldiers up to 2 spaces, <b>or</b> call in an airstrike: choose a space and roll a die. 1-2: 💔 to everyone in that space and each adjacent one. 3-6: 💔💔💔💔 to everyone in that space."),
                 ("grenade", "Grenade", "1 hand. In hand: discard during the Action phase and spend 2 ⌛ to deal 2 ✴ to an Enemy in an adjacent space. In your backpack: discard while using the <b>Compound Bow</b> to add 2 ✴ to the attack."),
             ],
-            "falta": "There are 2 Grenades and 2 different Bowie Knives. Volk'ar's Finale, Dark Power and Terror cards are still to photograph.",
+            "falta": "There are 2 Grenades and 2 different Bowie Knives. Her Terror cards are still to photograph.",
             "ev": [
                 ("Supply Drop", "Take 3 random unused Items and place them faceup next to the <b>Supply Depot</b> Item deck. When you search there successfully, you may take one of them instead of drawing. Discard when none of the 3 are left."),
                 ("\"Piranhas!\"", "Roll a die and place the Piranhas token: 1-2 Lower River, 3-4 Central River, 5-6 Upper River. Everyone in that space: 💔. Anyone entering it later: 💔."),
