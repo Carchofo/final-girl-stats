@@ -47,7 +47,7 @@ GUIAS = [
                     "<b>Burning Sickle</b> (Minor Dark Power): cada vez que Grimlash te hace daño, también hace ✴ a cada víctima de tu espacio."]),
                 ("Cartas de Terror", [
                     "<b>\"Something's Wrong with the Kids\"</b>: los Children tratan todos los espacios 🌾 como adyacentes entre sí. Luego, solo los Children: van a por ti o a la víctima más cercana, se mueven y resuelven el icono de las manos (abducción). Después, 🎭.",
-                    "<b>\"Nobody Knows Where They Take Them...\"</b>: si no hay víctimas ni Children en el tablero, descártala y roba otra. Si no, entran en pánico todas las víctimas que estén en el mismo espacio que un Child. (El resto de la carta no sale en la foto.)"]),
+                    "<b>\"Nobody Knows Where They Take Them...\"</b>: si no hay víctimas ni Children en el tablero, descártala y roba otra. Si no, entran en pánico todas las víctimas que estén en el mismo espacio que un Child. Después, por cada Child con una víctima en su espacio, resuelve el icono de las manos como si hubieras sacado un <b>1</b>."]),
             ],
             "err_m_t": "Errores frecuentes",
             "err_m": [
@@ -135,7 +135,7 @@ GUIAS = [
                     "<b>Burning Sickle</b> (Minor Dark Power): whenever Grimlash deals you damage, also deal ✴ to every Victim in your space."]),
                 ("Terror cards", [
                     "<b>\"Something's Wrong with the Kids\"</b>: the Children treat all 🌾 spaces as adjacent to each other. Then, Children only: target you or the closest Victim, move and resolve the hands icon (abduction). Then 🎭.",
-                    "<b>\"Nobody Knows Where They Take Them...\"</b>: if there are no Victims or Children on the board, discard and draw the next Terror card. Otherwise, panic all Victims in the same space as a Child. (The rest of the card isn't in our photo.)"]),
+                    "<b>\"Nobody Knows Where They Take Them...\"</b>: if there are no Victims or Children on the board, discard and draw the next Terror card. Otherwise, panic all Victims in the same space as a Child. Then, for each Child with a Victim in their space, resolve the hands icon as if you had rolled a <b>1</b>."]),
             ],
             "err_m_t": "Common mistakes",
             "err_m": [
