@@ -172,7 +172,7 @@ def secciones(lang, g):
     m += f'<p class="sub">{tt["nota"]}</p>'
 
     def foto(c, nombre):
-        f = "_finales" if c == "k" else "_tablero"
+        f = "foto-finales" if c == "k" else "foto-tablero"
         if not (AQUI / "img" / "guias" / g["dir"] / f"{f}.jpg").exists():
             return ""
         return f'<figure class="gu-foto"><img src="{ruta}{f}.jpg" alt="{nombre}" loading="lazy"></figure>'
