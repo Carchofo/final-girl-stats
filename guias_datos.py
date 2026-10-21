@@ -1666,8 +1666,8 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "<b>Billy</b>, fila de arriba: elige objetivo (tú o la víctima más cercana) ▸ ataca (en el Finale básico <b>no se mueve</b>).",
-    "Fila de abajo: icono de la pila con corazón ▸ elige objetivo (tú o la víctima más cercana) ▸ ataca.",
+    "Fila de arriba: <b>Billy</b> elige objetivo (tú o la víctima más cercana) y le ataca. En el Finale básico <b>no se mueve</b>: solo ataca si el objetivo está en su espacio.",
+    "Fila de abajo: primero la <b>pila con corazón</b>: si queda alguna fuente de energía activa, Billy se cura 1 ❤️. Luego Billy vuelve a elegir objetivo y le ataca otra vez.",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
