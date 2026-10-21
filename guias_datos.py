@@ -1628,16 +1628,16 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
+    "En su caja, con <b>Shady Acres</b>: antes que Grimlash actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "<b>Grimlash</b>: va a por ti o a la víctima más cercana ▸ se mueve <b>solo 1 espacio</b> ▸ ataca ▸ si ha muerto una víctima, sube Harvest Madness.",
-    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
+    "In his own box, with <b>Shady Acres</b>: before Grimlash, the <b>Children</b> act with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>Grimlash</b>: targets you or the closest Victim ▸ moves <b>only 1 space</b> ▸ attacks ▸ if a Victim was killed, Harvest Madness goes up.",
-    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }
@@ -1646,18 +1646,18 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "<b>Raptors sueltos</b> (Minions), uno a uno: van hacia la Pack ▸ se mueven ▸ <b>se paran</b> al entrar en un espacio contigo o con una víctima (la señal de stop); si empiezan ahí, no se mueven. Si llegan a la Pack, se unen. Un Raptor que aparece en esta fase no actúa hasta la siguiente.",
     "<b>La Pack</b> (el Killer): va a por ti o a la víctima más cercana ▸ <b>en la Finale básica se mueve solo 1 espacio</b> y ataca 1 vez. Con las otras Finales se mueve su valor de Movimiento y ataca tantas veces como cuchillos tenga la carta (1 en Claws Like Knives, 2 en las demás).",
+    "En su caja, con <b>Isla Lagarto</b>, si el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>Individual Raptors</b> (Minions), one by one: head for the Pack ▸ move ▸ <b>stop</b> on entering a space with you or a Victim (the stop sign); if they start there, they don't move. If they reach the Pack, they join it. A Raptor spawned during this phase doesn't act until the next one.",
     "<b>The Pack</b> (the Killer): targets you or the closest Victim ▸ <b>on the base Finale it moves only 1 space</b> and attacks once. With the other Finales it moves its Movement Value and attacks once per knife on the card (1 on Claws Like Knives, 2 on the rest).",
+    "In their own box, with <b>Isla Lagarto</b>, if the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }
@@ -1666,20 +1666,16 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "<b>Billy</b>, fila de arriba: va a por ti o a la víctima más cercana ▸ ataca (en el Finale básico <b>no se mueve</b>).",
     "Fila de abajo: icono de la pila con corazón ▸ va a por ti o a la víctima más cercana ▸ ataca.",
-    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>Billy</b>, top row: targets you or the closest Victim ▸ attacks (on the basic Finale <b>he doesn't move</b>).",
     "Bottom row: battery-with-heart icon ▸ targets you or the closest Victim ▸ attacks.",
-    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }
@@ -1688,20 +1684,16 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "Si empieza la fase <b>oculta</b>, fila de arriba: carta de Movimiento boca arriba al Path (el ojo) ▸ tira un 🎲: con 1-4, +🩸.",
     "Si empieza la fase <b>visible</b>, fila de abajo: va a por ti o a la víctima más cercana ▸ ataca ▸ se oculta (el ojo tachado).",
-    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "If the phase starts with her <b>concealed</b>, top row: a face-up Movement card to the Path (the eye) ▸ roll a 🎲: on 1-4, +🩸.",
     "If it starts with her <b>visible</b>, bottom row: targets you or the closest Victim ▸ attacks ▸ conceals (the crossed-out eye).",
-    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }
@@ -1710,18 +1702,14 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "<b>Ursula</b> (poseída por Berith), con la Finale básica: va a por ti o a la víctima más cercana ▸ ataca. <b>No se mueve</b>: la fila no tiene bota. Con las otras Finales sí se mueve y ataca las veces que marque la carta.",
-    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>Ursula</b> (possessed by Berith), on the base Finale: targets you or the closest Victim ▸ attacks. <b>She doesn't move</b>: the row has no boot. With the other Finales she moves and attacks as many times as the card says.",
-    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }
@@ -1730,20 +1718,16 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "Fila <b>M</b>: los <b>Lunáticos</b> (Esbirros) van a por ti ▸ se mueven.",
     "Fila <b>K</b>: <b>Ratchet Lady</b> va a por ti o a la Víctima más cercana ▸ ataca (<b>no se mueve</b>).",
-    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>M</b> row: the <b>Lunatics</b> (Minions) target you ▸ move.",
     "<b>K</b> row: <b>Ratchet Lady</b> targets you or the closest Victim ▸ attacks (<b>no move</b>).",
-    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }
@@ -1752,20 +1736,16 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Si juegas en <b>Shady Acres</b>: primero actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
     "<b>Finale básica: «Todos los Asesinos»</b> ▸ cada uno de los tres va a por ti o a la víctima más cercana ▸ ataca. <b>No se mueve ninguno</b>: la fila no tiene bota. Se resuelve de arriba abajo del tablero del Killer y la ficha de Asesino Activo no cambia. Con las otras Finales, mira su fila: lo que no diga «todos los Asesinos» lo hace <b>solo el Asesino Activo</b> (moverse con la bota, colocarse).",
     "Si la fila trae 🔺 o 🔻, la ficha pasa al siguiente Asesino y lo que siga lo hace el nuevo Activo.",
-    "Si juegas en <b>Isla Lagarto</b> y el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "If you play on <b>Shady Acres</b>: the <b>Children</b> act first with their action token, one by one (closest to the Altar first). Even though they belong to the map, <b>they do abduct</b>.",
     "<b>Base Finale: «All Killers»</b> ▸ each of the three targets you or the closest Victim ▸ attacks. <b>None of them moves</b>: the row has no boot. Resolve top to bottom of the Killer board; the Active Killer token doesn't change. With the other Finales, check their row: anything not marked «all Killers» is done <b>only by the Active Killer</b> (moving with the boot, being placed).",
     "If the row has 🔺 or 🔻, the token moves to the next Killer and the new Active Killer does what follows.",
-    "If you play on <b>Isla Lagarto</b> and the T-Rex has broken out: then the <b>T-Rex</b> acts (moves 2, stops on reaching anyone and <b>kills one in its space</b>).",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }

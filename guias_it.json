@@ -230,8 +230,8 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
+   "Nella sua scatola, con <b>Shady Acres</b>: prima di Grimlash agiscono i <b>Children</b> col loro segnalino azione, uno alla volta (dal più vicino all'Altare). Anche se sono del luogo, <b>rapiscono anche loro</b>.",
    "<b>Grimlash</b>: punta te o la vittima più vicina ▸ si muove <b>solo di 1 spazio</b> ▸ attacca ▸ se è morta una vittima, sale Harvest Madness.",
-   "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },
@@ -512,9 +512,9 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "<b>Raptors sciolti</b> (Minions), uno alla volta: vanno verso la Pack ▸ si muovono ▸ <b>si fermano</b> entrando in uno spazio con te o con una vittima (il segnale di stop); se iniziano lì, non si muovono. Se raggiungono la Pack, si uniscono. Un Raptor comparso in questa fase non agisce fino alla successiva.",
    "<b>La Pack</b> (il Killer): punta te o la vittima più vicina ▸ <b>nella Finale base si muove solo di 1 spazio</b> e attacca 1 volta. Con le altre Finali si muove del suo valore di Movimento e attacca una volta per ogni coltello della carta (1 in Claws Like Knives, 2 nelle altre).",
+   "Nella loro scatola, con <b>Isla Lagarto</b>, se il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },
@@ -755,10 +755,8 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "<b>Billy</b>, riga in alto: punta te o la vittima più vicina ▸ attacca (nella Finale base <b>non si muove</b>).",
    "Riga in basso: icona della pila con il cuore ▸ punta te o la vittima più vicina ▸ attacca.",
-   "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },
@@ -1088,10 +1086,8 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "Se la fase inizia con Volk'ar <b>nascosto</b>, riga in alto: una carta Movement scoperta sul Path (l'occhio) ▸ tira un 🎲: con 1-4, +🩸.",
    "Se è <b>visibile</b>, riga in basso: punta te o la vittima più vicina ▸ attacca ▸ si nasconde (l'occhio barrato).",
-   "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },
@@ -1337,9 +1333,7 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "<b>Ursula</b> (posseduta da Berith), con la Finale base: punta te o la vittima più vicina ▸ attacca. <b>Non si muove</b>: la riga non ha lo stivale. Con le altre Finali si muove e attacca quante volte dice la carta.",
-   "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },
@@ -1559,10 +1553,8 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "Riga <b>M</b>: i <b>Lunatici</b> (Minions) puntano te ▸ si muovono.",
    "Riga <b>K</b>: <b>Ratchet Lady</b> punta te o la vittima più vicina ▸ attacca (<b>senza muoversi</b>).",
-   "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },
@@ -1885,10 +1877,8 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Se giochi a <b>Shady Acres</b>: per primi agiscono i <b>Children</b> con il loro segnalino azione, uno alla volta (dal più vicino all'Altar al più lontano). Anche se sono della mappa, <b>rapiscono anche loro</b>.",
    "<b>Finale base: «Tutti gli Assassini»</b> ▸ ognuno dei tre punta te o la vittima più vicina ▸ attacca. <b>Nessuno si muove</b>: la riga non ha lo stivale. Si risolve dall'alto in basso del tabellone del Killer; il segnalino dell'Assassino Attivo non cambia. Con le altre Finali guarda la loro riga: ciò che non dice «tutti gli Assassini» lo fa <b>solo l'Assassino Attivo</b> (muoversi con lo stivale, essere piazzato).",
    "Se la riga ha 🔺 o 🔻, il segnalino passa al Killer successivo e il resto lo fa il nuovo Killer Attivo.",
-   "Se giochi a <b>Isla Lagarto</b> e il T-Rex è uscito: poi agisce il <b>T-Rex</b> (si muove di 2, si ferma quando raggiunge qualcuno e <b>uccide uno nel suo spazio</b>).",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  }

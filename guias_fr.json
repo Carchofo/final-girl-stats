@@ -230,8 +230,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
+   "Dans sa boîte, avec <b>Shady Acres</b> : avant Grimlash, les <b>Children</b> agissent avec leur jeton d'action, un par un (du plus proche de l'Autel au plus éloigné). Même s'ils viennent du lieu, <b>ils enlèvent aussi</b>.",
    "<b>Grimlash</b> : cible toi ou la victime la plus proche ▸ se déplace <b>d'1 seule case</b> ▸ attaque ▸ si une victime a été tuée, Harvest Madness monte.",
-   "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -512,9 +512,9 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "<b>Raptors isolés</b> (Minions), un par un : vont vers la Pack ▸ se déplacent ▸ <b>s'arrêtent</b> en entrant dans une case avec toi ou une victime (le panneau stop) ; s'ils y commencent, ils ne bougent pas. S'ils atteignent la Pack, ils la rejoignent. Un Raptor apparu pendant cette phase n'agit qu'à la suivante.",
    "<b>La Pack</b> (le Killer) : cible toi ou la victime la plus proche ▸ <b>sur la Finale de base, elle ne se déplace que d'1 case</b> et attaque 1 fois. Avec les autres Finales, elle se déplace de sa valeur de Mouvement et attaque une fois par couteau de la carte (1 sur Claws Like Knives, 2 sur les autres).",
+   "Dans leur boîte, avec <b>Isla Lagarto</b>, si le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue une personne de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -755,10 +755,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "<b>Billy</b>, ligne du haut : cible toi ou la victime la plus proche ▸ attaque (sur la Finale de base, <b>il ne bouge pas</b>).",
    "Ligne du bas : icône de la pile avec un cœur ▸ cible toi ou la victime la plus proche ▸ attaque.",
-   "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1088,10 +1086,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "Si la phase commence avec Volk'ar <b>caché</b>, ligne du haut : une carte Movement face visible sur le Path (l'œil) ▸ lance un 🎲 : sur 1-4, +🩸.",
    "S'il est <b>visible</b>, ligne du bas : cible toi ou la victime la plus proche ▸ attaque ▸ se cache (l'œil barré).",
-   "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1337,9 +1333,7 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "<b>Ursula</b> (possédée par Berith), avec la Finale de base : cible toi ou la victime la plus proche ▸ attaque. <b>Elle ne se déplace pas</b> : la ligne n'a pas de botte. Avec les autres Finales, elle se déplace et attaque autant de fois que l'indique la carte.",
-   "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1559,10 +1553,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "Ligne <b>M</b> : les <b>Lunatiques</b> (Minions) te ciblent ▸ se déplacent.",
    "Ligne <b>K</b> : <b>Ratchet Lady</b> cible toi ou la victime la plus proche ▸ attaque (<b>sans bouger</b>).",
-   "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1885,10 +1877,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Si tu joues à <b>Shady Acres</b> : les <b>Children</b> agissent d'abord avec leur jeton d'action, un par un (du plus proche de l'Altar au plus loin). Même s'ils viennent du plateau, <b>ils enlèvent aussi</b>.",
    "<b>Finale de base : «Tous les Tueurs»</b> ▸ chacun des trois cible toi ou la victime la plus proche ▸ attaque. <b>Aucun ne se déplace</b> : la ligne n'a pas de botte. On résout de haut en bas du plateau du Killer ; le jeton de Tueur Actif ne change pas. Avec les autres Finales, regarde leur ligne : ce qui n'indique pas «tous les Tueurs» est fait <b>seulement par le Tueur Actif</b> (se déplacer avec la botte, être placé).",
    "Si la ligne a 🔺 ou 🔻, le jeton passe au Killer suivant et c'est le nouveau Killer Actif qui fait la suite.",
-   "Si tu joues à <b>Isla Lagarto</b> et que le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue un occupant de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  }
