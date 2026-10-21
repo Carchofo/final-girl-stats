@@ -575,9 +575,9 @@
    [
     "Finales",
     [
-     "Alle haben zwei Zeilen: Oben wählt Billy sein Ziel (dich oder das nächste Opfer), bewegt sich und greift an; unten zuerst das Batterie-mit-Herz-Symbol, dann wählt Billy erneut ein Ziel.",
-     "<b>Base Finale</b> (der rosa Bär): Oben greift Billy an, ohne sich zu bewegen; unten zuerst Batterie mit Herz, dann wählt Billy sein Ziel und greift an.",
-     "<b>Encore</b>: unten bewegt er sich zweimal und greift zweimal an.",
+     "Alle haben zwei Zeilen: <b>oben handeln die Buddies</b> (Minion Action), einer nach dem anderen nach Initiative; <b>unten handelt Billy</b> (Killer Action): zuerst Batterie mit Herz, dann wählt er sein Ziel, bewegt sich und greift an.",
+     "<b>Base Finale</b> (der rosa Bär): keine Zeile hat einen Stiefel. Die Buddies greifen an, ohne sich zu bewegen; dann Billy, Batterie mit Herz, und er greift an, ohne sich zu bewegen.",
+     "<b>Encore</b>: in der unteren Zeile bewegt sich Billy zweimal und greift zweimal an.",
      "<b>Sizzling Power</b>: Ist mindestens eine Power Source aktiv, wiederhole seine Killeraktion einmal.",
      "<b>It's Showtime!</b>: Du kannst keine Reaktionskarten spielen, wenn mehr als ein Feind in deinem Feld ist.",
      "<b>Power Surge</b> (episches Finale): Beim Aufdecken erscheint <b>Boris</b>. Du musst Billy <b>und</b> Boris töten, um zu gewinnen."
@@ -755,8 +755,8 @@
   ],
   "fase_t": "Killer-Phase",
   "fase": [
-   "Obere Zeile: <b>Billy</b> wählt sein Ziel (dich oder das nächste Opfer) und greift es an. Auf der Basis-Finale <b>bewegt er sich nicht</b>: Er greift nur an, wenn das Ziel in seinem Feld ist.",
-   "Untere Zeile: zuerst die <b>Batterie mit Herz</b>: Ist noch mindestens eine Power Source aktiv, heilt Billy 1 ❤️. Dann wählt Billy erneut sein Ziel und greift es noch einmal an.",
+   "Obere Zeile (Minion Action): zuerst handeln die <b>Buddies</b>, einer nach dem anderen, von niedrigster zu höchster Initiative. Jeder Buddy wählt dich oder das nächste Opfer als Ziel, bewegt sich, wenn die Zeile einen Stiefel hat, und greift an. Auf der Basis-Finale gibt es <b>keinen Stiefel</b>: sie bewegen sich nicht und greifen nur ein Ziel in ihrem Feld an.",
+   "Untere Zeile (Killer Action): jetzt handelt <b>Billy</b>. Zuerst die <b>Batterie mit Herz</b>: Ist noch mindestens eine Power Source aktiv, heilt Billy 1 ❤️. Dann wählt er dich oder das nächste Opfer als Ziel, bewegt sich bei Stiefel und greift an. Auf der Basis-Finale auch kein Stiefel: er bewegt sich nicht.",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },

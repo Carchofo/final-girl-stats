@@ -527,9 +527,9 @@ GUIAS = [
                     "<b>Billy Jr.</b> (Special Buddy) · 2 ❤️ · iniciativa 6 · ataque 1 · movimiento 0. Siempre está en el mismo espacio que Billy. Recompensa: ✴ a Billy.",
                     "<b>Boris</b> (Special Buddy) · 4 ❤️ · iniciativa 7 · ataque 3 · movimiento 2. Recompensa: coge CUALQUIER carta de Acción."]),
                 ("Finales", [
-                    "Todos tienen dos filas: arriba Billy elige objetivo (tú o la víctima más cercana), se mueve y ataca; abajo, primero el icono de la pila con corazón y luego Billy vuelve a elegir objetivo.",
-                    "<b>Finale básico</b> (el del oso rosa): arriba Billy ataca sin moverse; abajo, primero la pila con corazón y luego Billy elige objetivo y ataca.",
-                    "<b>Encore</b>: abajo se mueve 2 veces y ataca 2 veces.",
+                    "Todos tienen dos filas: <b>arriba actúan los Buddies</b> (Minion Action), uno a uno por iniciativa; <b>abajo actúa Billy</b> (Killer Action): primero la pila con corazón y luego elige objetivo, se mueve y ataca.",
+                    "<b>Finale básico</b> (el del oso rosa): ninguna fila tiene bota. Los Buddies atacan sin moverse; luego Billy, pila con corazón y ataca sin moverse.",
+                    "<b>Encore</b>: en la fila de abajo, Billy se mueve 2 veces y ataca 2 veces.",
                     "<b>Sizzling Power</b>: si hay al menos una fuente activa, repite una vez su Killer Action.",
                     "<b>It's Showtime!</b>: no puedes jugar cartas de Reacción si hay más de un Enemy en tu espacio.",
                     "<b>Power Surge</b> (Epic Finale): al revelarlo, aparece <b>Boris</b>. Para ganar tienes que matar a Billy <b>y</b> a Boris."]),
@@ -629,9 +629,9 @@ GUIAS = [
                     "<b>Billy Jr.</b> (Special Buddy) · 2 ❤️ · Initiative 6 · attack 1 · movement 0. Always in the same space as Billy. Kill Reward: ✴ to Billy.",
                     "<b>Boris</b> (Special Buddy) · 4 ❤️ · Initiative 7 · attack 3 · movement 2. Kill Reward: take ANY Action card."]),
                 ("Finales", [
-                    "All have two rows: on top Billy targets you or the closest Victim, moves and attacks; below, the battery-with-heart icon and then he targets again.",
-                    "<b>Base Finale</b> (the pink bear): attacks without moving; below, battery with heart, targets and attacks.",
-                    "<b>Encore</b>: below, moves twice and attacks twice.",
+                    "All have two rows: <b>on top the Buddies act</b> (Minion Action), one at a time by Initiative; <b>below Billy acts</b> (Killer Action): first the battery-with-heart, then he targets, moves and attacks.",
+                    "<b>Base Finale</b> (the pink bear): no row has a boot. The Buddies attack without moving; then Billy, battery-with-heart, and attacks without moving.",
+                    "<b>Encore</b>: on the bottom row, Billy moves twice and attacks twice.",
                     "<b>Sizzling Power</b>: if at least one Power Source is Active, repeat his Killer Action once.",
                     "<b>It's Showtime!</b>: you can't play Reaction cards if more than one Enemy is in your space.",
                     "<b>Power Surge</b> (Epic Finale): when revealed, spawn <b>Boris</b>. You must kill both Billy <b>and</b> Boris to win."]),
@@ -1666,16 +1666,16 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Fila de arriba: <b>Billy</b> elige objetivo (tú o la víctima más cercana) y le ataca. En el Finale básico <b>no se mueve</b>: solo ataca si el objetivo está en su espacio.",
-    "Fila de abajo: primero la <b>pila con corazón</b>: si queda alguna fuente de energía activa, Billy se cura 1 ❤️. Luego Billy vuelve a elegir objetivo y le ataca otra vez.",
+    "Fila de arriba (Minion Action): actúan primero los <b>Buddies</b>, uno a uno, de menor a mayor iniciativa. Cada Buddy elige objetivo (tú o la víctima más cercana), se mueve si la fila tiene bota y ataca. En el Finale básico <b>no hay bota</b>: no se mueven y solo atacan si el objetivo está en su espacio.",
+    "Fila de abajo (Killer Action): ahora actúa <b>Billy</b>. Primero la <b>pila con corazón</b>: si queda alguna fuente de energía activa, Billy se cura 1 ❤️. Luego elige objetivo (tú o la víctima más cercana), se mueve si hay bota y ataca. En el Finale básico tampoco hay bota: no se mueve.",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
   "en": {
    "fase_t": "Killer phase",
    "fase": [
-    "<b>Billy</b>, top row: targets you or the closest Victim ▸ attacks (on the basic Finale <b>he doesn't move</b>).",
-    "Bottom row: battery-with-heart icon ▸ targets you or the closest Victim ▸ attacks.",
+    "Top row (Minion Action): the <b>Buddies</b> act first, one at a time, lowest to highest Initiative. Each Buddy targets you or the closest Victim, moves if the row has a boot, and attacks. On the basic Finale there is <b>no boot</b>: they don't move and only attack a target in their space.",
+    "Bottom row (Killer Action): now <b>Billy</b> acts. First the <b>battery-with-heart</b>: if at least one Power Source is active, Billy heals 1 ❤️. Then he targets you or the closest Victim, moves if there's a boot, and attacks. The basic Finale has no boot either: he doesn't move.",
     "Draw and resolve a <b>Terror</b> card."
    ]
   }

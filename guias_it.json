@@ -575,9 +575,9 @@
    [
     "Finali",
     [
-     "Hanno tutti due righe: sopra, Billy sceglie il bersaglio (te o la Vittima più vicina), si muove e attacca; sotto, prima l'icona della batteria con il cuore e poi Billy sceglie di nuovo il bersaglio.",
-     "<b>Base Finale</b> (l'orso rosa): sopra, Billy attacca senza muoversi; sotto, prima la batteria con il cuore, poi Billy sceglie il bersaglio e attacca.",
-     "<b>Encore</b>: sotto, si muove due volte e attacca due volte.",
+     "Tutte hanno due righe: <b>sopra agiscono i Buddies</b> (Minion Action), uno alla volta per Iniziativa; <b>sotto agisce Billy</b> (Killer Action): prima la batteria con il cuore, poi sceglie il bersaglio, si muove e attacca.",
+     "<b>Base Finale</b> (l'orso rosa): nessuna riga ha lo stivale. I Buddies attaccano senza muoversi; poi Billy, batteria con il cuore, e attacca senza muoversi.",
+     "<b>Encore</b>: nella riga in basso, Billy si muove due volte e attacca due volte.",
      "<b>Sizzling Power</b>: se almeno una Power Source è Attiva, ripeti una volta la sua Azione del Killer.",
      "<b>It's Showtime!</b>: non puoi giocare carte Reazione se nel tuo spazio c'è più di un Nemico.",
      "<b>Power Surge</b> (Finale Epico): quando viene rivelato, fai comparire <b>Boris</b>. Devi uccidere sia Billy <b>sia</b> Boris per vincere."
@@ -755,8 +755,8 @@
   ],
   "fase_t": "Fase del Killer",
   "fase": [
-   "Riga in alto: <b>Billy</b> sceglie il bersaglio (te o la vittima più vicina) e lo attacca. Nella Finale base <b>non si muove</b>: attacca solo se il bersaglio è nel suo spazio.",
-   "Riga in basso: prima la <b>pila con il cuore</b>: se resta almeno una Power Source attiva, Billy recupera 1 ❤️. Poi Billy sceglie di nuovo il bersaglio e lo attacca ancora.",
+   "Riga in alto (Minion Action): agiscono prima i <b>Buddies</b>, uno alla volta, dall'Iniziativa più bassa alla più alta. Ogni Buddy sceglie come bersaglio te o la vittima più vicina, si muove se la riga ha lo stivale e attacca. Nella Finale base <b>non c'è lo stivale</b>: non si muovono e attaccano solo un bersaglio nel loro spazio.",
+   "Riga in basso (Killer Action): ora agisce <b>Billy</b>. Prima la <b>pila con il cuore</b>: se resta almeno una Power Source attiva, Billy recupera 1 ❤️. Poi sceglie come bersaglio te o la vittima più vicina, si muove se c'è lo stivale e attacca. Nella Finale base niente stivale: non si muove.",
    "Pesca e risolvi una carta <b>Terror</b>."
   ]
  },

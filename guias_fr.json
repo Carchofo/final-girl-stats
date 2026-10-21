@@ -575,9 +575,9 @@
    [
     "Finales",
     [
-     "Toutes ont deux lignes : en haut, Billy choisit sa cible (toi ou la Victime la plus proche), se déplace et attaque ; en bas, d'abord l'icône batterie-cœur, puis Billy choisit de nouveau sa cible.",
-     "<b>Finale de base</b> (l'ours rose) : en haut, Billy attaque sans se déplacer ; en bas, d'abord la batterie-cœur, puis Billy choisit sa cible et attaque.",
-     "<b>Encore</b> : en bas, se déplace deux fois et attaque deux fois.",
+     "Toutes ont deux lignes : <b>en haut agissent les Buddies</b> (Minion Action), un par un selon l'Initiative ; <b>en bas agit Billy</b> (Killer Action) : d'abord la batterie-cœur, puis il choisit sa cible, se déplace et attaque.",
+     "<b>Finale de base</b> (l'ours rose) : aucune ligne n'a de botte. Les Buddies attaquent sans bouger ; puis Billy, batterie-cœur, et il attaque sans bouger.",
+     "<b>Encore</b> : sur la ligne du bas, Billy se déplace deux fois et attaque deux fois.",
      "<b>Sizzling Power</b> : si au moins une Power Source est Active, répète son Action du Killer une fois.",
      "<b>It's Showtime!</b> : tu ne peux pas jouer de cartes Réaction s'il y a plus d'un Ennemi dans ta case.",
      "<b>Power Surge</b> (Finale Epic) : quand elle est révélée, fais apparaître <b>Boris</b>. Tu dois tuer Billy <b>et</b> Boris pour gagner."
@@ -755,8 +755,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Ligne du haut : <b>Billy</b> choisit sa cible (toi ou la victime la plus proche) et l'attaque. Sur la Finale de base, <b>il ne bouge pas</b> : il n'attaque que si la cible est dans sa case.",
-   "Ligne du bas : d'abord la <b>batterie avec un cœur</b> : s'il reste au moins une Power Source active, Billy récupère 1 ❤️. Ensuite Billy choisit de nouveau sa cible et l'attaque encore.",
+   "Ligne du haut (Minion Action) : les <b>Buddies</b> agissent d'abord, un par un, de la plus petite à la plus grande Initiative. Chaque Buddy cible toi ou la victime la plus proche, se déplace si la ligne a une botte, et attaque. Sur la Finale de base il n'y a <b>pas de botte</b> : ils ne bougent pas et n'attaquent qu'une cible dans leur case.",
+   "Ligne du bas (Killer Action) : maintenant <b>Billy</b> agit. D'abord la <b>batterie avec un cœur</b> : s'il reste au moins une Power Source active, Billy récupère 1 ❤️. Puis il cible toi ou la victime la plus proche, se déplace s'il y a une botte, et attaque. Sur la Finale de base, pas de botte non plus : il ne bouge pas.",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
