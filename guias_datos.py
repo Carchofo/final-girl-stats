@@ -1629,7 +1629,7 @@ _FASE = {
    "fase_t": "Fase del Killer",
    "fase": [
     "En su caja, con <b>Shady Acres</b>: antes que Grimlash actúan los <b>Children</b> con su ficha de acción, uno a uno (del más cercano al Altar al más lejano). Aunque son del mapa, <b>también raptan</b>.",
-    "<b>Grimlash</b>: va a por ti o a la víctima más cercana ▸ se mueve <b>solo 1 espacio</b> ▸ ataca ▸ si ha muerto una víctima, sube Harvest Madness.",
+    "<b>Grimlash</b>: elige objetivo (tú o la víctima más cercana) ▸ se mueve <b>solo 1 espacio</b> ▸ ataca ▸ si ha muerto una víctima, sube Harvest Madness.",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
@@ -1647,7 +1647,7 @@ _FASE = {
    "fase_t": "Fase del Killer",
    "fase": [
     "<b>Raptors sueltos</b> (Minions), uno a uno: van hacia la Pack ▸ se mueven ▸ <b>se paran</b> al entrar en un espacio contigo o con una víctima (la señal de stop); si empiezan ahí, no se mueven. Si llegan a la Pack, se unen. Un Raptor que aparece en esta fase no actúa hasta la siguiente.",
-    "<b>La Pack</b> (el Killer): va a por ti o a la víctima más cercana ▸ <b>en la Finale básica se mueve solo 1 espacio</b> y ataca 1 vez. Con las otras Finales se mueve su valor de Movimiento y ataca tantas veces como cuchillos tenga la carta (1 en Claws Like Knives, 2 en las demás).",
+    "<b>La Pack</b> (el Killer): elige objetivo (tú o la víctima más cercana) ▸ <b>en la Finale básica se mueve solo 1 espacio</b> y ataca 1 vez. Con las otras Finales se mueve su valor de Movimiento y ataca tantas veces como cuchillos tenga la carta (1 en Claws Like Knives, 2 en las demás).",
     "En su caja, con <b>Isla Lagarto</b>, si el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
@@ -1666,8 +1666,8 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "<b>Billy</b>, fila de arriba: va a por ti o a la víctima más cercana ▸ ataca (en el Finale básico <b>no se mueve</b>).",
-    "Fila de abajo: icono de la pila con corazón ▸ va a por ti o a la víctima más cercana ▸ ataca.",
+    "<b>Billy</b>, fila de arriba: elige objetivo (tú o la víctima más cercana) ▸ ataca (en el Finale básico <b>no se mueve</b>).",
+    "Fila de abajo: icono de la pila con corazón ▸ elige objetivo (tú o la víctima más cercana) ▸ ataca.",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
@@ -1685,7 +1685,7 @@ _FASE = {
    "fase_t": "Fase del Killer",
    "fase": [
     "Si empieza la fase <b>oculta</b>, fila de arriba: carta de Movimiento boca arriba al Path (el ojo) ▸ tira un 🎲: con 1-4, +🩸.",
-    "Si empieza la fase <b>visible</b>, fila de abajo: va a por ti o a la víctima más cercana ▸ ataca ▸ se oculta (el ojo tachado).",
+    "Si empieza la fase <b>visible</b>, fila de abajo: elige objetivo (tú o la víctima más cercana) ▸ ataca ▸ se oculta (el ojo tachado).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
@@ -1702,7 +1702,7 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "<b>Ursula</b> (poseída por Berith), con la Finale básica: va a por ti o a la víctima más cercana ▸ ataca. <b>No se mueve</b>: la fila no tiene bota. Con las otras Finales sí se mueve y ataca las veces que marque la carta.",
+    "<b>Ursula</b> (poseída por Berith), con la Finale básica: elige objetivo (tú o la víctima más cercana) ▸ ataca. <b>No se mueve</b>: la fila no tiene bota. Con las otras Finales sí se mueve y ataca las veces que marque la carta.",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
@@ -1719,7 +1719,7 @@ _FASE = {
    "fase_t": "Fase del Killer",
    "fase": [
     "Fila <b>M</b>: los <b>Lunáticos</b> (Esbirros) van a por ti ▸ se mueven.",
-    "Fila <b>K</b>: <b>Ratchet Lady</b> va a por ti o a la Víctima más cercana ▸ ataca (<b>no se mueve</b>).",
+    "Fila <b>K</b>: <b>Ratchet Lady</b> elige objetivo (tú o la víctima más cercana) ▸ ataca (<b>no se mueve</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
   },
@@ -1736,7 +1736,7 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "<b>Finale básica: «Todos los Asesinos»</b> ▸ cada uno de los tres va a por ti o a la víctima más cercana ▸ ataca. <b>No se mueve ninguno</b>: la fila no tiene bota. Se resuelve de arriba abajo del tablero del Killer y la ficha de Asesino Activo no cambia. Con las otras Finales, mira su fila: lo que no diga «todos los Asesinos» lo hace <b>solo el Asesino Activo</b> (moverse con la bota, colocarse).",
+    "<b>Finale básica: «Todos los Asesinos»</b> ▸ cada uno de los tres elige objetivo (tú o la víctima más cercana) ▸ ataca. <b>No se mueve ninguno</b>: la fila no tiene bota. Se resuelve de arriba abajo del tablero del Killer y la ficha de Asesino Activo no cambia. Con las otras Finales, mira su fila: lo que no diga «todos los Asesinos» lo hace <b>solo el Asesino Activo</b> (moverse con la bota, colocarse).",
     "Si la fila trae 🔺 o 🔻, la ficha pasa al siguiente Asesino y lo que siga lo hace el nuevo Activo.",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
