@@ -29,11 +29,11 @@
    [
     "Finales",
     [
-     "<b>Finale de base</b> : vise toi ou la Victime la plus proche, se déplace d'1 case et attaque. Si une Victime a été tuée, 🎃 (Harvest Madness monte).",
-     "<b>Hunger of the Old Gods</b> : vise, se déplace de 2 et attaque 2 fois. À la fin de la phase du Killer, toutes les Victimes se déplacent d'1 case vers Grimlash.",
-     "<b>Withered Harbinger</b> : vise, se déplace et attaque 2 fois. Pour chaque case parcourue par Grimlash pendant la phase du Killer, tu perds ⌛.",
-     "<b>Ancient Abomination</b> : vise, se déplace de 2 et attaque. Chaque fois qu'il résout une attaque, ajoute le niveau de Harvest Madness à sa valeur d'Attaque.",
-     "<b>God of Blood and Grain</b> (Finale Epic) : te vise, se déplace et attaque 2 fois. Une fois révélée, toutes les Victimes meurent."
+     "<b>Finale de base</b> : Grimlash choisit sa cible (toi ou la Victime la plus proche), se déplace d'1 case et l'attaque. Si une Victime a été tuée, 🎃 (Harvest Madness monte).",
+     "<b>Hunger of the Old Gods</b> : Grimlash choisit sa cible, se déplace de 2 et attaque 2 fois. À la fin de la phase du Killer, toutes les Victimes se déplacent d'1 case vers Grimlash.",
+     "<b>Withered Harbinger</b> : Grimlash choisit sa cible, se déplace et attaque 2 fois. Pour chaque case parcourue par Grimlash pendant la phase du Killer, tu perds ⌛.",
+     "<b>Ancient Abomination</b> : Grimlash choisit sa cible, se déplace de 2 et attaque. Chaque fois que Grimlash résout une attaque, ajoute le niveau de Harvest Madness à sa valeur d'Attaque.",
+     "<b>God of Blood and Grain</b> (Finale Epic) : Grimlash te choisit comme cible, se déplace et t'attaque 2 fois. Quand ce Finale est révélé, toutes les Victimes meurent."
     ]
    ],
    [
@@ -49,7 +49,7 @@
    [
     "Cartes Terreur",
     [
-     "<b>\"Something's Wrong with the Kids\"</b> : les Children considèrent toutes les cases 🌾 comme adjacentes entre elles. Puis, Children seulement : visent toi ou la Victime la plus proche, se déplacent et résolvent l'icône des mains (enlèvement). Ensuite, 🎭.",
+     "<b>\"Something's Wrong with the Kids\"</b> : les Children considèrent toutes les cases 🌾 comme adjacentes entre elles. Puis seuls les Children agissent : chacun choisit sa cible (toi ou la Victime la plus proche), se déplace et résout l'icône des mains (enlèvement). Ensuite, 🎭.",
      "<b>\"Nobody Knows Where They Take Them...\"</b> : s'il n'y a ni Victimes ni Children sur le plateau, défausse-la et pioche la suivante. Sinon, toutes les Victimes dans la même case qu'un Child paniquent. Ensuite, pour chaque Child avec une Victime dans sa case, résous l'icône des mains comme si tu avais obtenu un <b>1</b>."
     ]
    ]
@@ -231,7 +231,7 @@
   "fase_t": "Phase du Killer",
   "fase": [
    "Dans sa boîte, avec <b>Shady Acres</b> : avant Grimlash, les <b>Children</b> agissent avec leur jeton d'action, un par un (du plus proche de l'Autel au plus éloigné). Même s'ils viennent du lieu, <b>ils enlèvent aussi</b>.",
-   "<b>Grimlash</b> : cible toi ou la victime la plus proche ▸ se déplace <b>d'1 seule case</b> ▸ attaque ▸ si une victime a été tuée, Harvest Madness monte.",
+   "<b>Grimlash</b> : choisit sa cible (toi ou la victime la plus proche) ▸ se déplace <b>d'1 seule case</b> ▸ attaque ▸ si une victime a été tuée, Harvest Madness monte.",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -296,14 +296,14 @@
    [
     "Lire leurs cartes",
     [
-     "La silhouette rouge de plusieurs Raptors = l'icône du Pack : les Raptors isolés se dirigent vers lui pour le rejoindre. Les figurines jaunes = ciblent toi ou la Victime la plus proche. La botte = déplacement. Le couteau = attaque (une par couteau). Le panneau stop avec des figurines = s'arrêtent en atteignant toi ou une Victime. L'œuf fêlé = des Raptors apparaissent.",
+     "La silhouette rouge de plusieurs Raptors = l'icône du Pack : les Raptors isolés se dirigent vers lui pour le rejoindre. Les figurines jaunes = choisit sa cible : toi ou la Victime la plus proche. La botte = déplacement. Le couteau = attaque (une par couteau). Le panneau stop avec des figurines = s'arrêtent en atteignant toi ou une Victime. L'œuf fêlé = des Raptors apparaissent.",
      "\"Pack only\" ne concerne que le Pack ; \"Raptors only\", uniquement les Raptors isolés."
     ]
    ],
    [
     "Finales",
     [
-     "Toutes ont deux lignes : en haut, les Raptors isolés se déplacent vers le Pack et s'arrêtent s'ils atteignent toi ou une Victime ; en bas, le Pack cible toi ou la Victime la plus proche, se déplace et attaque.",
+     "Toutes ont deux lignes : en haut, les Raptors isolés se déplacent vers le Pack et s'arrêtent s'ils atteignent toi ou une Victime ; en bas, le Pack choisit sa cible (toi ou la Victime la plus proche), se déplace et attaque.",
      "<b>Claws Like Knives</b> : le Pack attaque une fois. Le premier dégât de chaque attaque est 💔 : tu perds de la santé directement.",
      "<b>Born Hungry</b> : le Pack attaque deux fois. Quand elle est révélée, pioche une carte Spawn mais fais apparaître les Raptors dans <b>ta</b> case.",
      "<b>Raptor Rush</b> : le Pack attaque 3 fois. Quand elle est révélée, tous les Raptors sur le plateau rejoignent le Pack.",
@@ -322,8 +322,8 @@
    [
     "Cartes Terreur à expliquer",
     [
-     "<b>Protect the Brood</b> (2 exemplaires) : des Raptors apparaissent (œuf) et tu places le Pack là où ils sont apparus. Si la carte Spawn était un <b>0</b>, lance un dé et place le Pack selon le tableau de la carte Raptors. Ensuite le Pack cible toi ou une Victime, se déplace et attaque.",
-     "<b>Share the Feast</b> : le Pack cible, se déplace et attaque ; les Raptors isolés se déplacent vers le Pack (en s'arrêtant sur toi ou une Victime). Si au moins un a rejoint le Pack, le Pack attaque de nouveau.",
+     "<b>Protect the Brood</b> (2 exemplaires) : des Raptors apparaissent (œuf) et tu places le Pack là où ils sont apparus. Si la carte Spawn était un <b>0</b>, lance un dé et place le Pack selon le tableau de la carte Raptors. Ensuite le Pack choisit sa cible (toi ou une Victime), se déplace et attaque.",
+     "<b>Share the Feast</b> : le Pack choisit sa cible, se déplace et attaque ; les Raptors isolés se déplacent vers le Pack (en s'arrêtant sur toi ou une Victime). Si au moins un a rejoint le Pack, le Pack attaque de nouveau.",
      "<b>No Escape</b> : s'il n'y a aucun Raptor sur le plateau, défausse-la et pioche la carte Terreur suivante. Sinon, le Raptor le plus proche de chaque case verte (sortie) y est placé, et ceux sur les sorties attaquent. Si personne n'a été attaqué, 🎭🎭.",
      "<b>Predatory Instincts</b> (Minor Dark Power) : le Pack inflige 1 ✴ supplémentaire par couteau.",
      "<b>Survival Instincts</b> (Minor Dark Power) : à chaque Entretien, le Pack gagne ❤️."
@@ -513,7 +513,7 @@
   "fase_t": "Phase du Killer",
   "fase": [
    "<b>Raptors isolés</b> (Minions), un par un : vont vers la Pack ▸ se déplacent ▸ <b>s'arrêtent</b> en entrant dans une case avec toi ou une victime (le panneau stop) ; s'ils y commencent, ils ne bougent pas. S'ils atteignent la Pack, ils la rejoignent. Un Raptor apparu pendant cette phase n'agit qu'à la suivante.",
-   "<b>La Pack</b> (le Killer) : cible toi ou la victime la plus proche ▸ <b>sur la Finale de base, elle ne se déplace que d'1 case</b> et attaque 1 fois. Avec les autres Finales, elle se déplace de sa valeur de Mouvement et attaque une fois par couteau de la carte (1 sur Claws Like Knives, 2 sur les autres).",
+   "<b>La Pack</b> (le Killer) : choisit sa cible (toi ou la victime la plus proche) ▸ <b>sur la Finale de base, elle ne se déplace que d'1 case</b> et attaque 1 fois. Avec les autres Finales, elle se déplace de sa valeur de Mouvement et attaque une fois par couteau de la carte (1 sur Claws Like Knives, 2 sur les autres).",
    "Dans leur boîte, avec <b>Isla Lagarto</b>, si le T-Rex est sorti : ensuite agit le <b>T-Rex</b> (se déplace de 2, s'arrête en atteignant quelqu'un et <b>tue une personne de sa case</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
@@ -575,8 +575,8 @@
    [
     "Finales",
     [
-     "Toutes ont deux lignes : en haut, Billy cible toi ou la Victime la plus proche, se déplace et attaque ; en bas, l'icône batterie-cœur puis il cible de nouveau.",
-     "<b>Finale de base</b> (l'ours rose) : attaque sans se déplacer ; en bas, batterie-cœur, cible et attaque.",
+     "Toutes ont deux lignes : en haut, Billy choisit sa cible (toi ou la Victime la plus proche), se déplace et attaque ; en bas, d'abord l'icône batterie-cœur, puis Billy choisit de nouveau sa cible.",
+     "<b>Finale de base</b> (l'ours rose) : en haut, Billy attaque sans se déplacer ; en bas, d'abord la batterie-cœur, puis Billy choisit sa cible et attaque.",
      "<b>Encore</b> : en bas, se déplace deux fois et attaque deux fois.",
      "<b>Sizzling Power</b> : si au moins une Power Source est Active, répète son Action du Killer une fois.",
      "<b>It's Showtime!</b> : tu ne peux pas jouer de cartes Réaction s'il y a plus d'un Ennemi dans ta case.",
@@ -601,7 +601,7 @@
      "<b>\"He's Turning Them Back On!\"</b> : s'il n'y a aucune Power Source Inactive, défausse et pioches-en une autre. Sinon, place Billy dans la case la plus proche avec une Power Source Inactive, Active-la et 🎭.",
      "<b>\"Eyes in the Dark\"</b> : le Killer te cible (la Final Girl) et se déplace deux fois ; puis 🎭 une fois par Ennemi dans ta case et les cases adjacentes, jusqu'au nombre de Power Sources Actives.",
      "<b>\"It's a Short Circuit!\"</b> : si aucune case avec une Power Source Active n'a de Victimes, défausse et pioches-en une autre. Sinon, dans chacune de ces cases avec une Victime, une Victime est tuée, les autres paniquent et cette Power Source est Désactivée.",
-     "<b>\"They're Here for Blood!\"</b> : s'il n'y a pas de Buddies ou pas de Victimes, défausse et pioches-en une autre. Sinon, Buddies uniquement : ciblent la Victime la plus proche, se déplacent et attaquent. Si au moins une Victime a été tuée, +🩸."
+     "<b>\"They're Here for Blood!\"</b> : s'il n'y a pas de Buddies ou pas de Victimes, défausse et pioches-en une autre. Sinon, seuls les Buddies agissent : chacun choisit pour cible la Victime la plus proche, se déplace et attaque. Si au moins une Victime a été tuée, +🩸."
     ]
    ]
   ],
@@ -755,8 +755,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "<b>Billy</b>, ligne du haut : cible toi ou la victime la plus proche ▸ attaque (sur la Finale de base, <b>il ne bouge pas</b>).",
-   "Ligne du bas : icône de la pile avec un cœur ▸ cible toi ou la victime la plus proche ▸ attaque.",
+   "Ligne du haut : <b>Billy</b> choisit sa cible (toi ou la victime la plus proche) et l'attaque. Sur la Finale de base, <b>il ne bouge pas</b> : il n'attaque que si la cible est dans sa case.",
+   "Ligne du bas : d'abord la <b>batterie avec un cœur</b> : s'il reste au moins une Power Source active, Billy récupère 1 ❤️. Ensuite Billy choisit de nouveau sa cible et l'attaque encore.",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -848,10 +848,10 @@
     "Finales",
     [
      "En haut la ligne quand elle est <b>Dissimulée</b>, en bas quand elle est <b>Visible</b>.",
-     "<b>Finale de base</b> : Dissimulée, 👁 (carte face visible au Path) et lance un dé : sur 1-4, +🩸. Visible, vise toi ou la Victime la plus proche, attaque et se dissimule (œil barré).",
-     "<b>Rampage</b> : vise toi ou une Victime, se déplace de 3 et attaque 2 fois. Une fois révélée, Volk'ar est révélée (icône Reveal).",
-     "<b>Self-Destruct</b> : retire un jeton Countdown, te vise et attaque. Une fois révélée, Volk'ar est révélée et tu poses 3 jetons <b>Countdown</b> sur la carte. Pour gagner, tu dois tuer Volk'ar <b>et</b> être sur une case de sortie avant que le dernier soit retiré.",
-     "<b>Regenerative Cloaking</b> (Finale Epic) : Dissimulée, 👁 et récupère ❤️❤️. Visible, vise toi ou une Victime, se déplace de 3, attaque et ajoute deux cartes cachées (deux yeux barrés)."
+     "<b>Finale de base</b> : si Volk'ar est dissimulée, 👁 (carte face visible au Path) et lance un dé : sur 1-4, +🩸. Si elle est visible, Volk'ar choisit sa cible (toi ou la Victime la plus proche), attaque et se dissimule (œil barré).",
+     "<b>Rampage</b> : Volk'ar choisit sa cible (toi ou une Victime), se déplace de 3 et attaque 2 fois. Quand ce Finale est révélé, Volk'ar est révélée (icône Reveal).",
+     "<b>Self-Destruct</b> : retire un jeton Countdown ; puis Volk'ar te choisit comme cible et t'attaque. Quand ce Finale est révélé, Volk'ar est révélée et tu poses 3 jetons <b>Countdown</b> sur la carte. Pour gagner, tu dois tuer Volk'ar <b>et</b> être sur une case de sortie avant que le dernier soit retiré.",
+     "<b>Regenerative Cloaking</b> (Finale Epic) : si Volk'ar est dissimulée, 👁 et Volk'ar récupère ❤️❤️. Si elle est visible, Volk'ar choisit sa cible (toi ou une Victime), se déplace de 3, attaque et ajoute deux cartes cachées (deux yeux barrés)."
     ]
    ],
    [
@@ -1087,7 +1087,7 @@
   "fase_t": "Phase du Killer",
   "fase": [
    "Si la phase commence avec Volk'ar <b>caché</b>, ligne du haut : une carte Movement face visible sur le Path (l'œil) ▸ lance un 🎲 : sur 1-4, +🩸.",
-   "S'il est <b>visible</b>, ligne du bas : cible toi ou la victime la plus proche ▸ attaque ▸ se cache (l'œil barré).",
+   "S'il est <b>visible</b>, ligne du bas : choisit sa cible (toi ou la victime la plus proche) ▸ attaque ▸ se cache (l'œil barré).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1134,11 +1134,11 @@
    [
     "Finales",
     [
-     "Toutes : Ursula vise toi ou la Victime la plus proche, se déplace et attaque.",
-     "<b>It Wants You!</b> : te vise <b>toi</b>, se déplace et attaque 2 fois.",
+     "Toutes : Ursula choisit sa cible (toi ou la Victime la plus proche), se déplace et attaque.",
+     "<b>It Wants You!</b> : Ursula te choisit comme cible, <b>toi</b>, se déplace et t'attaque 2 fois.",
      "<b>Spiritual Attack</b> : si Ursula t'attaque, tu perds aussi 💔 après l'attaque.",
      "<b>Hell on Earth</b> : une fois révélée, 🩸 monte au niveau maximum.",
-     "<b>Legions of Hell</b> (Finale Epic) : vise, se déplace et attaque, puis recommence. Chaque fois qu'une Victime meurt, 🎭."
+     "<b>Legions of Hell</b> (Finale Epic) : Ursula choisit sa cible, se déplace et attaque, puis recommence. Chaque fois qu'une Victime meurt, 🎭."
     ]
    ],
    [
@@ -1155,7 +1155,7 @@
    [
     "Cartes Terreur",
     [
-     "<b>\"You Don't Belong Here.\"</b> : s'il n'y a pas de Victimes, défausse-la et pioche-en une autre. Sinon, vise la Victime la plus proche, se déplace et attaque. Si aucune ne meurt, +🩸.",
+     "<b>\"You Don't Belong Here.\"</b> : s'il n'y a pas de Victimes, défausse-la et pioche-en une autre. Sinon, Ursula choisit pour cible la Victime la plus proche, se déplace et attaque. Si aucune ne meurt, +🩸.",
      "<b>\"Leave Her! Take Me!\"</b> : place Ursula sur ta case. Si tu as au moins 3 de santé, tu peux tomber à 1 pour gagner une bénédiction 🙏. Un échange : beaucoup de santé contre un pas vers la victoire.",
      "<b>\"God Exists, and So Does Satan.\"</b> : place Ursula sur ta case. Jusqu'à la fin de la prochaine phase d'Action tu peux dépasser ta limite de main. Prends une carte <b>Expel Demon</b> et choisis : une carte <b>Guard</b>, une <b>Furious Strike</b> ou ⊘🎭. Puis elle t'attaque.",
      "<b>\"Serpents Are a Symbol of Satan.\"</b> : un <b>Serpent</b> apparaît (1 ❤️). Tu peux jouer des cartes Action qui infligent des dégâts pour le tuer. S'il est encore vivant, tu subis ✴ égal à l'Attaque d'Ursula moins 1 (minimum 1) et tu peux te défendre. Si tu subis des dégâts, +🩸. Puis le Serpent disparaît.",
@@ -1320,7 +1320,7 @@
    ],
    [
     "Demonic Crocodile",
-    "Place le jeton <b>Crocodile</b> dans le <b>Museum</b>. Les Ennemis ne peuvent ni le cibler ni le tuer, mais toi tu peux l'attaquer et le tuer. Mouvement, Attaque et santé de 1. À la fin de la phase du Killer, il cible la Final Girl, se déplace et attaque. Puis toutes les Victimes de sa case paniquent."
+    "Place le jeton <b>Crocodile</b> dans le <b>Museum</b>. Les Ennemis ne peuvent ni le cibler ni le tuer, mais toi tu peux l'attaquer et le tuer. Mouvement, Attaque et santé de 1. À la fin de la phase du Killer, le Crocodile choisit pour cible la Final Girl, se déplace et attaque. Puis toutes les Victimes de sa case paniquent."
    ],
    [
     "The Quebecer",
@@ -1333,7 +1333,7 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "<b>Ursula</b> (possédée par Berith), avec la Finale de base : cible toi ou la victime la plus proche ▸ attaque. <b>Elle ne se déplace pas</b> : la ligne n'a pas de botte. Avec les autres Finales, elle se déplace et attaque autant de fois que l'indique la carte.",
+   "<b>Ursula</b> (possédée par Berith), avec la Finale de base : choisit sa cible (toi ou la victime la plus proche) ▸ attaque. <b>Elle ne se déplace pas</b> : la ligne n'a pas de botte. Avec les autres Finales, elle se déplace et attaque autant de fois que l'indique la carte.",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1375,9 +1375,9 @@
    [
     "Finales",
     [
-     "<b>Llueven Lunáticos</b> : en haut, elle vient vers toi, se déplace et attaque 2 fois. En bas, 2 Lunáticos apparaissent dans son lieu, elle va vers la Victime ou vers toi et attaque. S'il n'y a aucun Lunático quand elle est révélée, 2 apparaissent dans le lieu de Ratchet Lady.",
-     "<b>Alimentando la Locura</b> : en haut, elle y va, se déplace et attaque. En bas, Ratchet Lady récupère ❤️, puis y va, se déplace et attaque. Au début de chaque phase du Killer, s'il n'y a aucun Lunático, un apparaît dans son lieu.",
-     "<b>Sujetadla</b> : en haut, elle vient vers toi et se déplace. En bas, elle vient vers toi, se déplace et attaque 2 fois. Quand elle est révélée, toutes les Victimes restantes deviennent des Lunáticos et toutes les cartes Action Calmar sont retirées de la partie."
+     "<b>Llueven Lunáticos</b> : en haut, Ratchet Lady te choisit comme cible, se déplace et attaque 2 fois. En bas, 2 Lunáticos apparaissent dans son lieu ; puis Ratchet Lady choisit sa cible (la Victime ou toi) et attaque. S'il n'y a aucun Lunático quand ce Finale est révélé, 2 apparaissent dans le lieu de Ratchet Lady.",
+     "<b>Alimentando la Locura</b> : en haut, Ratchet Lady choisit sa cible, se déplace et attaque. En bas, Ratchet Lady récupère ❤️, puis choisit de nouveau sa cible, se déplace et attaque. Au début de chaque phase du Killer, s'il n'y a aucun Lunático, un apparaît dans son lieu.",
+     "<b>Sujetadla</b> : en haut, Ratchet Lady te choisit comme cible et se déplace. En bas, Ratchet Lady te choisit de nouveau comme cible, se déplace et attaque 2 fois. Quand ce Finale est révélé, toutes les Victimes restantes deviennent des Lunáticos et toutes les cartes Action Calmar sont retirées de la partie."
     ]
    ],
    [
@@ -1553,8 +1553,8 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "Ligne <b>M</b> : les <b>Lunatiques</b> (Minions) te ciblent ▸ se déplacent.",
-   "Ligne <b>K</b> : <b>Ratchet Lady</b> cible toi ou la victime la plus proche ▸ attaque (<b>sans bouger</b>).",
+   "Ligne <b>M</b> : les <b>Lunatiques</b> (Minions) te choisissent comme cible ▸ se déplacent vers toi.",
+   "Ligne <b>K</b> : <b>Ratchet Lady</b> choisit sa cible (toi ou la victime la plus proche) ▸ attaque (<b>sans bouger</b>).",
    "Pioche et résous une carte <b>Terror</b>."
   ]
  },
@@ -1614,10 +1614,10 @@
    [
     "Finales (d'après le wiki)",
     [
-     "<b>Hunt Sweet Hunt</b> : l'Actif cible vous ou une Victime, se déplace deux fois, attaque et 🔺. Chaque attaque fait 1 ✴ de plus.",
-     "<b>You're Gonna Die</b> : l'Actif cible, se déplace et attaque ; 🔻 ; puis le nouvel Actif cible, se déplace et attaque.",
-     "<b>Release the Beast</b> : <b>tous</b> les Tueurs ciblent, se déplacent et attaquent. Dès lors, tous comptent comme Actifs jusqu'à la fin de la partie ; résolvez leurs actions de haut en bas.",
-     "<b>We Know Where You Live</b> (Epic Finale) : l'Actif cible, se déplace, attaque deux fois et 🔺. À sa révélation, tous les Tueurs ciblent, se déplacent et attaquent."
+     "<b>Hunt Sweet Hunt</b> : le Tueur Actif choisit sa cible (vous ou une Victime), se déplace deux fois, attaque et 🔺. Chaque attaque fait 1 ✴ de plus.",
+     "<b>You're Gonna Die</b> : le Tueur Actif choisit sa cible, se déplace et attaque ; 🔻 ; puis le nouvel Actif choisit sa cible, se déplace et attaque.",
+     "<b>Release the Beast</b> : <b>tous</b> les Tueurs choisissent leur cible, se déplacent et attaquent. Dès lors, tous comptent comme Actifs jusqu'à la fin de la partie ; résolvez leurs actions de haut en bas.",
+     "<b>We Know Where You Live</b> (Epic Finale) : le Tueur Actif choisit sa cible, se déplace, attaque deux fois et 🔺. Quand ce Finale est révélé, tous les Tueurs choisissent leur cible, se déplacent et attaquent."
     ]
    ],
    [
@@ -1632,12 +1632,12 @@
    [
     "Cartes de Terreur à expliquer (d'après le wiki)",
     [
-     "<b>\"They will hunt you\"</b> (x2) : placez l'Actif dans votre case et il vous attaque. Puis 🔻 et le nouveau vous cible et se déplace ; encore 🔻 et pareil.",
-     "<b>\"Where are they coming from?\"</b> : l'Actif cible, se déplace deux fois, attaque et 🔺. S'il n'y a pas de Victimes, défaussez et piochez-en une autre. Sinon, placez l'Actif avec la Victime la plus éloignée et il l'attaque.",
-     "<b>\"Go away!!!\"</b> : chaque Tueur dans votre case ou une case avec une Victime subit 1 ✴. Chacun blessé ainsi cible vous ou une Victime et attaque. Puis piochez un Événement.",
+     "<b>\"They will hunt you\"</b> (x2) : placez le Tueur Actif dans votre case et il vous attaque. Puis 🔻 et le nouvel Actif vous choisit comme cible et se déplace ; encore 🔻 et l'Actif suivant fait de même.",
+     "<b>\"Where are they coming from?\"</b> : le Tueur Actif choisit sa cible, se déplace deux fois, attaque et 🔺. S'il n'y a pas de Victimes, défaussez et piochez-en une autre. Sinon, placez l'Actif avec la Victime la plus éloignée et il l'attaque.",
+     "<b>\"Go away!!!\"</b> : chaque Tueur dans votre case ou une case avec une Victime subit 1 ✴. Chaque Tueur blessé ainsi choisit sa cible (vous ou une Victime) et attaque. Puis piochez un Événement.",
      "<b>\"They're everywhere!\"</b> : trois actions à la suite, avec 🔺 avant la 2e et la 3e. C'est celle de l'exemple du livret.",
      "<b>Amphetamines</b> (Minor Dark Power, 2 PV bonus) : au début de la phase du Killer, le Tueur avec le moins de PV en récupère 2.",
-     "<b>Coordinated Attack</b> (Minor Dark Power, 2 PV bonus) : à la fin de chaque phase du Killer, 🔺 et le nouvel Actif cible vous ou une Victime, se déplace et attaque."
+     "<b>Coordinated Attack</b> (Minor Dark Power, 2 PV bonus) : à la fin de chaque phase du Killer, 🔺 et le nouveau Tueur Actif choisit sa cible (vous ou une Victime), se déplace et attaque."
     ]
    ]
   ],
@@ -1877,7 +1877,7 @@
   ],
   "fase_t": "Phase du Killer",
   "fase": [
-   "<b>Finale de base : «Tous les Tueurs»</b> ▸ chacun des trois cible toi ou la victime la plus proche ▸ attaque. <b>Aucun ne se déplace</b> : la ligne n'a pas de botte. On résout de haut en bas du plateau du Killer ; le jeton de Tueur Actif ne change pas. Avec les autres Finales, regarde leur ligne : ce qui n'indique pas «tous les Tueurs» est fait <b>seulement par le Tueur Actif</b> (se déplacer avec la botte, être placé).",
+   "<b>Finale de base : «Tous les Tueurs»</b> ▸ chacun des trois choisit sa cible (toi ou la victime la plus proche) ▸ attaque. <b>Aucun ne se déplace</b> : la ligne n'a pas de botte. On résout de haut en bas du plateau du Killer ; le jeton de Tueur Actif ne change pas. Avec les autres Finales, regarde leur ligne : ce qui n'indique pas «tous les Tueurs» est fait <b>seulement par le Tueur Actif</b> (se déplacer avec la botte, être placé).",
    "Si la ligne a 🔺 ou 🔻, le jeton passe au Killer suivant et c'est le nouveau Killer Actif qui fait la suite.",
    "Pioche et résous une carte <b>Terror</b>."
   ]

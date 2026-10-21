@@ -29,11 +29,11 @@
    [
     "Finales",
     [
-     "<b>Basis-Finale</b>: zielt auf dich oder das nächste Opfer, bewegt sich 1 Feld und greift an. Wurde ein Opfer getötet, 🎃 (Harvest Madness steigt).",
-     "<b>Hunger of the Old Gods</b>: zielt, bewegt sich 2 und greift 2-mal an. Am Ende der Killerphase bewegen sich alle Opfer 1 Feld auf Grimlash zu.",
-     "<b>Withered Harbinger</b>: zielt, bewegt sich und greift 2-mal an. Für jedes Feld, das Grimlash sich in der Killerphase bewegt, verlierst du ⌛.",
-     "<b>Ancient Abomination</b>: zielt, bewegt sich 2 und greift an. Jedes Mal, wenn er einen Angriff abhandelt, addiere die Harvest-Madness-Stufe zu seinem Angriffswert.",
-     "<b>God of Blood and Grain</b> (episches Finale): zielt auf dich, bewegt sich und greift 2-mal an. Beim Aufdecken sterben alle Opfer."
+     "<b>Basis-Finale</b>: Grimlash wählt sein Ziel (dich oder das nächste Opfer), bewegt sich 1 Feld und greift es an. Wurde ein Opfer getötet, 🎃 (Harvest Madness steigt).",
+     "<b>Hunger of the Old Gods</b>: Grimlash wählt sein Ziel, bewegt sich 2 und greift 2-mal an. Am Ende der Killerphase bewegen sich alle Opfer 1 Feld auf Grimlash zu.",
+     "<b>Withered Harbinger</b>: Grimlash wählt sein Ziel, bewegt sich und greift 2-mal an. Für jedes Feld, das Grimlash sich in der Killerphase bewegt, verlierst du ⌛.",
+     "<b>Ancient Abomination</b>: Grimlash wählt sein Ziel, bewegt sich 2 und greift an. Jedes Mal, wenn Grimlash einen Angriff abhandelt, addiere die Harvest-Madness-Stufe zu seinem Angriffswert.",
+     "<b>God of Blood and Grain</b> (episches Finale): Grimlash wählt dich als Ziel, bewegt sich und greift dich 2-mal an. Beim Aufdecken dieses Finales sterben alle Opfer."
     ]
    ],
    [
@@ -49,7 +49,7 @@
    [
     "Terrorkarten",
     [
-     "<b>\"Something's Wrong with the Kids\"</b>: Die Children behandeln alle 🌾-Felder als benachbart. Dann nur die Children: zielen auf dich oder das nächste Opfer, bewegen sich und handeln das Hände-Symbol ab (Entführung). Danach 🎭.",
+     "<b>\"Something's Wrong with the Kids\"</b>: Die Children behandeln alle 🌾-Felder als benachbart. Dann handeln nur die Children: Jedes wählt sein Ziel (dich oder das nächste Opfer), bewegt sich und handelt das Hände-Symbol ab (Entführung). Danach 🎭.",
      "<b>\"Nobody Knows Where They Take Them...\"</b>: Sind weder Opfer noch Children auf dem Plan, wirf sie ab und zieh die nächste. Sonst geraten alle Opfer auf demselben Feld wie ein Child in Panik. Dann handle für jedes Child mit einem Opfer auf seinem Feld das Hände-Symbol ab, als hättest du eine <b>1</b> gewürfelt."
     ]
    ]
@@ -231,7 +231,7 @@
   "fase_t": "Killer-Phase",
   "fase": [
    "In seiner Box, mit <b>Shady Acres</b>: vor Grimlash handeln die <b>Children</b> mit ihrem Aktionsmarker, einer nach dem anderen (der Altar-nächste zuerst). Obwohl sie zum Ort gehören, <b>entführen sie auch</b>.",
-   "<b>Grimlash</b>: zielt auf dich oder das nächste Opfer ▸ bewegt sich <b>nur 1 Feld</b> ▸ greift an ▸ wurde ein Opfer getötet, steigt Harvest Madness.",
+   "<b>Grimlash</b>: wählt sein Ziel (dich oder das nächste Opfer) ▸ bewegt sich <b>nur 1 Feld</b> ▸ greift an ▸ wurde ein Opfer getötet, steigt Harvest Madness.",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
@@ -303,7 +303,7 @@
    [
     "Finales",
     [
-     "Alle haben zwei Zeilen: Oben ziehen freie Raptoren zum Pack und halten an, wenn sie dich oder ein Opfer erreichen; unten nimmt das Pack dich oder das nächste Opfer ins Ziel, bewegt sich und greift an.",
+     "Alle haben zwei Zeilen: Oben ziehen freie Raptoren zum Pack und halten an, wenn sie dich oder ein Opfer erreichen; unten wählt das Pack sein Ziel (dich oder das nächste Opfer), bewegt sich und greift an.",
      "<b>Claws Like Knives</b>: Das Pack greift einmal an. Der erste Schaden jedes Angriffs ist 💔: du verlierst direkt Gesundheit.",
      "<b>Born Hungry</b>: Das Pack greift zweimal an. Beim Aufdecken ziehe eine Spawn-Karte, aber lass die Raptoren in <b>deinem</b> Feld erscheinen.",
      "<b>Raptor Rush</b>: Das Pack greift 3-mal an. Beim Aufdecken schließen sich alle Raptoren auf dem Spielplan dem Pack an.",
@@ -322,7 +322,7 @@
    [
     "Terrorkarten, die Erklärung brauchen",
     [
-     "<b>Protect the Brood</b> (2 Exemplare): Raptoren erscheinen (Ei) und du stellst das Pack dorthin, wo sie erschienen sind. War die Spawn-Karte eine <b>0</b>, wirf einen Würfel und platziere das Pack nach der Tabelle der Raptors-Karte. Dann nimmt das Pack dich oder ein Opfer ins Ziel, bewegt sich und greift an.",
+     "<b>Protect the Brood</b> (2 Exemplare): Raptoren erscheinen (Ei) und du stellst das Pack dorthin, wo sie erschienen sind. War die Spawn-Karte eine <b>0</b>, wirf einen Würfel und platziere das Pack nach der Tabelle der Raptors-Karte. Dann wählt das Pack sein Ziel (dich oder ein Opfer), bewegt sich und greift an.",
      "<b>Share the Feast</b>: Das Pack wählt sein Ziel, bewegt sich und greift an; freie Raptoren ziehen zum Pack (und halten bei dir oder einem Opfer an). Hat sich einer dem Pack angeschlossen, greift das Pack erneut an.",
      "<b>No Escape</b>: Sind keine Raptoren auf dem Spielplan, wirf sie ab und ziehe die nächste Terrorkarte. Sonst wird der jeweils nächste Raptor auf jedes grüne (Ausgangs-)Feld gestellt, und die auf Ausgängen greifen an. Wurde niemand angegriffen: 🎭🎭.",
      "<b>Predatory Instincts</b> (kleine Dark Power): Das Pack verursacht 1 zusätzlichen ✴ pro Messer.",
@@ -513,7 +513,7 @@
   "fase_t": "Killer-Phase",
   "fase": [
    "<b>Einzelne Raptors</b> (Minions), einer nach dem anderen: Richtung Pack ▸ bewegen sich ▸ <b>halten an</b>, sobald sie ein Feld mit dir oder einem Opfer betreten (das Stoppschild); starten sie dort, bewegen sie sich nicht. Erreichen sie die Pack, schließen sie sich ihr an. Ein Raptor, der in dieser Phase erscheint, handelt erst in der nächsten.",
-   "<b>Die Pack</b> (der Killer): zielt auf dich oder das nächste Opfer ▸ <b>auf der Basis-Finale bewegt sie sich nur 1 Feld</b> und greift 1-mal an. Mit den anderen Finales bewegt sie sich um ihren Bewegungswert und greift einmal pro Messer der Karte an (1 bei Claws Like Knives, 2 bei den übrigen).",
+   "<b>Die Pack</b> (der Killer): wählt ihr Ziel (dich oder das nächste Opfer) ▸ <b>auf der Basis-Finale bewegt sie sich nur 1 Feld</b> und greift 1-mal an. Mit den anderen Finales bewegt sie sich um ihren Bewegungswert und greift einmal pro Messer der Karte an (1 bei Claws Like Knives, 2 bei den übrigen).",
    "In ihrer Box, mit <b>Isla Lagarto</b>, wenn der T-Rex ausgebrochen ist: danach handelt der <b>T-Rex</b> (bewegt sich 2, hält bei jemandem an und <b>tötet einen in seinem Feld</b>).",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
@@ -575,8 +575,8 @@
    [
     "Finales",
     [
-     "Alle haben zwei Zeilen: Oben nimmt Billy dich oder das nächste Opfer ins Ziel, bewegt sich und greift an; unten das Batterie-mit-Herz-Symbol, dann wählt er erneut ein Ziel.",
-     "<b>Base Finale</b> (der rosa Bär): greift an, ohne sich zu bewegen; unten Batterie mit Herz, Ziel wählen und angreifen.",
+     "Alle haben zwei Zeilen: Oben wählt Billy sein Ziel (dich oder das nächste Opfer), bewegt sich und greift an; unten zuerst das Batterie-mit-Herz-Symbol, dann wählt Billy erneut ein Ziel.",
+     "<b>Base Finale</b> (der rosa Bär): Oben greift Billy an, ohne sich zu bewegen; unten zuerst Batterie mit Herz, dann wählt Billy sein Ziel und greift an.",
      "<b>Encore</b>: unten bewegt er sich zweimal und greift zweimal an.",
      "<b>Sizzling Power</b>: Ist mindestens eine Power Source aktiv, wiederhole seine Killeraktion einmal.",
      "<b>It's Showtime!</b>: Du kannst keine Reaktionskarten spielen, wenn mehr als ein Feind in deinem Feld ist.",
@@ -601,7 +601,7 @@
      "<b>\"He's Turning Them Back On!\"</b>: Gibt es keine inaktiven Power Sources, abwerfen und eine andere ziehen. Sonst stelle Billy in das nächste Feld mit einer inaktiven, aktiviere sie und 🎭.",
      "<b>\"Eyes in the Dark\"</b>: Der Killer nimmt dich (das Final Girl) ins Ziel und bewegt sich zweimal; dann 🎭 einmal pro Feind in deinem Feld und den angrenzenden Feldern, höchstens so oft, wie Power Sources aktiv sind.",
      "<b>\"It's a Short Circuit!\"</b>: Hat kein Feld mit aktiver Power Source Opfer, abwerfen und eine andere ziehen. Sonst wird in jedem solchen Feld mit Opfer ein Opfer getötet, die übrigen geraten in Panik und diese Power Source wird deaktiviert.",
-     "<b>\"They're Here for Blood!\"</b>: Gibt es keine Buddies oder keine Opfer, abwerfen und eine andere ziehen. Sonst nur Buddies: Ziel ist das nächste Opfer, bewegen und angreifen. Wurde mindestens ein Opfer getötet, +🩸."
+     "<b>\"They're Here for Blood!\"</b>: Gibt es keine Buddies oder keine Opfer, abwerfen und eine andere ziehen. Sonst handeln nur die Buddies: Jeder wählt das nächste Opfer als Ziel, bewegt sich und greift an. Wurde mindestens ein Opfer getötet, +🩸."
     ]
    ]
   ],
@@ -755,8 +755,8 @@
   ],
   "fase_t": "Killer-Phase",
   "fase": [
-   "<b>Billy</b>, obere Zeile: zielt auf dich oder das nächste Opfer ▸ greift an (auf der Basis-Finale <b>bewegt er sich nicht</b>).",
-   "Untere Zeile: Symbol der Batterie mit Herz ▸ zielt auf dich oder das nächste Opfer ▸ greift an.",
+   "Obere Zeile: <b>Billy</b> wählt sein Ziel (dich oder das nächste Opfer) und greift es an. Auf der Basis-Finale <b>bewegt er sich nicht</b>: Er greift nur an, wenn das Ziel in seinem Feld ist.",
+   "Untere Zeile: zuerst die <b>Batterie mit Herz</b>: Ist noch mindestens eine Power Source aktiv, heilt Billy 1 ❤️. Dann wählt Billy erneut sein Ziel und greift es noch einmal an.",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
@@ -848,10 +848,10 @@
     "Finales",
     [
      "Oben die Zeile für <b>verborgen</b>, unten für <b>sichtbar</b>.",
-     "<b>Basis-Finale</b>: verborgen, 👁 (offene Karte in den Pfad) und würfle: bei 1-4 +🩸. Sichtbar, zielt auf dich oder das nächste Opfer, greift an und verbirgt sich (durchgestrichenes Auge).",
-     "<b>Rampage</b>: zielt auf dich oder ein Opfer, bewegt sich 3 und greift 2-mal an. Beim Aufdecken wird Volk'ar aufgedeckt (Reveal-Symbol).",
-     "<b>Self-Destruct</b>: entferne einen Countdown-Marker, zielt auf dich und greift an. Beim Aufdecken wird Volk'ar aufgedeckt und du legst 3 <b>Countdown</b>-Marker auf die Karte. Um zu gewinnen, musst du Volk'ar töten <b>und</b> auf einem Ausgangsfeld stehen, bevor der letzte entfernt wird.",
-     "<b>Regenerative Cloaking</b> (episches Finale): verborgen, 👁 und heilt ❤️❤️. Sichtbar, zielt auf dich oder ein Opfer, bewegt sich 3, greift an und fügt zwei verdeckte Karten hinzu (zwei durchgestrichene Augen)."
+     "<b>Basis-Finale</b>: Ist Volk'ar verborgen, 👁 (offene Karte in den Pfad) und würfle: bei 1-4 +🩸. Ist Volk'ar sichtbar, wählt sie ihr Ziel (dich oder das nächste Opfer), greift an und verbirgt sich (durchgestrichenes Auge).",
+     "<b>Rampage</b>: Volk'ar wählt ihr Ziel (dich oder ein Opfer), bewegt sich 3 und greift 2-mal an. Beim Aufdecken dieses Finales wird Volk'ar aufgedeckt (Reveal-Symbol).",
+     "<b>Self-Destruct</b>: Entferne einen Countdown-Marker; dann wählt Volk'ar dich als Ziel und greift dich an. Beim Aufdecken dieses Finales wird Volk'ar aufgedeckt und du legst 3 <b>Countdown</b>-Marker auf die Karte. Um zu gewinnen, musst du Volk'ar töten <b>und</b> auf einem Ausgangsfeld stehen, bevor der letzte entfernt wird.",
+     "<b>Regenerative Cloaking</b> (episches Finale): Ist Volk'ar verborgen, 👁 und Volk'ar heilt ❤️❤️. Ist sie sichtbar, wählt Volk'ar ihr Ziel (dich oder ein Opfer), bewegt sich 3, greift an und fügt zwei verdeckte Karten hinzu (zwei durchgestrichene Augen)."
     ]
    ],
    [
@@ -1087,7 +1087,7 @@
   "fase_t": "Killer-Phase",
   "fase": [
    "Beginnt die Phase mit Volk'ar <b>verborgen</b>, obere Zeile: eine Movement-Karte offen an den Path (das Auge) ▸ wirf einen 🎲: bei 1-4 +🩸.",
-   "Ist Volk'ar <b>sichtbar</b>, untere Zeile: zielt auf dich oder das nächste Opfer ▸ greift an ▸ verbirgt sich (das durchgestrichene Auge).",
+   "Ist Volk'ar <b>sichtbar</b>, untere Zeile: wählt ihr Ziel (dich oder das nächste Opfer) ▸ greift an ▸ verbirgt sich (das durchgestrichene Auge).",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
@@ -1134,11 +1134,11 @@
    [
     "Finales",
     [
-     "Alle: Ursula zielt auf dich oder das nächste Opfer, bewegt sich und greift an.",
-     "<b>It Wants You!</b>: zielt auf <b>dich</b>, bewegt sich und greift 2-mal an.",
+     "Alle: Ursula wählt ihr Ziel (dich oder das nächste Opfer), bewegt sich und greift an.",
+     "<b>It Wants You!</b>: Ursula wählt <b>dich</b> als Ziel, bewegt sich und greift dich 2-mal an.",
      "<b>Spiritual Attack</b>: Greift Ursula dich an, verlierst du nach dem Angriff zusätzlich 💔.",
      "<b>Hell on Earth</b>: Beim Aufdecken steigt 🩸 auf die höchste Stufe.",
-     "<b>Legions of Hell</b> (episches Finale): zielt, bewegt sich und greift an, dann noch einmal. Jedes Mal, wenn ein Opfer stirbt, 🎭."
+     "<b>Legions of Hell</b> (episches Finale): Ursula wählt ihr Ziel, bewegt sich und greift an, dann noch einmal. Jedes Mal, wenn ein Opfer stirbt, 🎭."
     ]
    ],
    [
@@ -1155,7 +1155,7 @@
    [
     "Terrorkarten",
     [
-     "<b>\"You Don't Belong Here.\"</b>: Gibt es keine Opfer, wirf ab und zieh eine andere. Sonst zielt sie auf das nächste Opfer, bewegt sich und greift an. Stirbt keins, +🩸.",
+     "<b>\"You Don't Belong Here.\"</b>: Gibt es keine Opfer, wirf ab und zieh eine andere. Sonst wählt Ursula das nächste Opfer als Ziel, bewegt sich und greift an. Stirbt keins, +🩸.",
      "<b>\"Leave Her! Take Me!\"</b>: Stell Ursula auf dein Feld. Hast du mindestens 3 Gesundheit, kannst du auf 1 fallen und einen Segen 🙏 bekommen. Ein Tausch: viel Gesundheit gegen einen Schritt zum Sieg.",
      "<b>\"God Exists, and So Does Satan.\"</b>: Stell Ursula auf dein Feld. Bis zum Ende der nächsten Aktionsphase darfst du dein Handlimit überschreiten. Nimm eine <b>Expel Demon</b>-Karte und wähle: eine <b>Guard</b>-, eine <b>Furious Strike</b>-Karte oder ⊘🎭. Dann greift sie dich an.",
      "<b>\"Serpents Are a Symbol of Satan.\"</b>: Eine <b>Schlange</b> erscheint (1 ❤️). Du kannst Schaden verursachende Aktionskarten spielen, um sie zu töten. Lebt sie noch, erhältst du ✴ in Höhe von Ursulas Angriff minus 1 (mindestens 1) und darfst dich verteidigen. Erhältst du Schaden, +🩸. Dann verschwindet die Schlange.",
@@ -1320,7 +1320,7 @@
    ],
    [
     "Demonic Crocodile",
-    "Lege den <b>Crocodile</b>-Marker ins <b>Museum</b>. Feinde können es weder ins Ziel nehmen noch töten, aber du darfst es angreifen und töten. Bewegung, Angriff und Gesundheit von 1. Am Ende der Killerphase nimmt es das Final Girl ins Ziel, bewegt sich und greift an. Dann geraten alle Opfer in seinem Feld in Panik."
+    "Lege den <b>Crocodile</b>-Marker ins <b>Museum</b>. Feinde können es weder ins Ziel nehmen noch töten, aber du darfst es angreifen und töten. Bewegung, Angriff und Gesundheit von 1. Am Ende der Killerphase wählt das Krokodil das Final Girl als Ziel, bewegt sich und greift an. Dann geraten alle Opfer in seinem Feld in Panik."
    ],
    [
     "The Quebecer",
@@ -1333,7 +1333,7 @@
   ],
   "fase_t": "Killer-Phase",
   "fase": [
-   "<b>Ursula</b> (von Berith besessen), mit der Basis-Finale: zielt auf dich oder das nächste Opfer ▸ greift an. <b>Sie bewegt sich nicht</b>: die Zeile hat keinen Stiefel. Mit den anderen Finales bewegt sie sich und greift so oft an, wie die Karte sagt.",
+   "<b>Ursula</b> (von Berith besessen), mit der Basis-Finale: wählt ihr Ziel (dich oder das nächste Opfer) ▸ greift an. <b>Sie bewegt sich nicht</b>: die Zeile hat keinen Stiefel. Mit den anderen Finales bewegt sie sich und greift so oft an, wie die Karte sagt.",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
@@ -1375,9 +1375,9 @@
    [
     "Finales",
     [
-     "<b>Llueven Lunáticos</b>: Oben geht sie auf dich los, bewegt sich und greift 2-mal an. Unten erscheinen 2 Lunáticos an ihrem Ort, sie geht auf das Opfer oder dich los und greift an. Gibt es beim Aufdecken keine Lunáticos, erscheinen 2 am Ort von Ratchet Lady.",
-     "<b>Alimentando la Locura</b>: Oben geht sie los, bewegt sich und greift an. Unten heilt Ratchet Lady ❤️, dann geht sie los, bewegt sich und greift an. Zu Beginn jeder Killerphase erscheint an ihrem Ort ein Lunático, falls keiner da ist.",
-     "<b>Sujetadla</b>: Oben geht sie auf dich los und bewegt sich. Unten geht sie auf dich los, bewegt sich und greift 2-mal an. Beim Aufdecken werden alle übrigen Opfer zu Lunáticos und alle Calmar-Aktionskarten werden aus dem Spiel entfernt."
+     "<b>Llueven Lunáticos</b>: Oben wählt Ratchet Lady dich als Ziel, bewegt sich und greift 2-mal an. Unten erscheinen 2 Lunáticos an ihrem Ort; dann wählt Ratchet Lady ihr Ziel (das Opfer oder dich) und greift an. Gibt es beim Aufdecken dieses Finales keine Lunáticos, erscheinen 2 am Ort von Ratchet Lady.",
+     "<b>Alimentando la Locura</b>: Oben wählt Ratchet Lady ihr Ziel, bewegt sich und greift an. Unten heilt Ratchet Lady ❤️, dann wählt sie erneut ein Ziel, bewegt sich und greift an. Zu Beginn jeder Killerphase erscheint an ihrem Ort ein Lunático, falls keiner da ist.",
+     "<b>Sujetadla</b>: Oben wählt Ratchet Lady dich als Ziel und bewegt sich. Unten wählt Ratchet Lady erneut dich als Ziel, bewegt sich und greift 2-mal an. Beim Aufdecken dieses Finales werden alle übrigen Opfer zu Lunáticos und alle Calmar-Aktionskarten werden aus dem Spiel entfernt."
     ]
    ],
    [
@@ -1553,8 +1553,8 @@
   ],
   "fase_t": "Killer-Phase",
   "fase": [
-   "Zeile <b>M</b>: die <b>Lunatics</b> (Minions) zielen auf dich ▸ bewegen sich.",
-   "Zeile <b>K</b>: <b>Ratchet Lady</b> zielt auf dich oder das nächste Opfer ▸ greift an (<b>ohne Bewegung</b>).",
+   "Zeile <b>M</b>: die <b>Lunatics</b> (Minions) wählen dich als Ziel ▸ bewegen sich auf dich zu.",
+   "Zeile <b>K</b>: <b>Ratchet Lady</b> wählt ihr Ziel (dich oder das nächste Opfer) ▸ greift an (<b>ohne Bewegung</b>).",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]
  },
@@ -1614,10 +1614,10 @@
    [
     "Finales (laut Wiki)",
     [
-     "<b>Hunt Sweet Hunt</b>: der aktive Killer zielt auf dich oder ein Opfer, bewegt sich zweimal, greift an und 🔺. Jeder Angriff macht 1 ✴ mehr.",
-     "<b>You're Gonna Die</b>: der aktive Killer zielt, bewegt sich und greift an; 🔻; dann zielt, bewegt sich und greift der neue aktive an.",
-     "<b>Release the Beast</b>: <b>alle</b> Killer zielen, bewegen sich und greifen an. Ab dann gelten alle bis Spielende als aktiv; ihre Aktionen von oben nach unten abhandeln.",
-     "<b>We Know Where You Live</b> (Epic Finale): der aktive Killer zielt, bewegt sich, greift zweimal an und 🔺. Beim Aufdecken zielen, bewegen sich und greifen alle Killer an."
+     "<b>Hunt Sweet Hunt</b>: Der aktive Killer wählt sein Ziel (dich oder ein Opfer), bewegt sich zweimal, greift an und 🔺. Jeder Angriff macht 1 ✴ mehr.",
+     "<b>You're Gonna Die</b>: Der aktive Killer wählt sein Ziel, bewegt sich und greift an; 🔻; dann wählt der neue aktive Killer sein Ziel, bewegt sich und greift an.",
+     "<b>Release the Beast</b>: <b>Alle</b> Killer wählen ihr Ziel, bewegen sich und greifen an. Ab dann gelten alle bis Spielende als aktiv; ihre Aktionen von oben nach unten abhandeln.",
+     "<b>We Know Where You Live</b> (Epic Finale): Der aktive Killer wählt sein Ziel, bewegt sich, greift zweimal an und 🔺. Beim Aufdecken dieses Finales wählen alle Killer ihr Ziel, bewegen sich und greifen an."
     ]
    ],
    [
@@ -1632,12 +1632,12 @@
    [
     "Terror-Karten mit Erklärungsbedarf (laut Wiki)",
     [
-     "<b>\"They will hunt you\"</b> (x2): stelle den aktiven Killer in dein Feld, er greift dich an. Dann 🔻, der neue zielt auf dich und bewegt sich; nochmal 🔻 und dasselbe.",
-     "<b>\"Where are they coming from?\"</b>: der aktive Killer zielt, bewegt sich zweimal, greift an und 🔺. Gibt es keine Opfer, abwerfen und neue ziehen. Sonst stellst du den aktiven Killer zum entferntesten Opfer und er greift es an.",
-     "<b>\"Go away!!!\"</b>: jeder Killer in deinem Feld oder einem Feld mit Opfer erleidet 1 ✴. Jeder so verletzte zielt auf dich oder ein Opfer und greift an. Dann ein Ereignis ziehen.",
+     "<b>\"They will hunt you\"</b> (x2): Stelle den aktiven Killer in dein Feld, er greift dich an. Dann 🔻, der neue aktive Killer wählt dich als Ziel und bewegt sich; nochmal 🔻 und der nächste aktive Killer macht dasselbe.",
+     "<b>\"Where are they coming from?\"</b>: Der aktive Killer wählt sein Ziel, bewegt sich zweimal, greift an und 🔺. Gibt es keine Opfer, abwerfen und neue ziehen. Sonst stellst du den aktiven Killer zum entferntesten Opfer und er greift es an.",
+     "<b>\"Go away!!!\"</b>: Jeder Killer in deinem Feld oder einem Feld mit Opfer erleidet 1 ✴. Jeder so verletzte Killer wählt sein Ziel (dich oder ein Opfer) und greift an. Dann ein Ereignis ziehen.",
      "<b>\"They're everywhere!\"</b>: drei Aktionen hintereinander, mit 🔺 vor der 2. und der 3. Das ist die aus dem Beispiel im Regelheft.",
      "<b>Amphetamines</b> (Minor Dark Power, 2 Bonusleben): zu Beginn der Killer-Phase erhält der Killer mit dem wenigsten Leben 2 zurück.",
-     "<b>Coordinated Attack</b> (Minor Dark Power, 2 Bonusleben): am Ende jeder Killer-Phase 🔺, dann zielt der neue aktive Killer auf dich oder ein Opfer, bewegt sich und greift an."
+     "<b>Coordinated Attack</b> (Minor Dark Power, 2 Bonusleben): Am Ende jeder Killer-Phase 🔺, dann wählt der neue aktive Killer sein Ziel (dich oder ein Opfer), bewegt sich und greift an."
     ]
    ]
   ],
@@ -1877,7 +1877,7 @@
   ],
   "fase_t": "Killer-Phase",
   "fase": [
-   "<b>Basis-Finale: «Alle Killer»</b> ▸ jeder der drei zielt auf dich oder das nächste Opfer ▸ greift an. <b>Keiner bewegt sich</b>: die Zeile hat keinen Stiefel. Von oben nach unten auf dem Killer-Tableau abhandeln; der Marker des Aktiven Killers bleibt. Bei den anderen Finales auf ihre Zeile schauen: alles ohne «alle Killer» macht <b>nur der Aktive Killer</b> (Bewegung mit dem Stiefel, Platzieren).",
+   "<b>Basis-Finale: «Alle Killer»</b> ▸ jeder der drei wählt sein Ziel (dich oder das nächste Opfer) ▸ greift an. <b>Keiner bewegt sich</b>: die Zeile hat keinen Stiefel. Von oben nach unten auf dem Killer-Tableau abhandeln; der Marker des Aktiven Killers bleibt. Bei den anderen Finales auf ihre Zeile schauen: alles ohne «alle Killer» macht <b>nur der Aktive Killer</b> (Bewegung mit dem Stiefel, Platzieren).",
    "Hat die Zeile 🔺 oder 🔻, wandert der Marker zum nächsten Killer, und der neue aktive Killer macht den Rest.",
    "Ziehe eine <b>Terror</b>-Karte und handle sie ab."
   ]

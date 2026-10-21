@@ -45,11 +45,11 @@ GUIAS = [
                     "Si bajas a un nivel inferior, <b>descarta la carta del nivel que dejas</b>. Si luego vuelves a ese nivel, robas otra vez 2 y te quedas 1. Si al robar no quedan bastantes, baraja los descartes de ese nivel.",
                     "Los efectos de <b>una vez por turno</b> se usan girando la carta boca abajo; en el <b>Upkeep</b> vuelve boca arriba."]),
                 ("Finales", [
-                    "<b>Finale básico</b>: va a por ti o a la víctima más cercana, se mueve 1 espacio y ataca. Si ha muerto una víctima, 🎃 (sube Harvest Madness).",
-                    "<b>Hunger of the Old Gods</b>: va, se mueve 2 y ataca 2 veces. Al final de la fase del Killer, todas las víctimas se mueven 1 espacio hacia Grimlash.",
-                    "<b>Withered Harbinger</b>: va, se mueve y ataca 2 veces. Por cada espacio que se mueva Grimlash en la fase del Killer, pierdes ⌛.",
-                    "<b>Ancient Abomination</b>: va, se mueve 2 y ataca. Cada vez que resuelve un ataque, suma el nivel de Harvest Madness a su valor de Ataque.",
-                    "<b>God of Blood and Grain</b> (Epic Finale): va a por ti, se mueve y ataca 2 veces. Al revelarlo, mueren todas las víctimas."]),
+                    "<b>Finale básico</b>: Grimlash elige objetivo (tú o la víctima más cercana), se mueve 1 espacio y le ataca. Si ha muerto una víctima, 🎃 (sube Harvest Madness).",
+                    "<b>Hunger of the Old Gods</b>: Grimlash elige objetivo, se mueve 2 y ataca 2 veces. Al final de la fase del Killer, todas las víctimas se mueven 1 espacio hacia Grimlash.",
+                    "<b>Withered Harbinger</b>: Grimlash elige objetivo, se mueve y ataca 2 veces. Por cada espacio que se mueva Grimlash en la fase del Killer, pierdes ⌛.",
+                    "<b>Ancient Abomination</b>: Grimlash elige objetivo, se mueve 2 y ataca. Cada vez que Grimlash resuelve un ataque, suma el nivel de Harvest Madness a su valor de Ataque.",
+                    "<b>God of Blood and Grain</b> (Epic Finale): Grimlash te elige a ti como objetivo, se mueve y te ataca 2 veces. Al revelar esta Finale, mueren todas las víctimas."]),
                 ("Poderes oscuros", [
                     "<b>Root-Bound Curse</b>: cada vez que resuelves ❤️ para curarte o bajar Harvest Madness, Grimlash recupera la mitad de esos ❤️, redondeando arriba.",
                     "<b>Rite of the Corrupted</b>: en el Mantenimiento, 🎃 si Harvest Madness no ha subido este turno.",
@@ -57,7 +57,7 @@ GUIAS = [
                     "<b>Fields of Madness</b> (Epic Dark Power): tus tiradas de Horror cambian según el nivel de Harvest Madness. Nivel 0 o 1: un dado menos (mínimo 1). Nivel 2: nada. Nivel 3: un dado más.",
                     "<b>Burning Sickle</b> (Minor Dark Power): cada vez que Grimlash te hace daño, también hace ✴ a cada víctima de tu espacio."]),
                 ("Cartas de Terror", [
-                    "<b>\"Something's Wrong with the Kids\"</b>: los Children tratan todos los espacios 🌾 como adyacentes entre sí. Luego, solo los Children: van a por ti o a la víctima más cercana, se mueven y resuelven el icono de las manos (abducción). Después, 🎭.",
+                    "<b>\"Something's Wrong with the Kids\"</b>: los Children tratan todos los espacios 🌾 como adyacentes entre sí. Luego actúan solo los Children: cada uno elige objetivo (tú o la víctima más cercana), se mueve y resuelve el icono de las manos (abducción). Después, 🎭.",
                     "<b>\"Nobody Knows Where They Take Them...\"</b>: si no hay víctimas ni Children en el tablero, descártala y roba otra. Si no, entran en pánico todas las víctimas que estén en el mismo espacio que un Child. Después, por cada Child con una víctima en su espacio, resuelve el icono de las manos como si hubieras sacado un <b>1</b>."]),
             ],
             "err_m_t": "Errores frecuentes",
@@ -268,10 +268,10 @@ GUIAS = [
                     "Tira un dado para saber dónde aparecen: <b>1</b> tu espacio · <b>2</b> el espacio verde (salida) más cercano a la Pack · <b>3</b> el 🔧 más cercano a la Pack · <b>4</b> el espacio verde más lejano de la Pack · <b>5</b> el 🔧 más lejano de la Pack · <b>6</b> el espacio más lejano a ti.",
                     "Cada Raptor suelto: 1 ❤️, ataque de 1 ✴ y movimiento igual al de la Pack. No se mueven si empiezan contigo o con una víctima, y se paran al entrar en un espacio contigo o con una víctima."]),
                 ("Cómo leer sus cartas", [
-                    "La silueta roja de varios Raptors = el icono de la Pack: los Raptors sueltos van hacia ella para unirse. Las figuras amarillas = a por ti o a por la víctima más cercana. La bota = se mueve. El cuchillo = ataca (uno por cada cuchillo). La señal de stop con figuras = se para al llegar a ti o a una víctima. El huevo roto = aparición de Raptors.",
+                    "La silueta roja de varios Raptors = el icono de la Pack: los Raptors sueltos van hacia ella para unirse. Las figuras amarillas = elige objetivo: tú o la víctima más cercana. La bota = se mueve. El cuchillo = ataca (uno por cada cuchillo). La señal de stop con figuras = se para al llegar a ti o a una víctima. El huevo roto = aparición de Raptors.",
                     "\"Pack only\" solo lo hace la Pack; \"Raptors only\", solo los sueltos."]),
                 ("Finales", [
-                    "Todos tienen dos filas: arriba los Raptors sueltos van hacia la Pack y se paran si llegan a ti o a una víctima; abajo la Pack va a por ti o a la víctima más cercana, se mueve y ataca.",
+                    "Todos tienen dos filas: arriba los Raptors sueltos van hacia la Pack y se paran si llegan a ti o a una víctima; abajo la Pack elige objetivo (tú o la víctima más cercana), se mueve y ataca.",
                     "<b>Claws Like Knives</b>: la Pack ataca 1 vez. El primer daño de cada ataque es 💔: pierdes vida directamente.",
                     "<b>Born Hungry</b>: la Pack ataca 2 veces. Al revelarlo, roba una carta de Spawn pero saca los Raptors en <b>tu</b> espacio.",
                     "<b>Raptor Rush</b>: la Pack ataca 3 veces. Al revelarlo, todos los Raptors del tablero se unen a la Pack.",
@@ -282,8 +282,8 @@ GUIAS = [
                     "<b>Blood Thirsty</b>: cada vez que la Pack mata a una víctima, gana ❤️.",
                     "<b>Scaly Hide</b> (Epic Dark Power): la Pack y los Raptors ignoran todo el daño de las cartas de Reacción."]),
                 ("Cartas de Terror que piden explicación", [
-                    "<b>Protect the Brood</b> (hay 2): aparecen Raptors (huevo) y pones la Pack en el espacio donde salieron. Si la carta de Spawn era un <b>0</b>, tira un dado y coloca la Pack con la tabla de la carta de Raptors. Luego la Pack va a por ti o una víctima, se mueve y ataca.",
-                    "<b>Share the Feast</b>: la Pack va, se mueve y ataca; los Raptors sueltos se mueven hacia la Pack (parándose si llegan a ti o a una víctima). Si alguno se unió a la Pack, la Pack vuelve a atacar.",
+                    "<b>Protect the Brood</b> (hay 2): aparecen Raptors (huevo) y pones la Pack en el espacio donde salieron. Si la carta de Spawn era un <b>0</b>, tira un dado y coloca la Pack con la tabla de la carta de Raptors. Luego la Pack elige objetivo (tú o una víctima), se mueve y ataca.",
+                    "<b>Share the Feast</b>: la Pack elige objetivo, se mueve y ataca; los Raptors sueltos se mueven hacia la Pack (parándose si llegan a ti o a una víctima). Si alguno se unió a la Pack, la Pack vuelve a atacar.",
                     "<b>No Escape</b>: si no hay Raptors en el tablero, descártala y roba otra de Terror. Si los hay, el Raptor más cercano a cada espacio verde (salida) se pone en ese espacio, y los que están en salidas atacan. Si nadie fue atacado, 🎭🎭.",
                     "<b>Predatory Instincts</b> (Minor Dark Power): la Pack hace 1 ✴ más por cada cuchillo.",
                     "<b>Survival Instincts</b> (Minor Dark Power): en cada Mantenimiento la Pack gana ❤️."]),
@@ -527,8 +527,8 @@ GUIAS = [
                     "<b>Billy Jr.</b> (Special Buddy) · 2 ❤️ · iniciativa 6 · ataque 1 · movimiento 0. Siempre está en el mismo espacio que Billy. Recompensa: ✴ a Billy.",
                     "<b>Boris</b> (Special Buddy) · 4 ❤️ · iniciativa 7 · ataque 3 · movimiento 2. Recompensa: coge CUALQUIER carta de Acción."]),
                 ("Finales", [
-                    "Todos tienen dos filas: arriba Billy va a por ti o a la víctima más cercana, se mueve y ataca; abajo, el icono de la pila con corazón y luego otra vez a por alguien.",
-                    "<b>Finale básico</b> (el del oso rosa): ataca sin moverse; abajo, pila con corazón, va y ataca.",
+                    "Todos tienen dos filas: arriba Billy elige objetivo (tú o la víctima más cercana), se mueve y ataca; abajo, primero el icono de la pila con corazón y luego Billy vuelve a elegir objetivo.",
+                    "<b>Finale básico</b> (el del oso rosa): arriba Billy ataca sin moverse; abajo, primero la pila con corazón y luego Billy elige objetivo y ataca.",
                     "<b>Encore</b>: abajo se mueve 2 veces y ataca 2 veces.",
                     "<b>Sizzling Power</b>: si hay al menos una fuente activa, repite una vez su Killer Action.",
                     "<b>It's Showtime!</b>: no puedes jugar cartas de Reacción si hay más de un Enemy en tu espacio.",
@@ -543,9 +543,9 @@ GUIAS = [
                 ("Cartas de Terror de Billy", [
                     "<b>Animatronical</b>: aparece un Buddy y robas la siguiente carta de Terror.",
                     "<b>\"He's Turning Them Back On!\"</b>: si no hay fuentes inactivas, descártala y roba otra. Si las hay, pon a Billy en el espacio más cercano con una inactiva, actívala y 🎭.",
-                    "<b>\"Eyes in the Dark\"</b>: el Killer va a por ti (la Final Girl) y se mueve 2 veces; luego 🎭 tantas veces como Enemies haya en tu espacio y los adyacentes, como mucho tantas como fuentes activas.",
+                    "<b>\"Eyes in the Dark\"</b>: el Killer te elige a ti (la Final Girl) como objetivo y se mueve 2 veces; luego 🎭 tantas veces como Enemies haya en tu espacio y los adyacentes, como mucho tantas como fuentes activas.",
                     "<b>\"It's a Short Circuit!\"</b>: si no hay víctimas en ningún espacio con fuente activa, descártala y roba otra. Si no, en cada espacio con fuente activa y alguna víctima, muere una víctima, las demás entran en pánico y se desactiva esa fuente.",
-                    "<b>\"They're Here for Blood!\"</b>: si no hay Buddies o no hay víctimas, descártala y roba otra. Si no, solo los Buddies: van a por la víctima más cercana, se mueven y atacan. Si murió al menos una víctima, +🩸."]),
+                    "<b>\"They're Here for Blood!\"</b>: si no hay Buddies o no hay víctimas, descártala y roba otra. Si no, actúan solo los Buddies: cada uno elige como objetivo a la víctima más cercana, se mueve y ataca. Si murió al menos una víctima, +🩸."]),
             ],
             "err_m_t": "Ojo con esto",
             "err_m": [
@@ -556,11 +556,11 @@ GUIAS = [
                     "Los <b>4 espacios del centro</b> con el icono de la máquina recreativa son espacios <b>Arcade</b>. Varias cartas se refieren a ellos.",
                     "Espacios con nombre: <b>Party Room</b>, <b>Kitchen</b>, <b>Dining Area</b>, <b>Entrance</b>, <b>Prize Counter</b>, <b>Arcade</b>, <b>Janitor's Closet</b>, <b>Bathroom</b>, <b>Jungle Gym</b> y <b>Ball Pit</b>. Dining Area, Prize Counter y Ball Pit tienen mazo de objetos en el lateral."]),
                 ("Cartas de Terror de Buddyland", [
-                    "<b>Hungry for Blood</b>: si no hay víctimas en Kitchen, Party Room ni Dining Area, descártala y roba otra. Si no, pon al Killer en la de las tres con más víctimas; va a por la víctima o a por ti y ataca 2 veces.",
+                    "<b>Hungry for Blood</b>: si no hay víctimas en Kitchen, Party Room ni Dining Area, descártala y roba otra. Si no, pon al Killer en la de las tres con más víctimas; el Killer elige objetivo (la víctima o tú) y ataca 2 veces.",
                     "<b>Panic at the Disco</b>: si no hay víctimas en espacios Arcade, descártala y roba otra. Si no, entran en pánico todas las víctimas de cada Arcade; si alguna huye a un espacio con un Enemy, muere. Si no murió ninguna, +🩸.",
                     "<b>\"How'd They Sneak In?\"</b>: tira 3 dados y pon una víctima por dado: 1-2 Jungle Gym, 3-4 Dining Area, 5-6 Party Room. Luego, un evento.",
                     "<b>\"They Want Her!\"</b>: entran en pánico las víctimas de tu espacio, todos los Enemies se mueven un espacio hacia ti, 🎭 por cada Enemy en tu espacio, y luego un evento.",
-                    "<b>\"It's Play Time!\"</b>: tira un dado. 1-3: pon al Killer con el objetivo más cercano. 4-6: va a por la víctima o a por ti y ataca. Repítelo 5 veces más; puedes quitar una repetición por cada carta de Acción que descartes de tu mano, decidiéndolo todo de golpe antes."]),
+                    "<b>\"It's Play Time!\"</b>: tira un dado. 1-3: pon al Killer con el objetivo más cercano. 4-6: el Killer elige objetivo (la víctima o tú) y ataca. Repítelo 5 veces más; puedes quitar una repetición por cada carta de Acción que descartes de tu mano, decidiéndolo todo de golpe antes."]),
             ],
             "obj": [
                 ("fire-axe", "Fire Axe", "Arma · alcance 0 · 1 ✴ · 2 manos. Contra un Minion haces ✴✴."),
@@ -775,10 +775,10 @@ GUIAS = [
                     "No se mueve y recupera ❤️ (dos cartas) · emboscada 🎭🎭 o descartar una carta de Acción al azar"]),
                 ("Finales", [
                     "Arriba la fila de cuando está <b>oculta</b>, abajo la de cuando está <b>visible</b>.",
-                    "<b>Finale básico</b>: oculta, 👁 (carta boca arriba al Path) y tira un dado: con 1-4, +🩸. Visible, va a por ti o a la víctima más cercana, ataca y se oculta (ojo tachado).",
-                    "<b>Rampage</b>: va a por ti o a una víctima, se mueve 3 y ataca 2 veces. Al revelarla, se revela Volk'ar (icono Reveal).",
-                    "<b>Self-Destruct</b>: quita una ficha de Countdown, va a por ti y ataca. Al revelarla, se revela Volk'ar y pones 3 fichas de <b>Countdown</b> en la carta. Para ganar tienes que matar a Volk'ar <b>y</b> estar en un espacio de salida antes de que se quite la última.",
-                    "<b>Regenerative Cloaking</b> (Epic Finale): oculta, 👁 y recupera ❤️❤️. Visible, va a por ti o a una víctima, se mueve 3, ataca y añade dos cartas ocultas (dos ojos tachados)."]),
+                    "<b>Finale básico</b>: si Volk'ar está oculta, 👁 (carta boca arriba al Path) y tira un dado: con 1-4, +🩸. Si está visible, Volk'ar elige objetivo (tú o la víctima más cercana), ataca y se oculta (ojo tachado).",
+                    "<b>Rampage</b>: Volk'ar elige objetivo (tú o una víctima), se mueve 3 y ataca 2 veces. Al revelar esta Finale, se revela Volk'ar (icono Reveal).",
+                    "<b>Self-Destruct</b>: quita una ficha de Countdown; luego Volk'ar te elige como objetivo y te ataca. Al revelar esta Finale, se revela Volk'ar y pones 3 fichas de <b>Countdown</b> en la carta. Para ganar tienes que matar a Volk'ar <b>y</b> estar en un espacio de salida antes de que se quite la última.",
+                    "<b>Regenerative Cloaking</b> (Epic Finale): si Volk'ar está oculta, 👁 y Volk'ar recupera ❤️❤️. Si está visible, Volk'ar elige objetivo (tú o una víctima), se mueve 3, ataca y añade dos cartas ocultas (dos ojos tachados)."]),
                 ("Poderes oscuros", [
                     "<b>Blades in the Dark</b>: al resolver su Path, muere 1 víctima en cada espacio adyacente a donde acaba.",
                     "<b>Chameleon of Death</b>: si la atacas estando oculta y no recibe daño, recibes ✴ igual a su valor de Ataque.",
@@ -1050,11 +1050,11 @@ GUIAS = [
                     "Luego revela una a una las fichas de Final Health de la hoja Divine Blessings. Si alguna tiene vida, Ursula vuelve y <b>ganas</b>. Si todas están en blanco, su alma se condena y <b>pierdes</b>.",
                     "No hace falta llenar los 7 huecos antes de derrotarla, pero cuantas más bendiciones, más fácil que vuelva."]),
                 ("Finales", [
-                    "Todos: Ursula va a por ti o a la víctima más cercana, se mueve y ataca.",
-                    "<b>It Wants You!</b>: va a por <b>ti</b>, se mueve y ataca 2 veces.",
+                    "Todos: Ursula elige objetivo (tú o la víctima más cercana), se mueve y ataca.",
+                    "<b>It Wants You!</b>: Ursula te elige como objetivo <b>a ti</b>, se mueve y te ataca 2 veces.",
                     "<b>Spiritual Attack</b>: si Ursula te ataca, después del ataque pierdes 💔 además.",
                     "<b>Hell on Earth</b>: al revelarlo, la 🩸 sube al nivel más alto.",
-                    "<b>Legions of Hell</b> (Epic Finale): va, se mueve y ataca, y luego otra vez. Cada vez que muere una víctima, 🎭."]),
+                    "<b>Legions of Hell</b> (Epic Finale): Ursula elige objetivo, se mueve y ataca, y luego lo hace otra vez. Cada vez que muere una víctima, 🎭."]),
                 ("Poderes oscuros", [
                     "<b>Lamb to the Slaughter</b>: en el Mantenimiento, la víctima más lejana de Ursula se pone en su espacio.",
                     "<b>Keeping Ursula Alive</b>: en el Mantenimiento, Ursula recupera ❤️. Si ya estaba al máximo, 🎭.",
@@ -1063,7 +1063,7 @@ GUIAS = [
                     "<b>Demonic Curse</b> (Minor): tu límite de mano de cartas de Acción es 6. Descarta al momento hasta 6.",
                     "<b>Blasphemy</b> (Minor): no puedes resolver cartas de Acción <b>Expel Demon</b>. Ojo: es la forma normal de conseguir bendiciones."]),
                 ("Cartas de Terror", [
-                    "<b>\"You Don't Belong Here.\"</b>: si no hay víctimas, descártala y roba otra. Si no, va a por la víctima más cercana, se mueve y ataca. Si no muere ninguna, +🩸.",
+                    "<b>\"You Don't Belong Here.\"</b>: si no hay víctimas, descártala y roba otra. Si no, Ursula elige como objetivo a la víctima más cercana, se mueve y ataca. Si no muere ninguna, +🩸.",
                     "<b>\"Leave Her! Take Me!\"</b>: pon a Ursula en tu espacio. Si tienes al menos 3 de vida, puedes quedarte a 1 para ganar una bendición 🙏. Es un trato: mucha vida a cambio de acercarte a ganar.",
                     "<b>\"God Exists, and So Does Satan.\"</b>: pon a Ursula en tu espacio. Hasta el final de la siguiente fase de Acción puedes pasarte del límite de mano. Coge una carta <b>Expel Demon</b> y elige: una carta <b>Guard</b>, una <b>Furious Strike</b> o ⊘🎭. Luego te ataca.",
                     "<b>\"Serpents Are a Symbol of Satan.\"</b>: aparece una <b>Serpiente</b> (1 ❤️). Puedes jugar cartas de Acción que hagan daño para matarla. Si sigue viva, recibes ✴ igual al Ataque de Ursula menos 1 (mínimo 1), y puedes defenderte. Si recibes daño, +🩸. Luego la Serpiente desaparece.",
@@ -1121,7 +1121,7 @@ GUIAS = [
                 ("Maddening Nursery Rhyme", "En el espacio con más víctimas muere una y las demás de ese espacio entran en pánico."),
                 ("Breaking the Curse", "Coge una carta de Acción <b>Benediction</b> del Action Tableau. Si tienes las dos en la mano, ⊘🎭."),
                 ("Father Damian", "Pon a Father Damian en la <b>Sacristy</b>. Te sigue al espacio del Killer y solo pueden atacarle si no hay otras víctimas en su espacio. Mientras esté contigo, 🎲★ en todas las tiradas de Horror y, una vez por fase de Acción, puedes quitar una ficha de Malice de tu espacio. Si muere en tu espacio, 🎭🎭🎭."),
-                ("Demonic Crocodile", "Pon la ficha del <b>Cocodrilo</b> en el <b>Museum</b>. Los Enemies no pueden apuntarle ni matarlo, pero tú sí puedes atacarlo y matarlo. Tiene Movimiento, Ataque y vida de 1. Al final de la fase del Killer: va a por la Final Girl, se mueve y ataca. Luego entran en pánico todas las víctimas de su espacio."),
+                ("Demonic Crocodile", "Pon la ficha del <b>Cocodrilo</b> en el <b>Museum</b>. Los Enemies no pueden apuntarle ni matarlo, pero tú sí puedes atacarlo y matarlo. Tiene Movimiento, Ataque y vida de 1. Al final de la fase del Killer, el Cocodrilo elige como objetivo a la Final Girl, se mueve y ataca. Luego entran en pánico todas las víctimas de su espacio."),
                 ("The Quebecer", "Ponlo en el <b>Dormitory</b>. Las víctimas normales de su espacio no te siguen si él no viene también. Con él, te puede seguir una víctima más. Si está en tu espacio en el Mantenimiento, ⌛ por cada víctima de tu espacio."),
                 ("The Abbess", "Ponla en el <b>Abbess' Office</b>. En el Mantenimiento, se mueve un espacio hacia la víctima normal más cercana que no esté en el <b>Dormitory</b>. Las víctimas normales del espacio donde empieza y acaba se mueven 2 espacios hacia el Dormitory."),
             ],
@@ -1258,9 +1258,9 @@ GUIAS = [
                     "Contra Ratchet Lady tienes las cartas de Acción <b>Calmar</b>, que devuelven Lunáticos a Víctimas.",
                     "Al resolver con éxito una Calmar, cambia el número de Lunáticos que indique por figuras de Víctima y devuelve los Lunáticos a la reserva. Ya te pueden seguir, las puedes salvar y los Enemigos las pueden matar."]),
                 ("Finales", [
-                    "<b>Llueven Lunáticos</b>: arriba va a por ti, se mueve y ataca 2 veces. Abajo aparecen 2 Lunáticos en su zona, va a por la Víctima o a por ti y ataca. Si no hay Lunáticos al revelarla, aparecen 2 en la zona de Ratchet Lady.",
-                    "<b>Alimentando la Locura</b>: arriba va, se mueve y ataca. Abajo Ratchet Lady recupera ❤️ y luego va, se mueve y ataca. Al principio de cada fase del Killer, si no hay Lunáticos, aparece uno en su zona.",
-                    "<b>Sujetadla</b>: arriba va a por ti y se mueve. Abajo va a por ti, se mueve y ataca 2 veces. Al revelarla, todas las Víctimas que queden se convierten en Lunáticos y se retiran de la partida todas las cartas de Acción Calmar."]),
+                    "<b>Llueven Lunáticos</b>: arriba, Ratchet Lady te elige como objetivo, se mueve y ataca 2 veces. Abajo, aparecen 2 Lunáticos en su zona; luego Ratchet Lady elige objetivo (la Víctima o tú) y ataca. Si no hay Lunáticos al revelar esta Finale, aparecen 2 en la zona de Ratchet Lady.",
+                    "<b>Alimentando la Locura</b>: arriba, Ratchet Lady elige objetivo, se mueve y ataca. Abajo, Ratchet Lady recupera ❤️ y luego vuelve a elegir objetivo, se mueve y ataca. Al principio de cada fase del Killer, si no hay Lunáticos, aparece uno en su zona.",
+                    "<b>Sujetadla</b>: arriba, Ratchet Lady te elige como objetivo y se mueve. Abajo, Ratchet Lady te vuelve a elegir como objetivo, se mueve y ataca 2 veces. Al revelar esta Finale, todas las Víctimas que queden se convierten en Lunáticos y se retiran de la partida todas las cartas de Acción Calmar."]),
                 ("Poderes oscuros", [
                     "<b>Inyección Oscura</b>: en la fase del Killer, la primera vez que Ratchet Lady recupera al menos 1 ❤️, recupera otro.",
                     "<b>Brote Maníaco</b>: cuando un Lunático entra en el tablero, activa al momento su Acción de Esbirro.",
@@ -1380,22 +1380,22 @@ GUIAS = [
                     "Al acabar la fase, revela su ficha de Vida Final. <b>En blanco</b>: está muerto de verdad y sale del tablero. <b>Con vida</b>: recupera la vida como siempre, cambia la ficha negra por una blanca y se levanta.",
                     "Aunque haya 3 fichas de Vida Final, la bonificación de <b>+1 🎲</b> solo se recibe una vez."]),
                 ("Finales (según la wiki)", [
-                    "<b>Hunt Sweet Hunt</b>: el Activo va a por ti o a la víctima, se mueve 2 veces, ataca y 🔺. Cada ataque hace 1 ✴ más.",
-                    "<b>You're Gonna Die</b>: el Activo va, se mueve y ataca; 🔻; y el nuevo Activo va, se mueve y ataca.",
-                    "<b>Release the Beast</b>: <b>todos</b> los Asesinos van, se mueven y atacan. Desde ese momento todos cuentan como Activos el resto de la partida; resuelve sus acciones de arriba abajo.",
-                    "<b>We Know Where You Live</b> (Epic Finale): el Activo va, se mueve, ataca 2 veces y 🔺. Al revelarla, todos los Asesinos van, se mueven y atacan."]),
+                    "<b>Hunt Sweet Hunt</b>: el Asesino Activo elige objetivo (tú o la víctima), se mueve 2 veces, ataca y 🔺. Cada ataque hace 1 ✴ más.",
+                    "<b>You're Gonna Die</b>: el Asesino Activo elige objetivo, se mueve y ataca; 🔻; y el nuevo Activo elige objetivo, se mueve y ataca.",
+                    "<b>Release the Beast</b>: <b>todos</b> los Asesinos eligen objetivo, se mueven y atacan. Desde ese momento todos cuentan como Activos el resto de la partida; resuelve sus acciones de arriba abajo.",
+                    "<b>We Know Where You Live</b> (Epic Finale): el Asesino Activo elige objetivo, se mueve, ataca 2 veces y 🔺. Al revelar esta Finale, todos los Asesinos eligen objetivo, se mueven y atacan."]),
                 ("Poderes oscuros", [
                     "<b>No Remorse</b> (Sin Remordimientos): al principio de cada Mantenimiento tira un dado. Si sale más que el número de Asesinos, 🩸.",
                     "<b>Strength in Numbers</b> (La Unión Hace la Fuerza): cada ataque hace 1 ✴ más por cada otro Asesino en la misma zona o en una adyacente.",
                     "<b>Maskaphobia</b> (Mascafobia): una vez por turno, cuando un Asesino entra en tu zona, 🎭. No puedes comprar <b>Focus</b> (Concentrarse) con un Asesino en tu zona.",
                     "<b>Won't Stay Down</b> (Se Sigue Levantando, Epic Dark Power): cuando muere un Asesino, recupera al momento 2 fichas de vida normal y una de Vida Final al azar. Luego retira esta carta del juego."]),
                 ("Cartas de Terror que piden explicación (según la wiki)", [
-                    "<b>\"They will hunt you\"</b> (hay 2): pon al Activo en tu zona y te ataca. Luego 🔻 y el nuevo va a por ti y se mueve; otra vez 🔻 y lo mismo.",
-                    "<b>\"Where are they coming from?\"</b>: el Activo va, se mueve 2, ataca y 🔺. Si no hay víctimas, descártala y roba otra. Si las hay, pon al Activo con la víctima más lejana y la ataca.",
-                    "<b>\"Go away!!!\"</b>: cada Asesino en tu zona o en una con víctima recibe 1 ✴. Cada uno dañado así va a por ti o a la víctima y ataca. Luego roba un Evento.",
+                    "<b>\"They will hunt you\"</b> (hay 2): pon al Asesino Activo en tu zona y te ataca. Luego 🔻 y el nuevo Activo te elige como objetivo y se mueve; otra vez 🔻 y el siguiente Activo hace lo mismo.",
+                    "<b>\"Where are they coming from?\"</b>: el Asesino Activo elige objetivo, se mueve 2, ataca y 🔺. Si no hay víctimas, descártala y roba otra. Si las hay, pon al Activo con la víctima más lejana y el Activo la ataca.",
+                    "<b>\"Go away!!!\"</b>: cada Asesino en tu zona o en una con víctima recibe 1 ✴. Cada Asesino dañado así elige objetivo (tú o la víctima) y ataca. Luego roba un Evento.",
                     "<b>\"They're everywhere!\"</b> (¡Están en Todas Partes!): tres acciones seguidas, con 🔺 antes de la 2.ª y de la 3.ª. Es la del ejemplo del reglamento.",
                     "<b>Amphetamines</b> (Minor Dark Power, 2 de vida extra): al principio de la fase del Killer, el Asesino con menos vida recupera 2.",
-                    "<b>Coordinated Attack</b> (Minor Dark Power, 2 de vida extra): al final de cada fase del Killer, 🔺 y el nuevo Activo va a por ti o a la víctima, se mueve y ataca."]),
+                    "<b>Coordinated Attack</b> (Minor Dark Power, 2 de vida extra): al final de cada fase del Killer, 🔺 y el nuevo Asesino Activo elige objetivo (tú o la víctima), se mueve y ataca."]),
             ],
             "err_m_t": "Errores frecuentes",
             "err_m": [
@@ -1718,7 +1718,7 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "Fila <b>M</b>: los <b>Lunáticos</b> (Esbirros) van a por ti ▸ se mueven.",
+    "Fila <b>M</b>: los <b>Lunáticos</b> (Esbirros) te eligen como objetivo ▸ se mueven hacia ti.",
     "Fila <b>K</b>: <b>Ratchet Lady</b> elige objetivo (tú o la víctima más cercana) ▸ ataca (<b>no se mueve</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
