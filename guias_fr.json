@@ -350,7 +350,7 @@
      "Il y a 3 clôtures : A, B et C. Tant qu'un marqueur est présent, le passage est bloqué et les cases de chaque côté ne sont <b>pas</b> adjacentes.",
      "<b>Panique</b> : quiconque panique vers une clôture bloquée reste où il est.",
      "<b>Plus loin / plus proche</b> : ne compte que les chemins non bloqués. Si les 3 marqueurs sont posés et que la seule case ou cible est de l'autre côté, compte comme s'il n'y avait pas de clôtures.",
-     "<b>Ciblage des Ennemis</b> : sans chemin non bloqué vers sa cible, l'Ennemi ne bouge pas pour cette action, mais ses icônes d'attaque se résolvent quand même dans sa case.",
+     "<b>Ciblage des Ennemis</b> : sans chemin non bloqué vers sa cible, l'Ennemi ne bouge pas pour cette action, S'il doit attaquer, il n'attaque que ceux qui sont dans sa propre case (toi ou une Victime) ; s'il n'y a personne, rien ne se passe.",
      "<b>Placer quelqu'un</b> : les clôtures n'affectent pas les effets qui placent quelqu'un.",
      "À chaque <b>Entretien</b>, lance le dé des clôtures : si cette clôture a un marqueur, retire-le ; sinon, places-en un."
     ]

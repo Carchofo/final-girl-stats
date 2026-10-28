@@ -302,7 +302,7 @@ GUIAS = [
                     "Hay 3 vallas: A, B y C. Con marcador puesto, el camino está cortado y los espacios de cada lado <b>no</b> cuentan como adyacentes.",
                     "<b>Pánico</b>: si alguien huye hacia una valla cerrada, se queda donde está.",
                     "<b>Más lejos / más cerca</b>: cuenta solo caminos sin valla. Si están las 3 puestas y el único espacio u objetivo queda al otro lado, cuenta como si no hubiera vallas.",
-                    "<b>Objetivo de un Enemy</b>: si no hay camino libre hasta su objetivo, no se mueve en esa acción, pero sus iconos de ataque se resuelven en su espacio.",
+                    "<b>Objetivo de un Enemy</b>: si no hay camino libre hasta su objetivo, no se mueve en esa acción. Si le toca atacar, ataca solo a quien esté en su mismo espacio (tú o una víctima); si no hay nadie, no hace nada.",
                     "<b>Colocar a alguien</b>: las vallas no afectan a los efectos que colocan.",
                     "En cada <b>Mantenimiento</b> tira el dado de la valla: si esa valla tiene marcador, quítalo; si no, ponlo."]),
                 ("El T-Rex", [
@@ -424,7 +424,7 @@ GUIAS = [
                     "There are 3 fences: A, B and C. While a marker is there, the path is blocked and the spaces on each side are <b>not</b> adjacent.",
                     "<b>Panic</b>: anyone panicking towards a blocked fence stays where they are.",
                     "<b>Farthest / closest</b>: only count unblocked paths. If all 3 markers are out and the only space or target is on the other side, count as if there were no fences.",
-                    "<b>Enemy targeting</b>: with no unblocked path to its target, the Enemy doesn't move for that action, but its attack icons still resolve in its space.",
+                    "<b>Enemy targeting</b>: with no unblocked path to its target, the Enemy doesn't move for that action, If it has to attack, it only attacks whoever is in its own space (you or a Victim); if nobody is there, nothing happens.",
                     "<b>Placing someone</b>: fences don't affect effects that place someone.",
                     "Each <b>Upkeep</b>, roll the fence die: if that fence has a marker, remove it; if not, place one."]),
                 ("The T-Rex", [

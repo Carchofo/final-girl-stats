@@ -350,7 +350,7 @@
      "Es gibt 3 Zäune: A, B und C. Solange dort ein Marker liegt, ist der Weg blockiert und die Felder auf beiden Seiten grenzen <b>nicht</b> aneinander.",
      "<b>Panik</b>: Wer in Richtung eines blockierten Zauns in Panik gerät, bleibt, wo er ist.",
      "<b>Am weitesten / am nächsten</b>: Zähle nur unblockierte Wege. Liegen alle 3 Marker und das einzige Feld oder Ziel ist auf der anderen Seite, zähle, als gäbe es keine Zäune.",
-     "<b>Ziel von Feinden</b>: Ohne unblockierten Weg zum Ziel bewegt sich der Feind für diese Aktion nicht, seine Angriffssymbole werden aber trotzdem in seinem Feld abgehandelt.",
+     "<b>Ziel von Feinden</b>: Ohne unblockierten Weg zum Ziel bewegt sich der Feind für diese Aktion nicht, Muss er angreifen, greift er nur an, wer in seinem eigenen Feld ist (du oder ein Opfer); ist niemand da, passiert nichts.",
      "<b>Jemanden platzieren</b>: Zäune betreffen keine Effekte, die jemanden platzieren.",
      "Wirf in jedem <b>Unterhalt</b> den Zaunwürfel: Hat dieser Zaun einen Marker, entferne ihn; wenn nicht, lege einen."
     ]
