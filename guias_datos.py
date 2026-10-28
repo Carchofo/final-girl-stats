@@ -237,8 +237,8 @@ GUIAS = [
             "ley": "⌛ = Tiempo · ✴ = daño · 🩸 = Bloodlust · 💔 = perder vida · ❤️ = recuperar vida · 🔧 = espacio con el icono naranja de la llave",
             "err_k_t": "Ojo con esto",
             "err_k": [
-                "La <b>Pack</b> cuenta como el Killer a todos los efectos; los <b>Raptors sueltos</b> son Minions. Si una carta dice «Raptor(s)», no incluye a la Pack; si dice «Pack», no incluye a los sueltos.",
-                "Ganas al eliminar <b>la Pack</b>, aunque queden Raptors sueltos en el tablero.",
+                "La <b>Pack</b> cuenta como el Killer a todos los efectos; los <b>Raptors sueltos</b> son Minions. Si una carta dice «Raptor(s)», no incluye a Pack; si dice «Pack», no incluye a los sueltos.",
+                "Ganas al eliminar <b>Pack</b>, aunque queden Raptors sueltos en el tablero.",
                 "Un Raptor que aparece durante la fase del Killer <b>no actúa</b> hasta la siguiente fase del Killer.",
                 "Los Raptors sueltos <b>se paran</b> al entrar en un espacio contigo o con una víctima (o si empiezan a moverse ahí). Las cartas de Terror del mapa no llevan ese icono, pero la regla también vale.",
             ],
@@ -246,47 +246,47 @@ GUIAS = [
                 ("Preparación especial", [
                     "Baraja las cartas de <b>Spawn</b> boca abajo junto a la carta de <b>Raptors</b>, y pon los meeples de Raptor encima de esa carta.",
                     "La <b>Pack</b> empieza en la casilla del Killer (K) de la carta de inicio, en lugar del meeple de Killer de la caja básica."]),
-                ("La Pack", [
+                ("Pack", [
                     "Es un grupo grande de Raptors y cuenta como Killer a todos los efectos.",
                     "Su vida es el número de Raptors que la forman: empieza en <b>5</b> (1 Final Health y 4 de vida) y <b>no tiene tope</b>.",
-                    "El ataque del tablero del Killer es lo que hace la Pack en cada ataque, sea del tamaño que sea."]),
+                    "El ataque del tablero del Killer es lo que hace Pack en cada ataque, sea del tamaño que sea."]),
                 ("Raptors sueltos", [
                     "Son los meeples de Raptor. Cuentan como <b>Minions</b> a todos los efectos.",
                     "Tienen <b>1 de vida</b> y usan el movimiento del tablero del Killer.",
                     "Atacan poco, pero cuando lo hacen, <b>cada uno</b> hace 1 ✴."]),
-                ("Unirse a la Pack", [
-                    "Con el icono de la Pack, los Raptors van hacia ella por el <b>camino más corto</b>. Si hay varios, eligen el que les deje más cerca de la Pack antes de pararse.",
-                    "Si un Raptor acaba en el espacio de la Pack, <b>se une</b> al momento: quita el meeple y suma 1 de vida a la Pack por cada uno.",
+                ("Unirse a Pack", [
+                    "Con el icono de Pack, los Raptors van hacia ella por el <b>camino más corto</b>. Si hay varios, eligen el que les deje más cerca de Pack antes de pararse.",
+                    "Si un Raptor acaba en el espacio de Pack, <b>se une</b> al momento: quita el meeple y suma 1 de vida a Pack por cada uno.",
                     "Los meeples que salen del tablero vuelven a la carta de Raptors para futuras apariciones."]),
                 ("Aparición de Raptors", [
                     "Con el icono de spawn, roba una carta de <b>Spawn</b> y saca ese número de Raptors. El espacio se decide tirando un dado en la tabla de la carta de Raptors; si hay varios válidos, eliges tú.",
                     "Nunca aparecen en espacios que ya no son accesibles.",
-                    "Si no quedan meeples suficientes, el Raptor más cercano a la Pack se une a ella y usas su meeple; repite hasta completar la carta.",
+                    "Si no quedan meeples suficientes, el Raptor más cercano a Pack se une a ella y usas su meeple; repite hasta completar la carta.",
                     "Si no quedan cartas de Spawn, baraja el descarte y roba.",
                     "El último efecto del track de 🩸 también saca un Raptor, como una carta de Spawn de 1."]),
                 ("La tabla de aparición (carta de Raptors)", [
-                    "Tira un dado para saber dónde aparecen: <b>1</b> tu espacio · <b>2</b> el espacio verde (salida) más cercano a la Pack · <b>3</b> el 🔧 más cercano a la Pack · <b>4</b> el espacio verde más lejano de la Pack · <b>5</b> el 🔧 más lejano de la Pack · <b>6</b> el espacio más lejano a ti.",
-                    "Cada Raptor suelto: 1 ❤️, ataque de 1 ✴ y movimiento igual al de la Pack. No se mueven si empiezan contigo o con una víctima, y se paran al entrar en un espacio contigo o con una víctima."]),
+                    "Tira un dado para saber dónde aparecen: <b>1</b> tu espacio · <b>2</b> el espacio verde (salida) más cercano a Pack · <b>3</b> el 🔧 más cercano a Pack · <b>4</b> el espacio verde más lejano de Pack · <b>5</b> el 🔧 más lejano de Pack · <b>6</b> el espacio más lejano a ti.",
+                    "Cada Raptor suelto: 1 ❤️, ataque de 1 ✴ y movimiento igual al de Pack. No se mueven si empiezan contigo o con una víctima, y se paran al entrar en un espacio contigo o con una víctima."]),
                 ("Cómo leer sus cartas", [
-                    "La silueta roja de varios Raptors = el icono de la Pack: los Raptors sueltos van hacia ella para unirse. Las figuras amarillas = elige objetivo: tú o la víctima más cercana. La bota = se mueve. El cuchillo = ataca (uno por cada cuchillo). La señal de stop con figuras = se para al llegar a ti o a una víctima. El huevo roto = aparición de Raptors.",
-                    "\"Pack only\" solo lo hace la Pack; \"Raptors only\", solo los sueltos."]),
+                    "La silueta roja de varios Raptors = el icono de Pack: los Raptors sueltos van hacia ella para unirse. Las figuras amarillas = elige objetivo: tú o la víctima más cercana. La bota = se mueve. El cuchillo = ataca (uno por cada cuchillo). La señal de stop con figuras = se para al llegar a ti o a una víctima. El huevo roto = aparición de Raptors.",
+                    "\"Pack only\" solo lo hace Pack; \"Raptors only\", solo los sueltos."]),
                 ("Finales", [
-                    "Todos tienen dos filas: arriba los Raptors sueltos van hacia la Pack y se paran si llegan a ti o a una víctima; abajo la Pack elige objetivo (tú o la víctima más cercana), se mueve y ataca.",
-                    "<b>Claws Like Knives</b>: la Pack ataca 1 vez. El primer daño de cada ataque es 💔: pierdes vida directamente.",
-                    "<b>Born Hungry</b>: la Pack ataca 2 veces. Al revelarlo, roba una carta de Spawn pero saca los Raptors en <b>tu</b> espacio.",
-                    "<b>Raptor Rush</b>: la Pack ataca 3 veces. Al revelarlo, todos los Raptors del tablero se unen a la Pack.",
-                    "<b>Deadly Quick</b> (Epic Finale): la Pack ataca 2 veces. Al revelarlo, pon la Pack en tu espacio y pierdes 4 ⌛."]),
+                    "Todos tienen dos filas: arriba los Raptors sueltos van hacia Pack y se paran si llegan a ti o a una víctima; abajo Pack elige objetivo (tú o la víctima más cercana), se mueve y ataca.",
+                    "<b>Claws Like Knives</b>: Pack ataca 1 vez. El primer daño de cada ataque es 💔: pierdes vida directamente.",
+                    "<b>Born Hungry</b>: Pack ataca 2 veces. Al revelarlo, roba una carta de Spawn pero saca los Raptors en <b>tu</b> espacio.",
+                    "<b>Raptor Rush</b>: Pack ataca 3 veces. Al revelarlo, todos los Raptors del tablero se unen a Pack.",
+                    "<b>Deadly Quick</b> (Epic Finale): Pack ataca 2 veces. Al revelarlo, pon Pack en tu espacio y pierdes 4 ⌛."]),
                 ("Poderes oscuros", [
-                    "<b>Pack Conditioning</b>: cada vez que un Raptor está adyacente a la Pack, se une a ella.",
+                    "<b>Pack Conditioning</b>: cada vez que un Raptor está adyacente a Pack, se une a ella.",
                     "<b>They're Everywhere!</b>: al robar cartas de Spawn, roba 2 y saca la de más valor. Luego descarta las dos.",
-                    "<b>Blood Thirsty</b>: cada vez que la Pack mata a una víctima, gana ❤️.",
-                    "<b>Scaly Hide</b> (Epic Dark Power): la Pack y los Raptors ignoran todo el daño de las cartas de Reacción."]),
+                    "<b>Blood Thirsty</b>: cada vez que Pack mata a una víctima, gana ❤️.",
+                    "<b>Scaly Hide</b> (Epic Dark Power): Pack y los Raptors ignoran todo el daño de las cartas de Reacción."]),
                 ("Cartas de Terror que piden explicación", [
-                    "<b>Protect the Brood</b> (hay 2): aparecen Raptors (huevo) y pones la Pack en el espacio donde salieron. Si la carta de Spawn era un <b>0</b>, tira un dado y coloca la Pack con la tabla de la carta de Raptors. Luego la Pack elige objetivo (tú o una víctima), se mueve y ataca.",
-                    "<b>Share the Feast</b>: la Pack elige objetivo, se mueve y ataca; los Raptors sueltos se mueven hacia la Pack (parándose si llegan a ti o a una víctima). Si alguno se unió a la Pack, la Pack vuelve a atacar.",
+                    "<b>Protect the Brood</b> (hay 2): aparecen Raptors (huevo) y pones Pack en el espacio donde salieron. Si la carta de Spawn era un <b>0</b>, tira un dado y coloca Pack con la tabla de la carta de Raptors. Luego Pack elige objetivo (tú o una víctima), se mueve y ataca.",
+                    "<b>Share the Feast</b>: Pack elige objetivo, se mueve y ataca; los Raptors sueltos se mueven hacia Pack (parándose si llegan a ti o a una víctima). Si alguno se unió a Pack, Pack vuelve a atacar.",
                     "<b>No Escape</b>: si no hay Raptors en el tablero, descártala y roba otra de Terror. Si los hay, el Raptor más cercano a cada espacio verde (salida) se pone en ese espacio, y los que están en salidas atacan. Si nadie fue atacado, 🎭🎭.",
-                    "<b>Predatory Instincts</b> (Minor Dark Power): la Pack hace 1 ✴ más por cada cuchillo.",
-                    "<b>Survival Instincts</b> (Minor Dark Power): en cada Mantenimiento la Pack gana ❤️."]),
+                    "<b>Predatory Instincts</b> (Minor Dark Power): Pack hace 1 ✴ más por cada cuchillo.",
+                    "<b>Survival Instincts</b> (Minor Dark Power): en cada Mantenimiento Pack gana ❤️."]),
             ],
             "err_m_t": "Ojo con esto",
             "err_m": [
@@ -312,7 +312,7 @@ GUIAS = [
                     "Las víctimas no te siguen a su espacio (salvo un efecto que las deje seguirte al del Killer). En la fase de Pánico, todos los de su espacio entran en pánico, haya muerto alguien o no.",
                     "<b>Movimiento 2</b>, con el icono ANY: se para en cuanto llega a un espacio con <b>cualquiera</b> (tú, víctimas, Enemies...), y no se mueve si ya hay alguien en su espacio.",
                     "<b>No hace daño: mata</b> a uno de su espacio. Prioridad: víctima, Minion, tú, Killer. Si os ataca a ti o al Killer, morís al momento, sin revelar la ficha Final Health.",
-                    "A un Enemy hecho de varias unidades (la Pack de Raptors, una horda zombi...) le mata <b>una</b> unidad, o sea, 1 de daño."]),
+                    "A un Enemy hecho de varias unidades (Pack de Raptors, una horda zombi...) le mata <b>una</b> unidad, o sea, 1 de daño."]),
                 ("El volcán", [
                     "La <b>primera vez</b> que resuelves el icono del volcán, entra en erupción: todos los que estén en el <b>Volcano</b> reciben 💔, los que queden en el espacio entran en pánico, y pones ahí la ficha de lava del volcán: deja de ser accesible.",
                     "Las <b>siguientes veces</b>, la lava se extiende a un espacio adyacente: roba una carta de <b>Lava</b> para saber cuál y sigue sus instrucciones.",
@@ -1646,8 +1646,8 @@ _FASE = {
   "es": {
    "fase_t": "Fase del Killer",
    "fase": [
-    "<b>Raptors sueltos</b> (Minions), uno a uno: van hacia la Pack ▸ se mueven ▸ <b>se paran</b> al entrar en un espacio contigo o con una víctima (la señal de stop); si empiezan ahí, no se mueven. Si llegan a la Pack, se unen. Un Raptor que aparece en esta fase no actúa hasta la siguiente.",
-    "<b>La Pack</b> (el Killer): elige objetivo (tú o la víctima más cercana) ▸ <b>en la Finale básica se mueve solo 1 espacio</b> y ataca 1 vez. Con las otras Finales se mueve su valor de Movimiento y ataca tantas veces como cuchillos tenga la carta (1 en Claws Like Knives, 2 en las demás).",
+    "<b>Raptors sueltos</b> (Minions), uno a uno: van hacia Pack ▸ se mueven ▸ <b>se paran</b> al entrar en un espacio contigo o con una víctima (la señal de stop); si empiezan ahí, no se mueven. Si llegan a Pack, se unen. Un Raptor que aparece en esta fase no actúa hasta la siguiente.",
+    "<b>Pack</b> (el Killer): elige objetivo (tú o la víctima más cercana) ▸ <b>en la Finale básica se mueve solo 1 espacio</b> y ataca 1 vez. Con las otras Finales se mueve su valor de Movimiento y ataca tantas veces como cuchillos tenga la carta (1 en Claws Like Knives, 2 en las demás).",
     "En su caja, con <b>Isla Lagarto</b>, si el T-Rex ya ha salido: después actúa el <b>T-Rex</b> (se mueve 2, se para al llegar a alguien y <b>mata a uno de su espacio</b>).",
     "Roba y resuelve una carta de <b>Terror</b>."
    ]
