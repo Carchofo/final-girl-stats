@@ -240,6 +240,7 @@ GUIAS = [
             "err_k": [
                 "<b>Pack (manada)</b> cuenta como el Killer a todos los efectos; los <b>Raptors sueltos</b> son Minions. Si una carta dice «Raptor(s)», no incluye a Pack; si dice «Pack», no incluye a los sueltos.",
                 "Ganas al eliminar <b>Pack</b>, aunque queden Raptors sueltos en el tablero.",
+                "<b>Pack no tiene límite de vida</b>: cada Raptor que se une le suma 1 ❤️, sin tope. Mata a los sueltos antes de que lleguen o la pelea final se alarga mucho. Su ataque no cambia aunque crezca.",
                 "Un Raptor que aparece durante la fase del Killer <b>no actúa</b> hasta la siguiente fase del Killer.",
                 "Los Raptors sueltos <b>se paran</b> al entrar en un espacio contigo o con una víctima (o si empiezan a moverse ahí). Las cartas de Terror del mapa no llevan ese icono, pero la regla también vale.",
             ],
@@ -362,6 +363,7 @@ GUIAS = [
             "err_k": [
                 "The <b>Pack</b> counts as the Killer for all purposes; <b>individual Raptors</b> are Minions. A card that says \"Raptor(s)\" doesn't include the Pack; one that says \"Pack\" doesn't include individual Raptors.",
                 "You win when <b>the Pack</b> is eliminated, even if individual Raptors are still on the board.",
+                "<b>The Pack has no health limit</b>: every Raptor that joins adds 1 ❤️, with no cap. Kill loose Raptors before they arrive or the final fight drags on. Its attack doesn't change however big it gets.",
                 "A Raptor that spawns during the Killer phase <b>doesn't activate</b> until the next Killer phase.",
                 "Individual Raptors <b>stop</b> when they enter (or start moving in) a space with you or a Victim. Location Terror cards don't show that icon, but the rule still applies.",
             ],

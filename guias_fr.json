@@ -241,6 +241,7 @@
   "err_k": [
    "Le <b>Pack</b> compte comme le Killer à tous égards ; les <b>Raptors individuels</b> sont des Sbires. Une carte qui dit \"Raptor(s)\" n'inclut pas le Pack ; une qui dit \"Pack\" n'inclut pas les Raptors individuels.",
    "Tu gagnes quand <b>le Pack</b> est éliminé, même s'il reste des Raptors individuels sur le plateau.",
+   "<b>Le Pack n'a pas de limite de vie</b> : chaque Raptor qui le rejoint ajoute 1 ❤️, sans plafond. Tue les Raptors isolés avant qu'ils n'arrivent, sinon le combat final s'éternise. Son attaque ne change pas, quelle que soit sa taille.",
    "Un Raptor qui apparaît pendant la phase du Killer <b>ne s'active pas</b> avant la phase du Killer suivante.",
    "Les Raptors individuels <b>s'arrêtent</b> quand ils entrent (ou commencent leur déplacement) dans une case avec toi ou une Victime. Les cartes Terreur de lieu ne montrent pas cette icône, mais la règle s'applique quand même."
   ],
