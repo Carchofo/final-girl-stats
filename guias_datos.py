@@ -230,7 +230,7 @@ GUIAS = [
                        "de": "Mit dieser Setup-Karte kommen Electric Fences auf A und C; B bleibt leer.",
                        "it": "Con questa carta Setup metti Electric Fence in A e C; B resta vuota."})],
                    2: [("fig-trex-kill", "T-Rex Kill Priority")],
-                   3: [("fig-lava", "Lava")]},
+                   3: [("fig-lava-1", "Smuggler's Cove"), ("fig-lava-2", "Generator"), ("fig-lava-3", "North Beach")]},
         "icos_m": {2: "ico-trex"},
         "inicios": [("facility-construction", "Facility Construction"), ("beach-landing", "Beach Landing"),
                     ("look-at-the-volcano", "Look at the Volcano!"), ("let-the-games-begin", "Let the Games Begin!"), ("lab-breach", "Lab Breach")],
