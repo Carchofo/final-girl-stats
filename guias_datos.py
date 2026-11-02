@@ -235,7 +235,7 @@ GUIAS = [
         "inicios": [("facility-construction", "Facility Construction"), ("beach-landing", "Beach Landing"),
                     ("look-at-the-volcano", "Look at the Volcano!"), ("let-the-games-begin", "Let the Games Begin!"), ("lab-breach", "Lab Breach")],
         "es": {
-            "ley": "⌛ = Tiempo · ✴ = daño · 🩸 = Bloodlust · 💔 = perder vida · ❤️ = recuperar vida · 🔧 = espacio con el icono naranja de la llave",
+            "ley": "⌛ = Tiempo · ✴ = daño · 🎭 = sube el Horror · 🩸 = Bloodlust · 💔 = perder vida · ❤️ = recuperar vida · 🔧 = espacio con el icono naranja de la llave",
             "err_k_t": "Ojo con esto",
             "err_k": [
                 "<b>Pack (manada)</b> cuenta como el Killer a todos los efectos; los <b>Raptors sueltos</b> son Minions. Si una carta dice «Raptor(s)», no incluye a Pack; si dice «Pack», no incluye a los sueltos.",
@@ -286,7 +286,7 @@ GUIAS = [
                 ("Cartas de Terror que piden explicación", [
                     "<b>Protect the Brood</b> (hay 2): aparecen Raptors (huevo) y pones Pack (manada) en el espacio donde salieron. Si la carta de Spawn era un <b>0</b>, tira un dado y coloca Pack con la tabla de la carta de Raptors. Luego Pack elige objetivo (tú o una víctima), se mueve y ataca.",
                     "<b>Share the Feast</b>: Pack elige objetivo, se mueve y ataca; los Raptors sueltos se mueven hacia Pack (parándose si llegan a ti o a una víctima). Si alguno se unió a Pack, Pack vuelve a atacar.",
-                    "<b>No Escape</b>: si no hay Raptors en el tablero, descártala y roba otra de Terror. Si los hay, el Raptor más cercano a cada espacio verde (salida) se pone en ese espacio, y los que están en salidas atacan. Si nadie fue atacado, 🎭🎭.",
+                    "<b>No Escape</b>: si no hay Raptors en el tablero, descártala y roba otra de Terror. Si los hay, el Raptor más cercano a cada espacio verde (salida) se pone en ese espacio, y los que están en salidas atacan. Si nadie fue atacado, el Horror sube 2 (🎭🎭).",
                     "<b>Predatory Instincts</b> (Minor Dark Power): Pack hace 1 ✴ más por cada cuchillo.",
                     "<b>Survival Instincts</b> (Minor Dark Power): en cada Mantenimiento Pack gana ❤️."]),
             ],
@@ -358,7 +358,7 @@ GUIAS = [
             ],
         },
         "en": {
-            "ley": "⌛ = Time · ✴ = damage · 🩸 = Bloodlust · 💔 = lose health · ❤️ = recover health · 🔧 = space with the orange wrench icon",
+            "ley": "⌛ = Time · ✴ = damage · 🎭 = raise Horror · 🩸 = Bloodlust · 💔 = lose health · ❤️ = recover health · 🔧 = space with the orange wrench icon",
             "err_k_t": "Watch out",
             "err_k": [
                 "The <b>Pack</b> counts as the Killer for all purposes; <b>individual Raptors</b> are Minions. A card that says \"Raptor(s)\" doesn't include the Pack; one that says \"Pack\" doesn't include individual Raptors.",
