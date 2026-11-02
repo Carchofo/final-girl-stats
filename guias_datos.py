@@ -409,7 +409,7 @@ GUIAS = [
                 ("Terror cards that need explaining", [
                     "<b>Protect the Brood</b> (2 copies): Raptors spawn (egg) and you place the Pack where they spawned. If the Spawn card was a <b>0</b>, roll a die and place the Pack using the table on the Raptors card. Then the Pack targets you or a Victim, moves and attacks.",
                     "<b>Share the Feast</b>: the Pack targets, moves and attacks; loose Raptors move towards the Pack (stopping at you or a Victim). If any joined the Pack, the Pack attacks again.",
-                    "<b>No Escape</b>: if there are no Raptors on the board, discard it and draw the next Terror card. Otherwise, the nearest Raptor to each green (exit) space is placed there, and those on exits attack. If no one was attacked, 🎭🎭.",
+                    "<b>No Escape</b>: if there are no Raptors on the board, discard it and draw the next Terror card. Otherwise, the nearest Raptor to each green (exit) space is placed there, and those on exits attack. If no one was attacked, Horror goes up 2 (🎭🎭).",
                     "<b>Predatory Instincts</b> (Minor Dark Power): the Pack deals 1 extra ✴ per knife.",
                     "<b>Survival Instincts</b> (Minor Dark Power): each Upkeep the Pack gains ❤️."]),
             ],
