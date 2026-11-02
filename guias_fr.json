@@ -358,7 +358,7 @@
    [
     "Le T-Rex",
     [
-     "Il commence enfermé dans le <b>Dino Pen</b>. Avec son icône (l'empreinte), avance son meeple d'une case vers la droite sur la carte T-Rex.",
+     "Au début, le T-Rex n'est pas sur le plateau : son meeple est sur la case <b>Start</b> de sa carte. Chaque fois qu'une carte montre son icône (l'<b>empreinte</b> orange), avance le meeple d'une case sur la piste de la carte : Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
      "Sur <b>\"Break out!\"</b>, place son meeple dans le Dino Pen sur le plateau et son jeton d'action sous l'Action du Killer sur la carte Finale. À partir de là, ignore son icône.",
      "Ce n'est <b>pas</b> un Killer ni un Sbire : il ne peut pas être attaqué, blessé ni tué. Son action se résout après les Actions des Sbires et du Killer de la Finale.",
      "Les Victimes ne te suivent pas dans sa case (sauf si un effet leur permet de te suivre dans celle du Killer). Pendant la phase de Panique, tous ceux qui sont dans sa case paniquent, que quelqu'un soit mort ou non ce tour-ci.",

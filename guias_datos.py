@@ -307,7 +307,7 @@ GUIAS = [
                     "<b>Colocar a alguien</b>: las vallas no afectan a los efectos que colocan.",
                     "En cada <b>Mantenimiento</b> tira el dado de la valla: si esa valla tiene marcador, quítalo; si no, ponlo."]),
                 ("El T-Rex", [
-                    "Empieza encerrado en el <b>Dino Pen</b>. Con su icono (la huella), avanza su figura una casilla a la derecha en la carta del T-Rex.",
+                    "Al principio el T-Rex no está en el tablero: su figura va en la casilla <b>Start</b> de su carta. Cada vez que una carta muestre su icono (la <b>huella</b> naranja), avanzas la figura una casilla en el track de la carta: Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
                     "Al llegar a <b>\"Break out!\"</b>, pon su figura en el Dino Pen del tablero y su ficha de acción debajo de la Killer Action de la carta Finale. A partir de ahí ignora su icono.",
                     "<b>No</b> es Killer ni Minion: no se le puede atacar, dañar ni matar. Su acción se resuelve después de las de Minion y Killer de la Finale.",
                     "Las víctimas no te siguen a su espacio (salvo un efecto que las deje seguirte al del Killer). En la fase de Pánico, todos los de su espacio entran en pánico, haya muerto alguien o no.",
@@ -429,7 +429,7 @@ GUIAS = [
                     "<b>Placing someone</b>: fences don't affect effects that place someone.",
                     "Each <b>Upkeep</b>, roll the fence die: if that fence has a marker, remove it; if not, place one."]),
                 ("The T-Rex", [
-                    "It starts locked in the <b>Dino Pen</b>. With its icon (the footprint), move its meeple one space right on the T-Rex card.",
+                    "At first the T-Rex isn't on the board: its meeple sits on the <b>Start</b> space of its card. Each time a card shows its icon (the orange <b>footprint</b>), move the meeple one space along the card's track: Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
                     "On <b>\"Break out!\"</b>, put its meeple in the Dino Pen on the board and its action token below the Killer Action on the Finale card. From then on, ignore its icon.",
                     "It is <b>not</b> a Killer or a Minion: it can't be attacked, damaged or killed. Its action resolves after the Finale's Minion and Killer Actions.",
                     "Victims won't follow you into its space (unless an effect lets them follow you into the Killer's). In the Panic phase, everyone in its space panics, whether or not anyone died that turn.",

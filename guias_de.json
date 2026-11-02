@@ -358,7 +358,7 @@
    [
     "Der T-Rex",
     [
-     "Er beginnt eingesperrt im <b>Dino Pen</b>. Bei seinem Symbol (dem Fußabdruck) rückt sein Meeple auf der T-Rex-Karte ein Feld nach rechts.",
+     "Anfangs ist der T-Rex nicht auf dem Spielplan: sein Meeple steht auf dem Feld <b>Start</b> seiner Karte. Jedes Mal, wenn eine Karte sein Symbol zeigt (den orangen <b>Fußabdruck</b>), rückt das Meeple auf der Leiste der Karte ein Feld vor: Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
      "Bei <b>\"Break out!\"</b> stelle seinen Meeple in den Dino Pen auf dem Spielplan und seinen Aktionsmarker unter die Killeraktion auf der Finale-Karte. Ab dann ignorierst du sein Symbol.",
      "Er ist <b>kein</b> Killer und kein Handlanger: Er kann nicht angegriffen, beschädigt oder getötet werden. Seine Aktion wird nach den Handlanger- und Killeraktionen des Finales abgehandelt.",
      "Opfer folgen dir nicht in sein Feld (außer ein Effekt lässt sie dir in das Feld des Killers folgen). In der Panikphase geraten alle in seinem Feld in Panik, egal ob in dieser Runde jemand gestorben ist.",

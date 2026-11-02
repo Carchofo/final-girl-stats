@@ -358,7 +358,7 @@
    [
     "Il T-Rex",
     [
-     "Inizia rinchiuso nel <b>Dino Pen</b>. Con la sua icona (l'impronta), sposta il suo meeple di uno spazio a destra sulla carta T-Rex.",
+     "All'inizio il T-Rex non è sul tabellone: il suo meeple sta sulla casella <b>Start</b> della sua carta. Ogni volta che una carta mostra la sua icona (l'<b>impronta</b> arancione), avanza il meeple di una casella sul tracciato della carta: Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
      "Con <b>\"Break out!\"</b>, metti il suo meeple nel Dino Pen sul tabellone e il suo segnalino azione sotto l'Azione del Killer sulla carta Finale. Da quel momento, ignora la sua icona.",
      "<b>Non</b> è né un Killer né uno Scagnozzo: non può essere attaccato, danneggiato o ucciso. La sua azione si risolve dopo le Azioni degli Scagnozzi e del Killer del Finale.",
      "Le Vittime non ti seguono nel suo spazio (a meno che un effetto non permetta loro di seguirti in quello del Killer). Nella fase Panico, tutti quelli nel suo spazio vanno nel panico, che qualcuno sia morto o no in quel turno.",
