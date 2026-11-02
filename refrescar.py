@@ -20,7 +20,7 @@ import pathlib
 import re
 import sys
 import urllib.request
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime
 
 AQUI = pathlib.Path(__file__).parent
@@ -244,6 +244,43 @@ def recalcular(filas, viejo):
     return D
 
 
+def jugadores(filas, um_viejo):
+    """Pestaña Jugadores: UJ (ficha de cada nick) y UM.u (killer x mapa).
+    Los nicks se juntan sin mirar mayúsculas ("Daichid" y "daichid" son el
+    mismo) y se enseña la grafía más usada. Antes UJ estaba congelado."""
+    grupos = defaultdict(list)
+    for f in filas:
+        n = (f.get('Nickname') or '').strip()
+        if n:
+            grupos[n.lower()].append(f)
+    ks, ls = list(um_viejo['k']), list(um_viejo['l'])
+    def idx(lista, v):
+        if v not in lista:
+            lista.append(v)
+        return lista.index(v)
+    def top(d, n):
+        t = sorted(d.items(), key=lambda kv: -kv[1][0])[:n]
+        return [[k, g, round(w / g, 3)] for k, (g, w) in t]
+    UJ, UMu = {}, {}
+    for fs in grupos.values():
+        nick = Counter((f.get('Nickname') or '').strip() for f in fs).most_common(1)[0][0]
+        n = len(fs); w = sum(f['_gano'] for f in fs)
+        ds = sorted(d for d in (fecha(f.get('Timestamp', '')) for f in fs) if d)
+        u = {'n': n, 'wr': round(w / n, 3),
+             'd1': ds[0].isoformat() if ds else '', 'd2': ds[-1].isoformat() if ds else '',
+             'kill': top(cuenta(fs, lambda f: f['_killer']), 8)}
+        if n >= 10:
+            u['combo'] = top(cuenta(fs, lambda f: f"{f['_killer']} @ {f['_loc']}"), 8)
+        ext = sum(1 for f in fs if (f.get('Difficulty Settings') or '').strip() == 'Extreme Horror')
+        if ext:
+            u['ext'] = ext
+        u['girl'] = top(cuenta(fs, lambda f: (f.get('Final Girl') or '').strip()), 6)
+        UJ[nick] = u
+        c = cuenta(fs, lambda f: (f['_killer'], f['_loc']))
+        UMu[nick] = [[idx(ks, k), idx(ls, l), g, w] for (k, l), (g, w) in c.items()]
+    return UJ, {'k': ks, 'l': ls, 'u': UMu}
+
+
 def main():
     viejo_txt = (AQUI / 'src' / 'cuerpo.html').read_text(encoding="utf-8")
     m = re.search(r'var D = (\{.*?\});\n', viejo_txt, re.S)
@@ -267,6 +304,12 @@ def main():
         return
 
     nuevo_txt = viejo_txt[:m.start(1)] + json.dumps(nuevo, ensure_ascii=False) + viejo_txt[m.end(1):]
+    mu = re.search(r'var UM = (\{.*?\});\n', nuevo_txt, re.S)
+    UJ, UM = jugadores(filas, json.loads(mu.group(1)))
+    nuevo_txt = nuevo_txt[:mu.start(1)] + json.dumps(UM, ensure_ascii=False, separators=(',', ':')) + nuevo_txt[mu.end(1):]
+    mj = re.search(r'var UJ = (\{.*?\});', nuevo_txt)
+    nuevo_txt = nuevo_txt[:mj.start(1)] + json.dumps(UJ, ensure_ascii=False, separators=(',', ':')) + nuevo_txt[mj.end(1):]
+    print('  jugadores  ', len(UJ))
     (AQUI / 'src' / 'cuerpo.html').write_text(nuevo_txt, encoding="utf-8")
 
     # La cifra de partidas esta escrita a mano en titulos, descripciones y
