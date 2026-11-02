@@ -156,6 +156,7 @@ def con_iconos(html, caja, lang):
     trozos = re.split(r"(<[^>]+>)", html)
     out = [t if t.startswith("<") else patron.sub(cambia, t) for t in trozos]
     html = "".join(out).replace("👁", ico("ojo"))
+    html = html.replace("🎭", ico("horror"))
     for e, n in ICO_EMOJI.get(caja, {}).items():
         html = html.replace(e, f'<img class="ico ico-k" src="/img/ico/{n}.png" alt="" width="22" height="22">')
     return html
