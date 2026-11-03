@@ -380,6 +380,7 @@ def pagina_caja(f, lang, tx):
         filas = [x for x in ([t["nivel"], c.get("nivel")], [t["elmapa"], c.get("mapa")]) if x[1]]
         if filas:
             h.append(P.tabla(["", ""], filas))
+    h.append(P.mesa(f["film"], lang))
     h.append(mecanicas.killer(f["killer"], lang))
     h.append(mecanicas.mapa(f["loc"], lang))
     if k:

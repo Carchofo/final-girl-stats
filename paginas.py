@@ -328,6 +328,17 @@ def pagina_killer(nombre, k):
 # --------------------------------------------------------------------------
 # Páginas de caja
 # --------------------------------------------------------------------------
+MESA_T = {'es': 'En nuestra mesa', 'en': 'At our table', 'fr': 'À notre table', 'de': 'An unserem Tisch', 'it': 'Al nostro tavolo'}
+
+
+def mesa(caja, lang):
+    """Impresiones propias de partida (mesa.json), si las hay."""
+    f = AQUI / 'mesa.json'
+    d = json.loads(f.read_text(encoding='utf-8')).get(caja, {}) if f.exists() else {}
+    t = d.get(lang) or d.get('en')
+    return f'<h2>{MESA_T[lang]}</h2>{t}' if t else ''
+
+
 def pagina_caja(f):
     c = CONSEJOS.get(f['film'], {})
     k = KILLERS.get(f['killer'], {})
@@ -360,6 +371,7 @@ def pagina_caja(f):
                 ['Nivel', c.get('nivel', '—')],
                 ['El mapa', c.get('mapa', '—')]) if x[1]]))
 
+    h.append(mesa(f['film'], 'es'))
     h.append(mecanicas.killer(f['killer'], 'es'))
     h.append(mecanicas.mapa(f['loc'], 'es'))
 
