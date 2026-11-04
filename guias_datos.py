@@ -306,7 +306,7 @@ GUIAS = [
                     "<b>Más lejos / más cerca</b>: cuenta solo caminos sin valla. Si están las 3 puestas y el único espacio u objetivo queda al otro lado, cuenta como si no hubiera vallas.",
                     "<b>Objetivo de un Enemy</b>: si no hay camino libre hasta su objetivo, no se mueve en esa acción. Si le toca atacar, ataca solo a quien esté en su mismo espacio (tú o una víctima); si no hay nadie, no hace nada.",
                     "<b>Colocar a alguien</b>: las vallas no afectan a los efectos que colocan.",
-                    "En cada <b>Mantenimiento</b> tira el dado de la valla: si esa valla tiene marcador, quítalo; si no, ponlo."]),
+                    "En cada <b>Mantenimiento</b> tira el dado amarillo de la valla (caras A, B, C): si la valla de esa letra tiene marcador, quítalo; si no, ponlo."]),
                 ("El T-Rex", [
                     "Al principio el T-Rex no está en el tablero: su figura va en la casilla <b>Start</b> de su carta. Cada vez que una carta muestre su icono (la <b>huella</b> naranja), avanzas la figura una casilla en el track de la carta: Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
                     "Al llegar a <b>\"Break out!\"</b>, pon su figura en el Dino Pen del tablero y su ficha de acción debajo de la Killer Action de la carta Finale. A partir de ahí ignora su icono.",
@@ -429,7 +429,7 @@ GUIAS = [
                     "<b>Farthest / closest</b>: only count unblocked paths. If all 3 markers are out and the only space or target is on the other side, count as if there were no fences.",
                     "<b>Enemy targeting</b>: with no unblocked path to its target, the Enemy doesn't move for that action, If it has to attack, it only attacks whoever is in its own space (you or a Victim); if nobody is there, nothing happens.",
                     "<b>Placing someone</b>: fences don't affect effects that place someone.",
-                    "Each <b>Upkeep</b>, roll the fence die: if that fence has a marker, remove it; if not, place one."]),
+                    "Each <b>Upkeep</b>, roll the yellow fence die (faces A, B, C): if the fence with that letter has a marker, remove it; if not, place one."]),
                 ("The T-Rex", [
                     "At first the T-Rex isn't on the board: its meeple sits on the <b>Start</b> space of its card. Each time a card shows its icon (the orange <b>footprint</b>), move the meeple one space along the card's track: Start ▸ ○ ▸ ○ ▸ <b>Break Out!</b>",
                     "On <b>\"Break out!\"</b>, put its meeple in the Dino Pen on the board and its action token below the Killer Action on the Finale card. From then on, ignore its icon.",

@@ -353,7 +353,7 @@
      "<b>Più lontano / più vicino</b>: conta solo i percorsi non bloccati. Se tutti e 3 gli indicatori sono piazzati e l'unico spazio o bersaglio è dall'altra parte, conta come se non ci fossero recinzioni.",
      "<b>Bersaglio dei Nemici</b>: senza un percorso libero verso il bersaglio, il Nemico non si muove per quell'azione, Se deve attaccare, attacca solo chi è nel suo stesso spazio (tu o una Vittima); se non c'è nessuno, non succede niente.",
      "<b>Piazzare qualcuno</b>: le recinzioni non influiscono sugli effetti che piazzano qualcuno.",
-     "A ogni <b>Mantenimento</b>, tira il dado delle recinzioni: se quella recinzione ha un indicatore, rimuovilo; altrimenti, piazzane uno."
+     "A ogni <b>Mantenimento</b>, tira il dado giallo delle recinzioni (facce A, B, C): se la recinzione di quella lettera ha un indicatore, rimuovilo; altrimenti, piazzane uno."
     ]
    ],
    [
