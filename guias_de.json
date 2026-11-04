@@ -354,7 +354,7 @@
      "<b>Ziel von Feinden</b>: Ohne unblockierten Weg zum Ziel bewegt sich der Feind für diese Aktion nicht, Muss er angreifen, greift er nur an, wer in seinem eigenen Feld ist (du oder ein Opfer); ist niemand da, passiert nichts.",
      "<b>Jemanden platzieren</b>: Zäune betreffen keine Effekte, die jemanden platzieren.",
      "Wirf in jedem <b>Unterhalt</b> den Zaunwürfel: Hat dieser Zaun einen Marker, entferne ihn; wenn nicht, lege einen.",
-     "In jeder <b>Unterhaltsphase</b> wirfst du den gelben Zaunwürfel (Seiten A, B, C): Hat der Zaun mit diesem Buchstaben einen Marker, entferne ihn; sonst lege einen hin."
+     "In jeder <b>Unterhaltsphase</b> wirfst du den gelben Zaunwürfel (Seiten A, B, C): Hat der Zaun mit diesem Buchstaben einen Marker, entferne ihn; sonst lege einen hin. Das funktioniert wie ein <b>Schalter</b>: Jedes Mal, wenn sein Buchstabe fällt, wechselt dieser Zaun zwischen blockiert und offen."
     ]
    ],
    [

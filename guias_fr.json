@@ -353,7 +353,7 @@
      "<b>Plus loin / plus proche</b> : ne compte que les chemins non bloqués. Si les 3 marqueurs sont posés et que la seule case ou cible est de l'autre côté, compte comme s'il n'y avait pas de clôtures.",
      "<b>Ciblage des Ennemis</b> : sans chemin non bloqué vers sa cible, l'Ennemi ne bouge pas pour cette action, S'il doit attaquer, il n'attaque que ceux qui sont dans sa propre case (toi ou une Victime) ; s'il n'y a personne, rien ne se passe.",
      "<b>Placer quelqu'un</b> : les clôtures n'affectent pas les effets qui placent quelqu'un.",
-     "À chaque <b>Entretien</b>, lance le dé jaune des clôtures (faces A, B, C) : si la clôture de cette lettre a un marqueur, retire-le ; sinon, places-en un."
+     "À chaque <b>Entretien</b>, lance le dé jaune des clôtures (faces A, B, C) : si la clôture de cette lettre a un marqueur, retire-le ; sinon, places-en un. Ça marche comme un <b>interrupteur</b> : chaque fois que sa lettre sort, cette clôture passe de fermée à ouverte ou l'inverse."
     ]
    ],
    [
