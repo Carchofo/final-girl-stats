@@ -1321,7 +1321,7 @@
    ],
    [
     "Demonic Crocodile",
-    "Place le jeton <b>Crocodile</b> dans le <b>Museum</b>. Les Ennemis ne peuvent ni le cibler ni le tuer, mais toi tu peux l'attaquer et le tuer. Mouvement, Attaque et santé de 1. À la fin de la phase du Killer, le Crocodile choisit pour cible la Final Girl, se déplace et attaque. Puis toutes les Victimes de sa case paniquent."
+    "Place le jeton <b>Crocodile</b> dans le <b>Museum</b>. Les Ennemis ne peuvent ni le cibler ni le tuer, mais toi tu peux l'attaquer et le tuer. Mouvement, Attaque et santé de 1. À la fin de la phase du Killer, le Crocodile cible la Final Girl ou une Victime (la plus proche), se déplace et attaque. Puis toutes les Victimes de sa case paniquent."
    ],
    [
     "The Quebecer",
