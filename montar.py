@@ -774,13 +774,31 @@ def _alt(salida):
             r += f'<xhtml:link rel="alternate" hreflang="{l}" href="{DOMINIO}/{l}/{base}"/>'
     return r
 
+def _fechas_git():
+    # Fecha del ultimo commit que toco cada archivo: lastmod real, no la del build.
+    import subprocess
+    r = subprocess.run(["git", "log", "--name-only", "--format=@%cs"], cwd=AQUI,
+                       capture_output=True, text=True).stdout
+    f, fecha = {}, HOY
+    for linea in r.splitlines():
+        if linea.startswith("@"):
+            fecha = linea[1:]
+        elif linea:
+            f.setdefault(linea, fecha)
+    return f
+
+_FECHAS = _fechas_git()
+
+def _mod(ruta):
+    return _FECHAS.get(ruta, HOY)
+
 urls = "".join(
     f"<url><loc>{DOMINIO}/{'' if p['salida']=='index.html' else p['salida']}</loc>"
-    f"<lastmod>{HOY}</lastmod><priority>{p['prioridad']}</priority>{_alt(p['salida'])}</url>"
+    f"<lastmod>{_mod(p['salida'])}</lastmod><priority>{p['prioridad']}</priority>{_alt(p['salida'])}</url>"
     for p in PAGINAS
 ) + "".join(
     f"<url><loc>{DOMINIO}/{l}/{'' if s=='index.html' else s}</loc>"
-    f"<lastmod>{HOY}</lastmod><priority>{'0.9' if s=='index.html' else '0.7'}</priority>{_alt(s)}</url>"
+    f"<lastmod>{_mod(l + '/' + s)}</lastmod><priority>{'0.9' if s=='index.html' else '0.7'}</priority>{_alt(s)}</url>"
     for l, s in otras
 )
 if INDEXAR:
