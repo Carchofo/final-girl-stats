@@ -857,7 +857,8 @@
 
 <script>
   var ST = /*@@ST@@*/;
-  var MIAS = ['The Happy Trails Horror','Into the Void','A Knock at the Door','Once Upon a Full Moon','Madness in the Dark'];
+  var MIAS = [];
+  try { MIAS = JSON.parse(localStorage.getItem('fg-mis-cajas')) || []; } catch (e) {}
   var pc = function (x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; };
   var esMia = function (f) { return MIAS.indexOf(f) !== -1; };
 
