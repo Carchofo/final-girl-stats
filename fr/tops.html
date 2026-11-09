@@ -281,9 +281,10 @@
         if (v && (!solo || solo.indexOf(v) >= 0)) { pts[v] = (pts[v] || 0) + C.p[r]; votos[v] = (votos[v] || 0) + 1; }
       });
     });
-    // Más los tops por temporada (columna best_sN: "1º|2º|3º"), que suman a la vez a su temporada y al total.
-    if (id === 'best_box') C.ts.forEach(function (T, j) {
-      if (FT >= 0 && FT !== j) return;
+    // Más los tops por temporada (columna best_sN: "1º|2º|3º"): solo cuentan en el filtro de su temporada.
+    // En "Todas" no, porque una temporada con pocas cajas regalaba puntos (SP solo tiene 2).
+    if (id === 'best_box' && FT >= 0) C.ts.forEach(function (T, j) {
+      if (FT !== j) return;
       var col = U + 1 + j, vs = {};
       FILAS.slice().reverse().forEach(function (f) {
         if (!f[col]) return;
