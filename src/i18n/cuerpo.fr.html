@@ -804,6 +804,25 @@ var D = /*@@D@@*/;
   var miniatura = function (s) { return s ? String(s).replace(/([^\/]+)$/, 'mini/$1') : s; };
   var MINI_ERR = ' onerror="this.onerror=null;this.src=this.src.replace(\'/mini/\',\'/\')"';
 
+  // Los datos de cada jugador (unos 300 KB, más de la mitad de la página) van
+  // aparte, en jugadores.json (lo separa idiomas.separar_jugadores al montar):
+  // solo los usan la pestaña Jugadores y el filtro "Matriz de". Se piden al
+  // abrir cualquiera de los dos o, si no, poco después de cargar la página.
+  // Si los datos siguen dentro de la página (sin montar), se usan tal cual.
+  var JUGADORES = { listo: Object.keys(UJ).length > 0, cola: [], pedido: false };
+  function conJugadores(fn) {
+    if (JUGADORES.listo) return fn();
+    JUGADORES.cola.push(fn);
+  }
+  function pedirJugadores() {
+    if (JUGADORES.listo || JUGADORES.pedido || typeof fetch !== 'function') return;
+    JUGADORES.pedido = true;
+    fetch('JUGADORES_URL').then(function (r) { return r.json(); }).then(function (d) {
+      UM = d.UM; UJ = d.UJ; JUGADORES.listo = true;
+      JUGADORES.cola.splice(0).forEach(function (fn) { fn(); });
+    }).catch(function () { JUGADORES.pedido = false; });
+  }
+
   function paso(wr) {
     var d = wr - MEDIA, i = 0;
     while (i < CORTES.length && d >= CORTES[i]) i++;
@@ -1628,7 +1647,7 @@ var D = /*@@D@@*/;
   // --- Jugadores ----------------------------------------------------------
   // Solo quien tiene 10 partidas o mas: por debajo, un porcentaje de
   // victorias no dice nada de como juega, solo de la suerte que tuvo.
-  (function () {
+  conJugadores(function () {
     var nombres = Object.keys(UJ);
     var cubren = nombres.reduce(function (a, n) { return a + UJ[n].n; }, 0);
     document.getElementById('ju-n').textContent = nombres.length + ' personnes qui les ont enregistrées';
@@ -1749,7 +1768,7 @@ var D = /*@@D@@*/;
     document.getElementById('ju-busca').addEventListener('input', pintarLista);
     document.getElementById('ju-orden').addEventListener('change', pintarLista);
     pintarLista();
-  })();
+  });
 
   ['f-mias', 'f-orden', 'f-busca'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', pintarMatriz);
@@ -1758,7 +1777,7 @@ var D = /*@@D@@*/;
   // Matriz de un jugador concreto: ve SUS partidas en la misma rejilla.
   (function () {
     var sel = document.getElementById('f-jug');
-    Object.keys(UM.u)
+    conJugadores(function () { Object.keys(UM.u)
       .sort(function (a, b) { return UM.u[b].length - UM.u[a].length; })
       .forEach(function (n) {
         var total = UM.u[n].reduce(function (x, f) { return x + f[2]; }, 0);
@@ -1766,7 +1785,7 @@ var D = /*@@D@@*/;
         o.value = n;
         o.textContent = n + ' (' + total + ')';
         sel.appendChild(o);
-      });
+      }); });
     sel.addEventListener('change', function () {
       cargarJugador(sel.value);
       pintarMatriz();
@@ -1779,6 +1798,13 @@ var D = /*@@D@@*/;
         '</b>, pas celles de la communauté. Ici une cellule, c’est une seule partie répétée : ' +
         'cela sert à voir ce qui a été joué et ce qui manque, pas à tirer des pourcentages.';
     });
+  })();
+  (function () {
+    var tab = document.querySelector('nav.tabs button[data-t="jug"]'), sel = document.getElementById('f-jug');
+    if (tab) tab.addEventListener('click', pedirJugadores);
+    ['focus', 'pointerdown', 'touchstart'].forEach(function (e) { sel.addEventListener(e, pedirJugadores); });
+    var luego = function () { setTimeout(pedirJugadores, 1500); };
+    if (document.readyState === 'complete') luego(); else window.addEventListener('load', luego);
   })();
   document.getElementById('g-orden').addEventListener('change', pintarGirls);
 

@@ -692,7 +692,7 @@ def grande(lang, salida, M, existe):
 
     cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
     if salida == "index.html":
-        cuerpo = filtrar_jugadores(cuerpo, lang)
+        cuerpo = separar_jugadores(filtrar_jugadores(cuerpo, lang))
     for clave, valor in cifras(lang).items():
         cuerpo = re.sub(r'(<span data-dato="%s">)[^<]*(</span>)' % clave,
                         r"\g<1>" + valor + r"\g<2>", cuerpo)
@@ -813,6 +813,29 @@ def filtrar_jugadores(cuerpo, lang):
     return cuerpo
 
 
+def separar_jugadores(cuerpo):
+    """Saca UM y UJ (los datos de cada jugador) a jugadores.json.
+
+    Son unos 300 KB, más de la mitad de la home, y solo los usan la pestaña
+    Jugadores y el filtro "Matriz de"; la página los pide aparte cuando hacen
+    falta (conJugadores en el cuerpo). Son iguales en los cinco idiomas, así
+    que hay un solo fichero. La versión en la URL cambia con los datos: GitHub
+    Pages cachea 10 minutos.
+    """
+    import hashlib
+    mu = re.search(r"var UM = (\{.*?\});(?=\n)", cuerpo, re.S)
+    mj = re.search(r"var UJ = (\{.*?\});(?=\n)", cuerpo, re.S)
+    if not (mu and mj) or "JUGADORES_URL" not in cuerpo:
+        return cuerpo
+    txt = json.dumps({"UM": json.loads(mu.group(1)), "UJ": json.loads(mj.group(1))},
+                     ensure_ascii=False, separators=(",", ":"))
+    (AQUI / "jugadores.json").write_text(txt, encoding="utf-8")
+    v = hashlib.md5(txt.encode()).hexdigest()[:8]
+    cuerpo = cuerpo.replace(mj.group(0), "var UJ = {};", 1)
+    cuerpo = cuerpo.replace(mu.group(0), 'var UM = {"k":[],"l":[],"u":{}};', 1)
+    return cuerpo.replace("JUGADORES_URL", "/jugadores.json?v=" + v)
+
+
 # --------------------------------------------------------------------------
 # Aviso en el móvil
 # --------------------------------------------------------------------------
@@ -846,5 +869,10 @@ def aviso_movil(lang):
 def poner_aviso_movil(cuerpo, lang):
     if 'id="aviso-movil"' in cuerpo:
         return cuerpo
+    # En la home va justo encima de la matriz, que es lo que se ve mal en el
+    # móvil: arriba del todo era lo primero que leía cualquiera al entrar.
+    i = cuerpo.find('<section id="v-matriz"')
+    if i >= 0:
+        return cuerpo[:i] + aviso_movil(lang) + cuerpo[i:]
     i = cuerpo.find("</nav>")
     return cuerpo if i < 0 else cuerpo[:i + 6] + aviso_movil(lang) + cuerpo[i + 6:]

@@ -460,7 +460,7 @@ for p in PAGINAS:
     cuerpo = re.sub(r"^\s*<title>.*?</title>\s*", "", cuerpo, count=1, flags=re.S)
     if p["salida"] == "index.html":
         import idiomas
-        cuerpo = idiomas.filtrar_jugadores(cuerpo, "es")
+        cuerpo = idiomas.separar_jugadores(idiomas.filtrar_jugadores(cuerpo, "es"))
 
     # Las cifras que van en el HTML servido (y no pintadas por JavaScript,
     # que el buscador no las veria) se rellenan aqui desde los datos. Antes
