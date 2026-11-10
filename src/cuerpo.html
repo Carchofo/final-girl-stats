@@ -385,6 +385,9 @@
   .bar .caret { position:absolute; right:13px; top:50%; transform:translateY(-50%); color:var(--muted);
                 font-family:var(--f-mono); font-size:11px; opacity:0; }
   .bar[aria-expanded="true"] { background:var(--blood-s); }
+  /* Flecha: avisa de que cada fila se despliega */
+  .bar .pl::after { content:'\25BE'; display:inline-block; margin-left:8px; color:var(--muted); transition:transform .15s; }
+  .bar[aria-expanded="true"] .pl::after { transform:rotate(180deg); color:var(--blood); }
   .bar .th { width:34px; height:48px; object-fit:cover; border-radius:2px; background:var(--sunk); flex:none; }
   /* Arte del killer dentro del panel abierto: arriba a la derecha, a la altura
      del nombre, desvanecido hacia el centro para que no tape las tablas. */
@@ -604,7 +607,9 @@
   nav.tabs button[aria-selected="true"] { background:var(--blood); color:#fff; }
 
   @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
-  @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; } }
+  @media (max-width:430px) { .bar { grid-template-columns:1fr 52px; } .bar .pl { display:none; }
+    .bar .pc::after { content:'\25BE'; display:inline-block; margin-left:5px; color:var(--muted); transition:transform .15s; }
+    .bar[aria-expanded="true"] .pc::after { transform:rotate(180deg); color:var(--blood); } }
   .wr-lbl { font-family:var(--f-mono); font-size:11px; letter-spacing:.06em; color:var(--muted); font-weight:400; }
   .bar-cab { display:grid; grid-template-columns:1fr 56px 46px; gap:10px; padding:2px 13px 6px;
              font-family:var(--f-mono); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
@@ -1121,7 +1126,6 @@ var D = {"meta": {"total": 14956, "wr": 0.6551, "perDay": 8.55, "last": "8 nov 2
       el.querySelectorAll('.bar').forEach(function (b) {
         b.addEventListener('click', function () { abrir(b, false); });
       });
-      if (s.length) abrir(el.querySelector('.bar'), true);
       dibujaBarra();
     }
 
