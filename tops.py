@@ -16,6 +16,7 @@ datos que el resto de la web, y son exactamente las del formulario.
 """
 import json
 import pathlib
+import miniaturas
 
 AQUI = pathlib.Path(__file__).parent
 
@@ -155,6 +156,10 @@ def seccion(lang):
     t = T[lang]
     pre = "" if lang == "es" else "../"
     img = {k: pre + v for k, v in _imagenes().items()}
+    # Las filas pintan la foto a 28 px: ahí va la copia pequeña (miniaturas.py)
+    # si existe. La grande sigue en la foto del primer puesto.
+    mini = {k: pre + "img/" + m for k, v in _imagenes().items()
+            if (m := miniaturas.mini_de(v[len("img/"):]))}
     import paginas
     D = paginas.datos()
     caj = {t["id"]: t["cajas"] for t in D["temporadas"]}
@@ -162,7 +167,7 @@ def seccion(lang):
     ts = [{"e": e, "o": sorted(caj.get(k, [])), "n": (tn[1] if k == "SP" else f"{tn[0]} {k[1:]}")} for k, e in TEMPS]
     todas = {"es": "Todas", "en": "All", "fr": "Toutes", "de": "Alle", "it": "Tutte"}[lang]
     cfg = {"ts": ts, "todas": todas, "tsk": [k for k, _ in TEMPS], "form": FORM, "hoja": HOJA, "e": ENTRADAS, "eid": ID_ENTRADA, "cols": COLUMNAS, "orden": ORDEN, "p": PUNTOS,
-           "o": _opciones(), "img": img, "t": t,
+           "o": _opciones(), "img": img, "mini": mini, "t": t,
            "amz": {k: v for k, v in __import__("paginas").AFILIADOS["amazon"]["tags"].items() if v.get("tag")},
            "url": "finalgirlstats.com/" + ("" if lang == "es" else lang + "/") + "tops.html",
            "rel": _relaciones(), "rt": REL_T[lang]}
@@ -271,7 +276,7 @@ def seccion(lang):
       var top = Object.keys(votos).sort(function (a, b) {{ return votos[b] - votos[a]; }}).slice(0, 3);
       return '<p class="ct-tn">' + esc(T.n) + '</p>' + (top.length ? top.map(function (n, k) {{
         return '<div class="ct-row"><i class="b" style="width:' + (votos[n] / votos[top[0]] * 100) + '%"></i>' +
-          (C.img[n] ? '<img src="' + C.img[n] + '" alt="" loading="lazy">' : '') +
+          (C.img[n] ? '<img src="' + (C.mini[n] || C.img[n]) + '" alt="" loading="lazy">' : '') +
           '<span class="nm">' + (k + 1) + '. ' + esc(n) + '</span><span class="n">' + votos[n] + ' ' + (votos[n] === 1 ? C.t.voto : C.t.votos) + '</span></div>';
       }}).join('') : '<p class="sub ct-vacio">' + esc(C.t.sin) + '</p>');
     }}).join('');
@@ -313,7 +318,7 @@ def seccion(lang):
       '<span>' + esc(top[0]) + '<i>' + cifra(top[0]) + '</i></span></div>';
     return h + top.slice(1).map(function (n, k) {{
       return '<div class="ct-row' + (k >= 4 ? ' ct-mas' : '') + '"><i class="b" style="width:' + (pts[n] / max * 100) + '%"></i>' +
-        (C.img[n] ? '<img src="' + C.img[n] + '" alt="" loading="lazy">' : '') +
+        (C.img[n] ? '<img src="' + (C.mini[n] || C.img[n]) + '" alt="" loading="lazy">' : '') +
         '<span class="nm">' + (k + 2) + '. ' + esc(n) + '</span><span class="n">' + cifra(n) + '</span></div>';
     }}).join('');
   }}

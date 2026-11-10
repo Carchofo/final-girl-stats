@@ -11,6 +11,7 @@ puede tocar una foto y luego tocar la fila donde va.
 """
 import json
 
+import miniaturas
 import paginas as P
 import tops
 
@@ -61,7 +62,12 @@ def _items():
     cajas = sorted(f["film"] for f in D["films"])
     killers = sorted(k for k in P.KILLERS)
     locs = sorted({f["loc"] for f in D["films"]})
-    return [[(n, img.get(n, "")) for n in grupo] for grupo in (cajas, killers, locs)]
+    # Las fichas se ven a 76 px y la imagen descargada las dibuja a ese tamaño:
+    # basta la copia pequeña (miniaturas.py) si existe.
+    def chica(i):
+        m = miniaturas.mini_de(i[len("img/"):]) if i else None
+        return "img/" + m if m else i
+    return [[(n, chica(img.get(n, ""))) for n in grupo] for grupo in (cajas, killers, locs)]
 
 
 def pagina(lang):

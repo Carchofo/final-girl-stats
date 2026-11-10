@@ -22,9 +22,11 @@
     position:relative;   /* ya va fuera de .wrap: el ancho completo es gratis */
     min-height:clamp(300px, 46vw, 480px);
     display:flex; align-items:flex-end;
-    background:var(--paper) url("img/vhs-final-girl.jpg") center/cover no-repeat;
+    background:var(--paper) url("img/vhs-final-girl.webp") center/cover no-repeat;
     isolation:isolate;
   }
+  /* En el movil, la cinta a 800 px: la de 1200 pesa el doble y no se nota. */
+  @media (max-width:700px) { .hero { background-image:url("img/vhs-final-girl-m.webp"); } }
   .hero::after {
     content:""; position:absolute; inset:0; z-index:0;
     background:
@@ -474,8 +476,8 @@
      tape nada. Los paneles son opacos, asi que ningun texto cae encima. */
   body::after {
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
-    background:url("img/vhs-final-girl.jpg") center/cover no-repeat fixed;
-    opacity:.13; filter:grayscale(.35) contrast(.85);
+    background:url("img/fondo-vhs.webp") center/cover no-repeat;
+    opacity:.13;   /* el gris y el contraste ya vienen en la imagen (miniaturas.py) */
   }
   body { position:relative; }
 

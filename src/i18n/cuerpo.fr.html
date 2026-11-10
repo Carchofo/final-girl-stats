@@ -1,7 +1,8 @@
 <title>Laboratoire Final Girl</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Nosifer&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<!-- La cinta de la cabecera es lo primero grande que se pinta: que se pida ya,
+     sin esperar a leer el CSS. Las fuentes van en la cabecera de la pagina. -->
+<link rel="preload" as="image" href="img/vhs-final-girl.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/vhs-final-girl-m.webp" media="(max-width:700px)" fetchpriority="high">
 
 <style>
   /* Identidad de una sola pieza: siempre oscuro, a propósito.
@@ -27,9 +28,11 @@
     position:relative;   /* ya va fuera de .wrap: el ancho completo es gratis */
     min-height:clamp(300px, 46vw, 480px);
     display:flex; align-items:flex-end;
-    background:var(--paper) url("img/vhs-final-girl.jpg") center/cover no-repeat;
+    background:var(--paper) url("img/vhs-final-girl.webp") center/cover no-repeat;
     isolation:isolate;
   }
+  /* En el movil, la cinta a 800 px: la de 1200 pesa el doble y no se nota. */
+  @media (max-width:700px) { .hero { background-image:url("img/vhs-final-girl-m.webp"); } }
   .hero::after {
     content:""; position:absolute; inset:0; z-index:0;
     background:
@@ -479,8 +482,8 @@
      tape nada. Los paneles son opacos, asi que ningun texto cae encima. */
   body::after {
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
-    background:url("img/vhs-final-girl.jpg") center/cover no-repeat fixed;
-    opacity:.13; filter:grayscale(.35) contrast(.85);
+    background:url("img/fondo-vhs.webp") center/cover no-repeat;
+    opacity:.13;   /* el gris y el contraste ya vienen en la imagen (miniaturas.py) */
   }
   body { position:relative; }
 
@@ -795,6 +798,11 @@ var D = /*@@D@@*/;
     });
   };
   var pc0 = function (x) { return Math.round(x * 100); };
+  // Portadas pequenas (img/mini/, ver miniaturas.py): la tira, las filas y la
+  // cabecera de la ficha las pintan a 30-90 px y la original pesa 100-150 KB.
+  // Si la copia no existe, el onerror vuelve a la original.
+  var miniatura = function (s) { return s ? String(s).replace(/([^\/]+)$/, 'mini/$1') : s; };
+  var MINI_ERR = ' onerror="this.onerror=null;this.src=this.src.replace(\'/mini/\',\'/\')"';
 
   function paso(wr) {
     var d = wr - MEDIA, i = 0;
@@ -1067,7 +1075,7 @@ var D = /*@@D@@*/;
       el.innerHTML = '<div class="bar-cab' + (s.some(function (f) { return f.img; }) ? ' conth' : '') + '"><span></span><span>victoires</span><span>parties</span></div>' + s.map(function (f, i) {
         return '<button type="button" class="bar' + (f.img ? ' conth' : '') + '" data-i="' + i + '" aria-expanded="false">' +
           '<span class="fill" style="width:' + (f.wr / max * 100).toFixed(1) + '%"></span>' +
-          (f.img ? '<img class="th" src="' + f.img + '" alt="" loading="lazy"' +
+          (f.img ? '<img class="th" src="' + miniatura(f.img) + '" alt="" loading="lazy"' + MINI_ERR +
             (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '>' : '') +
           '<span class="nm">' + f.nombre + (f.mia ? '<span class="mine">À vous</span>' : '') +
           (f.sub ? '<i>' + f.sub + '</i>' : '') + '</span>' +
@@ -1244,7 +1252,7 @@ var D = /*@@D@@*/;
   function detalleCaja(f) {
     {
       var h = '<div class="det-head">' +
-        (f.img ? '<img src="' + f.img + '" alt="Jaquette de ' + f.film + '" loading="lazy"' +
+        (f.img ? '<img src="' + miniatura(f.img) + '"' + MINI_ERR + ' alt="Jaquette de ' + f.film + '" loading="lazy"' +
           (f.imgpos ? ' style="object-fit:cover;aspect-ratio:5/7;object-position:' + f.imgpos + '"' : '') + '>' : '<div></div>') +
         '<div><h3>' + f.film + '</h3><p class="loc">' + f.killer + ' à ' + f.loc +
         (f.fnum ? ' · <b>' + f.fnum + '</b>' : '') + '</p></div></div>' +
@@ -1804,7 +1812,7 @@ var D = /*@@D@@*/;
       return '<button type="button" class="poster" data-film="' +
         esc(f.film).replace(/"/g, '&quot;') + '" title="' + esc(f.film) +
         '" aria-label="Voir la fiche de ' + esc(f.film) + '">' +
-        '<img src="' + f.img + '" alt="" loading="lazy"' +
+        '<img src="' + miniatura(f.img) + '" alt="" loading="lazy"' + MINI_ERR +
         (f.imgpos ? ' style="object-position:' + f.imgpos + '"' : '') + '></button>';
     }).join('');
     // Arrastrar para mover. Hay que distinguir arrastre de clic: si no,

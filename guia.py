@@ -7,6 +7,7 @@ cartas llevan filtro de peli vieja (img/guias/<caja>/).
 import pathlib
 import re
 import unicodedata
+import miniaturas
 
 from guias_datos import GUIAS
 
@@ -78,7 +79,7 @@ EVPOP = ('<script>(function(){var p;function q(){if(p){p.remove();p=null}}'
          'document.addEventListener("click",function(e){var t=e.target.closest(".gu-evc");if(t&&matchMedia("(hover:none)").matches){var r=t.getBoundingClientRect();p?q():ver(t,Math.min(r.left,innerWidth-250),r.bottom+170)}else if(!t)q()})})()</script>')
 ZOOM = ('<script>document.addEventListener("click",function(e){var z=document.querySelector(".gu-zoom");if(z){z.remove();return}'
         'var i=e.target.closest(".gu-grid img,.gu-it img,.gu-foto img,.gu-figs img");if(!i)return;var d=document.createElement("div");d.className="gu-zoom";'
-        'd.innerHTML=\'<img src="\'+i.src+\'" alt="">\';document.body.appendChild(d)})</script>')
+        'd.innerHTML=\'<img src="\'+(i.dataset.full||i.src)+\'" alt="">\';document.body.appendChild(d)})</script>')
 
 
 def ancla(*partes):
@@ -179,6 +180,15 @@ def fase_html(lang, g, ancla_id=False, h="h3"):
     return out if ancla_id else con_iconos(out, g["caja"], lg)
 
 
+def _img_obj(g, pre, ruta, s, n):
+    """Carta de objeto: se ve a 108x148, así que va la copia pequeña
+    (miniaturas.py) y la original solo al ampliarla (data-full)."""
+    chica = miniaturas.mini_de(f"guias/{g['dir']}/{s}.jpg", miniaturas.ANCHO_GUIA)
+    if not chica:
+        return f'<img src="{ruta}{s}.jpg" alt="{n}" loading="lazy">'
+    return f'<img src="{pre}img/{chica}" data-full="{ruta}{s}.jpg" alt="{n}" loading="lazy">'
+
+
 def secciones(lang, g):
     """Las dos guías como secciones de la ficha de la caja."""
     lg = _lg(lang, g)
@@ -217,7 +227,7 @@ def secciones(lang, g):
                       for s, n in g["inicios"]) + '</div>')
     if d["obj"]:
         m += (f'<h3>{tt["obj"]}</h3><div class="gu-obj">' +
-              "".join(f'<div class="gu-it" id="{ancla("obj", n)}">' + (f'<img src="{ruta}{s}.jpg" alt="{n}" loading="lazy">' if s else '') +
+              "".join(f'<div class="gu-it" id="{ancla("obj", n)}">' + (_img_obj(g, pre, ruta, s, n) if s else '') +
                       f'<div><b class="n">{n}</b><p>{x}</p></div></div>' for s, n, x in d["obj"]) + '</div>')
     if d.get("falta"):
         m += f'<p class="sub">{d["falta"]}</p>'

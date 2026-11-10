@@ -12,6 +12,7 @@ del % de victorias de las partidas registradas. S es lo más duro.
 import pathlib
 
 import idiomas as I
+import miniaturas
 import paginas as P
 import tops
 
@@ -216,7 +217,9 @@ def _tier(items, lang, pre, cajas=False):
         celdas = []
         for nombre, wr, g, href, img in grupos[letra]:
             tag = f'a href="{href}"' if href else "div"
-            foto = f'<img src="{pre}{img}" alt="{nombre}" loading="lazy">' if img else ""
+            # Se ve a 104 px: la copia pequeña si existe (miniaturas.py).
+            chica = miniaturas.mini_de(img[len("img/"):]) if img else None
+            foto = f'<img src="{pre}{"img/" + chica if chica else img}" alt="{nombre}" loading="lazy">' if img else ""
             dc = f' data-caja="{nombre}"' if cajas else ""
             celdas.append(f'<{tag} class="tl-it">{foto}<span{dc}>{nombre}'
                           f'<b>{I.pc(wr, lang, 0)} {t["vic"]} · {I.num(g, lang)} {t["part"]}</b></span></{tag.split()[0]}>')

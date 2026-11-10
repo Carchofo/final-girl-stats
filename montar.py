@@ -11,6 +11,11 @@ import re
 import json
 import pathlib
 import paginas
+import miniaturas
+
+# Copias pequeñas de las portadas y la cinta VHS en WebP, antes de montar nada:
+# las páginas solo apuntan a una miniatura si existe. Sin PIL no hace nada.
+miniaturas.generar()
 
 AQUI = pathlib.Path(__file__).parent
 DOMINIO = "https://finalgirlstats.com"
@@ -101,6 +106,9 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
   .nav-sitio {{ display:flex; gap:18px; padding:14px 0 2px; font-size:13px;
                 letter-spacing:.06em; text-transform:uppercase; align-items:center;
                 position:relative; }}
+  /* En la home la barra va suelta en el body, no dentro de .wrap: en pantallas
+     anchas se pegaba al borde izquierdo en vez de alinearse con el contenido. */
+  body > .nav-sitio {{ max-width:1040px; margin-inline:auto; padding-inline:20px; }}
   .nav-sitio a {{ color:var(--muted); text-decoration:none; padding-bottom:4px;
                   border-bottom:2px solid transparent; }}
   .nav-sitio a:hover {{ color:var(--ink); }}
@@ -128,7 +136,11 @@ NAV = """<nav class="nav-sitio" aria-label="Secciones">
   .nav-mas a {{ color:var(--muted); text-decoration:none; padding:7px 0; }}
   .nav-mas a:hover {{ color:var(--blood); }}
   @media (max-width:560px) {{
-    .nav-sitio {{ justify-content:center; gap:6px 14px; flex-wrap:wrap; font-size:12px; letter-spacing:.04em; }}
+    /* Más prieta para que quepa en una línea en un móvil de 390 px: con 14 px
+       de hueco, el "+" bajaba solo a una segunda fila (también en salidas,
+       donde la barra va dentro de .wrap y tiene 350 px). */
+    .nav-sitio {{ justify-content:center; gap:6px 8px; flex-wrap:wrap; font-size:12px; letter-spacing:.02em; }}
+    body > .nav-sitio {{ padding-inline:12px; }}
     /* Con el menu centrado, margin-left:auto mandaria el "+" al borde y
        descuadraria el centro. */
     .nav-sitio .mas {{ margin-left:0; }}
@@ -320,7 +332,7 @@ CABECERA = """<!doctype html>
 <script type="application/ld+json">{jsonld}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Nosifer&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Nosifer&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 </head>
 <body>
