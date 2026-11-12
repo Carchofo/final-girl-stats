@@ -426,29 +426,10 @@ META = D["meta"]
 
 
 def jsonld_de(pagina, url):
-    """Datos estructurados: le dice al buscador que esto es un conjunto de
-    datos con fuente y fecha, no un blog cualquiera."""
-    base = {
-        "@context": "https://schema.org",
-        "@type": "Dataset",
-        "name": pagina["title"],
-        "description": pagina["desc"],
-        "url": url,
-        "inLanguage": "es",
-        "keywords": ["Final Girl", "board game", "solo", "win rate", "estadísticas"],
-        "temporalCoverage": f"../{META['last']}",
-        "variableMeasured": "Porcentaje de victoria",
-        "measurementTechnique": "Partidas registradas por jugadores",
-        "distribution": {"@type": "DataDownload", "encodingFormat": "text/html", "contentUrl": url},
-        "about": {
-            "@type": "Game",
-            "name": "Final Girl",
-            "gamePlatform": "Juego de mesa",
-            "numberOfPlayers": {"@type": "QuantitativeValue", "value": 1},
-        },
-        "size": f"{META['total']} partidas",
-    }
-    return json.dumps(base, ensure_ascii=False, separators=(",", ":"))
+    """Datos estructurados: tipo (datos, artículo, herramienta), fecha ISO y
+    la entidad del juego. Lo comparte con idiomas.py (paginas.ld)."""
+    salida = url[len(DOMINIO) + 1:] or "index.html"
+    return paginas.ld(pagina["title"], pagina["desc"], url, "es", salida, DOMINIO)
 
 
 for p in PAGINAS:
@@ -547,6 +528,20 @@ for p in PAGINAS:
 # navegador lo baja una vez por página. En un .css lo baja una sola vez y
 # lo cachea para todas.
 CSS = estilos()
+# Tablas de las fichas (paginas.tabla): con el mismo aire que table.mini de la portada.
+CSS += """<style>
+  .tabla-wrap { overflow-x:auto; }
+  .tabla-wrap table { width:100%; max-width:640px; border-collapse:collapse; font-size:14.5px; }
+  .tabla-wrap th { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase;
+                   color:var(--muted); text-align:left; padding:5px 0; border-bottom:2px solid var(--line-hi); }
+  .tabla-wrap td { padding:6px 0; border-bottom:1px solid var(--line); }
+  .tabla-wrap td.n, .tabla-wrap th.n { text-align:right; font-family:var(--f-mono);
+                   font-variant-numeric:tabular-nums; white-space:nowrap; padding-left:12px; }
+  .tabla-wrap th.n { font-size:10px; }
+  .tabla-wrap tr:last-child td { border-bottom:0; }
+  .tabla-wrap td a { color:var(--ink); text-decoration-color:var(--line-hi); text-underline-offset:3px; }
+  .tabla-wrap td a:hover { color:var(--blood); }
+</style>"""
 (AQUI / "estilos.css").write_text(
     re.sub(r"</?style>", "", CSS), encoding="utf-8")
 # Version en el enlace: GitHub Pages cachea el CSS 10 min y sin ella
@@ -591,6 +586,21 @@ def enlaces(tipo, titulo, nota):
         f'<li><a href="{g["salida"]}" data-caja="{g.get("caja", "")}">{g["title"].split(":")[0].split(" en Final Girl")[0]}</a></li>'
         for g in items)
     return f'<h2>{titulo}</h2><p class="sub">{nota}</p><ul class="indice">{li}</ul>'
+# Las versiones traducidas ya traían estas tablas; la española solo tenía
+# listas de enlaces, sin un solo porcentaje que un buscador pudiera citar.
+def _tablas_es():
+    ks = sorted(((nm, k) for nm, k in paginas.KILLERS.items() if k.get("g", 0) >= 60), key=lambda x: x[1]["wr"])
+    cs = sorted(paginas.D["films"], key=lambda f: f["wr"])
+    fmt = lambda n: f"{n:,}".replace(",", ".")
+    return ('<p>Media de victorias: <b>' + paginas.pc(META["wr"]) + '</b> sobre ' + fmt(META["total"]) + ' partidas.</p>'
+            + '<h2>Killers, del más duro al más fácil</h2>'
+            + paginas.tabla(["Killer", "Victorias", "Partidas"],
+                            [[f'<a href="{paginas.slug(nm)}.html">{nm}</a>', paginas.pc(k["wr"]), fmt(k["g"])] for nm, k in ks])
+            + '<h2>Cajas, de la más dura a la más fácil</h2>'
+            + paginas.tabla(["Caja", "Victorias", "Partidas"],
+                            [[f'<a href="{paginas.slug(f["film"])}.html">{f["film"]}</a>', paginas.pc(f["wr"]), fmt(f["plays"])] for f in cs]))
+
+TABLAS_ES = _tablas_es()
 
 fichas = (
     NAV.format(act_index="", act_salidas="", act_fichas="")
@@ -599,6 +609,7 @@ fichas = (
       '<h1>Todas las<span class="roja">fichas</span></h1>'
       '<p class="dek">Una página por killer y por caja, con sus porcentajes de victoria, '
       'sus cartas más duras y los consejos de quien las ha jugado.</p></header>'
+    + TABLAS_ES
     + '<nav class="chips" aria-label="Tipos de ficha">'
       '<a href="#killers">Killers</a><a href="#peliculas">Películas</a>'
       '<a href="#temporadas">Temporadas</a><a href="#localizaciones">Localizaciones</a></nav>'
@@ -832,3 +843,7 @@ else:
 # --- buscador: índice por idioma y lupa en el menú (al final: lee las páginas ya escritas)
 import buscador
 buscador.montar()
+
+# --- sello en texto plano: fecha de los datos y qué es Final Girl (para bots sin JS)
+print("sello en", paginas.sellar(AQUI), "páginas")
+paginas.resumir_portadas(AQUI)

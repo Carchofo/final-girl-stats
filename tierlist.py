@@ -256,6 +256,7 @@ def pagina(lang):
          f'<h2>{t["cajas"]}</h2>', _tier(cajas, lang, pre, True),
          f'<h2>{t["killers"]}</h2><p class="sub">{t["nota_k"]}</p>', _tier(killers, lang, pre),
          f'<h2>{t["mapas"]}</h2><p class="sub">{t["nota_m"]}</p>', _tier(mapas, lang, pre),
-         # FAQ apagada de momento (menos es mas). Para volver: _faq(lang, cajas, killers, mapas, n),
+         # Preguntas frecuentes plegadas: es el formato que citan los buscadores y las IA.
+         _faq(lang, cajas, killers, mapas, n),
          ESTILO]
     return (t["title"].format(n=n), t["desc"].format(n=n)[:158], "\n".join(h))

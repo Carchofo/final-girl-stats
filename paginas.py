@@ -199,7 +199,7 @@ def tabla(cab, filas):
     return f'<div class="tabla-wrap"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
 
-def arte_ficha(ruta, pre=""):
+def arte_ficha(ruta, pre="", alt=""):
     """Ilustración arriba a la derecha de la ficha (killer: su arte; caja: la portada),
     montada como una diapositiva de 35 mm."""
     if not (AQUI / ruta).exists():
@@ -217,7 +217,7 @@ def arte_ficha(ruta, pre=""):
             'box-shadow:0 0 0 1px rgba(0,0,0,.35),inset 0 0 28px rgba(0,0,0,.75)}'
             '.diapo::before{content:"FINALGIRLSTATS";position:absolute;left:0;right:0;bottom:8px;text-align:center;'
             'font:700 8px/1 var(--f-mono),monospace;letter-spacing:.25em;color:#8a8170}</style>'
-            '<span class="diapo"><img class="ficha-arte" src="' + pre + ruta + '" alt="" style="object-position:' + pos + '"></span>')
+            '<span class="diapo"><img class="ficha-arte" src="' + pre + ruta + '" alt="' + alt.replace('"', '&quot;') + '" style="object-position:' + pos + '"></span>')
 
 
 # --------------------------------------------------------------------------
@@ -230,7 +230,7 @@ def pagina_killer(nombre, k):
     propio = f['loc'] if f else None
     aqui = next((m for m in mapas if m[0] == propio), None)
 
-    h = [arte_ficha(f"img/art/{slug(nombre)}.jpg"),
+    h = [arte_ficha(f"img/art/{slug(nombre)}.jpg", alt=nombre),
          f'<p class="eyebrow">Killer · {len(mapas)} mapas con datos</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{pc(k["wr"])} de victorias</span></h1>']
     import guia
@@ -342,7 +342,7 @@ def mesa(caja, lang):
 def pagina_caja(f):
     c = CONSEJOS.get(f['film'], {})
     k = KILLERS.get(f['killer'], {})
-    h = [arte_ficha(f"img/{slug(f['film'])}.jpg"),
+    h = [arte_ficha(f"img/{slug(f['film'])}.jpg", alt=f['film']),
          f'<p class="eyebrow">Caja · {f.get("fnum","")} · {f["plays"]} partidas</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{pc(f["wr"])} de victorias</span></h1>']
     import guia
@@ -449,3 +449,139 @@ if __name__ == '__main__':
           f'{sum(1 for x in p if x["tipo"]=="caja")} cajas')
     for x in p[:3]:
         print(f'  {x["salida"]:<34} {len(x["cuerpo"])//1024} KB  {x["title"][:60]}')
+
+
+# --- datos estructurados comunes ---------------------------------------------
+# Fecha de los datos en ISO (D['meta']['last'] viene como "8 nov 2026") y la
+# entidad del juego, con editorial y BGG: así un buscador o una IA sabe de qué
+# "Final Girl" hablamos (no de la película ni del tropo).
+_MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic']
+
+
+def fecha_iso(t=None):
+    d, m, y = (t or D['meta']['last']).split()
+    return f"{y}-{_MESES.index(m[:3].lower()) + 1:02d}-{int(d):02d}"
+
+
+JUEGO = {
+    "@type": "Game", "name": "Final Girl",
+    "description": "Solo horror board game", "numberOfPlayers": {"@type": "QuantitativeValue", "value": 1},
+    "publisher": {"@type": "Organization", "name": "Van Ryder Games", "url": "https://www.vanrydergames.com/"},
+    "sameAs": ["https://boardgamegeek.com/boardgame/277659/final-girl"],
+}
+
+
+def tipo_ld(salida):
+    """Qué es cada página: datos, artículo o herramienta."""
+    s = salida.rsplit("/", 1)[-1]
+    if s == "salidas.html":
+        return "Article"
+    if s in ("crear-tier-list.html", "registrar.html"):
+        return "WebApplication"
+    return "Dataset"
+
+
+def ld(name, desc, url, lang, salida, dominio, extra=None):
+    hoy = fecha_iso()
+    base = {"@context": "https://schema.org", "@type": tipo_ld(salida),
+            "name": name, "description": desc, "url": url, "inLanguage": lang,
+            "isAccessibleForFree": True, "dateModified": hoy, "about": JUEGO,
+            "creator": {"@type": "Organization", "name": "Final Girl Stats", "url": dominio + "/"}}
+    t = base["@type"]
+    if t == "Dataset":
+        base.update({"keywords": ["Final Girl", "board game", "solo", "win rate", "statistics"],
+                     "temporalCoverage": f"2022-01/{hoy}",
+                     "variableMeasured": "Win rate",
+                     "measurementTechnique": "Games logged by players in the community tracking sheet",
+                     "size": f"{D['meta']['total']} games"})
+    elif t == "Article":
+        base.update({"headline": name[:110], "author": base["creator"], "publisher": base["creator"]})
+    else:
+        base.update({"applicationCategory": "GameApplication", "operatingSystem": "Any",
+                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}})
+    if extra:
+        base.update(extra)
+    return json.dumps(base, ensure_ascii=False, separators=(",", ":"))
+
+
+# --- sello: fecha de los datos y qué es Final Girl, en texto plano -----------
+# Va en todas las páginas, fuera del JavaScript: es lo que lee un bot que no
+# ejecuta JS (la mayoría de los de IA) y le dice de qué juego hablamos y de
+# cuándo son los datos.
+SELLO_TXT = {
+    "es": ("Datos hasta el {f} · {n} partidas.", "Final Girl Stats es una web de fans, no oficial, sobre <b>Final Girl</b>, el juego de mesa de terror en solitario de Van Ryder Games."),
+    "en": ("Data up to {f} · {n} games.", "Final Girl Stats is an unofficial fan site about <b>Final Girl</b>, the solo horror board game by Van Ryder Games."),
+    "fr": ("Données jusqu'au {f} · {n} parties.", "Final Girl Stats est un site de fans non officiel sur <b>Final Girl</b>, le jeu de société d'horreur en solo de Van Ryder Games."),
+    "de": ("Daten bis {f} · {n} Partien.", "Final Girl Stats ist eine inoffizielle Fanseite über <b>Final Girl</b>, das Solo-Horror-Brettspiel von Van Ryder Games."),
+    "it": ("Dati fino al {f} · {n} partite.", "Final Girl Stats è un sito di fan non ufficiale su <b>Final Girl</b>, il gioco da tavolo horror in solitario di Van Ryder Games."),
+}
+_SELLO_RE = re.compile(r"\n?<!--sello-->.*?<!--/sello-->", re.S)
+
+
+def sellar(raiz):
+    iso = fecha_iso()
+    total = D['meta']['total']
+    hechas = 0
+    for f in list(raiz.glob("*.html")) + [p for l in SELLO_TXT if l != "es" for p in (raiz / l).glob("*.html")]:
+        lang = f.parent.name if f.parent != raiz else "es"
+        s = f.read_text(encoding="utf-8")
+        if "</body>" not in s or 'content="noindex' in s:
+            continue
+        a, b = SELLO_TXT[lang]
+        n = f"{total:,}".replace(",", "." if lang in ("es", "de", "it") else (" " if lang == "fr" else ","))
+        fecha = f'<time datetime="{iso}">{iso}</time>'
+        sello = ('<!--sello--><p class="sello" style="max-width:1040px;margin:28px auto 18px;padding:0 20px;'
+                 'font-size:12.5px;line-height:1.6;color:var(--muted,#9c8f93)">'
+                 + a.format(f=fecha, n=n) + " " + b + "</p><!--/sello-->")
+        s = _SELLO_RE.sub("", s).replace("</body>", sello + "\n</body>", 1)
+        s = re.sub(r'(<h1[^>]*>[^<]*?\S)(<span class="roja">)', r'\1 \2', s, count=1)
+        f.write_text(s, encoding="utf-8")
+        hechas += 1
+    return hechas
+
+
+# --- resumen en texto plano para la portada ---------------------------------
+# La portada pinta todo con JavaScript: sin él no hay ni un porcentaje. Este
+# bloque, plegado al final, deja escrito lo que más se pregunta (qué killer y
+# qué caja son más duros o más fáciles) con enlaces a las fichas.
+RESUMEN_TXT = {
+    "es": ("Resumen en texto", "De media, la Final Girl gana el {m} de {n} partidas.", "Killers más duros", "Killers más fáciles", "Cajas más duras", "Cajas más fáciles", "Todos en el <a href=\"fichas.html\">índice de fichas</a>.", "partidas"),
+    "en": ("Summary in text", "On average, the Final Girl wins {m} of {n} games.", "Hardest killers", "Easiest killers", "Hardest boxes", "Easiest boxes", "All of them in the <a href=\"fichas.html\">killer and box index</a>.", "games"),
+    "fr": ("Résumé en texte", "En moyenne, la Final Girl gagne {m} des {n} parties.", "Killers les plus durs", "Killers les plus faciles", "Boîtes les plus dures", "Boîtes les plus faciles", "Tous dans l'<a href=\"fichas.html\">index des fiches</a>.", "parties"),
+    "de": ("Zusammenfassung als Text", "Im Schnitt gewinnt das Final Girl {m} von {n} Partien.", "Härteste Killer", "Leichteste Killer", "Härteste Boxen", "Leichteste Boxen", "Alle im <a href=\"fichas.html\">Index der Killer und Boxen</a>.", "Partien"),
+    "it": ("Riassunto in testo", "In media la Final Girl vince il {m} di {n} partite.", "Killer più duri", "Killer più facili", "Scatole più dure", "Scatole più facili", "Tutti nell'<a href=\"fichas.html\">indice delle schede</a>.", "partite"),
+}
+_RES_RE = re.compile(r"\n?<!--resumen-->.*?<!--/resumen-->", re.S)
+
+
+def _num(n, lang):
+    return f"{n:,}".replace(",", {"es": ".", "de": ".", "it": ".", "fr": " "}.get(lang, ","))
+
+
+def _pc(x, lang):
+    s = f"{x * 100:.1f}"
+    return (s if lang == "en" else s.replace(".", ",")) + (" %" if lang == "fr" else "%")
+
+
+def resumir_portadas(raiz):
+    ks = sorted(((nm, k) for nm, k in KILLERS.items() if k.get("g", 0) >= 60), key=lambda x: x[1]["wr"])
+    cs = sorted(D["films"], key=lambda f: f["wr"])
+    for lang, txt in RESUMEN_TXT.items():
+        f = raiz / "index.html" if lang == "es" else raiz / lang / "index.html"
+        if not f.exists():
+            continue
+        tit, med, kd, kf, cd, cf, todos, part = txt
+        li = lambda filas: "".join(f'<li><a href="{slug(n)}.html">{n}</a>: {_pc(w, lang)} ({_num(g, lang)} {part})</li>' for n, w, g in filas)
+        kk = [(nm, k["wr"], k["g"]) for nm, k in ks]
+        cc = [(c["film"], c["wr"], c["plays"]) for c in cs]
+        bloque = ('<!--resumen--><details class="resumen-txt" style="max-width:1040px;margin:30px auto 0;padding:0 20px;color:var(--muted,#9c8f93);font-size:14px">'
+                  f'<summary style="cursor:pointer">{tit}</summary>'
+                  f'<p>{med.format(m="<b>" + _pc(D["meta"]["wr"], lang) + "</b>", n=_num(D["meta"]["total"], lang))}</p>'
+                  f'<h2 style="font-size:15px">{kd}</h2><ul>{li(kk[:5])}</ul>'
+                  f'<h2 style="font-size:15px">{kf}</h2><ul>{li(kk[::-1][:5])}</ul>'
+                  f'<h2 style="font-size:15px">{cd}</h2><ul>{li(cc[:5])}</ul>'
+                  f'<h2 style="font-size:15px">{cf}</h2><ul>{li(cc[::-1][:5])}</ul>'
+                  f'<p>{todos}</p></details><!--/resumen-->')
+        s = _RES_RE.sub("", f.read_text(encoding="utf-8"))
+        s = s.replace("<!--sello-->", bloque + "\n<!--sello-->", 1) if "<!--sello-->" in s else s.replace("</body>", bloque + "\n</body>", 1)
+        f.write_text(s, encoding="utf-8")

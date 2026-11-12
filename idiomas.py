@@ -288,7 +288,7 @@ def pagina_killer(nombre, k, lang, tx):
     propio = f["loc"] if f else None
     aqui = next((m for m in mapas if m[0] == propio), None)
     wr = pc(k["wr"], lang)
-    h = [P.arte_ficha(f"img/art/{P.slug(nombre)}.jpg", "../"),
+    h = [P.arte_ficha(f"img/art/{P.slug(nombre)}.jpg", "../", nombre),
          f'<p class="eyebrow">{t["killer_eb"].format(n=len(mapas))}</p>',
          f'<h1 data-caja="{caja or ""}">{nombre}<span class="roja">{t["killer_h1"].format(wr=wr)}</span></h1>']
     import guia
@@ -360,7 +360,7 @@ def pagina_caja(f, lang, tx):
     c = tx["cons"].get(f["film"], {})
     k = P.KILLERS.get(f["killer"], {})
     wr = pc(f["wr"], lang)
-    h = [P.arte_ficha(f"img/{P.slug(f['film'])}.jpg", "../"),
+    h = [P.arte_ficha(f"img/{P.slug(f['film'])}.jpg", "../", f['film']),
          f'<p class="eyebrow">{t["box_eb"].format(f=f.get("fnum", ""), g=f["plays"])}</p>',
          f'<h1 data-caja="{f["film"]}">{f["film"]}<span class="roja">{t["box_h1"].format(wr=wr)}</span></h1>']
     import guia
@@ -556,17 +556,8 @@ def generar(M):
 
 
 def jsonld(title, desc, url, lang, M):
-    m = P.D["meta"]
-    return json.dumps({
-        "@context": "https://schema.org", "@type": "Dataset",
-        "name": title, "description": desc, "url": url, "inLanguage": lang,
-        "keywords": ["Final Girl", "board game", "solo", "win rate", "statistics"],
-        "temporalCoverage": f"../{m['last']}",
-        "isAccessibleForFree": True,
-        "creator": {"@type": "Organization", "name": "Final Girl Stats", "url": M.DOMINIO + "/"},
-        "about": {"@type": "Game", "name": "Final Girl",
-                  "numberOfPlayers": {"@type": "QuantitativeValue", "value": 1}},
-    }, ensure_ascii=False, separators=(",", ":"))
+    salida = url[len(M.DOMINIO) + 1:] or "index.html"
+    return P.ld(title, desc, url, lang, salida, M.DOMINIO)
 
 
 def parchear_es(ruta, salida, dominio, existe):

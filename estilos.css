@@ -616,3 +616,14 @@
   #mis-temps button { margin-left:6px; }
 
 .reg-link{color:var(--blood);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;white-space:nowrap}
+  .tabla-wrap { overflow-x:auto; }
+  .tabla-wrap table { width:100%; max-width:640px; border-collapse:collapse; font-size:14.5px; }
+  .tabla-wrap th { font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase;
+                   color:var(--muted); text-align:left; padding:5px 0; border-bottom:2px solid var(--line-hi); }
+  .tabla-wrap td { padding:6px 0; border-bottom:1px solid var(--line); }
+  .tabla-wrap td.n, .tabla-wrap th.n { text-align:right; font-family:var(--f-mono);
+                   font-variant-numeric:tabular-nums; white-space:nowrap; padding-left:12px; }
+  .tabla-wrap th.n { font-size:10px; }
+  .tabla-wrap tr:last-child td { border-bottom:0; }
+  .tabla-wrap td a { color:var(--ink); text-decoration-color:var(--line-hi); text-underline-offset:3px; }
+  .tabla-wrap td a:hover { color:var(--blood); }
