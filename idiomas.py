@@ -76,6 +76,8 @@ T = {
     "foro_c": "Tips from players", "reviews": "What reviews say",
     "salir_c": "The four openings, with which one to use depending on the setup, are in the <a href=\"salidas.html\">opening strategies</a>.",
     "c_title": "{c} (Final Girl): stats and tips, {wr} win rate",
+    "cg_title": "{c} (Final Girl): {k} guide, rules and tips · {wr} wins",
+    "cg_desc": "How to play {k} on {l}: setup, special rules, every Dark Power and Finale explained. Won {wr} of {g} games.",
     "c_desc": "{k} on {l}. Won {wr} of {g} games. Setups, Dark Powers, Finales and tips.",
     "pie": "Data from the <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">public tracking sheet</a> kept by the Final Girl community (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">log your games</a>). Back to <a href=\"fichas.html\">all killers and boxes</a>.",
     "hub_title": "Final Girl stats: win rate of every killer and box ({n} games)",
@@ -133,6 +135,8 @@ T = {
     "foro_c": "Conseils de joueurs", "reviews": "Ce qu'en disent les critiques",
     "salir_c": "Les quatre ouvertures, avec laquelle choisir selon la mise en place, sont dans les <a href=\"salidas.html\">stratégies d'ouverture</a>.",
     "c_title": "{c} (Final Girl) : stats et conseils, {wr} de victoires",
+    "cg_title": "{c} (Final Girl) : guide de {k}, règles et conseils · {wr} de victoires",
+    "cg_desc": "Comment jouer contre {k} sur {l} : mise en place, règles spéciales, Dark Powers et Finales expliqués. Gagnée dans {wr} des {g} parties.",
     "c_desc": "{k} sur {l}. Gagnée dans {wr} des {g} parties. Setups, Dark Powers, Finales et conseils.",
     "pie": "Données issues de la <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">feuille de suivi publique</a> de la communauté Final Girl (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">enregistrez vos parties</a>). Retour à <a href=\"fichas.html\">tous les killers et boîtes</a>.",
     "hub_title": "Statistiques Final Girl : victoires par killer et par boîte ({n} parties)",
@@ -190,6 +194,8 @@ T = {
     "foro_c": "Tipps von Spielern", "reviews": "Was Rezensionen sagen",
     "salir_c": "Die vier Eröffnungen, und welche je nach Aufbau passt, stehen in den <a href=\"salidas.html\">Eröffnungsstrategien</a>.",
     "c_title": "{c} (Final Girl): Statistik und Tipps, {wr} Siegquote",
+    "cg_title": "{c} (Final Girl): {k}-Guide, Regeln und Tipps · {wr} Siege",
+    "cg_desc": "So spielst du gegen {k} auf {l}: Aufbau, Sonderregeln, alle Dark Powers und Finales erklärt. {wr} von {g} Partien gewonnen.",
     "c_desc": "{k} auf {l}. {wr} von {g} Partien gewonnen. Setups, Dark Powers, Finales und Tipps.",
     "pie": "Daten aus der <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">öffentlichen Tabelle</a> der Final-Girl-Community (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">trag deine Partien ein</a>). Zurück zu <a href=\"fichas.html\">allen Killern und Boxen</a>.",
     "hub_title": "Final Girl Statistik: Siegquote jedes Killers und jeder Box ({n} Partien)",
@@ -247,6 +253,8 @@ T = {
     "foro_c": "Consigli di chi l'ha giocata", "reviews": "Cosa dicono le recensioni",
     "salir_c": "Le quattro aperture, con quale usare in base alla preparazione, sono nelle <a href=\"salidas.html\">strategie di apertura</a>.",
     "c_title": "{c} (Final Girl): statistiche e consigli, {wr} di vittorie",
+    "cg_title": "{c} (Final Girl): guida a {k}, regole e consigli · {wr} di vittorie",
+    "cg_desc": "Come giocare contro {k} su {l}: preparazione, regole speciali, ogni Dark Power e Finale spiegati. Vinta nel {wr} di {g} partite.",
     "c_desc": "{k} su {l}. Vinta nel {wr} di {g} partite. Setup, Dark Powers, Finali e consigli.",
     "pie": "Dati dal <a href=\"{h}\" target=\"_blank\" rel=\"noopener\">foglio pubblico</a> della community di Final Girl (<a href=\"{f}\" target=\"_blank\" rel=\"noopener\">registra le tue partite</a>). Torna a <a href=\"fichas.html\">tutti i killer e le scatole</a>.",
     "hub_title": "Statistiche Final Girl: vittorie per killer e scatola ({n} partite)",
@@ -409,8 +417,10 @@ def pagina_caja(f, lang, tx):
         h.append(f'<h2>{t["reviews"]}</h2><div class="aviso"><p><b>{r}</b></p></div>')
     h.append(P.bloque_tienda(f["film"], lang))
     h.append(f'<h2>{t["salir"]}</h2><p>{t["salir_c"]}</p>')
-    title = t["c_title"].format(c=f["film"], wr=pc(f["wr"], lang, 0))
-    desc = t["c_desc"].format(k=f["killer"], l=f["loc"], wr=wr, g=f["plays"])
+    # Con guía: que el título lo diga y nombre al killer (es lo que se busca).
+    pre = "cg_" if guia.por_caja(f["film"]) else "c_"
+    title = t[pre + "title"].format(c=f["film"], k=f["killer"], wr=pc(f["wr"], lang, 0))
+    desc = t[pre + "desc"].format(k=f["killer"], l=f["loc"], wr=pc(f["wr"], lang, 0) if pre == "cg_" else wr, g=f["plays"])
     if guia.por_caja(f["film"]):
         h.append(guia.secciones(lang, guia.por_caja(f["film"])))
     return title, desc[:158], "\n".join(h)

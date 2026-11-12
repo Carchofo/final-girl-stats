@@ -423,6 +423,11 @@ def pagina_caja(f):
     titulo = f'{f["film"]} (Final Girl): estadísticas y consejos, {pc(f["wr"],0)} de victorias'
     desc = (f'{f["killer"]} en {f["loc"]}. Se gana el {pc(f["wr"])} sobre {f["plays"]} partidas. '
             f'Hojas de preparación, Dark Powers, Finales y consejos.')
+    if guia.por_caja(f["film"]):
+        # Con guía: que el título lo diga y nombre al killer (es lo que se busca).
+        titulo = f'{f["film"]} (Final Girl): guía de {f["killer"]}, reglas y consejos · {pc(f["wr"],0)} de victorias'
+        desc = (f'Cómo jugar contra {f["killer"]} en {f["loc"]}: preparación, reglas especiales y cada Dark Power '
+                f'y Finale explicados. Se gana el {pc(f["wr"],0)} de {f["plays"]} partidas.')
     return titulo, desc[:155], '\n'.join(h)
 
 
