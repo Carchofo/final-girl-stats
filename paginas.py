@@ -319,7 +319,7 @@ def pagina_killer(nombre, k):
              'Para cruzar a este killer con cualquier otro mapa, la matriz completa está en '
              '<a href="index.html">las estadísticas</a>.</p>')
 
-    titulo = f'{nombre} en Final Girl: victorias por mapa y cómo ganarle'
+    titulo = f'{nombre} en Final Girl (juego de mesa): victorias por mapa y cómo ganarle'
     desc = (f'La Final Girl gana el {pc(k["wr"])} contra {nombre} sobre {k["g"]} partidas. '
             f'Dónde le va mejor y peor, sus Dark Powers y Finales más duros, y consejos.')
     return titulo, desc[:155], '\n'.join(h)

@@ -269,7 +269,7 @@ PAGINAS = [
     {
         "fuente": "src/cuerpo.html",
         "salida": "index.html",
-        "title": f'Estadísticas de Final Girl: {CIFRAS["partidas"]} partidas reales',
+        "title": f'Estadísticas de Final Girl, el juego de mesa: {CIFRAS["partidas"]} partidas reales',
         # Google corta la descripcion sobre los 155 caracteres: lo que
         # importa va delante.
         "desc": (
