@@ -520,6 +520,12 @@ SELLO_TXT = {
     "de": ("Daten bis {f} · {n} Partien.", "Final Girl Stats ist eine inoffizielle Fanseite über <b>Final Girl</b>, das Solo-Horror-Brettspiel von Van Ryder Games."),
     "it": ("Dati fino al {f} · {n} partite.", "Final Girl Stats è un sito di fan non ufficiale su <b>Final Girl</b>, il gioco da tavolo horror in solitario di Van Ryder Games."),
 }
+CONTACTO = "poerkatauro@gmail.com"
+CONTACTO_TXT = {"es": "¿Quieres colaborar o hacer algo con nosotros? Escríbenos a {c}.",
+    "en": "Want to collaborate or build something with us? Email {c}.",
+    "fr": "Envie de collaborer ou de faire quelque chose avec nous ? Écrivez à {c}.",
+    "de": "Lust auf eine Zusammenarbeit? Schreib uns an {c}.",
+    "it": "Vuoi collaborare o fare qualcosa con noi? Scrivici a {c}."}
 _SELLO_RE = re.compile(r"\n?<!--sello-->.*?<!--/sello-->", re.S)
 
 
@@ -537,7 +543,9 @@ def sellar(raiz):
         fecha = f'<time datetime="{iso}">{iso}</time>'
         sello = ('<!--sello--><p class="sello" style="max-width:1040px;margin:28px auto 18px;padding:0 20px;'
                  'font-size:12.5px;line-height:1.6;color:var(--muted,#9c8f93)">'
-                 + a.format(f=fecha, n=n) + " " + b + "</p><!--/sello-->")
+                 + a.format(f=fecha, n=n) + " " + b + " "
+                 + CONTACTO_TXT[lang].format(c=f'<a href="mailto:{CONTACTO}">{CONTACTO}</a>')
+                 + "</p><!--/sello-->")
         s = _SELLO_RE.sub("", s).replace("</body>", sello + "\n</body>", 1)
         s = re.sub(r'(<h1[^>]*>[^<]*?\S)(<span class="roja">)', r'\1 \2', s, count=1)
         f.write_text(s, encoding="utf-8")

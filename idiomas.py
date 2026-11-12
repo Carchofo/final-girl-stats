@@ -754,7 +754,7 @@ def grande(lang, salida, M, existe):
 # excluir_nicks.json es una lista de nicks (mayúsculas no importan). Se
 # quitan de la pestaña Jugadores en todos los idiomas. Sus partidas siguen
 # contando en todas las cifras: lo que desaparece es su ficha personal.
-CONTACTO = "contacto@finalgirlstats.com"
+CONTACTO = "poerkatauro@gmail.com"
 
 AVISO_NICK = {
     "es": "¿Eres tú y prefieres no salir? Escribe a {c} con tu nick y te quitamos de esta lista. Tus partidas seguirán contando en las cifras, pero sin tu nombre.",
